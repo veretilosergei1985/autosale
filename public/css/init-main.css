@@ -1,0 +1,5900 @@
+
+a {
+    color: #256799;
+    text-decoration: none;
+}
+.delete {
+    color: #D85442;
+}
+.date {
+    color: #7A7A7A;
+}
+.grey {
+    color: #7A7A7A;
+}
+.text {
+    color: #414042;
+}
+.area {
+    float: right;
+    font-size: 13px;
+    text-align: right;
+}
+.area.btn {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.area .allotted {
+    margin: 0 2px 0 0;
+    padding: 3px 3px 3px 5px;
+}
+.area-tab {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DDDDDD #DDDDDD -moz-use-text-color;
+    border-image: none;
+    border-radius: 7px 7px 0 0;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    float: right;
+    padding: 6px 12px;
+}
+.title {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 18px;
+    padding-bottom: 5px;
+}
+.title.line {
+    border-bottom: 1px solid #D85442;
+}
+.title.line-grove {
+    border-bottom: 2px solid #D85442;
+}
+.head {
+    border-bottom: 2px solid #D85442;
+    font-size: 15px;
+    line-height: 35px;
+    margin-bottom: 18px;
+}
+.head [class^="icon-head"] {
+    margin-top: -6px;
+}
+.right-panel .head, .left-panel .head {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom-color: #DDDDDD;
+    line-height: 21px;
+    padding: 7px 14px;
+}
+.right-panel [class^="icon-head"], .left-panel [class^="icon-head"] {
+    margin-left: -8px;
+    margin-right: -5px;
+}
+.box-panel .head {
+    margin-bottom: 0;
+}
+.head-box {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+}
+.head-box.line {
+    border-bottom: 1px solid #D85442;
+}
+.head-box.line-grove {
+    border-bottom: 2px solid #D85442;
+}
+.head-box .sub-head {
+    font-size: 15px;
+    line-height: 20px;
+    margin: -2px 0 7px;
+}
+.head-box .area {
+    line-height: 30px;
+    padding-top: 5px;
+}
+.head-news {
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 26px;
+}
+.head-news.line {
+    border-bottom: 1px solid #D85442;
+    padding-bottom: 12px;
+}
+.head-news.line-grove {
+    border-bottom: 2px solid #D85442;
+}
+.heading {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+.head-cars {
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+.head-cars .year {
+    color: #7A7A7A;
+}
+.head-autosalon {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.head-autosalon.line {
+    border-bottom: 1px solid #D85442;
+}
+.head-autosalon.line-grove {
+    border-bottom: 2px solid #D85442;
+}
+.tinycon {
+    background: none repeat scroll 0 0 #D85442;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    float: right;
+    font-size: 8px;
+    font-style: normal;
+    line-height: 8px;
+    padding: 1px 3px;
+    text-align: center;
+}
+.allotted {
+    background: none repeat scroll 0 0 #F8E1A8;
+    border-radius: 5px 5px 5px 5px;
+    padding: 4px 6px;
+}
+.through {
+    text-decoration: line-through;
+    white-space: nowrap;
+}
+.price-through {
+    color: #7A7A7A;
+    white-space: nowrap;
+}
+.view-all {
+    margin: 0;
+    text-align: right;
+}
+.link-add {
+    color: #527B02;
+    padding-left: 15px;
+    position: relative;
+}
+.link-add:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -60px -220px transparent;
+    content: "";
+    height: 12px;
+    left: 1px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    z-index: 10;
+}
+.link-delete {
+    color: #D85442;
+    padding-left: 15px;
+    position: relative;
+}
+.link-delete:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -61px -320px transparent;
+    content: "";
+    height: 12px;
+    left: 0;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    z-index: 10;
+}
+.help-link {
+    border-bottom: 1px dotted #256799;
+}
+.help-link:hover {
+    text-decoration: none;
+}
+.mdash {
+    color: #7A7A7A;
+    font-size: 16px;
+}
+.nbu {
+    color: #7A7A7A;
+    font-size: 13px;
+}
+.overflow {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+.textcolumn {
+    -moz-column-gap: 20px;
+    -moz-column-rule: 1px solid #DDDDDD;
+}
+.textcolumn.count-2 {
+    -moz-column-count: 2;
+}
+.textcolumn.count-3 {
+    -moz-column-count: 3;
+}
+.textcolumn.count-4 {
+    -moz-column-count: 4;
+}
+.textcolumn.count-5 {
+    -moz-column-count: 5;
+}
+.photo-85x56, .photo-100x75, .photo-135x90, .photo-185x120, .photo-295x195, .photo-380x250 {
+    background-color: #FFFFFF;
+    background-image: url("http://img6.auto.ria.ua/images/common/loader/24x24/spiner.gif");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #DDDDDD;
+    color: #FFFFFF;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+}
+.photo-85x56 img, .photo-100x75 img, .photo-135x90 img, .photo-185x120 img, .photo-295x195 img, .photo-380x250 img {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    text-decoration: none;
+}
+.photo-295x195, .photo-380x250 {
+    background-image: url("http://img6.auto.ria.ua/images/common/loader/config.gif");
+}
+.photo-85x56 {
+    height: 56px;
+    width: 85px;
+}
+.photo-100x75 {
+    height: 75px;
+    width: 100px;
+}
+.photo-135x90 {
+    height: 90px;
+    width: 135px;
+}
+.photo-185x120 {
+    height: 120px;
+    width: 185px;
+}
+.photo-295x195 {
+    height: 195px;
+    width: 295px;
+}
+.photo-380x250 {
+    height: 250px;
+    width: 380px;
+}
+.video-135x90 {
+    background-color: #FFFFFF;
+    background-image: url("http://img6.auto.ria.ua/images/common/loader/24x24/spiner.gif");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #DDDDDD;
+    color: #FFFFFF;
+    display: block;
+    height: 90px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 135px;
+}
+.video-135x90:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -40px -120px transparent;
+    content: "";
+    height: 40px;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    opacity: 0.75;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    z-index: 100;
+}
+.video-135x90:hover:before {
+    opacity: 1;
+}
+.avatar {
+    border: 1px solid #DDDDDD;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.section-loader {
+    background: url("http://img6.auto.ria.ua/images/common/loader/config.gif") no-repeat scroll 50% 50% #FFFFFF;
+    height: 100%;
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+}
+.preloader-window {
+    background: url("http://img6.auto.ria.ua/images/common/loader/config.gif") no-repeat scroll 50% 50% #FFFFFF;
+    bottom: 0;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+}
+.wrapper-rotator .section-loader {
+    border-radius: 0 0 5px 5px;
+    left: -13px;
+    padding: 13px;
+    top: -13px;
+}
+.element-select {
+    display: inline-block;
+    position: relative;
+}
+.selected {
+    display: inline-block;
+    padding-right: 20px;
+    position: relative;
+}
+.selected:after {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -20px -40px transparent;
+    content: "";
+    height: 16px;
+    left: 100%;
+    margin: -8px 0 0 -16px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.selected-smoll {
+    display: inline-block;
+    padding-right: 16px;
+    position: relative;
+}
+.selected-smoll:after {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll 0 -160px transparent;
+    content: "";
+    height: 16px;
+    left: 100%;
+    margin: -8px 0 0 -16px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.options {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B0B3B4;
+    box-shadow: 5px 5px 5px -4px #414042;
+    font-size: 1em;
+    font-weight: normal;
+    left: 0;
+    line-height: 1.5em;
+    margin: 0 0 0 -5px;
+    max-height: 250px;
+    max-width: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    white-space: nowrap;
+    width: auto;
+    z-index: 2000;
+}
+.options .item {
+    color: #414042;
+    cursor: pointer;
+    display: block;
+    font-weight: normal;
+    padding: 1px 15px 1px 6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.options .item:hover, .options .item .select {
+    background: none repeat scroll 0 0 #3399FE;
+    color: #FFFFFF;
+}
+thead.styled th, thead.styled td {
+    background-color: #F4F4F4;
+    background-image: -moz-linear-gradient(center top , #FFFFFF 10%, #E4E4E4 70%);
+    background-repeat: repeat-x;
+    border-bottom-width: 1px;
+}
+.subscribe-item {
+    margin: 0;
+    padding: 0;
+}
+.subscribe-item .title {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+.subscribe-item .rows {
+    margin: 0;
+    padding: 0;
+}
+.unordered-list .benefits {
+    margin-left: 20px;
+}
+.unordered-list .benefits:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -60px -340px transparent;
+    height: 16px;
+    margin-left: -20px;
+    margin-top: 0;
+    width: 16px;
+}
+.unordered-list .check {
+    margin-left: 20px;
+}
+.unordered-list .check:before {
+    background: url("http://img6.auto.ria.ua/images/demo/ckeck.png") no-repeat scroll 50% 50% transparent;
+    height: 16px;
+    margin-left: -20px;
+    margin-top: 0;
+    width: 16px;
+}
+.unordered-list .item-news {
+    line-height: 21px;
+}
+.wrapper-rotator {
+    display: block;
+    padding: 0 9px;
+    position: relative;
+}
+.wrapper-rotator > [class*="arrow-slide"] {
+    margin: -5px 0 0;
+    position: absolute;
+    top: 50%;
+}
+.wrapper-rotator .slidebar {
+    display: block;
+    min-height: 160px;
+    overflow-x: hidden;
+    width: 100%;
+}
+.arrow-slide-left {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent #D85442 transparent transparent;
+    border-image: none;
+    border-left: 0 dashed transparent;
+    border-right: 10px solid #D85442;
+    border-style: solid solid dashed dashed;
+    border-width: 10px 10px 10px 0;
+    font-size: 0;
+    height: 0;
+    left: -10px;
+    line-height: 0;
+    width: 0;
+}
+.arrow-slide-left.disabled {
+    border-right-color: #DDDDDD;
+    cursor: default;
+}
+.arrow-slide-right {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent transparent #D85442;
+    border-image: none;
+    border-left: 10px solid #D85442;
+    border-right: 0 dashed transparent;
+    border-style: solid dashed dashed solid;
+    border-width: 10px 0 10px 10px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    right: -10px;
+    width: 0;
+}
+.arrow-slide-right.disabled {
+    border-left-color: #DDDDDD;
+    cursor: default;
+}
+.tinycomment {
+    background: none repeat scroll 0 0 #D85442;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 16px;
+    min-width: 15px;
+    padding: 0 4px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+.tinycomment:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #D85442 transparent transparent -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid dashed none;
+    border-width: 4px 4px 0 0;
+    bottom: -4px;
+    content: "";
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    right: 4px;
+    width: 0;
+}
+.rating {
+    background: url("http://img6.auto.ria.ua/images/demo/stars.png") repeat-x scroll 0 -15px transparent;
+    display: inline-block;
+    height: 15px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 70px;
+}
+.rating .scale {
+    background: url("http://img6.auto.ria.ua/images/demo/stars.png") repeat-x scroll 0 0 transparent;
+    display: block;
+    height: 15px;
+}
+.rating-review {
+    display: inline-block;
+    height: 15px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 70px;
+}
+.rating-review .itemstar {
+    background: url("http://img6.auto.ria.ua/images/demo/stars.png") repeat-x scroll 0 -15px transparent;
+    float: left;
+    height: 14px;
+    margin: 0;
+    width: 14px;
+    z-index: 10;
+}
+.rating-review .itemstar.on, .rating-review .itemstar.on:hover {
+    background-position: 0 0;
+}
+.rating-review .itemstar.half, .rating-review .itemstar.half:hover {
+    background-position: 0 -30px;
+}
+.rating-review .itemstar.hover, .rating-review .itemstar.hover:hover {
+    background-position: 0 -45px;
+}
+.color-1 {
+    background: none repeat scroll 0 0 #E0C48F;
+}
+.color-2 {
+    background: none repeat scroll 0 0 #000000;
+}
+.color-3 {
+    background: none repeat scroll 0 0 #1212D1;
+}
+.color-4 {
+    background: none repeat scroll 0 0 #C1A278;
+}
+.color-5 {
+    background: none repeat scroll 0 0 #4F3B06;
+}
+.color-6 {
+    background: none repeat scroll 0 0 #D9BD35;
+}
+.color-7 {
+    background: none repeat scroll 0 0 #0CC60C;
+}
+.color-8 {
+    background: none repeat scroll 0 0 #CCCCCC;
+}
+.color-9 {
+    background: none repeat scroll 0 0 #FC9611;
+}
+.color-10 {
+    background: none repeat scroll 0 0 #EAC7EA;
+}
+.color-11 {
+    background: none repeat scroll 0 0 #DF75A4;
+}
+.color-12 {
+    background: none repeat scroll 0 0 #620C88;
+}
+.color-13 {
+    background: none repeat scroll 0 0 #FF0000;
+}
+.color-14 {
+    background: none repeat scroll 0 0 #C6C7C4;
+}
+.color-15 {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.color-16 {
+    background: none repeat scroll 0 0 #FFD906;
+}
+.color-17 {
+    background: none repeat scroll 0 0 #C3DCF5;
+}
+.color-18 {
+    background: none repeat scroll 0 0 #9A243D;
+}
+.color-19 {
+    background: none repeat scroll 0 0 #BEB472;
+}
+.color-20 {
+    background: none repeat scroll 0 0 #8B161C;
+}
+.color-21 {
+    background: none repeat scroll 0 0 #6E6C6F;
+}
+.window-swich-themes {
+    background: none repeat scroll 0 0 #414141;
+    bottom: 0;
+    color: #FFFFFF;
+    left: 0;
+    padding: 0 10px;
+    position: fixed;
+    z-index: 1000;
+}
+.window-confirm-phone {
+    left: 50%;
+    margin: -290px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+}
+.window-confirm-phone .head {
+    border-bottom-width: 1px;
+    font-weight: bold;
+}
+.window-confirm-phone .phone {
+    white-space: nowrap;
+}
+.succes-icons {
+    background: url("http://img.auto.ria.ua/images/demo/alert/password-sent-success.png") no-repeat scroll 10px 0 transparent;
+    display: block;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 18px 0;
+    padding-left: 75px;
+}
+.confirmed-verification {
+    background: url("http://img.auto.ria.ua/images/demo/icons/phone-confirmed.png") no-repeat scroll 0 5px transparent;
+    display: block;
+    padding-left: 75px;
+}
+.confirmed-verification .item {
+    margin-bottom: 10px;
+}
+.sms-verification {
+    display: block;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0 0 18px;
+}
+.panel-verification {
+    display: block;
+    margin: 18px 0;
+    padding-left: 75px;
+}
+.popup-panel-button {
+    border-top: 1px solid #DDDDDD;
+    padding-top: 10px;
+    text-align: right;
+}
+.loader-24x24 {
+    background: url("http://img6.auto.ria.ua/images/common/loader/24x24/spiner.gif") no-repeat scroll 0 0 transparent;
+    padding: 3px 0 3px 35px;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #414042;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 18px;
+    text-rendering: geometricprecision;
+}
+body.pattern {
+    background: url("http://img6.auto.ria.ua/images/pattern/bgnoise.png") repeat scroll 0 0 transparent;
+}
+.container-body {
+    min-height: 100%;
+}
+.container {
+    margin: 0 auto;
+}
+.panel-banner {
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+    text-align: center;
+    vertical-align: top;
+}
+.panel-banner > embed {
+    margin-top: 10px;
+}
+.panel-banner > div {
+    display: block !important;
+    margin-top: 10px;
+}
+header {
+    background: none repeat scroll 0 0 #ECEEEE;
+    border-top: 1px solid #FFFFFF;
+    box-shadow: 0 -1px 7px rgba(194, 194, 194, 0.45) inset;
+    display: block;
+    line-height: 21px;
+}
+.content-main {
+    padding-bottom: 140px;
+}
+.content-main.row {
+    margin-bottom: 0;
+}
+.left-panel .support {
+    margin-top: 14px;
+}
+.right-panel {
+    float: right;
+}
+.box-panel {
+    display: inline-block;
+}
+.box-panel {
+    display: block;
+    margin-bottom: 20px;
+}
+.box-panel .title {
+    margin-bottom: 0;
+}
+.box-panel .panel {
+    display: block;
+    padding: 14px 14px 0;
+}
+.box-panel .panel-wrap {
+    display: block;
+    padding-top: 14px;
+}
+.box-panel > .wrapper {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #DDDDDD #DDDDDD;
+    border-image: none;
+    border-radius: 0 0 7px 7px;
+    border-right: 1px solid #DDDDDD;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    display: block;
+    padding: 14px;
+}
+.box-panel .area {
+    font-size: 12px;
+}
+.rocon {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.rocon .panel {
+    padding-left: 0;
+    padding-right: 0;
+}
+footer {
+    background: none repeat scroll 0 0 #EDEDED;
+    border-top: 1px solid #FFFFFF;
+    box-shadow: 0 -1px 0 #E5E5E5;
+    color: #5C6975;
+    display: block;
+    height: 139px;
+    margin: -140px 0 0;
+    top: 0;
+}
+.feedback {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll -230px 0 transparent;
+    height: 230px;
+    margin: -115px 0 0;
+    opacity: 0.8;
+    position: fixed;
+    right: 0;
+    text-decoration: none;
+    top: 50%;
+    width: 26px;
+    z-index: 9999;
+}
+.feedback:hover {
+    opacity: 1;
+}
+dev {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    border-radius: 5px 5px 5px 5px;
+    bottom: 10px;
+    color: #FFFFFF;
+    left: 10px;
+    padding: 10px 15px;
+    position: fixed;
+    z-index: 1000;
+}
+dev a {
+    color: #FFFFFF;
+}
+.ria-ua {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll 0 0 transparent;
+    height: 44px;
+    width: 62px;
+}
+.ria-ua-smoll, .copyright:before {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll -62px 0 transparent;
+    height: 30px;
+    width: 42px;
+}
+[class^="logo-"] {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll 0 0 transparent;
+}
+.logo-auto-ria {
+    background-position: 0 -100px;
+    height: 30px;
+    width: 94px;
+}
+.logo-auto-ria.select, .logo-auto-ria:hover {
+    background-position: 0 -250px;
+}
+.logo-dom-ria {
+    background-position: 0 -130px;
+    height: 30px;
+    width: 86px;
+}
+.logo-dom-ria.select, .logo-dom-ria:hover {
+    background-position: 0 -280px;
+}
+.logo-rabota-ria {
+    background-position: 0 -160px;
+    height: 30px;
+    width: 113px;
+}
+.logo-rabota-ria.select, .logo-rabota-ria:hover {
+    background-position: 0 -310px;
+}
+.logo-hotels-ria {
+    background-position: 0 -190px;
+    height: 30px;
+    width: 116px;
+}
+.logo-hotels-ria.select, .logo-hotels-ria:hover {
+    background-position: 0 -340px;
+}
+.logo-avia-ria {
+    background-position: 0 -220px;
+    height: 30px;
+    width: 85px;
+}
+.logo-avia-ria.select, .logo-avia-ria:hover {
+    background-position: 0 -370px;
+}
+.top-drop {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.top-drop:hover ol.drop-menu {
+    display: block;
+}
+ol.drop-menu {
+    background-color: #ECEEEE;
+    display: none;
+    list-style: none outside none;
+    margin: -10px 0 0 -10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+ol.drop-menu li {
+    margin: 0;
+    padding: 0;
+}
+.logo-travel-ria {
+    background-position: -136px -347px;
+    height: 30px;
+    opacity: 0.6;
+    width: 113px;
+}
+.logo-travel-ria:hover {
+    background-position: -136px -316px;
+    opacity: 1;
+}
+nav.head-menu {
+    display: block;
+    height: 36px;
+    margin-right: 260px;
+    padding: 0 0 0 80px;
+    position: relative;
+}
+nav.head-menu .ria-ua {
+    left: 0;
+    position: absolute;
+    top: -2px;
+}
+nav.head-menu [class^="logo-"] {
+    display: inline-block;
+    margin-right: 18px;
+    margin-top: 3px;
+}
+nav.head-menu .select[class^="logo-"] {
+    border-top: 3px solid #D85442;
+    margin-top: 0;
+}
+.loginbar {
+    float: right;
+    padding: 8px 0;
+    text-align: right;
+    text-shadow: 0 1px 0 #FFFFFF;
+    white-space: nowrap;
+    width: 260px;
+}
+.loginbar .item {
+    margin-left: 25px;
+}
+.header {
+    padding: 30px 0 20px;
+}
+.logo {
+    float: left;
+    height: 40px;
+    margin-top: 1px;
+    width: 255px;
+}
+.header-settings {
+    display: block;
+    margin: 0 0 0 250px;
+    text-align: right;
+}
+.header-settings .add-offer {
+    float: right;
+}
+.header-settings .informbar {
+    display: block;
+    margin: 0 260px 0 0;
+    padding: 7px 0;
+    text-align: center;
+}
+.header-settings .popup {
+    left: 50%;
+    margin-left: -137px;
+    width: 255px;
+}
+.header-settings .location {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 26px;
+    position: relative;
+}
+.header-settings .location .icon-arrou {
+    margin-top: 3px;
+}
+.header-settings .newads {
+    display: inline-block;
+    line-height: 21px;
+    position: relative;
+    white-space: nowrap;
+}
+.header-settings .newads .icon-reload {
+    float: left;
+    margin-top: 3px;
+    opacity: 0.75;
+}
+.header-settings .newads .icon-reload:hover {
+    opacity: 1;
+}
+.header-settings .newads .wrap {
+    border-left: 1px solid #E4D665;
+    font-size: 14px;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 10px;
+}
+.header-settings .newads .stretch {
+    color: #525252;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.header-settings .newads .count {
+    font-size: 18px;
+    vertical-align: middle;
+}
+.header-settings .newads .icon-arrou, .header-settings .newads .icon-arrod {
+    margin-top: 3px;
+}
+.langbar {
+    height: 25px;
+    margin: -25px 0 0;
+}
+.langbar .item {
+    margin-left: 12px;
+}
+.main-menu {
+    border-bottom: 2px solid #D85442;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1000;
+}
+.main-menu:after {
+    clear: both;
+    content: "";
+    display: table;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.main-menu .area {
+    float: right;
+    line-height: 21px;
+    margin-top: 4px;
+    padding-bottom: 2px;
+}
+.main-menu .icon-search-red {
+    margin: 2px -3px 0;
+}
+.main-menu .tabs {
+    float: left;
+    font-size: 15px;
+    line-height: 26px;
+    margin-left: 0;
+    margin-right: 2px;
+}
+.main-menu .link-add {
+    color: #527B02;
+}
+.main-menu .window {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: -moz-use-text-color #D85442 #D85442;
+    border-image: none;
+    border-radius: 0 0 9px 9px;
+    border-right: 2px solid #D85442;
+    border-style: none solid solid;
+    border-width: 0 2px 2px;
+    box-shadow: 0 18px 18px rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    left: -2px;
+    line-height: 21px;
+    top: 28px;
+}
+.main-menu .headbar {
+    margin-bottom: 6px;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.main-menu .column {
+    float: left;
+    margin-bottom: 0;
+    max-width: 200px;
+    min-width: 150px;
+    padding-bottom: 0;
+    padding-right: 20px;
+}
+.main-menu .column-2 {
+    width: 400px;
+}
+.main-menu .column-3 {
+    width: 600px;
+}
+.main-menu .column-4 {
+    width: 800px;
+}
+.main-menu .column-5 {
+    width: 1000px;
+}
+.main-menu .unordered-list dd, .main-menu .unordered-list li {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.user-bar__menu {
+    border-bottom: 1px solid #DDDDDD;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+.user-bar__menu .avatar {
+    float: left;
+}
+.user-bar__menu .area {
+    color: #7A7A7A;
+    font-size: 12px;
+}
+.user-data__menu {
+    display: block;
+    margin: 0 0 0 60px;
+}
+.user-data__menu .user-name {
+    color: #256799;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.user-data__menu .item-phone {
+    margin-left: 0;
+    padding-left: 0;
+}
+.menu__bottom-panel {
+    clear: both;
+    padding-top: 6px;
+}
+.menu__bottom-panel .mdash {
+    color: #DDDDDD;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.fast-search .type-search {
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.fast-search .label {
+    white-space: nowrap;
+}
+.fast-search .checkrows {
+    margin-bottom: 4px;
+}
+.fast-search .button-icon {
+    float: right;
+    margin-top: 6px;
+}
+.icon-star-tab {
+    left: -3px;
+    position: relative;
+    top: 1px;
+}
+.ico-new {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll -165px -20px transparent;
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    width: 35px;
+}
+.ico-market {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll -80px -51px transparent;
+    display: block;
+    height: 16px;
+    margin-bottom: 15px;
+    position: relative;
+    vertical-align: middle;
+    width: 110px;
+}
+.search-main-form .tabs {
+    border: 0 none;
+    box-shadow: 0 -5px 15px -5px rgba(0, 0, 0, 0.5) inset;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 37px;
+    margin-left: 0;
+    margin-right: 3px;
+}
+.search-main-form .tabs:hover {
+    color: #FFFFFF;
+}
+.search-main-form .tabs.active {
+    box-shadow: 0 0 0 #FFFFFF;
+}
+.search-main-form .tabs [class^="icon-head"] {
+    margin: -3px 0 0;
+}
+.search-main-form .tabs.search-cars {
+    background: none repeat scroll 0 0 #D85442;
+}
+.search-main-form .tabs.add-cars {
+    background: none repeat scroll 0 0 #72AC30;
+}
+.search-main-form .tabs.desk-order {
+    background: none repeat scroll 0 0 #EFEEE8;
+    color: #7A7A7A;
+}
+.search-main-form .list-tabs {
+    border: 0 none;
+}
+.search-cars.active:before {
+    background: none repeat scroll 0 0 #D85442;
+    content: "";
+    height: 7px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 7px;
+}
+[class^="icon-combobox"] {
+    left: 10px;
+    margin: -16px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+}
+.combobox {
+    float: left;
+    height: 38px;
+    position: relative;
+    width: 280px;
+    z-index: 200;
+}
+.combobox:hover {
+    z-index: 1000;
+}
+.combobox .selector {
+    background: none repeat scroll 0 0 #D85442;
+    border: 2px solid #E7978C;
+    border-radius: 7px 7px 7px 7px;
+    left: 0;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.combobox .select-ed {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    color: #414042;
+    display: block;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 0 30px 0 70px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 100;
+}
+.combobox .select-ed:hover {
+    text-decoration: none;
+}
+.combobox .select-ed:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #D85442 transparent transparent;
+    border-image: none;
+    border-style: solid solid dashed dashed;
+    border-width: 8px 8px 0;
+    bottom: -8px;
+    content: "";
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 0;
+}
+.combobox .optgroup {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 15px -4px #414042;
+    list-style: none outside none;
+    margin: -4px 0 0;
+    padding: 4px 0 5px;
+}
+.combobox .item {
+    color: #414042;
+    display: block;
+    font-size: 16px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0 0 0 70px;
+    position: relative;
+}
+.combobox .item:hover {
+    background: none repeat scroll 0 0 #E07668;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.combobox .item:first-child {
+    border-top: 1px solid #D85442;
+}
+.search-main {
+    background: none repeat scroll 0 0 #D85442;
+    border-radius: 7px 7px 7px 7px;
+    color: #FFFFFF;
+    display: block;
+    padding: 15px;
+    position: relative;
+}
+.search-main a {
+    color: #FFFFFF;
+}
+.search-main [class^="span"] {
+    margin: 0;
+}
+.search-main .label {
+    font-size: 15px;
+}
+.search-main .row {
+    margin: 0 -5px;
+}
+.search-main .grid .help-block {
+    color: #FFFFFF;
+    margin: 0;
+}
+.search-main .rows {
+    margin: 0 0 15px;
+}
+.search-main .top-bar {
+    display: inline-block;
+    padding-bottom: 14px;
+    width: 100%;
+}
+.search-main .top-bar .rows {
+    margin: 6px 0 6px 50%;
+    padding-left: 10px;
+}
+.search-main .type-search {
+    font-size: 18px;
+    margin: 0 -10px 15px 0;
+    padding: 3px 0;
+}
+.search-main .checkrows {
+    font-size: 14px;
+    margin: 0 -10px 0 0;
+}
+.search-main .left-column {
+    border-right: 1px solid #DF7162;
+    padding: 0 10px 0 5px;
+}
+.search-main .right-column {
+    padding: 0 5px 0 10px;
+}
+.search-main .indent {
+    display: block;
+    margin-left: 100px;
+}
+.search-main .select select {
+    width: 100%;
+}
+.search-main label.label {
+    width: 100px;
+}
+.search-main input.blue {
+    font-size: 16px;
+}
+.panel-search {
+    background: none repeat scroll 0 0 #D85442;
+    border-radius: 7px 7px 7px 7px;
+    color: #FFFFFF;
+    display: block;
+    padding: 15px;
+    position: relative;
+}
+.panel-search select {
+    width: 100%;
+}
+.panel-search .submit-search-form {
+    display: block;
+    margin-top: -64px;
+    text-align: right;
+}
+.panel-search .rows {
+    display: block;
+    margin: 0 0 10px;
+}
+.submit-main-form {
+    display: block;
+    margin-top: -20px;
+    text-align: right;
+}
+.submit-main-form .button-icon {
+    margin-left: 15px;
+}
+.add-main {
+    background-color: #EDF6CD;
+    border: 2px solid #72AC30;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    line-height: 24px;
+    padding: 13px;
+    position: relative;
+}
+.add-main:before {
+    background: none repeat scroll 0 0 #EDF6CD;
+    border-left: 2px solid #72AC30;
+    border-top: 2px solid #72AC30;
+    content: "";
+    height: 5px;
+    left: -2px;
+    overflow: hidden;
+    position: absolute;
+    top: -2px;
+    width: 5px;
+}
+.add-main a {
+    color: #536341;
+}
+.add-main [class^="icon-head"] {
+    margin: -6px 0 0 -8px;
+}
+.add-main .heading {
+    font-size: 20px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+}
+.add-main .item {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.main-autosales-services {
+    border-right: 1px solid #BECAA3;
+    float: left;
+    font-size: 17px;
+    width: 70%;
+}
+.main-autosales-services .column {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.main-autosales-services .item {
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.main-additions-services {
+    border-left: 1px solid #BECAA3;
+    font-size: 15px;
+    margin: 0 0 0 70%;
+    padding: 0 0 0 15px;
+}
+.desk-order-main {
+    background: none repeat scroll 0 0 #EFEEE8;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    padding: 15px;
+    position: relative;
+}
+.desk-order-main [class^="span"] {
+    margin: 0;
+}
+.desk-order-main:before {
+    background: none repeat scroll 0 0 #EFEEE8;
+    content: "";
+    height: 7px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 7px;
+}
+.desk-order-main .error {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.preloader-deskorder {
+    background: url("http://img6.auto.ria.ua/images/common/loader/hloading.gif") no-repeat scroll 50% 50% transparent;
+    display: block;
+    height: 215px;
+}
+.confirm-deskorder {
+    background: url("http://img.auto.ria.ua/images/demo/alert/password-sent-success.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    padding: 6px 0 6px 75px;
+}
+.confirm-deskorder .form-confirm {
+    font-weight: bold;
+    margin: 0;
+    padding-top: 6px;
+}
+.confirm-deskorder .input-confirm {
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+.footer-deskorder {
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+.footer-deskorder .item {
+    float: left;
+    padding-left: 40px;
+    position: relative;
+    width: 130px;
+}
+.footer-deskorder .item:first-child {
+    width: 195px;
+}
+.footer-deskorder [class^="icon-head"] {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.priority-cars {
+    display: inline-block;
+    width: 100%;
+}
+.priority-cars .large-prew {
+    float: left;
+    width: 300px;
+}
+.priority-cars .item {
+    display: inline-block;
+    padding: 0 0 12px;
+    width: 100%;
+}
+.priority-cars .item:first-child {
+    padding-bottom: 11px;
+}
+.priority-cars .photo-85x56 {
+    float: left;
+}
+.priority-cars .view-all {
+    margin-top: 30px;
+}
+.large-prew .title {
+    font-size: 15px;
+}
+.large-prew .subscribe-item {
+    margin-top: 6px;
+}
+.list-priority-cars {
+    display: block;
+    margin: 0 0 0 310px;
+}
+.list-priority-cars .subscribe-item {
+    margin-left: 95px;
+}
+.item__prewcars .photo-85x56 {
+    float: left;
+}
+.item__prewcars .subscribe-item {
+    margin-left: 95px;
+}
+.list-item-scroll {
+    display: inline-block;
+}
+.list-item-scroll {
+    display: block;
+    padding: 0;
+}
+.list-item-scroll .item {
+    float: left;
+    padding: 0;
+    width: 25%;
+}
+.prew-4-item {
+    display: block;
+    margin-right: -20px;
+}
+.prew-4-item .item {
+    float: left;
+    width: 145px;
+}
+.prew-4-item .subscribe-item {
+    padding-top: 6px;
+}
+.main-news {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.main-news .item-news {
+    margin-bottom: 14px;
+}
+.main-news:before, .main-news:after {
+    background: url("http://img.auto.ria.ua/img/common/repeat-x/delim-box-news.png") repeat-x scroll 0 0 transparent;
+    content: "";
+    height: 115px;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    z-index: 100;
+}
+.main-news:before {
+    background-position: 0 0;
+    top: 0;
+}
+.main-news:after {
+    background-position: 0 100%;
+    bottom: 0;
+}
+.main-news .title {
+    font-weight: normal;
+    margin-bottom: 14px;
+}
+.main-news .image {
+    float: left;
+    line-height: 0;
+    width: 85px;
+}
+.main-news .desc {
+    margin: 0 0 0 95px;
+    padding-right: 10px;
+}
+.main-news .date {
+    font-size: 11px;
+    white-space: nowrap;
+}
+.main-news .left-bar {
+    border-right: 1px solid #DDDDDD;
+    float: left;
+    width: 50%;
+}
+.main-news .right-bar {
+    border-left: 1px solid #DDDDDD;
+    margin-left: 50%;
+    padding-left: 15px;
+}
+.top-news {
+    border-bottom: 1px solid #F2F2F2;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.top-news .image {
+    float: left;
+    width: 230px;
+}
+.top-news .wrap {
+    display: block;
+    margin: 0 0 0 240px;
+    padding: 0;
+}
+.top-news .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.top-news .desc {
+    margin: 0;
+}
+.news-comment {
+    background: url("http://img.auto.ria.ua/img/news/comments.gif") no-repeat scroll 0 0 transparent;
+    color: #2D2D2D;
+    font: 11px/16px Verdana,Geneva,Arial,Helvetica,sans-serif;
+    padding: 0 0 1px 16px;
+    text-decoration: none;
+}
+.main-new__hots {
+    display: inline-block;
+    margin-bottom: -19px;
+    width: 100%;
+}
+.main-new__hots .item-news {
+    float: left;
+    margin-bottom: 15px;
+    width: 50%;
+}
+.main-new__hots .image {
+    float: left;
+    line-height: 0;
+    width: 85px;
+}
+.main-new__hots .desc {
+    margin: 0 0 0 95px;
+    padding-right: 10px;
+}
+.catalog-by-type .rows {
+    margin-bottom: 0;
+    margin-top: 12px;
+}
+.catalog-by-type [class^="icon-head"] {
+    margin-bottom: -3px;
+    margin-left: -4px;
+    margin-top: -5px;
+}
+.catalog-by-type .count {
+    border: 0 none;
+    color: #7A7A7A;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 18px;
+}
+.catalog-by-type .column-left {
+    float: left;
+    width: 45%;
+}
+.catalog-by-type .column-right {
+    float: right;
+    width: 45%;
+}
+.catalog-list {
+    display: inline-block;
+    width: 100%;
+}
+.catalog-list .rows {
+    margin-bottom: 6px;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+.catalog-list .count {
+    border: 0 none;
+    color: #7A7A7A;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 18px;
+}
+.catalog-list .unordered-list {
+    float: left;
+    margin: 0;
+}
+.count-column-two .unordered-list {
+    width: 295px;
+}
+.count-column-three .unordered-list {
+    width: 196px;
+}
+.count-column-four .unordered-list {
+    width: 147px;
+}
+.catalog-market {
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.catalog-market .wtapper-catalog {
+    display: block;
+    margin-right: -10px;
+}
+.right-catalog-market .item {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.right-catalog-market .item:last-child {
+    margin-bottom: 0;
+}
+.right-catalog-market .photo {
+    float: left;
+}
+.right-catalog-market .subscribe-item {
+    margin-left: 95px;
+}
+div.right-catalog-market {
+    margin-bottom: 10px;
+}
+.right-panel .wtapper-catalog {
+    padding-left: 5px;
+    padding-top: 14px;
+}
+.right-panel .catalog-market {
+    margin-bottom: 0;
+}
+.item-catalog {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #EBEFF1;
+    border-radius: 3px 3px 3px 3px;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 7px;
+    position: relative;
+    width: 140px;
+}
+.item-catalog:hover {
+    border-color: #D3D3D3;
+}
+.item-catalog .icon-summer, .item-catalog .icon-winter {
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+}
+.item-catalog .photo-140x120 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #F1F1F1;
+    border-radius: 3px 3px 0 0;
+    display: block;
+    padding-bottom: 0;
+    padding-top: 2px;
+    text-align: center;
+    width: 100%;
+}
+.item-catalog .content {
+    padding: 10px;
+}
+.item-catalog .subscribe-item {
+    height: 50px;
+    overflow: hidden;
+}
+.item-catalog .title {
+    font-weight: normal;
+    margin-bottom: 6px;
+}
+.item-catalog .description {
+    color: #7A7A7A;
+    margin-bottom: 6px;
+    margin-left: 0;
+    margin-top: 6px;
+}
+.item-catalog .price {
+    padding-top: 10px;
+}
+.item-catalog .count {
+    font-size: 18px;
+}
+.item-catalog .icon-truck {
+    float: right;
+    height: 20px;
+    width: 26px;
+}
+.item-catalog .icon-passenger {
+    float: right;
+    height: 20px;
+    width: 24px;
+}
+.item-catalog .button {
+    bottom: 6px;
+    font-size: 13px;
+    opacity: 0;
+    position: absolute;
+    right: 6px;
+    visibility: hidden;
+}
+.informer-riaua {
+    display: inline-block;
+    padding-left: 6px;
+    position: relative;
+    width: 100%;
+}
+.informer-riaua .partner-ticket {
+    float: left;
+    width: 25%;
+}
+.informer-riaua .subscribe-item {
+    line-height: 18px;
+    overflow: hidden;
+    padding: 5px 0 10px;
+    white-space: nowrap;
+    width: 135px;
+}
+.all-about-marks-rotate .brend-cars {
+    background-image: url("http://img.auto.ria.ua/images/common/main-marka-news.jpg?1");
+    background-repeat: no-repeat;
+    display: block;
+    height: 75px;
+}
+.all-about-marks-rotate a.citroen {
+    background-position: 0 0;
+}
+.all-about-marks-rotate a.subaru {
+    background-position: 0 -75px;
+}
+.all-about-marks-rotate a.sixt {
+    background-position: 0 -75px;
+}
+.all-about-marks-rotate a.lexus {
+    background-position: 0 -150px;
+}
+.all-about-marks-rotate a.mitsubishi {
+    background-position: 0 -225px;
+}
+.all-about-marks-rotate a.texnoptorg {
+    background-position: 0 -300px;
+}
+.all-about-marks-rotate a.mini {
+    background-position: -145px 0;
+}
+.all-about-marks-rotate a.bmw {
+    background-position: -145px -75px;
+}
+.advanced-panel {
+    display: block;
+    margin-bottom: 10px;
+}
+.advanced-panel .count-result {
+    line-height: 26px;
+}
+.advanced-panel .group-button {
+    float: right;
+}
+.advanced {
+    line-height: 30px;
+    margin-left: -10px;
+}
+.btn-compare {
+    margin-left: 12px;
+}
+.btn-compare .button {
+    margin-top: -2px;
+    padding: 4px;
+}
+.grop_marka-model {
+    border-top: 1px solid #DDDDDD;
+}
+.grop_marka-model .delete {
+    margin-left: 10px;
+}
+.count-result {
+    font-size: 14px;
+}
+.setup-data-search {
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 10px 0 5px 50px;
+}
+.setup-data-search .icon-head-searchauto {
+    float: left;
+    left: -10px;
+    margin-left: -40px;
+    position: relative;
+}
+.setup-data-search .element-select {
+    margin-left: 20px;
+}
+.setup-data-search .selected-smoll {
+    color: #D85442;
+    font-weight: bold;
+}
+.filtered {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 15px 0;
+}
+.filtered .title {
+    color: #D85442;
+    margin: 0;
+}
+.filtered .delete {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -20px -320px transparent;
+    height: 15px;
+    position: relative;
+    width: 15px;
+}
+.filtered .delete:hover {
+    background-color: #D85442;
+    background-position: -40px -320px;
+}
+.filtered .item-filtered {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 4px 6px 3px 18px;
+    white-space: nowrap;
+}
+.advanced-search {
+    border: 2px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    margin-bottom: 10px;
+    min-height: 56px;
+    padding: 0 13px;
+    position: relative;
+}
+.advanced-search .count-result {
+    float: right;
+    line-height: 26px;
+    text-align: right;
+    width: 300px;
+}
+.advanced-search .toggle-advanced {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-radius: 0 7px 0 7px;
+    padding: 3px 3px 3px 5px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+.advanced-search .advanced-bar {
+    padding: 14px 0;
+}
+.advanced-search .sub-group {
+    margin-bottom: 25px;
+}
+.advanced-search .right-group {
+    float: right;
+    width: 220px;
+}
+.advanced-search .rows {
+    margin-bottom: 10px;
+    margin-left: 8px;
+    margin-top: 10px;
+}
+.advanced-search .input, .advanced-search .select, .advanced-search .indent {
+    margin-bottom: 10px;
+}
+.advanced-search .exception {
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.advanced-search .rows-add {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.advanced-search .cars-id {
+    display: inline-block;
+    padding-left: 30px;
+}
+.advanced-search .submit-form {
+    margin-left: 8px;
+    padding: 0 0 5px;
+}
+.reset-advanced-search {
+    margin-left: 20px;
+}
+.time-range {
+    margin: 5px 0;
+}
+.additional-options {
+    display: inline-block;
+    width: 100%;
+}
+.additional-options .column {
+    float: left;
+    padding-left: 12px;
+    width: 280px;
+}
+.additional-options .head-group {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.additional-options .item {
+    display: block;
+    margin: 5px 0;
+    padding-left: 20px;
+}
+.additional-options .chek {
+    float: left;
+    margin-left: -18px;
+}
+.filter {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DDDDDD -moz-use-text-color #DDDDDD #DDDDDD;
+    border-image: none;
+    border-radius: 7px 0 0 7px;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    box-shadow: -6px 0 12px -9px #7A7A7A inset;
+    float: left;
+    font-size: 12px;
+    left: -10px;
+    line-height: 21px;
+    margin-left: -152px;
+    position: relative;
+    width: 150px;
+    z-index: 100;
+}
+.filter:before, .filter:after {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll 0 0 transparent;
+    content: "";
+    height: 25px;
+    position: absolute;
+    right: 0;
+    width: 50px;
+}
+.filter:before {
+    background-position: -120px -160px;
+    top: -25px;
+}
+.filter:after {
+    background-position: -120px -185px;
+    bottom: -25px;
+}
+.filter a {
+    color: inherit;
+}
+.filter .head-filter {
+    color: #D85442;
+}
+.filter .title {
+    color: #D85442;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.filter .sub-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.filter .panel {
+    padding: 5px 10px;
+}
+.filter .open {
+    display: inline-block;
+    line-height: 12px;
+}
+.filter .open:after {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -20px -360px transparent;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.filter .close {
+    display: inline-block;
+    line-height: 12px;
+}
+.filter .close:after {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -20px -340px transparent;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.filter .label {
+    display: block;
+}
+.filter .item-rows {
+    margin-bottom: 6px;
+    margin-left: 0;
+    margin-top: 0;
+}
+.filter .select {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    width: 125px;
+}
+.filter .item-smoll {
+    margin-bottom: 6px;
+    margin-left: 25px;
+    margin-top: 0;
+}
+.filter .label-smoll {
+    color: #7A7A7A;
+    float: left;
+    font-size: 11px;
+    margin-left: -25px;
+    text-align: right;
+    width: 20px;
+}
+.filter .select-smoll {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    width: 75px;
+}
+.filter .input-smoll {
+    padding-bottom: 3px;
+    padding-top: 3px;
+    width: 75px;
+}
+.filter .toggle {
+    color: #7A7A7A;
+    text-align: right;
+}
+.filter .check {
+    display: inline-block;
+}
+.filter .check:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll 0 -320px transparent;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.filter .checked {
+    font-weight: bold;
+}
+.filter .checked:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll 0 -340px transparent;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.filter .link-add {
+    color: #527B02;
+}
+.filter .link-delete {
+    color: #D85442;
+}
+.filter .button.mini {
+    margin-bottom: 1px;
+}
+.head-filter {
+    border-bottom: 1px dotted #DDDDDD;
+    color: #D85442;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+.group__filter {
+    padding-bottom: 12px;
+}
+.sub-group__filter .item {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.sub-group__filter .subgroup {
+    padding-left: 12px;
+}
+.compact-filter {
+    position: relative;
+    width: 100%;
+}
+.compact-filter .advanced {
+    margin-left: 170px;
+}
+.compact-filter .filter {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 0 #FFFFFF;
+    left: 0;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    position: absolute;
+    top: 0;
+    z-index: 500;
+}
+.compact-filter .filter:before, .compact-filter .filter:after {
+    display: none;
+}
+.compact-filter .head-filter {
+    border: 0 none;
+    line-height: 21px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.compact-filter .head-filter:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -100px -440px transparent;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: text-top;
+    width: 16px;
+}
+.compact-filter .panel {
+    border-top: 1px dotted #DDDDDD;
+}
+.filter-setup-list {
+    border-top: 1px solid #DDDDDD;
+    display: block;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding-top: 12px;
+}
+.filter-setup-list .delete {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -20px -320px transparent;
+    height: 15px;
+    position: relative;
+    width: 15px;
+}
+.filter-setup-list .delete:hover {
+    background-color: #D85442;
+    background-position: -40px -320px;
+}
+.filter-setup-list .del-group {
+    float: right;
+    top: 7px;
+}
+.item-filtered {
+    border-radius: 2px 2px 2px 2px;
+    color: #414042;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    line-height: 12px;
+    padding-bottom: 3px;
+    padding-left: 18px;
+    padding-top: 3px;
+}
+.item-filtered .delete {
+    float: left;
+    left: -1px;
+    margin-left: -15px;
+    top: -1px;
+}
+.item-filtered:hover {
+    background: none repeat scroll 0 0 #D85442;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.item-filtered:hover .delete {
+    background-position: -40px -320px;
+}
+.clear-filter {
+    font-size: 11px;
+}
+.standart-view {
+    min-height: 1965px;
+    position: relative;
+}
+.standart-view .preloader-window {
+    background-position: 55% 300px;
+    min-height: 600px;
+}
+.icon-chips {
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+}
+.icon-chips:hover {
+    text-decoration: none;
+}
+.action-bar {
+    float: left;
+    padding-left: 5px;
+    text-align: center;
+    width: 20px;
+}
+.action-bar [class*="icon-"] {
+    height: 20px;
+    width: 20px;
+}
+.action-bar .item {
+    display: block;
+}
+.action-bar .item-check {
+    position: relative;
+}
+.action-bar .tooltip {
+    left: 21px;
+    top: -15px;
+    width: 300px;
+}
+.head-ticket {
+    background: none repeat scroll 0 0 #E7E7E7;
+    margin: 0;
+    padding: 3px 5px;
+}
+.head-ticket .head-car {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: inherit;
+    overflow-x: hidden;
+    width: 100%;
+}
+.head-ticket .item-check {
+    display: inline-block;
+    margin-right: 4px;
+    top: 2px;
+}
+.head-ticket .city, .head-ticket .offers {
+    float: right;
+    font-size: 12px;
+    line-height: 18px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    white-space: nowrap;
+    width: 120px;
+}
+.head-ticket .icon-up-ticket {
+    margin-left: -2px;
+}
+.characteristic {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.characteristic .item-char {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0 0 0 24px;
+}
+.characteristic .item-param {
+    list-style: none outside none;
+    margin: 5px 0;
+    padding: 0 0 0 24px;
+}
+.characteristic [class*="icon-"] {
+    height: 20px;
+    margin-left: -24px;
+    position: relative;
+    top: -2px;
+    width: 20px;
+}
+.ticket-item {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    margin-bottom: 15px;
+    min-height: 171px;
+    padding: 10px 10px 0 0;
+}
+.ticket-item .content-bar {
+    display: block;
+    margin-left: 30px;
+}
+.ticket-item .action-bar .item {
+    margin-bottom: 5px;
+}
+.ticket-item .photo {
+    border: 0 none;
+    float: left;
+    margin-bottom: 5px;
+}
+.ticket-item .head-ticket {
+    padding-right: 120px;
+}
+.ticket-item .city, .ticket-item .offers {
+    margin-right: -120px;
+}
+.ticket-item .content {
+    display: block;
+    margin-left: 145px;
+}
+.ticket-item .content__newcar {
+    display: block;
+    margin-left: 195px;
+}
+.ticket-item .price {
+    font-size: 16px;
+    padding: 12px 0 6px;
+}
+.ticket-item .price-through {
+    margin-left: 20px;
+}
+.ticket-item .definition-data {
+    margin-right: 85px;
+    padding-left: 5px;
+    position: relative;
+}
+.ticket-item .data__newcar {
+    margin-right: 170px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.ticket-item .characteristic {
+    display: inline-block;
+    width: 100%;
+}
+.ticket-item .item-char {
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 114px;
+}
+.ticket-item .item-param {
+    margin: 2px 0;
+}
+.ticket-item .contact-seller {
+    border-top: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px 0;
+}
+.ticket-item .contact-seller .item {
+    margin-left: 10px;
+}
+.ticket-item .contact-seller [class*="icon-"] {
+    height: 20px;
+}
+.ticket-item .phone {
+    font-size: 15px;
+    font-weight: bold;
+}
+.ticket-item.paid {
+    border-color: #F0BD35;
+    min-height: 185px;
+}
+.ticket-item.paid .edit-my-offer {
+    background: none repeat scroll 0 0 #F8E1A8;
+    border-bottom-color: #F0BD35;
+}
+.ticket-item.paid .content {
+    margin-left: 195px;
+}
+.ticket-item.paid .head-ticket {
+    background: none repeat scroll 0 0 #F8E1A8;
+}
+.ticket-item.paid .footer-ticket {
+    border-top-color: #F8E1A8;
+}
+.ticket-item.paid-top {
+    border-color: #F0BD35;
+    min-height: 213px;
+}
+.ticket-item.paid-top .edit-my-offer {
+    background: none repeat scroll 0 0 #F8E1A8;
+    border-bottom-color: #F0BD35;
+}
+.ticket-item.paid-top .content {
+    margin-left: 195px;
+}
+.ticket-item.paid-top .head-ticket {
+    background: none repeat scroll 0 0 #F8E1A8;
+}
+.ticket-item.paid-top .footer-ticket {
+    border-top-color: #F8E1A8;
+}
+.cars-color {
+    border: 2px solid #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 3px 15px -5px #5E5E5E;
+    height: 40px;
+    left: 165px;
+    margin: 0;
+    position: absolute;
+    top: 90px;
+    width: 40px;
+    z-index: 1000;
+}
+.paid .head-ticket, .paid-top .head-ticket {
+    background: none repeat scroll 0 0 #F8E1A8;
+}
+.if-dealer {
+    float: right;
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 12px;
+    text-align: center;
+    width: 80px;
+}
+.if-dealer .dealer-logo {
+    display: block;
+}
+.if-dealer .link {
+    color: inherit;
+}
+.descriptions-ticket {
+    display: inline-block;
+    line-height: 18px;
+    margin: 0 0 6px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    text-transform: lowercase;
+    width: 100%;
+}
+.descriptions-ticket:first-letter {
+    text-transform: capitalize;
+}
+.footer-ticket {
+    border-top: 1px solid #DDDDDD;
+    font-size: 12px;
+    line-height: 21px;
+    padding: 4px 0;
+}
+.footer-ticket [class*="icon-"] {
+    height: 20px;
+    width: 20px;
+}
+.footer-ticket .view-all {
+    float: right;
+    font-weight: bold;
+}
+.footer-ticket .charlist-data {
+    color: #7A7A7A;
+    display: block;
+    margin-right: 100px;
+}
+.footer-ticket .item {
+    margin-right: 10px;
+}
+.footer-ticket .date-add {
+    float: left;
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 110px;
+}
+.nocleared {
+    color: #D85442;
+    font-weight: normal;
+}
+.edit-my-offer {
+    background: none repeat scroll 0 0 #E7E7E7;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 6px 6px 0 0;
+    display: block;
+    margin: -10px -10px 10px 0;
+    padding: 6px 10px;
+}
+.edit-my-offer .config-ticket {
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0 90px 0 0;
+}
+.edit-my-offer .item-conf {
+    display: inline-block;
+    padding: 0 0 0 12px;
+    position: relative;
+}
+.edit-my-offer .options {
+    left: 10px;
+    line-height: 21px;
+}
+.edit-my-offer .up-myorder {
+    float: right;
+}
+.popup__sold {
+    left: -5px;
+    top: 24px;
+    width: 350px;
+}
+.popup__sold .ckecklist {
+    margin-bottom: 20px;
+}
+.rows__history-search {
+    border-bottom: 1px dotted #DDDDDD;
+    display: block;
+    font-size: 12px;
+    margin: 0 0 7px;
+    padding: 0 0 5px;
+}
+.rows__history-search.last-rows {
+    border: medium none;
+    margin: 0;
+}
+.data__history-search {
+    float: right;
+    margin-top: 5px;
+    width: 162px;
+}
+.data__history-search .icon-head-mail-red {
+    float: right;
+    margin-top: -8px;
+}
+.item__history-search {
+    display: block;
+    margin-right: 175px;
+}
+.rss-feed .icon-head-rss {
+    background-position: -208px -546px;
+    width: 20px;
+}
+.select-history {
+    margin-left: 12px;
+}
+.select-history .overflow {
+    color: #256799;
+    padding: 5px 0 0;
+}
+.select-history .select-history-search {
+    margin-top: -1px;
+    width: 218px;
+}
+.select-history .item {
+    border-bottom: 1px dotted #DDDDDD;
+    font-size: 12px;
+    margin: 0 10px;
+    overflow: hidden;
+    padding: 2px 0;
+}
+.select-history .item:hover {
+    background: none repeat scroll 0 0 transparent;
+    color: #414042;
+}
+.select-history .item:hover a {
+    text-decoration: underline;
+}
+.select-history .item.last-item {
+    border: medium none;
+}
+.saved-searches {
+    position: relative;
+}
+.saved-searches .popup {
+    left: -100px;
+    width: 355px;
+}
+.saved-searches .popup .item {
+    border-bottom: 1px dotted #DDDDDD;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 2px 0;
+}
+.saved-searches .popup .item.last-item {
+    border: medium none;
+}
+.saved-searches .popup a {
+    color: #256799;
+}
+.saved-searches .button {
+    float: right;
+    margin-top: 7px;
+}
+.saved-searches .save-search {
+    display: block;
+    padding-right: 60px;
+}
+.point-old-search {
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 7px #D3D3D3;
+    display: block;
+    margin: 0 0 15px;
+    padding: 5px;
+    text-align: center;
+}
+.point-old-search .icon-search-red {
+    margin-right: 5px;
+}
+.point-old-search:hover {
+    text-decoration: none;
+}
+.gallery-view {
+    display: block;
+    margin-right: -20px;
+    position: relative;
+}
+.ticket-gallery {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    float: left;
+    height: 370px;
+    margin-bottom: 10px;
+    margin-right: 6px;
+    padding: 5px;
+    white-space: nowrap;
+    width: 295px;
+}
+.ticket-gallery .action-bar {
+    text-align: left;
+    width: 160px;
+}
+.ticket-gallery .action-bar .item {
+    display: inline-block;
+}
+.ticket-gallery .content-bar {
+    display: block;
+}
+.ticket-gallery .head-ticket {
+    background: none repeat scroll 0 0 #E7E7E7;
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 5px;
+    padding-right: 0;
+}
+.ticket-gallery .head-car {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.ticket-gallery .photo {
+    border: 0 none;
+    display: block;
+}
+.ticket-gallery .content {
+    display: block;
+}
+.ticket-gallery .price {
+    font-size: 16px;
+    padding: 12px 0 8px;
+}
+.ticket-gallery .price-through {
+    margin-left: 20px;
+}
+.ticket-gallery .offers-autosalon {
+    width: 80px;
+}
+.ticket-gallery .definition-data {
+    overflow: hidden;
+    padding-left: 5px;
+    width: 290px;
+}
+.ticket-gallery .data__newcar {
+    margin-right: 85px;
+    padding-bottom: 5px;
+}
+.ticket-gallery .characteristic {
+    display: inline-block;
+    width: 100%;
+}
+.ticket-gallery .item-char {
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    width: 120px;
+}
+.ticket-gallery .item-param {
+    margin: 2px 0;
+}
+.ticket-gallery .title-char {
+    display: none;
+}
+.ticket-gallery .footer-ticket {
+    padding-bottom: 0;
+}
+.ticket-gallery .charlist-data {
+    height: 21px;
+    overflow: hidden;
+    width: 195px;
+}
+.ticket-gallery.paid, .ticket-gallery.paid-top {
+    border-color: #F0BD35;
+}
+.ticket-gallery.paid .head-ticket, .ticket-gallery.paid-top .head-ticket {
+    background: none repeat scroll 0 0 #F8E1A8;
+}
+.ticket-gallery.paid .footer-ticket, .ticket-gallery.paid-top .footer-ticket {
+    border-top-color: #F0BD35;
+}
+.icon-fishki-sprite, .icon-fishki-login, .icon-fishki-support, .icon-fishki-discounts, .icon-fishki-sms, .icon-fishki-up, .icon-fishki-ls1, .icon-fishki-ls2, .icon-fishki-statsms, .arr-rubrik:after {
+    background: url("http://img6.auto.ria.ua/images/icons/icon-fishki-s438df0e9ac.png") no-repeat scroll 0 0 transparent;
+}
+.icon-fishki-login {
+    background-position: 0 -96px;
+    height: 65px;
+    left: -6px;
+    position: absolute;
+    top: -12px;
+    width: 78px;
+}
+.icon-fishki-support {
+    background-position: -210px -41px;
+    height: 55px;
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+}
+.icon-fishki-discounts {
+    background-position: -98px -1px;
+    height: 40px;
+    margin-left: 16px;
+    margin-top: -12px;
+    width: 70px;
+}
+.icon-fishki-sms {
+    background-position: -168px -1px;
+    height: 40px;
+    margin-top: -12px;
+    width: 70px;
+}
+.icon-fishki-up {
+    background-position: -68px -1px;
+    height: 35px;
+    left: -45px;
+    position: absolute;
+    top: 0;
+    width: 30px;
+}
+.icon-fishki-ls1 {
+    background-position: 0 -41px;
+    height: 20px;
+    width: 200px;
+}
+.icon-fishki-ls2 {
+    background-position: 0 -1px;
+    height: 18px;
+    width: 68px;
+}
+.icon-fishki-statsms {
+    background-position: -78px -96px;
+    height: 120px;
+    width: 120px;
+}
+.window-fishki {
+    left: 50%;
+    margin: -350px 0 0 -375px;
+    position: absolute;
+    top: 50%;
+    width: 750px;
+}
+.window-fishki .button-bar {
+    padding-top: 10px;
+}
+.window-fishki .preloader-window {
+    background-position: 50% 50%;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    top: 6px;
+}
+.wrapper-fishki {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 1px 0 #FFFFFF inset;
+    display: block;
+    padding: 10px 20px 20px;
+    position: relative;
+}
+.combobox-fishki {
+    padding-bottom: 20px;
+}
+.combobox-fishki .combobox {
+    float: none;
+    height: 42px;
+    width: 100%;
+}
+.combobox-fishki .images {
+    left: 5px;
+    position: absolute;
+    top: 5px;
+}
+.combobox-fishki .select-ed {
+    line-height: 38px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+.combobox-fishki .select-ed:after {
+    right: 12px;
+    top: 17px;
+}
+.combobox-fishki .select-ed .cars-select {
+    border-right: 1px solid #DDDDDD;
+}
+.combobox-fishki .cars-select {
+    display: block;
+    font-size: 13px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.combobox-fishki .item {
+    border-bottom: 1px dashed #DDDDDD;
+    line-height: 42px;
+}
+.combobox-fishki .view-all {
+    padding: 5px 10px;
+}
+.menu-fishki .item {
+    color: inherit;
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 20px;
+}
+.menu-fishki .item:hover {
+    color: #D85442;
+    text-decoration: none;
+}
+.menu-fishki .item.active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 7px 0 0 7px;
+    color: #D85442;
+}
+.arr-rubrik {
+    position: relative;
+}
+.arr-rubrik:after {
+    background-position: -200px -41px;
+    content: "";
+    height: 45px;
+    margin-top: -22px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10px;
+}
+.support-fishki {
+    border-top: 1px solid #DDDDDD;
+    bottom: 20px;
+    box-shadow: 0 -1px 1px 0 #FFFFFF;
+    color: #7A7A7A;
+    font-size: 11px;
+    left: 20px;
+    line-height: 14px;
+    padding-left: 40px;
+    padding-top: 20px;
+    position: absolute;
+    width: 85px;
+}
+.support-fishki .title {
+    font-size: 11px;
+    line-height: 16px;
+}
+.content-fishki {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    height: 450px;
+    padding: 20px;
+}
+.content-fishki .bottom-help {
+    color: #7A7A7A;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+.content-fishki .price {
+    color: #527B02;
+}
+.container-fishki {
+    border-top: 1px solid #DDDDDD;
+    box-shadow: 0 -1px 1px 0 #FFFFFF;
+    display: inline-block;
+    padding-top: 20px;
+    width: 100%;
+}
+.container-fishki .menu-fishki {
+    float: left;
+    width: 145px;
+}
+.container-fishki .content-fishki {
+    margin-left: 135px;
+}
+.form-login-fishki {
+    padding-bottom: 50px;
+    padding-left: 65px;
+    padding-top: 50px;
+}
+.form-login-fishki .title {
+    font-size: 16px;
+    padding-left: 100px;
+    position: relative;
+}
+.about-up-offer {
+    border-bottom: 1px dotted #DDDDDD;
+    padding-left: 50px;
+}
+.about-up-offer .block {
+    border-top: 1px dotted #DDDDDD;
+    display: inline-block;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    position: relative;
+    width: 100%;
+}
+.about-up-offer h3.block {
+    border-top: 0 none;
+    font-size: 15px;
+    line-height: 21px;
+    padding-top: 0;
+}
+.about-up-offer .screen {
+    float: right;
+}
+.about-up-offer .arr-rubrik {
+    display: block;
+    margin-right: 160px;
+    padding-right: 40px;
+}
+.fishki-up-ad {
+    padding: 12px 0;
+}
+.fishki-up-ad .row {
+    padding-left: 50px;
+    padding-top: 12px;
+}
+.fishki-up-ad .button {
+    font-size: 14px;
+    text-align: left;
+    width: 160px;
+}
+.label-button__fishki {
+    display: inline-block;
+    position: relative;
+}
+.label-button__fishki .icon-fishki-discounts, .label-button__fishki .icon-fishki-sms {
+    left: 140px;
+    position: absolute;
+    top: 0;
+}
+table.discounts-fishki {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+table.discounts-fishki th {
+    padding-bottom: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    white-space: nowrap;
+}
+table.discounts-fishki select {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+table.discounts-fishki .item-pseudoselect {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+table.discounts-fishki .period {
+    font-weight: bold;
+    line-height: 21px;
+}
+table.discounts-fishki .update {
+    text-align: center;
+    vertical-align: middle;
+}
+table.discounts-fishki .price {
+    line-height: 28px;
+    white-space: nowrap;
+}
+table.discounts-fishki .price .green {
+    font-size: 16px;
+}
+table.discounts-fishki .bottom-help {
+    white-space: nowrap;
+}
+.aletr-current-position {
+    display: inline-block;
+    width: 100%;
+}
+.aletr-current-position .switch-select {
+    float: left;
+}
+.aletr-current-position .elem-input {
+    background: url("http://img.auto.ria.ua/img/fishki/ico-fishki.png") no-repeat scroll 95% 0 transparent;
+    color: #F19312;
+    font-size: 23px;
+    padding: 0;
+}
+.aletr-current-position .content-bar {
+    display: block;
+    margin-left: 135px;
+}
+.total-pay__fishki {
+    display: inline-block;
+    line-height: 28px;
+    margin: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+.total-pay__fishki .title {
+    float: left;
+    font-weight: normal;
+    line-height: inherit;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 100px;
+    width: 300px;
+}
+.total-pay__fishki .price {
+    color: #527B02;
+    float: right;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+    width: 100px;
+}
+.total-pay__fishki .count {
+    font-size: 24px;
+}
+.total-pay__fishki .discounts-count {
+    display: inline-block;
+    padding-left: 25px;
+    text-decoration: line-through;
+}
+.helpbar-pay {
+    border-bottom: 1px dotted #DDDDDD;
+    border-top: 1px dotted #DDDDDD;
+    color: #7A7A7A;
+    display: inline-block;
+    font-size: 12px;
+    padding: 10px 0;
+    width: 100%;
+}
+.helpbar-pay .list-type-pay {
+    float: right;
+    padding-left: 12px;
+    padding-top: 4px;
+    width: 250px;
+}
+.helpbar-pay .user-account {
+    border-right: 1px dotted #DDDDDD;
+    display: block;
+    margin-bottom: 0;
+    margin-right: 265px;
+    padding-top: 4px;
+}
+.user-account .item-title {
+    font-weight: normal;
+    margin: 0 0 6px;
+}
+.user-account .item-row {
+    margin: 0;
+}
+.user-account .price {
+    font-size: 13px;
+}
+.submit-payment-form {
+    margin-top: 20px;
+    text-align: right;
+}
+.pseudoselect {
+    display: inline-block;
+    font-size: 13px;
+    position: relative;
+}
+.pseudoselect .overflow {
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+.pseudoselect select {
+    margin: 0;
+    width: 100%;
+}
+.pseudoselect .options {
+    margin-left: 0;
+}
+.item-pseudoselect {
+    color: #414042;
+    height: 21px;
+    left: 0;
+    line-height: 21px;
+    overflow: hidden;
+    padding: 2px 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+}
+.item-pseudoselect:hover {
+    color: #414042;
+    text-decoration: none;
+}
+.item-pseudoselect .block {
+    display: block;
+    margin-left: 5px;
+    margin-right: 24px;
+}
+.fishki-up-sms select {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.fishki-up-sms .row {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+}
+.fishki-up-sms .span3 {
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 15px;
+}
+.fishki-up-sms .offset3 {
+    margin-bottom: 0;
+}
+.fishki-up-sms .offset3 .bottom-help {
+    margin: 0;
+}
+.fishki-up-sms .pseudoselect {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.fishki-up-sms .item-pseudoselect {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.fishki-up-sms .allotted {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #414042;
+    font-size: 15px;
+    outline: medium none;
+}
+.fishki-up-sms .submit-payment-form {
+    border-top: 1px dotted #DDDDDD;
+    margin-top: 0;
+    padding-top: 10px;
+}
+.fishki-statsms {
+    font-size: 20px;
+    height: 120px;
+    line-height: 26px;
+    margin: 50px 0;
+    padding: 20px 0 0 150px;
+    position: relative;
+}
+.fishki-statsms .icon-fishki-statsms {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.footer-fishki-stat {
+    border-top: 1px dotted #7A7A7A;
+    margin: 50px 0 0;
+    padding: 20px 0 0;
+}
+.submit-form-fishki {
+    margin-top: 20px;
+    text-align: right;
+}
+.informer__newcars {
+    display: inline-block;
+    font-size: 12px;
+    padding: 7px 0 14px;
+    width: 100%;
+}
+.informer__newcars .details {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 2px 10px -2px #2D2D2D;
+    display: none;
+    left: -5px;
+    padding-top: 70px;
+    position: absolute;
+    top: -5px;
+    width: 195px;
+    z-index: 999;
+}
+.informer__newcars .details-layer {
+    float: left;
+    padding: 0 5px 5px;
+    width: 185px;
+}
+.informer__newcars .car-type {
+    padding: 0 5px;
+}
+.informer__newcars .item {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    width: 190px;
+}
+.informer__newcars .item.last {
+    margin-right: 0;
+}
+.informer__newcars .item:hover .details, .informer__newcars .item .details:hover {
+    display: block;
+}
+.informer__newcars .item:hover .details-newcar {
+    position: relative;
+    z-index: 1000;
+}
+.informer__newcars .photo-85x56 {
+    float: left;
+}
+.informer__newcars .subscribe-item {
+    margin-left: 95px;
+}
+.informer__newcars .title {
+    font-weight: normal;
+    max-height: 36px;
+    overflow: hidden;
+    width: 100%;
+}
+.informer__market {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    margin: 0 0 20px;
+    padding: 14px;
+}
+.left-bar__market {
+    float: left;
+    width: 165px;
+}
+.head__informer {
+    margin: 0;
+    padding: 0;
+}
+.title__informer {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 3px;
+    padding: 0;
+}
+.content__informer {
+    color: #D85442;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 6px;
+}
+.list__market {
+    float: left;
+    width: 75px;
+}
+.list__market li {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.informer__market .list__market {
+    margin-bottom: 0;
+}
+.wrapper__market {
+    display: block;
+    margin-left: 165px;
+}
+.item__market {
+    border: 1px solid #DDDDDD;
+    border-radius: 2px 2px 2px 2px;
+    cursor: default;
+    float: left;
+    margin-left: 14px;
+    width: 196px;
+}
+.item__market:hover .price__market {
+    color: #527B02;
+}
+.photo__market {
+    float: left;
+    padding: 8px 0;
+    width: 82px;
+}
+.img__market {
+    width: 82px;
+}
+.content__market {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-left: 1px solid #F1F1F1;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 82px;
+    padding: 9px 2px;
+}
+.head__market {
+    display: block;
+    font-weight: bold;
+    height: 32px;
+    overflow: hidden;
+    width: 100%;
+}
+.desc__market {
+    color: #838383;
+    font-size: 11px;
+    margin: 3px 0;
+}
+.price__market {
+    color: #6A777C;
+}
+.count__market {
+    font-size: 18px;
+}
+.informer-no-offers {
+    background: url("http://img6.auto.ria.ua/images/demo/not-found.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    padding-left: 100px;
+    padding-top: 15px;
+    position: relative;
+}
+.list__no-offers {
+    list-style: none outside none;
+    margin: 20px 0;
+    padding: 0;
+}
+.list__no-offers i {
+    float: left;
+    margin-left: -40px;
+    margin-top: -7px;
+    position: relative;
+}
+.list__no-offers .item {
+    margin: 8px 0;
+    padding-left: 40px;
+}
+.informer-del-offer {
+    padding: 20px 0;
+}
+.informer-del-offer .span4 {
+    float: left;
+}
+.informer-del-offer .button {
+    font-size: 15px;
+}
+.informer-del-offer .list__no-offers {
+    margin: 0;
+}
+.panel-navigate__del-offer {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.left-bar-view [class*="icon-"] {
+    height: 20px;
+    width: 20px;
+}
+.left-bar-view .item-param {
+    margin: 5px 0;
+}
+.delimeter {
+    border-bottom: 1px dotted #DDDDDD;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+.delimeter-top {
+    border-top: 1px dotted #DDDDDD;
+    margin-top: 12px;
+    padding-top: 12px;
+}
+.add-notebook {
+    border: 2px solid #FFDD66;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+}
+.add-notebook [class*="icon-"] {
+    height: 20px;
+    width: 20px;
+}
+.heading-cars {
+    padding-left: 30px;
+}
+.heading-cars .add-notebook {
+    float: left;
+    margin-left: -30px;
+}
+.price-cars {
+    margin-bottom: 20px;
+}
+.price-cars .price {
+    color: #527B02;
+}
+.price-cars .price-through {
+    margin-left: 20px;
+}
+.price-cars .icon-through {
+    vertical-align: middle;
+}
+.price-range .price {
+    color: #527B02;
+}
+.price-seller {
+    font-size: 19px;
+    line-height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+.price-at-rate {
+    font-size: 13px;
+    margin-top: 6px;
+}
+.announced-tenders .item {
+    padding-right: 6px;
+}
+.photo-seller {
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-right: 10px;
+}
+.seller-data {
+    line-height: 21px;
+}
+.seller-data .warning, .seller-data .info {
+    font-size: 11px;
+    line-height: 16px;
+}
+.seller-data .count-offer {
+    display: block;
+    margin-top: -6px;
+}
+.info-user {
+    margin: 0;
+    padding: 0;
+}
+.info-user .user-name {
+    color: #256799;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    text-transform: capitalize;
+}
+.info-user .item {
+    margin: 5px 0;
+    padding: 0;
+}
+.info-salon {
+    margin: 0 0 0 85px;
+    padding: 0;
+}
+.info-salon .salon-name {
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    text-transform: capitalize;
+}
+.info-salon .item {
+    margin: 0;
+    padding: 0;
+}
+.contact-data-seller {
+    padding-top: 12px;
+}
+.contact-data-seller .logo-salon {
+    float: left;
+}
+.contact-data-seller .writing-seller {
+    margin: 6px 0;
+    position: relative;
+}
+.contact-data-seller .phone {
+    font-size: 18px;
+    font-weight: normal;
+}
+.contact-data-seller .remark {
+    color: #7A7A7A;
+    display: block;
+    line-height: 6px;
+    margin: 0 0 18px;
+}
+.uncustomed {
+    margin-bottom: 10px;
+    padding-left: 24px;
+}
+.uncustomed .title {
+    color: #D85442;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+}
+.uncustomed .icon-dealer {
+    margin-left: -24px;
+    position: relative;
+}
+.uncustomed .price {
+    font-size: 18px;
+    white-space: nowrap;
+}
+.private-order-list {
+    border-top: 1px dotted #DDDDDD;
+    margin-top: 12px;
+    padding-top: 12px;
+}
+.private-order-list [class^="icon-"] {
+    height: 16px;
+    top: 0;
+    width: 16px;
+}
+.alert-partner {
+    background: none repeat scroll 0 0 #F1F9F0;
+    border-radius: 5px 5px 5px 5px;
+    color: #527B02;
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 20px 0;
+    padding-left: 55px;
+}
+.alert-partner:before {
+    border-top-color: #F1F9F0;
+}
+.alert-partner:after {
+    background: url("http://img6.auto.ria.ua/images/icons/icons-alert.png") no-repeat scroll 0 -250px transparent;
+    content: "";
+    height: 32px;
+    left: 10px;
+    margin: -16px 0 0;
+    position: absolute;
+    top: 50%;
+    width: 35px;
+}
+.alert-partner .wrap {
+    background: none repeat scroll 0 0 #E8F5E6;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 0 10px 10px;
+}
+.social-network {
+    border-bottom: 1px dotted #DDDDDD;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+.api-vk, .api-facebook, .api-twitter {
+    display: block;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+.api-vk {
+    height: 22px;
+}
+.api-facebook {
+    height: 20px;
+}
+.api-twitter {
+    height: 20px;
+}
+.api-google {
+    display: block;
+    height: 24px;
+    overflow: hidden;
+}
+.gallery-order {
+    margin-left: -2px;
+}
+.gallery-order .main-photo {
+    position: relative;
+}
+.gallery-order .main-photo:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -40px 0 transparent;
+    bottom: 5px;
+    content: "";
+    height: 40px;
+    position: absolute;
+    right: 5px;
+    width: 40px;
+    z-index: 2;
+}
+.gallery-order .large-photo {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+.main-photo .label-checked {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 2;
+}
+.main-photo .label-sold {
+    background: url("http://img.auto.ria.ua/images/languages/ru/common/labels.png") no-repeat scroll 0 0 transparent;
+    bottom: 0;
+    height: 140px;
+    position: absolute;
+    right: 0;
+    width: 165px;
+    z-index: 10;
+}
+.count-photo__order {
+    height: 18px;
+    margin: 12px 0;
+}
+.count-photo__order .count-photo {
+    float: left;
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 265px;
+}
+.count-photo__order .mega-photo {
+    display: block;
+    margin-left: 265px;
+    text-align: right;
+}
+.preview-gallery {
+    margin-bottom: 20px;
+}
+.preview-gallery .wrapper {
+    display: block;
+    margin-right: -20px;
+}
+.preview-gallery .photo-85x56 {
+    float: left;
+    margin-bottom: 12px;
+    margin-right: 11px;
+}
+.preview-gallery .photo-85x56:hover {
+    border-color: #FFFFFF;
+    outline: 3px solid #F0BD35;
+}
+.cars-review {
+    clear: left;
+    margin: 12px 0;
+}
+.panel-notice {
+    float: right;
+    margin-top: 4px;
+    position: relative;
+}
+.notice {
+    left: -10px;
+    position: absolute;
+    top: 21px;
+    z-index: 1000;
+}
+.notice .answer {
+    width: 240px;
+}
+.notice .text-notice {
+    height: 78px;
+    padding-bottom: 60px;
+}
+.notice .panel-button {
+    background: none repeat scroll 0 0 #FEFFE6;
+    border-top: 1px dashed #D0C26F;
+    bottom: 0;
+    padding: 10px 0;
+    position: absolute;
+    width: 234px;
+}
+.wrapper-auction {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 0 7px 7px;
+    padding: 14px;
+}
+.wrapper-auction .bestoffers {
+    margin: 6px 0 20px;
+}
+.wrapper-auction .avatar {
+    float: left;
+}
+.wrapper-auction .main-bar {
+    display: block;
+    margin: 0 124px 0 65px;
+    padding: 0 15px 0 0;
+}
+.wrapper-auction .show-all {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    line-height: 18px;
+    padding: 0 10px;
+    position: relative;
+    top: 5px;
+}
+.window-auction {
+    left: 50%;
+    margin: -200px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+}
+.window-auction .title {
+    border: 0 none;
+}
+.window-auction .button-bar {
+    text-align: center;
+}
+.window-auction .button {
+    margin: 0 50px;
+}
+.form-add__auction {
+    display: block;
+    margin: 0 0 12px;
+    position: relative;
+    text-align: center;
+}
+.form-add__auction .mybids {
+    border-right: 1px solid #DDDDDD;
+    display: block;
+    margin: 0 50% 0 0;
+    padding: 10px 12px 0 0;
+}
+.form-add__auction .buynow {
+    color: #256799;
+    float: right;
+    padding: 10px 0 0;
+    width: 50%;
+}
+.form-add__auction .wrap-or {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #989898;
+    font-style: normal;
+    left: 50%;
+    margin: 0 0 0 -15px;
+    padding: 0 0 3px;
+    position: absolute;
+    text-align: center;
+    top: 35px;
+    width: 30px;
+}
+.form-add__auction .add-comment {
+    font-size: 11px;
+    margin: 12px 0;
+}
+.form-add__auction .price {
+    line-height: 25px;
+    margin: 15px 0;
+}
+.form-add__auction .answer {
+    margin: 0;
+    text-align: left;
+}
+.head-exchange .head-box {
+    margin-right: 175px;
+}
+.head-exchange .area-tab {
+    position: relative;
+    top: 6px;
+}
+.head-exchange .tooltip {
+    background: none repeat scroll 0 0 #FDF5D9;
+    color: #514721;
+    right: 8px;
+    top: 36px;
+    width: 300px;
+}
+.head-exchange .tooltip:before {
+    border-bottom-color: #FDF5D9;
+}
+.no-offers {
+    color: #7A7A7A;
+    font: 15px/50px Arial,Helvetica,sans-serif;
+    margin: 0 10px;
+    text-align: center;
+}
+.answer {
+    background: none repeat scroll 0 0 #FEFFE6;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px 3px 3px 3px;
+    line-height: 16px;
+    margin: 0 0 5px;
+    min-height: 48px;
+    padding: 5px 10px;
+    position: relative;
+}
+.answer:before, .answer:after {
+    content: "";
+    left: 10px;
+    position: absolute;
+}
+.answer:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent #DBDBDB;
+    border-image: none;
+    border-style: dashed solid solid dashed;
+    border-width: 0 5px 5px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    top: -5px;
+    width: 0;
+    z-index: 100;
+}
+.answer:after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent #FEFFE6;
+    border-image: none;
+    border-style: dashed solid solid dashed;
+    border-width: 0 5px 5px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    top: -4px;
+    width: 0;
+    z-index: 101;
+}
+.answer .user-date {
+    font-size: 11px;
+}
+.answer .date {
+    color: #A8A8A8;
+}
+.answer .event {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.answer textarea {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-family: Arial,Helvetica,sains-serif;
+    font-size: 12px;
+    height: 50px;
+    margin: -5px -10px;
+    padding: 5px 10px;
+    resize: none;
+    width: 100%;
+}
+.wrapper-exchange {
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 0 7px 7px;
+    padding: 14px;
+}
+.wrapper-exchange .main-bar {
+    display: block;
+    margin: 0 124px 0 202px;
+    min-height: 120px;
+    padding: 0 15px 0 0;
+}
+.wrapper-exchange .show-all {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    line-height: 18px;
+    padding: 0 10px;
+    position: relative;
+    top: 5px;
+}
+.item-exchange {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border: 1px solid #DDDDDD;
+    font-size: 12px;
+    margin-bottom: 7px;
+    padding: 9px;
+}
+.item-exchange .photo-185x120 {
+    border: 1px solid #A9A9A9;
+    float: left;
+    position: relative;
+}
+.item-exchange .bottom-bar {
+    clear: both;
+    font-size: 11px;
+    position: relative;
+    width: 100%;
+}
+.item-exchange .notifies {
+    color: #54AA00;
+    left: -205px;
+    position: absolute;
+    top: 0;
+}
+.item-exchange .history-exchanges {
+    left: 0;
+    top: 18px;
+    width: 300px;
+}
+.item-exchange .data-cars {
+    display: block;
+    line-height: 16px;
+    padding: 0 0 15px;
+    position: relative;
+}
+.item-exchange.author .main-bar {
+    border-right: 1px solid #EDEDED;
+    box-shadow: 1px 0 1px 0 #FFFFFF;
+}
+.item-exchange .reply-offer {
+    float: right;
+}
+.item-exchange .photo-85x56 {
+    float: left;
+}
+.item-exchange .wrapper-item {
+    display: inline-block;
+    width: 100%;
+}
+.item-exchange .carsmodel {
+    color: #256799;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16px;
+    margin: 0;
+    max-height: 32px;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+.item-exchange .rows {
+    margin: 0;
+    padding: 0;
+}
+.item-exchange .usercard {
+    left: 95px;
+    top: 20px;
+}
+.control-exchanges {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+}
+.control-exchanges .item {
+    font-size: 11px;
+    list-style: none outside none;
+    margin: 0 0 2px;
+    padding: 0;
+}
+.history-exchanges .head-window {
+    font-size: 13px;
+    font-weight: bold;
+}
+.history-exchanges .answer {
+    background: none repeat scroll 0 0 #F1F1F1;
+    border: 0 none;
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.1) inset;
+    margin: 8px 0 0;
+    text-shadow: 1px 1px 0 #ECECEC;
+}
+.history-exchanges .answer:before {
+    border-bottom-color: #D9D9D9;
+}
+.history-exchanges .answer:after {
+    border-bottom-color: #F1F1F1;
+}
+.statys-exchange {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+    color: #C40000;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.statys-exchange:before {
+    background: url("http://img6.auto.ria.ua/images/icons/sprite.png") no-repeat scroll -240px -10px transparent;
+    content: "";
+    height: 16px;
+    left: 50%;
+    margin-left: -18px;
+    position: absolute;
+    top: 40px;
+    width: 36px;
+}
+.statys-exchange em {
+    display: block;
+    font-style: normal;
+    padding: 60px 20px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 #ECECEC;
+}
+.statys-exchange em.del {
+    color: #616161;
+}
+.window-exchange {
+    left: 50%;
+    margin: -240px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+}
+.window-exchange .title {
+    border: 0 none;
+}
+.window-exchange .scrollist {
+    border-top: 1px solid #DDDDDD;
+    display: block;
+    height: 310px;
+    margin: 0 -12px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0;
+}
+.window-exchange .item-exchange {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border-color: #FEFEFE -moz-use-text-color #B9C7CC;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+.window-exchange .item-exchange:hover {
+    background-color: #E1ECF0;
+    background-image: -moz-linear-gradient(center top , #E9F1F4 10%, #D6E6EC 70%);
+    background-repeat: repeat-x;
+}
+.window-exchange .item-exchange:hover .btn {
+    background-color: #FFFFFF;
+    border-color: #A0A0A0;
+}
+.window-exchange .item-exchange:last-child {
+    border-bottom: 0 none;
+}
+.window-exchange .data-cars {
+    display: block;
+    font-size: 11px;
+    height: 58px;
+    line-height: 14px;
+    margin: 0 0 0 95px;
+    padding: 0;
+}
+.window-exchange .removed {
+    background: none repeat scroll 0 0 rgba(235, 235, 235, 0.75);
+    cursor: default;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.window-exchange .wrapper-removed {
+    margin: 0 25px 0 240px;
+    padding: 20px 0;
+}
+.window-exchange .onwards {
+    border-left: 1px solid white;
+    box-shadow: -1px 0 0 #DBDBDB;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    z-index: 100;
+}
+.window-exchange .onwards .btn {
+    left: 50%;
+    margin: -10px 0 0 -8px;
+    position: absolute;
+    top: 50%;
+}
+.window-exchange .button-bar {
+    text-align: right;
+}
+.compare-exchange {
+    display: block;
+    margin: 0 -11px;
+}
+.compare-exchange .panel {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    display: inline-block;
+    width: 100%;
+}
+.compare-exchange .item-exchange {
+    border: 0 none;
+    cursor: default;
+    float: left;
+    padding: 12px;
+    position: relative;
+    width: 224px;
+}
+.compare-exchange .item-exchange:first-child {
+    background: none repeat scroll 0 0 #D6E6EC;
+}
+.compare-exchange .item-exchange:last-child {
+    background: none repeat scroll 0 0 #E8F0F3;
+}
+.compare-exchange .exchanged:after, .compare-exchange .exchanged:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color transparent;
+    border-image: none;
+    border-style: solid dashed solid solid;
+    border-width: 41px 0 41px 14px;
+    content: "";
+    font-size: 0;
+    height: 0;
+    left: -14px;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.compare-exchange .exchanged:before {
+    border-bottom-color: #E8F0F3;
+    border-top-color: #E8F0F3;
+    left: -13px;
+    z-index: 101;
+}
+.compare-exchange .exchanged:after {
+    border-bottom-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+    z-index: 100;
+}
+.type-exchange {
+    display: inline-block;
+    padding: 20px 0;
+    width: 100%;
+}
+.type-exchange .item {
+    float: left;
+    padding: 0 0 0 12px;
+    width: 150px;
+}
+.type-exchange .group-form {
+    display: block;
+    line-height: 22px;
+    padding: 10px 0 0;
+}
+.type-exchange .count {
+    width: 80px;
+}
+.info-autotest {
+    margin: 20px 0;
+}
+.info-autotest .button {
+    float: left;
+    line-height: 20px;
+    width: 70px;
+}
+.info-autotest .offset {
+    margin-left: 120px;
+}
+.combobox-autotes {
+    padding-bottom: 20px;
+}
+.combobox-autotes .combobox {
+    float: none;
+    height: 67px;
+    width: 100%;
+}
+.combobox-autotes .images {
+    height: 56px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 85px;
+}
+.combobox-autotes .select-ed {
+    line-height: 24px;
+    padding: 9px 30px 9px 100px;
+    white-space: normal;
+}
+.combobox-autotes .select-ed:after {
+    bottom: auto;
+    margin-top: -4px;
+    right: 12px;
+    top: 50%;
+}
+.combobox-autotes .select-ed .cars-select {
+    border-right: 1px solid #DDDDDD;
+}
+.combobox-autotes .cars-select {
+    display: block;
+    font-size: 13px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.combobox-autotes .additional {
+    float: right;
+    padding-right: 10px;
+    text-align: right;
+    width: 190px;
+}
+.combobox-autotes .marka {
+    color: #256799;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 200px;
+}
+.combobox-autotes .data {
+    display: block;
+    margin-right: 200px;
+}
+.combobox-autotes .price {
+    display: block;
+    font-size: 16px;
+}
+.combobox-autotes .city {
+    display: block;
+}
+.combobox-autotes .item {
+    border-bottom: 1px dashed #DDDDDD;
+    line-height: 42px;
+}
+.form-autotest {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    display: block;
+    min-height: 300px;
+    padding: 20px;
+}
+.form-autotest .grid {
+    margin-left: 160px;
+}
+.footer-autotest {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 21px;
+    margin: 10px 0 -10px;
+    width: 100%;
+}
+.feedback-autotest {
+    float: right;
+    padding-top: 13px;
+}
+.support__autotest {
+    float: left;
+    padding-left: 40px;
+    position: relative;
+}
+.support__autotest .icon-fishki-support {
+    height: 40px;
+    top: 0;
+}
+.package-autotest .title {
+    font-weight: normal;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    text-transform: none;
+}
+.package-autotest td, .package-autotest th {
+    border-color: #C7C7C7;
+    border-style: dotted;
+    padding: 4px;
+    text-align: center;
+}
+.package-autotest .allocated {
+    background: none repeat scroll 0 0 #F3F3F3;
+}
+.package-autotest .allocated td {
+    background: none repeat scroll 0 0 #F3F3F3;
+}
+.package-autotest .checked, .package-autotest .allocated .checked {
+    background: none repeat scroll 0 0 #E4F4D1;
+}
+.package-autotest .e1, .package-autotest .e2, .package-autotest .e3, .package-autotest .e4 {
+    width: 96px;
+}
+.package-autotest .name {
+    text-align: left;
+}
+.package-autotest label {
+    cursor: pointer;
+    display: block;
+    margin: -4px;
+    padding: 4px 4px 4px 26px;
+    text-align: left;
+}
+.package-autotest label input {
+    float: left;
+    margin-left: -17px;
+}
+.package-autotest thead {
+    background: none repeat scroll 0 0 #F3F3F3;
+}
+.package-autotest thead tr {
+    background: none repeat scroll 0 0 #F3F3F3;
+}
+.package-autotest thead td {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border-bottom-width: 1px;
+    font-weight: normal;
+    line-height: 16px;
+    text-align: center;
+}
+.package-autotest tfoot td {
+    border-top: 0 none;
+    font-size: 15px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+.package-autotest tfoot tr:first-child td {
+    border-top: 1px solid #C7C7C7;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.package-autotest tfoot .name {
+    font-weight: bold;
+}
+.package-autotest .button {
+    display: block;
+}
+.package-autotest .yes {
+    background: url("http://img6.auto.ria.ua/images/demo/ckeck.png") no-repeat scroll 50% 50% transparent;
+    display: block;
+    height: 14px;
+    margin: 0 auto;
+    padding: 1px;
+    width: 14px;
+}
+.annotation-autotest {
+    border-top: 1px solid #DDDDDD;
+    display: block;
+    margin: 0 -20px;
+    padding: 20px 20px 0;
+}
+.annotation-autotest .annotation {
+    height: 60px;
+    width: 100%;
+}
+.annotation-autotest .info-autotest {
+    margin-bottom: 0;
+}
+.annotation-autotest .offset {
+    color: #7A7A7A;
+    line-height: 16px;
+}
+.authentication__autotest {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+.authentication__autotest .panel-login {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #222222;
+    border-top: 1px solid #222222;
+    display: block;
+    margin-top: 150px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+.authentication__autotest .error {
+    border-radius: 1px 1px 1px 1px;
+    bottom: 100%;
+    left: 0;
+    margin: 0 0 1px;
+    position: absolute;
+    right: 0;
+}
+.autotest-map {
+    margin: 0 0 10px;
+    width: 100%;
+}
+.choose-on-map {
+    display: inline-block;
+    margin: 2px 0 0 15px;
+}
+.info__newpage {
+    background: url("http://img6.auto.ria.ua/images/demo/newpage.png") no-repeat scroll 25px 50% #F1F9F0;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    font-size: 15px;
+    line-height: 21px;
+    margin: 0 0 20px;
+}
+.info__newpage .wrap {
+    background: none repeat scroll 0 0 #E8F5E6;
+    border-radius: 0 7px 7px 0;
+    margin-left: 83px;
+}
+.info__newpage .content {
+    background: url("http://img6.auto.ria.ua/images/demo/rarr_green.png") no-repeat scroll 100% 50% transparent;
+    display: block;
+    margin-right: 180px;
+    padding: 15px;
+}
+.info__newpage .button-bar {
+    float: right;
+    font-size: 12px;
+    margin: 0;
+    padding: 21px 0;
+    text-align: center;
+    width: 180px;
+}
+.window-autotest {
+    left: 50%;
+    margin: -290px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+}
+.window-autotest .head {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.window-autotest .item-btn {
+    float: right;
+}
+.window-autotest .close {
+    position: relative;
+    z-index: 1000;
+}
+.select-autotest .name {
+    display: block;
+    height: 20px;
+    margin-right: 100px;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.select-autotest .rating {
+    float: right;
+    position: relative;
+    right: 2px;
+    top: 4px;
+}
+.head__autotest {
+    background: none repeat scroll 0 0 #F3F3F3;
+    color: #7A7A7A;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding: 10px 160px 10px 10px;
+    position: relative;
+}
+.head__autotest .label-checked {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
+.item-cars__autotest {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    padding: 3px 10px 1px 2px;
+    position: relative;
+}
+.item-cars__autotest .photo-135x90 {
+    float: left;
+}
+.item-cars__autotest .price {
+    float: right;
+    font-size: 15px;
+    padding: 10px 0;
+}
+.item-cars__autotest .data-cars {
+    display: block;
+    margin: 0 100px 0 147px;
+    padding: 10px 0;
+}
+.item-cars__autotest .carsmodel {
+    color: #256799;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.item-cars__autotest .item-city {
+    bottom: 18px;
+    position: absolute;
+    right: 10px;
+}
+.feedback__autotest {
+    border-top: 1px solid #FFFFFF;
+    margin: 6px 160px 0 0;
+    padding-top: 6px;
+}
+.package__autotest {
+    background: none repeat scroll 0 0 #F3F3F3;
+    margin: 0 -12px;
+}
+.package__autotest .active {
+    background: none repeat scroll 0 0 #D9E4EE;
+}
+.package__autotest .item-package {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 12px;
+}
+.package__autotest .wrap-package {
+    border-right: 1px solid #DDDDDD;
+    margin: 0 100px 0 25px;
+}
+.package__autotest .switcher__package {
+    float: left;
+    margin: 0;
+}
+.package__autotest .price-package {
+    float: right;
+    font-size: 17px;
+    padding-top: 30px;
+    text-align: center;
+    width: 85px;
+}
+.package__autotest .name-package {
+    font-size: 15px;
+    font-weight: bold;
+}
+.package__autotest .ckecklist {
+    margin: 10px 0 0;
+}
+.package__autotest .row-annotation {
+    padding: 12px;
+}
+.package__autotest .annotation {
+    margin: 6px 0 0;
+    padding: 6px;
+    width: 460px;
+}
+.gratters__autotest {
+    background: url("http://img.auto.ria.ua/images/demo/diagnostics/order-accepted.jpg") no-repeat scroll 25px 10px transparent;
+    padding: 0 0 25px 135px;
+}
+.gratters__autotest .head-cars {
+    margin-bottom: 12px;
+}
+.item__gratters-autotest {
+    border-top: 1px dotted #DDDDDD;
+    margin: 0;
+    padding: 12px 0;
+}
+.item__gratters-autotest .indent {
+    padding-left: 20px;
+}
+.window-testdrive {
+    left: 50%;
+    margin: -300px 0 0 -205px;
+    position: absolute;
+    top: 50%;
+    width: 410px;
+}
+.window-testdrive .head {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.window-testdrive .item-btn {
+    float: right;
+}
+.window-testdrive .close {
+    position: relative;
+    z-index: 1000;
+}
+.head__testdrive {
+    background: none repeat scroll 0 0 #F3F3F3;
+    color: #7A7A7A;
+    font-size: 14px;
+    margin-bottom: 12px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+}
+.input__testdrive {
+    margin: 6px 0 12px;
+}
+.sup__testdrive {
+    color: #7A7A7A;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0 120px 0 0;
+}
+.date-time__testdrive {
+    display: inline-block;
+    margin-top: -10px;
+    width: 100%;
+}
+.date-time__testdrive .elem-date, .date-time__testdrive .elem-time {
+    margin-top: 6px;
+    width: 100%;
+}
+.date-time__testdrive .item-date {
+    float: left;
+    width: 180px;
+}
+.date-time__testdrive .item-time {
+    float: right;
+    width: 180px;
+}
+.informer__insurance {
+    display: table-row;
+}
+.informer__insurance .item {
+    display: table-cell;
+    padding: 14px 0;
+    text-align: center;
+    width: 120px;
+}
+.page-cars .label-blacklist {
+    background-position: 100% 0;
+}
+.description-order {
+    display: block;
+    overflow-x: hidden;
+    width: 100%;
+}
+.description-order a, .description-order a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.checked-autoria {
+    background: none repeat scroll 0 0 #F0FCE1;
+    border-radius: 6px 6px 0 0;
+    display: block;
+    margin: 0 -14px 14px;
+}
+.checked-autoria .avatar-salon {
+    float: left;
+    margin: 5px 14px;
+}
+.checked-autoria .wrap {
+    background: none repeat scroll 0 0 #E8F8D5;
+    border-left: 1px solid #DFEECD;
+    border-radius: 0 6px 0 0;
+    font-size: 11px;
+    margin-left: 88px;
+    padding: 16px 10px;
+    text-align: center;
+}
+.checked-autoria .label-checked {
+    float: left;
+    margin-top: 3px;
+}
+.checked-autoria .item-checked {
+    margin: 0 0 10px;
+    text-align: right;
+}
+.verify-autoria {
+    background: url("http://img.auto.ria.ua/images/demo/diagnostics/ico-autodiagnosys.png") no-repeat scroll 15px 20px #ECFAFB;
+    border-radius: 0 0 6px 6px;
+    display: block;
+    margin: 14px -14px 0;
+}
+.verify-autoria .wrap {
+    background: none repeat scroll 0 0 #E3F6FA;
+    border-left: 1px solid #DAECEE;
+    border-radius: 0 0 6px 0;
+    font-size: 12px;
+    margin-left: 88px;
+    padding: 14px 105px 14px 10px;
+}
+.verify-autoria .button {
+    float: right;
+    margin: 27px 10px 0 0;
+}
+.verify-autoria .tooltip {
+    width: 200px;
+}
+.verify-autoria1 {
+    background: url("http://img6.auto.ria.ua/images/demo/diagnostics/bg-gray-auto.gif") no-repeat scroll 15px center #F4F4F4;
+    border-radius: 0 0 6px 6px;
+    border-top: 1px solid #D85442;
+    display: block;
+    margin: 14px -14px 0;
+}
+.verify-autoria1 .wrap {
+    border-radius: 0 0 6px 0;
+    font-size: 12px;
+    margin-left: 80px;
+    padding: 14px 105px 14px 0;
+}
+.verify-autoria1 .wrap a {
+    border-bottom: 1px dotted #256799;
+    text-decoration: none;
+}
+.verify-autoria1 .wrap a:hover {
+    border: medium none;
+}
+.verify-autoria1 .button {
+    float: right;
+    font-size: 12px;
+    margin: 20px 15px 0 0;
+}
+.verify-autoria1 .tooltip {
+    width: 200px;
+}
+.verify-autoria2 {
+    background: url("http://img6.auto.ria.ua/images/demo/diagnostics/auto-red.gif") no-repeat scroll -5px center transparent;
+    border-radius: 0 0 6px 6px;
+    border-top: 1px dotted #EFEEE8;
+    display: block;
+    margin: 14px 0 0;
+}
+.verify-autoria2 .wrap {
+    border-radius: 0 0 6px 0;
+    font-size: 12px;
+    margin-left: 55px;
+    padding: 14px 105px 14px 10px;
+}
+.verify-autoria2 .wrap a {
+    border-bottom: 1px dotted #256799;
+    text-decoration: none;
+}
+.verify-autoria2 .wrap a:hover {
+    border: medium none;
+}
+.verify-autoria2 .button {
+    float: right;
+    font-size: 12px;
+    margin: 20px 0 0;
+}
+.verify-autoria2 .tooltip {
+    width: 200px;
+}
+.similar-ads {
+    display: inline-block;
+    padding: 15px 0 0;
+    width: 100%;
+}
+.similar-ads .item__prewcars {
+    float: left;
+    padding-bottom: 14px;
+    width: 50%;
+}
+.similar-ads .title {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.similar-ads .subscribe-item {
+    margin-right: 10px;
+}
+.section_autodiagnostics {
+    background: url("http://img.auto.ria.ua/images/demo/diagnostics/ico-autodiagnosys.png") no-repeat scroll 15px 20px #ECFAFB;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 20px;
+}
+.section_autodiagnostics .wrap {
+    background: none repeat scroll 0 0 #E3F6FA;
+    border-left: 1px solid #DAECEE;
+    border-radius: 0 7px 7px 0;
+    margin-left: 88px;
+}
+.section_autodiagnostics .content {
+    background: url("http://img.auto.ria.ua/images/demo/diagnostics/arrow-diagn.gif") no-repeat scroll 100% 50% transparent;
+    display: block;
+    margin-right: 240px;
+    padding: 15px;
+}
+.section_autodiagnostics .button-bar {
+    float: right;
+    margin: 6px 0 0;
+    padding: 14px;
+    text-align: center;
+    width: 215px;
+}
+.section_autodiagnostics .help-block {
+    color: #7D95A4;
+    font-size: 11px;
+    margin-top: 2px;
+}
+.section_autodiagnostics1 {
+    border-bottom: 1px dotted #EFEEE8;
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.section_autodiagnostics1 .yellow-autodiagnos {
+    background: url("http://img6.auto.ria.ua/images/demo/diagnostics/bg-red-auto.gif") no-repeat scroll center center #D85442;
+    border-radius: 3px 3px 3px 3px;
+    float: left;
+    height: 50px;
+    margin-top: 3px;
+    width: 60px;
+}
+.section_autodiagnostics1 .content {
+    background: url("http://img6.auto.ria.ua/images/demo/diagnostics/arrow-red.gif") no-repeat scroll 100% 50% transparent;
+    display: block;
+    margin: 0 240px 0 75px;
+}
+.section_autodiagnostics1 .button-bar {
+    float: right;
+    margin-top: 15px;
+    text-align: center;
+    width: 215px;
+}
+.section_autodiagnostics2 {
+    background: url("http://img6.auto.ria.ua/images/demo/diagnostics/big-auto-red.gif") no-repeat scroll -5px 5px transparent;
+    border-bottom: 1px dotted #EFEEE8;
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.section_autodiagnostics2 .content {
+    display: block;
+    margin-left: 75px;
+}
+.section_autodiagnostics2 .content a {
+    border-bottom: 1px dotted #256799;
+    text-decoration: none;
+}
+.section_autodiagnostics2 .content a:hover {
+    border: medium none;
+}
+.section_autodiagnostics2 .button-bar {
+    margin: 8px 0 0 75px;
+}
+.info__newpage {
+    background: url("http://img6.auto.ria.ua/images/demo/newpage.png") no-repeat scroll 25px 50% #F1F9F0;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    font-size: 15px;
+    line-height: 21px;
+    margin: 0 0 20px;
+}
+.info__newpage .wrap {
+    background: none repeat scroll 0 0 #E8F5E6;
+    border-radius: 0 7px 7px 0;
+    margin-left: 83px;
+}
+.info__newpage .content {
+    background: url("http://img6.auto.ria.ua/images/demo/rarr_green.png") no-repeat scroll 100% 50% transparent;
+    display: block;
+    margin-right: 180px;
+    padding: 15px;
+}
+.info__newpage .button-bar {
+    float: right;
+    font-size: 12px;
+    margin: 0;
+    padding: 21px 0;
+    text-align: center;
+    width: 180px;
+}
+.lidogeneration-tabs {
+    display: inline-block;
+    margin: 0 0 -4px;
+    padding: 0;
+    width: 100%;
+}
+.lidogeneration-tabs li {
+    background-color: #F3F3F3;
+    background-image: -moz-linear-gradient(center top , #FEFEFE 10%, #E4E4E4 70%);
+    background-repeat: repeat-x;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    float: left;
+    list-style: none outside none;
+    margin-bottom: 3px;
+    margin-right: 11px;
+    padding: 5px;
+    width: 108px;
+}
+.lidogeneration-tabs li.active, .lidogeneration-tabs li:hover {
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #E4E4E4 10%, #FEFEFE 70%);
+    background-repeat: repeat-x;
+}
+.lidogeneration-tabs .active {
+    border-bottom: medium none;
+    border-radius: 7px 7px 0 0;
+    margin-bottom: -1px;
+    padding-bottom: 11px;
+}
+.lidogeneration-tabs .last {
+    margin-left: 0;
+    margin-right: 0;
+}
+.lidogeneration-tabs a {
+    background-image: url("http://img.auto.ria.ua/images/common/ico-lidogeneration.png");
+    background-repeat: no-repeat;
+    color: #414042;
+    float: left;
+    padding: 2px 0 0 40px;
+    text-decoration: none;
+    width: 70px;
+}
+.remarka {
+    clear: both;
+    display: inline-block;
+    margin-top: 12px;
+    width: 100%;
+}
+.lg-tab1 a {
+    background-position: 3px 5px;
+}
+.lg-tab2 a {
+    background-position: 0 -51px;
+}
+.lg-tab3 a {
+    background-position: 2px -107px;
+}
+.nocorner-lt {
+    border-radius: 0 7px 7px 7px;
+}
+.nocorner-rt {
+    border-radius: 7px 0 7px 7px;
+}
+.order-consultation {
+    position: relative;
+}
+.order-consultation .order-link {
+    display: block;
+    line-height: 12px;
+    margin-top: 5px;
+}
+.order-consultation .popup {
+    left: 30px;
+    top: 30px;
+    width: 350px;
+}
+#geneva_motorshow .container-body {
+    background: url("http://img6.auto.ria.ua/images/branding/geneva/mount.jpg") no-repeat scroll 50% 37px #FFFFFF;
+}
+#geneva_motorshow header {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+#geneva_motorshow footer {
+    position: relative;
+    z-index: 2;
+}
+#geneva_motorshow .panel-banner {
+    display: block;
+    height: 150px;
+}
+#geneva_motorshow .geneva-motor-show {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 37px;
+    z-index: 1;
+}
+#geneva_motorshow .container-body > .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+#bmw_x1 .container-body {
+    background: url("http://img6.auto.ria.ua/images/branding/bmw/bmw-x1.jpg") no-repeat scroll 50% 38px #FFFFFF;
+}
+#bmw_x1 #main .container-body {
+    background-position: 50% 32px;
+}
+#bmw_x1 .container-filter .panel-filter {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+#bmw_x1 div.container-main, #bmw_x1 #show_grid, #bmw_x1 #final_page__container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 132px auto 0;
+    padding: 0 10px 25px;
+    position: relative;
+    z-index: 20;
+}
+#bmw_x1 .header-main {
+    padding: 5px 0 20px;
+}
+#bmw_x1 .container-header, #bmw_x1 header, #bmw_x1 footer {
+    position: relative;
+    z-index: 20;
+}
+#bmw_x1 .panel-banner {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_x1 .panel-banner .body_style_bmw {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_x1 .bmw_link {
+    height: 19px;
+    left: 50%;
+    margin-left: 54px;
+    position: absolute;
+    z-index: 100;
+}
+#bmw_x1 #main .bmw_link {
+    margin-top: -5px;
+}
+#bmw_x1 .bmw_link:hover {
+    border-bottom: 1px solid #231F20;
+    text-decoration: none;
+}
+#bmw_x1 .bmw_x1_pack {
+    top: 85px;
+    width: 200px;
+}
+#bmw_x1 .bmw_x1_sport_line {
+    top: 108px;
+    width: 190px;
+}
+#bmw_x1 .bmw_x1_xline {
+    top: 131px;
+    width: 137px;
+}
+#bmw_3 .container-body {
+    background: url("http://img6.auto.ria.ua/images/branding/bmw/bmw3.jpg") no-repeat scroll 50% 38px #FFFFFF;
+    z-index: 100;
+}
+#bmw_3 .bmw_link {
+    height: 19px;
+    left: 50%;
+    position: absolute;
+    z-index: 100;
+}
+#bmw_3 .body_style_bmw {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_3 .panel-banner {
+    height: 130px;
+    vertical-align: top;
+}
+#bmw_3 .bmw_link:hover {
+    border-bottom: 1px solid #231F20;
+    text-decoration: none;
+}
+.bmw_3_series_pack {
+    margin-left: 25px;
+    top: 98px;
+    width: 81px;
+}
+.bmw_3_series_modern_line {
+    margin-left: 25px;
+    top: 119px;
+    width: 185px;
+}
+.bmw_3_series_sport_line {
+    margin-left: 275px;
+    top: 98px;
+    width: 168px;
+}
+.bmw_3_series_luxury_line {
+    margin-left: 275px;
+    top: 119px;
+    width: 178px;
+}
+#bmw_5 .container-body {
+    background: url("http://img6.auto.ria.ua/images/branding/bmw/bmw5.jpg") no-repeat scroll 50% 38px #FFFFFF;
+}
+#bmw_5 #main .container-body {
+    background-position: 50% 32px;
+}
+#bmw_5 .container-filter .panel-filter {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+#bmw_5 div.container-main, #bmw_5 #show_grid, #bmw_5 #final_page__container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 132px auto 0;
+    padding: 0 10px 25px;
+    position: relative;
+    z-index: 20;
+}
+#bmw_5 .header-main {
+    padding: 5px 0 20px;
+}
+#bmw_5 .container-header, #bmw_5 header, #bmw_5 footer {
+    position: relative;
+    z-index: 20;
+}
+#bmw_5 .panel-banner {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_5 .panel-banner .body_style_bmw {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_5 .bmw_link {
+    height: 19px;
+    left: 50%;
+    margin-left: 54px;
+    position: absolute;
+    z-index: 100;
+}
+#bmw_5 #main .bmw_link {
+    margin-top: -5px;
+}
+#bmw_5 .bmw_link:hover {
+    border-bottom: 1px solid #231F20;
+    text-decoration: none;
+}
+.bmw_5_series_business_line {
+    top: 85px;
+    width: 200px;
+}
+.bmw_5_series_comfort_line {
+    top: 108px;
+    width: 190px;
+}
+.bmw_5_series_528xi {
+    top: 131px;
+    width: 137px;
+}
+#bmw_x5 .container-body {
+    background: url("http://img6.auto.ria.ua/images/branding/bmw/bmw-x5.jpg") no-repeat scroll 50% 38px #FFFFFF;
+}
+#bmw_x5 #main .container-body {
+    background-position: 50% 32px;
+}
+#bmw_x5 .container-filter .panel-filter {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+#bmw_x5 div.container-main, #bmw_x5 #show_grid, #bmw_x5 #final_page__container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 132px auto 0;
+    padding: 0 10px 25px;
+    position: relative;
+    z-index: 20;
+}
+#bmw_x5 .header-main {
+    padding: 5px 0 20px;
+}
+#bmw_x5 .container-header, #bmw_x5 header, #bmw_x5 footer {
+    position: relative;
+    z-index: 20;
+}
+#bmw_x5 .panel-banner {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_x5 .panel-banner .body_style_bmw {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#bmw_x5 .bmw_link {
+    height: 19px;
+    left: 50%;
+    position: absolute;
+    z-index: 100;
+}
+#bmw_x5 .bmw_link:hover {
+    border-bottom: 1px solid #231F20;
+    text-decoration: none;
+}
+#bmw_x5 #main .bmw_link {
+    margin-top: -5px;
+}
+.bmw_x5_xDrive35i {
+    margin-left: 25px;
+    top: 96px;
+    width: 145px;
+}
+.bmw_x5_xDrive35i_m {
+    margin-left: 25px;
+    top: 117px;
+    width: 220px;
+}
+.bmw_x5_xDrive30d {
+    margin-left: 277px;
+    top: 96px;
+    width: 151px;
+}
+.bmw_x5_xDrive30d_m {
+    margin-left: 277px;
+    top: 117px;
+    width: 225px;
+}
+#auto_mobile_app .container-body {
+    background: url("http://img.auto.ria.ua/images/branding/mobile-promopage/promo.jpg") no-repeat scroll center 38px #FFFFFF;
+}
+#auto_mobile_app .container-main {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+#auto_mobile_app .panel-banner {
+    height: 172px;
+    margin: -8px auto 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+#auto_mobile_app .mobile_app {
+    display: block;
+    height: 200px;
+    text-decoration: none;
+    z-index: 90;
+}
+#dom_mobile_app .panel-banner {
+    height: 172px;
+    margin: -8px auto 0;
+    position: relative;
+    width: 100%;
+}
+#dom_mobile_app .mobile_app {
+    display: block;
+    height: 200px;
+    text-decoration: none;
+    z-index: 90;
+}
+#dom_mobile_app .banner_plase_960px {
+    width: 100%;
+}
+#dom_mobile_app div.panel-banner {
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+    text-align: center;
+    width: 100%;
+}
+#dom_mobile_app .container-body {
+    background: url("http://dom.ria.ua/img/promo-brending/promo.jpg") no-repeat scroll center 38px #FFFFFF;
+}
+#dom_mobile_app .container-main {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+#ria_mobile_app {
+    background: url("http://ria.ua/img/promo-brending/promo.jpg") no-repeat scroll center 38px #FFFFFF;
+}
+#ria_mobile_app div.top-panel-banner {
+    display: inline-block;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+}
+#ria_mobile_app .banner_plase_960px {
+    font-size: 0;
+    line-height: 0;
+    margin: 10px auto 5px;
+    text-align: center;
+    width: 100%;
+}
+#ria_mobile_app div.panel-banner {
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+    text-align: center;
+    width: 100%;
+}
+#ria_mobile_app .container-body {
+    position: relative;
+}
+#ria_mobile_app .panel-banner {
+    height: 172px;
+    margin: -8px auto 0;
+    position: relative;
+    width: 100%;
+}
+#ria_mobile_app .mobile_app {
+    display: block;
+    height: 430px;
+    text-decoration: none;
+    z-index: 90;
+}
+#sixt_ua .container-body {
+    background: url("http://img.auto.ria.ua/images/branding/sixt/sixt.jpg") no-repeat scroll center 0 #FFFFFF;
+}
+#sixt_ua .container-filter .panel-filter {
+    background: none repeat scroll 0 0 white;
+}
+#sixt_ua div.container-main, #sixt_ua #show_grid {
+    background: none repeat scroll 0 0 white;
+    margin: 130px auto 0;
+    padding: 0 23px 25px;
+    position: relative;
+    z-index: 20;
+}
+#sixt_ua .container-footer {
+    margin: 0 auto;
+}
+#sixt_ua .header-main {
+    padding: 5px 0 20px;
+}
+#sixt_ua .panel-banner {
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    z-index: 20;
+}
+#sixt_ua .link_sixtua {
+    display: block;
+    height: 1030px;
+    margin: 0 auto;
+    text-decoration: none;
+    width: 2000px;
+}
+#sixt_ua footer {
+    position: relative;
+    z-index: 30;
+}
+#mini_cooper .panel-filter {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+#mini_cooper div.container-main, #mini_cooper #show_grid {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 141px auto 0;
+    padding: 0 10px 25px;
+    position: relative;
+    z-index: 20;
+}
+#mini_cooper .header-main {
+    padding: 5px 0 20px;
+}
+#mini_cooper .container-header, #mini_cooper header, #mini_cooper footer {
+    position: relative;
+    z-index: 20;
+}
+#mini_cooper .panel-banner {
+    background: url("http://img.auto.ria.ua/images/branding/mini/header.png") no-repeat scroll 50% 38px #000000;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#mini_cooper #main .panel-banner {
+    background-position: 50% 33px;
+}
+#mini_cooper .panel-banner:after {
+    background: url("http://img.auto.ria.ua/images/branding/mini/repeat.png") repeat-x scroll 0 0 transparent;
+    content: "";
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 10;
+}
+#mini_cooper .panel-banner .body_style_mini {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+#mini_cooper .mini_link {
+    height: 19px;
+    left: 50%;
+    margin-left: 210px;
+    position: absolute;
+    z-index: 100;
+}
+#mini_cooper #main .mini_link {
+    margin-top: -5px;
+}
+#mini_cooper .mini_link:hover {
+    border-bottom: 1px solid #FFFFFF;
+    text-decoration: none;
+}
+#mini_cooper .mini_one {
+    top: 70px;
+    width: 192px;
+}
+#mini_cooper .mini_cooper {
+    top: 94px;
+    width: 222px;
+}
+#mini_cooper .mini_coopers {
+    top: 118px;
+    width: 277px;
+}
+.banner-place-300 {
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+    width: 300px;
+}
+.statistic-addcars {
+    list-style: none outside none;
+    margin: 0 0 20px;
+    padding: 5px 0 0;
+}
+.statistic-addcars .item {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.statistic-addcars .left {
+    float: left;
+    width: 120px;
+}
+.statistic-addcars .right {
+    border-left: 1px solid #DDDDDD;
+    float: right;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.statistic-addcars .center {
+    margin: 0 0 0 120px;
+    text-align: right;
+}
+.head-financeua {
+    position: relative;
+}
+.head-financeua .icon-open, .head-financeua .icon-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.financeua-mini {
+    float: right;
+    font-size: 12px;
+    padding-right: 15px;
+    width: 120px;
+}
+.financeua-mini .item {
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+.financeua {
+    display: block;
+    padding: 0 30px 0 20px;
+    position: relative;
+}
+.financeua em, .financeua dfn {
+    cursor: help;
+    font: 16px/16px Georgia;
+}
+.financeua em {
+    color: #D85442;
+}
+.financeua dfn {
+    color: #527B02;
+}
+.financeua .link-finance {
+    background: url("http://img6.auto.ria.ua/images/common/sprite.png") no-repeat scroll -210px 0 transparent;
+    height: 85px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+}
+.financeua .icon-clock {
+    left: 2px;
+    margin-left: -20px;
+    position: relative;
+}
+.financeua .head-row {
+    color: #7A797A;
+    font-size: 12px;
+}
+.financeua .row {
+    border-top: 1px solid #E3E5E5;
+    font-size: 13px;
+    line-height: 21px;
+    margin-bottom: 0;
+    padding: 4px 0;
+}
+.financeua .row.head-row {
+    border: 0 none;
+    padding: 0;
+}
+.financeua .span1 {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.calculator table {
+    margin: 0;
+}
+.calculator td {
+    border: medium none;
+    padding: 0 9px 0 0;
+}
+.support {
+    display: inline-block;
+    width: 100%;
+}
+.support p {
+    margin: 6px 0;
+}
+.support .photo {
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 13px;
+    width: 67px;
+}
+.support .contact-data {
+    margin: 0 0 0 80px;
+    padding: 0;
+}
+.support .title {
+    font-size: 17px;
+    font-weight: normal;
+    margin: 0 0 6px;
+    padding: 0;
+}
+.support .desc {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.support .mail {
+    position: relative;
+}
+.support .icon-email {
+    height: 19px;
+    margin: -2px 0 0 -2px;
+    width: 19px;
+}
+.support .popup {
+    right: 24px;
+    top: 22px;
+}
+.list-phone .phone {
+    font-size: 15px;
+}
+.list-top-news .item-news {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+table.market tr td {
+    border: 0 none;
+    line-height: 30px;
+    padding: 0;
+}
+table.market [class^="icon-market"] {
+    margin: -5px -10px 0 -5px;
+}
+.social-network {
+    display: inline-block;
+    margin-bottom: 6px;
+    width: 100%;
+}
+.social-network .item-social {
+    float: left;
+    line-height: 24px;
+    margin-top: 6px;
+    width: 50%;
+}
+.partner-informer {
+    display: block;
+    width: auto;
+}
+.partner-informer a {
+    color: #256799 !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    text-decoration: none;
+}
+.partner-informer a:hover {
+    text-decoration: underline;
+}
+.partner-informer table {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    border-collapse: separate;
+    border-spacing: 0;
+    line-height: 18px;
+    margin-bottom: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+.partner-informer table caption, .partner-informer table th, .partner-informer table td {
+    font-weight: normal;
+    text-align: left;
+}
+.partner-informer table th, .partner-informer table td {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    margin-bottom: 5px;
+    padding: 0 0 10px;
+    vertical-align: top;
+}
+.partner-informer table caption {
+    padding-bottom: 5px;
+}
+.partner-informer thead td {
+    font-weight: bold;
+}
+.partner-informer ol, .partner-informer ul, .partner-informer li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.partner-informer li {
+    display: inline-block;
+    margin: 0 0 10px;
+}
+.partner-informer img {
+    border: 0 none !important;
+    float: left;
+    margin-right: 10px;
+    max-width: 100px;
+}
+.partner-informer .element-news {
+    display: inline-block;
+    margin: 0 0 10px;
+    width: 100%;
+}
+.partner-informer .element-news .images, .partner-informer .element-news .images img {
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+.partner-informer .element-news .link-news {
+    display: block;
+    margin: 0 0 0 80px;
+}
+.partner-informer table.newsnet {
+    background: none repeat scroll 0 0 transparent;
+    font-size: 13px;
+}
+.partner-informer a.newsnet {
+    font-size: 13px;
+}
+.partner-informer table.newsnet img {
+    margin: 0 3px 0 0;
+}
+.item-news-24tv {
+    display: inline-block;
+    font-size: 12px;
+    height: 64px;
+    line-height: 18px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    width: 100%;
+}
+.item-news-24tv .image, .item-news-24tv .image img {
+    float: left;
+    width: 85px;
+}
+.item-news-24tv .link-news-24tv {
+    display: block;
+    margin: -3px 0 0 95px;
+}
+.about-us {
+    font-size: 12px;
+}
+.about-us h1, .about-us h2 {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+}
+.relink-panel {
+    font-size: 11px;
+    line-height: 13px;
+}
+.bigmir table {
+    margin: 1px 0 !important;
+}
+.bigmir td {
+    padding: 0;
+}
+.bigmir div {
+    line-height: 2px;
+}
+.fb-like-box {
+    margin-top: 15px;
+}
+.copyright {
+    float: left;
+    line-height: 15px;
+    margin-top: 21px;
+    padding-left: 50px;
+    position: relative;
+    text-align: left;
+}
+.copyright:before {
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.footer-menu {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 20px 0 0;
+    width: 100%;
+}
+nav.menu-footer {
+    border-bottom: 1px solid #CBCDCD;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 100;
+}
+nav.menu-footer .item {
+    border-bottom: 1px solid #CBCDCD;
+    float: left;
+    margin-bottom: -1px;
+    margin-left: 35px;
+    padding-bottom: 3px;
+}
+nav.menu-footer .item:first-child {
+    margin-left: 0;
+}
+nav.menu-footer .item.active {
+    border-bottom-color: #D85442;
+    color: #D85442;
+}
+nav.menu-footer .item:hover {
+    color: #D85442;
+    text-decoration: none;
+}
+.footer-signature {
+    float: right;
+}
+.left-bar__footer {
+    float: left;
+    text-align: left;
+    width: 175px;
+}
+.left-bar__footer a {
+    color: #8699A3;
+}
+.right-bar__footer {
+    border-left: 1px solid #DDDDDD;
+    float: right;
+    height: 55px;
+    padding-left: 12px;
+    text-align: left;
+    width: 110px;
+}
+.signature__footer {
+    margin-left: 210px;
+}
+.signature__footer a {
+    color: #8699A3;
+}
