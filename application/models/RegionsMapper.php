@@ -1,7 +1,7 @@
 <?php
 
 
-class Application_Model_CarsMapper
+class Application_Model_RegionsMapper
 {
     protected $_dbTable;
     public function setDbTable($dbTable)
@@ -18,53 +18,53 @@ class Application_Model_CarsMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Cars');
+            $this->setDbTable('Application_Model_DbTable_Regions');
         }
         return $this->_dbTable;
     }
-    public function save(Application_Model_Cars $car)
+    public function save(Application_Model_Regions $region)
     {
         $data = array(
-            'title'   => $car->getTitle(),
-            'description' => $car->getDescription(),
-            'added' => date('Y-m-d H:i:s'),
+            'name'   => $region->getName(),
+            
         );
-      if (null === ($id = $car->getId())) {
+      if (null === ($id = $region->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
     }
-    public function find($id, Application_Model_Cars $car)
+    public function find($id, Application_Model_Regions $region)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $car->setId($row->id)
-            ->setTitle($row->title)
-            ->setDesription($row->description)
-            ->setYear($row->year)
-            ->setAdded($row->added);
+        $region->setId($row->id)
+            ->setName($row->name);
     }
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_Cars();
+            $entry = new Application_Model_Regions();
             $entry->setId($row->id)
-                   ->setTitle($row->title)
-                   ->setDescription($row->description)
-                   ->setAdded($row->added)
-                   ->setYear($row->year)
+                   ->setName($row->name)
                    ->setMapper($this);
             $entries[] = $entry;
         }
         return $entries;
     }
+    
+    public function getAuthor()
+    {
+	return $this->_row->findParentRow(new Model_DbTable_Users, 'User');
+                
+    }
+    
 }
 
 ?>

@@ -27,7 +27,7 @@
                         </span>
                         <h3 class="head-car">
 
-                            <a href="/auto_mercedes-benz_ml_63_amg_6841512.html" title='<?php echo $car->title; ?>'><i class="label-hot" onclick="fishkiObj.getForm(6841512); return false;"></i><?php echo $car->title; ?></a>&nbsp;2012
+                            <a href="/auto_mercedes-benz_ml_63_amg_6841512.html" title='<?php echo $car->title; ?>'><i class="label-hot" onclick="fishkiObj.getForm(6841512); return false;"></i><?php echo $car->title; ?></a>&nbsp;<?php echo $car->year; ?>
                         </h3>
                     </div>
 
@@ -104,4 +104,7 @@
             </div>
         </div>
     <?php } ?>
+    <?php foreach($this->regions as $region){ ?>
+        <?php echo $region->name; ?>
+    <?php }?>
 </div>

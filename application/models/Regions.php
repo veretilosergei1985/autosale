@@ -1,13 +1,10 @@
 <?php
 
-class Application_Model_Cars
+class Application_Model_Regions
 {
-    protected $_title;
-    protected $_description;
-    protected $_added;
+    protected $_name;
     protected $_id;
     protected $_mapper;
-    protected $_year;
     
     
     public function __construct(array $options = null)
@@ -43,42 +40,16 @@ class Application_Model_Cars
         }
         return $this;
     }
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->_title = (string) $title;
+        $this->_name = (string) $name;
         return $this;
     }
-    public function getTitle()
+    public function getName()
     {
-        return $this->_title;
+        return $this->_name;
     }
-    public function setDescription($desc)
-    {
-        $this->_description = (string) $desc;
-        return $this;
-    }
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-    public function setAdded($ts)
-    {
-        $this->_added = $ts;
-        return $this;
-    }
-    public function getAdded()
-    {
-        return $this->_added;
-    }
-    public function setYear($val)
-    {
-        $this->_year = $val;
-        return $this;
-    }
-    public function getYear()
-    {
-        return $this->_year;
-    }
+   
     public function setId($id)
     {
         $this->_id = (int) $id;
@@ -96,7 +67,7 @@ class Application_Model_Cars
     public function getMapper()
     {
         if (null === $this->_mapper) {
-            $this->setMapper(new Application_Model_CarsMapper());
+            $this->setMapper(new Application_Model_RegionsMapper());
         }
         return $this->_mapper;
     }
@@ -114,10 +85,7 @@ class Application_Model_Cars
         return $this->getMapper()->fetchAll();
     }
     
-    public function get()
-    {
-        return $this->getMapper()->findParentRow(new Model_DbTable_Regions, 'Region');
-    }
+    
 }
 
 ?>
