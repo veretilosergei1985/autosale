@@ -114,9 +114,9 @@ class Application_Model_Cars
         return $this->getMapper()->fetchAll();
     }
     
-    public function get()
+    public function findAll()
     {
-        return $this->getMapper()->findParentRow(new Model_DbTable_Regions, 'Region');
+        return $this->getMapper()->findAll();
     }
 }
 

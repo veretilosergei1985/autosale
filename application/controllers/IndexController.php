@@ -15,6 +15,8 @@ class IndexController extends Zend_Controller_Action
         
         $regionsModel = new Application_Model_Regions();
         $this->view->regions = $regionsModel->fetchAll();
+
+        $carsModel->findAll();
         
     }
 

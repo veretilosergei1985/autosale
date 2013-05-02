@@ -65,6 +65,24 @@ class Application_Model_CarsMapper
         }
         return $entries;
     }
+    
+    
+    public function findAll()
+    {
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select()->from('cars') 
+                                      ->joinLeft('region','cars.reg_id=region.id', array()
+                                      ); 
+        echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+       // echo "<pre>"; print_r($oResultSet);  exit;
+        
+        foreach($oResultSet as $row){
+            echo  $row['title']."  ".$row['name']; exit;
+        }
+        
+        
+    }
 }
 
 ?>

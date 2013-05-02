@@ -59,7 +59,7 @@ class Application_Model_RegionsMapper
         return $entries;
     }
     
-    public function getAuthor()
+    public function getRegion()
     {
 	return $this->_row->findParentRow(new Model_DbTable_Users, 'User');
                 
