@@ -70,17 +70,20 @@ class Application_Model_CarsMapper
     public function findAll()
     {
         $oDbTable = $this->getDbTable();
-        $oSelect = $oDbTable->select()->from('cars') 
-                                      ->joinLeft('region','cars.reg_id=region.id', array()
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
+                                      ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
+                                      ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
+                                      ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
+                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name')
                                       ); 
-        echo $oSelect; exit;
+
+        
+        //echo $oSelect; exit;
         $oResultSet = $oDbTable->fetchAll($oSelect);        
        // echo "<pre>"; print_r($oResultSet);  exit;
-        
-        foreach($oResultSet as $row){
-            echo  $row['title']."  ".$row['name']; exit;
-        }
-        
+               
+        return $oResultSet;
         
     }
 }

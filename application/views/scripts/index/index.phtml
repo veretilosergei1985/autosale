@@ -1,110 +1,97 @@
 <div id="search_auto_results" class="standart-view">
-    <?php foreach($this->list as $car){ ?>
-        <div class='ticket-item paid-top' ticket_auto_id="6841512" ticket_status_id="0">
-            <a name="search_auto_id_6841512"> </a>
-            <div class="action-bar">
-                <a class="item icon-chips" href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Icon', 'Search_Result']); fishkiObj.getForm(6841512)"
-                       title="Фишек - 3784 Что это такое?">vip</a>
-
-                <a class="item icon-star" href="javascript:void(0);" title="Добавить в блокнот"  pelement="auto_add_to_notepad"  item_id="6841512" content_type_id="1"></a>
-                <span class="item-check" title="Добавить к сравнению">
-                    <input type="checkbox" disabled pelement="auto_compare_checkbox" auto_id="6841512" auto_name='Mercedes-Benz ML 63 AMG  Europe' content_type_id="1"  item_id="6841512"/>
-                        <span class="tooltip succes larr __top hide" pelement="auto_compare_popup">                        
-                        </span>
-                </span>
-            </div>
-
-            <div class="content-bar">
-                <a href="/auto_mercedes-benz_ml_63_amg_6841512.html" class="photo photo-185x120" title='Mercedes-Benz ML 63 AMG  Europe'>
-                    <img src='http://cdn.img.ria.ua/photosnew/auto/photo/mercedes-benz_ml_63_amg__70813589m.jpg' />
-                </a>
-
-                <div class="content">
-                    <div class="head-ticket">
-                        <span class="city">
-                            <a href='city/kiev/' title="Поиск объявлений по региону Киев.">Киев</a>
-                                <a href="/fishki-group/" class="icon-up-ticket" onclick="fishkiObj.getForm(6841512); _gaq.push(['_trackEvent', 'Popup_Fishek', 'Strelka', 'Search_Oldcar']); return false;" target="_blank" title="Поднять вверх при поиске"></a>
-                        </span>
-                        <h3 class="head-car">
-
-                            <a href="/auto_mercedes-benz_ml_63_amg_6841512.html" title='<?php echo $car->title; ?>'><i class="label-hot" onclick="fishkiObj.getForm(6841512); return false;"></i><?php echo $car->title; ?></a>&nbsp;<?php echo $car->year; ?>
-                        </h3>
-                    </div>
-
-                    <div class="if-dealer">
-                        <a  class="dealer-logo" target="_blank" href='/golink/?http://www.avtoport-kiev.com.ua' onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_Avtosalon_[18]', 'Search_Oldcar']);">
-                            <img width="40" src='auto/new_autosalon/0/0/18/18s.jpg' />
+    <?php foreach ($this->list as $car) { ?>
+        <div class="item">
+            <div class="ticket-item" ticket_status_id="0" ticket_auto_id="11080455">
+                <a name="search_auto_id_11080455"> </a>
+                <div class="action-bar">
+                    <a class="item icon-chips" title="Фишек нет. Что это такое?" onclick="" href="javascript:void(0);"> 0 </a>
+                    <a class="item icon-star" content_type_id="1" item_id="11080455" pelement="auto_add_to_notepad" title="Добавить в блокнот" href="javascript:void(0);"></a>
+                    <span class="item-check" title="Добавить к сравнению">
+                        <input type="checkbox" item_id="11080455" content_type_id="1" auto_name="Audi 100 " auto_id="11080455" pelement="auto_compare_checkbox">
+                        <span class="tooltip succes larr __top hide" pelement="auto_compare_popup"> </span>
+                    </span>
+                </div>
+                <div class="content-bar">
+                    <div class="ticket-photo">
+                        <a class=" photo photo-135x90 " title="<?php echo $car->title; ?>" href="/auto_audi_100_11080455.html">
+                            <img src="/images/photos/<?php echo $car->id; ?>/main.jpg ">
                         </a>
-                        <a  class="link" target="_blank" href='/golink/?http://www.avtoport-kiev.com.ua' onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_Avtosalon_[18]', 'Search_Oldcar']);">
-                             Автопорт-Киев
-                        </a>
+                        <span class="item">
+                            <i class="icon-small-photo"></i>
+                            7 фото
+                        </span>
                     </div>
-
-                    <div class="definition-data">
-                        <div class="price" currency_id="2">
-                            <span class="grey" title='UAH'>1 354 665 грн.</span>
-                            <span class="nbu">по курсу НБУ</span> $<strong class="green" title='USD'>169 481</strong>
-
+                    <div class="content">
+                        <div class="head-ticket">
+                            <span class="city">
+                                <a title="Поиск объявлений по региону <?php echo $car->city_name; ?>." href="city/harkov/"><?php echo $car->city_name; ?></a>
+                                <a class="icon-up-ticket" title="Поднять вверх при поиске" target="_blank" onclick="fishkiObj.getForm(11080455);
+            _gaq.push(['_trackEvent', 'Popup_Fishek', 'Strelka', 'Search_Oldcar']);
+            return false;" href="/fishki-group/"></a>
+                            </span>
+                            <h3 class="head-car">
+                                <a title="<?php echo $car->title; ?>" href="/auto_audi_100_11080455.html"><?php echo $car->title; ?> </a>
+                                1991
+                            </h3>
                         </div>
-
-                        <ul class="characteristic">
-                            <li class="item-char" title="Тип топлива">
-                                <i class="icon-char-fuel"></i>
-                                    Бензин,&nbsp;5.50 л.
-                            </li>
-                            <li class="item-char" title="Пробег">
-                                    <i class="icon-mileage"></i>
-                                    без пробега
-                            </li>
-                            <li class="item-char" title="Тип коробки передач">
+                        <div class="definition-data">
+                            <div class="price" currency_id="1">
+                                <?php if($car->currency == 'UAH'){ ?>
+                                    <span class="grey" title="UAH"><?php echo $car->price; ?> грн.</span>
+                                    <span class="nbu">по курсу НБУ</span> $
+                                    <strong class="green" title="USD"><?php echo intval($car->price/$this->er); ?></strong>
+                                <?php } else if($car->currency == 'USD'){ ?>
+                                    <span class="grey" title="UAH"><?php echo intval($car->price * $this->er);; ?> грн.</span>
+                                    <span class="nbu">по курсу НБУ</span> $
+                                    <strong class="green" title="USD"><?php echo intval($car->price); ?></strong>
+                                <?php } ?>
+                            </div>
+                            <ul class="characteristic">
+                                <li class="item-char" title="Тип топлива">
+                                    <i class="icon-char-fuel"></i>
+                                    <?php echo $car->fuel_type; ?>, <?php echo number_format($car->volume, 2, '.', ''); ?> л.
+                                </li>
+                                <li class="item-char" title="Пробег">
+                                    <i class="icon-char-mileage"></i>
+                                    <?php echo $car->mileage; ?> тыс.км.
+                                </li>
+                                <li class="item-char" title="Тип коробки передач">
                                     <i class="icon-char-transmission"></i>
-                                    Автомат
-                            </li>
-                            <li class="item-char" title="Цвет кузова">
+                                    <?php echo $car->trans_type; ?>
+                                </li>
+                                <li class="item-char" title="Цвет кузова">
                                     <i class="icon-char-color"></i>
-                                    Белый металик
-                            </li>
-                        </ul>
+                                    <?php echo $car->color; ?>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="descriptions-ticket" pelement="description">Автомобиль обслужен в хорошем сотоянии.</p>
                     </div>
-                </div>
-
-                <p class="descriptions-ticket" pelement="description" ><?php echo $car->description; ?></p>
-
-                <div class="contact-seller">
-                        Связаться с продавцом:
-                            <span class="phone">(044) 528-22-62</span>
-                    <span class="item">
-                        <i class="icon-megaphoto"></i>
-                        <a href="javascript:void(0)" onclick="_gaq.push(['_trackEvent', 'Photos', 'Click_on_Megaphoto', 'Auto6']); window.open('/old/auto_photo/megaphoto/6841512/', '_blank', 'height=768, width=1024,scrollbars=yes');" >Мегафото</a>
-                    </span>
-                    <span class="item">
-                        <i class="icon-photo-red"></i>
-                        26
-                    </span>
-                </div>
-
-                <div class="footer-ticket">
-                    <span class="view-all">
-                        <a href='/auto_mercedes-benz_ml_63_amg_6841512.html'>Подробно</a>
-                        <i class="icon-view"></i>
-                    </span>
-
-                    <div class="charlist-data">
-                        <span class="date-add" pelement='date_add' pvalue='16:22:48 16.04.2013' title="Объявление добавлено 16.04.2013">
-                            <i class="icon-time-grey"></i>
-                            <span>16.04.2013</span>
+                    <div class="footer-ticket">
+                        <span class="view-all">
+                            <a href="/auto_audi_100_11080455.html">Подробно</a>
+                            <i class="icon-view"></i>
                         </span>
-                        <strong class="item" title='26 фотографий'>
-                            <i class="icon-photo-red"></i>26
-                        </strong>
-
+                        <div class="charlist-data">
+                            <span class="date-add" title="Объявление добавлено 03.05.2013" pvalue="22:33:45 03.05.2013" pelement="date_add">
+                                <i class="icon-time-blue"></i>
+                                <span class="blue" style="font-weight: bold;">Позавчера</span>
+                            </span>
+                            <strong class="item" title="Возможен обмен (Любой)">
+                                <i class="icon-exchange"></i>
+                                <span class="title-char">Обмен: Любой</span>
+                            </strong>
+                            <strong class="item" title="Торги">
+                                <i class="icon-auction"></i>
+                                <span class="title-char">Торги</span>
+                            </strong>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     <?php } ?>
-    <?php foreach($this->regions as $region){ ?>
-        <?php echo $region->name; ?>
-    <?php }?>
+    <?php //foreach($this->regions as $region){ ?>
+    <?php //echo $region->name; ?>
+    <?php //}?>
 </div>
