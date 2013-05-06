@@ -36,8 +36,27 @@ class Application_Model_CarsMapper
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
     }
-    public function find($id, Application_Model_Cars $car)
+    public function find($id)
     {
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
+                                      ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
+                                      ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
+                                      ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
+                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
+                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'title'))
+                                      ->where('cars.id = ?', $id); 
+
+        
+        //echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchRow($oSelect);        
+        // echo "<pre>"; print_r($oResultSet);  exit;
+               
+        return $oResultSet;
+     
+        
+        /*
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
@@ -48,6 +67,8 @@ class Application_Model_CarsMapper
             ->setDesription($row->description)
             ->setYear($row->year)
             ->setAdded($row->added);
+         * 
+         */
     }
     public function fetchAll()
     {

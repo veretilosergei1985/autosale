@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb1
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Май 05 2013 г., 20:14
+-- Время создания: Май 06 2013 г., 16:46
 -- Версия сервера: 5.5.29
--- Версия PHP: 5.4.6-1ubuntu1.2
+-- Версия PHP: 5.3.10-1ubuntu3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS `cars` (
 --
 
 INSERT INTO `cars` (`id`, `cat_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors_id`, `fuel_id`, `color_id`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `added`) VALUES
-(1, 0, 1, 1, 2, 22, 4, 0, 0, 1, 1, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', '2013-04-17 09:00:00'),
-(2, 0, 1, 1, 1, 57, 4, 0, 0, 2, 6, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', '2013-04-09 10:31:32'),
-(3, 0, 1, 2, 2, 3, 1, 0, 0, 4, 9, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', '0000-00-00 00:00:00');
+(1, 0, 1, 1, 2, 22, 4, 2, 0, 1, 1, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', '2013-04-17 09:00:00'),
+(2, 0, 1, 1, 1, 57, 4, 2, 0, 2, 6, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', '2013-04-09 10:31:32'),
+(3, 0, 1, 2, 2, 3, 1, 3, 0, 4, 9, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2678,7 +2678,16 @@ CREATE TABLE IF NOT EXISTS `drive` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `drive`
+--
+
+INSERT INTO `drive` (`id`, `title`) VALUES
+(1, 'Задний'),
+(2, 'Передний'),
+(3, 'Полный');
 
 -- --------------------------------------------------------
 

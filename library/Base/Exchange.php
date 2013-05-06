@@ -24,7 +24,7 @@ class Base_Exchange
            // Выполняем XPath-запрос к XML-данным
            //$v = $row->xpath('//char3[USD]');
           
-           if($row->char3 == 'USD'){
+           if($row->char3 == $char3){
               $result = $item;
               break;
            }

@@ -26,6 +26,24 @@ class IndexController extends Zend_Controller_Action
         $this->view->er = $data->rate/100;
         
     }
+    
+    public function viewAction()
+    {
+        $id = $this->_getParam('id');
+        
+        $carsModel = new Application_Model_Cars();
+        //$data = $carsModel->find($id)->toArray();
+        $this->view->data = $carsModel->find($id);
+         //echo "<pre>"; print_r($this->view->data); exit;
+        
+        $er = new Base_Exchange();
+        $usd = $er->getExchangeRateByChar3("USD");
+        $eur = $er->getExchangeRateByChar3("EUR");
+        
+        $this->view->usd = $usd->rate/100;
+        $this->view->eur = $eur->rate/100;
+        $this->view->rel = floatval($this->view->eur)/floatval($this->view->usd);
+    }
 
 
 }

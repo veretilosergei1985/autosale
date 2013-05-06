@@ -106,8 +106,7 @@ class Application_Model_Cars
     }
     public function find($id)
     {
-        $this->getMapper()->find($id, $this);
-        return $this;
+        return $this->getMapper()->find($id);
     }
     public function fetchAll()
     {

@@ -1,0 +1,1314 @@
+<nav class="navigator" id="final_page__navigator_container">
+    <span class="next disabled">
+        <a href="javascript:void(0);">Следующее</a>&nbsp;»
+    </span>
+    <span class="prev disabled">
+        «&nbsp;Предыдущее
+    </span>
+    <div class="back-page disabled">
+        <a href="javascript:void(0);">Вернуться к результатам поиска</a>
+    </div>
+</nav>
+
+
+
+
+
+<div class="heading-cars">
+    <a href="javascript:void(0);" class="add-notebook" id="final_page__add_bookmark" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Добавляет просматриваемое объявление в &quot;блонкот&quot; в разделе &quot;мое меню&quot;. Это позволит Вам не потерять объявление и получить к нему доступ в любой момент с раздела &quot;Мое меню&quot;">
+        <i class="icon-star" id="final_page__add_bookmark_icon"></i>
+    </a>
+    <h1 class="head-cars">
+        <?php echo $this->data->title; ?>
+        <span class="year"><?php echo $this->data->year; ?></span>
+        <a href="/help/hot" class="label-hot" target="_blank"></a>
+    </h1>
+</div>
+
+
+<div class="row page-cars" id="final_page__main_info_block">
+    <div class="span3 left-bar-view">
+        <div class="price-cars">
+            <div class="price-seller">
+                <?php if($this->data->currency == 'UAH'){ ?>
+                   <span class="price"><?php echo intval($this->data->price); ?></span> грн.
+                <?php } else if($this->data->currency == 'USD'){ ?>
+                    <span class="price"><?php echo intval($this->data->price * $this->usd); ?></span> грн.
+                <?php } ?>
+            </div>
+            <div class="nbu">
+                по курсу НБУ
+            </div>
+            <div class="price-at-rate">
+                <?php if($this->data->currency == 'UAH'){ ?>
+                    &euro;<span class="price"><?php echo intval($this->data->price / $this->eur); ?></span> /
+                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price / $this->usd); ?></span>
+                <?php } else if($this->data->currency == 'EUR'){ ?>
+                    &euro;<span class="price"><?php echo intval($this->data->price); ?></span> /
+                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price * $this->rel); ?></span>
+                <?php } else if($this->data->currency == 'USD'){ ?>
+                    &euro;<span class="price"><?php echo intval($this->data->price / $this->rel); ?></span> /
+                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price); ?></span>
+                <?php } ?>
+            </div>
+        </div>
+        <!--    .BEGIN link diagnostic  -->
+        <!--    .END link diagnostic  -->
+        <div>
+            <hr class="dotted">
+            <a id="final_page__autotest_make_order_link" title="Проверить этот автомобиль" onclick="_gaq.push(['_trackEvent', 'Proverka_Auto', 'Click_on_Button_Zakaz_Price',location.href]);" href="javascript:void(0);">
+            <i class="icon-diagnostic"></i>
+            Проверить этот автомобиль
+            </a>
+            <hr class="dotted">
+        </div>
+        <div id="top_link_container" style="margin-bottom:10px;">
+            <script language="javascript" type="text/javascript">
+            <!--// <![CDATA[
+            OA_show('top_link');
+            // ]]> -->
+            </script>
+        </div>
+        <div class="characteristic delimeter">
+            <p class="item-param">
+                <i class="icon-color"></i>
+                Цвет кузова:
+                <strong>
+                    <?php echo $this->data->color; ?>
+                </strong>
+            </p>
+            <p class="item-param">
+                <i class="icon-fuel"></i>
+                Топливо:
+                <strong>
+                    <?php echo $this->data->fuel_type; ?>
+                </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано">.</span>
+            </p>
+             <p class="item-param">
+                <i class="icon-engine"></i>
+                Объем двигателя:
+                <strong>
+                    <?php echo $this->data->volume; ?> л.
+                </strong>
+            </p>
+            <p class="item-param">
+                <i class="icon-transmission"></i>
+                Коробка:
+                <strong>
+                    <?php echo $this->data->trans_type; ?>
+                </strong>
+            </p>
+            <p class="item-param">
+                <i class="icon-drive"></i>
+                Привод:
+                <strong>
+                    <?php echo $this->data->drive; ?>
+                </strong>
+            </p>
+
+
+
+
+
+            <p class="item-param">
+                <i class="icon-door"></i>
+                Дверей:
+                <strong>
+                    5
+                </strong>
+            </p>
+
+
+
+
+            <p class="item-param">
+                <i class="icon-mileage"></i>
+
+                Пробег:
+                <strong>
+                    230
+                    тыс.км
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="seller-data" id="black_list">
+
+
+            <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">
+
+
+
+            <dl class="info-user">
+
+
+                <dt class="user-name">
+
+                cта
+
+                </dt>
+
+
+
+
+                <dd class="item">
+                    Город:
+                    <strong>
+
+                        Умань Черкасская обл.
+
+                    </strong>
+                </dd>
+
+
+
+
+
+
+
+
+                <dd class="item">
+                    Объявлений продавца:
+
+                    <a href="/?target=search&event=little&user_id=2442014" target="_blank"><strong id="final_page__user_ads_count">1</strong></a>
+                    <small class="count-offer" id="final_page__how_to_hide_link" style="display: none;"><a href="/autoseller/addpackage/?show_message=1" target="_blank">Как скрыть?</a></small>
+
+                </dd>
+
+
+
+
+
+                <dd class="item">
+                    Пользуется сайтом: <strong>
+
+                        7 
+
+                        месяцев
+
+
+
+                    </strong>
+                </dd>
+
+
+
+
+                <dd class="item">
+                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014">загрузка...</strong>
+                </dd>
+
+            </dl>
+
+
+            <div class="characteristic contact-data-seller">
+
+                <strong>
+                    связаться с продавцом:
+                </strong>
+
+
+
+                <div class="item-param writing-seller">
+                    <i class="icon-email"></i>
+                    <a href="javascript:void(0);" id="final_page__mail_to_seller" user_id="2442014" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Позволяет отправить письмо на личный e-mail продавца" ria_ppih_position_orientation="bottom">Написать сообщение</a>
+                </div>
+
+
+
+
+
+
+
+                <div class="item-param">
+                    <i class="icon-mobile-confirm"></i>
+                    <strong class="phone">(093) 439-53-80</strong>
+
+                </div>
+
+                <div class="item-param">
+                    <i class="icon-mobile-confirm"></i>
+                    <strong class="phone">(063) 779-11-28</strong>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="warning">
+            <strong>ВНИМАНИЕ!</strong>
+            <p>
+
+                AUTO.ria.ua
+                не является гарантом сделки
+                и не сотрудничает с транспортными компаниями.
+            </p>
+            Будьте бдительны!<br>
+            Не доверяйте предложениям с подозрительно
+            низкой ценой 
+
+            <a href="http://bezpeka.ria.ua/ru/article_22.html" target="_blank">Подробнее</a>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="characteristic delimeter">
+            <p class="item-param">
+                <i class="icon-add"></i>
+                <a href="/add_auto.html" class="bold green">Добавить объявление</a>
+            </p>
+
+            <p class="item-param" id="final_page__actions_block_edit_auto_container" style="display: none;">
+                <i class="icon-edit"></i>
+                <a href="/addauto/autoinfo/autoId/11066447/">Редактировать авто</a>
+            </p>
+
+            <p class="item-param" id="final_page__actions_block_raise_up_auto_container" style="display: none;">
+                <i class="icon-up-ticket"></i>
+                <a href="/fishki-group/" id="final_page__actions_block_raise_up_auto">Поднять вверх при поиске</a>
+            </p>
+
+            <p class="item-param" id="final_page__actions_block_republic_container" style="display: none;">
+                <i class="icon-reload"></i>
+                <a href="/addauto/publication/autoId/11066447/">Переопубликовать</a>
+            </p>
+            <p class="item-param" id="final_page__actions_block_delete_auto_container" style="display: none;">
+                <i class="icon-delete"></i>
+                <a href="javascript:void(0);" id="final_page__actions_block_delete_auto">Удалить в архив</a>
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="characteristic delimeter">
+            <p class="item-param">
+                <i class="icon-added-item"></i>
+                Размещено: <strong id="final_page__add_date" date="2013-05-01 15:00:42">2013-05-01 15:00:42</strong>
+            </p><p class="item-param">
+                <i class="icon-views"></i>
+                Всего просмотров: <strong id="final_page__views_counter" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Демонстрирует сколько потенциальных покупателей просмотрело объявление." ria_ppih_position_orientation="right">загрузка...</strong>
+            </p><p class="item-param">
+                <i class="icon-id-item"></i>
+                ID автомобиля: <strong>11066447</strong>
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+        <!-- include virtual="/html/common/social_network_vertical.html"-->
+        <div class="social-network">
+            <div class="api-vk">
+                <div id="vk_like"></div>
+            </div>
+            <div class="api-facebook" style="overflow: visible;">
+                <fb:like layout="button_count" data-send="false" data-width="225" data-show-faces="false" ></fb:like>
+            </div>
+            <div class="api-twitter">
+                <a href="http://twitter.com/share" data-url='http://auto.ria.ua/auto_audi_80_11066447.html' class="twitter-share-button" data-lang="ru">Твитнуть</a>
+            </div>
+
+            <div class="api-google">
+                <div class="g-plusone" ></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="characteristic">
+            <p class="item-param">
+                <i class="icon-star" id="final_page__actions_block_bookmark_icon"></i>
+                <a href="javascript:void(0);" id="final_page__actions_block_add_to_bookmarks">Добавить в блокнот</a>
+                <a href="javascript:void(0);" id="final_page__actions_block_remove_from_bookmarks" style="display: none;">Удалить из блокнота</a>
+            </p>
+            <div class="item-param" id="final_page__actions_block_send_complain_container">
+                <i class="icon-report"></i>
+                <a href="javascript:void(0);" id="final_page__actions_block_send_complain">Пожаловаться на объявление</a>
+            </div>
+            <p class="item-param" style="display: none;" id="final_page__actions_block_add_to_blacklist_container">
+                <i class="icon-blacklist"></i>
+                <a href="javascript:void(0);" id="final_page__actions_block_add_to_blacklist">Добавить в "Черный список"</a>
+            </p>
+            <p class="item-param">
+                <i class="icon-print"></i>
+                <!--a href="/?target=view&event=print_version&auto_id=11066447" class="new">Версия для печати</a-->
+                <a href="/blocks_auto_view/view/final_page_print_version/11066447/2/" id="final_page__actions_block_print_version" class="new">Версия для печати</a>
+            </p>
+            <p class="item-param" id="final_page__action_block_print_flyer_container" style="display: none;">
+                <i class="icon-print"></i>
+                <a href="/?target=view&event=print_version&auto_id=11066447&list=1" target="_blank" class="new">Распечатать листовку</a>
+            </p>
+            <p class="item-param">
+                <i class="icon-add-compare"></i>
+                <a href="javascript:void(0);" id="final_page__actions_block_add_to_compare">Добавить к сравнению</a>
+                <a href="javascript:void(0);" id="final_page__actions_block_compare_cars" style="display: none;">Сравнить</a>
+            </p>
+            <p class="item-param">
+                <i class="icon-views"></i>
+                <a href="/strahovanie/" target="_blank">Подобрать страховую компанию</a>
+            </p>
+
+            <p class="item-param">
+                <i class="icon-parts-mini"></i>
+                <a href="http://zapchasti.ria.ua/audi/80/" target="_blank">Автозапчасти Ауди 80</a>
+            </p>
+
+        </div>
+
+        <p class="item-param" style="padding-left:24px;">
+            <a href="javascript:void(0);" id="final_page__actions_block_choose_autogoods">Подобрать автотовары</a>
+            <em class="icon-open"></em>
+        </p>
+
+        <div id="final_page__actions_block_autogoods_container" class="characteristic" style="display: none; height: 0px; overflow-y: hidden;">
+            <p class="item-param">
+                <i class="icon-tyres"></i>
+                <a href="http://market.auto.ria.ua/shina" target="_blank">Подобрать шины</a>
+            </p>
+            <p class="item-param">
+                <i class="icon-disk"></i>
+                <a href="http://market.auto.ria.ua/diski" target="_blank">Подобрать диски</a>
+            </p>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="span5">
+        <div class="gallery-order">
+            <div>
+
+                <div class="photo-380x250 main-photo " onclick="window.open('/old/auto_photo/viewphoto/11066447/', '_blank', 'width=800,height=600,scrollbars=yes');
+                        _gaq.push(['_trackEvent', 'Photos', 'Click_on_Main_photo', 'Ad_Page']);">
+
+
+
+                    <img src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962922bx.jpg" class="large-photo" width="380" id="final_page__main_photo">
+
+                </div>
+                <div class="count-photo__order">
+
+                    <div class="count-photo">
+                        <i class="icon-photo-grey"></i>
+                        12 фото   Audi 80 1995
+                    </div>
+                    <span class="mega-photo">
+                        <i class="icon-megaphoto"></i>
+                        <a href="javascript:void(0);" id="final_page__megaphoto" onclick="window.open('/old/auto_photo/megaphoto/11066447/', '_blank', 'width=800,height=600,scrollbars=yes');
+                        _gaq.push(['_trackEvent', 'Photos', 'Click_on_Megaphoto', 'Ad_Page']);" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Позволяет просмотреть фотографии автотранспортного средства большего размера и качества. Просмотр откроется в новом окне.">Мегафото</a>
+                    </span>
+
+                </div>
+                <div class="preview-gallery">
+
+
+                    <div class="wrapper" id="final_page__preview_photos_wrapper">
+
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962912">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962912lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962917">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962917lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962922">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962922lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962927">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962927lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962932">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962932lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962939">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962939lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962944">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962944lx.jpg" width="85" height="56"/>
+                        </a>
+
+                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962952">
+                            <img title="Audi 80"
+                                 alt="Audi 80"
+                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962952lx.jpg" width="85" height="56"/>
+                        </a>
+
+                    </div>
+
+                    <div class="boxed">
+                        <a href="javascript:void(0)" id="final_page__show_all_photos">
+                            Показать еще
+                            <em class="icon-open"></em>
+                        </a>
+
+                        <span id="final_page__photos_count">
+                            (4)
+                        </span>
+
+                        <a href="javascript:void(0)" style="display: none;" id="final_page__hide_photos">
+                            Свернуть
+                            <em class="icon-close"></em>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+
+                <div id="380x60_place"></div>
+
+
+
+
+
+                <div class="cars-review" id="final_page__reviews_block">
+                    <a href="/newauto/Отзывы/Audi" target="_blank" class="bold">Отзывы о Audi:</a>
+                    <span class="rating-review rr2">
+                        <a class="itemstar on" href="/newauto/Отзывы/Добавить?markaId=6" target="_blank"></a>
+                        <a class="itemstar on" href="/newauto/Отзывы/Добавить?markaId=6" target="_blank"></a>
+                        <a class="itemstar on" href="/newauto/Отзывы/Добавить?markaId=6" target="_blank"></a>
+                        <a class="itemstar " href="/newauto/Отзывы/Добавить?markaId=6" target="_blank"></a>
+                        <a class="itemstar " href="/newauto/Отзывы/Добавить?markaId=6" target="_blank"></a>
+                    </span>
+                    <span class="allotted">
+                        <strong>3</strong> из <strong>5</strong>
+                    </span>
+                </div>
+
+
+
+
+                <div class="panel-notice" id="final_page__remarks_add_container">
+                    <i class="icon-remark"></i>
+                    <a href="javascript:void(0);" id="final_page__remarks_add">Оставить заметку</a>
+                    <a href="javascript:void(0);" id="final_page__remarks_edit" style="display: none;">Редактировать заметку</a>
+                    <span id="final_page__remarks_delimiter" style="display: none;">|</span>
+                    <a href="javascript:void(0);" id="final_page__remarks_delete" style="display: none;" class="red">удалить</a>
+                </div>
+                <div class="remarka" id="final_page__remarks_text_container" style="display: none;">
+                    <div class="warning uarr __right" id="final_page__remarks_text"></div>
+                </div>
+
+
+
+
+
+
+
+                <section class="box-panel">
+                    <div class="title bold">
+                        Описание Audi 80 1995
+                    </div>
+                    <div class="box-panel rocon">
+
+
+                        <p class="additional-data">
+                            <strong>
+
+                                Комфорт
+                                :
+                            </strong>
+                            Кожаный салон, Кондиционер, Люк, Подогрев зеркал, Подогрев сидений, Усилитель руля, Эл. стеклоподъемники, Электропакет
+                        </p>
+
+                        <p class="additional-data">
+                            <strong>
+
+                                Мультимедиа
+                                :
+                            </strong>
+                            CD, MP3
+                        </p>
+
+                        <p class="additional-data">
+                            <strong>
+
+                                Безопасность
+                                :
+                            </strong>
+                            ABS, Подушка безопасности (Airbag), Сигнализация, Центральный замок
+                        </p>
+
+
+                        <p class="description-order">
+
+                            очень быстрый и удобобный <a href="http://www.ria.ua/Services/Lease-rent/avtomobil/" title="автомобиль" target="_blank">автомобиль</a>...
+
+                        </p>
+
+
+
+
+                    </div>
+                </section>
+                <div id="380x60_2_place"></div>
+                <p>
+                    <a href="javascript:void(0);" id="final_page__to_similar_ads">Похожие обьявления</a>
+                </p>
+                <div id="380x60_3_place"></div>
+
+
+
+
+
+                <section class="box-panel">
+                    <div class="title bold">
+
+                        Страховые компании
+
+                    </div>
+                    <div class="box-panel rocon">
+                        <div class="informer__insurance">
+
+                            <a 
+                                href="/golink/?http://insurancebroker.com.ua/index.php/osago_calculator.html" target="_blank"
+                                class="item" onclick="_gaq.push(['_trackEvent', 'Avtostrahovanie', 'Click_on_Logo_[287]_Страховой брокер СЕМЕНЮК', 'Page_Ad']);">
+                                <img src="http://img.ria.ua/photos/auto/autoinsurance/0/2/287/287s.jpg" width="100" alt="" title=""> 
+                                <span class="name">Страховой брокер СЕМЕНЮК</span>
+                            </a>
+
+
+
+
+                            <a 
+                                href="/golink/?http://avtocivilka.kiev.ua" target="_blank"
+                                class="item" onclick="_gaq.push(['_trackEvent', 'Avtostrahovanie', 'Click_on_Logo_[99]_Avtocivilka.kiev.ua', 'Page_Ad']);">
+                                <img src="http://img.ria.ua/photos/auto/autoinsurance/0/0/99/99s.jpg" width="100" alt="" title=""> 
+                                <span class="name">Avtocivilka.kiev.ua</span>
+                            </a>
+
+
+
+
+                            <a 
+                                href="/golink/?http://osgpo.com.ua/" target="_blank"
+                                class="item" onclick="_gaq.push(['_trackEvent', 'Avtostrahovanie', 'Click_on_Logo_[316]_OSGPO.com.ua', 'Page_Ad']);">
+                                <img src="http://img.ria.ua/photos/auto/autoinsurance/0/3/316/316s.jpg" width="100" alt="" title=""> 
+                                <span class="name">OSGPO.com.ua</span>
+                            </a>
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<section class="box-panel" id="final_page__comments_container">
+
+
+
+
+    <h3 class="head">
+        <strong>Комментарии (1) к Audi 80 1995:</strong>
+    </h3>
+
+
+
+
+    <p class="add-comment">
+        <a href="javascript:void(0);" class="button green large" id="final_page__add_comment">Добавить комментарий</a>
+    </p>
+
+
+
+
+
+    <div class="wrapper-comments" id="final_page__comments_wrapper">
+
+        <div class="comment" comment_id="23066674" parent_id="0">
+
+            <img class="avatar" src="http://img.ria.ua/photos/avatars/all/237/23775/2377541/2377541c.jpg" width="50" height="50" onerror="this.set('src', 'http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif');">
+
+            <div class="content-comment">
+                <div class="head-comment">
+                    <div class="area">
+                        05.05, 20:37 <a href="javascript:void(0);" class="icon-complain"></a>
+                    </div>
+                    <div class="name">
+                        <span class="overflow" user_id="2377541" style="width: auto;display: inline;">
+
+                            АНТОН ВАЛЕРЬЕВИЧ
+
+                        </span>
+                    </div>
+                </div>
+                <div class="text-comment">
+                    <div class="overflow">
+                        двойник???
+
+                    </div>
+                </div>
+                <a href="javascript:void(0);" answer="23066674">Ответить</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<section class="box-panel rocon">
+    <div class="head">
+        Новые авто
+        <a class="area" href="/newauto/search" target="_blank" title="Перейти к поиску новых авто">Смотреть все</a>
+    </div>
+    <div class="informer__newcars">
+
+        <div class="item ">
+            <div class="details-newcar">
+                <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21436]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A1/21436/?stateId=0">
+                    <img alt="Audi A1 Attraction 1.2 TFSI МТ" src="http://img.ria.ua/photos/auto/new_auto/2/258/25812/25812s.jpg" width="85" title="Audi A1 ">
+                </a>
+                <dl class="subscribe-item">
+                    <dt class="title">
+                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[21436]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A1/21436/?stateId=0">
+                        Audi A1 Attraction 1.2 TFSI МТ
+                    </a>
+                    </dt>
+                    <dd class="rows price">
+                        <strong class="green">193 774</strong> грн.
+                    </dd>
+                </dl>
+            </div>
+            <div class="details">
+                <div class="details-layer">
+                    <div class="all-images">
+                        <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21436]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A1/21436/?stateId=0">
+                            <img alt="Audi A1 Attraction 1.2 TFSI МТ" src="http://img.ria.ua/photos/auto/new_auto/2/258/25812/25812m.jpg" title="Audi A1 ">
+                        </a>
+                    </div>
+                    <div class="car-type">
+                        Тип кузова: <strong>Комби (хэтчбек)</strong><br>
+                        Тип топлива: <strong>Бензин</strong><br>
+                        Кол-во дверей: <strong>3</strong><br>
+                        Тип привода: <strong>Передний</strong><br>
+                        Коробка передач: <strong>Механическая</strong><br>
+                        Обьем двигателя, см3: <strong>1197</strong><br>
+                        <span class="boxed view-all">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21436]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A1/21436/?stateId=0">
+                                Подробно
+                            </a>
+                            <i class="icon-view"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item ">
+            <div class="details-newcar">
+                <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21961]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21961/?stateId=0">
+                    <img alt="Audi A4 Allroad 2.0 TFSI (211 л.с.) АT " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1926/192672/192672s.jpg" width="85" title="Audi A4 Allroad ">
+                </a>
+                <dl class="subscribe-item">
+                    <dt class="title">
+                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[21961]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21961/?stateId=0">
+                        Audi A4 Allroad 2.0 TFSI (211 л.с.) АT 
+                    </a>
+                    </dt>
+                    <dd class="rows price">
+                        <strong class="green">43 410</strong> грн.
+                    </dd>
+                </dl>
+            </div>
+            <div class="details">
+                <div class="details-layer">
+                    <div class="all-images">
+                        <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21961]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21961/?stateId=0">
+                            <img alt="Audi A4 Allroad 2.0 TFSI (211 л.с.) АT " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1926/192672/192672m.jpg" title="Audi A4 Allroad ">
+                        </a>
+                    </div>
+                    <div class="car-type">
+                        Тип кузова: <strong>Универсал</strong><br>
+                        Тип топлива: <strong>Бензин</strong><br>
+                        Кол-во дверей: <strong>5</strong><br>
+                        Тип привода: <strong>Полный</strong><br>
+                        Коробка передач: <strong>Механическая роботизированная</strong><br>
+                        Обьем двигателя, см3: <strong>1984</strong><br>
+                        <span class="boxed view-all">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21961]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21961/?stateId=0">
+                                Подробно
+                            </a>
+                            <i class="icon-view"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item last">
+            <div class="details-newcar">
+                <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21960]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21960/?stateId=0">
+                    <img alt="Audi A4 Allroad 2.0 TFSI (211 л.с.) MT " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1926/192672/192672s.jpg" width="85" title="Audi A4 Allroad ">
+                </a>
+                <dl class="subscribe-item">
+                    <dt class="title">
+                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[21960]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21960/?stateId=0">
+                        Audi A4 Allroad 2.0 TFSI (211 л.с.) MT 
+                    </a>
+                    </dt>
+                    <dd class="rows price">
+                        <strong class="green">41 204</strong> грн.
+                    </dd>
+                </dl>
+            </div>
+            <div class="details">
+                <div class="details-layer">
+                    <div class="all-images">
+                        <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21960]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21960/?stateId=0">
+                            <img alt="Audi A4 Allroad 2.0 TFSI (211 л.с.) MT " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1926/192672/192672m.jpg" title="Audi A4 Allroad ">
+                        </a>
+                    </div>
+                    <div class="car-type">
+                        Тип кузова: <strong>Универсал</strong><br>
+                        Тип топлива: <strong>Бензин</strong><br>
+                        Кол-во дверей: <strong>5</strong><br>
+                        Тип привода: <strong>Полный</strong><br>
+                        Коробка передач: <strong>Механическая</strong><br>
+                        Обьем двигателя, см3: <strong>1984</strong><br>
+                        <span class="boxed view-all">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[21960]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/A4 Allroad/21960/?stateId=0">
+                                Подробно
+                            </a>
+                            <i class="icon-view"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>    
+
+
+
+
+
+
+<div class="informer__market">
+
+    <div class="left-bar__market">
+
+        <dl class="head__informer">
+
+            <dt class="title__informer">Товары для</dt>
+            <dd class="content__informer">
+                <a href="http://market.auto.ria.ua/search_for_auto/Audi /80 (8C,B4)/?utm_source=autoria&utm_medium=informer&utm_campaign=marketmain" target="_blank" class="link__informer" >Audi  80 (8C,B4)</a>
+            </dd>
+        </dl>
+
+        <div class="boxed">
+
+            <ol class="unordered-list list__market">
+                <li>
+                    <a href="http://market.auto.ria.ua/shina?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">шины</a>
+                </li>
+                <li>
+                    <a href="http://market.auto.ria.ua/diski?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">диски</a>
+                </li>
+                <li>
+                    <a href="http://market.auto.ria.ua/car_seats?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">автокресла</a>
+                </li>
+            </ol>
+            <ol class="unordered-list list__market">
+                <li>
+                    <a href="http://market.auto.ria.ua/antiradar/?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">антирадары</a>
+                </li>
+                <li>
+                    <a href="http://market.auto.ria.ua/radio/?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">автомагнитолы</a>
+                </li>
+                <li>
+                    <a href="http://market.auto.ria.ua/acoustic/?utm_source=autoria&utm_medium=informer&utm_campaign=marketcategory">автоакустика</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="wrapper__market">
+        <div class="boxed">
+
+
+
+            <div class="item__market">
+                <a class="photo__market" href="http://market.auto.ria.ua/dvrs-item-85785.html?utm_source=autoria&utm_medium=informer&utm_campaign=markettovar" title="Видеорегистраторы">
+                    <img class="img__market" alt="Видеорегистраторы" width="82" src="http://img.ria.ua/photos/auto/treba/24/2409/240915/240915s.jpg" />
+                </a>
+                <div class="content__market">
+                    <a class="head__market" href="http://market.auto.ria.ua/dvrs-item-85785.html?utm_source=autoria&utm_medium=informer&utm_campaign=markettovar" title="Видеорегистраторы">
+                        AEE Magicam CD21 Car Edition
+                    </a>
+
+                    <p class="desc__market">Видеорегистраторы</p>
+                    <div class="price__market">
+                        <span class="count__market">1836</span>грн.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="item__market">
+                <a class="photo__market" href="http://market.auto.ria.ua/car_seats-item-87155.html?utm_source=autoria&utm_medium=informer&utm_campaign=markettovar" title="Детские автокресла">
+                    <img class="img__market" alt="Детские автокресла" width="82" src="http://img.ria.ua/photos/auto/treba/26/2633/263313/263313s.jpg" />
+                </a>
+                <div class="content__market">
+                    <a class="head__market" href="http://market.auto.ria.ua/car_seats-item-87155.html?utm_source=autoria&utm_medium=informer&utm_campaign=markettovar" title="Детские автокресла">
+                        Chicco Eletta 0+/1 (79218.01)
+                    </a>
+
+                    <p class="desc__market">Детские автокресла</p>
+                    <div class="price__market">
+                        <span class="count__market">1525</span>грн.
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<section class="box-panel rocon">
+    <p>
+        <strong>СРОЧНЫЙ  ВЫКУП </strong>легковых авто украинской регистрации на выгодных для Вас условиях.&nbsp;<br />
+        (066)049-69-72, (067) 346-13-96, (050) 750-39-11,<strong>avtovikupsergey@mail.ru, http://avtoturbo.com/</strong>&nbsp;
+    </p>
+</section>
+
+<section class="box-panel rocon">
+    <p>
+        Срочный<strong> ВЫКУП АВТО</strong> укр. регистрации. Не старше 2000г. Реальная цена. Мгновенный расчет. Выкуп кредит.авто 099 4334343, 067 6173214, 050 4625055, <strong>www.auto-dealer.com.ua</strong>
+    </p>
+</section>
+
+<section class="box-panel rocon">
+    <p>
+        <strong>ТЕРМІНОВИЙ ВИКУП</strong> автомобілів на вигідних умовах (укр.реєстрації з 2000р.в.)&nbsp;<strong>Автосалон &quot;РІК АВТО&quot;,</strong>&nbsp;тел: (093)1595050; (067)1834433; (066)0295129; (095)3834433; <strong>http://rikauto.com.ua/</strong>
+    </p>
+</section>
+
+
+
+
+
+
+
+<section class="box-panel rocon" id="final_page__similar_ads">
+    <div class="head">
+        Похожие объявления
+        <a href="/car/audi/80/?page=0" class="area">Смотреть все</a>
+    </div>
+    <div class="similar-ads">
+
+        <div class="item__prewcars">
+            <a class="photo-85x56" href="/auto_audi_80_11082033.html" target="_blank">
+                <img src="http://img.ria.ua/photosnew/auto/photo/audi_80__79137070lx.jpg" width="85">
+            </a>
+            <dl class="subscribe-item">
+                <dt class="title">
+                <a href="/auto_audi_80_11082033.html" target="_blank">
+                    Audi 80  
+                </a>
+                </dt>
+                <dd class="rows">1987 г.в., 1 тыс.км</dd>
+                <dd class="rows price">
+                    $<strong class="green">3 500</strong>
+                </dd>
+            </dl>
+        </div>
+
+
+        <div class="item__prewcars">
+            <a class="photo-85x56" href="/auto_audi_80_11063347.html" target="_blank">
+                <img src="http://img.ria.ua/photosnew/auto/photo/audi_80__78928789lx.jpg" width="85">
+            </a>
+            <dl class="subscribe-item">
+                <dt class="title">
+                <a href="/auto_audi_80_11063347.html" target="_blank">
+                    Audi 80 сс
+                </a>
+                </dt>
+                <dd class="rows">1985 г.в., 106 тыс.км</dd>
+                <dd class="rows price">
+                    $<strong class="green">3 000</strong>
+                </dd>
+            </dl>
+        </div>
+
+
+        <div class="item__prewcars">
+            <a class="photo-85x56" href="/auto_audi_80_10964925.html" target="_blank">
+                <img src="http://img.ria.ua/photosnew/auto/photo/audi_80__77858674lx.jpg" width="85">
+            </a>
+            <dl class="subscribe-item">
+                <dt class="title">
+                <a href="/auto_audi_80_10964925.html" target="_blank">
+                    Audi 80 
+                </a>
+                </dt>
+                <dd class="rows">1986 г.в., 270 тыс.км</dd>
+                <dd class="rows price">
+                    $<strong class="green">2 700</strong>
+                </dd>
+            </dl>
+        </div>
+
+
+        <div class="item__prewcars">
+            <a class="photo-85x56" href="/auto_audi_80_10993228.html" target="_blank">
+                <img src="http://img.ria.ua/photosnew/auto/photo/audi_80__78170807lx.jpg" width="85">
+            </a>
+            <dl class="subscribe-item">
+                <dt class="title">
+                <a href="/auto_audi_80_10993228.html" target="_blank">
+                    Audi 80 b2
+                </a>
+                </dt>
+                <dd class="rows">1986 г.в., 293 тыс.км</dd>
+                <dd class="rows price">
+                    $<strong class="green">3 000</strong>
+                </dd>
+            </dl>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="box-panel">
+    <h4 class="head">
+        Последние новости:
+    </h4>
+    <div class="panel-wrap">
+        <ol class="unordered-list">
+
+            <li class="item-news">
+                <a href="/news/events/207049" target="_blank">На Столичном шоссе открылся новый автосалон Maserati</a>
+                <em class="date">06.05.2013</em>
+            </li>
+
+
+            <li class="item-news">
+                <a href="/news/auto/207050" target="_blank">Great Wall выводит на рынок новый модельный ряд кроссоверов Haval</a>
+                <em class="date">06.05.2013</em>
+            </li>
+
+
+            <li class="item-news">
+                <a href="/news/auto/207051" target="_blank">Volkswagen Polo раскрыл суть бытия</a>
+                <em class="date">06.05.2013</em>
+            </li>
+
+
+            <li class="item-news">
+                <a href="/news/events/207052" target="_blank">Себастьен Леб победил на ралли WRC в Аргентине</a>
+                <em class="date">06.05.2013</em>
+            </li>
+
+
+            <li class="item-news">
+                <a href="/news/autobusiness/207053" target="_blank">Почти все McLaren P1 уже проданы</a>
+                <em class="date">06.05.2013</em>
+            </li>
+
+
+        </ol>
+    </div>
+</section>
+
+
+
+
+<section class="box-panel">
+    <h4 class="head">
+        Модельный ряд Audi на AUTO.ria.ua
+    </h4>
+    <div class="panel-wrap">
+        <div class="catalog-list count-column-two">
+
+            <ol class="unordered-list">
+
+                <li>
+                    Продажа <a href="/car/audi/100/">Ауди 100</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/200/">Ауди 200</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/80/">Ауди 80</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/90/">Ауди 90</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A2/">Ауди А2</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A3/">Ауди А3</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A4/">Ауди А4</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A6/">Ауди А6</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A8/">Ауди А8</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/Allroad/">Ауди Allroad</a>
+                </li>
+
+            </ol>
+
+            <ol class="unordered-list">
+
+                <li>
+                    Продажа <a href="/car/audi/RS6/">Ауди РС6</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/RS4 /">Ауди РС4</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/S3/">Ауди С3</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/S4/">Ауди С4</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/S6/">Ауди С6</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/S8/">Ауди С8</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/V8/">Ауди В8</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/TT/">Ауди TT</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/Q7/">Ауди К7</a>
+                </li>
+
+                <li>
+                    Продажа <a href="/car/audi/A5/">Ауди А5</a>
+                </li>
+
+            </ol>
+
+        </div>
+        <div class="view-all">
+            <a href="/car/audi/">Смотреть все</a>
+            <i class="icon-view"></i>
+        </div>
+    </div>
+</section>
+
+
+
+<a href="javascript:void(0);" id="final_page__to_top" class="navigator text-c">
+    Подняться вверх
+    <i class="icon-up-blue"></i>
+</a>
+
+
+
+<div class="window-fixed hide" id="houses_popup"></div>
+
+
+
+<div class="window-fixed" id="final_page__exchange_popup_container" style="display: none;">
+    <div class="mount-iframe">
+        <iframe></iframe>
+    </div>
+    <div class="popup window-exchange">
+        <div class="wrapper" id="final_page__exchange_popup_wrapper"></div>
+    </div>
+</div>
+
+
+
+<div class="window-fixed" id="final_page__auctions_popup_container" style="display: none;">
+    <div class="mount-iframe">
+        <iframe></iframe>
+    </div>
+    <div class="popup window-auction">
+        <div class="wrapper" id="final_page__auctions_popup_wrapper"></div>
+    </div>
+</div>
+
+
+
+
+<div class="window-absolute" id="final_page__autotest_popup_container" style="display: none;">
+    <div class="mount-iframe">
+        <iframe></iframe>
+    </div>
+    <div class="popup window-fishki" id="final_page__autotest_popup">
+        <div class="wrapper-fishki" id="final_page__autotest_popup_wrapper"></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="mount-window-fixed" id="final_page__autotestdrive_popup_container" style="display: none;">
+    <div class="window-fixed">
+        <div class="mount-iframe">
+            <iframe></iframe>
+        </div>
+    </div>
+    <div class="popup window-testdrive" id="final_page__autotestdrive_popup">
+        <div class="wrapper" id="final_page__autotestdrive_popup_wrapper"></div>
+    </div>
+</div>
+
+
+
+
+<div id="final_page__thanks_popup_container" class="popup popup__sold uarr __left" style=" display: none; width:320px;left:150px;top:240px;">
+    <div class="wrapper grid" id="final_page__thanks_popup_right_shadow">
+
+    </div>
+</div>
+
+
+
+<!--    .BEGIN Right Panel    -->
