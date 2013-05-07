@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Май 06 2013 г., 16:46
+-- Время создания: Май 07 2013 г., 16:46
 -- Версия сервера: 5.5.29
 -- Версия PHP: 5.3.10-1ubuntu3.6
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `cars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `cat_id` int(11) NOT NULL,
   `reg_id` int(11) NOT NULL,
   `model_id` int(11) NOT NULL,
@@ -35,13 +36,14 @@ CREATE TABLE IF NOT EXISTS `cars` (
   `city_id` int(11) NOT NULL,
   `transmission_id` int(11) NOT NULL,
   `drive_id` int(11) NOT NULL,
-  `doors_id` int(11) NOT NULL,
+  `doors` int(1) NOT NULL,
   `fuel_id` int(11) NOT NULL,
   `color_id` int(11) NOT NULL,
   `safety_id` int(11) NOT NULL,
   `comfort_id` int(11) NOT NULL,
   `multimedia_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
+  `other_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `year` varchar(4) NOT NULL,
@@ -57,10 +59,10 @@ CREATE TABLE IF NOT EXISTS `cars` (
 -- Дамп данных таблицы `cars`
 --
 
-INSERT INTO `cars` (`id`, `cat_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors_id`, `fuel_id`, `color_id`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `added`) VALUES
-(1, 0, 1, 1, 2, 22, 4, 2, 0, 1, 1, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', '2013-04-17 09:00:00'),
-(2, 0, 1, 1, 1, 57, 4, 2, 0, 2, 6, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', '2013-04-09 10:31:32'),
-(3, 0, 1, 2, 2, 3, 1, 3, 0, 4, 9, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', '0000-00-00 00:00:00');
+INSERT INTO `cars` (`id`, `user_id`, `cat_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors`, `fuel_id`, `color_id`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `other_id`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `added`) VALUES
+(1, 1, 0, 1, 1, 2, 22, 4, 2, 4, 1, 1, 0, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', '2013-04-17 09:00:00'),
+(2, 1, 0, 1, 1, 1, 57, 4, 2, 4, 2, 6, 0, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', '2013-04-09 10:31:32'),
+(3, 2, 0, 1, 2, 2, 3, 1, 3, 5, 4, 9, 0, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', '2013-01-12 08:11:00');
 
 -- --------------------------------------------------------
 
@@ -73,6 +75,32 @@ CREATE TABLE IF NOT EXISTS `car_comfort` (
   `comfort_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `car_comfort`
+--
+
+INSERT INTO `car_comfort` (`car_id`, `comfort_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 5),
+(3, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +111,56 @@ CREATE TABLE IF NOT EXISTS `car_multimedia` (
   `car_id` int(11) NOT NULL,
   `multimedia_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `car_multimedia`
+--
+
+INSERT INTO `car_multimedia` (`car_id`, `multimedia_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(3, 1),
+(3, 2),
+(3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `car_other`
+--
+
+CREATE TABLE IF NOT EXISTS `car_other` (
+  `car_id` int(11) NOT NULL,
+  `other_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `car_other`
+--
+
+INSERT INTO `car_other` (`car_id`, `other_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -95,6 +173,28 @@ CREATE TABLE IF NOT EXISTS `car_safety` (
   `safety_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `car_safety`
+--
+
+INSERT INTO `car_safety` (`car_id`, `safety_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +205,30 @@ CREATE TABLE IF NOT EXISTS `car_state` (
   `car_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `car_state`
+--
+
+INSERT INTO `car_state` (`car_id`, `state_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 5),
+(3, 6);
 
 -- --------------------------------------------------------
 
@@ -2654,7 +2778,29 @@ CREATE TABLE IF NOT EXISTS `comfort` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attr` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+
+--
+-- Дамп данных таблицы `comfort`
+--
+
+INSERT INTO `comfort` (`id`, `attr`) VALUES
+(1, 'Бортовой компьютер '),
+(2, 'Датчик света '),
+(3, 'Климат контроль '),
+(4, 'Кожаный салон '),
+(5, 'Кондиционер '),
+(6, 'Круиз контроль '),
+(7, 'Люк'),
+(8, 'Мультируль '),
+(9, 'Омыватель фар '),
+(10, 'Парктроник '),
+(11, 'Подогрев зеркал '),
+(12, 'Подогрев сидений '),
+(13, 'Сенсор дождя '),
+(14, 'Усилитель руля '),
+(15, 'Эл. стеклоподъемники'),
+(16, 'Электропакет');
 
 -- --------------------------------------------------------
 
@@ -2784,7 +2930,46 @@ CREATE TABLE IF NOT EXISTS `multimedia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attr` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Дамп данных таблицы `multimedia`
+--
+
+INSERT INTO `multimedia` (`id`, `attr`) VALUES
+(1, 'CD '),
+(2, 'DVD '),
+(3, 'MP3 '),
+(4, 'Акустика '),
+(5, 'Магнитола '),
+(6, 'Сабвуфер'),
+(7, 'Система навигации GPS ');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `other`
+--
+
+CREATE TABLE IF NOT EXISTS `other` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `attr` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `other`
+--
+
+INSERT INTO `other` (`id`, `attr`) VALUES
+(1, 'Газовая установка (ГБО) '),
+(2, 'Дерево '),
+(3, 'Длинная база'),
+(4, 'Кузов MAXI'),
+(5, 'Правый руль '),
+(6, 'Тонирование стекол '),
+(7, 'Тюнинг '),
+(8, 'Фаркоп');
 
 -- --------------------------------------------------------
 
@@ -2839,7 +3024,24 @@ CREATE TABLE IF NOT EXISTS `safety` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attr` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Дамп данных таблицы `safety`
+--
+
+INSERT INTO `safety` (`id`, `attr`) VALUES
+(1, 'ABD '),
+(2, 'ABS '),
+(3, 'ESP'),
+(4, 'Галогенные фары'),
+(5, 'Замок на КПП '),
+(6, 'Иммобилайзер '),
+(7, 'Пневмоподвеска '),
+(8, 'Подушка безопасности (Airbag) '),
+(9, 'Серворуль '),
+(10, 'Сигнализация '),
+(11, 'Центральный замок ');
 
 -- --------------------------------------------------------
 
@@ -2869,7 +3071,24 @@ CREATE TABLE IF NOT EXISTS `state` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attr` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Дамп данных таблицы `state`
+--
+
+INSERT INTO `state` (`id`, `attr`) VALUES
+(1, 'Гаражное хранение '),
+(2, 'Не бит '),
+(3, 'Не крашен '),
+(4, 'Ручное управление '),
+(5, 'Сервисная книжка '),
+(6, 'Нерастаможенный '),
+(7, 'После ДТП '),
+(8, 'Не на ходу'),
+(9, 'Взято в кредит '),
+(10, 'Автоконфискат'),
+(11, 'Пригнан из');
 
 -- --------------------------------------------------------
 
@@ -2893,6 +3112,38 @@ INSERT INTO `transmission` (`id`, `type`) VALUES
 (3, 'Вариатор'),
 (4, 'Ручная / Механика'),
 (5, 'Типтроник');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `old_password` varchar(255) NOT NULL,
+  `secret` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `skype` varchar(255) NOT NULL,
+  `status` enum('pending','confirmed','waiting','ch_mail') NOT NULL DEFAULT 'pending',
+  `enabled` enum('yes','no') NOT NULL DEFAULT 'yes',
+  `avatar` varchar(255) NOT NULL,
+  `added` datetime NOT NULL,
+  `last_login` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `old_password`, `secret`, `first_name`, `last_name`, `email`, `skype`, `status`, `enabled`, `avatar`, `added`, `last_login`) VALUES
+(1, 'serg__666', '666666a', '666666a', 'asdNDa', 'Сергей', 'Веретило', 'sergey.veretilo@gmail.com', 'veretilo_sergei', 'confirmed', 'yes', '', '2008-02-14 14:17:00', '2013-05-07 10:22:00'),
+(2, 'dima', '666666a', '666666a', 'sdg12C', 'Дмитрий', 'Головко', 'dima.golovko@gmail.com', 'dima_golovko', 'confirmed', 'yes', '', '2013-05-06 23:08:35', '2013-05-07 05:17:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -125,12 +125,13 @@
             <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">
             <dl class="info-user">
                 <dt class="user-name">
-                cта
+                <?php echo $this->data->username; ?>
                 </dt>
                 <dd class="item">
                     Город:
                     <strong>
-                        Умань Черкасская обл.
+                        <?php echo $this->data->city_name; ?><br>
+                        <?php echo $this->data->reg_name; ?>
                     </strong>
                 </dd>
                 <dd class="item">
@@ -140,12 +141,11 @@
                 </dd>
                 <dd class="item">
                     Пользуется сайтом: <strong>
-                        7 
-                        месяцев
+                        <?php echo $this->elapsed_time; ?>
                     </strong>
                 </dd>
                 <dd class="item">
-                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014">загрузка...</strong>
+                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014"><?php echo $this->reg_time; ?> назад</strong>
                 </dd>
             </dl>
             <div class="characteristic contact-data-seller">
@@ -211,13 +211,13 @@
         <div class="characteristic delimeter">
             <p class="item-param">
                 <i class="icon-added-item"></i>
-                Размещено: <strong id="final_page__add_date" date="2013-05-01 15:00:42">2013-05-01 15:00:42</strong>
+                Размещено: <strong id="final_page__add_date" date="<?php echo $this->data->added; ?>"><?php echo $this->data->added; ?></strong>
             </p><p class="item-param">
                 <i class="icon-views"></i>
                 Всего просмотров: <strong id="final_page__views_counter" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Демонстрирует сколько потенциальных покупателей просмотрело объявление." ria_ppih_position_orientation="right">загрузка...</strong>
             </p><p class="item-param">
                 <i class="icon-id-item"></i>
-                ID автомобиля: <strong>11066447</strong>
+                ID автомобиля: <strong><?php echo $this->data->id; ?></strong>
             </p>
 
         </div>
@@ -414,45 +414,57 @@
 
                 <section class="box-panel">
                     <div class="title bold">
-                        Описание Audi 80 1995
+                        <?php echo $this->data->title; ?> <?php echo $this->data->year; ?>
                     </div>
                     <div class="box-panel rocon">
-
-
-                        <p class="additional-data">
-                            <strong>
-
-                                Комфорт
-                                :
-                            </strong>
-                            Кожаный салон, Кондиционер, Люк, Подогрев зеркал, Подогрев сидений, Усилитель руля, Эл. стеклоподъемники, Электропакет
-                        </p>
-
-                        <p class="additional-data">
-                            <strong>
-
-                                Мультимедиа
-                                :
-                            </strong>
-                            CD, MP3
-                        </p>
-
-                        <p class="additional-data">
-                            <strong>
-
-                                Безопасность
-                                :
-                            </strong>
-                            ABS, Подушка безопасности (Airbag), Сигнализация, Центральный замок
-                        </p>
-
-
-                        <p class="description-order">
-
-                            очень быстрый и удобобный <a href="http://www.ria.ua/Services/Lease-rent/avtomobil/" title="автомобиль" target="_blank">автомобиль</a>...
-
-                        </p>
-
+                        <?php if($this->comfort != null){ ?>
+                                <p class="additional-data">
+                                    <strong>
+                                        Комфорт
+                                        :
+                                    </strong>
+                             <?php foreach($this->comfort as $attr){ 
+                                    echo $attr['attr'] . ", ";
+                                   } ?>       
+                                </p>
+                        <?php } ?>
+                        <?php if($this->multimedia != null){ ?>
+                                <p class="additional-data">
+                                    <strong>
+                                        Мультимедиа
+                                        :
+                                    </strong>
+                                    <?php foreach($this->multimedia as $attr){ 
+                                    echo $attr['attr'] . ", ";
+                                   } ?>    
+                                </p>
+                        <?php } ?>
+                        <?php if($this->safety != null){ ?>
+                                <p class="additional-data">
+                                    <strong>
+                                        Безопасность
+                                        :
+                                    </strong>
+                                    <?php foreach($this->safety as $attr){ 
+                                    echo $attr['attr'] . ", ";
+                                   } ?>    
+                                </p>
+                        <?php } ?>
+                        <?php if($this->state != null){ ?>
+                                <p class="additional-data">
+                                    <strong>
+                                        Состояние
+                                        :
+                                    </strong>
+                                    <?php foreach($this->state as $attr){ 
+                                    echo $attr['attr'] . ", ";
+                                   } ?>    
+                                </p>
+                        <?php } ?>
+                                <p class="description-order">
+                                    очень быстрый и удобобный <a href="http://www.ria.ua/Services/Lease-rent/avtomobil/" title="автомобиль" target="_blank">автомобиль</a>...
+                                </p>
+                                
                     </div>
                 </section>
                 <div id="380x60_2_place"></div>
@@ -461,15 +473,9 @@
                 </p>
                 <div id="380x60_3_place"></div>
 
-
-
-
-
                 <section class="box-panel">
                     <div class="title bold">
-
                         Страховые компании
-
                     </div>
                     <div class="box-panel rocon">
                         <div class="informer__insurance">
@@ -480,30 +486,22 @@
                                 <img src="http://img.ria.ua/photos/auto/autoinsurance/0/2/287/287s.jpg" width="100" alt="" title=""> 
                                 <span class="name">Страховой брокер СЕМЕНЮК</span>
                             </a>
-
-
-
-
                             <a 
                                 href="/golink/?http://avtocivilka.kiev.ua" target="_blank"
                                 class="item" onclick="_gaq.push(['_trackEvent', 'Avtostrahovanie', 'Click_on_Logo_[99]_Avtocivilka.kiev.ua', 'Page_Ad']);">
                                 <img src="http://img.ria.ua/photos/auto/autoinsurance/0/0/99/99s.jpg" width="100" alt="" title=""> 
                                 <span class="name">Avtocivilka.kiev.ua</span>
                             </a>
-
-
-
-
                             <a 
                                 href="/golink/?http://osgpo.com.ua/" target="_blank"
                                 class="item" onclick="_gaq.push(['_trackEvent', 'Avtostrahovanie', 'Click_on_Logo_[316]_OSGPO.com.ua', 'Page_Ad']);">
                                 <img src="http://img.ria.ua/photos/auto/autoinsurance/0/3/316/316s.jpg" width="100" alt="" title=""> 
                                 <span class="name">OSGPO.com.ua</span>
                             </a>
-
                         </div>
                     </div>
                 </section>
+                
             </div>
         </div>
     </div>

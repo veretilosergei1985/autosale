@@ -8,6 +8,7 @@ class Application_Model_Cars
     protected $_id;
     protected $_mapper;
     protected $_year;
+protected $_user_id;
     
     
     public function __construct(array $options = null)
@@ -103,6 +104,9 @@ class Application_Model_Cars
     public function save()
     {
         $this->getMapper()->save($this);
+    }
+    public function getAttributesById($id, $table_name) {
+        return $this->getMapper()->getAttributesById($id, $table_name);
     }
     public function find($id)
     {
