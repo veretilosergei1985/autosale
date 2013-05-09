@@ -65,7 +65,8 @@ class IndexController extends Zend_Controller_Action
         
         //echo "<pre>"; print_r($this->view->safety); exit;
     }
-
+    
+    
 
 }
 

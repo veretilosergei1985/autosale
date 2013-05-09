@@ -60,37 +60,42 @@ jQuery(function() {
     
     jQuery('#final_page__mail_to_seller').live('click',function(e) {
         e.preventDefault();
-       
-        var html =
-            '<div class="popup  uarr __left" style="width: 346px;" id="final_page__send_message_popup_container">'+
-                '<form class="grid wrapper" action="/ajax.php?target=messages&event=sendMail" id="final_page__send_message_form">'+
-                    '<a class="close" href="javascript:void(0);" id="final_page__send_message_close_popup">×</a>'+
-                    '<input name="user_id" type="hidden" id="final_page__send_message_user_id"/>'+
-                    '<input name="autoIdToSend" type="hidden" id="final_page__send_message_auto_id"/>'+
-                    '<div class="title bold">'+
-                        'Отправить сообщение'+
-                    '</div>'+
-                    '<p class="rows">'+
-                        '<input class="span3" placeholder="ФИО" type="text" id="final_page__send_message_fio" name="fio" tabindex="1">'+
-                    '</p>'+
-                   '<p class="rows">'+
-                        '<input class="span3" placeholder="email" type="text" id="final_page__send_message_email" name="email" tabindex="2">'+
-                    '</p>'+
-                    '<p class="rows">'+
-                        '<input class="span3" placeholder="Телефон" type="text" id="final_page__send_message_phone" name="phone" tabindex="3">'+
-                    '</p>'+
-                    '<p class="rows">'+
-                        '<textarea placeholder="Текст сообщения" class="boxed" id="final_page__send_message_message" name="message" cols="30" rows="5" tabindex="4"></textarea>'+
-                    '</p>'+
-                    '<p class="help-block">Сообщение будет отправлено на электронную почту продавца от вашего электронного адреса <span id="final_page__send_message_email_user"></span></p>'+
-                    '<div class="button-bar">'+
-                        '<input type="submit" class="button green" value="Отправить сообщение" tabindex="5">'+
-                        '<a href="javascript:void(0);" class="button" id="final_page__send_message_cancel_button" tabindex="6">Отмена</a>'+
-                    '</div>'+
-                '</form>'+
-            '</div>';
-               
-        $(this).prepend(html);
+        var elem = $(this);
+        var user_id = $(elem).attr('rel');
+        
+          jQuery.ajax({
+                url: $(this).attr('href'),
+                type:'POST',
+                data: {'user_id': user_id},
+                success: function(res) {
+     
+                    $(elem).after(res);
+
+                }
+            }); 
+   
+    });
+    
+    jQuery('#final_page__send_message_form input[type="submit"]').live('click',function(e) {
+        e.preventDefault();
+        
+        jQuery.ajax({
+                url: 'ajax/send',
+                type:'POST',
+                data: $("#final_page__send_message_form").serialize(),
+                success: function(res) {
+     
+                    //$(elem).after(res);
+
+                }
+            }); 
+   
+    });
+    
+     jQuery('#final_page__send_message_close_popup').live('click',function(e) {
+        e.preventDefault();
+        
+        $('#final_page__send_message_popup_container').remove();
     
     });
            
