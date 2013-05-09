@@ -26,7 +26,47 @@ class IndexController extends Zend_Controller_Action
         $this->view->er = $data->rate/100;
         
     }
+    
+    public function viewAction()
+    {
+        $id = $this->_getParam('id');
+        
+        $carsModel = new Application_Model_Cars();
+        //$data = $carsModel->find($id)->toArray();
+        $data = $carsModel->find($id);
+        $this->view->data = $data;
+         //echo "<pre>"; print_r($this->view->data); exit;
+        
+        $er = new Base_Exchange();
+        $usd = $er->getExchangeRateByChar3("USD");
+        $eur = $er->getExchangeRateByChar3("EUR");
+        
+        $this->view->usd = $usd->rate/100;
+        $this->view->eur = $eur->rate/100;
+        $this->view->rel = floatval($this->view->eur)/floatval($this->view->usd);
 
+        $elapsed_time = new Base_ElapsedTime();
+        $this->view->elapsed_time = $elapsed_time->get_elapsed_time(strtotime($data['user_added']));
+        $this->view->reg_time = $elapsed_time->get_reg_time(strtotime($data['last_login']));
+        
+        // get full characteristics
+        $safety = $carsModel->getAttributesById($id, 'safety');
+        $comfort = $carsModel->getAttributesById($id, 'comfort');
+        $other = $carsModel->getAttributesById($id, 'other');
+        $multimedia = $carsModel->getAttributesById($id, 'multimedia');
+        $state = $carsModel->getAttributesById($id, 'state');
+        
+        $this->view->safety = $safety; 
+        $this->view->comfort = $comfort;
+        $this->view->other = $other;
+        $this->view->multimedia = $multimedia;
+        $this->view->state = $state;
+                
+        
+        //echo "<pre>"; print_r($this->view->safety); exit;
+    }
+    
+    
 
 }
 

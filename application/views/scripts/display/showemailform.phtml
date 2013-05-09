@@ -1,0 +1,27 @@
+<div class="popup  uarr __left" style="width: 346px;" id="final_page__send_message_popup_container">
+                <form method='post' class="grid wrapper" action="<?php echo $this->getHelper('url')->url(array('controller' => 'ajax','action' => 'send'), null, true); ?>" id="final_page__send_message_form">
+                   <a class="close" href="javascript:void(0);" id="final_page__send_message_close_popup">×</a>
+                   <input name="user_id" type="hidden" id="final_page__send_message_user_id"/>
+                   <input name="autoIdToSend" type="hidden" id="final_page__send_message_auto_id"/>
+                   <div class="title bold">
+                        Отправить сообщение
+                   </div>
+                   <p class="rows">
+                       <input class="span3" placeholder="ФИО" type="text" id="final_page__send_message_fio" name="fio" tabindex="1" value="<?php echo $this->data->getFirstName() . " " . $this->data->getLastName(); ?>" readonly="">
+                   </p>
+                   <p class="rows">
+                        <input class="span3" placeholder="email" type="text" id="final_page__send_message_email" name="email" tabindex="2" value="sergey.veretilo@gmail.com" readonly="">
+                    </p>
+                    <p class="rows">
+                        <input class="span3" placeholder="Телефон" type="text" id="final_page__send_message_phone" name="phone" tabindex="3">
+                    </p>
+                    <p class="rows">
+                        <textarea placeholder="Текст сообщения" class="boxed" id="final_page__send_message_message" name="message" cols="30" rows="5" tabindex="4" value="Привет"></textarea>
+                    </p>
+                    <p class="help-block">Сообщение будет отправлено на электронную почту продавца от вашего электронного адреса <span id="final_page__send_message_email_user"></span></p>
+                    <div class="button-bar">
+                        <input type="submit" class="button green" value="Отправить сообщение" tabindex="5">
+                        <a href="javascript:void(0);" class="button" id="final_page__send_message_cancel_button" tabindex="6">Отмена</a>
+                    </div>
+                </form>
+            </div>

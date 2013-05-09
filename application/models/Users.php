@@ -1,15 +1,16 @@
 <?php
 
-class Application_Model_Cars
+class Application_Model_Users
 {
-    protected $_title;
-    protected $_description;
-    protected $_added;
     protected $_id;
-    protected $_mapper;
-    protected $_year;
-protected $_user_id;
+    protected $_username;
+    protected $_password;
+    protected $_first_name;
+    protected $_last_name;
+    protected $_email;
     
+    protected $_mapper;
+   
     
     public function __construct(array $options = null)
     {
@@ -44,42 +45,43 @@ protected $_user_id;
         }
         return $this;
     }
-    public function setTitle($title)
+     public function setFirstName($val)
     {
-        $this->_title = (string) $title;
+        $this->_first_name = (string) $val;
         return $this;
     }
-    public function getTitle()
+    public function getFirstName()
     {
-        return $this->_title;
+        return $this->_first_name;
     }
-    public function setDescription($desc)
+    public function setLastName($val)
     {
-        $this->_description = (string) $desc;
+        $this->_last_name = (string) $val;
         return $this;
     }
-    public function getDescription()
+    public function getLastName()
     {
-        return $this->_description;
+        return $this->_last_name;
     }
-    public function setAdded($ts)
+    public function setUsername($val)
     {
-        $this->_added = $ts;
+        $this->_username = (string) $val;
         return $this;
     }
-    public function getAdded()
+    public function getUsername()
     {
-        return $this->_added;
+        return $this->_username;
     }
-    public function setYear($val)
+    public function setEmail($val)
     {
-        $this->_year = $val;
+        $this->_email = (string) $val;
         return $this;
     }
-    public function getYear()
+    public function getEmail()
     {
-        return $this->_year;
+        return $this->_email;
     }
+  
     public function setId($id)
     {
         $this->_id = (int) $id;
@@ -97,7 +99,7 @@ protected $_user_id;
     public function getMapper()
     {
         if (null === $this->_mapper) {
-            $this->setMapper(new Application_Model_CarsMapper());
+            $this->setMapper(new Application_Model_UsersMapper());
         }
         return $this->_mapper;
     }
@@ -105,22 +107,17 @@ protected $_user_id;
     {
         $this->getMapper()->save($this);
     }
-    public function getAttributesById($id, $table_name) {
-        return $this->getMapper()->getAttributesById($id, $table_name);
-    }
+   
     public function find($id)
     {
-        return $this->getMapper()->find($id);
+        $this->getMapper()->find($id, $this);
+        return $this;
     }
     public function fetchAll()
     {
         return $this->getMapper()->fetchAll();
     }
-    
-    public function findAll()
-    {
-        return $this->getMapper()->findAll();
-    }
+        
 }
 
 ?>

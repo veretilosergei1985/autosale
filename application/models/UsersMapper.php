@@ -1,7 +1,7 @@
 <?php
 
 
-class Application_Model_CarsMapper
+class Application_Model_UsersMapper
 {
     protected $_dbTable;
     public function setDbTable($dbTable)
@@ -18,59 +18,43 @@ class Application_Model_CarsMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Cars');
+            $this->setDbTable('Application_Model_DbTable_Users');
         }
         return $this->_dbTable;
     }
-    public function save(Application_Model_Cars $car)
+    public function save(Application_Model_Users $user)
     {
         $data = array(
-            'title'   => $car->getTitle(),
-            'description' => $car->getDescription(),
-            'added' => date('Y-m-d H:i:s'),
+            //'title'   => $car->getTitle(),
+            //'description' => $car->getDescription(),
+            //'added' => date('Y-m-d H:i:s'),
         );
-      if (null === ($id = $car->getId())) {
+      if (null === ($id = $user->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
     }
-    public function find($id)
+    public function find($id, Application_Model_Users $user)
     {
-        $oDbTable = $this->getDbTable();
-        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
-                                      ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
-                                      ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
-                                      ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
-                                      ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
-                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
-                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'title'))
-                                      ->joinLeft('users','users.id = cars.user_id', array('username', 'first_name', 'last_name', 'user_added' => 'added', 'last_login'))
-                                      ->where('cars.id = ?', $id); 
 
-        
-        //echo $oSelect; exit;
-        $oResultSet = $oDbTable->fetchRow($oSelect);        
-        // echo "<pre>"; print_r($oResultSet);  exit;
-               
-        return $oResultSet;
-     
-        
-        /*
         $result = $this->getDbTable()->find($id);
+       
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $car->setId($row->id)
-            ->setTitle($row->title)
-            ->setDesription($row->description)
-            ->setYear($row->year)
-            ->setAdded($row->added);
-         * 
-         */
+
+        $user->setId($row->id)
+                ->setUsername($row->username)
+                ->setFirstName($row->first_name)
+                ->setLastName($row->last_name)
+                ->setEmail($row->email);
+                
+
     }
+    
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();
