@@ -10,14 +10,17 @@ class DisplayController extends Zend_Controller_Action
 
     public function showemailformAction(){
         
-        $user_id = $this->_getParam('user_id');
+        $car_user_id = $this->_getParam('car_user_id');
+        $curr_user_id = $this->_getParam('curr_user_id');
+        
         $this->_helper->layout->disableLayout();
         // проверить залогинен ли пользователь
         
         $user = new Application_Model_Users();
-        $this->view->data = $user->find($user_id);
-//        echo "<pre>"; 
-//        print_r($this->view->data->getUsername()); exit;
+        $this->view->curr_data = $user->find($curr_user_id);
+        $this->view->owner_id = $curr_user_id;
+        
+        
     }
 
 

@@ -1,13 +1,14 @@
 <div class="popup  uarr __left" style="width: 346px;" id="final_page__send_message_popup_container">
-                <form method='post' class="grid wrapper" action="<?php echo $this->getHelper('url')->url(array('controller' => 'ajax','action' => 'send'), null, true); ?>" id="final_page__send_message_form">
+                <form method='post' class="grid wrapper" action="/ajax/send" id="final_page__send_message_form">
                    <a class="close" href="javascript:void(0);" id="final_page__send_message_close_popup">×</a>
                    <input name="user_id" type="hidden" id="final_page__send_message_user_id"/>
+                   <input name="owner_id" type="hidden" id="final_page__send_message_owner_id" value="<?php echo $this->owner_id; ?>"/>
                    <input name="autoIdToSend" type="hidden" id="final_page__send_message_auto_id"/>
                    <div class="title bold">
                         Отправить сообщение
                    </div>
                    <p class="rows">
-                       <input class="span3" placeholder="ФИО" type="text" id="final_page__send_message_fio" name="fio" tabindex="1" value="<?php echo $this->data->getFirstName() . " " . $this->data->getLastName(); ?>" readonly="">
+                       <input class="span3" placeholder="ФИО" type="text" id="final_page__send_message_fio" name="fio" tabindex="1" value="<?php echo $this->curr_data->getFirstName() . " " . $this->curr_data->getLastName(); ?>" readonly="">
                    </p>
                    <p class="rows">
                         <input class="span3" placeholder="email" type="text" id="final_page__send_message_email" name="email" tabindex="2" value="sergey.veretilo@gmail.com" readonly="">
