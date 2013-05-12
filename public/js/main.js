@@ -61,15 +61,17 @@ jQuery(function() {
     jQuery('#final_page__mail_to_seller').live('click',function(e) {
         e.preventDefault();
         var elem = $(this);
-        var user_id = $(elem).attr('rel');
+        var car_user_id = $(elem).attr('rel');
+        var curr_user_id = $(elem).data('currentuser');
         
           jQuery.ajax({
                 url: $(this).attr('href'),
                 type:'POST',
-                data: {'user_id': user_id},
+                data: {'car_user_id': car_user_id, 'curr_user_id' : curr_user_id },
                 success: function(res) {
      
                     $(elem).after(res);
+                    
 
                 }
             }); 
@@ -80,12 +82,12 @@ jQuery(function() {
         e.preventDefault();
         
         jQuery.ajax({
-                url: 'ajax/send',
+                url: '/ajax/send',
                 type:'POST',
                 data: $("#final_page__send_message_form").serialize(),
                 success: function(res) {
      
-                    //$(elem).after(res);
+                    $('#final_page__send_message_popup_container').remove();
 
                 }
             }); 
