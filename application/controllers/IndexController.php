@@ -19,7 +19,18 @@ class IndexController extends Zend_Controller_Action
 
 //        echo "<pre>";
 //        print_r($carsModel->findAll()); exit;
-        $this->view->list = $carsModel->findAll();
+        //$this->view->list = $carsModel->findAll();
+        
+        
+        $result =  $carsModel->findAll();
+        $page=$this->_getParam('p',1);
+        
+        $paginator = Zend_Paginator::factory($result);
+        $paginator->setItemCountPerPage(2);
+        $paginator->setCurrentPageNumber($page);
+
+        $this->view->paginator=$paginator;    
+        
         
         $er = new Base_Exchange();
         $data = $er->getExchangeRateByChar3("USD");
@@ -46,24 +57,29 @@ class IndexController extends Zend_Controller_Action
         $this->view->rel = floatval($this->view->eur)/floatval($this->view->usd);
 
         $elapsed_time = new Base_ElapsedTime();
-        $this->view->elapsed_time = $elapsed_time->get_elapsed_time(strtotime($data['user_added']));
-        $this->view->reg_time = $elapsed_time->get_reg_time(strtotime($data['last_login']));
+        //$this->view->elapsed_time = $elapsed_time->get_elapsed_time(strtotime($data['user_added']));
+        //$this->view->reg_time = $elapsed_time->get_reg_time(strtotime($data['last_login']));
         
         // get full characteristics
         $safety = $carsModel->getAttributesById($id, 'safety');
         $comfort = $carsModel->getAttributesById($id, 'comfort');
-        $other = $carsModel->getAttributesById($id, 'other');
+        //$other = $carsModel->getAttributesById($id, 'other');
         $multimedia = $carsModel->getAttributesById($id, 'multimedia');
         $state = $carsModel->getAttributesById($id, 'state');
         
         $this->view->safety = $safety; 
         $this->view->comfort = $comfort;
-        $this->view->other = $other;
+        //$this->view->other = $other;
         $this->view->multimedia = $multimedia;
         $this->view->state = $state;
                 
         
+        
         //echo "<pre>"; print_r($this->view->safety); exit;
+    }
+    
+    public function testAction(){
+        echo "1111111111"; exit;
     }
     
     

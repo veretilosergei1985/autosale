@@ -1,0 +1,182 @@
+<div class="float-popover shadow__trapezoid">
+    <div id="authblock__addcars" class="authentication">
+        <div class="mount-iframe white-style" style="height: 1300px;">
+            <iframe>
+            <html>
+                <head></head>
+                <body></body>
+            </html>
+            </iframe>
+        </div>
+        <div class="indent-panel">
+            <p class="warning">
+                Прежде чем приступить к добавлению информации об автомобиле,
+                <strong>укажите свои контактные данные</strong>
+                , по которым покупатели смогут с Вами связаться:
+            </p>
+            <div class="form-registration">
+                <div class="wrapper-form">
+                    <div class="title bold line"> Информация о владельце: </div>
+                    <div id="registrationerrors__addcars" class="error" style="display: none;"> </div>
+                    <form id="registrationform__addcars" class="grid grid-span2" action="/user/register">
+                        <div class="rows">
+                            <label class="label" for="registrationemail_addcars">
+                                Email:
+                                <ins>*</ins>
+                            </label>
+                            <div class="input">
+                                <input id="registrationemail_addcars" class="span3" type="text" name="email" tabindex="1">
+                                <span class="hint-popup">
+                                    <i class="icon-help-grey js-icon-help" title="Нажмите чтобы увидеть подсказку"></i>
+                                    <span class="tooltip darr __right hide">
+                                        <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                        Введите Ваш адрес электронной почты. Допустимо использовать только латинские буквы и цифры.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <label class="label" for="registrationpasswd__addcars">
+                                Пароль:
+                                <ins>*</ins>
+                            </label>
+                            <div class="input">
+                                <input id="registrationpasswd__addcars" class="span3" type="password" name="password" tabindex="2">
+                                <span class="hint-popup">
+                                    <i class="icon-help-grey js-icon-help" title="Нажмите чтобы увидеть подсказку"></i>
+                                    <span class="tooltip darr __right hide">
+                                        <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                        Пароль может содержать от 6 до 24 символов.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <label class="label" for="registrationrepeatpasswd__addcars">
+                                Повторите пароль:
+                                <ins>*</ins>
+                            </label>
+                            <div class="input">
+                                <input id="registrationrepeatpasswd__addcars" class="span3" type="password" name="password_repeat" tabindex="3">
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <label class="label" for="registrationname__addcars">
+                                Имя:
+                                <ins>*</ins>
+                            </label>
+                            <div class="input">
+                                <input id="registrationname__addcars" class="span3" type="text" maxlength="40" name="username" tabindex="4">
+                                <span class="hint-popup">
+                                    <i class="icon-help-grey js-icon-help" title="Нажмите чтобы увидеть подсказку"></i>
+                                    <span class="tooltip darr __right hide">
+                                        <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                        Имя может состоять из букв русского, украинского или английского алфавитов.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <label class="label" for="registrationcode__addcars">
+                                Телефон:
+                                <ins>*</ins>
+                            </label>
+                            <div class="input">
+                                <div class="hidden">
+                                    <input id="verification_code" class="hidden" type="hidden" name="verification_code" value="0" content="phone_confirm_code">
+                                </div>
+                                <span>(</span>
+                                <input id="registrationcode__addcars" class="code" type="text" placeholder="XXX" name="code" tabindex="5">
+                                <span>)</span>
+                                <input id="registrationphone__addcars" class="number" type="text" placeholder="XX-XX-XXX" name="phone" tabindex="6">
+                                <span class="hint-popup" style="margin-left: 18px">
+                                    <i class="icon-help-grey js-icon-help" title="Нажмите чтобы увидеть подсказку"></i>
+                                    <span class="tooltip darr __right hide">
+                                        <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                        На сайте возможно зарегистрироваться только с украинским городским или мобильным номером телефона, состоящим из 10 цифр.
+                                    </span>
+                                </span>
+                                <p class="help-block" style="display: none;">
+                                    <i class="icon-mobile"></i>
+                                    <a id="registrationadditionalparam__addcars" href="javascript:void(0);">Дополнительные параметры</a>
+                                </p>
+                            </div>
+                            <p class="indent help-block" style="display: none;">
+                                <i class="icon-mobile"></i>
+                                <a id="registrationaddmorephones__addcars" href="javascript:void(0);">добавить еще телефон</a>
+                            </p>
+                        </div>
+                        <div class="indent ckecklist">
+                            <p class="rows item">
+                                <input id="registrationnewsletters__addcars" class="ckeck" type="checkbox" checked="checked" value="1" name="news_letters" tabindex="7">
+                                <label class="label-ckeck sub" for="registrationnewsletters__addcars"> Получать рассылки про обновления, акции, конкурсы </label>
+                            </p>
+                            <p class="rows item">
+                                <input id="registrationagreement__addcars" class="ckeck" type="checkbox" checked="checked" value="1" name="agreement" tabindex="8">
+                                <label class="label-ckeck sub" for="registrationagreement__addcars">
+                                    Я принимаю условия, изложенные в
+                                    <a class="new" onclick="newWindowSize('/?target=view&event=lic', 500, 600);
+                                            return false;" href="/?target=view&event=lic" title=""Посмотреть Соглашение о предоставлении услуг"">"Соглашении о предоставлении услуг"</a>
+                                    и
+                                    <a onclick="newWindowSize('/privacy-policy/', 800, 600);
+                                            return false;" href="/privacy-policy/" title="Посмотреть соглашение Политики конфиденциальности">"Политике конфиденциальности"</a>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="submit-form-add indent">
+                            <input id="registrationagreement__submit" class="button green" type="submit" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Registration', 'Step0']);" value="Продолжить" tabindex="9">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="form-login">
+                <div class="wrapper-form">
+                    <div class="title bold line">
+                        Уже зарегистрированы на
+                        <a href="http://www.ria.ua">RIA.ua</a>
+                    </div>
+                    <div id="loginerrors__addcars" class="error" style="display: none;"> </div>
+                    <form id="loginform__addcars" class="grid grid-span2" action="/user/register/login">
+                        <div class="rows">
+                            <label class="label" for="loginemail__addcars"> Email: </label>
+                            <div class="input">
+                                <input id="loginemail__addcars" class="span3" type="text" name="email" tabindex="10">
+                                <span class="hint-popup float-r" style="margin: -23px -20px 0 0">
+                                    <i class="icon-help-grey js-icon-help" title="Нажмите чтобы увидеть подсказку"></i>
+                                    <span class="tooltip darr __right hide">
+                                        <a class="close js-close-help" "="" href="javascript:void(0)">×</a>
+                                        Введите адрес электронной почты, на который Вы зарегистрировались. Необходимый формат: имя_пользователя@имя_домена (например autoria@ria.ua).
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <label class="label" for="loginpasswd__addcars"> Пароль: </label>
+                            <div class="input">
+                                <input id="loginpasswd__addcars" class="span3" type="password" name="password" tabindex="11">
+                                <p class="help-block">
+                                    <a href="/user/forgot_password.html">Забыли пароль?</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="submit-form-add indent">
+                            <input id="button_login" class="button green" type="submit" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Login', 'Step0']);" value="Войти" tabindex="12">
+                        </div>
+                        <div class="rows">
+                            <p class="indent help-block" partner_id="1">
+                                Ваш e-mail и пароль едины для любого из проектов
+                                <a href="http://www.ria.ua">RIA.ua</a>
+                            </p>
+                        </div>
+                        <div class="rows">
+                            <p class="indent help-block">
+                                Рекомендуем:
+                                <a href="http://bezpeka.ria.ua/ru/account-security">Безопасность учетной записи RIA.ua </a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

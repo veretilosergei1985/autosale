@@ -1,6 +1,9 @@
-    <div class="" id="DeleteAutoBlock">
+<div class="main-panel span8">    
 
-    </div>
+
+<div class="" id="DeleteAutoBlock">
+
+</div>
 
 
 
@@ -743,7 +746,7 @@
     
     
             <div id="search_auto_results" class="standart-view">
-                <?php foreach ($this->list as $car) { ?>
+                <?php foreach ($this->paginator as $car) { ?>
                     <div class="item">
                         <div class="ticket-item" ticket_status_id="0" ticket_auto_id="11080455">
                             <a name="search_auto_id_11080455"> </a>
@@ -774,7 +777,7 @@
                         return false;" href="/fishki-group/"></a>
                                         </span>
                                         <h3 class="head-car">
-                                            <a title="<?php echo $car->title; ?>" href="<?php echo $this->url(array('controller' => 'index', 'action' => 'view', 'id' => $car->id));  ?>"><?php echo $car->title; ?> </a>
+                                            <a title="<?php echo $car->title; ?>" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->title; ?> </a>
                                             1991
                                         </h3>
                                     </div>
@@ -858,58 +861,9 @@
     <hr noshade="noshade">
 </div>
 <!--    .BEGIN Pager    -->
-<div class="pager" id="search_results_pager">
-    <div class="scrollpager">
-        <strong>Страницы</strong>
-        &laquo;
-        <span class="prev" pdata="prev_page" pval="Предыдущая">
-            
-                <a href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=0">
-                    Предыдущая
-                </a>
-            
-        </span>
-        <span class="next" pdata="next_page" pval="Следующая">
-            
-                <a href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=1">
-                    Следующая
-                </a>
-            
-        </span>
-        &raquo;
-    </div>
-    <div class="page" pdata="pages_range">
-  
-                    <strong class="active">1</strong>
-               
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=1">
-                        2
-                    </a>
+<?php echo $this->paginationControl($this->paginator, 'Sliding',
+				'partials/my_paginator.phtml'); ?>	
 
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=2">
-                        3
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=3">
-                        4
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=4">
-                        5
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=5">
-                        6
-                    </a>    
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=32418">
-                        32419
-                    </a>
-                
-            
-        
-    </div>
-</div>
 <!--    .END Pager    -->
 <nav class="navigator" id="pager_navigator">
     <span class="next">
@@ -1090,4 +1044,6 @@
 
     </div>
 </section>
+</div>
+
 </div>

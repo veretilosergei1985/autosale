@@ -46,7 +46,7 @@ class Application_Model_CarsMapper
                                       ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
                                       ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
                                       ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'title'))
-                                      ->joinLeft('users','users.id = cars.user_id', array('username', 'first_name', 'last_name', 'user_added' => 'added', 'last_login'))
+                                      //->joinLeft('users','users.id = cars.user_id', array('username', 'first_name', 'last_name', 'user_added' => 'added', 'last_login'))
                                       ->where('cars.id = ?', $id); 
 
         

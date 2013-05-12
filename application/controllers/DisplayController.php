@@ -22,6 +22,20 @@ class DisplayController extends Zend_Controller_Action
         
         
     }
+    
+    public function checkaddcarAction(){
+        $this->_helper->layout->disableLayout();
+        
+        // check is logged
+        //if is logged
+        
+        
+        
+        //else
+        $is_logged = false;
+        $this->view->is_logged = $is_logged;
+        
+    }
 
 
 }
