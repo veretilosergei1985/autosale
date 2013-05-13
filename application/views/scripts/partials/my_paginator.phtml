@@ -1,0 +1,56 @@
+<div class="pager" id="search_results_pager">
+    <div class="scrollpager">
+        <strong>Страницы</strong>
+        &laquo;
+        
+        <?php if ($this->pageCount): ?>
+
+            <!-- Previous page link -->
+            <?php if (isset($this->previous)): ?>
+                <span class="prev" pdata="prev_page" pval="Предыдущая">
+                    <a href="<?php echo $this->url(array('p' => $this->previous)); ?>">
+                        Предыдущая
+                    </a>
+                </span>
+              </a>
+            <?php else: ?>
+                <span style="font-size: 15px;" class="prev" pdata="prev_page" pval="Предыдущая">
+                        Предыдущая
+                </span>
+            <?php endif; ?>
+
+            <!-- Numbered page links -->
+           
+
+            <!-- Next page link -->
+            <?php if (isset($this->next)): ?>
+            <span class="next" pdata="next_page" pval="Следующая">
+                <a href="<?php echo $this->url(array('p' => $this->next)); ?>">
+                    Следующая
+                </a>
+            </span>
+
+            <?php else: ?>
+              <span style="font-size: 15px;" class="disabled">Следующая</span>
+            <?php endif; ?>
+
+        <?php endif; ?>
+        &raquo;
+    </div>
+    <div class="page" pdata="pages_range">
+  
+             <!-- Numbered page links -->
+            <?php foreach ($this->pagesInRange as $page): ?>
+              <?php if ($page != $this->current): ?>
+                <a href="<?php echo $this->url(array('p' => $page)); ?>">
+                    <?php echo $page; ?>
+                </a>
+              <?php else: ?>
+                <?php echo '<strong class="active">'.$page.'</strong>'; ?>
+              <?php endif; ?>
+            <?php endforeach; ?>
+                
+    </div>
+</div>
+
+

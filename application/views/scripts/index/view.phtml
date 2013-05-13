@@ -1,3 +1,5 @@
+<div class="main-panel span8">
+
 <nav class="navigator" id="final_page__navigator_container">
     <span class="next disabled">
         <a href="javascript:void(0);">Следующее</a>&nbsp;»
@@ -109,7 +111,7 @@
                 <i class="icon-door"></i>
                 Дверей:
                 <strong>
-                    <?php echo $this->data->doors; ?>
+                    <?php //echo $this->data->doors; ?>
                 </strong>
             </p>
             <p class="item-param">
@@ -125,7 +127,7 @@
             <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">
             <dl class="info-user">
                 <dt class="user-name">
-                <?php echo $this->data->username; ?>
+                <?php //echo $this->data->username; ?>
                 </dt>
                 <dd class="item">
                     Город:
@@ -141,11 +143,11 @@
                 </dd>
                 <dd class="item">
                     Пользуется сайтом: <strong>
-                        <?php echo $this->elapsed_time; ?>
+                        <?php //echo $this->elapsed_time; ?>
                     </strong>
                 </dd>
                 <dd class="item">
-                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014"><?php echo $this->reg_time; ?> назад</strong>
+                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014"><?php //echo $this->reg_time; ?> назад</strong>
                 </dd>
             </dl>
             <div class="characteristic contact-data-seller">
@@ -154,7 +156,7 @@
                 </strong>
                 <div class="item-param writing-seller">
                     <i class="icon-email"></i>
-                    <a href="/display/showemailform" id="final_page__mail_to_seller" rel="<?php echo $this->data->user_id; ?>">Написать сообщение</a>
+                    <a href="/display/showemailform" id="final_page__mail_to_seller" data-currentUser="<?php //echo $this->data->user_id; ?>" rel="<?php// echo $this->data->user_id; ?>">Написать сообщение</a>
                 </div>
                 <div class="item-param">
                     <i class="icon-mobile-confirm"></i>
@@ -1126,3 +1128,5 @@
 
 
 <!--    .BEGIN Right Panel    -->
+
+</div>

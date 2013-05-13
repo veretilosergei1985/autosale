@@ -9,6 +9,8 @@
        
         <?php echo $this->headScript()->appendFile('/js/jquery-1.7.2.min.js');  ?>
          <?php echo $this->headScript()->appendFile('/js/main.js');  ?>
+       <?php echo $this->headLink()->appendStylesheet('/css/init_add.css'); ?>
+       <?php // echo $this->headScript()->appendFile('/js/init_add.js');?>
 
    </head>
 
@@ -72,7 +74,7 @@
         <!--            <a class="item" href="/ru/">-->
         </div>
 
-        <a href="/add_auto.html" class="button green add-offer" title="Добавить объявление о продаже авто">
+        <a href="/catalog/add" class="button green add-offer" title="Добавить объявление о продаже авто">
              Добавить объявление
         </a>
 
@@ -822,14 +824,13 @@
 
 <!-- include virtual="/html/blocks/search_page/blocks/assync_banners_loader.html" -->
 
-<div class="main-panel span8">
+
        
     
     
 <?php echo $this->layout()->content; ?>
 
 
-</div>
 
 <!--    .END Main Panel    -->
 
@@ -1237,11 +1238,13 @@
         </div>
          <!--drugasmuga 50% ICTV-->
         <div class="box-panel">
+            <!--
             <script src="http://fakty.ictv.ua/widgets/informers/informer.js?v1.9.14" type="text/javascript"/></script>
      <script type="text/javascript">
          var ictv_informer = "fakty_avtonews";
              get_ictvinformer (ictv_informer);
              </script>
+            -->
         </div>
     
     <!--    .END Partner Informer    -->
