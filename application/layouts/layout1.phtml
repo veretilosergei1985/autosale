@@ -6,6 +6,11 @@
        
         <?php echo $this->headLink()->appendStylesheet('/css/main.css', 'screen'); ?>
         <?php  echo $this->headLink()->appendStylesheet('/css/init-main.css', 'screen'); ?>
+       
+        <?php echo $this->headScript()->appendFile('/js/jquery-1.7.2.min.js');  ?>
+         <?php echo $this->headScript()->appendFile('/js/main.js');  ?>
+       <?php echo $this->headLink()->appendStylesheet('/css/init_add.css'); ?>
+       <?php // echo $this->headScript()->appendFile('/js/init_add.js');?>
 
    </head>
 
@@ -15,19 +20,19 @@
 <header class="text">
     <div class="container">
         <div class="loginbar">
-            <a href="/user/register" class="item">СЂРµРіРёСЃС‚СЂР°С†РёСЏ</a>
-            <a href="/login.html" class="item">РІС…РѕРґ</a>
+            <a href="/user/register" class="item">регистрация</a>
+            <a href="/login.html" class="item">вход</a>
         </div>
         <nav class="head-menu">
-            <a class="ria-ua" href='http://www.ria.ua/' title="Р‘РµСЃРїР»Р°С‚РЅС‹Рµ РѕР±СЉСЏРІР»РµРЅРёСЏ РЈРєСЂР°РёРЅС‹"></a>
-            <a class="logo-auto-ria select" href='http://auto.ria.ua/' title="РђРІС‚РѕСЂРёР° - Р°РІС‚РѕСЃР°Р№С‚ в„–1 РЈРєСЂР°РёРЅС‹"></a>
-            <a class="logo-dom-ria" href='http://dom.ria.ua/' title="РџСЂРѕРґР°Р¶Р° Рё Р°СЂРµРЅРґР° РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РІ РЈРєСЂР°РёРЅРµ"></a>
-            <a class="logo-rabota-ria" href='http://rabota.ria.ua/' title="РџРѕРёСЃРє СЂР°Р±РѕС‚С‹ РІ РЈРєСЂР°РёРЅРµ"></a>
+            <a class="ria-ua" href='http://www.ria.ua/' title="Бесплатные объявления Украины"></a>
+            <a class="logo-auto-ria select" href='http://auto.ria.ua/' title="Авториа - автосайт №1 Украины"></a>
+            <a class="logo-dom-ria" href='http://dom.ria.ua/' title="Продажа и аренда недвижимости в Украине"></a>
+            <a class="logo-rabota-ria" href='http://rabota.ria.ua/' title="Поиск работы в Украине"></a>
             <div class="top-drop">
-                <a title="Р›СѓС‡С€РёРµ С‚СѓСЂС‹ РґР»СЏ РѕС‚РґС‹С…Р°" href="http://travel.ria.ua/?utm_source=auto&utm_medium=link&utm_campaign=header" class="logo-travel-ria" target=""></a>
+                <a title="Лучшие туры для отдыха" href="http://travel.ria.ua/?utm_source=auto&utm_medium=link&utm_campaign=header" class="logo-travel-ria" target=""></a>
                 <ol class="drop-menu">
-                    <li><a title="Р’СЃРµ РіРѕСЃС‚РёРЅРёС†С‹ РЈРєСЂР°РёРЅС‹" href="http://hotels.ria.ua" class="logo-hotels-ria" target=""></a></li>
-                    <li><a title="Р‘СЂРѕРЅРёСЂРѕРІР°РЅРёРµ Р°РІРёР°Р±РёР»РµС‚РѕРІ РѕРЅР»Р°Р№РЅ" href="http://avia.ria.ua" class="logo-avia-ria" target=""></a></li>
+                    <li><a title="Все гостиницы Украины" href="http://hotels.ria.ua" class="logo-hotels-ria" target=""></a></li>
+                    <li><a title="Бронирование авиабилетов онлайн" href="http://avia.ria.ua" class="logo-avia-ria" target=""></a></li>
                 </ol>
             </div>
         </nav>
@@ -54,54 +59,54 @@
             <!--   .BEGIN HEAD   -->
 <div class="header">
     <a href="/" class="logo">
-        <img src="http://img6.auto.ria.ua/images/logo.png" width="255" height="40" alt="AUTO.ria.ua" title="РђРІС‚РѕСЂРёР° - Р°РІС‚РѕСЃР°Р№С‚ в„–1 РЈРєСЂР°РёРЅС‹" alt="Р‘Р°Р·Р°СЂ Р°РІС‚Рѕ РђРІС‚РѕСЂРёР°. РџСЂРѕРґР°Р¶Р° Р±Сѓ Р°РІС‚РѕРјРѕР±РёР»РµР№ - РѕР±СЉСЏРІР»РµРЅРёСЏ"/>
+        <img src="http://img6.auto.ria.ua/images/logo.png" width="255" height="40" alt="AUTO.ria.ua" title="Авториа - автосайт №1 Украины" alt="Базар авто Авториа. Продажа бу автомобилей - объявления"/>
     </a>
     <div class="header-settings">
         <div class="langbar">
         
             <span class="item">
-                <i class="icon-rus"></i>СЂСѓСЃ.
+                <i class="icon-rus"></i>рус.
             </span>
             <a class="item" href="/uk/">
-                <i class="icon-ukr"></i>СѓРєСЂ.
+                <i class="icon-ukr"></i>укр.
             </a>
         
         <!--            <a class="item" href="/ru/">-->
         </div>
 
-        <a href="/add_auto.html" class="button green add-offer" title="Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ Рѕ РїСЂРѕРґР°Р¶Рµ Р°РІС‚Рѕ">
-             Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ
+        <a href="/catalog/add" class="button green add-offer" title="Добавить объявление о продаже авто">
+             Добавить объявление
         </a>
 
         <div class="informbar">
             <div class="location">
-    <a href="javascript:void(0);"><span>РЈРєСЂР°РёРЅР°</span><i class="icon-arrou"></i></a>
+    <a href="javascript:void(0);"><span>Украина</span><i class="icon-arrou"></i></a>
 
     <div id ="head_location_popup" class="popup uarr __center hide">
         <div class="wrapper">
-            <a href="javascript:void(0);" class="close">Г—</a>
+            <a href="javascript:void(0);" class="close">×</a>
             <div class="title bold" style="margin: 0; padding: 0;">
-                Р’С‹Р±РµСЂРёС‚Рµ РіРѕСЂРѕРґ
+                Выберите город
             </div>
             <form class="grid grid-span1">
                 <p class="rows">
-                    <label class="label" for="select2">РћР±Р»Р°СЃС‚СЊ:</label>
+                    <label class="label" for="select2">Область:</label>
                     <span class="indent select">
                         <select id="select" name="state_id" style="width: 135px;">
-                            <option>Р—Р°РіСЂСѓР·РєР°...</option>
+                            <option>Загрузка...</option>
                         </select>
                     </span>
                 </p>
                 <p class="rows">
-                    <label class="label" for="select2">Р“РѕСЂРѕРґ:</label>
+                    <label class="label" for="select2">Город:</label>
                     <span class="indent select">
                         <select id="select2" name="city_id" style="width: 135px;">
-                            <option value="0">Р›СЋР±Р°СЏ</option>
+                            <option value="0">Любая</option>
                         </select>
                     </span>
                 </p>
                 <div class="input">
-                    <a href="javascript:void(0);" class="button">РЎРѕС…СЂР°РЅРёС‚СЊ</a>
+                    <a href="javascript:void(0);" class="button">Сохранить</a>
                 </div>
             </form>
         </div>
@@ -113,19 +118,19 @@
         <a class="icon-reload" href="javascript:void(0);"></a>
         <div class="wrap">
             <div class="" value="1">
-                <a href="/last/visit/" class="stretch">РЎ РїРѕСЃР»РµРґРЅРµРіРѕ РІРёР·РёС‚Р°</a>
+                <a href="/last/visit/" class="stretch">С последнего визита</a>
                 <span class="count">
                     +<a href="/last/visit/"><span>0</span><i class="icon-arrou"></i></a>
                 </span>
             </div>
             <div class="hide" value="2">
-                <a href="/last/hour/" class="stretch">Р—Р° РїРѕСЃР»РµРґРЅРёР№ С‡Р°СЃ</a>
+                <a href="/last/hour/" class="stretch">За последний час</a>
                 <span class="count">
                     <a href="/last/hour/"><span>613</span><i class="icon-arrou"></i></a>
                 </span>
             </div>
             <div class="hide" value="3">
-                <a href="/last/today/" class="stretch">Р—Р° СЃРµРіРѕРґРЅСЏ</a>
+                <a href="/last/today/" class="stretch">За сегодня</a>
                 <span class="count">
                     <a href="/last/today/"><span>4542</span><i class="icon-arrou"></i></a>
                 </span>
@@ -135,9 +140,9 @@
 
         <div class="popup uarr __center hide">
             <div class="wrapper">
-                <a href="javascript:void(0);" class="close">Г—</a>
+                <a href="javascript:void(0);" class="close">×</a>
                 <div class="title line bold">
-                    Р’С‹Р±РµСЂРёС‚Рµ РїРµСЂРёРѕРґ
+                    Выберите период
                 </div>
 
                 <div class="grid">
@@ -147,24 +152,24 @@
                                 + <strong value="1">0</strong>
                             </span>
                             <input type="radio" name="ria_adv_count" value="1" id="header_ads_count_from_last_visit" />
-                            <label for="header_ads_count_from_last_visit">РЎ РїРѕСЃР»РµРґРЅРµРіРѕ РІРёР·РёС‚Р°</label>
+                            <label for="header_ads_count_from_last_visit">С последнего визита</label>
                         </p>
                         <p class="item">
                             <span class="area blue">
                                 <strong value="2">613</strong>
                             </span>
                             <input type="radio" name="ria_adv_count" value="2" id="header_ads_count_per_hour" />
-                            <label for="header_ads_count_per_hour">Р—Р° РїРѕСЃР»РµРґРЅРёР№ С‡Р°СЃ</label>
+                            <label for="header_ads_count_per_hour">За последний час</label>
                         </p>
                         <p class="item">
                             <span class="area blue">
                                 <strong value="3">4542</strong>
                             </span>
                             <input  type="radio" name="ria_adv_count" value="3" id="header_ads_count_per_day"/>
-                            <label for="header_ads_count_per_day">Р—Р° СЃРµРіРѕРґРЅСЏ</label>
+                            <label for="header_ads_count_per_day">За сегодня</label>
                         </p>
                     </div>
-                    <a href="javascript:void(0);" class="button">РЎРѕС…СЂР°РЅРёС‚СЊ</a>
+                    <a href="javascript:void(0);" class="button">Сохранить</a>
 
                 </div>
             </div>
@@ -195,7 +200,7 @@
     </div>
 
     <div class="tabs hide" tab="1">
-         <a href="/mymenu.html" >РњРѕРµ РјРµРЅСЋ</a>
+         <a href="/mymenu.html" >Мое меню</a>
         <div class="window hide">
 
             <div class="iframe"><iframe></iframe></div>
@@ -211,7 +216,7 @@
 
                 <dl class="column unordered-list" style="width:180px;">
                     <!-- Search form menu-->
-    <p class="headbar bold"><a href="/search.html">РџРѕРёСЃРє Р°РІС‚Рѕ</a></p>
+    <p class="headbar bold"><a href="/search.html">Поиск авто</a></p>
     <form class="grid fast-search" id="main_menu_search" action="/" method="get">
         <div class="hidden">
             <input type="hidden" value="search" name="target" filter_type="old">
@@ -225,96 +230,96 @@
         <div class="row type-search">
             <label for="item1" class="span2">
                 <input type="radio" name="radio" id="item1" value="oldAutos" checked="checked">
-                Р°РІС‚Рѕ Р±/Сѓ
+                авто б/у
             </label>
             <label for="item2" class="span2">
                 <input type="radio" name="radio" id="item2" value="newAutos">
-                РЅРѕРІС‹Рµ Р°РІС‚Рѕ
+                новые авто
             </label>
         </div>
 
         <p class="rows" filter_type="old">
-            <label for="" class="label">РњР°СЂРєР°:</label>
+            <label for="" class="label">Марка:</label>
             <span class="select">
                 <select class="span3"  name="marka"  content="marka_old" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Marka', 'B-u search']);return true;">
-                    <option value="0">Р›СЋР±Р°СЏ</option>
+                    <option value="0">Любая</option>
                     
                 </select>
             </span>
         </p>
         <p class="rows hide" filter_type="new">
-            <label for="" class="label">РњР°СЂРєР°:</label>
+            <label for="" class="label">Марка:</label>
             <span class="select">
                 <select class="span3" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Marka', 'New search']);return true;" name="marka_id" content="marka_new" >
-                    <option value="0">Р›СЋР±Р°СЏ</option>
+                    <option value="0">Любая</option>
                     
                 </select>
             </span>
         </p>
 
         <p class="rows" filter_type="old">
-            <label for="" class="label">РњРѕРґРµР»СЊ:</label>
+            <label for="" class="label">Модель:</label>
             <span class="select">
                 <select class="span3"  content="model_old" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Model', 'B-u search']);return true;" name="model">
-                    <option value="0">Р›СЋР±Р°СЏ</option>
+                    <option value="0">Любая</option>
                 </select>
             </span>
         </p>
         <p class="rows hide" filter_type="new">
-            <label for="" class="label">РњРѕРґРµР»СЊ:</label>
+            <label for="" class="label">Модель:</label>
             <span class="select">
                 <select class="span3"  content="model_new" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Model', 'New search']);return true;" name="model_id">
-                    <option value="0">Р›СЋР±Р°СЏ</option>
+                    <option value="0">Любая</option>
                 </select>
             </span>
         </p>
 
         <p class="rows" filter_type="old">
-            <label for="" class="label">Р“РѕРґ РІС‹РїСѓСЃРєР°:</label>
+            <label for="" class="label">Год выпуска:</label>
             <span class="indent">
-                РѕС‚
+                от
                 <select class="years" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Year_from', 'B-u search']);return true;" id="" name="s_yers">
-                    <option value="0">Р›СЋР±РѕР№</option>
+                    <option value="0">Любой</option>
                     
                 </select>
                 <em class="mdash">&mdash;</em>
-                РґРѕ
+                до
                 <select class="years" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Year_to', 'B-u search']);return true;" id="" name="po_yers">
-                    <option value="0">Р›СЋР±РѕР№</option>
+                    <option value="0">Любой</option>
                     
                 </select>
             </span>
         </p>
 
         <p class="rows" filter_type="old">
-            <label for="" class="label">Р РµРіРёРѕРЅ:</label>
+            <label for="" class="label">Регион:</label>
             <span class="select">
                 <select class="span3" id="" onChange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Region', 'B-u search']);return true;" name="state">
-                    <option value="0">Р›СЋР±РѕР№</option>
+                    <option value="0">Любой</option>
                     
                 </select>
             </span>
         </p>
         <p class="rows hide" filter_type="new">
-            <label for="" class="label">Р РµРіРёРѕРЅ:</label>
+            <label for="" class="label">Регион:</label>
             <span class="select">
                 <select class="span3" id="" onChange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Region', 'New search']);return true;" name="city">
-                    <option value="0">Р›СЋР±РѕР№</option>
+                    <option value="0">Любой</option>
                     
                 </select>
             </span>
         </p>
 
         <p class="rows">
-            <label for="" class="label bold">Р¦РµРЅР°:</label>
+            <label for="" class="label bold">Цена:</label>
             <span class="select">
-                <input type="text" placeholder="РѕС‚" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_from', 'Search']);" name="price_ot">
+                <input type="text" placeholder="от" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_from', 'Search']);" name="price_ot">
                 <em class="mdash">&mdash;</em>
-                <input type="text" placeholder="РґРѕ" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_to', 'Search']);" name="price_do">
+                <input type="text" placeholder="до" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_to', 'Search']);" name="price_do">
                 <select class="currency" id="" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Currency', 'Search']); return true;" name="currency">
                     <option value="1">$</option>
-                    <option value="2">в‚¬</option>
-                    <option value="3">РіСЂРЅ.</option>
+                    <option value="2">€</option>
+                    <option value="3">грн.</option>
                 </select>
             </span>
         </p>
@@ -323,19 +328,19 @@
 
             <span class="button-icon">
                 <i class="icon-search-white"></i>
-                <input type="submit" value="РџРѕРёСЃРє" class="button blue large">
+                <input type="submit" value="Поиск" class="button blue large">
             </span>
 
             <p class="checkrows" filter_type="old">
                 <input type="checkbox" id="check1" name="with_photo" value="1">
                 <label for="check1">
                     <i class="icon-photo-red"></i>
-                    С‚РѕР»СЊРєРѕ СЃ С„РѕС‚Рѕ
+                    только с фото
                 </label>
             </p>
 
             <a filter_type="old" href="/search.html" ext_search="true">
-                 Р Р°СЃС€РёСЂРµРЅРЅС‹Р№ РїРѕРёСЃРє
+                 Расширенный поиск
             </a>
         </div>
     </form>
@@ -345,8 +350,8 @@
 
                 <ul class="column unordered-list" style="width: 180px">
                     <li>
-                        <a title="РњРѕР№ Р±Р»РѕРєРЅРѕС‚" href="/notepad.html" >
-                           РњРѕР№ Р±Р»РѕРєРЅРѕС‚
+                        <a title="Мой блокнот" href="/notepad.html" >
+                           Мой блокнот
                     </a>
 
         <!--
@@ -357,40 +362,40 @@
                                                                                                                             # endif -->
                 </li>
                 <li>
-                    <a title="РњРѕСЏ Р°РЅРєРµС‚Р°" href="/?target=user&event=redug" >
-                       РњРѕСЏ Р°РЅРєРµС‚Р°
+                    <a title="Моя анкета" href="/?target=user&event=redug" >
+                       Моя анкета
                 </a>
             </li>
             <li>
-                <a title="РљРѕРјРјРµСЂС‡РµСЃРєРёРµ СЃРµСЂРІРёСЃС‹" href="/myservice/" onclick="_gaq.push(['_trackEvent', 'My_Menu_Tab', 'Click_on_Link_My_Service', 'Myservice'])">
-                   РљРѕРјРјРµСЂС‡РµСЃРєРёРµ СЃРµСЂРІРёСЃС‹
+                <a title="Коммерческие сервисы" href="/myservice/" onclick="_gaq.push(['_trackEvent', 'My_Menu_Tab', 'Click_on_Link_My_Service', 'Myservice'])">
+                   Коммерческие сервисы
             </a>
         </li>
         <li>
-            <a title="РџРѕРјРµРЅСЏС‚СЊ РїР°СЂРѕР»СЊ" href="/user/change_password.html" >
-               РџРѕРјРµРЅСЏС‚СЊ РїР°СЂРѕР»СЊ
+            <a title="Поменять пароль" href="/user/change_password.html" >
+               Поменять пароль
         </a>
     </li>
     <li>
-        <a title="Р Р°СЃСЃС‹Р»РєР°" href="/subscribe" >
-           Р Р°СЃСЃС‹Р»РєР°
+        <a title="Рассылка" href="/subscribe" >
+           Рассылка
     </a>
 </li>
 <li>
-    <a title="РњРѕРё РїРѕРёСЃРєРё" href="/?target=user&event=searchHistory" >
-       РњРѕРё РїРѕРёСЃРєРё
+    <a title="Мои поиски" href="/?target=user&event=searchHistory" >
+       Мои поиски
 </a>
 </li>
 <li>
-    <a class="new" title="РњРѕР№ Р§РµСЂРЅС‹Р№ СЃРїРёСЃРѕРє" href="/user/blacklist" >
-       РњРѕР№ "Р§РµСЂРЅС‹Р№ СЃРїРёСЃРѕРє"
+    <a class="new" title="Мой Черный список" href="/user/blacklist" >
+       Мой "Черный список"
 </a>
 </li>
 
 </ul>
 <div class="menu__bottom-panel">
-    <a class="link-add" href="/add_auto.html" title="Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ"  >
-       Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ
+    <a class="link-add" href="/add_auto.html" title="Добавить объявление"  >
+       Добавить объявление
 </a>
 </div>
 </div>
@@ -399,145 +404,145 @@
 
 
 <div class="tabs" tab="2">
-    <a href="/" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Used_Cars', 'Menu'])">РђРІС‚РѕРјРѕР±РёР»Рё Р±/Сѓ</a>
+    <a href="/" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Used_Cars', 'Menu'])">Автомобили б/у</a>
     <div class="window hide">
         <div class="iframe"><iframe></iframe></div>
         <div style="width: 340px;" class="wrapper">
             <p class="headbar bold">
                 <a href="/search" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Used_Cars', 'Search'])">
-                   РђРІС‚РѕРјРѕР±РёР»Рё Р±/Сѓ
+                   Автомобили б/у
             </a>
         </p>
         <ul class="column unordered-list">
-            <li><a href="/legkovie/" title="Р›РµРіРєРѕРІС‹Рµ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Legkovie', 'РЎatalog'])">Р›РµРіРєРѕРІС‹Рµ</a></li>
-            <li><a href="/moto/" title="РњРѕС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Moto', 'РЎatalog'])">РњРѕС‚Рѕ</a></li>
-            <li><a href="/vodnyj_transport/" title="Р’РѕРґРЅС‹Р№ С‚СЂР°РЅСЃРїРѕСЂС‚" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Vodnyj_Transport', 'РЎatalog'])">Р’РѕРґРЅС‹Р№ С‚СЂР°РЅСЃРїРѕСЂС‚</a></li>
-            <li><a href="/spectehnika/" title="РЎРїРµС†С‚РµС…РЅРёРєР°" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Spectehnika', 'РЎatalog'])">РЎРїРµС†С‚РµС…РЅРёРєР°</a></li>
-            <li><a href="/trailer/" title="РџСЂРёС†РµРїС‹" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Trailer', 'РЎatalog'])">РџСЂРёС†РµРїС‹</a></li>
-            <li><a href="/truck/" title=" Р“СЂСѓР·РѕРІРёРєРё" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Truck', 'РЎatalog'])"> Р“СЂСѓР·РѕРІРёРєРё</a></li>
-            <li><a href="/bus/" title="РђРІС‚РѕР±СѓСЃРё" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Bus', 'РЎatalog'])">РђРІС‚РѕР±СѓСЃРё</a></li>
-            <li><a href="/autohouse/" title="РђРІС‚РѕРґРѕРјР°" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autohouse', 'РЎatalog'])">РђРІС‚РѕРґРѕРјР°</a></li>
-            <li><a href="/air_transport/" title="Р’РѕР·РґСѓС€РЅС‹Р№ С‚СЂР°РЅСЃРїРѕСЂС‚" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Air_Transport', 'РЎatalog'])">Р’РѕР·РґСѓС€РЅС‹Р№ С‚СЂР°РЅСЃРїРѕСЂС‚</a></li>
+            <li><a href="/legkovie/" title="Легковые" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Legkovie', 'Сatalog'])">Легковые</a></li>
+            <li><a href="/moto/" title="Мото" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Moto', 'Сatalog'])">Мото</a></li>
+            <li><a href="/vodnyj_transport/" title="Водный транспорт" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Vodnyj_Transport', 'Сatalog'])">Водный транспорт</a></li>
+            <li><a href="/spectehnika/" title="Спецтехника" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Spectehnika', 'Сatalog'])">Спецтехника</a></li>
+            <li><a href="/trailer/" title="Прицепы" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Trailer', 'Сatalog'])">Прицепы</a></li>
+            <li><a href="/truck/" title=" Грузовики" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Truck', 'Сatalog'])"> Грузовики</a></li>
+            <li><a href="/bus/" title="Автобуси" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Bus', 'Сatalog'])">Автобуси</a></li>
+            <li><a href="/autohouse/" title="Автодома" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autohouse', 'Сatalog'])">Автодома</a></li>
+            <li><a href="/air_transport/" title="Воздушный транспорт" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Air_Transport', 'Сatalog'])">Воздушный транспорт</a></li>
 
         </ul>
         <ul class="column unordered-list" >
-            <li><a href="/search.html" title="РџРѕРёСЃРє Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Search_Cars', 'Search'])">РџРѕРёСЃРє Р°РІС‚Рѕ</a></li>
-            <li><a href="/hots/" title="Р“РѕСЂСЏС‡РёРµ РїСЂРµРґР»РѕР¶РµРЅРёСЏ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Hots', 'РЎatalog'])">Р“РѕСЂСЏС‡РёРµ РїСЂРµРґР»РѕР¶РµРЅРёСЏ</a></li>
-            <li><a href="/retro/" title="Р РµС‚СЂРѕ Р°РІС‚РѕРјРѕР±РёР»Рё" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Retro', 'РЎatalog'])">Р РµС‚СЂРѕ Р°РІС‚РѕРјРѕР±РёР»Рё</a></li>
-            <li><a href="/autointer/" title="РђРІС‚Рѕ РёР·-Р·Р° СЂСѓР±РµР¶Р°" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autointer', 'РЎatalog'])">РђРІС‚Рѕ РёР·-Р·Р° СЂСѓР±РµР¶Р°</a></li>
-            <li><a href="/avtovikup/" title="РђРІС‚РѕРІС‹РєСѓРї" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Avtovikup', 'Service'])">РђРІС‚РѕРІС‹РєСѓРї</a></li>
-            <li><a href="/kredit_auto/" class="new" title="РљСЂРµРґРёС‚РЅС‹Рµ Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Kredit', 'РЎatalog'])">РљСЂРµРґРёС‚РЅС‹Рµ Р°РІС‚Рѕ</a></li>
-            <li><a href="/newauto/РћС‚Р·С‹РІС‹/РљР°С‚Р°Р»РѕРі/" class="new" title="РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ</a></li>
-            <li><a href="/diagnostika-promo/" class="new" title="РџСЂРѕРІРµСЂРµРЅРЅС‹Рµ Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Diagnostika', 'Promo'])">РџСЂРѕРІРµСЂРµРЅРЅС‹Рµ Р°РІС‚Рѕ</a></li>
+            <li><a href="/search.html" title="Поиск авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Search_Cars', 'Search'])">Поиск авто</a></li>
+            <li><a href="/hots/" title="Горячие предложения" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Hots', 'Сatalog'])">Горячие предложения</a></li>
+            <li><a href="/retro/" title="Ретро автомобили" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Retro', 'Сatalog'])">Ретро автомобили</a></li>
+            <li><a href="/autointer/" title="Авто из-за рубежа" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autointer', 'Сatalog'])">Авто из-за рубежа</a></li>
+            <li><a href="/avtovikup/" title="Автовыкуп" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Avtovikup', 'Service'])">Автовыкуп</a></li>
+            <li><a href="/kredit_auto/" class="new" title="Кредитные авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Kredit', 'Сatalog'])">Кредитные авто</a></li>
+            <li><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></li>
+            <li><a href="/diagnostika-promo/" class="new" title="Проверенные авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Diagnostika', 'Promo'])">Проверенные авто</a></li>
         </ul>
         <div class="menu__bottom-panel">
-            <a class="link-add" href="/add_auto.html" title="Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Add', 'Menu'])" >
-               Р”РѕР±Р°РІРёС‚СЊ РѕР±СЉСЏРІР»РµРЅРёРµ
+            <a class="link-add" href="/add_auto.html" title="Добавить объявление" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Add', 'Menu'])" >
+               Добавить объявление
         </a>
     </div>
 </div>
 </div>
 </div>
 <div class="tabs" tab="3">
-    <a href="/newauto/" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Menu'])">РќРѕРІС‹Рµ Р°РІС‚Рѕ</a>
+    <a href="/newauto/" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Menu'])">Новые авто</a>
     <div class="window hide">
         <div class="iframe"><iframe></iframe></div>
         <div style="width: 345px;" class="wrapper">
             <p class="headbar bold">
-                <a href="/newauto/">РќРѕРІС‹Рµ Р°РІС‚Рѕ</a>
+                <a href="/newauto/">Новые авто</a>
             </p>
             <ul class="column unordered-list">
-                <li><a href="/newauto/" title="РџРѕРёСЃРє РЅРѕРІС‹С… Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Search'])">РџРѕРёСЃРє РЅРѕРІС‹С… Р°РІС‚Рѕ</a></li>
-                <li><a href="/new_auto/master_search/" title="РњР°СЃС‚РµСЂ РїРѕРёСЃРєР°" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Master_Search', 'Search'])">РњР°СЃС‚РµСЂ РїРѕРёСЃРєР°</a></li>
-                <li><a href="/newauto/catalogue/" title="РљР°С‚Р°Р»РѕРі РЅРѕРІС‹С… Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_РЎatalog', 'РЎatalog'])">РљР°С‚Р°Р»РѕРі РЅРѕРІС‹С… Р°РІС‚Рѕ</a></li>
-                <li><i class="icon-reliable-partner"></i><a href="/reliable-partner/" title="РќР°РґРµР¶РЅС‹Р№ РїР°СЂС‚РЅРµСЂ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Reliable_Partner', 'Promo'])">РќР°РґРµР¶РЅС‹Р№ РїР°СЂС‚РЅРµСЂ</a></li>
+                <li><a href="/newauto/" title="Поиск новых авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Search'])">Поиск новых авто</a></li>
+                <li><a href="/new_auto/master_search/" title="Мастер поиска" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Master_Search', 'Search'])">Мастер поиска</a></li>
+                <li><a href="/newauto/catalogue/" title="Каталог новых авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_Сatalog', 'Сatalog'])">Каталог новых авто</a></li>
+                <li><i class="icon-reliable-partner"></i><a href="/reliable-partner/" title="Надежный партнер" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Reliable_Partner', 'Promo'])">Надежный партнер</a></li>
             </ul>
             <ul class="column unordered-list">
-                <li><a href="/newauto/avtosaloni/" title="РђРІС‚РѕСЃР°Р»РѕРЅС‹" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Avtosalon', 'РЎatalog'])">РђРІС‚РѕСЃР°Р»РѕРЅС‹</a></li>
-                <li><a class="new" href="/newauto/motosaloni/" title="РњРѕС‚РѕСЃР°Р»РѕРЅС‹" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Motosalon', 'РЎatalog'])">РњРѕС‚РѕСЃР°Р»РѕРЅС‹</a></li>
-                <li><a href="/news/actions/" title="РђРєС†РёРё Р°РІС‚РѕСЃР°Р»РѕРЅРѕРІ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_Actions', 'News'])">РђРєС†РёРё Р°РІС‚РѕСЃР°Р»РѕРЅРѕРІ</a></li>
-                <li><a href="/newauto/РћС‚Р·С‹РІС‹/РљР°С‚Р°Р»РѕРі/" class="new" title="РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ</a></li>
+                <li><a href="/newauto/avtosaloni/" title="Автосалоны" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Avtosalon', 'Сatalog'])">Автосалоны</a></li>
+                <li><a class="new" href="/newauto/motosaloni/" title="Мотосалоны" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Motosalon', 'Сatalog'])">Мотосалоны</a></li>
+                <li><a href="/news/actions/" title="Акции автосалонов" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_Actions', 'News'])">Акции автосалонов</a></li>
+                <li><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></li>
             </ul>
             <div class="menu__bottom-panel">
-                <a class="link-add" href="/avtosaloni/addinfo/" title="Р”РѕР±Р°РІРёС‚СЊ РђРІС‚РѕСЃР°Р»РѕРЅ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Avtosalon', 'Menu'])" >
-                   Р”РѕР±Р°РІРёС‚СЊ РђРІС‚РѕСЃР°Р»РѕРЅ
+                <a class="link-add" href="/avtosaloni/addinfo/" title="Добавить Автосалон" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Avtosalon', 'Menu'])" >
+                   Добавить Автосалон
             </a>
             <em class="mdash">|</em>
-            <a class="link-add" href="/motosalon/addinfo/" title="Р”РѕР±Р°РІРёС‚СЊ РњРѕС‚РѕСЃР°Р»РѕРЅ" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Motosalon', 'Menu'])" >
-               Р”РѕР±Р°РІРёС‚СЊ РњРѕС‚РѕСЃР°Р»РѕРЅ
+            <a class="link-add" href="/motosalon/addinfo/" title="Добавить Мотосалон" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Motosalon', 'Menu'])" >
+               Добавить Мотосалон
         </a>
     </div>
 </div>
 </div>
 </div>
 <div class="tabs" tab="4">
-    <a href="javascript:void(0);">Р’СЃРµ РґР»СЏ Р°РІС‚Рѕ</a>
+    <a href="javascript:void(0);">Все для авто</a>
     <div class="window hide">
         <div class="iframe"><iframe></iframe></div>
         <div style="width: 565px;" class="wrapper">
             <div class="column" style="width: 155px">
                 <dl class="unordered-list">
-                    <dt>РЎРµСЂРІРёСЃС‹</dt>
-                    <dd><a href="/avtovikup/" title="РђРІС‚РѕРІС‹РєСѓРї" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtovikup', 'Service'])">РђРІС‚РѕРІС‹РєСѓРї</a></dd>
-                    <dd><a href="/autolombardy/"  title="РђРІС‚РѕР»РѕРјР±Р°СЂРґС‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autolombardy', 'Service'])">РђРІС‚РѕР»РѕРјР±Р°СЂРґС‹</a></dd>
-                    <dd><a href="/autoservice/" title="РђРІС‚РѕСЃРµСЂРІРёСЃС‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoservice', 'Service'])">РђРІС‚РѕСЃРµСЂРІРёСЃС‹</a></dd>
-                    <dd><a href="/avtorazborka/" title="РђРІС‚РѕСЂР°Р·Р±РѕСЂРєР°" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtorazborka', 'Service'])">РђРІС‚РѕСЂР°Р·Р±РѕСЂРєР°</a></dd>
-                    <dd><a href="/avtorazborka/#stolzakazov" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Add_Aplication', 'Main_AUTO.ria.ua']);" title="РЎС‚РѕР» Р·Р°РєР°Р·РѕРІ Р·Р°РїС‡Р°СЃС‚РµР№">РЎС‚РѕР» Р·Р°РєР°Р·РѕРІ Р·Р°РїС‡Р°СЃС‚РµР№</a></dd>
-                    <dd><a href="/strahovanie/" title="РђРІС‚РѕСЃС‚СЂР°С…РѕРІР°РЅРёРµ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Strahovanie', 'Service'])">РђРІС‚РѕСЃС‚СЂР°С…РѕРІР°РЅРёРµ</a></dd>
-                    <dd><a href="http://market.auto.ria.ua/tehpomosch" target="_blank" title="##autohelp##" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Tehpomosch', 'Market'])">РђРІС‚РѕРїРѕРјРѕС‰СЊ</a></dd>
-                    <dd><a href="/rastamozhka_avto/" title="Р Р°СЃС‚Р°РјРѕР¶РєР° Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Rastamozhka', 'РЎatalog'])">Р Р°СЃС‚Р°РјРѕР¶РєР° Р°РІС‚Рѕ</a></dd>
+                    <dt>Сервисы</dt>
+                    <dd><a href="/avtovikup/" title="Автовыкуп" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtovikup', 'Service'])">Автовыкуп</a></dd>
+                    <dd><a href="/autolombardy/"  title="Автоломбарды" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autolombardy', 'Service'])">Автоломбарды</a></dd>
+                    <dd><a href="/autoservice/" title="Автосервисы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoservice', 'Service'])">Автосервисы</a></dd>
+                    <dd><a href="/avtorazborka/" title="Авторазборка" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtorazborka', 'Service'])">Авторазборка</a></dd>
+                    <dd><a href="/avtorazborka/#stolzakazov" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Add_Aplication', 'Main_AUTO.ria.ua']);" title="Стол заказов запчастей">Стол заказов запчастей</a></dd>
+                    <dd><a href="/strahovanie/" title="Автострахование" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Strahovanie', 'Service'])">Автострахование</a></dd>
+                    <dd><a href="http://market.auto.ria.ua/tehpomosch" target="_blank" title="##autohelp##" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Tehpomosch', 'Market'])">Автопомощь</a></dd>
+                    <dd><a href="/rastamozhka_avto/" title="Растаможка авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Rastamozhka', 'Сatalog'])">Растаможка авто</a></dd>
                 </dl>
             </div>
             <div class="column">
              <dl class="unordered-list">
                 <dt>
-                    РўРѕРІР°СЂС‹ РѕС‚
+                    Товары от
                     <a href="http://market.auto.ria.ua" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Market', 'Market'])">
                         <i class="ico-market"></i>
                     </a>
                 </dt>
-                <dd><a href="http://market.auto.ria.ua/shina" title="РЁРёРЅС‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Shina', 'Market'])">РЁРёРЅС‹</a></dd>
-                <dd><a href="http://market.auto.ria.ua/diski" title="Р”РёСЃРєРё" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Diski', 'Market'])">Р”РёСЃРєРё</a></dd>
-                <dd><a href="http://market.auto.ria.ua/car_seats/" title="Р”РµС‚СЃРєРёРµ Р°РІС‚РѕРєСЂРµСЃР»Р°" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Krisla', 'Market'])">Р”РµС‚СЃРєРёРµ Р°РІС‚РѕРєСЂРµСЃР»Р°</a></dd>
-                <dd><a href="http://market.auto.ria.ua/avtochehlu" title="Р§РµС…Р»С‹ РЅР° СЃРёРґРµРЅСЊСЏ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtochehlu', 'Market'])">Р§РµС…Р»С‹ РЅР° СЃРёРґРµРЅСЊСЏ</a></dd>
-                <dd><a href="http://market.auto.ria.ua/kovriki/" title="РљРѕРІСЂРёРєРё" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Kovriki', 'Market'])">РљРѕРІСЂРёРєРё</a></dd>
-                <dd><a href="http://market.auto.ria.ua/farkop/" title="Р¤Р°СЂРєРѕРїС‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Farkop', 'Market'])">Р¤Р°СЂРєРѕРїС‹</a></dd>
+                <dd><a href="http://market.auto.ria.ua/shina" title="Шины" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Shina', 'Market'])">Шины</a></dd>
+                <dd><a href="http://market.auto.ria.ua/diski" title="Диски" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Diski', 'Market'])">Диски</a></dd>
+                <dd><a href="http://market.auto.ria.ua/car_seats/" title="Детские автокресла" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Krisla', 'Market'])">Детские автокресла</a></dd>
+                <dd><a href="http://market.auto.ria.ua/avtochehlu" title="Чехлы на сиденья" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtochehlu', 'Market'])">Чехлы на сиденья</a></dd>
+                <dd><a href="http://market.auto.ria.ua/kovriki/" title="Коврики" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Kovriki', 'Market'])">Коврики</a></dd>
+                <dd><a href="http://market.auto.ria.ua/farkop/" title="Фаркопы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Farkop', 'Market'])">Фаркопы</a></dd>
 
                 <dt>&nbsp;</dt>
-                <dd><a href="http://zapchasti.ria.ua/" title="Р—Р°РїС‡Р°СЃС‚Рё" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Zapchast_Catalog', 'Ria'])">Р—Р°РїС‡Р°СЃС‚Рё</a></dd>
-                <dd><a href="http://dom.ria.ua/garage/" title="Р“Р°СЂР°Р¶Рё" target="_blank" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Garage_Catalog', 'Dom'])">Р“Р°СЂР°Р¶Рё</a></dd>
-               <dd><a href="/document/" title="РђРІС‚РѕРґРѕРєСѓРјРµРЅС‚С‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Document', 'Poleznoe'])">РђРІС‚РѕРґРѕРєСѓРјРµРЅС‚С‹</a></dd>
+                <dd><a href="http://zapchasti.ria.ua/" title="Запчасти" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Zapchast_Catalog', 'Ria'])">Запчасти</a></dd>
+                <dd><a href="http://dom.ria.ua/garage/" title="Гаражи" target="_blank" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Garage_Catalog', 'Dom'])">Гаражи</a></dd>
+               <dd><a href="/document/" title="Автодокументы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Document', 'Poleznoe'])">Автодокументы</a></dd>
             </dl>
             </div>
             <div class="column" style="width: 195px">
                 <dl class="unordered-list">
-                    <dt>РџРѕР»РµР·РЅРѕРµ</dt>
-                    <dd><a href="/avtoshkola/"  title="РђРІС‚РѕС€РєРѕР»С‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtoshkola', 'Poleznoe'])">РђРІС‚РѕС€РєРѕР»С‹</a></dd>
-                    <dd><a href="/online_pdd/"  title="Р‘РёР»РµС‚С‹ РџР”Р” РѕРЅР»Р°Р№РЅ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Pdd_online', 'Poleznoe'])">Р‘РёР»РµС‚С‹ РџР”Р” РѕРЅР»Р°Р№РЅ</a></dd>
-                    <dd><a href="/forum" title="РђРІС‚РѕС„РѕСЂСѓРј" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Forum', 'Poleznoe'])">РђРІС‚РѕС„РѕСЂСѓРј</a></dd>
-                    <dd><a href="/humor/" title="РђРІС‚РѕСЋРјРѕСЂ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Humor', 'Poleznoe'])">РђРІС‚РѕСЋРјРѕСЂ</a></dd>
-                    <dd><a href="/autoclubs/" title="РђРІС‚РѕРєР»СѓР±С‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoclubs', 'Poleznoe'])">РђРІС‚РѕРєР»СѓР±С‹</a></dd>
-                    <dd><a href="http://link.auto.ria.ua/" title="РђРІС‚РѕСЃР°Р№С‚С‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Links', 'Poleznoe'])">РђРІС‚РѕСЃР°Р№С‚С‹</a></dd>
-                    <dd><a href="/automagazine/" title="Р–СѓСЂРЅР°Р»С‹" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Magazine', 'Poleznoe'])">Р–СѓСЂРЅР°Р»С‹</a></dd>
-                    <dd><a href="/compare/" title="РќР°РґРµР¶РЅРѕСЃС‚СЊ Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Compare', 'Poleznoe'])">РќР°РґРµР¶РЅРѕСЃС‚СЊ Р°РІС‚Рѕ</a></dd>
-                    <dd><a href="http://lanos.com.ua/" title="Р’СЃРµ РїСЂРѕ Lanos" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Lanos', 'Poleznoe'])">Р’СЃРµ РїСЂРѕ Lanos</a></dd>
-                    <dd><a href="/first_auto/"  title="РџРѕРєСѓРїР°РµРј РїРµСЂРІС‹Р№ Р°РІС‚РѕРјРѕР±РёР»СЊ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_First_Auto', 'Poleznoe'])">РџРѕРєСѓРїР°РµРј РїРµСЂРІС‹Р№ Р°РІС‚РѕРјРѕР±РёР»СЊ</a></dd>
-                    <dd><a href="/newauto/РћС‚Р·С‹РІС‹/РљР°С‚Р°Р»РѕРі/" class="new" title="РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">РћС‚Р·С‹РІС‹ РѕР± Р°РІС‚Рѕ</a></dd>
+                    <dt>Полезное</dt>
+                    <dd><a href="/avtoshkola/"  title="Автошколы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtoshkola', 'Poleznoe'])">Автошколы</a></dd>
+                    <dd><a href="/online_pdd/"  title="Билеты ПДД онлайн" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Pdd_online', 'Poleznoe'])">Билеты ПДД онлайн</a></dd>
+                    <dd><a href="/forum" title="Автофорум" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Forum', 'Poleznoe'])">Автофорум</a></dd>
+                    <dd><a href="/humor/" title="Автоюмор" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Humor', 'Poleznoe'])">Автоюмор</a></dd>
+                    <dd><a href="/autoclubs/" title="Автоклубы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoclubs', 'Poleznoe'])">Автоклубы</a></dd>
+                    <dd><a href="http://link.auto.ria.ua/" title="Автосайты" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Links', 'Poleznoe'])">Автосайты</a></dd>
+                    <dd><a href="/automagazine/" title="Журналы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Magazine', 'Poleznoe'])">Журналы</a></dd>
+                    <dd><a href="/compare/" title="Надежность авто" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Compare', 'Poleznoe'])">Надежность авто</a></dd>
+                    <dd><a href="http://lanos.com.ua/" title="Все про Lanos" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Lanos', 'Poleznoe'])">Все про Lanos</a></dd>
+                    <dd><a href="/first_auto/"  title="Покупаем первый автомобиль" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_First_Auto', 'Poleznoe'])">Покупаем первый автомобиль</a></dd>
+                    <dd><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></dd>
                 </dl>
             </div>
 
             <div class="menu__bottom-panel">
-                <a href="/help/" title="РџРѕРјРѕС‰СЊ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Help', 'Poleznoe'])">РџРѕРјРѕС‰СЊ</a>
+                <a href="/help/" title="Помощь" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Help', 'Poleznoe'])">Помощь</a>
                 <em class="mdash">|</em>
-                <a href="/news/novinki/" title="РќРѕРІРѕРІРІРµРґРµРЅРёСЏ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Novinki', 'Poleznoe'])">РќРѕРІРѕРІРІРµРґРµРЅРёСЏ</a>
+                <a href="/news/novinki/" title="Нововведения" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Novinki', 'Poleznoe'])">Нововведения</a>
                 <em class="mdash">|</em>
-                <a class="new" href="/?target=view&event=lic" title="РЎРѕРіР»Р°С€РµРЅРёРµ Рѕ РїСЂРµРґРѕСЃС‚Р°РІР»РµРЅРёРё СѓСЃР»СѓРі" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Agreement', 'Poleznoe'])">РЎРѕРіР»Р°С€РµРЅРёРµ Рѕ РїСЂРµРґРѕСЃС‚Р°РІР»РµРЅРёРё СѓСЃР»СѓРі</a>
+                <a class="new" href="/?target=view&event=lic" title="Соглашение о предоставлении услуг" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Agreement', 'Poleznoe'])">Соглашение о предоставлении услуг</a>
 
             </div>
             <div class="menu__bottom-panel">
-                <a class="link-add"  href="/document/add.html" title="Р”РѕР±Р°РІРёС‚СЊ РђРІС‚РѕРґРѕРєСѓРјРµРЅС‚" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Docum', 'Menu'])">Р”РѕР±Р°РІРёС‚СЊ РђРІС‚РѕРґРѕРєСѓРјРµРЅС‚</a>
+                <a class="link-add"  href="/document/add.html" title="Добавить Автодокумент" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Docum', 'Menu'])">Добавить Автодокумент</a>
                 <em class="mdash">|</em>
-                <a class="link-add" href="http://www.ria.ua/advertisement/addstep1" title="Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїС‡Р°СЃС‚СЊ" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Zapchast', 'Ria'])">Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїС‡Р°СЃС‚СЊ</a>
+                <a class="link-add" href="http://www.ria.ua/advertisement/addstep1" title="Добавить запчасть" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Zapchast', 'Ria'])">Добавить запчасть</a>
             </div>
 
 
@@ -546,7 +551,7 @@
 
 </div>
 <div class="tabs" tab="5">
-    <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_News', 'News'])">РќРѕРІРѕСЃС‚Рё</a>
+    <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_News', 'News'])">Новости</a>
     <strong class="blue"></strong>
     <div class="window hide">
         <div class="iframe"></div>
@@ -556,14 +561,14 @@
     <div class="column" style="min-width: 90px">
         <dl class="unordered-list">
             <dt>
-            <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_All_News', 'News'])">Р’СЃРµ РЅРѕРІРѕСЃС‚Рё</a>
+            <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_All_News', 'News'])">Все новости</a>
             </dt>
 
             
 
                 <dd>
                     
-                        <a href="/news/events/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_events', 'News'])">РЎРѕР±С‹С‚РёСЏ</a>
+                        <a href="/news/events/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_events', 'News'])">События</a>
                     
                 </dd>
 
@@ -573,7 +578,7 @@
 
                 <dd>
                     
-                        <a href="/news/auto/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_auto', 'News'])">РђРІС‚РѕРјРѕР±РёР»Рё</a>
+                        <a href="/news/auto/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_auto', 'News'])">Автомобили</a>
                     
                 </dd>
 
@@ -583,7 +588,7 @@
 
                 <dd>
                     
-                        <a href="/news/autobusiness/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autobusiness', 'News'])">РђРІС‚РѕР±РёР·РЅРµСЃ</a>
+                        <a href="/news/autobusiness/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autobusiness', 'News'])">Автобизнес</a>
                     
                 </dd>
 
@@ -593,7 +598,7 @@
 
                 <dd>
                     
-                        <a href="/news/autolaw/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autolaw', 'News'])">РђРІС‚РѕР·Р°РєРѕРЅ</a>
+                        <a href="/news/autolaw/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autolaw', 'News'])">Автозакон</a>
                     
                 </dd>
 
@@ -603,7 +608,7 @@
 
                 <dd>
                     
-                        <a href="/news/actions/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_actions', 'News'])">РђРєС†РёРё</a>
+                        <a href="/news/actions/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_actions', 'News'])">Акции</a>
                     
                 </dd>
 
@@ -613,7 +618,7 @@
 
                 <dd>
                     
-                        <a href="/news/test_drive/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_test_drive', 'News'])">РўРµСЃС‚-РґСЂР°Р№РІС‹</a>
+                        <a href="/news/test_drive/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_test_drive', 'News'])">Тест-драйвы</a>
                     
                 </dd>
 
@@ -631,7 +636,7 @@
 
                 <dd>
                     
-                        <a href="/news/autoservice_technology/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_Technology', 'News'])">РђРІС‚РѕСЃРµСЂРІРёСЃ Рё РўРµС…РЅРѕР»РѕРіРёРё</a>
+                        <a href="/news/autoservice_technology/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_Technology', 'News'])">Автосервис и Технологии</a>
                     
                 </dd>
 
@@ -641,7 +646,7 @@
 
                 <dd>
                     
-                        <a href="/news/about_us/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_about_us', 'News'])">Рћ РЅР°СЃ РїРёС€СѓС‚</a>
+                        <a href="/news/about_us/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_about_us', 'News'])">О нас пишут</a>
                     
                 </dd>
 
@@ -651,7 +656,7 @@
 
                 <dd>
                     
-                        <a href="/news/avtoblog/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_avtoblog', 'News'])">РђРІС‚РѕР±Р»РѕРіРё</a>
+                        <a href="/news/avtoblog/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_avtoblog', 'News'])">Автоблоги</a>
                     
                 </dd>
 
@@ -661,7 +666,7 @@
 
                 <dd>
                     
-                        <a href="/news/novinki/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_novinki', 'News'])">РќРѕРІРѕРІРІРµРґРµРЅРёСЏ</a>
+                        <a href="/news/novinki/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_novinki', 'News'])">Нововведения</a>
                     
                 </dd>
 
@@ -679,7 +684,7 @@
 
                 <dd>
                     
-                        <a href="/news/subaru/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_subaru', 'News'])">Р’СЃРµ Рѕ Subaru</a>
+                        <a href="/news/subaru/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_subaru', 'News'])">Все о Subaru</a>
                     
                 </dd>
 
@@ -689,7 +694,7 @@
 
                 <dd>
                     
-                        <a href="/news/bmw/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_bmw', 'News'])">Р’СЃРµ o BMW</a>
+                        <a href="/news/bmw/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_bmw', 'News'])">Все o BMW</a>
                     
                 </dd>
 
@@ -699,7 +704,7 @@
 
                 <dd>
                     
-                        <a href="/news/mini/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_mini', 'News'])">Р’СЃРµ Рѕ MINI</a>
+                        <a href="/news/mini/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_mini', 'News'])">Все о MINI</a>
                     
                 </dd>
 
@@ -709,7 +714,7 @@
 
                 <dd>
                     
-                        <a href="/news/rental_info/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_rental_info', 'News'])">Р’СЃРµ Рѕ РїСЂРѕРєР°С‚Рµ</a>
+                        <a href="/news/rental_info/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_rental_info', 'News'])">Все о прокате</a>
                     
                 </dd>
 
@@ -719,7 +724,7 @@
 
                 <dd>
                     
-                        <a href="/news/journals/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_journals', 'News'])">РћРЅР»Р°Р№РЅ Р¶СѓСЂРЅР°Р»</a>
+                        <a href="/news/journals/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_journals', 'News'])">Онлайн журнал</a>
                     
                 </dd>
 
@@ -729,7 +734,7 @@
 
                 <dd>
                     
-                        <a href="/news/konkurs/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_konkurs', 'News'])">РљРѕРЅРєСѓСЂСЃС‹</a>
+                        <a href="/news/konkurs/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_konkurs', 'News'])">Конкурсы</a>
                     
                 </dd>
 
@@ -739,7 +744,7 @@
 
                 <dd>
                     
-                        <a href="/news/shanghai/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_shanghai', 'News'])">РЁР°РЅС…Р°Р№-2013</a>
+                        <a href="/news/shanghai/"  onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_shanghai', 'News'])">Шанхай-2013</a>
                     
                 </dd>
 
@@ -760,7 +765,7 @@
 </div>
 <div class="tabs" >
     <a href="/notepad.html" >
-       <i class="icon-star-tab"></i> Р‘Р»РѕРєРЅРѕС‚
+       <i class="icon-star-tab"></i> Блокнот
         <!--            FIX THIS to JavaScript-->
         <!--            # if expr="$bookmarks_count!=0"
                         <strong class="blue">
@@ -774,7 +779,7 @@
           <i class="ico-new"></i>
      <a href="http://auto.ria.ua/news/events/206878/" target="_blank" class="insert-element"
         onclick="_gaq.push(['_trackEvent', 'Whats_New', 'Click_on_Yanukovich_poshlini', '/']);">
-                  РЇРЅСѓРєРѕРІРёС‡ Р·Р°Р№РјРµС‚СЃСЏ РїРѕС€Р»РёРЅР°РјРё
+                  Янукович займется пошлинами
           
      </a>
   <!-- Page load array script time : 0.034149885177612
@@ -794,10 +799,10 @@
 <div class="panel-breadcrumbs">
     <h2 class="breadcrumbs" id="breadcrumbs">
         
-            <a href="/" title="РџСЂРѕРґР°Р¶Р° Р°РІС‚Рѕ" id="breadcrumbs-/" class="item">РџСЂРѕРґР°Р¶Р° Р°РІС‚Рѕ</a>
+            <a href="/" title="Продажа авто" id="breadcrumbs-/" class="item">Продажа авто</a>
             
         
-            <a href="/search/" title="Р Р°СЃС€РёСЂРµРЅРЅС‹Р№ РїРѕРёСЃРє РЅР° Auto.ria.ua : РїСЂРѕРґР°Р¶Р° Р°РІС‚Рѕ, Р°РІС‚РѕСЃР°Р»РѕРЅС‹, РєР°С‚Р°Р»РѕРі Р°РІС‚РѕРјРѕР±РёР»РµР№, Р±Р°Р·Р°СЂ Р°РІС‚Рѕ" id="breadcrumbs-/search/" class="item">РџРѕРёСЃРє Р°РІС‚Рѕ</a>
+            <a href="/search/" title="Расширенный поиск на Auto.ria.ua : продажа авто, автосалоны, каталог автомобилей, базар авто" id="breadcrumbs-/search/" class="item">Поиск авто</a>
             
         
     </h2>
@@ -819,994 +824,110 @@
 
 <!-- include virtual="/html/blocks/search_page/blocks/assync_banners_loader.html" -->
 
-<div class="main-panel span8">
-    <div class="" id="DeleteAutoBlock">
 
-    </div>
-
-
-
-    
-		<div style="margin-bottom: 10px;" >
-		    <a href="/search.html" onclick="Cookie.write('use_old_search', '1', {duration: 365}); _gaq.push(['_trackEvent', 'Advanced_Search', 'Click_on_Link_Return', 'Search_Oldcar']); this.set('href','/search.html?' + window.location.hash.substring(1)); return true;" class="point-old-search">
-			<i class="icon-search-red"></i>РџРµСЂРµР№С‚Рё Рє СѓРїСЂРѕС‰РµРЅРЅРѕРјСѓ РїРѕРёСЃРєСѓ.</a>
-		</div>
-    
-    <!--    .BEGIN Advanced Search    -->
-<div class="advanced-search" id="advanced_search_main_container">
-    <a class="toggle-advanced hide" href="javascript:void(0);" id="search_advanced_top_container_slide_handler">
-        <i class="icon-open-white"></i>
-        <!--<i class="icon-close-white"></i>-->
-    </a>
-    <div id="search_advanced_top_container" class="hide">
-        <div  id="top_search_filters_container" class="hide">
-            <div class="setup-data-search">
-                <i class="icon-head-searchauto"></i>
-                Р’С‹ РёС‰РµС‚Рµ:
-                <span class="element-select" id="sfh_category_id" pelement="container" data="category_id">
-                    <a class="selected-smoll no-select" href="javascript:void(0);" pelement="handle">Р’СЃРµ</a>
-                    <span class="options" style="display: none;" pelement="options_container">
-                        <a href="javascript:void(0);" class="item" pelement="option" pvalue="0">Р’СЃРµ</a>
-                    </span>
-                </span>
-
-
-
-            </div>
-            <div class="filtered hide" id="top_filter_container">
-
-
-                <div class="title">
-
-                    Р’С‹Р±СЂР°РЅРЅС‹Рµ С„РёР»СЊС‚СЂС‹:
-
-                    <span class="area clear-filter">
-                        <i class="icon-delete"></i>
-                        <a href="javascript:void(0);" id="tf_reset_href">СѓР±СЂР°С‚СЊ РІСЃРµ С„РёР»СЊС‚СЂС‹</a>
-                    </span>
-                </div>
-
-                <div id="top_filter_body">
-
-<!--                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        ABS
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        Р“Р°Р»РѕРіРµРЅРЅС‹Рµ С„Р°СЂС‹
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РЎРµСЂРІРѕСЂСѓР»СЊ
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РЎРёРіРЅР°Р»РёР·Р°С†РёСЏ
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ Р·Р°РјРѕРє
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        MP3
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РђРєСѓСЃС‚РёРєР°
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РЎР°Р±РІСѓС„РµСЂ
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        Р‘РѕСЂС‚РѕРІРѕР№ РєРѕРјРїСЊСЋС‚РµСЂ
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РџР°СЂРєС‚СЂРѕРЅРёРє
-                    </a>
-                    <a class="item-filtered" href="#">
-                        <i class="delete" href="#"></i>
-                        РџРѕРґРѕРіСЂРµРІ СЃРёРґРµРЅРёР№
-                    </a>-->
-
-                </div>
-            </div>
-        </div>
-        <div class="advanced-bar" id="search_expanded_advanced_container">
-            <a href="javascript:void(0);" class="advanced-button" id="search_form_expand_btn" openned="false">
-                <i class="icon-search-white"></i>
-                РЈС‚РѕС‡РЅРёС‚СЊ РїРѕРёСЃРє
-            </a>
-            <span class="count-result">
-                РќР°Р№РґРµРЅРѕ <strong id="search_results_count">0</strong> Р°РІС‚Рѕ
-            </span>
-
-        </div>
-    </div>
-    <div class="grid grid-span2" id="search_form_container">
-        <div class="preloader-window"></div>
-    </div>
-</div>
-
-
-<!--    .END Advanced Search    -->
-<div style="display: none;">
-    <!-- hr noshade="noshade" / -->
-    <!-- hr noshade="noshade" / -->
-<p class="item-feedback-newcars">
-    <i class="icon-feedback-red"></i>
-    <a class="bold" href="#">РћС‚Р·С‹РІС‹ Рѕ Chevrolet</a>:
-    РџРѕ СЂР°СЃС…РѕРґСѓ С‚РѕРїР»РёРІР° РіРѕСЂРѕРґ РІ СЂР°Р№РѕРЅРµ 9-10. РњР°С€РёРЅРєР° СЂРµ ...
-    <a href="#">РџРѕРґСЂРѕР±РЅРµРµ<i class="icon-view"></i></a>
-</p>
-
-
-</div>
-
-
-
-    <div class="advanced-panel" id="advanced_panel_contaier">
-        <div class="filter" id="left_filter_container">
-
-    <div class="head-filter" style="cursor:pointer;">
-        Р¤РёР»СЊС‚СЂРѕРІР°С‚СЊ
-    </div>
-    <div class="panel">
-
-        <!--    .BEGIN    subcategory__filter    -->
-
-        <div class="group__filter" id="slf_filter_vendor_sub_category_container">
-            <div class="title">
-                <a href="javascript:void(0);" class="open" id="slf_filter_vendor_category_toggle_handler">РџРѕРґРєР°С‚РµРіРѕСЂРёСЏ</a>
-            </div>
-            <div id="slf_filter_vendor_category_toggle_target">
-                <p class="item-rows">
-                    <select id="sfl_bodyStyleId" class="select" name="bodyStyleId">
-                        <option value="0" class="no-select">Р›СЋР±РѕР№</option>
-                    </select>
-                </p>
-                <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-            </div>
-        </div>
-
-        <!--    .END    subcategory__filter    -->
-
-
-
-        <!--    .BEGIN    Marka/Model__filter    -->
-
-        <div class="group__filter">
-
-            <div class="title" toggle="head">
-                <a href="javascript:void(0)" class="open" id="slf_filter_marka_model_block_toggle_handler">РњР°СЂРєР°/РњРѕРґРµР»СЊ</a>
-            </div>
-
-            <div toggle="data" id="slf_filter_marka_model_block_toggle_target">
-                <div class="group" id="slf_filter_marka_model_block">
-
-                    <p class="item-rows">
-                        <label class="label" for="">РњР°СЂРєР°</label>
-                        <select class="select" id="filter_marka" name="marka" data="marka">
-                            <option value="0" class="no-select">Р›СЋР±Р°СЏ</option>
-                        </select>
-                    </p>
-
-                    <p class="item-rows">
-                        <label class="label" for="">РњРѕРґРµР»СЊ</label>
-                        <select class="select" id="filter_model" name="model" data="model">
-                            <option value="0" class="no-select">Р›СЋР±Р°СЏ</option>
-                        </select>
-                    </p>
-
-                    <dl class="item-rows" data="time_range">
-                        <dt>Р“РѕРґ РІС‹РїСѓСЃРєР°</dt>
-                        <dd class="item-smoll">
-                            <label class="label-smoll" for="filter_s_yers">РѕС‚</label>
-                            <select class="select-smoll" id="filter_s_yers"  data="years_from" name="s_yers">
-                                <option value="0" class="no-select">Р›СЋР±РѕР№</option>
-                            </select>
-                        </dd>
-                        <dd class="item-smoll">
-                            <label class="label-smoll" for="filter_po_yers">РґРѕ</label>
-                            <select class="select-smoll" id="filter_po_yers" data="years_to" name="po_yers">
-                                <option value="0" class="no-select">Р›СЋР±РѕР№</option>
-                            </select>
-                        </dd>
-                        <!--                        <dd class="item-smoll">
-                                                    <select class="select-smoll">
-                                                        <option>option</option>
-                                                    </select>
-                                                </dd>-->
-                    </dl>
-
-                </div>
-                <div id="slf_marka_model_block_add_pointer" style="display: none;"></div>
-                <p class="item-rows">
-                    <a href="javascript:void(0);" class="link-add" id="slf_filter_add_marka_model_block">Р”РѕР±Р°РІРёС‚СЊ РµС‰Рµ</a>
-                </p>
-
-                <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-            </div>
-
-        </div>
-
-        <!--    .END    Marka/Model__filter    -->
-
-
-        <!--    .BEGIN    Region    -->
-
-        <div class="group__filter">
-
-            <div class="title" toggle="head">
-                <a href="javascript:void(0)" class="open" id="slf_location_chk_toggle_handler">Р РµРіРёРѕРЅС‹</a>
-            </div>
-            <div class="hide" toggle="data" id="slf_location_chk_toggle_target">
-                <div class="sub-group__filter" id="lf_location_chk_group">
-
-                    <!--                    <p class="item">
-                                            <a href="javascript:void(0);" class="checked">Р’РёРЅРЅРёС†РєР°СЏ</a>
-                                            <a href="javascript:void(0)" class="open" toggle_target="region_data_1"></a>
-                                        </p>
-
-                                        <div class="subgroup hide" toggle_source="region_data_1">
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="checked">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="checked">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                        </div>
-
-                                        <p class="item">
-                                            <a href="javascript:void(0);" class="check">Р›СЊРІРѕРІСЃРєР°СЏ</a>
-                                            <a href="javascript:void(0)" class="open" toggle_target="region_data_lvov"></a>
-                                        </p>
-
-                                        <p class="item">
-                                            <a href="javascript:void(0);" class="check">РћРґРµСЃСЃРєР°СЏ</a>
-                                            <a href="javascript:void(0)" class="open" toggle_target="region_data_odessa"></a>
-                                        </p>
-
-                                        <p class="item">
-                                            <a href="javascript:void(0);" class="check">РҐР°СЂСЊРєРѕРІСЃРєР°СЏ </a>
-                                            <a href="javascript:void(0)" class="open" toggle_target="region_data_harkov"></a>
-                                        </p>
-
-                                        <div class="subgroup hide" toggle_source="region_data_harkov">
-                                            <p class="item"><a href="javascript:void(0);" class="checked">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="checked">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                            <p class="item"><a href="javascript:void(0);" class="check">Item</a></p>
-                                        </div>-->
-
-                </div>
-
-
-                <!--                <div class="toggle">
-                                    <a href="javascript:void(0);">
-                                        Р‘РѕР»СЊС€Рµ<i class="icon-open"></i>
-                                    </a>
-                                </div>
-
-
-                                <div class="toggle">
-                                    <a href="javascript:void(0);">
-                                        РњРµРЅСЊС€Рµ<i class="icon-close"></i>
-                                    </a>
-                                </div>-->
-
-
-            </div>
-        </div>
-
-        <!--    .END    Region    -->
-
-
-
-        <!--    .BEGIN    additionally__filter    -->
-
-        <div class="group__filter">
-            <div class="title">
-                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_toggle_handler">Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ</a>
-            </div>
-
-            <div class="group" id="slf_filter_additional_data_toggle_target">
-                <p class="item-rows">
-                    <a href="javascript:void(0);" class="check" id="lf_search_with_photo" pname="with_photo" pvalue="1" pchecked="false">СЃ С„РѕС‚Рѕ</a>
-                </p>
-
-                <p class="item-rows">
-                    <a href="javascript:void(0);" class="check" id="lf_search_with_video" pname="with_video" pvalue="1" pchecked="false">СЃ РІРёРґРµРѕ</a>
-                </p>
-                <p class="item-rows">
-                    <a href="javascript:void(0);" class="check" id="lf_checked_auto_ria" pname="checked_auto_ria" pvalue="1">РїСЂРѕРІРµСЂРµРЅРѕ auto.ria.ua</a>
-                </p>
-
-
-
-                <div class="rows">
-                    <div class="sub-title">
-                        <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_price_block_toggle_handler">Р¦РµРЅР°</a>
-                    </div>
-                    <div class="" id="slf_filter_additional_data_price_block_toggle_target">
-                        <p class="item-smoll">
-                            <label class="label-smoll" for="lf_price_from">РѕС‚</label>
-                            <input class="input-smoll" id="lf_price_from" type="text" name="price_ot" />
-                        </p>
-                        <p class="item-smoll">
-                            <label class="label-smoll" for="lf_price_to">РґРѕ</label>
-                            <input class="input-smoll"  id="lf_price_to" type="text" name="price_do" />
-                        </p>
-                        <p class="item-smoll">
-                            <select id="lf_currency_id" class="select-smoll" name="currency" >
-                                <option value="1">$</option>
-                                <option value="2">в‚¬</option>
-                                <option value="3">РіСЂРЅ.</option>
-                            </select>
-                        </p>
-                        <p class="item-smoll">
-                            <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                        </p>
-                    </div>
-                </div>
-
-
-
-                <div class="rows">
-                    <div class="sub-title">
-                        <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_race_block_toggle_handler">РџСЂРѕР±РµРі (С‚С‹СЃ.РєРј.)</a>
-                    </div>
-                    <div class="" id="slf_filter_additional_data_race_block_toggle_target">
-                        <dd class="item-smoll">
-                            <label class="label-smoll" for="">РѕС‚</label>
-                            <input id="lf_race_from" type="text" class="input-smoll" name="raceFrom">
-                        </dd>
-                        <dd class="item-smoll">
-                            <label class="label-smoll" for="">РґРѕ</label>
-                            <input id="lf_race_to" type="text" class="input-smoll" name="raceTo">
-                        </dd>
-                        <dd class="item-smoll">
-                            <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                        </dd>
-                    </div>
-                </div>
-
-
-<!--                <div class="toggle">
-                        <span toggle_status="open" class="" id="slf_filter_additional_data_more_toggle_handler"><span>Р‘РѕР»СЊС€Рµ</span><i class="icon-open"></i></span>
-                        <span toggle_status="close">РњРµРЅСЊС€Рµ<i class="icon-close"></i></span>
-
-                </div>-->
-                <!--<div toggle="data" class="hide" id="slf_filter_additional_data_more_toggle_target">-->
-                <div toggle=" data"id="slf_filter_additional_data_more_toggle_target">
-                        <div class="rows">
-                            <div class="sub-title" toggle="head" >
-                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_gearbox_toggle_handler">РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡</a>
-                            </div>
-                            <div toggle="data" class="hide" id="slf_filter_additional_data_more_gearbox_toggle_target">
-                                <p class="item-rows">
-                                    <select id="lf_gearBoxId" class="select" name="gearbox">
-                                        <option value="0" class="no-select">Р›СЋР±Р°СЏ</option>
-                                    </select>
-                                </p>
-                                <p class="item-rows">
-                                    <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                                </p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="rows">
-                            <div class="sub-title" toggle="head">
-                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_engine_volume_toggle_handler">РћР±СЉРµРј РґРІРёРіР°С‚РµР»СЏ</a>
-                            </div>
-                            <div toggle="data" class="hide" id="slf_filter_additional_data_more_engine_volume_toggle_target">
-                                <p class="item-smoll">
-                                    <label class="label-smoll" for="">РѕС‚</label>
-                                    <input type="text" class="input-smoll" id="lf_engineVolumeFrom" name="engineVolumeFrom"/>
-                                </p>
-                                <p class="item-smoll">
-                                    <label class="label-smoll" for="">РґРѕ</label>
-                                    <input type="text" class="input-smoll" id="lf_engineVolumeTo" name="engineVolumeTo"/>
-                                </p>
-                                <p class="item-smoll">
-                                    <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                                </p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="rows">
-                            <div class="sub-title">
-                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_type_toggle_handler">РўРѕРїР»РёРІРѕ</a>
-                            </div>
-                            <div toggle="data" class="hide" id="slf_filter_additional_data_more_type_toggle_target">
-                                <p class="item-rows">
-                                    <select id="lf_fuel_type" class="select" name="type">
-                                        <option value="0" class="no-select">Р›СЋР±РѕРµ</option>
-                                    </select>
-                                </p>
-                                <p class="item-rows">
-                                    <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                                </p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="rows">
-                            <div class="sub-title">
-                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_drive_type_toggle_handler">РџСЂРёРІРѕРґ</a>
-                            </div>
-                            <div toggle="data" class="hide" id="slf_filter_additional_data_more_drive_type_toggle_target">
-                                <p class="item-rows">
-                                    <select id="lf_driveTypeId" class="select" name="drive_type">
-                                        <option value="0" class="no-select">Р›СЋР±РѕР№</option>
-                                    </select>
-                                </p>
-                                <p class="item-rows">
-                                    <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                                </p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="rows">
-                            <div class="sub-title" toggle="head">
-                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_color_toggle_handler">Р¦РІРµС‚</a>
-                            </div>
-                            <div toggle="data" class="hide" id="slf_filter_additional_data_more_color_toggle_target">
-                                <p class="item-rows">
-                                    <select id="lf_colorId" class="select" name="color">
-                                        <option value="0" class="no-select">Р›СЋР±РѕР№</option>
-                                    </select>
-                                </p>
-                                <p class="item-rows">
-                                    <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-
-
-
-
-        </div>
-
-        <!--    .END    additionally__filter    -->
-
-
-
-
-        <!--    .BEGIN    ID    -->
-
-        <div class="group__filter">
-
-            <div class="title">
-                <a href="javascript:void(0)" class="open" id="slf_auto_id_handler">РџРѕРёСЃРє РїРѕ ID</a>
-            </div>
-            <div toggle="data" class="hide" id="slf_auto_id_target">
-
-                <p class="item-rows">
-                    <input type="text"  class="select" id="lfs_auto_id_input" value=""/>
-                </p>
-                <a href="javascript:void(0);" class="button mini">РџРѕРёСЃРє</a>
-
-            </div>
-        </div>
-
-        <!--    .END    ID    -->
-
-        <div class="filter-setup-list">
-            <div id="lf_bottom_marka_model_exclude_labels_container">
-
-            </div>
-            <div id="lf_bottom_additional_remove_label_container">
-
-            </div>
-            <div id="lf_bottom_additional_filter_labels_container">
-
-            </div>
-
-            <p class="clear-filter">
-                <i class="icon-delete"></i>
-                <a href="javascript:void(0);" id="lf_reset_href">СѓР±СЂР°С‚СЊ РІСЃРµ С„РёР»СЊС‚СЂС‹</a>
-            </p>
-
-
-
-
-
-
-        </div>
-
-    </div>
-
-</div>
-
-        <div class="advanced" id='sft_search_filters'>
-
-    РЎРѕСЂС‚РёСЂРѕРІРєР°
-
-    <span class="element-select" id='top_order_by' pelement="container" data="order_by">
-
-        <a class="selected" href="javascript:void(0);" pelement="handle">РѕР±С‹С‡РЅР°СЏ</a>
-        <input type="hidden" name="order_by" pelement="data" value="0">
-        <span class="options" style="display: none;" pelement="options_container">
-            <a class="item" href="javascript:void(0);"  pelement="option" pvalue="0">РѕР±С‹С‡РЅР°СЏ</a>
-            <a class="item" href="javascript:void(0);"  pelement="option" pvalue="3">РѕС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј</a>
-            <a class="item" href="javascript:void(0);" pelement="option"  pvalue="2" >РѕС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј</a>
-            <a class="item" href="javascript:void(0);" pelement="option"  pvalue="1">РїРѕ СЂРµР№С‚РёРЅРіСѓ</a>
-        </span>
-
-    </span>
-
-
-    <span class="btn-compare hide" id="search_cars_compare_container">
-        <a href="/compare_ads/auto" target="_blank" class="button">
-            <i class="icon-compare"></i>
-        </a>
-        <a href="/compare_ads/auto" target="_blank">СЃСЂР°РІРЅРёС‚СЊ</a>
-        (<strong id="search_cars_compare_count">0</strong>)
-    </span>
-
-    <span class="group-button" id="top_view_type_id">
-        <a href="javascript:void(0);" class="button active" name="type_view_id" pvalue="0">
-            <i class="icon-switch-1"></i>
-        </a>
-        <a href="javascript:void(0);" class="button" name="type_view_id" pvalue="1">
-            <i class="icon-switch-2"></i>
-        </a>
-        <!--<a href="#" class="button">-->
-        <!--<i class="icon-switch-3"></i>-->
-        <!--</a>-->
-        <!--<a href="#" class="button">-->
-        <!--<i class="icon-switch-4"></i>-->
-        <!--</a>-->
-    </span>
-        
-    <div id="search_history_conteiner" class="hide pseudoselect span3 select-history">
-
-        <a id="search_history_link" onclick="_gaq.push(['_trackEvent', 'Search_history', 'Click_on_Select_Saved_Searches', 'Advanced_Search'])" class=" item-pseudoselect" href="javascript:void(0);">
-            <span class="block">
-                <span class="overflow">
-                    <i class="icon-search-history"></i>
-                    <span id="active_search_name" >СЃРѕС…СЂР°РЅРµРЅРЅС‹Рµ РїРѕРёСЃРєРё</span>
-                </span>
-            </span>
-        </a>
-
-        <select id="">
-            <option value=""></option>
-        </select>
-
-        <div id="search_history_block" class="hide options select-history-search" style="display: block;">
-            
-        </div>
-
-
-    </div>
-    
-</div>
-
-    </div>
-
-
-    <div id="user_cars_position_block" class="hide">
-    <!-- # include virtual="/html/blocks/search_page/blocks/cars_position-v1.062.html" -->
-</div>
-
-
-
-    
-        <div class="advanced-panel" id="results_newcompletebanner_1">
-
-
-            
-    <section class="box-panel rocon">
-        <div class="head">
-            РќРѕРІС‹Рµ Р°РІС‚Рѕ
-            <a class="area" href="/newauto/search" target="_blank" title="РџРµСЂРµР№С‚Рё Рє РїРѕРёСЃРєСѓ РЅРѕРІС‹С… Р°РІС‚Рѕ">РЎРјРѕС‚СЂРµС‚СЊ РІСЃРµ</a>
-        </div>
-        <div class="informer__newcars">
-            
-                <div class="item ">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
-                            <img alt="Audi Q5 2.0 TFSI (211 Р».СЃ.) MT quattro" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1927/192786/192786s.jpg" width="85" title="Audi Q5 ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26240]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
-                                Audi Q5 2.0 TFSI (211 Р».СЃ.) MT quattro
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">479 580</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
-                                    <img alt="Audi Q5 2.0 TFSI (211 Р».СЃ.) MT quattro" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1927/192786/192786m.jpg" title="Audi Q5 ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>РљСЂРѕСЃСЃРѕРІРµСЂ</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р‘РµРЅР·РёРЅ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>5</strong><br>
-                                РўРёРї РїСЂРёРІРѕРґР°: <strong>РџРѕР»РЅС‹Р№</strong><br>
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РњРµС…Р°РЅРёС‡РµСЃРєР°СЏ</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>1984</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="item ">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
-                            <img alt="Hyundai IX35 2.0 AT 4WD Comfort" src="http://img.ria.ua/photos/auto/new_auto/5/535/53570/53570s.jpg" width="85" title="Hyundai IX35 ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[9984]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
-                                Hyundai IX35 2.0 AT 4WD Comfort
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">219 808</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
-                                    <img alt="Hyundai IX35 2.0 AT 4WD Comfort" src="http://img.ria.ua/photos/auto/new_auto/5/535/53570/53570m.jpg" title="Hyundai IX35 ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>РљСЂРѕСЃСЃРѕРІРµСЂ</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р‘РµРЅР·РёРЅ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>5</strong><br>
-                                РўРёРї РїСЂРёРІРѕРґР°: <strong>РџРѕР»РЅС‹Р№</strong><br>
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РђРІС‚РѕРјР°С‚</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>1998</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="item last">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/РљР°РјРђР—/4308/29665/?stateId=0">
-                            <img alt="РљР°РјРђР— 4308 4308-064-96(Рђ3)" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1921/192130/192130s.jpg" width="85" title="РљР°РјРђР— 4308 ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[29665]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/РљР°РјРђР—/4308/29665/?stateId=0">
-                                РљР°РјРђР— 4308 4308-064-96(Рђ3)
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">531 566</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/РљР°РјРђР—/4308/29665/?stateId=0">
-                                    <img alt="РљР°РјРђР— 4308 4308-064-96(Рђ3)" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1921/192130/192130m.jpg" title="РљР°РјРђР— 4308 ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>Р“СЂСѓР·РѕРІРёРє</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р”РёР·РµР»СЊ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>2</strong><br>
-                                
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РњРµС…Р°РЅРёС‡РµСЃРєР°СЏ</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>6700</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/РљР°РјРђР—/4308/29665/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-        </div>
-    </section>    
-
-
-        </div>
-    
-
-    <div id="banner_3_hidden_place" style="display: none;"></div>
-<!--    .BEGIN Search Result   -->
-
-    <!--expr search with $request_uri search-->
-
-    <div style="display: none;">
-    <!--<div>-->
-    include virtual="/blocks_search/search/?catalog_name=search&person_id=0
-    </div>
-    <div style="display: none;" id="search_results_total_count">324188</div>
-    
+       
     
     
 <?php echo $this->layout()->content; ?>
 
 
 
-<div style="text-align: center; margin-bottom: 10px;" id="search_result_banner_after_3" class="hide">
-
-</div>
-<div class="window-fixed hide" id="houses_popup"></div>
+<!--    .END Main Panel    -->
 
 
 
 
-    <!--    .BEGIN Pager    -->
-<div style="display: none;">
-<!--<div>-->
-    <hr noshade="noshade">
-    /blocks_search/pagination/search/?catalog_name=search&person_id=0
-    <hr noshade="noshade">
-</div>
-<!--    .BEGIN Pager    -->
-<div class="pager" id="search_results_pager">
-    <div class="scrollpager">
-        <strong>РЎС‚СЂР°РЅРёС†С‹</strong>
-        &laquo;
-        <span class="prev" pdata="prev_page" pval="РџСЂРµРґС‹РґСѓС‰Р°СЏ">
-            
-                <a href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=0">
-                    РџСЂРµРґС‹РґСѓС‰Р°СЏ
-                </a>
-            
-        </span>
-        <span class="next" pdata="next_page" pval="РЎР»РµРґСѓСЋС‰Р°СЏ">
-            
-                <a href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=1">
-                    РЎР»РµРґСѓСЋС‰Р°СЏ
-                </a>
-            
-        </span>
-        &raquo;
-    </div>
-    <div class="page" pdata="pages_range">
-  
-                    <strong class="active">1</strong>
-               
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=1">
-                        2
-                    </a>
+                <!--    .BEGIN Right Panel    -->
 
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=2">
-                        3
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=3">
-                        4
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=4">
-                        5
-                    </a>
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=5">
-                        6
-                    </a>    
-
-                    <a class="item" href="/search/?catalog_name=search&target=search&event=little&lang_id=2&countpage=10&page=32418">
-                        32419
-                    </a>
-                
-            
+                </div>
+<!--    .END Right Panel    -->
+            </div>
+        </div>
+        <a href="/impressions" class="feedback"></a>
+        
         
     </div>
-</div>
-<!--    .END Pager    -->
-<nav class="navigator" id="pager_navigator">
-    <span class="next">
-        <a href="javascript:void(0);" id="pager_scroll_up">РџРѕРґРЅСЏС‚СЊСЃСЏ РІРІРµСЂС…</a>
-        <i class="icon-up-blue"></i>
-    </span>
-    <div class="prev" id="pager_count_page" pelement="container" >
-        РїРѕРєР°Р·С‹РІР°С‚СЊ
-        <span class="element-select">
-            <a class="selected" href="javascript:void(0);" pelement="handle">10</a>
-            <span class="options" style="display: none;" pelement="options_container">
-                <a class="item" href="javascript:void(0);" pelement="option" pvalue="10">10</a>
-                <a class="item" href="javascript:void(0);" pelement="option" pvalue="20">20</a>
-                <a class="item" href="javascript:void(0);" pelement="option" pvalue="30">30</a>
-                <a class="item" href="javascript:void(0);" pelement="option" pvalue="50">50</a>
-                <a class="item" href="javascript:void(0);" pelement="option" pvalue="100">100</a>
-            </span>
-        </span>
-        СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РїРѕРёСЃРєР° РЅР° СЃС‚СЂР°РЅРёС†Рµ
-    </div>
-</nav>
-    
-<!--    .END Pager    -->
+    <!--    .BEGIN FOOTER    -->
+<footer>
+    <div class="container">
 
-    
-        <div class="advanced-panel" id="results_newcompletebanner_2">
-           
-    <section class="box-panel rocon">
-        <div class="head">
-            РќРѕРІС‹Рµ Р°РІС‚Рѕ
-            <a class="area" href="/newauto/search" target="_blank" title="РџРµСЂРµР№С‚Рё Рє РїРѕРёСЃРєСѓ РЅРѕРІС‹С… Р°РІС‚Рѕ">РЎРјРѕС‚СЂРµС‚СЊ РІСЃРµ</a>
-        </div>
-        <div class="informer__newcars">
-            
-                <div class="item ">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Р“РђР—/3302 Р“Р°Р·РµР»СЊ/26402/?stateId=0">
-                            <img alt="Р“РђР— 3302 Р“Р°Р·РµР»СЊ 3302-288 РЎ" src="http://img.ria.ua/photos/auto/prototypes/0/10/1033/1033s.jpg" width="85" title="Р“РђР— 3302 Р“Р°Р·РµР»СЊ ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26402]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Р“РђР—/3302 Р“Р°Р·РµР»СЊ/26402/?stateId=0">
-                                Р“РђР— 3302 Р“Р°Р·РµР»СЊ 3302-288 РЎ
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">147 871</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Р“РђР—/3302 Р“Р°Р·РµР»СЊ/26402/?stateId=0">
-                                    <img alt="Р“РђР— 3302 Р“Р°Р·РµР»СЊ 3302-288 РЎ" src="http://img.ria.ua/photos/auto/prototypes/0/10/1033/1033m.jpg" title="Р“РђР— 3302 Р“Р°Р·РµР»СЊ ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>Р“СЂСѓР·РѕРІРёРє</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р”РёР·РµР»СЊ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>2</strong><br>
-                                
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РњРµС…Р°РЅРёС‡РµСЃРєР°СЏ</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>2900</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Р“РђР—/3302 Р“Р°Р·РµР»СЊ/26402/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+        <div class="footer-menu">
+
+            <div class="copyright">
+                &copy; 2004-2013 RIA.ua.<br />
+                Все права защищены
+            </div>
+
+            <div class="footer-signature">
+
+                <nav class="menu-footer">
+                    <a class="item" href='http://www.ria.ua/'>Объявления</a>
+                    <a class="item active" href='http://auto.ria.ua/'>Автомобили</a>
+                    <a class="item" href='http://dom.ria.ua/'>Недвижимость</a>
+                    <a class="item" href='http://rabota.ria.ua/'>Работа</a>
+                    <a class="item" href="http://hotels.ria.ua/">Гостиницы</a>
+                    <a class="item" href="http://avia.ria.ua/">Билеты</a>
+                </nav>
+
+                <div class="clear"></div>
+
+                <div class="left-bar__footer">
+
+                    <a href="http://auto.ria.ua/price/">Реклама на сайте</a><br />
+
+                    <!--i class="icon-mobile"></i-->
+                    <a href="http://m.auto.ria.ua/">Мобильная версия</a><br />
+
+                    <!--i class="icon-bezpeka"></i-->
+                    <a href="http://bezpeka.ria.ua/">Безопасные сделки</a>
+
+
                 </div>
-            
-                <div class="item ">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
-                            <img alt="BMW X5 xDrive 30d AT" src="http://img.ria.ua/photos/auto/new_auto_storage/20/2004/200451/200451s.jpg" width="85" title="BMW X5 ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26246]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
-                                BMW X5 xDrive 30d AT
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">583 329</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
+
+                <div class="signature__footer">
+
+                    <div class="right-bar__footer">
+                        <a target="_blank" title="Prom.ua — здесь находят клиентов (откроется в новом окне)" href="http://prom.ua">Prom.ua</a><br />
+                        
+                        
+                            <a target="_blank" href="/map/">Карта сайта</a><br/>
+                        
                     </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
-                                    <img alt="BMW X5 xDrive 30d AT" src="http://img.ria.ua/photos/auto/new_auto_storage/20/2004/200451/200451m.jpg" title="BMW X5 ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>Р’РЅРµРґРѕСЂРѕР¶РЅРёРє</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р”РёР·РµР»СЊ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>5</strong><br>
-                                РўРёРї РїСЂРёРІРѕРґР°: <strong>РџРѕР»РЅС‹Р№</strong><br>
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РђРІС‚РѕРјР°С‚</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>2993</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+
+                    <a href="http://auto.ria.ua/question/search/">Помощь</a><br />
+                    <a target="_blank" href="http://auto.ria.ua/privacy-policy/">Политика конфиденциальности</a><br />
+                    <a href="http://cobrand.ria.ua/">Партнерские программы</a>
+
                 </div>
-            
-                <div class="item last">
-                    <div class="details-newcar">
-                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
-                            <img alt="Chevrolet Cruze 5D FL 1.8 РђT LTZ " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1976/197653/197653s.jpg" width="85" title="Chevrolet Cruze 5D ">
-                        </a>
-                        <dl class="subscribe-item">
-                            <dt class="title">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[27114]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
-                                Chevrolet Cruze 5D FL 1.8 РђT LTZ 
-                                </a>
-                            </dt>
-                            <dd class="rows price">
-                                <strong class="green">188 499</strong> РіСЂРЅ.
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="details">
-                        <div class="details-layer">
-                            <div class="all-images">
-                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
-                                    <img alt="Chevrolet Cruze 5D FL 1.8 РђT LTZ " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1976/197653/197653m.jpg" title="Chevrolet Cruze 5D ">
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                РўРёРї РєСѓР·РѕРІР°: <strong>РљРѕРјР±Рё (С…СЌС‚С‡Р±РµРє)</strong><br>
-                                РўРёРї С‚РѕРїР»РёРІР°: <strong>Р‘РµРЅР·РёРЅ</strong><br>
-                                РљРѕР»-РІРѕ РґРІРµСЂРµР№: <strong>5</strong><br>
-                                РўРёРї РїСЂРёРІРѕРґР°: <strong>РџРµСЂРµРґРЅРёР№</strong><br>
-                                РљРѕСЂРѕР±РєР° РїРµСЂРµРґР°С‡: <strong>РђРІС‚РѕРјР°С‚</strong><br>
-                                РћР±СЊРµРј РґРІРёРіР°С‚РµР»СЏ, СЃРј3: <strong>1796</strong><br>
-                                <span class="boxed view-all">
-                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length?$('informer_newauto_event').get('value'):'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
-                                        РџРѕРґСЂРѕР±РЅРѕ
-                                    </a>
-                                    <i class="icon-view"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
+
+            </div>
         </div>
-    </section>    
+<!-- Yandex.Metrika counter -->
+
+     
+<noscript><div><img src="//mc.yandex.ru/watch/91244" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+     
+<!-- /Yandex.Metrika counter -->
 
 
-        </div>
-    
+    <div id="vk_api_transport"></div>
 
 
 
+<!-- MMI CMeter -->
+
+<noscript>
+<img
+src="http://juke.mmi.bemobile.ua/bug/pic.gif?siteid=auto.ria.ua"
+style="position:absolute;left:-1000px;"
+alt=""
+/>
+</noscript>
 
 
+<!-- /MMI CMeter -->
 
-<div class="">
-    <section id="search_section" class="box-panel rocon hide">
-    <div class="head">
-        <i class="icon-head-history-search"></i>
-        Р
+     </div>
+</footer>
+</body>
+</html>

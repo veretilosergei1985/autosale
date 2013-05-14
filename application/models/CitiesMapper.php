@@ -58,6 +58,9 @@ class Application_Model_CitiesMapper
         }
         return $entries;
     }
+    
+    public function findByRegId()
+            {}
 
     
 }

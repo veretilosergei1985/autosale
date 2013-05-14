@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends Zend_Controller_Action
+class UserController extends Zend_Controller_Action
 {
 
     public function init()
@@ -10,7 +10,9 @@ class IndexController extends Zend_Controller_Action
 
     public function registerAction()
     {
-        
+        $this->_helper->layout->setLayout('layout1');
+        $this->view->headScript()->appendFile('/js/init_register.js');
+        $this->view->headLink()->appendStylesheet('/css/init_register.css');
         
         
     }

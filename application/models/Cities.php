@@ -104,6 +104,11 @@ class Application_Model_Cities
     {
         return $this->getMapper()->fetchAll();
     }
+    
+    public function findByRegId($id)
+    {
+        return $this->getMapper()->findByRegId($id);
+    }
 
 }
 
