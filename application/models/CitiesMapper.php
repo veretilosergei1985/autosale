@@ -59,8 +59,21 @@ class Application_Model_CitiesMapper
         return $entries;
     }
     
-    public function findByRegId()
-            {}
+    public function findByRegId($reg_id){
+        
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                            //->joinLeft('region','city.id = cars.city_id', array('city_name'=>'name'))
+                            ->where('city.region_id = ?', $reg_id); 
+
+        
+        //echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        // echo "<pre>"; print_r($oResultSet);  exit;
+               
+        return $oResultSet;
+        
+    }
 
     
 }

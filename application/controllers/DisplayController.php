@@ -56,11 +56,14 @@ class DisplayController extends Zend_Controller_Action
     }
     
     public function getcityAction(){
-        $reg_id = $this->_getParam('reg_id');
+        $reg_id = $this->_getParam('region_id');
         
-        $cityModel = new Application_Model_Cities();
+        $cityModel = new Application_Model_Cities(); 
         $cities = $cityModel->findByRegId($reg_id);
-                
+             
+//        echo "<pre>";
+//        print_r($cities); exit;
+        
         $result = array();
         $i =0 ;
         foreach($cities as $city){
