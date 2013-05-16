@@ -1000,6 +1000,29 @@ ins {
 .grid .number {
     width: 120px;
 }
+.grid dt{
+    display: none;
+}
+
+.grid .hr{
+    border-bottom: dotted 1px #ddd; 
+}
+
+.errors li{
+     list-style-type: none;
+     display: inline;
+}
+
+.label_error{
+    float:left;
+    width: 60px;
+}
+
+.errors{
+    float:left;
+    width: 250px;
+}
+
 .add-on {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;

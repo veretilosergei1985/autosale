@@ -45,6 +45,21 @@
                 <div class="heading">
                     Регистрация на сайте <strong class="red">AUTO.ria.ua</strong>
                 </div>
+                <div style="position: relative; height: 220px;">
+                <?php
+                
+                    $arrMessages = $this->form->getMessages();
+                    foreach($arrMessages as $field => $arrErrors) {
+                        echo sprintf(
+                            '<span class="label_error">%s</span>%s',
+                            $this->form->getElement($field)->getLabel(),
+                            $this->formErrors($arrErrors)
+
+                        );
+                    }
+                
+                ?>
+                </div>
 <?php echo $this->form; ?>
 
       <!--          <form id="register-form" class="grid grid-span1" action="" method="POST">

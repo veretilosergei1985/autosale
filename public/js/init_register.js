@@ -42,6 +42,9 @@ jQuery(function() {
 
                       data = jQuery.parseJSON(res);                
                            var tips = '';
+                            $("select[name='city'] option").remove();
+                            var tips = '<option value="0">Выберите</option>';
+                            
                               for (var i in data) {
                                   tips += '<option value="'+ data[i].id + '">' + data[i].name + '</option>';
                               }
