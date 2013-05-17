@@ -1,0 +1,206 @@
+
+    <div class="wrapper-login wrapper-register-page clearfix" id="register_page__container">
+
+
+        <div class="info-block-register">
+            <div class="heading">
+                Впервые на <strong class="red">AUTO.ria.ua?</strong>
+            </div>
+
+            <p class="size-15">Зарегистрировавшись на  AUTO.ria.ua Вы сможете:</p>
+
+            <div class="info-register">
+                <div class="item row-1">
+                    <h2>Добавить <span>объявление</span></h2>
+                    <p>на самый популярный украинский автосайт. На <strong>AUTO.ria.ua</strong> уже сегодня добавлено <strong><span id="ads_per_day"></span></strong> свежих объявлений.</p>
+                </div>
+                <div class="item row-2">
+                    <h2>Подписаться на <span>рассылку</span></h2>
+                    <p>про обновления, акции, конкурсы и новости. Узнайте самую свежую информацию от AUTO.ria.ua первыми.</p>
+                </div>
+                <div class="item row-3">
+                    <h2>Присоединяйтесь к нам в<br> <span>социальных сетях</span></h2>
+                    <p>Фанаты и просто те, кому нравится AUTO.ria.ua участвуют в интересных дискуссиях, узнают много нового и занимательного на страницах социальных групп:</p>
+                </div>
+
+                <div class="box-description">
+                    <a target="_blank" href="http://vkontakte.ru/auto_ria_ua" class="item-social" title="Вконтакте">
+                        <i class="icon-social-vkontakte"></i>вконтакте
+                    </a>
+                    <a target="_blank" href="http://www.facebook.com/AUTO.ria.ua" class="item-social" title="Facebook">
+                        <i class="icon-social-facebook"></i>facebook
+                    </a>
+                    <a target="_blank" href="http://twitter.com/auto_ria_ua" class="item-social" title="Twitter">
+                        <i class="icon-social-twitter"></i>twitter
+                    </a>
+                    <a target="_blank" href="https://plus.google.com/110464453590594722256/posts" class="item-social" title="Google+">
+                        <i class="icon-social-google-plus"></i>google+
+                    </a>
+                </div>
+            </div>
+        </div>    
+
+        <div class="position-login-block">
+            <div class="login-block register-page curved curved-vt-2">
+                <div class="heading">
+                    Регистрация на сайте <strong class="red">AUTO.ria.ua</strong>
+                </div>
+                <div style="position: relative; height: 220px;">
+                <?php
+                
+                    $arrMessages = $this->form->getMessages();
+                    foreach($arrMessages as $field => $arrErrors) {
+                        echo sprintf(
+                            '<span class="label_error">%s</span>%s',
+                            $this->form->getElement($field)->getLabel(),
+                            $this->formErrors($arrErrors)
+
+                        );
+                    }
+                
+                ?>
+                </div>
+<?php echo $this->form; ?>
+
+      <!--          <form id="register-form" class="grid grid-span1" action="" method="POST">
+
+                    <input type="hidden" name="lang_id" value='2'>
+                    <input type="hidden" name="verification_code" value="0" class="hidden" content="phone_confirm_code" id="verification_code">
+
+                    <div class="rows relative">
+
+
+                        <label class="label" for="email" title='Обязательное поле'>
+                            E-mail:<ins>*</ins>
+                        </label>
+                        <div class="input">
+                            <input type="text" name="email" id="email" value="" class="span3" tabindex="1">
+                            <span class="hint-popup">
+                                <i class="icon-help-grey js-icon-help" title='Нажмите, чтобы увидеть подсказку' onmouseover="_gaq.push(['_trackEvent', 'Hint', 'Mouse_on_Email', 'Register']);" onclick="_gaq.push(['_trackEvent', 'Hint', 'Click_on_Email', 'Register']);"></i>
+                                <span class="tooltip darr __right hide">
+                                    <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                    Введите Ваш адрес электронной почты. Допустимо использовать только латинские буквы и цифры.                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="password" title='Обязательное поле'>
+                            Пароль:<ins>*</ins>
+                        </label>
+                        <div class="input">
+                            <input type="password" name="password" id="password" value="" class="span3" tabindex="2">
+                            <span class="hint-popup">
+                                <i class="icon-help-grey js-icon-help" title='Нажмите, чтобы увидеть подсказку' onmouseover="_gaq.push(['_trackEvent', 'Hint', 'Mouse_on_Password', 'Register']);" onclick="_gaq.push(['_trackEvent', 'Hint', 'Click_on_Password', 'Register']);"></i>
+                                <span class="tooltip darr __right hide">
+                                    <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                    Пароль может содержать от 6 до 24 символов.                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="password_repeat" title='Обязательное поле'>
+                            Повторите пароль:<ins>*</ins>
+                        </label>
+                        <div class="input">
+                            <input type="password" name="password_repeat" id="password_repeat" value="" class="span3" tabindex="3">
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="username" title='Обязательное поле'>
+                            Имя:<ins>*</ins>
+                        </label>
+                        <div class="input">
+                            <input type="text" name="username" id="username" value="" class="span3" tabindex="4">
+                            <span class="hint-popup">
+                                <i class="icon-help-grey js-icon-help" title='Нажмите, чтобы увидеть подсказку' onmouseover="_gaq.push(['_trackEvent', 'Hint', 'Mouse_on_Name', 'Register']);" onclick="_gaq.push(['_trackEvent', 'Hint', 'Click_on_Name', 'Register']);"></i>
+                                <span class="tooltip darr __right hide">
+                                    <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                    Имя может состоять из букв русского, украинского или английского алфавитов.                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="registration__code" title='Обязательное поле'>
+                            Телефон:<ins>*</ins>
+                        </label>
+                        <div class="input">
+                            <span>(</span>
+                            <input tabindex="5" name="code" id="registration__code" class="code" type="text" placeholder="XXX" value="">
+                            <span>)</span>
+                            <input tabindex="6" name="phone" id="registration__phone" class="number" type="text" placeholder="XX-XX-XXX" value="">
+                            <span class="hint-popup" style="margin-left: 18px">
+                                <i class="icon-help-grey js-icon-help" title='Нажмите, чтобы увидеть подсказку' onmouseover="_gaq.push(['_trackEvent', 'Hint', 'Mouse_on_Phone', 'Register']);" onclick="_gaq.push(['_trackEvent', 'Hint', 'Click_on_Phone', 'Register']);"></i>
+                                <span class="tooltip darr __right hide">
+                                    <a class="close js-close-help" href="javascript:void(0)">×</a>
+                                    На сайте возможно зарегистрироваться только с украинским городским или мобильным номером телефона, состоящим из 10 цифр.                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="region" title='Обязательное поле'>
+                            Область: <ins>*</ins>
+                        </label>
+                        <div class="select">
+                            <select name="state" id="region" class="span3" title='Обязательное поле' tabindex="7">
+                                <option value="0" label='Выберите'>Выберите</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <label class="label" for="city" title='Обязательное поле'>
+                            Город: <ins>*</ins>
+                        </label>
+                        <div class="select">
+                            <select name="city" id="city" class="span3" title='Обязательное поле' tabindex="8">
+                                <option value="0" label='Выберите'>Выберите</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="delimeter">
+                        <div class="indent">
+                            <p class="item ckecklist">
+                                <input type="checkbox" id="reg-ckeck1" class="ckeck" name="news_letters" checked tabindex="9">
+                                <label class="label-ckeck sub" for="reg-ckeck1">
+                                    Разрешить контактировать со мной через e-mail
+                                </label>
+                            </p>
+                            <p class="item ckecklist">
+                                <input type="checkbox" id="reg-ckeck2" class="ckeck" name="subscribe" checked tabindex="10">
+                                <label class="label-ckeck sub" for="reg-ckeck2">
+                                    Получать рассылки про обновления, акции, конкурсы
+                                </label>
+                            </p>
+                            <p class="item ckecklist">
+                                <input type="checkbox" name="agreement" id="reg-ckeck3" class="ckeck " checked tabindex="11">
+                                <label class="label-ckeck sub" for="reg-ckeck3">
+                                    Я принимаю условия, изложенные в "<a href='/?target=view&event=lic' target="_blank">Соглашении о предоставлении услуг</a>" и "<a href='/privacy-policy/' target="_blank">Политике конфиденциальности</a>"
+                                </label>
+                            </p>
+
+
+                            <div class="rows">
+                                <input class="button large green" type="submit" id="submit_form" value='Зарегистрироваться' tabindex="12">
+                            </div>
+                            <div class="sub">
+                                Уже регистрировались? <a href="/login.html" title='Войдите'>Войдите»</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxed">
+                        <p class="rows bold float-l" style="width:210px">
+                            Возникли вопросы?<br> <a href="/question/login/0/" title="">Служба поддержки</a>:
+                        </p>
+                        <div class="list-phone indent">
+                            <p class="phone">
+                                <i class="icon-phone"></i> (067) 469-04-10<br>
+                                <i class="icon-phone"></i> 0-800-21-00-12
+                            </p>
+                        </div>
+                    </div>
+                </form>  -->
+            </div>
+        </div>
+    </div>
+

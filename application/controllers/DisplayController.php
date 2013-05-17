@@ -36,6 +36,46 @@ class DisplayController extends Zend_Controller_Action
         $this->view->is_logged = $is_logged;
         
     }
+    
+    public function getregionsAction(){
+        
+        $regModel = new Application_Model_Regions();
+        $regions = $regModel->fetchAll();
+                
+        $result = array();
+        $i =0 ;
+        foreach($regions as $region){
+            $result[$i]['id'] = $region->id;
+            $result[$i]['name'] = $region->name;
+            $i++;
+        }
+        
+        echo json_encode($result); exit;
+//        echo "<pre>";
+//        print_r($regions); exit;
+    }
+    
+    public function getcityAction(){
+        $reg_id = $this->_getParam('region_id');
+        
+        $cityModel = new Application_Model_Cities(); 
+        $cities = $cityModel->findByRegId($reg_id);
+             
+//        echo "<pre>";
+//        print_r($cities); exit;
+        
+        $result = array();
+        $i =0 ;
+        foreach($cities as $city){
+            $result[$i]['id'] = $city->id;
+            $result[$i]['name'] = $city->name;
+            $i++;
+        }
+        
+        echo json_encode($result); exit;
+//        echo "<pre>";
+//        print_r($regions); exit;
+    }
 
 
 }
