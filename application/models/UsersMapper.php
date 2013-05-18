@@ -24,12 +24,20 @@ class Application_Model_UsersMapper
     }
     public function save(Application_Model_Users $user)
     {
+        $password_salt = sha1(uniqid('xyz', true));
         $data = array(
-            //'title'   => $car->getTitle(),
-            //'description' => $car->getDescription(),
-            //'added' => date('Y-m-d H:i:s'),
+            'reg_id'    => $user->getRegId(),
+            'city_id'   => $user->getCityId(),
+            'username'  => $user->getUsername(),
+            'salt' => $password_salt,
+            'password'  => md5($password_salt.$user->getPassword()),
+            'email'    => $user->getEmail(),
+            'phone'    => $user->getPhone(),
+            'added' => date('Y-m-d H:i:s'),
+            
         );
-      if (null === ($id = $user->getId())) {
+        
+        if (null === ($id = $user->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {

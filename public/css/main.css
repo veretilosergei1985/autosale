@@ -607,6 +607,11 @@ ul.unstyle, ol.unstyle {
 .error.icons:before {
     background-position: 0 0;
 }
+
+.error.icons{
+    font-size: 12px;
+}
+
 .info, .official {
     background: none repeat scroll 0 0 #DDF4FB;
     color: #514721;
@@ -1014,12 +1019,13 @@ ins {
 }
 
 .label_error{
-    float:left;
-    width: 60px;
+    display: inline-block;
+    font-weight: bold; 
+    width: 75px;
 }
 
 .errors{
-    float:left;
+   
     width: 250px;
 }
 
@@ -4032,4 +4038,10 @@ a [class^="icon-arr"] {
     width: 135px;
 }
 
+.no_wisible_label{
+    display: none;
+}
 
+.code_padding {
+    padding-right: 20px;
+}
