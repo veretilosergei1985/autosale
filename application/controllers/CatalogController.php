@@ -18,13 +18,14 @@ class CatalogController extends Zend_Controller_Action
     
     public function addAction()
     {
-        //$this->view->headLink()->appendStylesheet('/css/init_add.css'); 
         $this->view->headScript()->appendFile('/js/init_add.js');
-        //$this->headLink()->appendStylesheet('/css/init_add.css', 'screen');
+       $this->_helper->layout->setLayout('layout1');
+  
         
-
         
     }
+    
+    
 
 
 }

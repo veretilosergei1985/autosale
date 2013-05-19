@@ -51,9 +51,10 @@ class UserController extends Zend_Controller_Action
 //                        print_r($user);
 //                        exit;
                         //$data = $form->getValues();	
-                        $user->save();		
+                        $ins_id = $user->save();		
                         //$user->sendActivationEmail();		
-                        $this->_helper->redirector('index');
+                        //$this->_helper->redirector('index');
+                        $this->_helper->redirector('mymenu', 'user', 'default', array('id' => $ins_id));
                 }
         }
 
@@ -81,6 +82,83 @@ class UserController extends Zend_Controller_Action
  
         return $userId;
        */ 
+    }
+    
+    public function carregisterAction()
+    {
+        //$translate = include(APPLICATION_PATH . '/forms/translate.php');
+        require_once APPLICATION_PATH . '/forms/translate.php';
+              
+        $this->_helper->layout->disableLayout();
+       
+        $form = new Application_Form_CarRegister();
+
+        if ($this->getRequest()->isPost()) {
+
+                if ($form->isValid($this->getRequest()->getPost())) {
+                        $data = $form->getValues();
+                        $user = new Application_Model_Users();
+                        
+                        $user->setEmail($data['email']);
+                        $user->setPassword($data['password']);
+                        $user->setUsername($data['username']);
+                        $user->setPhone($data['code'].$data['phone']);
+                        $user->setRegId($data['region']);
+                        $user->setCityId($data['city']);
+	
+                        $ins_id = $user->save();		
+
+                        $this->_helper->redirector('mymenu', 'user', 'default', array('id' => $ins_id));
+                } else {
+                    echo json_encode($form->getMessages()); exit;
+                }
+        }
+
+
+    }
+    
+    public function mymenuAction(){
+        $this->_helper->layout->setLayout('layout1');
+        $this->view->headLink()->appendStylesheet('/css/init_mymenu.css');
+        
+        $user_id = $this->_getParam('id');
+        $user = new Application_Model_Users();
+        $data = $user->find($user_id);
+        
+        //echo "<pre>";
+        //print_r($data->id); exit;
+        
+        $this->view->data = $data;
+    }
+    
+    public function loginAction(){
+        
+        $this->view->headLink()->appendStylesheet('/css/init_login.css');
+        $this->_helper->layout->setLayout('layout1');
+        
+        
+        /////////
+        $user = new Application_Model_Users();
+        $form = new Application_Form_Login();
+
+        if ($this->getRequest()->isPost()) {
+            if ($form->isValid($_POST)) {
+                if ($user->authorize($form->getValue('email'), $form->getValue('password'))) {
+                        $this->_helper->redirector('mymenu');
+                } else {
+                        $this->view->error = 'Неверные данные авторизации.';
+                }
+            }
+        }
+        $this->view->form = $form;
+       
+    }
+    
+    public function logoutAction()
+    {
+        $auth = Zend_Auth::getInstance();
+        $auth->clearIdentity();
+        $this->_helper->redirector('login');
     }
       
     

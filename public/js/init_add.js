@@ -10,6 +10,25 @@ jQuery(function() {
 
         }); 
     
+    jQuery('#submit').live('click',function(e) {
+        e.preventDefault();
+        
+        var element = $(this);
+        var id = $(this).attr('rel');
+        
+        jQuery.ajax({
+                url: '/user/carregister',
+                type:'POST',
+                data: $('.reg_form').serialize(),
+                success: function(res) {
+                    alert(res);
+                    }
+                   
+                }
+            ); 
+    
+    });
+    
 
     
     

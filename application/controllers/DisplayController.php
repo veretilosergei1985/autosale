@@ -32,6 +32,13 @@ class DisplayController extends Zend_Controller_Action
         
         
         //else
+        
+        $reg_form = new Application_Form_CarRegister();
+        $log_form = new Application_Form_Login();
+        
+        $this->view->reg_form = $reg_form;
+        $this->view->log_form = $log_form;
+        
         $is_logged = false;
         $this->view->is_logged = $is_logged;
         

@@ -4,6 +4,7 @@
 class Application_Model_UsersMapper
 {
     protected $_dbTable;
+    
     public function setDbTable($dbTable)
     {
         if (is_string($dbTable)) {
@@ -15,6 +16,7 @@ class Application_Model_UsersMapper
         $this->_dbTable = $dbTable;
         return $this;
     }
+    
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
@@ -22,9 +24,84 @@ class Application_Model_UsersMapper
         }
         return $this->_dbTable;
     }
+    
+    public function mkSecret($length = 20)
+    {
+        $set = array(
+            "a",
+            "A",
+            "b",
+            "B",
+            "c",
+            "C",
+            "d",
+            "D",
+            "e",
+            "E",
+            "f",
+            "F",
+            "g",
+            "G",
+            "h",
+            "H",
+            "i",
+            "I",
+            "j",
+            "J",
+            "k",
+            "K",
+            "l",
+            "L",
+            "m",
+            "M",
+            "n",
+            "N",
+            "o",
+            "O",
+            "p",
+            "P",
+            "q",
+            "Q",
+            "r",
+            "R",
+            "s",
+            "S",
+            "t",
+            "T",
+            "u",
+            "U",
+            "v",
+            "V",
+            "w",
+            "W",
+            "x",
+            "X",
+            "y",
+            "Y",
+            "z",
+            "Z",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+        );
+        $str = '';
+
+        for ($i = 1; $i <= $length; $i++) {
+            $ch = rand(0, count($set) - 1);
+            $str .= $set[$ch];
+        }
+        return $str;
+    }
+    
     public function save(Application_Model_Users $user)
     {
-        $password_salt = sha1(uniqid('xyz', true));
+        $password_salt = $this->mkSecret(6);
         $data = array(
             'reg_id'    => $user->getRegId(),
             'city_id'   => $user->getCityId(),
@@ -39,9 +116,10 @@ class Application_Model_UsersMapper
         
         if (null === ($id = $user->getId())) {
             unset($data['id']);
-            $this->getDbTable()->insert($data);
+            $ins_id = $this->getDbTable()->insert($data);
+            return $ins_id;
         } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
+            $ins_id = $this->getDbTable()->update($data, array('id = ?' => $id));
         }
     }
     public function find($id, Application_Model_Users $user)
@@ -55,10 +133,12 @@ class Application_Model_UsersMapper
         $row = $result->current();
 
         $user->setId($row->id)
-                ->setUsername($row->username)
-                ->setFirstName($row->first_name)
-                ->setLastName($row->last_name)
-                ->setEmail($row->email);
+             ->setUsername($row->username)
+             ->setEmail($row->email)
+             ->setPhone($row->phone);
+                //->setFirstName($row->first_name)
+                //->setLastName($row->last_name)
+                
                 
 
     }
