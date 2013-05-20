@@ -20,8 +20,15 @@
 <header class="text">
     <div class="container">
         <div class="loginbar">
-            <a href="/user/register" class="item">регистрация</a>
-            <a href="/login.html" class="item">вход</a>
+
+            <?php if(Zend_Auth::getInstance()->hasIdentity()){ ?>
+               <?php echo '<b style="font-weight: bold;">'.Zend_Auth::getInstance()->getIdentity()->username .'</b>'; ?>
+                          <a href="/user/logout" class="item">Выход</a>
+               <?php  } else { ?>
+                      <a href="/user/register" class="item">регистрация</a>
+                      <a href="/user/login" class="item">вход</a>
+               <?php  }  ?>
+                 
         </div>
         <nav class="head-menu">
             <a class="ria-ua" href='http://www.ria.ua/' title="Бесплатные объявления Украины"></a>

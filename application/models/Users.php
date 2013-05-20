@@ -8,6 +8,9 @@ class Application_Model_Users
     protected $_first_name;
     protected $_last_name;
     protected $_email;
+    protected $_phone;
+    protected $_reg_id;
+    protected $_city_id;
     
     protected $_mapper;
    
@@ -81,6 +84,26 @@ class Application_Model_Users
     {
         return $this->_email;
     }
+    
+    public function setPassword($val)
+    {
+        $this->_password = (string) $val;
+        return $this;
+    }
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+    
+    public function setPhone($val)
+    {
+        $this->_phone = (string) $val;
+        return $this;
+    }
+    public function getPhone()
+    {
+        return $this->_phone;
+    }
   
     public function setId($id)
     {
@@ -91,6 +114,27 @@ class Application_Model_Users
     {
         return $this->_id;
     }
+    
+    public function setRegId($id)
+    {
+        $this->_reg_id = (int) $id;
+        return $this;
+    }
+    public function getRegId()
+    {
+        return $this->_reg_id;
+    }
+    
+    public function setCityId($id)
+    {
+        $this->_city_id = (int) $id;
+        return $this;
+    }
+    public function getCityId()
+    {
+        return $this->_city_id;
+    }
+    
     public function setMapper($mapper)
     {
         $this->_mapper = $mapper;
@@ -105,7 +149,7 @@ class Application_Model_Users
     }
     public function save()
     {
-        $this->getMapper()->save($this);
+       return $this->getMapper()->save($this);
     }
    
     public function find($id)
@@ -116,6 +160,28 @@ class Application_Model_Users
     public function fetchAll()
     {
         return $this->getMapper()->fetchAll();
+    }
+    
+    public function authorize($email, $password)
+    {
+            $auth = Zend_Auth::getInstance();
+            $authAdapter = new Zend_Auth_Adapter_DbTable(
+                    Zend_Db_Table::getDefaultAdapter(),
+                    'users',
+                    'email',
+                    'password',
+                    'MD5(CONCAT(salt, ?))'
+            );
+            $authAdapter->setIdentity($email)
+                    ->setCredential($password);
+
+            $result = $auth->authenticate($authAdapter);
+            if ($result->isValid()) {
+                    $storage = $auth->getStorage();
+                    $storage->write($authAdapter->getResultRowObject(null, array('password')));
+                    return true;
+            }
+            return false;
     }
         
 }

@@ -21,7 +21,11 @@
     <div class="container">
         <div class="loginbar">
             <a href="/user/register" class="item">регистрация</a>
-            <a href="/login.html" class="item">вход</a>
+            <?php if(isset(Zend_Auth::getInstance()->getIdentity()->id)){ ?>
+            
+            <?php echo Zend_Auth::getInstance()->getIdentity()->id;} else { ?>
+                <a href="/user/login" class="item">вход</a>
+            <?php } ?>
         </div>
         <nav class="head-menu">
             <a class="ria-ua" href='http://www.ria.ua/' title="Бесплатные объявления Украины"></a>

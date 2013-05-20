@@ -32,6 +32,13 @@ class DisplayController extends Zend_Controller_Action
         
         
         //else
+        
+        $reg_form = new Application_Form_CarRegister();
+        $log_form = new Application_Form_Login();
+        
+        $this->view->reg_form = $reg_form;
+        $this->view->log_form = $log_form;
+        
         $is_logged = false;
         $this->view->is_logged = $is_logged;
         
@@ -56,6 +63,7 @@ class DisplayController extends Zend_Controller_Action
     }
     
     public function getcityAction(){
+        session_start();
         $reg_id = $this->_getParam('region_id');
         
         $cityModel = new Application_Model_Cities(); 
@@ -64,15 +72,24 @@ class DisplayController extends Zend_Controller_Action
 //        echo "<pre>";
 //        print_r($cities); exit;
         
-        $result = array();
-        $i =0 ;
+        $result = '';
         foreach($cities as $city){
-            $result[$i]['id'] = $city->id;
-            $result[$i]['name'] = $city->name;
-            $i++;
+            
+            if(!empty($_SESSION['city'])){
+                if($_SESSION['city'] == $city['id']){
+                    $result.='<option selected="selected" value="'. $city['id'] .'">' . $city['name'] . '</option>';
+                } else {
+                    $result.='<option value="'. $city['id'] .'">' . $city['name'] . '</option>';
+                }
+             
+            } else {
+                $result.='<option value="'. $city['id'] .'">' . $city['name'] . '</option>';
+            }
+           
         }
         
-        echo json_encode($result); exit;
+        unset($_SESSION['city']);
+        echo $result; exit;
 //        echo "<pre>";
 //        print_r($regions); exit;
     }

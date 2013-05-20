@@ -1,0 +1,54 @@
+
+                <!--    .BEGIN Login    -->
+                <div class="wrapper-login clearfix">
+                    <!--    .BEGIN baner-->
+                    <noindex>
+                        <script type='text/javascript'>
+                            <!--// <![CDATA[
+                               OA_show('login');
+                            // ]]> -->
+                        </script>
+                                                  <a href="http://bn.ria.ua/www/delivery/ck.php?oaparams=2__bannerid=2418__zoneid=50__cb=4c59411ac4__oadest=http%3A%2F%2Fauto.ria.ua%2Fnewauto%2F" target="_blank">
+                                                        <img src="http://bn.ria.ua/www/images/ae28d2c37fe9ec2c7e9a425bdae888cf.jpg" width="940" height="763" alt="" title="" border="0">
+                                                    </a>
+                                                    <div id="beacon_4c59411ac4" style="position: absolute; left: 0px; top: 0px; visibility: hidden;">
+                                                        <img src="http://bn.ria.ua/www/delivery/lg.php?bannerid=2418&amp;campaignid=915&amp;zoneid=50&amp;loc=http%3A%2F%2Fauto.ria.ua%2Flogin.html&amp;referer=http%3A%2F%2Fauto.ria.ua%2Fnewauto%2F&amp;cb=4c59411ac4" width="0" height="0" alt="" style="width: 0px; height: 0px;">
+                                                    </div>
+
+                        <!--RIA baner-->
+                    </noindex>
+                    <!--    .END baner-->
+
+                    <div class="position-login-block">
+
+
+                        <div class="login-block curved curved-vt-2">
+                            <div class="heading">
+
+                                Вход на сайт
+
+                                <strong class="red">AUTO.ria.ua</strong>
+                            </div>
+                            <?php
+                
+                    $arrMessages = $this->form->getMessages();
+                    
+                    if(count($arrMessages)>0){
+                    echo '<div style="position: relative; top:43px;"><div class="tooltip darr __right">';
+                        foreach($arrMessages as $field => $arrErrors) {
+                            echo sprintf(
+                                '<span class="label_error">%s</span>%s',
+                                $this->form->getElement($field)->getLabel(),
+                                $this->formErrors($arrErrors)
+
+                            );
+                        }
+                     echo '</div></div>';   
+                    }
+                ?>
+                               <?php echo $this->form; ?>     
+                  
+                        </div>
+                    </div>
+                </div>
+            

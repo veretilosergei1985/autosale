@@ -45,4 +45,5 @@ Zend_Validate_Regex::NOT_MATCH => 'Значение "%value%" не подход�
 Zend_Validate_StringLength::TOO_SHORT => 'Длина введённого значения "%value%", меньше чем %min% симв.',
 Zend_Validate_StringLength::TOO_LONG => 'Длина введённого значения "%value%", больше чем %max% симв.',
 ); 
+
 ?>
