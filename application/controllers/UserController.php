@@ -107,9 +107,11 @@ class UserController extends Zend_Controller_Action
                         $user->setRegId($data['region']);
                         $user->setCityId($data['city']);
 	
-                        $ins_id = $user->save();		
-
-                        $this->_helper->redirector('mymenu', 'user', 'default', array('id' => $ins_id));
+                        $ins_id = $user->save();
+                        $user->authorize($data['email'], $data['password']);
+                        
+                        echo json_encode(array('status' => 'success')); exit;
+                        
                 } else {
                     $messages = array();
                     foreach($form->getMessages() as $k => $v){

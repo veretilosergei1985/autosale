@@ -12,7 +12,8 @@ jQuery(function() {
     
     jQuery('#submit').live('click',function(e) {
         e.preventDefault();
-        
+        $("#registrationerrors__addcars").empty();
+        $('#registrationerrors__addcars').css({'display':'none'});
         var element = $(this);
         var id = $(this).attr('rel');
         
@@ -22,15 +23,29 @@ jQuery(function() {
                 data: $('.reg_form').serialize(),
                 success: function(res) {
                         data = jQuery.parseJSON(res);
+                        
+                        if(data.status == 'success'){
+                            jQuery.ajax({
+                                url: '/display/checkaddcar',
+                                type:'POST',
+                                success: function(res) {
+                                         $('#mainauthcontainer__addcars').empty();
+                                         $('#mainauthcontainer__addcars').append(res);
+                                    }
 
-                        var tips = '';
-                        for (var i in data) {
 
-                            tips += '<div><span class="bold"> ' + data[i].label + '</span>' + data[i].message + '</div>';
+                            }); 
+                        } else {
+
+                            var tips = '';
+                            for (var i in data) {
+
+                                tips += '<div><span class="bold"> ' + data[i].label + '</span>' + data[i].message + '</div>';
+                            }
+
+                            $('#registrationerrors__addcars').append(tips);
+                            $('#registrationerrors__addcars').css({'display':'block'});
                         }
-
-                        $('#registrationerrors__addcars').append(tips);
-                        $('#registrationerrors__addcars').css({'display':'block'});
                     }
                    
                 }

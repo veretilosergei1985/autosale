@@ -13,7 +13,7 @@
                     <img class="avatar-smoll" src="http://img.auto.ria.ua/images/no-photo/no-photo-user-50x50.gif">
                     <dl class="user-info">
                         <dt class="item name">
-                        Сергей
+                        <?php echo Zend_Auth::getInstance()->getIdentity()->username; ?>
                         </dt>
                         <dd class="item">
                             Харьков
@@ -26,11 +26,11 @@
                 <div class="row">
                     <div class="span3 contact-data">
                         <p>
-                            (093) 123-69-91
+                            <?php echo '(' . substr(Zend_Auth::getInstance()->getIdentity()->phone, 0, 3) . ') ' . substr(Zend_Auth::getInstance()->getIdentity()->phone, 3, 3) . '-' . substr(Zend_Auth::getInstance()->getIdentity()->phone, 6, 2) . '-' . substr(Zend_Auth::getInstance()->getIdentity()->phone, 8, 2) ; ?>
                             <a href="/?target=user&event=redug" title="Редактировать контактные данные" target="_blank"><i class="icon-edit"></i></a>
                         </p>
                         <p>
-                            sergey.veretilo@gmail.com
+                            <?php echo Zend_Auth::getInstance()->getIdentity()->email; ?>
                         </p>
                     </div>
                     <div class="offset3 contact-data">
