@@ -58,7 +58,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
      {
         
        try {
-            $translator = new Zend_Translate(
+            $translate = new Zend_Translate(
                 array (
                       'adapter' => 'array',
                       'content' => APPLICATION_PATH . '/../library/translate',
@@ -66,7 +66,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                       'scan'    => Zend_Translate::LOCALE_DIRECTORY
                 )
             );
-            Zend_Validate_Abstract::setDefaultTranslator($translator);
+            Zend_Validate_Abstract::setDefaultTranslator($translate);
              Zend_Registry::set('Zend_Translate', $translate);
         } catch (Exception $e) {
             Zend_Debug::dump($e->getMessage());

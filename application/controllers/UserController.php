@@ -111,7 +111,17 @@ class UserController extends Zend_Controller_Action
 
                         $this->_helper->redirector('mymenu', 'user', 'default', array('id' => $ins_id));
                 } else {
-                    echo json_encode($form->getMessages()); exit;
+                    $messages = array();
+                    foreach($form->getMessages() as $k => $v){
+                        $messages[$k]['label'] = $form->getElement($k)->getLabel();
+                        
+                        foreach($v as $err => $text){
+                            $messages[$k]['message'] = $text;
+                        }
+                        
+                    }
+                    echo json_encode($messages); exit;
+
                 }
         }
 

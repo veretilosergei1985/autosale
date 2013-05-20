@@ -21,7 +21,16 @@ jQuery(function() {
                 type:'POST',
                 data: $('.reg_form').serialize(),
                 success: function(res) {
-                    alert(res);
+                        data = jQuery.parseJSON(res);
+
+                        var tips = '';
+                        for (var i in data) {
+
+                            tips += '<div><span class="bold"> ' + data[i].label + '</span>' + data[i].message + '</div>';
+                        }
+
+                        $('#registrationerrors__addcars').append(tips);
+                        $('#registrationerrors__addcars').css({'display':'block'});
                     }
                    
                 }
