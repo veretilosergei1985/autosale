@@ -10,8 +10,8 @@ class UserController extends Zend_Controller_Action
 
     public function registerAction()
     {
-        $translate = include(APPLICATION_PATH . '/forms/translate.php');
-       //require_once APPLICATION_PATH . '/forms/translate.php';
+        //$translate = include(APPLICATION_PATH . '/forms/translate.php');
+       require_once APPLICATION_PATH . '/forms/translate.php';
 //echo APPLICATION_PATH . '/../forms/translate.php'; exit;
         //require_once '/forms/translate.php';
         
@@ -21,7 +21,6 @@ class UserController extends Zend_Controller_Action
         
         $this->view->title = "Регистрация нового пользователя.";
         $this->view->headTitle($this->view->title, 'PREPEND');
-        
         
         $translator = new Zend_Translate_Adapter_Array($data);
         $form = new Application_Form_Register();
