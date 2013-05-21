@@ -104,8 +104,8 @@ class UserController extends Zend_Controller_Action
                         $user->setPassword($data['password']);
                         $user->setUsername($data['username']);
                         $user->setPhone($data['code'].$data['phone']);
-                        $user->setRegId($data['region']);
-                        $user->setCityId($data['city']);
+                        $user->setRegId(0);
+                        $user->setCityId(0);
 	
                         $ins_id = $user->save();
                         $user->authorize($data['email'], $data['password']);
@@ -129,6 +129,36 @@ class UserController extends Zend_Controller_Action
 
 
     }
+    
+    public function carloginAction(){
+        
+        $this->_helper->layout->disableLayout();
+        $user = new Application_Model_Users();
+        $form = new Application_Form_CarLogin();
+
+        if ($this->getRequest()->isPost()) {
+            if ($form->isValid($_POST)) {
+                if ($user->authorize($form->getValue('email'), $form->getValue('password'))) {
+                        echo json_encode(array('status' => 'success')); exit;
+                } else {
+                        echo json_encode(array('status' => 'errorr')); exit;
+                }
+            } else {
+                    $messages = array();
+                    foreach($form->getMessages() as $k => $v){
+                        $messages[$k]['label'] = $form->getElement($k)->getLabel();
+                        
+                        foreach($v as $err => $text){
+                            $messages[$k]['message'] = $text;
+                        }
+                        
+                    }
+                    echo json_encode($messages); exit;
+
+            }
+        }
+        $this->view->form = $form;
+    }   
     
     public function mymenuAction(){
         $this->_helper->layout->setLayout('layout1');

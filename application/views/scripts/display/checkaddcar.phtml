@@ -2,6 +2,6 @@
        <?php if($this->is_logged == true){
            echo $this->partial('/partials/can_add_car.phtml', array());
        } else {
-            echo $this->partial('/partials/cant_add_car.phtml', array('reg_form' => $this->reg_form));
+            echo $this->partial('/partials/cant_add_car.phtml', array('reg_form' => $this->reg_form, 'log_form' => $this->log_form));
        } ?>
     </div>

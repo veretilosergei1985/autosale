@@ -174,7 +174,7 @@ class Application_Form_CarRegister extends Zend_Form
        
                       
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setOptions(array('class' => 'button green'));
+        $submit->setOptions(array('class' => 'button green car_reg_submit'));
         $submit->setDecorators(array(
             'ViewHelper',
             'Description',

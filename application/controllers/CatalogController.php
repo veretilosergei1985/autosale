@@ -18,9 +18,11 @@ class CatalogController extends Zend_Controller_Action
     
     public function addAction()
     {
-        $this->view->headScript()->appendFile('/js/init_add.js');
+       $this->view->headScript()->appendFile('/js/init_add.js');
        $this->_helper->layout->setLayout('layout1');
   
+       $form = new Application_Form_AddCar();
+       $this->view->form = $form;
         
         
     }
