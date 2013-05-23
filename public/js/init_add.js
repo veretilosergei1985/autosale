@@ -77,7 +77,11 @@ jQuery(function() {
                                     }
 
 
-                            }); 
+                            });
+                        } else if(data.status == 'error'){
+                            $('#loginerrors__addcars').append('<p style="margin-bottom: 0px;">Указанный Вами e-mail не присутствует в базе.<a href="/user/register">Зарегистрируйтесь</a></p>');
+                            $('#loginerrors__addcars').css({'display':'block'});
+                        
                         } else {
 
                             var tips = '';
@@ -96,9 +100,42 @@ jQuery(function() {
     
     });
 
+        
+    jQuery('.select-ed').live('click',function(e) {
+        e.preventDefault();
+
+        
+        if($('#transpottype__addcars').css('display') == 'none'){ 
+            $('#transpottype__addcars').show(); 
+        } else { 
+            $('#transpottype__addcars').hide(); 
+        }
+    
+    });
+    
+    jQuery('#transpottype__addcars .item').live('click',function(e) {
+        e.preventDefault();
+
+        $('#selectedtypetext__addcars').text($(this).text());
+        $('#selectedtypeicon__addcars').removeAttr('class');
+        $('#selectedtypeicon__addcars').addClass($(this).find('i').attr('class'));
+        $('#transpottype__addcars').hide(); 
+        $('#cat_id').val($(this).attr('category_id'));
+    
+    });
     
     
+     jQuery('#choosebodystyle__addcars').live('click',function(e) {
+        e.preventDefault();
+        
+        if($('#cat_id').val() == '' || $('#cat_id').val() == '0'){
+            
+        } else {
+            
+        }
+        
     
+    });
      
            
     

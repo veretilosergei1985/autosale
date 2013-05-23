@@ -141,7 +141,7 @@ class UserController extends Zend_Controller_Action
                 if ($user->authorize($form->getValue('email'), $form->getValue('password'))) {
                         echo json_encode(array('status' => 'success')); exit;
                 } else {
-                        echo json_encode(array('status' => 'errorr')); exit;
+                        echo json_encode(array('status' => 'error')); exit;
                 }
             } else {
                     $messages = array();
@@ -189,7 +189,7 @@ class UserController extends Zend_Controller_Action
                 if ($user->authorize($form->getValue('email'), $form->getValue('password'))) {
                         $this->_helper->redirector('mymenu');
                 } else {
-                        $this->view->error = 'Неверные данные авторизации.';
+                        $this->view->error = 'Введен неправильный Е-mail или пароль. Проверьте раскладку клавиатуры, не нажата ли клавиша "Caps Lock" и попробуйте ввести E-mail и пароль еще раз.';
                 }
             }
         }

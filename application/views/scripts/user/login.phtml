@@ -30,7 +30,12 @@
                                 <strong class="red">AUTO.ria.ua</strong>
                             </div>
                             <?php
-                
+                    if(isset($this->error)){
+                        echo '<div style="position: relative; top:43px;"><div class="tooltip darr __right">';
+                            echo $this->error;
+                        echo '</div></div>';
+                    }        
+                            
                     $arrMessages = $this->form->getMessages();
                     
                     if(count($arrMessages)>0){
