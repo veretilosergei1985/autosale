@@ -318,7 +318,37 @@
              });
              */
     </script>
-    <?php echo $this->form; ?>
+    
+    <form class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="<?php echo $this->form->getAction(); ?>">
+        <?php echo $this->form->region; ?>
+        <div class="window-fixed" style="display: none;" id="bodystylespopup__addcars"></div>  
+        
+        <input id="partnerId" type="hidden" value="1" name="partnerId">
+        <input id="category__addcars" type="hidden" value="0" name="categoryId">
+        <input id="tmpcategory__addcars" type="hidden" value="" name="TempAddAutoCategoryHidden">
+        <input id="cityId" type="hidden" value="0" name="cityId">
+        
+        <?php echo $this->form->transport_type; ?>
+        <?php echo $this->form->body_type; ?>
+        
+        <div id="categoryerrormessage__addcars" class="error larr __smoll __top" style="display: none;">
+            <a class="close" href="javascript:void(0);">×</a>
+            Сначала выберите Тип транспорта
+        </div>
+        
+        <?php echo $this->form->mark; ?>
+        <?php echo $this->form->model; ?>
+        <?php echo $this->form->version; ?>
+        <?php echo $this->form->vin; ?>
+        <?php echo $this->form->transmission; ?>
+        <?php echo $this->form->drive; ?>
+        <?php echo $this->form->doors; ?>
+        <?php echo $this->form->color; ?>
+        
+    </form>
+        
+    <?php //echo $this->form; ?>
+    <?php //echo $this->form->region; ?>
     <!--
     
     <form class="grid grid-span2" method="post" action="http://auto.ria.ua/addauto/autoinfo" name="" id="mainform__addcars">
@@ -412,112 +442,7 @@
         </div>
 
         <div class="window-fixed" style="display: none;" id="bodystylespopup__addcars">
-            <div class="mount-iframe">
-                <iframe></iframe>
-            </div>
-
-            <div class="popup window-bodytype">
-                <div class="wrapper">
-
-                    <a href="javascript:void(0);" class="close" id="closebodystyle__addcars">×</a>
-                    <div class="title bold">
-                        Выберите тип кузова            </div>
-                    <div class="wrapper-bodytype" id="bodystylescontainer_addcars">
-                        <label class="item-bodytype" title="" for="bodyid3__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/sedan.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="3" id="bodyid3__addcars">
-                                <span>Седан</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid5__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/suv.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="5" id="bodyid5__addcars">
-                                <span>Внедорожник / Кроссовер</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid8__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/van.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="8" id="bodyid8__addcars">
-                                <span>Минивэн</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid4__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/hatchback.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="4" id="bodyid4__addcars">
-                                <span>Хэтчбек</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid2__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/wagon.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="2" id="bodyid2__addcars">
-                                <span>Универсал</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid6__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/coupe.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="6" id="bodyid6__addcars">
-                                <span>Купе</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid254__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/truck/light_furgon.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="254" id="bodyid254__addcars">
-                                <span>Легковой фургон (до 1,5 т)</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid7__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/cabriolet.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="7" id="bodyid7__addcars">
-                                <span>Кабриолет</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid9__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/truck.gif');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="9" id="bodyid9__addcars">
-                                <span>Пикап</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid252__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/kupe/limousine.jpg');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="252" id="bodyid252__addcars">
-                                <span>Лимузин</span>
-                            </span>
-                        </label>
-                        <label class="item-bodytype" title="" for="bodyid28__addcars">
-                            <span class="image-bodytype" style="background-image:
-                                  url('http://img.auto.ria./img/auto_cat/other.png');"></span>
-                            <span class="description-bodytype">
-                                <input class="radio-bodytype" type="radio" name="bodyId" value="28" id="bodyid28__addcars">
-                                <span>Другой</span>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="button-bar">
-                        <a class="button blue" href="javascript:void(0);" id="choosebodystyle__addcars">Выбрать</a>
-                        <a class="button" href="javascript:void(0);" id="cancelbodystyle__addcars">Отмена</a>
-                    </div>
-                </div>
-            </div>
+           
         </div>    
 
 

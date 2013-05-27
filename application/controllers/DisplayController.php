@@ -95,6 +95,56 @@ class DisplayController extends Zend_Controller_Action
 //        echo "<pre>";
 //        print_r($regions); exit;
     }
+    
+     public function getmodelAction(){
+        //session_start();
+        $mark_id = $this->_getParam('mark_id');
+        
+        $modelModel = new Application_Model_Models(); 
+        $models = $modelModel->findByMarkId($mark_id);
+        
+        $result = '';
+        foreach($models as $model){
+         
+            $result.='<option value="'. $model['id'] .'">' . $model['name'] . '</option>';
+        /*    
+            if(!empty($_SESSION['city'])){
+                if($_SESSION['city'] == $city['id']){
+                    $result.='<option selected="selected" value="'. $city['id'] .'">' . $city['name'] . '</option>';
+                } else {
+                    $result.='<option value="'. $city['id'] .'">' . $city['name'] . '</option>';
+                }
+             
+            } else {
+                $result.='<option value="'. $city['id'] .'">' . $city['name'] . '</option>';
+            }
+           
+        }
+        */
+            
+        }
+        //unset($_SESSION['city']);
+        echo $result; exit;
+
+    }
+    
+    public function bodytypeAction(){
+         $this->_helper->layout->disableLayout();
+         
+         $cat_id = $this->_getParam('category_id');
+         
+         if(!isset($cat_id)){
+             $cat_id = 1;
+         }
+         
+         $oSubCat = new Application_Model_Subcats();
+         $result = $oSubCat->getByParentId($cat_id);
+//         echo "<pre>";
+//         print_r($result); exit;
+         $this->view->items = $result;
+        
+        
+    }
 
 
 }

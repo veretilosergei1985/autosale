@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Май 16 2013 г., 15:55
--- Версия сервера: 5.5.29
--- Версия PHP: 5.3.10-1ubuntu3.6
+-- Хост: 127.0.0.1
+-- Время создания: Май 27 2013 г., 22:01
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -240,7 +240,22 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Легковые'),
+(2, 'Мото'),
+(3, 'Водный транспорт'),
+(4, 'Спецтехника'),
+(5, 'Прицепы'),
+(6, 'Грузовики'),
+(7, 'Автобусы'),
+(8, 'Автодома'),
+(9, 'Воздушный транспорт');
 
 -- --------------------------------------------------------
 
@@ -2822,7 +2837,7 @@ CREATE TABLE IF NOT EXISTS `doors` (
 
 CREATE TABLE IF NOT EXISTS `drive` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -2830,7 +2845,7 @@ CREATE TABLE IF NOT EXISTS `drive` (
 -- Дамп данных таблицы `drive`
 --
 
-INSERT INTO `drive` (`id`, `title`) VALUES
+INSERT INTO `drive` (`id`, `type`) VALUES
 (1, 'Задний'),
 (2, 'Передний'),
 (3, 'Полный');
@@ -3093,6 +3108,212 @@ INSERT INTO `state` (`id`, `attr`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `sub_category`
+--
+
+CREATE TABLE IF NOT EXISTS `sub_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=191 ;
+
+--
+-- Дамп данных таблицы `sub_category`
+--
+
+INSERT INTO `sub_category` (`id`, `parent_id`, `name`, `img`) VALUES
+(1, 1, 'Седан', 'kupe/sedan.gif'),
+(2, 1, 'Внедорожник / Кроссовер', 'kupe/suv.gif'),
+(3, 1, 'Минивэн', 'kupe/van.gif'),
+(4, 1, 'Хэтчбек', 'kupe/hatchback.gif'),
+(5, 1, 'Универсал', 'kupe/wagon.gif'),
+(6, 1, 'Купе', 'kupe/coupe.gif'),
+(7, 1, 'Легковой фургон (до 1,5 т)', 'truck/light_furgon.gif'),
+(8, 1, 'Кабриолет', 'kupe/cabriolet.gif'),
+(9, 1, 'Пикап', 'kupe/truck.gif'),
+(10, 1, 'Лимузин', 'kupe/limousine.jpg'),
+(11, 1, 'Другой', 'other.png'),
+(12, 2, 'Мопеды', 'moto/motorbike.jpg'),
+(13, 2, 'Скутер / Мотороллер', 'moto/scooter.gif'),
+(14, 2, 'Макси-скутер', 'moto/maxi_scooter.gif'),
+(15, 2, 'Мотоциклы', 'moto/moto.jpg'),
+(16, 2, 'Мотоцикл Без обтекателей (Naked bike)', 'moto/naked_bike.gif'),
+(17, 2, 'Мотоцикл Внедорожный (Enduro)', 'moto/enduro.gif'),
+(18, 2, 'Мотоцикл Кастом', 'moto/castom_bike.gif'),
+(19, 2, 'Мотоцикл Классик', 'moto/clasic_bike.gif'),
+(20, 2, 'Мотоцикл Кросс', 'moto/cross_bike.gif'),
+(21, 2, 'Мотоцикл Круизер', 'moto/cruiser_bike.gif'),
+(22, 2, 'Мотоцикл Многоцелевой (All-round)', 'moto/all_round_bike.gif'),
+(23, 2, 'Мотоцикл с коляской', 'moto/s_kolaskoy_bike.gif'),
+(24, 2, 'Спортбайк', 'moto/sport_bike.gif'),
+(25, 2, 'Мотоцикл Спорт-туризм', 'moto/sport_tur_bike.gif'),
+(26, 2, 'Мотоцикл Супермото (Motard)', 'moto/super_moto_bike.gif'),
+(27, 2, 'Мотоцикл Триал', 'moto/trial_bike.gif'),
+(28, 2, 'Мотоцикл Туризм', 'moto/tur_bike.gif'),
+(29, 2, 'Мотоцикл Чоппер', 'moto/chopper.gif'),
+(30, 2, 'Мини мотоциклы', 'moto/mini-moto.jpg'),
+(31, 2, 'Мини спорт', 'moto/mini_bike_sport.gif'),
+(32, 2, 'Мини крос (Питбайк)', 'moto/mini_bike_cross.gif'),
+(33, 2, 'Трицикл', 'moto/thricicle.gif'),
+(34, 2, 'Трайк', 'moto/traike.gif'),
+(35, 2, 'Квадроциклы', 'moto/atvs.jpg'),
+(36, 2, 'Квадроцикл детский', 'moto/atv_child.gif'),
+(37, 2, 'Квадроцикл утилитарный', 'moto/atv_utility.gif'),
+(38, 2, 'Мотовездеход', 'moto/motovezdehod.gif'),
+(39, 2, 'Вездеход-амфибия', 'moto/amfobia.gif'),
+(40, 2, 'Гольф-кар', 'moto/golf_car.gif'),
+(41, 2, 'Картинг', 'moto/kart.gif'),
+(42, 2, 'Снегоход', 'moto/snow_tur.gif'),
+(43, 2, 'Другое', 'other.png'),
+(44, 3, 'Лодка', 'water/lodki.gif'),
+(45, 3, 'Катер', 'water/kater.gif'),
+(46, 3, 'Моторная яхта', 'water/engine_yahts.gif'),
+(47, 3, 'Парусная яхта', 'water/parus_yahts.gif'),
+(48, 3, 'Земcнаряд', ''),
+(49, 3, 'Гидроциклы', 'water/personal-watercraft.jpg'),
+(50, 3, 'Гидроцикл спортивный', 'moto/aqa_bike_sport.gif'),
+(51, 3, 'Гидроцикл туристический', 'moto/aqa_bike_ture.gif'),
+(52, 3, 'Лодочный мотор', 'moto/bot_motor.gif'),
+(53, 3, 'Другое', 'other.png'),
+(54, 4, 'Сельхозтехника', ''),
+(55, 4, 'Мотоблок / Мотокультиватор', 'special/tiller.jpg'),
+(56, 4, 'Трактор', 'special/vheels_traktor.gif'),
+(57, 4, 'Комбайн', 'special/kombine_zernovuy.gif'),
+(58, 4, 'Минитрактор', 'special/minitractor.jpg'),
+(59, 4, 'Сеялка', 'special/seeder.jpg'),
+(60, 4, 'Плуг', 'special/plow.jpg'),
+(61, 4, 'Опрыскиватель', 'special/sprayer.jpg'),
+(62, 4, 'Почвообрабатывающая техника', 'special/tillage.jpg'),
+(63, 4, 'Кормоуборочная техника', 'special/harvesting.jpg'),
+(64, 4, 'Садовая техника', 'special/garden.jpg'),
+(65, 4, 'Строительная техника', 'special/construction.jpg'),
+(66, 4, 'Кран / Автокран', 'special/auto_kran.gif'),
+(67, 4, 'Башенный кран', 'pecial/towercrane.jpg'),
+(68, 4, 'Экскаватор', 'special/excavator.jpg'),
+(69, 4, 'Миниэкскаватор', 'special/miniexcavator.jpg'),
+(70, 4, 'Автогрейдер', 'special/autogreider.gif'),
+(71, 4, 'Аварийно-ремонтные машины', 'special/repairtrucks.jpg'),
+(72, 4, 'Кран-манипулятор', ''),
+(73, 4, 'Гудронатор', 'special/sprayercars.jpg'),
+(74, 4, 'Асфальтозавод', 'special/asphalt.jpg'),
+(75, 4, 'Асфальтоукладчик', 'special/asfaltoukladchik.gif'),
+(80, 4, 'Бетономешалка (Миксер)', 'special/mixer.gif'),
+(81, 4, 'Бетононасос', 'special/auto_betononasos.gif'),
+(82, 4, 'Бетоноукладчик', 'special/concreteplacer.jpg'),
+(83, 4, 'Бульдозер', 'special/buldoser.gif'),
+(84, 4, 'Буровая установка', 'special/burilnaya_ustanovka.gif'),
+(85, 4, 'Сваебой / Дизельный молот', 'special/svaeboi.gif'),
+(86, 4, 'Каток', 'special/katok.gif'),
+(87, 4, 'Компрессор', 'special/kompressor.gif'),
+(88, 4, 'Мотопомпа / Насос', 'special/motorpump.jpg'),
+(89, 4, 'Ресайклер', 'special/recycler.jpg'),
+(90, 4, 'Фреза дорожная', 'special/planers.jpg'),
+(91, 4, 'Электростанция / Генератор', 'special/generator.jpg'),
+(92, 4, 'Скрепер', 'special/skrepper.gif'),
+(93, 4, 'Другая строительная техника', 'other.png'),
+(94, 4, 'Погрузчики', 'special/forklifts.jpg'),
+(95, 4, 'Вилочный погрузчик / Штабелер', 'special/vilochny_pogruzchik.gif'),
+(96, 4, 'Фронтальный погрузчик', 'special/frontalny_pogruzchik.gif'),
+(97, 4, 'Экскаватор погрузчик', 'special/exkavator_pogruzchik.gif'),
+(98, 4, 'Минипогрузчик', 'special/minipogruzchik.gif'),
+(99, 4, 'Телескопический погрузчик', 'special/telehandler.jpg'),
+(100, 4, 'Контейнерный погрузчик', 'special/container_handler.jpg'),
+(101, 4, 'Подьемник', 'special/lifts.jpg'),
+(102, 4, 'Коммунальная техника', 'special/municipalcars.jpg'),
+(103, 4, 'Машина аварийно-ремонтная "МАВР"', 'special/emergency.jpg'),
+(104, 4, 'Уборочно-поливочные автомобили', 'special/cleaner_auto.gif'),
+(105, 4, 'Автовышка комунальная', 'special/auto_vishka.gif'),
+(106, 4, 'Ассенизатор / Вакуумная машина', 'special/vakuumn_auto.gif'),
+(107, 4, 'Илососная машина', 'special/vacuum_truck.jpg'),
+(108, 4, 'Мусоровоз', 'special/garbage.jpg'),
+(109, 4, 'Эвакуатор', ''),
+(110, 4, 'Каналопромывочная машина', 'special/sewer_machine.jpg'),
+(111, 4, 'Пескоразбрасывающая машина', 'special/sand_machine.jpg'),
+(112, 4, 'Уборочная машина', 'special/harvester.jpg'),
+(113, 4, 'Снегоуборочная машина', 'special/snowblower.jpg'),
+(114, 4, 'Спецтранспорт', 'special/specialcars.jpg'),
+(115, 4, 'Вездеход', 'special/vezdehod.gif'),
+(116, 4, 'Харвестер / форвардер', 'special/forwarder.jpg'),
+(117, 4, 'Багги / Гоночный автомобиль', 'special/baggi.gif'),
+(118, 4, 'Специальный автобус', 'special/specbus.jpg'),
+(119, 4, 'Автомобиль скорой помощи', 'special/ambulance.jpg'),
+(120, 4, 'Бронированный автомобиль', 'special/brony_mobile.gif'),
+(121, 4, 'Пожарная машина', 'special/fire_auto.gif'),
+(122, 4, 'Другая спецтехника', 'other.png'),
+(123, 5, 'Прицеп', 'pricep/trailer.jpg'),
+(124, 5, 'Платформа', 'pricep/pricep/Platform.gif'),
+(125, 5, 'Шасси', 'pricep/pricep/Shassi.gif'),
+(126, 5, 'Самосвал прицеп', 'pricep/pricep/Samosval.gif'),
+(127, 5, 'Борт', 'pricep/pricep/Bort.gif'),
+(128, 5, 'Цистерна', 'pricep/pricep/Cisterna.gif'),
+(129, 5, 'Фургон', 'pricep/pricep/Furgon.gif'),
+(130, 5, 'Рефрижератор', 'pricep/pricep/Refregerator.gif'),
+(131, 5, 'Контейнеровоз', 'pricep/pricep/Konteiner.gif'),
+(132, 5, 'Тентованный борт (штора)', 'pricep/pricep/Tent.gif'),
+(133, 5, 'Лесовоз / Сортиментовоз', 'pricep/pricep/Lesovoz.gif'),
+(134, 5, 'Для перевозки животных', 'pricep/pricep/Enimal.gif'),
+(135, 5, 'Изотермическая будка', ''),
+(136, 5, 'Полуприцеп', 'pricep/semitrailer.jpg'),
+(137, 5, 'Платформа полуприцеп', 'pricep/polypricep/Platform.gif'),
+(138, 5, 'Низкорамная платформа', 'pricep/polypricep/LowPlatform.gif'),
+(139, 5, 'Бетономешалка (Миксер) полуприцеп', 'pricep/polypricep/Beton.gif'),
+(140, 5, 'Шасси полуприцеп', 'pricep/polypricep/shassi.gif'),
+(141, 5, 'Самосвал полуприцеп', 'pricep/polypricep/Samosval.gif'),
+(142, 5, 'Бортовой полуприцеп', 'pricep/polypricep/Bort.gif'),
+(143, 5, 'Цистерна полуприцеп', 'pricep/polypricep/Cisterna.gif'),
+(144, 5, 'Фургон полуприцеп', 'pricep/polypricep/Furgon.gif'),
+(145, 5, 'Рефрижератор полуприцеп', 'pricep/polypricep/polupricep_refrigerator.gif'),
+(146, 5, 'Контейнеровоз полуприцеп', 'pricep/polypricep/Konteiner.gif'),
+(147, 5, 'Тентованный борт (штора)', 'pricep/polypricep/Tent.gif'),
+(148, 5, 'Автовоз', 'pricep/polypricep/AutoVoz.gif'),
+(149, 5, 'Лесовоз / Сортиментовоз', 'pricep/polypricep/Lesovoz.gif'),
+(150, 5, 'Плитовоз', 'pricep/polypricep/Plitovoz.gif'),
+(151, 5, 'Для перевозки животных', 'pricep/polypricep/Enimal.gif'),
+(152, 5, 'Легковой прицеп', 'pricep/LightPricep.gif'),
+(153, 5, 'Прицеп дача', 'pricep/Camp.gif'),
+(154, 5, 'Лафет', 'pricep/lafet.gif'),
+(155, 5, 'Другое', 'other.png'),
+(156, 6, 'Микроавтобус грузовой (до 3,5т)', 'truck/truck_microbus.gif'),
+(157, 6, 'Легковой фургон (до 1,5 т)', 'truck/light_furgon.gif'),
+(158, 6, 'Тягач', 'truck/tyagach.gif'),
+(159, 6, 'Грузовик', 'truck/autotruck.jpg'),
+(160, 6, 'Платформа', 'truck/Konteinerovoz.gif'),
+(161, 6, 'Шасси', 'truck/Konteinerovoz.gif'),
+(162, 6, 'Самосвал', 'truck/samosval.gif'),
+(163, 6, 'Бортовой', 'truck/bort_truck.gif'),
+(164, 6, 'Цистерна', 'truck/cisterna.gif'),
+(165, 6, 'Фургон', 'truck/furgon.gif'),
+(166, 6, 'Эвакуатор', 'truck/evakuator.gif'),
+(167, 6, 'Рефрижератор', 'truck/refrigerator_termokuzov.gif'),
+(168, 6, 'Контейнеровоз', 'truck/Konteinerovoz.gif'),
+(169, 6, 'Мусоровоз', 'truck/Trash.gif'),
+(170, 6, 'Вахтовый автобус / Кунг', 'bus/kung.gif'),
+(171, 6, 'Тентованый', 'truck/TentBort.gif'),
+(172, 6, 'Мультилифт', 'truck/Multilift.gif'),
+(173, 6, 'Автовоз', 'truck/Avtovoz.gif'),
+(174, 6, 'Лесовоз / Сортиментовоз', 'special/lesovoz.gif '),
+(175, 6, 'Стекловоз', 'truck/Steklovoz.gif'),
+(176, 6, 'Для перевозки животных', 'truck/Skotovoz.gif'),
+(177, 6, 'Другое', 'other.png'),
+(178, 7, 'Микроавтобус (от 10 до 22 пас.)	', 'bus/mikroavtobus pasajir.gif'),
+(179, 7, 'Автобус', 'bus/bus.jpg'),
+(180, 7, 'Пригородный автобус', 'bus/prigorodniy.gif'),
+(181, 7, 'Городской автобус', 'bus/gorodskoy.gif'),
+(182, 7, 'Туристический / Междугородний автобус', 'bus/turisticheskiy.gif'),
+(183, 7, 'Другое', 'other.png'),
+(184, 8, 'Дом на колесах', 'autohouse/dom_na_kalesah.gif'),
+(185, 8, 'Мобильный дом', 'autohouse/mobile-homes.jpg'),
+(186, 8, 'Прицеп дача', 'pricep/Camp.gif'),
+(187, 9, 'Самолёт', 'air/samolet.gif'),
+(188, 9, 'Вертолёт', 'air/vertolet.gif'),
+(189, 9, 'Дельтаплан', 'air/deltaplan.gif'),
+(190, 9, 'Другое', 'air/drugoe.gif');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `transmission`
 --
 
@@ -3121,13 +3342,17 @@ INSERT INTO `transmission` (`id`, `type`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reg_id` int(11) NOT NULL,
+  `city_id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `salt` varchar(255) NOT NULL,
   `old_password` varchar(255) NOT NULL,
   `secret` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
   `skype` varchar(255) NOT NULL,
   `status` enum('pending','confirmed','waiting','ch_mail') NOT NULL DEFAULT 'pending',
   `enabled` enum('yes','no') NOT NULL DEFAULT 'yes',
@@ -3135,15 +3360,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `added` datetime NOT NULL,
   `last_login` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `old_password`, `secret`, `first_name`, `last_name`, `email`, `skype`, `status`, `enabled`, `avatar`, `added`, `last_login`) VALUES
-(1, 'serg__666', '666666a', '666666a', 'asdNDa', 'Сергей', 'Веретило', 'sergey.veretilo@gmail.com', 'veretilo_sergei', 'confirmed', 'yes', '', '2008-02-14 14:17:00', '2013-05-07 10:22:00'),
-(2, 'dima', '666666a', '666666a', 'sdg12C', 'Дмитрий', 'Головко', 'dima.golovko@gmail.com', 'dima_golovko', 'confirmed', 'yes', '', '2013-05-06 23:08:35', '2013-05-07 05:17:00');
+INSERT INTO `users` (`id`, `reg_id`, `city_id`, `username`, `password`, `salt`, `old_password`, `secret`, `first_name`, `last_name`, `email`, `phone`, `skype`, `status`, `enabled`, `avatar`, `added`, `last_login`) VALUES
+(1, 0, 0, 'serg__666', '666666a', '', '666666a', 'asdNDa', 'Сергей', 'Веретило', 'sergey.veretilo@gmail.com', '', 'veretilo_sergei', 'confirmed', 'yes', '', '2008-02-14 14:17:00', '2013-05-07 10:22:00'),
+(2, 0, 0, 'dima', '666666a', '', '666666a', 'sdg12C', 'Дмитрий', 'Головко', 'dima.golovko@gmail.com', '', 'dima_golovko', 'confirmed', 'yes', '', '2013-05-06 23:08:35', '2013-05-07 05:17:00'),
+(3, 0, 0, 'Сергей', 'ffb43cb0bf7c849377bc052020b3864c', 'kqwIMq', '', '', '', '', 'test@gmail.com', '0931236991', '', 'pending', 'yes', '', '2013-05-21 12:02:20', '0000-00-00 00:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
