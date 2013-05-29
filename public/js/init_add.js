@@ -253,23 +253,47 @@ jQuery(function() {
     jQuery('#selectcolor__addcars').live('click',function(e) {
         e.preventDefault();
 
+        if($('#fuel').val() == '0'){
+            $('#showchoosefuelratesnotice__addcars').show();
+        }
+
         $('#colorslist__addcars').show();
         
     
     });
-        
-    jQuery('#colorslist__addcars a.item').live('click',function(e) {
+    
+    jQuery('#choosefuelrates__addcars').live('click',function(e) {
         e.preventDefault();
+
+        if($('#fuel').find(":selected").val() == ''){
+            $('#showchoosefuelratesnotice__addcars').show();
+        } else {
+            $('#fuelratesblock__addcars').show();
+            $('#choosefuelrates__addcars').hide();
+        }
+       
+    
+    });
         
-        var color_id = $(this).attr('color_id');
-        var color_name = $(this).html();
-        $('#colorid__addcars').val(color_id);
-        $('#selectcolor__addcars').empty();
-        $('#selectcolor__addcars').append(color_name);
+    jQuery('#fuel').live('change',function(e) {
+        $('#showchoosefuelratesnotice__addcars').hide();
+    
+    });    
+    
+           
+    jQuery('#choosefuelrates__addcars').live('click',function(e) {
+        e.preventDefault();
         
         $('#colorslist__addcars').hide();
     
-    });    
+    });  
+    
+    jQuery('#showchoosefuelratesnotice__addcars .close').live('click',function(e) {
+        e.preventDefault();
+        
+        $('#showchoosefuelratesnotice__addcars').hide();
+    
+    });  
     
     jQuery('body').click(function() {
 

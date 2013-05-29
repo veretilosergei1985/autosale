@@ -2137,7 +2137,7 @@ table.list-bodytype input {
     line-height: 21px;
     padding: 8px 12px;
     position: absolute;
-    top: 0;
+    top: -28px;
     width: 340px;
 }
 .form-add-auto .type-cars .label {

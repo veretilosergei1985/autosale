@@ -115,6 +115,21 @@ class Application_Form_AddCar extends Zend_Form
         $doors->removeDecorator('Errors');
         $doors->setRegisterInArrayValidator(false);
         
+        
+                $fuel = new Zend_Form_Element_Select('fuel', array());
+                $fuel->setLabel("Топливо:");
+                $fuel->addMultiOptions(array('' => 'Выберите'));
+
+                $oFuel = new Application_Model_Fuel();
+                foreach ($oFuel->fetchAll() as $item) {
+                    $fuel->addMultiOption($item->id, $item->type);
+                }
+
+                $fuel->setAttrib('class', 'span3');
+
+                $fuel->removeDecorator('Errors');
+                $fuel->setRegisterInArrayValidator(false);
+        
         //////////////////////////////////////////////
         
         $region->setDecorators(array(
@@ -179,6 +194,14 @@ class Application_Form_AddCar extends Zend_Form
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ));    
+        
+        $fuel->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
         ));     
         
                        
@@ -193,7 +216,7 @@ class Application_Form_AddCar extends Zend_Form
         $submit->setLabel('Войти');
         
         $this->addElements(
-                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors)
+                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel)
                 );
  
         
@@ -399,7 +422,40 @@ class Application_Form_AddCar extends Zend_Form
                     )
                );
          
-       
+         $this->addElement(
+                'note', 
+                'fuelrate', 
+                array('value' => '<div id="fuelselectblock__addcars" class="rows">
+                                    <p style="display: block;">
+                                        <a id="choosefuelrates__addcars" style="margin-left:160px; " href="javascript:void(0);">Указать расход топлива</a>
+                                    </p>
+                                    
+                                    <div id="showchoosefuelratesnotice__addcars" class="error larr __smoll __top" style="display: none;">
+                                        <a class="close" href="javascript:void(0);">×</a>
+                                        Для того, что бы указать расход, необходимо указать топливо
+                                    </div>
+                                    
+                                    <div id="fuelratesblock__addcars" class="rows" style="display: none;">
+                                        <label class="label" for="input3"> Расход топлива </label>
+                                        <div class="input">
+                                            <div class="fuel-consumption">
+                                                <label for="fuelratescity__addcars">город</label>
+                                                <input id="fuelratescity__addcars" class="span1" type="text" value="" name="fuelRates[city]">
+                                                <label for="fuelratesrace__addcars">шоссе</label>
+                                                <input id="fuelratesrace__addcars" class="span1" type="text" value="" name="fuelRates[route]">
+                                                <label for="fuelratescombine__addcars">смеш.</label>
+                                                <input id="fuelratescombine__addcars" class="span1" type="text" value="" name="fuelRates[combine]">
+                                                <em>л/100км.</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>', 
+                      'decorators' => array(
+                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
+                       )
+                    )
+               );
+         
                
         
         $this->addElements(
