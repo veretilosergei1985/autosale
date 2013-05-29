@@ -169,6 +169,16 @@
     </div>
 
     <script>
+
+        function check_num(input) { 
+            var value = input.value; 
+            var rep = /[a-zA-Zа-яА-Я]/; 
+            if (rep.test(value)) { 
+                value = value.replace(rep, ''); 
+                input.value = value; 
+            };
+        };
+
             /*
              document.addEvent('domready', function(){
              Ria_Autoloader.loadClass('Ria_Auto_Add_Form_Primary', '1.95', function(){
@@ -319,6 +329,8 @@
              */
     </script>
     
+    
+    
     <form class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="<?php echo $this->form->getAction(); ?>">
         <?php echo $this->form->region; ?>
         <div class="window-fixed" style="display: none;" id="bodystylespopup__addcars"></div>  
@@ -346,6 +358,7 @@
         <?php echo $this->form->color; ?>
         <?php echo $this->form->fuel; ?>
         <?php echo $this->form->fuelrate; ?>
+        <?php echo $this->form->year; ?>
     </form>
         
     <?php //echo $this->form; ?>

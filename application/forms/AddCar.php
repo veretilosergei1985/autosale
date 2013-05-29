@@ -129,6 +129,20 @@ class Application_Form_AddCar extends Zend_Form
 
                 $fuel->removeDecorator('Errors');
                 $fuel->setRegisterInArrayValidator(false);
+                
+        $year = new Zend_Form_Element_Select('year', array());
+        $year->setLabel("Год выпуска:<ins>*</ins>");
+        $year->addMultiOptions(array('' => 'Выберите'));
+        
+        $cur_year = intval(date('Y'));
+        for($i = $cur_year; $i >= 1901; $i--) {
+            $year->addMultiOption($i, $i);
+        }
+        $year->setAttrib('class', 'span2');
+        $year->removeDecorator('Errors');
+        $year->setRequired(true)
+                        ->addValidator('NotEmpty',true)
+                        ->setRegisterInArrayValidator(false);
         
         //////////////////////////////////////////////
         
@@ -202,7 +216,15 @@ class Application_Form_AddCar extends Zend_Form
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ));     
+        ));  
+        
+         $year->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ));    
         
                        
         $submit = new Zend_Form_Element_Submit('submit');
@@ -216,7 +238,7 @@ class Application_Form_AddCar extends Zend_Form
         $submit->setLabel('Войти');
         
         $this->addElements(
-                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel)
+                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year)
                 );
  
         
@@ -440,11 +462,11 @@ class Application_Form_AddCar extends Zend_Form
                                         <div class="input">
                                             <div class="fuel-consumption">
                                                 <label for="fuelratescity__addcars">город</label>
-                                                <input id="fuelratescity__addcars" class="span1" type="text" value="" name="fuelRates[city]">
+                                                <input id="fuelratescity__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[city] " onkeyup="return check_num(this);">
                                                 <label for="fuelratesrace__addcars">шоссе</label>
-                                                <input id="fuelratesrace__addcars" class="span1" type="text" value="" name="fuelRates[route]">
+                                                <input id="fuelratesrace__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[route]" onkeyup="return check_num(this);">
                                                 <label for="fuelratescombine__addcars">смеш.</label>
-                                                <input id="fuelratescombine__addcars" class="span1" type="text" value="" name="fuelRates[combine]">
+                                                <input id="fuelratescombine__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[combine]" onkeyup="return check_num(this);">
                                                 <em>л/100км.</em>
                                             </div>
                                         </div>

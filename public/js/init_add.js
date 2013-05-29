@@ -196,13 +196,15 @@ jQuery(function() {
             $(".name-bodystyle").remove();
         }
         
-         var radio = $('.radio-bodytype:checked');
-         var title = $(radio).next();
-                
-         $('#bodystylespopup__addcars').hide();
-         $('#replacedelement__addcars .element-select').remove();
-         $('#replacedelement__addcars').append('<div class="name-bodystyle"><strong>' +  $(title).text() + '</strong>[<a id="choosebodystyle__addcars" href="javascript:void(0);">изменить</a>]</div>');
+        if($('.radio-bodytype:checked').length>0) {    
+            var radio = $('.radio-bodytype:checked');
+            var title = $(radio).next();
+            
+            $('#replacedelement__addcars .element-select').remove();
+            $('#replacedelement__addcars').append('<div class="name-bodystyle"><strong>' +  $(title).text() + '</strong>[<a id="choosebodystyle__addcars" href="javascript:void(0);">изменить</a>]</div>');
+        }
         
+        $('#bodystylespopup__addcars').hide();
     
     });
     
@@ -262,6 +264,17 @@ jQuery(function() {
     
     });
     
+    jQuery('#colorslist__addcars a').live('click',function(e) {
+        e.preventDefault();
+      
+        var html = $(this).html();
+
+        $('#selectcolor__addcars').empty();
+        $('#selectcolor__addcars').append(html);
+        $('#colorslist__addcars').hide();
+    
+    });
+    
     jQuery('#choosefuelrates__addcars').live('click',function(e) {
         e.preventDefault();
 
@@ -292,6 +305,17 @@ jQuery(function() {
         e.preventDefault();
         
         $('#showchoosefuelratesnotice__addcars').hide();
+    
+    });  
+    
+    jQuery('.fuel-consumption input').live('keyup',function(e) {
+        e.preventDefault();
+       
+//       var regexp = /^\d+$/; 
+//	 
+//        if(!regexp.test($(this).val())){
+//            $(this).val('');
+//        } 
     
     });  
     
