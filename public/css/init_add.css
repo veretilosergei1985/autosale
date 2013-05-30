@@ -3504,3 +3504,76 @@ root {
     display: block;
 }
 
+.hint{
+    display: inline;
+    left: -5px;
+    position: relative;
+}
+
+.add_car_form .errors:before {
+    border-right-color: #FDDFDE;
+}
+
+
+.add_car_form .errors:before {
+    border-top: 0 none;
+    border-width: 0 10px 10px;
+    left: -20px;
+}
+.add_car_form .errors:before {
+    top: 10px;
+}
+.add_car_form .errors:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent #000000 transparent transparent;
+    border-image: none;
+    border-left: 0 dashed transparent;
+    border-right: 10px solid #000000;
+    border-style: solid solid dashed dashed;
+    border-width: 10px 10px 10px 0;
+    font-size: 0;
+    height: 0;
+    left: -10px;
+    line-height: 0;
+    width: 0;
+}
+.add_car_form .errors:before{
+    content: "";
+    position: absolute;
+    z-index: 100;
+}
+.add_car_form .errors:before {
+    top: 16px;
+}
+.add_car_form .errors:after {
+    top: 16px;
+}
+.add_car_form .form-add-auto .error.larr {
+    border-top: 1px solid #FFFFFF;
+    left: 395px;
+    line-height: 21px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    width: 340px;
+}
+.add_car_form .errors {
+    position: relative;
+}
+.add_car_form .errors {
+    background: none repeat scroll 0 0 #FDDFDE;
+    color: #8A1F11;
+}
+.add_car_form .errors {
+    border-radius: 5px 5px 5px 5px;
+    display: block;
+    margin: 0 0 1.5em;
+    padding: 5px 10px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    position: absolute;
+    left: 780px;
+}
+

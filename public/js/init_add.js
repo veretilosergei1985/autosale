@@ -213,42 +213,52 @@ jQuery(function() {
     });
     
      $('#mark').change(function () {
+         
+            if($(this).find("option:selected").val() != ''){
+                var mark_name = $(this).find("option:selected").text();
+                $('#previewmarka__addcars').text(mark_name);
+            } else {
+                var mark_name = 'Марка';
+                $('#previewmarka__addcars').text(mark_name);
+                
+                var model_name = 'Модель';
+                $('#previewmodel__addcars').text(model_name);
+            }
 
             var mark_id = $(this).val();
-            /*
-             * Если значение селекта равно 0,
-             * т.е. не выбрана страна, то мы
-             * не будем ничего делать
-             */ 
+
             if (mark_id == '') {
                 $('#model').html('');
                 $('#model').attr('disabled', true);
                 return(false);
+            } else {
+                
+                $('#model').attr('disabled', false);
+                    jQuery.ajax({
+                          url: '/display/getmodel',
+                          type:'POST',
+                          data: { mark_id : mark_id },
+
+                          success: function(res) {
+
+                              //data = jQuery.parseJSON(res);                
+                                   var tips = '';
+                                    $("select[name='model'] option").remove();
+                                    var tips = '<option value="">Выберите</option>';
+
+        //                              for (var i in data) {
+        //                                  tips += '<option value="'+ data[i].id + '">' + data[i].name + '</option>';
+        //                              }
+        //                              $('#city').append(tips);
+                                        tips +=res;
+                                          $('#model').append(tips);
+
+                              }
+
+
+                      }); 
+              
             }
-            
-            jQuery.ajax({
-                  url: '/display/getmodel',
-                  type:'POST',
-                  data: { mark_id : mark_id },
-                  
-                  success: function(res) {
-
-                      //data = jQuery.parseJSON(res);                
-                           var tips = '';
-                            $("select[name='model'] option").remove();
-                            var tips = '<option value="">Выберите</option>';
-                            
-//                              for (var i in data) {
-//                                  tips += '<option value="'+ data[i].id + '">' + data[i].name + '</option>';
-//                              }
-//                              $('#city').append(tips);
-                                tips +=res;
-                                  $('#model').append(tips);
-
-                      }
-
-
-              }); 
     });  
     
     
@@ -317,14 +327,84 @@ jQuery(function() {
 //            $(this).val('');
 //        } 
     
+    }); 
+    
+    
+    jQuery('#specifypower__addcars').live('click',function(e) {
+        e.preventDefault();
+        $('#powerblock__addcars').show();
+        $(this).hide();
+    
     });  
     
+    
+    jQuery('#region').live('change',function(e) {
+        e.preventDefault();
+        
+        if($(this).find("option:selected").val() != ''){
+            var reg_name = $(this).find("option:selected").text();
+            $('#previewcity__addcars').text(reg_name);
+        } else {
+            var reg_name = 'Город';
+            $('#previewcity__addcars').text(reg_name);
+        }
+    
+    });
+    
+
+    
+    jQuery('#model').live('change',function(e) {
+        e.preventDefault();
+        
+        if($(this).find("option:selected").val() != ''){
+            var model_name = $(this).find("option:selected").text();
+            $('#previewmodel__addcars').text(model_name);
+        } else {
+            var model_name = 'Модель';
+            $('#previewmodel__addcars').text(model_name);
+        }
+    
+    });  
+    
+    jQuery('#year').live('change',function(e) {
+        e.preventDefault();
+        
+        if($(this).find("option:selected").val() != ''){
+            var year = $(this).find("option:selected").text();
+            $('#previewyear__addcars').text(year);
+        } else {
+            var year = 'Год выпуска';
+            $('#previewyear__addcars').text(year);
+        }
+    
+    });  
+    
+    jQuery('.item-ad input').live('change',function(e) {
+        //e.preventDefault();
+        if($(this).val() != '0'){
+            $('#previewishot__addcars').removeAttr('class');
+            $('#previewticket__addcars').addClass('paid');
+            $('#previewishot__addcars').addClass($(this).next().attr('class'));
+            
+        } else {
+            $('#previewticket__addcars').removeClass('paid');
+            $('#previewishot__addcars').removeAttr('class');
+        }
+        
+        
+    
+    
+    });  
+    
+        
     jQuery('body').click(function() {
 
         if($('#transpottype__addcars').css('display') == 'block'){ 
             $('#transpottype__addcars').hide(); 
         }
     });
+    
+    
      
            
     

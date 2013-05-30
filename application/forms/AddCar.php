@@ -6,13 +6,14 @@ class Application_Form_AddCar extends Zend_Form
      
 
         $this->setMethod('post');
-        $this->setAttrib('class', 'grid grid-span2');
+        $this->setAttrib('class', 'grid grid-span2 add_car_form');
+        $this->setAttrib('position','relative');
                 
-//        $this->setDecorators(array(
-//                        array('FormErrors', array('markupListEnd' => '', 'markupListStart' => '','markupListItemStart' => '', 'markupListItemEnd' => '')),
-//                        array('FormElements'),
-//                        array('Form')
-//                    ));
+        $this->setDecorators(array(
+                        array('FormErrors', array('markupListEnd' => '', 'markupListStart' => '','markupListItemStart' => '', 'markupListItemEnd' => '')),
+                        array('FormElements'),
+                        array('Form')
+                    ));
         
         $cat_id = new Zend_Form_Element_Hidden('cat_id');
         
@@ -27,7 +28,7 @@ class Application_Form_AddCar extends Zend_Form
                 //
                 $region->setAttrib('class', 'span3');
 
-                $region->removeDecorator('Errors');
+                //$region->removeDecorator('Errors');
                 $region->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
@@ -44,7 +45,7 @@ class Application_Form_AddCar extends Zend_Form
         //      
         $mark->setAttrib('class', 'span3');
                 
-        $mark->removeDecorator('Errors');
+        //$mark->removeDecorator('Errors');
         $mark->setRequired(true)
                 ->addValidator('NotEmpty',true)
                 ->setRegisterInArrayValidator(false);
@@ -55,7 +56,7 @@ class Application_Form_AddCar extends Zend_Form
 
                 $model->setAttrib('class', 'span3');
 
-                $model->removeDecorator('Errors');
+                //$model->removeDecorator('Errors');
                 $model->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
@@ -66,15 +67,14 @@ class Application_Form_AddCar extends Zend_Form
                 ->addFilter('HtmlEntities')
                 ->addFilter('StringTrim');
         $version->setAttrib('class', 'span3');
-        $version->removeDecorator('Errors');
+        //$version->removeDecorator('Errors');
         
                 $vin = new Zend_Form_Element_Text('vin');
                 $vin->setLabel('VIN номер:')
-                        ->setRequired(true)
                         ->addFilter('HtmlEntities')
                         ->addFilter('StringTrim');
                 $vin->setAttrib('class', 'span3');
-                $vin->removeDecorator('Errors');
+                //$vin->removeDecorator('Errors');
         
         $transmission = new Zend_Form_Element_Select('transmission', array());
         $transmission->setLabel("Коробка передач:");
@@ -87,7 +87,7 @@ class Application_Form_AddCar extends Zend_Form
         
         $transmission->setAttrib('class', 'span3');
                 
-        $transmission->removeDecorator('Errors');
+        //$transmission->removeDecorator('Errors');
         $transmission->setRegisterInArrayValidator(false);
         
                 $drive = new Zend_Form_Element_Select('drive', array());
@@ -101,7 +101,7 @@ class Application_Form_AddCar extends Zend_Form
 
                 $drive->setAttrib('class', 'span3');
 
-                $drive->removeDecorator('Errors');
+                //$drive->removeDecorator('Errors');
                 $drive->setRegisterInArrayValidator(false);
         
         $doors = new Zend_Form_Element_Select('doors', array());
@@ -112,7 +112,7 @@ class Application_Form_AddCar extends Zend_Form
             $doors->addMultiOption($i, $i);
         }
         $doors->setAttrib('class', 'span2');
-        $doors->removeDecorator('Errors');
+        //$doors->removeDecorator('Errors');
         $doors->setRegisterInArrayValidator(false);
         
         
@@ -127,7 +127,7 @@ class Application_Form_AddCar extends Zend_Form
 
                 $fuel->setAttrib('class', 'span3');
 
-                $fuel->removeDecorator('Errors');
+                //$fuel->removeDecorator('Errors');
                 $fuel->setRegisterInArrayValidator(false);
                 
         $year = new Zend_Form_Element_Select('year', array());
@@ -139,20 +139,44 @@ class Application_Form_AddCar extends Zend_Form
             $year->addMultiOption($i, $i);
         }
         $year->setAttrib('class', 'span2');
-        $year->removeDecorator('Errors');
+        //$year->removeDecorator('Errors');
         $year->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
+        
+
+                $race = new Zend_Form_Element_Text('race');
+                $race->setLabel("Пробег:<ins>*</ins>")
+                        ->setRequired(true)
+                        ->addValidator('NotEmpty', true)
+                        ->addFilter('HtmlEntities')
+                        ->addFilter('StringTrim')
+                        ->setAttrib('class', 'span1'); 
+                
+        $volume = new Zend_Form_Element_Text('volume');
+        $volume->setLabel("Объем двигателя:")
+                ->addFilter('HtmlEntities')
+                ->addFilter('StringTrim')
+                ->setAttrib('class', 'span1'); 
+        
+                $price = new Zend_Form_Element_Text('price');
+                $price->setLabel("Цена:<ins>*</ins>")
+                        ->setRequired(true)
+                        ->addValidator('NotEmpty', true)
+                        ->addFilter('HtmlEntities')
+                        ->addFilter('StringTrim')
+                        ->setAttrib('class', 'span2'); 
         
         //////////////////////////////////////////////
         
         $region->setDecorators(array(
             'ViewHelper',
             'Description',
+            'FormErrors',
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ));      
+        ))->addDecorator('Errors');      
         
         $mark->setDecorators(array(
             'ViewHelper',
@@ -160,7 +184,7 @@ class Application_Form_AddCar extends Zend_Form
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ));    
+        ))->addDecorator('Errors');    
         
         $model->setDecorators(array(
             'ViewHelper',
@@ -168,7 +192,7 @@ class Application_Form_AddCar extends Zend_Form
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ));    
+        ))->addDecorator('Errors');    
                  
         $version->setDecorators(array(
             'ViewHelper',
@@ -224,21 +248,65 @@ class Application_Form_AddCar extends Zend_Form
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ));    
+        ))->addDecorator('Errors');    
+        
+        $race->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ))->setDescription('<em class="add-on">тыс.км</em>');
+        $race->getDecorator('description')->setOption('escape',  
+        false); 
+        $race->addDecorator('Errors');
+        
+        $volume->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ))->setDescription('<em class="add-on">л.</em> <a id="specifypower__addcars" href="javascript:void(0);">Указать мощность</a>
+                            <span id="powerblock__addcars" class="add-power span2" style="display: none;">
+                                <input id="power__addcars" class="span1" type="text" value="" name="power">
+                                <select id="powername__addcars" class="currency" name="powerName">
+                                    <option selected="selected" label="л. с." value="1">л. с.</option>
+                                    <option label="кВт" value="2">кВт</option>
+                                </select>
+                            </span>');
+        $volume->getDecorator('description')->setOption('escape',  
+        false); 
+        
+        $price->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ))->setDescription('<select style="margin-left: 10px;" id="currency__addcars" class="currency" tabindex="26" name="currencyId">
+                                <option label="$" value="1">$</option>
+                                <option label="€" value="2">€</option>
+                                <option label="грн." value="3">грн.</option>
+                            </select>');
+        $price->getDecorator('description')->setOption('escape',  
+        false); 
+        $price->addDecorator('Errors');
         
                        
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setOptions(array('class' => 'button  large green car_log_submit'));
+        $submit->setOptions(array('class' => 'button  large green'));
         $submit->setDecorators(array(
             'ViewHelper',
             'Description',
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows submit-form-add')),
-        ));
-        $submit->setLabel('Войти');
+        ))->setDescription('<p class="help-block"> При клике на кнопку "Далее" Вы перейдете к более подробному описанию своего объявления, а также добавлению фото </p>');
+        $submit->getDecorator('description')->setOption('escape',false); 
+        $submit->setLabel('Далее');
         
         $this->addElements(
-                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year)
+                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
                 );
  
         
@@ -472,6 +540,84 @@ class Application_Form_AddCar extends Zend_Form
                                         </div>
                                     </div>
                                  </div>', 
+                      'decorators' => array(
+                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
+                       )
+                    )
+               );
+         
+         
+          $this->addElement(
+                'note', 
+                'indent', 
+                array('value' => '<div class="indent ckecklist">
+                                    <p class="item">
+                                        <input type="hidden" value="0" name="auctionPossible">
+                                        <input id="auction__addcars" type="checkbox" tabindex="27" value="1" name="auctionPossible">
+                                        <label for="auction__addcars">
+                                            <i class="icon-auction-red"></i>
+                                                Возможен торг
+                                            <em> (+ включить блок Торги)</em>
+                                        </label>
+                                    </p>
+                                    <div class="item">
+                                        <input type="hidden" value="0" name="isExchange">
+                                        <input id="exchange__addcars" type="checkbox" tabindex="28" value="1" name="isExchange">
+                                        <label for="exchange__addcars">
+                                            <i class="icon-exchange-red"></i>
+                                                Возможен обмен
+                                            <em>(+ включить блок Обмен)</em>
+                                        </label>
+                                    </div>
+                                 </div>', 
+                      'decorators' => array(
+                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
+                       )
+                    )
+               );
+          
+          
+          $this->addElement(
+                'note', 
+                'preview', 
+                array('value' => '<div id="previewblock__addcars" class="rows preview-title-ad span7">
+                                        <label class="label" for="input3"> Заглавие объявления: </label>
+                                        <div class="indent">
+                                            <div id="previewticket__addcars" class="ticket-item ">
+                                                <div class="head-ticket">
+                                                    <span class="city">
+                                                        <span id="previewcity__addcars" style="color : #256799">Город</span>
+                                                    </span>
+                                                    <h3 class="head-car">
+                                                        <i id="previewishot__addcars" class=""></i>
+                                                        <span id="previewmarka__addcars" style="color : #256799">Марка</span>
+                                                        <span id="previewmodel__addcars" style="color : #256799">Модель</span>
+                                                        <span id="previewversion__addcars" style="color : #256799"></span>
+                                                        <span id="previewyear__addcars">Год выпуска</span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <dl class="swich-title-ad">
+                                            <dt class="title-ad"> Добавить к заглавию: </dt>
+                                            <dd class="item-ad">
+                                                <input id="previewradio1__addcars" type="radio" value="1" name="title-ad">
+                                                <label class="label-hot" for="previewradio1__addcars"></label>
+                                            </dd>
+                                            <dd class="item-ad">
+                                                <input id="previewradio2__addcars" type="radio" value="2" name="title-ad">
+                                                <label class="label-less" for="previewradio2__addcars"></label>
+                                            </dd>
+                                            <dd class="item-ad">
+                                                <input id="previewradio3__addcars" type="radio" value="3" name="title-ad">
+                                                <label class="label-urgently" for="previewradio3__addcars"></label>
+                                            </dd>
+                                            <dd class="item-ad">
+                                                <input id="previewradio0__addcars" type="radio" value="0" name="title-ad" checked="checked">
+                                                <label for="previewradio0__addcars"> ничего не добавлять </label>
+                                            </dd>
+                                            </dl>
+                                        </div>
+                                    </div>', 
                       'decorators' => array(
                           //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
                        )
