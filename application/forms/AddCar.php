@@ -15,9 +15,23 @@ class Application_Form_AddCar extends Zend_Form
                         array('Form')
                     ));
         
+        //$cat_id = new Zend_Form_Element_Hidden('cat_id');
         $cat_id = new Zend_Form_Element_Hidden('cat_id');
+        $cat_id->setAttrib('id', 'category__addcars');
         
-                $region = new Zend_Form_Element_Select('region', array());
+        $body_id = new Zend_Form_Element_Hidden('body_id');
+        $body_id->setAttrib('id', 'body_id_tmp__addcars');
+        
+        $model_id = new Zend_Form_Element_Hidden('model_id');
+        $model_id->setAttrib('id', 'model_id');
+        
+        $color_id = new Zend_Form_Element_Hidden('color_id');
+        $color_id->setAttrib('id', 'colorid__addcars');
+        
+        $metallic = new Zend_Form_Element_Hidden('metallic');
+       
+        
+                $region = new Zend_Form_Element_Select('reg_id', array());
                 $region->setLabel("Регион:<ins>*</ins>");
                 $region->addMultiOptions(array('' => 'Выберите'));
                 //
@@ -32,9 +46,11 @@ class Application_Form_AddCar extends Zend_Form
                 $region->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
+                
+                $region->getValidator('NotEmpty')->setMessage('Выберите регион');
         
         
-        $mark = new Zend_Form_Element_Select('mark', array());
+        $mark = new Zend_Form_Element_Select('mark_id', array());
         $mark->setLabel("Марка:<ins>*</ins>");
         $mark->addMultiOptions(array('' => 'Выберите'));
         //
@@ -44,26 +60,29 @@ class Application_Form_AddCar extends Zend_Form
         }
         //      
         $mark->setAttrib('class', 'span3');
+        $mark->setAttrib('id', 'mark');
                 
         //$mark->removeDecorator('Errors');
         $mark->setRequired(true)
                 ->addValidator('NotEmpty',true)
                 ->setRegisterInArrayValidator(false);
+        $mark->getValidator('NotEmpty')->setMessage('Выберите марку');
         
                 $model = new Zend_Form_Element_Select('model', array());
                 $model->setLabel("Модель:<ins>*</ins>");
                 $model->addMultiOptions(array('' => 'Выберите'));
 
                 $model->setAttrib('class', 'span3');
+                $model->setAttrib('id', 'model');
 
                 //$model->removeDecorator('Errors');
                 $model->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
+                $mark->getValidator('NotEmpty')->setMessage('Выберите модель');
         
         $version = new Zend_Form_Element_Text('version');
         $version->setLabel('Версия:')
-                ->setRequired(true)
                 ->addFilter('HtmlEntities')
                 ->addFilter('StringTrim');
         $version->setAttrib('class', 'span3');
@@ -76,7 +95,7 @@ class Application_Form_AddCar extends Zend_Form
                 $vin->setAttrib('class', 'span3');
                 //$vin->removeDecorator('Errors');
         
-        $transmission = new Zend_Form_Element_Select('transmission', array());
+        $transmission = new Zend_Form_Element_Select('transmission_id', array());
         $transmission->setLabel("Коробка передач:");
         $transmission->addMultiOptions(array('' => 'Выберите'));
         
@@ -90,7 +109,7 @@ class Application_Form_AddCar extends Zend_Form
         //$transmission->removeDecorator('Errors');
         $transmission->setRegisterInArrayValidator(false);
         
-                $drive = new Zend_Form_Element_Select('drive', array());
+                $drive = new Zend_Form_Element_Select('drive_id', array());
                 $drive->setLabel("Привод:");
                 $drive->addMultiOptions(array('' => 'Выберите'));
 
@@ -116,7 +135,7 @@ class Application_Form_AddCar extends Zend_Form
         $doors->setRegisterInArrayValidator(false);
         
         
-                $fuel = new Zend_Form_Element_Select('fuel', array());
+                $fuel = new Zend_Form_Element_Select('fuel_id', array());
                 $fuel->setLabel("Топливо:");
                 $fuel->addMultiOptions(array('' => 'Выберите'));
 
@@ -143,6 +162,7 @@ class Application_Form_AddCar extends Zend_Form
         $year->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
+        $year->getValidator('NotEmpty')->setMessage('Выберите год выпуска');
         
 
                 $race = new Zend_Form_Element_Text('race');
@@ -151,13 +171,19 @@ class Application_Form_AddCar extends Zend_Form
                         ->addValidator('NotEmpty', true)
                         ->addFilter('HtmlEntities')
                         ->addFilter('StringTrim')
-                        ->setAttrib('class', 'span1'); 
+                        ->setAttrib('class', 'span1');
+                $race->getValidator('NotEmpty')->setMessage('Пробег б/у автомобиля должен быть более 1 тыс.км. Продажа новых автомобилей доступна только в коммерческом разделе “Новые авто”. Детальнее по телефону (067)430-79-91 ');
+                $race->setAttrib('onkeyup','return check_num(this);');
                 
         $volume = new Zend_Form_Element_Text('volume');
         $volume->setLabel("Объем двигателя:")
                 ->addFilter('HtmlEntities')
                 ->addFilter('StringTrim')
                 ->setAttrib('class', 'span1'); 
+        $volume->addPrefixPath('Base_Validator', 'Base/Validator', 'validate')		
+                                ->addValidator('FloatValidator');
+
+        
         
                 $price = new Zend_Form_Element_Text('price');
                 $price->setLabel("Цена:<ins>*</ins>")
@@ -166,7 +192,27 @@ class Application_Form_AddCar extends Zend_Form
                         ->addFilter('HtmlEntities')
                         ->addFilter('StringTrim')
                         ->setAttrib('class', 'span2'); 
+                $price->getValidator('NotEmpty')->setMessage('Укажите адекватную стоимость. Введите 0 для “договорной”. ');
+                $price->setAttrib('onkeyup','return check_num(this);');
+                
+        $fuel_city = new Zend_Form_Element_Text('fuel_city');
+        $fuel_city->setLabel('город')
+                ->addFilter('HtmlEntities')
+                ->addFilter('StringTrim');
+        $fuel_city->setAttrib('class', 'span1');
         
+                $fuel_route = new Zend_Form_Element_Text('fuel_route');
+                $fuel_route->setLabel('шоссе')
+                        ->addFilter('HtmlEntities')
+                        ->addFilter('StringTrim');
+                $fuel_route->setAttrib('class', 'span1');
+        
+        $fuel_combine = new Zend_Form_Element_Text('fuel_combine');
+        $fuel_combine->setLabel('смеш.')
+                ->addFilter('HtmlEntities')
+                ->addFilter('StringTrim');
+        $fuel_combine->setAttrib('class', 'span1');
+                
         //////////////////////////////////////////////
         
         $region->setDecorators(array(
@@ -276,7 +322,8 @@ class Application_Form_AddCar extends Zend_Form
                                 </select>
                             </span>');
         $volume->getDecorator('description')->setOption('escape',  
-        false); 
+        false);
+        $volume->addDecorator('Errors');
         
         $price->setDecorators(array(
             'ViewHelper',
@@ -293,6 +340,34 @@ class Application_Form_AddCar extends Zend_Form
         false); 
         $price->addDecorator('Errors');
         
+        $fuel_city->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'span')),
+        ));
+        $fuel_city->getDecorator('Label')->setOption('style','float:none;');
+
+         
+        $fuel_route->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'span')),
+        ));
+        $fuel_route->getDecorator('Label')->setOption('style','float:none;');
+          
+         $fuel_combine->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'span')),
+        ));
+        $fuel_combine->getDecorator('Label')->setOption('style','float:none;');
+        
                        
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setOptions(array('class' => 'button  large green'));
@@ -306,7 +381,7 @@ class Application_Form_AddCar extends Zend_Form
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
+                array($fuel_city, $fuel_route, $fuel_combine, $metallic, $color_id, $model_id, $body_id, $cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
                 );
  
         
@@ -378,7 +453,7 @@ class Application_Form_AddCar extends Zend_Form
                 'note', 
                 'color', 
                 array('value'=>'<div id="colorselectblock__addcars" class="rows">
-                                    <input id="colorid__addcars" type="hidden" value="0" name="colorId">
+                                    
                                     <label class="label" for=""> Цвет: </label>
                                     
                                     <div class="select">
@@ -479,8 +554,7 @@ class Application_Form_AddCar extends Zend_Form
                                         </span>
                                         </span>
                                         <label class="exception" for="metallic__addcars">
-                                            <input type="hidden" value="0" name="metallic">
-                                            <input id="metallic__addcars" type="checkbox" value="1" name="metallic">
+                                            <input id="metallic__addcars" type="checkbox">
                                                 Металлик
                                         </label>
                                     </div>
@@ -512,39 +586,7 @@ class Application_Form_AddCar extends Zend_Form
                     )
                );
          
-         $this->addElement(
-                'note', 
-                'fuelrate', 
-                array('value' => '<div id="fuelselectblock__addcars" class="rows">
-                                    <p style="display: block;">
-                                        <a id="choosefuelrates__addcars" style="margin-left:160px; " href="javascript:void(0);">Указать расход топлива</a>
-                                    </p>
-                                    
-                                    <div id="showchoosefuelratesnotice__addcars" class="error larr __smoll __top" style="display: none;">
-                                        <a class="close" href="javascript:void(0);">×</a>
-                                        Для того, что бы указать расход, необходимо указать топливо
-                                    </div>
-                                    
-                                    <div id="fuelratesblock__addcars" class="rows" style="display: none;">
-                                        <label class="label" for="input3"> Расход топлива </label>
-                                        <div class="input">
-                                            <div class="fuel-consumption">
-                                                <label for="fuelratescity__addcars">город</label>
-                                                <input id="fuelratescity__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[city] " onkeyup="return check_num(this);">
-                                                <label for="fuelratesrace__addcars">шоссе</label>
-                                                <input id="fuelratesrace__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[route]" onkeyup="return check_num(this);">
-                                                <label for="fuelratescombine__addcars">смеш.</label>
-                                                <input id="fuelratescombine__addcars" class="span1" type="text" value="" maxlength="4" name="fuelRates[combine]" onkeyup="return check_num(this);">
-                                                <em>л/100км.</em>
-                                            </div>
-                                        </div>
-                                    </div>
-                                 </div>', 
-                      'decorators' => array(
-                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
-                       )
-                    )
-               );
+
          
          
           $this->addElement(

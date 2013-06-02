@@ -1,0 +1,655 @@
+
+
+
+<style>
+    #oldtypeaddphotolink__addcars {
+        cursor: pointer;
+    }
+    #oldtypeaddphotolink__addcars:hover {
+        text-decoration: underline;
+    }
+</style>
+<div class="head-box">
+    Добавление объявления: фото и подробная информация            
+    <span class="area grey">
+        Перейти к <a href="/?target=user" target="_blank" class="bold">Моему меню</a>
+    </span>
+
+</div>
+
+<nav class="progressive-bar step-3">
+    <a class="item-tab active" href="http://auto.ria.ua/addauto/autoinfo/autoId/11284210">
+        Шаг 1. <em>Объявление</em>
+    </a>
+    <a class="item-tab active" href="http://auto.ria.ua/addauto/addphoto/autoId/11284210">
+        Шаг 2. <em>фото и подробная информация</em>
+    </a>
+    <a class="item-tab " href="javascript:void(0);">
+        Шаг 3.
+        <em>
+            Публикация                    </em>
+    </a>
+</nav>
+
+<script>
+    document.addEvent('domready', function() {
+        Ria_Autoloader.loadClass('Ria_Auto_Add_Photo_Primary', '1.87', function() {
+            var addPhotoPrimary = new Ria_Auto_Add_Photo_Primary({
+                'mainForm': 'optionsform__addcars',
+                'submitButton': 'submitform__addcars',
+                'mainGalleryContainer': 'photogallerycontainer__addcars', //ID главного блока для загрузки фотографий
+                'uploadingPhotoContainer': 'uploadingphotocontainer__addcars', //ID блока, где непосредственно находятся загруженные фотографии
+                'mainPhotoContainer': 'mainphotocontainer__addcars', //ID блока с главной фотографией
+                'mainPhotoControls': 'mainphotocontrols__addcars', //ID блока, где находится ссылка для удаления главного фото
+                'mainPhotoBlockClass': 'main-photo', //Класс элемента, в котором содержится одна загруженная фотография
+                'makeMainPhotoBigger': 'makemainphotobigger__addcars', //ID чекбокса, для того чтобы сделать главное фото большим
+                'addPhotoButton': ['addphotobutton__addcars', 'oldtypeaddphotolink__addcars'], //ID кнопки добавления новых фотографий
+                'uploaderContainers': ['addphotocontainer__addcars', 'oldtypecontainer__addcars'],
+                'photo_135_90_class': 'photo-135x90', //Класс элемента с фотографией 135х90 пикселей
+                'photo_185_120_class': 'photo-185x120', //Класс элемента с фотографией 185х120 пикселей
+                'photo_85_56_class': 'photo-85x56', //Класс элемента с фотографией 85х56 пикселей
+                'item_photo_class': 'item-photo', //Класс элемента с фотографией
+                'default_photo_link': 'http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg', //Ссылка на фотку, которая будет по умолчанию показываться в блочке с главным фото
+                'control_bar_class': 'control-bar', //Класс элемента, в котором содержатся кнопки для управления фотографиями
+                'sendCommentsBlock': 'sendcommentsblock_addcars',
+                'dontComment': 'dontcomment__addcars', //ID чекбокса которым человек запрещает комментировать его объявление
+                'item_control_class': 'item-control',
+                'delete_icon_class': 'icon-add__delete',
+                'main_photo_icon_class': 'icon-add__star',
+                'auto_id': 11284210, //ID текущего авто
+                'popups': {
+                    'mms': {
+                        'show_mms_popup_link': 'uploadphotoviamms__addcars', //ID элемента по клику на который должен появится попап
+                        'mms_popup_id': 'mmsphotopopup__addcars', //ID попапа
+                        'request_url': '/static/target/user/event/mms_popup/?auto_id=11284210&kod_mms=432', //Ссылка по которой будет запрашиваться попап, если его еще нет на странице
+                        'container': 'photoviammscontainer__addcars' //Контейнер - элемент в которой добавится попап после загрузки
+                    },
+                    'youtube': {
+                        'show_youtube_popup_link': 'uploadvideofromyoutube__addcars', //ID элемента по клику на которой должен появится попап
+                        'youtube_popup_id': 'addyoutubevideopopup__addcars', //ID попапа
+                        'request_url': '/static/target/user/event/youtube_popup/', //Ссылка по которой будет запрашиваться попап, если его еще нет на странице
+                        'container': 'youtubecontainer__addcars', //Контейнер - элемент в которой добавится попап после того как загрузится
+                        'closePopup': 'closeyuotubepopup__addcars', //ID элемента по клику на которой попап закроется
+                        'cancelPopup': 'cancelyoutubepopup__addcars', //ID элемента по клику на который отменится ввод и закроется попап
+                        'uploadVideo': 'uploadyoutubevideo__addcars', //ID элемента по клику на который начнется процесс добавления видео
+                        'linkToVideo': 'youtubeurlinput__addcars' //ID элемента в котором содержится ссылка на видео, которое необходимо добавить
+                    }
+                },
+                'errors': {
+                    'errorsBlock': 'errorblock__addcars', //ID блока для выведения ошибок
+                    'errorTitle': 'errortitle__addcars', //ID заголовка ошибки - оно будет выделяться жирным
+                    'errorText': 'errortext__addcars' //ID элемента с текстом ошибки
+                },
+                'youTubeVideoContainer': 'uploadingvideocontainer__addcars', //Контэйнер для видео с youtube
+                'youTubeVideoPreview': 'uploadedvideopreview__addcars', //Элемент с предосмотром видео
+                'youTubeVideoTitle': 'youtubetitle__addcars', //Название видео с youtube
+                submitButtonEvents: {
+                    0: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Next', 'Step2_without_BigPhoto'])",
+                    1: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Next', 'Step2_with_BigPhoto'])"
+                },
+                optionCheckboxes: {
+                    onParts: 'forparts__addcars'
+                },
+                optionContainer: 'optionscontainer__addcars',
+                toolTipClasses: {
+                    wrapper: 'wrap-tooltip',
+                    tooltip: 'tooltip',
+                    close: 'close'
+                },
+                flash_swf_url: 'http://css.ria.ua/js/plupload/2.0a/Moxie.swf',
+                silverlight_xap_url: 'http://css.ria.ua/js/plupload/2.0a/Moxie.xap'
+            });
+            if ((Browser.opera && ((Browser.version).toFloat() < (12.01).toFloat())) || (Browser.ie && (Browser.version.toInt() < 10))) {
+                addPhotoPrimary.options.runtimes = 'html4';
+            }
+            addPhotoPrimary.initEventListener();
+            addPhotoPrimary.initPhotoUploader();
+        });
+    });
+</script>
+
+<div class="head-box line">
+    <a href="http://auto.ria.ua/addauto/autoinfo/autoId/11284210" class="button mini">
+        Назад                    </a>
+    фото и подробная информация                </div>
+<div class="form-add-auto">
+    <section class="wrapper-add">
+        <!--                   <div class="warning" id="errorblock__addcars">
+               В связи с обновлением сервиса загрузки фото он временно недоступен.
+        Вы сможете загрузить фото к объявлению в 11:30
+            </div>-->
+        <div class="error" id="errorblock__addcars" style="display: none;">
+            <strong id="errortitle__addcars">Возникла ошибка</strong><br>
+            <span id="errortext__addcars">К сожалению, версия браузера устарела.<a target="_blank" href="http://help.ria.ua/index.php?/Knowledgebase/Article/View/377/0/kk-obnovit-versiju-bruzer">Обновите версию браузера</a>. <br/>Также вы можете загрузить фото по одной через "<a href="http://auto.ria.ua/addauto/addphoto/autoId/11284210/oldSystem/1">Упрощенную систему загрузки фото</a>", или загрузить фото через е-мейл: отправьте письмо с прикрепленными файлами на адрес <strong>11284210.432@mms.auto.ria.ua</strong></span>
+        </div>
+
+        <div class="warning" style="display: none;">
+            <strong>На сайте проводятся технические работы с сервером фотографий.</strong><br>
+            <span>Пожалуйста, попробуйте позже.</span>
+        </div>
+
+        <div class="form-upload-photo clearfix">
+            <dl class="headbar-add multi-uploader" id="oldtypecontainer__addcars">
+                <dt class="head-box">
+                <span id="oldtypeaddphotolink__addcars">Добавить фото</span>
+                </dt>
+                <dd class="item-help">
+                    Чтобы выбрать несколько фото / видео удерживайте клавишу Ctrl.<br/>
+                    Максимальный размер одного фото: 5 Мб.<br/>
+                    Форматы фото: GIF, JPG, PNG
+                </dd>
+                <dd class="item">
+                    <a href="http://img.auto.ria.ua/files/auto_photo.pdf" target="_blank">Как правильно сфотографировать автомобиль</a>
+                </dd>
+                <dd class="item" id="addphotocontainer__addcars">
+                    <a href="javascript:void(0);" class="button green large" id="addphotobutton__addcars">
+                        Добавить фото            </a>
+                </dd>
+            </dl>
+            <div class="othe-uploader">
+
+                <div class="item">
+                    <i class="icon-add__photo"></i>
+                    <a href="http://auto.ria.ua/addauto/addphoto/autoId/11284210/oldSystem/1">Упрощенная система загрузки фотографий</a>
+                </div>
+                <div class="item" id="photoviammscontainer__addcars">
+                    <i class="icon-add__mobile"></i>
+                    <a href="javascript:void(0);" id="uploadphotoviamms__addcars">Загрузить фото с мобильного</a>
+                </div>
+                <div class="item" id="youtubecontainer__addcars">
+                    <i class="icon-add__youtube"></i>
+                    <a href="javascript:void(0);" id="uploadvideofromyoutube__addcars" class="new">Загрузить видео с Youtube</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-upload-photo corner-7" id="photogallerycontainer__addcars" style="display: none;">
+            <div class="title">Главное фото:</div>
+
+            <div class="main-photo" >
+                <div class="show-main-photo" id="mainphotocontainer__addcars">
+                    <img class="photo photo-135x90" src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg" />
+                </div>
+                <p class="item-control" style="display: none;" id="mainphotocontrols__addcars">
+                    <i class="icon-add__delete"></i>
+                    <a href="javascript:void(0);">удалить</a>
+                </p>
+                <label for="makemainphotobigger__addcars" class="bottom-bar">
+                    <input type="checkbox" id="makemainphotobigger__addcars" />
+                    Сделать главное фото <strong>большим</strong>
+                </label>
+            </div>
+
+            <div class="uploading-photo" id="uploadingphotocontainer__addcars">
+            </div>
+
+
+            <div class="clear"></div>
+            <div class="uploading-video" id="uploadingvideocontainer__addcars" style="display: none;">
+                <div class="title">Видео с Youtube:</div>
+
+                <a href="http://www.youtube.com/watch?v=" target="_blank" class="video-135x90" id="uploadedvideopreview__addcars">
+                    <img src="" title="">
+                </a>
+
+                <div class="control-bar">
+                    <div class="title-video" id="youtubetitle__addcars">
+                    </div>
+
+                    <p class="item-control">
+                        <i class="icon-add__delete"></i>
+                        <a href="javascript:void(0);">удалить</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <form method="post" action="http://auto.ria.ua/addauto/addphoto/autoId/11284210" name="" id="optionsform__addcars">
+        <section class="wrapper-add">
+            <dl class="headbar-add characteristics">
+                <dt class="head-box">
+                Заполнить анкету характеристик        </dt>
+                <dd class="item-help">
+                    Укажите характеристику Вашего авто - это поможет покупателю выбрать именно ваш автомобиль среди всех предложений.
+                    По указанным параметрам Ваш автомобиль будет участвовать в поиске        </dd>
+            </dl>
+            <div class="additional-add-data" id="optionscontainer__addcars">
+                <div class="group-column">
+                    <dl class="column">
+                        <dt>
+                        Безопасность                    </dt>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_354" name="ch[354]"/>
+                            <label for="element_tree_354">
+                                ABD                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_217" name="ch[217]"/>
+                            <label for="element_tree_217">
+                                ABS                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_459" name="ch[459]"/>
+                            <label for="element_tree_459">
+                                ESP                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_463" name="ch[463]"/>
+                            <label for="element_tree_463">
+                                Галогенные фары                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_481" name="ch[481]"/>
+                            <label for="element_tree_481">
+                                Замок на КПП                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_225" name="ch[225]"/>
+                            <label for="element_tree_225">
+                                Иммобилайзер                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_442" name="ch[442]"/>
+                            <label for="element_tree_442">
+                                Пневмоподвеска                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_211" name="ch[211]"/>
+                            <label for="element_tree_211">
+                                Подушка безопасности (Airbag)                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_485" name="ch[485]"/>
+                            <label for="element_tree_485">
+                                Серворуль                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_303" name="ch[303]"/>
+                            <label for="element_tree_303">
+                                Сигнализация                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_137" name="ch[137]"/>
+                            <label for="element_tree_137">
+                                Центральный замок                                </label>
+                        </dd>
+                    </dl>
+                </div>
+                <dl class="column">
+                    <dt>
+                    Комфорт                </dt>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_188" name="ch[188]"/>
+                        <label for="element_tree_188">
+                            Бортовой компьютер                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_437" name="ch[437]"/>
+                        <label for="element_tree_437">
+                            Датчик света                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_190" name="ch[190]"/>
+                        <label for="element_tree_190">
+                            Климат контроль                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_125" name="ch[125]"/>
+                        <label for="element_tree_125">
+                            Кожаный салон                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_189" name="ch[189]"/>
+                        <label for="element_tree_189">
+                            Кондиционер                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_191" name="ch[191]"/>
+                        <label for="element_tree_191">
+                            Круиз контроль                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_132" name="ch[132]"/>
+                        <label for="element_tree_132">
+                            Люк                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_465" name="ch[465]"/>
+                        <label for="element_tree_465">
+                            Мультируль                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_441" name="ch[441]"/>
+                        <label for="element_tree_441">
+                            Омыватель фар                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_192" name="ch[192]"/>
+                        <label for="element_tree_192">
+                            Парктроник                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_443" name="ch[443]"/>
+                        <label for="element_tree_443">
+                            Подогрев зеркал                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_193" name="ch[193]"/>
+                        <label for="element_tree_193">
+                            Подогрев сидений                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_255" name="ch[255]"/>
+                        <label for="element_tree_255">
+                            Сенсор дождя                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_104" name="ch[104]"/>
+                        <label for="element_tree_104">
+                            Усилитель руля                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_139" name="ch[139]"/>
+                        <label for="element_tree_139">
+                            Эл. стеклоподъемники                        </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_452" name="ch[452]"/>
+                        <label for="element_tree_452">
+                            Электропакет                        </label>
+                    </dd>
+                </dl>
+                <div class="group-column">
+                    <dl class="column">
+                        <dt>
+                        Мультимедиа                        </dt>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_407" name="ch[407]"/>
+                            <label for="element_tree_407">
+                                CD                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_408" name="ch[408]"/>
+                            <label for="element_tree_408">
+                                DVD                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_433" name="ch[433]"/>
+                            <label for="element_tree_433">
+                                MP3                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_258" name="ch[258]"/>
+                            <label for="element_tree_258">
+                                Акустика                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_175" name="ch[175]"/>
+                            <label for="element_tree_175">
+                                Магнитола                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_241" name="ch[241]"/>
+                            <label for="element_tree_241">
+                                Сабвуфер                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_355" name="ch[355]"/>
+                            <label for="element_tree_355">
+                                Система навигации GPS                                </label>
+                        </dd>
+                    </dl>
+                    <dl class="column">
+                        <dt>
+                        Прочее                        </dt>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_246" name="ch[246]"/>
+                            <label for="element_tree_246" >
+                                Газовая установка  (ГБО)                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_460" name="ch[460]"/>
+                            <label for="element_tree_460" >
+                                Дерево                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_504" name="ch[504]"/>
+                            <label for="element_tree_504"   class="new">
+                                Длинная база                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_503" name="ch[503]"/>
+                            <label for="element_tree_503"   class="new">
+                                Кузов MAXI                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_495" name="ch[495]"/>
+                            <label for="element_tree_495" >
+                                Правый руль                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_486" name="ch[486]"/>
+                            <label for="element_tree_486" >
+                                Тонирование стекол                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_475" name="ch[475]"/>
+                            <label for="element_tree_475" >
+                                Тюнинг                                </label>
+                        </dd>
+                        <dd>
+                            <input type="checkbox" value="1"  id="element_tree_462" name="ch[462]"/>
+                            <label for="element_tree_462" >
+                                Фаркоп                                </label>
+                        </dd>
+                    </dl>
+                </div>
+                <dl class="column">
+                    <dt>
+                    Состояние                </dt>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_477" name="ch[477]"/>
+                        <label   for="element_tree_477">
+                            Гаражное хранение                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_497" name="ch[497]"/>
+                        <label   for="element_tree_497">
+                            Не бит                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_498" name="ch[498]"/>
+                        <label   for="element_tree_498">
+                            Не крашен                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_501" name="ch[501]"/>
+                        <label   for="element_tree_501">
+                            Первая регистрация                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_496" name="ch[496]"/>
+                        <label   for="element_tree_496">
+                            Первый владелец                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_502" name="ch[502]"/>
+                        <label    class="new" for="element_tree_502">
+                            Ручное управление                            </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" value="1"  id="element_tree_484" name="ch[484]"/>
+                        <label   for="element_tree_484">
+                            Сервисная книжка                            </label>
+                    </dd>
+                    <dd>
+
+                        <input type="hidden" name="custom" value="0"><input type="checkbox" name="custom" id="custom" value="1">                    <label for="custom">Нерастаможенный </label>
+                    </dd>
+                    <dd>
+
+                        <input type="hidden" name="damage" value="0"><input type="checkbox" name="damage" id="damage" value="1">                    <label for="damage">
+                            После ДТП                    </label>
+                    </dd>
+                    <dd>
+
+                        <input type="hidden" name="onRepairParts" value="0"><input type="checkbox" name="onRepairParts" id="forparts__addcars" value="1">                    <label for="forparts__addcars">
+                            <span class="wrap-tooltip">
+                                <span>Не на ходу</span>
+                                <span class="tooltip larr __top" style="display: none; ">
+                                    <a href="javascript: void(0);" class="close">×</a>
+                                    Обратите внимание! Вы можете подать только ЦЕЛОЕ авто, готовое к разборке на запчасти. Возможно Вам будет интересно посетить раздел <a target="_blank" href="/avtorazborka">Авторазборка</a>.
+                                </span>
+                            </span>
+                        </label>
+                    </dd>
+                    <dd>
+
+                        <input type="hidden" name="underCredit" value="0"><input type="checkbox" name="underCredit" id="underCredit" value="1">                    <label for="underCredit">
+                            Взято в кредит                    </label>
+                    </dd>
+                    <dd>
+
+                        <input type="hidden" name="confiscatedCar" value="0"><input type="checkbox" name="confiscatedCar" id="confiscatedCar" value="1" onfocus="showHelpNotice(this, & #39; helpNoticeconfiscatedCar & #39; );">                    <label for="confiscatedCar">
+                            Автоконфискат                    </label>
+                    </dd>
+                    <dd>
+                        <input type="checkbox" name="matchedCar" id="matchedCar" value="1" onclick="showCountries()">
+                        <label for="matchedCar" class="new">Пригнан из</label>
+                    </dd>
+                    <dd>
+
+                        <select name="matchedCarCountry" id="matchedCarCountry" class="hide" disabled="disabled">
+                            <option value="0" label="Выберите страну" selected="selected">Выберите страну</option>
+                            <option value="40" label="Австрия">Австрия</option>
+                            <option value="826" label="Англия">Англия</option>
+                            <option value="112" label="Беларусь">Беларусь</option>
+                            <option value="56" label="Бельгия">Бельгия</option>
+                            <option value="100" label="Болгария">Болгария</option>
+                            <option value="76" label="Бразилия">Бразилия</option>
+                            <option value="348" label="Венгрия">Венгрия</option>
+                            <option value="276" label="Германия">Германия</option>
+                            <option value="208" label="Дания">Дания</option>
+                            <option value="356" label="Индия">Индия</option>
+                            <option value="364" label="Иран">Иран</option>
+                            <option value="724" label="Испания">Испания</option>
+                            <option value="380" label="Италия">Италия</option>
+                            <option value="398" label="Казахстан">Казахстан</option>
+                            <option value="124" label="Канада">Канада</option>
+                            <option value="158" label="Китай">Китай</option>
+                            <option value="408" label="Корея">Корея</option>
+                            <option value="428" label="Латвия">Латвия</option>
+                            <option value="440" label="Литва">Литва</option>
+                            <option value="458" label="Малайзия">Малайзия</option>
+                            <option value="528" label="Нидерланды">Нидерланды</option>
+                            <option value="578" label="Норвегия">Норвегия</option>
+                            <option value="616" label="Польша">Польша</option>
+                            <option value="643" label="Россия">Россия</option>
+                            <option value="642" label="Румыния">Румыния</option>
+                            <option value="688" label="Сербия">Сербия</option>
+                            <option value="703" label="Словакия">Словакия</option>
+                            <option value="705" label="Словения">Словения</option>
+                            <option value="850" label="США">США</option>
+                            <option value="792" label="Турция">Турция</option>
+                            <option value="804" label="Украина">Украина</option>
+                            <option value="246" label="Финляндия">Финляндия</option>
+                            <option value="250" label="Франция">Франция</option>
+                            <option value="203" label="Чехия">Чехия</option>
+                            <option value="752" label="Швеция">Швеция</option>
+                            <option value="392" label="Япония">Япония</option>
+                        </select>                </dd>
+                </dl>
+                <dl class="group-column">
+                    <dt>
+                    Управление объявлением                </dt>
+                    <dd>
+
+                        <input type="hidden" name="dont_comment" value="0"><input type="checkbox" name="dont_comment" id="dontcomment__addcars" value="1" checked="checked">                    <label for="dontcomment__addcars" title="Все комментарии к объявлению  будут сразу отображаться на сайте без модерации. Если Вы хотите дополнительно получать комментарии на e-mail, сделайте соответствующую отметку ниже">Разрешить комментирование объявления</label>
+                    </dd>
+                    <dd id="sendcommentsblock_addcars">
+
+                        <input type="hidden" name="send_comments" value="0"><input type="checkbox" name="send_comments" id="sendcomments__addcars" value="1" checked="checked">                    <label for="sendcomments__addcars" title="Все комментарии не будут отображаться на сайте без Вашего ведома: Вы будете получать на E-mail каждое сообщение с возможностью: “удалить” или “согласиться на публикацию комментария.” Обратите внимание! Только при установленной галочке “Разрешить контактировать со мной через E-mail (Мое меню - Моя анкета)">Присылать мне комментарии на E-mail для проверки</label>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <section class="box-panel">
+            <dl class="headbar-add description">
+                <dt class="head-box">
+                Добавить подробное описание        </dt>
+                <dd class="item-help">
+                    Опишите здесь особенности Вашего авто, которые не были указаны ранее. В данном поле запрещается:<br />
+                    &mdash; предлагать какие-либо услуги, не связанные с объектом продажи (пригоню под заказ, есть еще другие авто, помогу выбрать);<br />
+                    &mdash; давать ссылки на какие-либо сайты или E-mail адреса, указывать номера телефонов.        </dd>
+            </dl>
+            <div class="add-description">
+
+                <textarea name="description" id="description__addcars" rows="6" cols="80" maxlength="1024"></textarea>        <p class="number-characters">
+                    Осталось символов: <span id="maxdescriptionslength__addcars">1024</span>
+                </p>
+                <script>
+                                            document.addEvent('domready', function() {
+                                                $('maxdescriptionslength__addcars').set('text', (1024 - $('description__addcars').get('value').length).toString());
+                                                $('description__addcars').addEvent('keydown', function(e) {
+                                                    $('maxdescriptionslength__addcars').set('text', (1024 - this.get('value').length).toString());
+                                                });
+                                                $('description__addcars').addEvent('change', function(e) {
+                                                    var text = this.get('value');
+                                                    var t = this.get('value').length;
+                                                    var num = (text.split("\n")).length;
+                                                    t = t + num;
+                                                    if (t > 1024) {
+                                                        var text = text.substr(0, (1024 - (num)));
+                                                        $('description__addcars').set('value', text);
+                                                        $('maxdescriptionslength__addcars').set('text', '0')
+                                                    }
+                                                    ;
+                                                });
+                                                if ($('matchedCarCountry').get('value') != 0) {
+                                                    $('matchedCar').set('checked', 'checked');
+                                                    $('matchedCarCountry').set('disabled', '');
+                                                    $('matchedCarCountry').removeClass('hide');
+                                                }
+                                            });
+                                            function showCountries() {
+                                                el = $('matchedCar');
+                                                if (el.get('checked')) {
+                                                    el.set('checked', 'checked');
+                                                    $('matchedCarCountry').set('disabled', '');
+                                                    $('matchedCarCountry').removeClass('hide');
+                                                } else {
+                                                    el.set('checked', '');
+                                                    $('matchedCarCountry').set('disabled', 'disabled');
+                                                    $('matchedCarCountry').addClass('hide');
+                                                }
+                                            }
+                </script>
+            </div>
+        </section>
+        <div class="submit-form-add">
+
+            <input type="submit" name="continue" id="submitform__addcars" value="Далее" class="button green">    </div>
+    </form>
+
+    <p class="help-block">
+        При клике на кнопку “Далее” Вы перейдете к публикации своего объявления                                                </p>
+
+</div>
+<!-- include virtual="/html/blocks/add_form/auto_buy_rotator.html"-->
+
+
+
+
+<!--"/html/blocks/add_form/auto_salons_trade_in_rotator.html"-->
+<!-- include virtual="/html/blocks/add_form/auto_salons_trade_in_rotator.html"-->
+<!--"/html/blocks/add_form/auto_lombards_rotator.html"-->
+<!-- include virtual="/html/blocks/add_form/auto_lombards_rotator.html"-->
+
+
+
+

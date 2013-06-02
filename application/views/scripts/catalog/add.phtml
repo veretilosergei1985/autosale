@@ -332,14 +332,15 @@
 
     
     <form method="post" class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="<?php echo $this->form->getAction(); ?>">
-        <?php echo $this->form->region; ?>
+        <?php echo $this->form->reg_id; ?>
         <div class="window-fixed" style="display: none;" id="bodystylespopup__addcars"></div>  
-        
-        <input id="partnerId" type="hidden" value="1" name="partnerId">
-        <input id="category__addcars" type="hidden" value="0" name="categoryId">
-        <input id="tmpcategory__addcars" type="hidden" value="" name="TempAddAutoCategoryHidden">
-        <input id="cityId" type="hidden" value="0" name="cityId">
-        
+  
+        <?php echo $this->form->cat_id; ?>
+        <?php echo $this->form->body_id; ?>
+        <?php echo $this->form->model_id; ?>
+        <?php echo $this->form->color_id; ?>
+        <?php echo $this->form->metallic; ?>
+
         <?php echo $this->form->transport_type; ?>
         <?php echo $this->form->body_type; ?>
         
@@ -348,16 +349,41 @@
             Сначала выберите Тип транспорта
         </div>
         
-        <?php echo $this->form->mark; ?>
+        <?php echo $this->form->mark_id; ?>
         <?php echo $this->form->model; ?>
         <?php echo $this->form->version; ?>
         <?php echo $this->form->vin; ?>
-        <?php echo $this->form->transmission; ?>
-        <?php echo $this->form->drive; ?>
+        <?php echo $this->form->transmission_id; ?>
+        <?php echo $this->form->drive_id; ?>
         <?php echo $this->form->doors; ?>
         <?php echo $this->form->color; ?>
         <?php echo $this->form->fuel; ?>
-        <?php echo $this->form->fuelrate; ?>
+        <?php //echo $this->form->fuelrate; ?>
+        
+        <div id="fuelselectblock__addcars" class="rows">
+            <p style="display: block;">
+                <a id="choosefuelrates__addcars" style="margin-left:160px; " href="javascript:void(0);">Указать расход топлива</a>
+            </p>
+
+            <div id="showchoosefuelratesnotice__addcars" class="error larr __smoll __top" style="display: none;">
+                <a class="close" href="javascript:void(0);">×</a>
+                Для того, что бы указать расход, необходимо указать топливо
+            </div>
+
+            <div id="fuelratesblock__addcars" class="rows" style="display: none;">
+                <label class="label" for="input3"> Расход топлива </label>
+                <div class="input">
+                    <div class="fuel-consumption">
+                        <?php echo $this->form->fuel_city; ?>
+                        <?php echo $this->form->fuel_route; ?>
+                        <?php echo $this->form->fuel_combine; ?>
+                        
+                        <em>л/100км.</em>
+                    </div>
+                </div>
+            </div>
+         </div>
+        
         <?php echo $this->form->year; ?>
         <?php echo $this->form->race; ?>
         <?php echo $this->form->volume; ?>
