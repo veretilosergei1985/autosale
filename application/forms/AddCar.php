@@ -79,7 +79,7 @@ class Application_Form_AddCar extends Zend_Form
                 $model->setRequired(true)
                         ->addValidator('NotEmpty',true)
                         ->setRegisterInArrayValidator(false);
-                $mark->getValidator('NotEmpty')->setMessage('Выберите модель');
+                $model->getValidator('NotEmpty')->setMessage('Выберите модель');
         
         $version = new Zend_Form_Element_Text('version');
         $version->setLabel('Версия:')
@@ -195,6 +195,16 @@ class Application_Form_AddCar extends Zend_Form
                 $price->getValidator('NotEmpty')->setMessage('Укажите адекватную стоимость. Введите 0 для “договорной”. ');
                 $price->setAttrib('onkeyup','return check_num(this);');
                 
+                
+                $currency = new Zend_Form_Element_Select('currency', array());
+                $currency->addMultiOptions(array('USD' => '$'));
+                $currency->addMultiOptions(array('EUR' => '€'));
+                $currency->addMultiOptions(array('UAH' => 'грн.'));
+                $currency->setAttrib('class', 'currency');
+                $currency->setAttrib('id', 'currency__addcars');
+               
+                
+                
         $fuel_city = new Zend_Form_Element_Text('fuel_city');
         $fuel_city->setLabel('город')
                 ->addFilter('HtmlEntities')
@@ -212,6 +222,12 @@ class Application_Form_AddCar extends Zend_Form
                 ->addFilter('HtmlEntities')
                 ->addFilter('StringTrim');
         $fuel_combine->setAttrib('class', 'span1');
+        
+            $auction = new Zend_Form_Element_Checkbox('auction', array('disableLoadDefaultDecorators' => true, 'required' => false));
+            $auction->setAttrib('id', 'auction__addcars');
+            
+            $exchange = new Zend_Form_Element_Checkbox('exchange', array('disableLoadDefaultDecorators' => true, 'required' => false));
+            $exchange->setAttrib('id', 'exchange__addcars');
                 
         //////////////////////////////////////////////
         
@@ -328,17 +344,22 @@ class Application_Form_AddCar extends Zend_Form
         $price->setDecorators(array(
             'ViewHelper',
             'Description',
-            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input', 'style'=>'padding-bottom:5px;')),
             array('Label', array('class' => 'label', 'escape' => false)),
-            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
-        ))->setDescription('<select style="margin-left: 10px;" id="currency__addcars" class="currency" tabindex="26" name="currencyId">
-                                <option label="$" value="1">$</option>
-                                <option label="€" value="2">€</option>
-                                <option label="грн." value="3">грн.</option>
-                            </select>');
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative', 'openOnly' => true)),
+        ));
         $price->getDecorator('description')->setOption('escape',  
         false); 
         $price->addDecorator('Errors');
+        
+        $currency->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span', 'class' => 'span_absolute')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'closeOnly' => true)),
+        ));
+        
         
         $fuel_city->setDecorators(array(
             'ViewHelper',
@@ -368,6 +389,28 @@ class Application_Form_AddCar extends Zend_Form
         ));
         $fuel_combine->getDecorator('Label')->setOption('style','float:none;');
         
+        $exchange->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ))->setDescription('<label for="exchange__addcars">
+                    <i class="icon-exchange-red"></i>
+                        Возможен обмен
+                    <em>(+ включить блок Обмен)</em>
+                </label>');
+        $exchange->getDecorator('description')->setOption('escape',false);
+        
+        $auction->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
+        ))->setDescription('<label for="auction__addcars"><i class="icon-auction-red"></i>Возможен торг<em> (+ включить блок Торги)</em></label>'); 
+        $auction->getDecorator('description')->setOption('escape', false);
+        
                        
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setOptions(array('class' => 'button  large green'));
@@ -381,7 +424,7 @@ class Application_Form_AddCar extends Zend_Form
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($fuel_city, $fuel_route, $fuel_combine, $metallic, $color_id, $model_id, $body_id, $cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
+                array($auction, $exchange, $currency, $fuel_city, $fuel_route, $fuel_combine, $metallic, $color_id, $model_id, $body_id, $cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
                 );
  
         
@@ -586,37 +629,6 @@ class Application_Form_AddCar extends Zend_Form
                     )
                );
          
-
-         
-         
-          $this->addElement(
-                'note', 
-                'indent', 
-                array('value' => '<div class="indent ckecklist">
-                                    <p class="item">
-                                        <input type="hidden" value="0" name="auctionPossible">
-                                        <input id="auction__addcars" type="checkbox" tabindex="27" value="1" name="auctionPossible">
-                                        <label for="auction__addcars">
-                                            <i class="icon-auction-red"></i>
-                                                Возможен торг
-                                            <em> (+ включить блок Торги)</em>
-                                        </label>
-                                    </p>
-                                    <div class="item">
-                                        <input type="hidden" value="0" name="isExchange">
-                                        <input id="exchange__addcars" type="checkbox" tabindex="28" value="1" name="isExchange">
-                                        <label for="exchange__addcars">
-                                            <i class="icon-exchange-red"></i>
-                                                Возможен обмен
-                                            <em>(+ включить блок Обмен)</em>
-                                        </label>
-                                    </div>
-                                 </div>', 
-                      'decorators' => array(
-                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
-                       )
-                    )
-               );
           
           
           $this->addElement(

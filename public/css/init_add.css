@@ -3535,3 +3535,8 @@ root {
 
 }
 
+.span_absolute{
+    position: absolute;
+    left: 306px;
+    top: 0;
+}
