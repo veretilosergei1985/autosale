@@ -10,7 +10,7 @@ jQuery(function() {
 
     }); 
         
-    if($('#category__addcars').val() != '' || $('#category__addcars').val() != '0'){
+    if($('#category__addcars').val() != '' && $('#category__addcars').val() != '0'){
         
         jQuery.ajax({
             url: '/display/bodytype',
@@ -47,6 +47,7 @@ jQuery(function() {
        jQuery.ajax({
             url: '/display/bodytype',
             type:'POST',
+            data: {'category_id' : '1' },
             success: function(res) {
                      $('#bodystylespopup__addcars').append(res);
                      //$('#bodystylespopup__addcars').show();
@@ -81,7 +82,7 @@ jQuery(function() {
     jQuery('#choosebodystyle__addcars').live('click',function(e) {
         e.preventDefault();
              
-        if($('#category__addcars').val() !== '0'){
+        if($('#category__addcars').val() !== '0' && $('#category__addcars').val() !== ''){
             $('#bodystylespopup__addcars').show();
         } else {
             $('#categoryerrormessage__addcars').show();
@@ -340,7 +341,7 @@ jQuery(function() {
     jQuery('#choosefuelrates__addcars').live('click',function(e) {
         e.preventDefault();
 
-        if($('#fuel').find(":selected").val() == ''){
+        if($('#fuel_id').find(":selected").val() == ''){
             $('#showchoosefuelratesnotice__addcars').show();
         } else {
             $('#fuelratesblock__addcars').show();
@@ -546,7 +547,7 @@ jQuery(function() {
         
     }
     
-    if( ($('#fuel_city') !== '' && $('#fuel_city') !== '0') || ($('#fuel_route') !== '' && $('#fuel_route') !== '0') || ($('#fuel_combine') !== '' && $('#fuel_combine') !== '0') ){
+    if( ($('#fuel_city').val() !== '' && $('#fuel_city').val() !== '0') || ($('#fuel_route').val() !== '' && $('#fuel_route').val() !== '0') || ($('#fuel_combine').val() !== '' && $('#fuel_combine').val() !== '0') ){
         $('#fuelratesblock__addcars').show();
          $('#fuelselectblock__addcars p').hide();
          

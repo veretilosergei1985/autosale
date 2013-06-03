@@ -132,9 +132,9 @@ class DisplayController extends Zend_Controller_Action
          $this->_helper->layout->disableLayout();
          
          $cat_id = $this->_getParam('category_id');
-         
+      
          if(!isset($cat_id)){
-             $cat_id = 1;
+             $cat_id = 1; 
          }
          
          $oSubCat = new Application_Model_Subcats();
