@@ -39,22 +39,34 @@ class CatalogController extends Zend_Controller_Action
 
 
                                  $data = $form->getValues();
-                                 /*
-                                 $user = new Application_Model_Users();
+                                 //echo "<pre>"; print_r($data); exit;
+                                 $car = new Application_Model_Cars();
 
-                                 $user->setEmail($data['email']);
-                                 $user->setPassword($data['password']);
-                                 $user->setUsername($data['username']);
-                                 $user->setPhone($data['code'].$data['phone']);
-                                 $user->setRegId($data['region']);
-                                 $user->setCityId($data['city']);
-
-                                 $ins_id = $user->save();		
-         ;
-                                  * 
-                                  */
-
-                                 $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => 1, 'step' => 'addphoto'));
+                                 $car->setCatId($data['cat_id']);
+                                 $car->setBodyId($data['body_id']);
+                                 $car->setRegId($data['reg_id']);
+                                 $car->setModelId($data['model_id']);
+                                 $car->setMarkId($data['mark_id']);
+                                 //$car->setCityId($data['']);
+                                 $car->setTransmissionId($data['transmission_id']);
+                                 $car->setDriveId($data['drive_id']);
+                                 $car->setDoors($data['doors']);
+                                 $car->setFuelId($data['fuel_id']);
+                                 $car->setColorId($data['color_id']);
+                                 $car->setMetallic($data['metallic']);
+                                 $car->setYear($data['year']);
+                                 $car->setMileage($data['race']);
+                                 $car->setVolume($data['volume']);                              
+                                 $car->setPrice($data['price']);
+                                 $car->setCurrency($data['currency']);
+                                 $car->setStatus('waiting');
+                                 $car->setAdded(date('Y-m-d H:i:s'));
+                                 
+                                 $car->setTitle('Title');
+                                 $car->setDescription('Description');
+            
+                                 $ins_id = $car->save();		
+                                 $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $ins_id, 'step' => 'addphoto'));
                     }
                     //echo "<pre>"; print_r($form->getErrors()); exit;
                 }

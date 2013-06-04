@@ -25,9 +25,24 @@ class Application_Model_CarsMapper
     public function save(Application_Model_Cars $car)
     {
         $data = array(
-            'title'   => $car->getTitle(),
-            'description' => $car->getDescription(),
-            'added' => date('Y-m-d H:i:s'),
+            'cat_id' => $car->getCatId(), 
+            'body_id' => $car->getBodyId(), 
+            'reg_id' => $car->getRegId(),
+            'model_id' => $car->getModelId(),
+            'mark_id' => $car->getMarkId(),
+            'transmission_id' => $car->getTransmissionId(), 
+            'drive_id' => $car->getDriveId(),
+            'doors' => $car->getDoors(),
+            'fuel_id' => $car->getFuelId(),
+            'color_id' => $car->getColorId(),
+            'metallic' => $car->getMetallic(),
+            'year' => $car->getYear(),
+            'mileage' => $car->getMileage(),
+            'volume' => $car->getVolume(),                           
+            'price'  => $car->getPrice(),
+            'currency' => $car->getCurrency(),
+            'status' => $car->getStatus()
+            
         );
       if (null === ($id = $car->getId())) {
             unset($data['id']);
