@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 02 2013 г., 22:46
+-- Время создания: Июн 04 2013 г., 23:17
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -53,18 +53,21 @@ CREATE TABLE IF NOT EXISTS `cars` (
   `volume` float NOT NULL,
   `price` float NOT NULL,
   `currency` enum('UAH','USD','EUR') NOT NULL DEFAULT 'UAH',
+  `status` enum('active','pending','confirmed','waiting') NOT NULL DEFAULT 'waiting',
   `added` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `cars`
 --
 
-INSERT INTO `cars` (`id`, `user_id`, `cat_id`, `body_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors`, `fuel_id`, `color_id`, `metallic`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `other_id`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `added`) VALUES
-(1, 1, 0, 0, 1, 1, 2, 22, 4, 2, 4, 1, 1, 0, 0, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', '2013-04-17 09:00:00'),
-(2, 1, 0, 0, 1, 1, 1, 57, 4, 2, 4, 2, 6, 0, 0, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', '2013-04-09 10:31:32'),
-(3, 2, 0, 0, 1, 2, 2, 3, 1, 3, 5, 4, 9, 0, 0, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', '2013-01-12 08:11:00');
+INSERT INTO `cars` (`id`, `user_id`, `cat_id`, `body_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors`, `fuel_id`, `color_id`, `metallic`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `other_id`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `status`, `added`) VALUES
+(1, 1, 0, 0, 1, 1, 2, 22, 4, 2, 4, 1, 1, 0, 0, 0, 0, 0, 0, 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', 'waiting', '2013-04-17 09:00:00'),
+(2, 1, 0, 0, 1, 1, 1, 57, 4, 2, 4, 2, 6, 0, 0, 0, 0, 0, 0, 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', 'waiting', '2013-04-09 10:31:32'),
+(3, 2, 0, 0, 1, 2, 2, 3, 1, 3, 5, 4, 9, 0, 0, 0, 0, 0, 0, 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', 'waiting', '2013-01-12 08:11:00'),
+(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Title', 'Description', '', 0, 0, 0, 'UAH', 'waiting', '2013-06-04 22:49:31'),
+(6, 0, 2, 12, 13, 4, 2, 0, 1, 2, 1, 2, 21, 1, 0, 0, 0, 0, 0, '', '', '2011', 456, 456, 546, 'USD', 'waiting', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
