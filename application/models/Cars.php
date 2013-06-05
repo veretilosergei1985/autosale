@@ -14,6 +14,11 @@ class Application_Model_Cars
     protected $_drive_id;
     protected $_doors;
     protected $_fuel_id;
+    
+     protected $_fuel_city;
+     protected $_fuel_route;
+     protected $_fuel_combine;
+    
     protected $_color_id;
     protected $_metallic;
     protected $_year;
@@ -21,6 +26,10 @@ class Application_Model_Cars
     protected $_volume;
     protected $_price;
     protected $_currency;
+    protected $_version;
+    protected $_vin;
+    protected $_exchange;
+    protected $_auction;
     protected $_status;
     protected $_added;
     
@@ -186,6 +195,36 @@ class Application_Model_Cars
         return $this->_fuel_id;
     }
     
+    public function setFuelCity($val)
+    {
+        $this->_fuel_city = (int) $val;
+        return $this;
+    }
+    public function getFuelCity()
+    {
+        return $this->_fuel_city;
+    }
+    
+    public function setFuelRoute($val)
+    {
+        $this->_fuel_route = (int) $val;
+        return $this;
+    }
+    public function getFuelRoute()
+    {
+        return $this->_fuel_route;
+    }
+    
+    public function setFuelCombine($val)
+    {
+        $this->_fuel_combine = (int) $val;
+        return $this;
+    }
+    public function getFuelCombine()
+    {
+        return $this->_fuel_combine;
+    }
+    
     public function setColorId($id)
     {
         $this->_color_id = (int) $id;
@@ -256,6 +295,46 @@ class Application_Model_Cars
         return $this->_currency;
     }
     
+    public function setVersion($val)
+    {
+        $this->_version = $val;
+        return $this;
+    }
+    public function getVersion()
+    {
+        return $this->_version;
+    }
+    
+    public function setVin($val)
+    {
+        $this->_vin = $val;
+        return $this;
+    }
+    public function getVin()
+    {
+        return $this->_vin;
+    }
+    
+    public function setAuction($val)
+    {
+        $this->_auction = (int)$val;
+        return $this;
+    }
+    public function getAuction()
+    {
+        return $this->_auction;
+    }
+    
+    public function setExchange($val)
+    {
+        $this->_exchange = (int)$val;
+        return $this;
+    }
+    public function getExchange()
+    {
+        return $this->_exchange;
+    }
+    
     public function setStatus($val)
     {
         $this->_status = $val;
@@ -310,7 +389,7 @@ class Application_Model_Cars
     }
     public function save()
     {
-        $this->getMapper()->save($this);
+       return $this->getMapper()->save($this);
     }
     public function getAttributesById($id, $table_name) {
         return $this->getMapper()->getAttributesById($id, $table_name);

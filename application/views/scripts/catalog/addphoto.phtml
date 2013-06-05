@@ -1,14 +1,4 @@
 
-
-
-<style>
-    #oldtypeaddphotolink__addcars {
-        cursor: pointer;
-    }
-    #oldtypeaddphotolink__addcars:hover {
-        text-decoration: underline;
-    }
-</style>
 <div class="head-box">
     Добавление объявления: фото и подробная информация            
     <span class="area grey">
@@ -31,82 +21,7 @@
     </a>
 </nav>
 
-<script>
-    document.addEvent('domready', function() {
-        Ria_Autoloader.loadClass('Ria_Auto_Add_Photo_Primary', '1.87', function() {
-            var addPhotoPrimary = new Ria_Auto_Add_Photo_Primary({
-                'mainForm': 'optionsform__addcars',
-                'submitButton': 'submitform__addcars',
-                'mainGalleryContainer': 'photogallerycontainer__addcars', //ID главного блока для загрузки фотографий
-                'uploadingPhotoContainer': 'uploadingphotocontainer__addcars', //ID блока, где непосредственно находятся загруженные фотографии
-                'mainPhotoContainer': 'mainphotocontainer__addcars', //ID блока с главной фотографией
-                'mainPhotoControls': 'mainphotocontrols__addcars', //ID блока, где находится ссылка для удаления главного фото
-                'mainPhotoBlockClass': 'main-photo', //Класс элемента, в котором содержится одна загруженная фотография
-                'makeMainPhotoBigger': 'makemainphotobigger__addcars', //ID чекбокса, для того чтобы сделать главное фото большим
-                'addPhotoButton': ['addphotobutton__addcars', 'oldtypeaddphotolink__addcars'], //ID кнопки добавления новых фотографий
-                'uploaderContainers': ['addphotocontainer__addcars', 'oldtypecontainer__addcars'],
-                'photo_135_90_class': 'photo-135x90', //Класс элемента с фотографией 135х90 пикселей
-                'photo_185_120_class': 'photo-185x120', //Класс элемента с фотографией 185х120 пикселей
-                'photo_85_56_class': 'photo-85x56', //Класс элемента с фотографией 85х56 пикселей
-                'item_photo_class': 'item-photo', //Класс элемента с фотографией
-                'default_photo_link': 'http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg', //Ссылка на фотку, которая будет по умолчанию показываться в блочке с главным фото
-                'control_bar_class': 'control-bar', //Класс элемента, в котором содержатся кнопки для управления фотографиями
-                'sendCommentsBlock': 'sendcommentsblock_addcars',
-                'dontComment': 'dontcomment__addcars', //ID чекбокса которым человек запрещает комментировать его объявление
-                'item_control_class': 'item-control',
-                'delete_icon_class': 'icon-add__delete',
-                'main_photo_icon_class': 'icon-add__star',
-                'auto_id': 11284210, //ID текущего авто
-                'popups': {
-                    'mms': {
-                        'show_mms_popup_link': 'uploadphotoviamms__addcars', //ID элемента по клику на который должен появится попап
-                        'mms_popup_id': 'mmsphotopopup__addcars', //ID попапа
-                        'request_url': '/static/target/user/event/mms_popup/?auto_id=11284210&kod_mms=432', //Ссылка по которой будет запрашиваться попап, если его еще нет на странице
-                        'container': 'photoviammscontainer__addcars' //Контейнер - элемент в которой добавится попап после загрузки
-                    },
-                    'youtube': {
-                        'show_youtube_popup_link': 'uploadvideofromyoutube__addcars', //ID элемента по клику на которой должен появится попап
-                        'youtube_popup_id': 'addyoutubevideopopup__addcars', //ID попапа
-                        'request_url': '/static/target/user/event/youtube_popup/', //Ссылка по которой будет запрашиваться попап, если его еще нет на странице
-                        'container': 'youtubecontainer__addcars', //Контейнер - элемент в которой добавится попап после того как загрузится
-                        'closePopup': 'closeyuotubepopup__addcars', //ID элемента по клику на которой попап закроется
-                        'cancelPopup': 'cancelyoutubepopup__addcars', //ID элемента по клику на который отменится ввод и закроется попап
-                        'uploadVideo': 'uploadyoutubevideo__addcars', //ID элемента по клику на который начнется процесс добавления видео
-                        'linkToVideo': 'youtubeurlinput__addcars' //ID элемента в котором содержится ссылка на видео, которое необходимо добавить
-                    }
-                },
-                'errors': {
-                    'errorsBlock': 'errorblock__addcars', //ID блока для выведения ошибок
-                    'errorTitle': 'errortitle__addcars', //ID заголовка ошибки - оно будет выделяться жирным
-                    'errorText': 'errortext__addcars' //ID элемента с текстом ошибки
-                },
-                'youTubeVideoContainer': 'uploadingvideocontainer__addcars', //Контэйнер для видео с youtube
-                'youTubeVideoPreview': 'uploadedvideopreview__addcars', //Элемент с предосмотром видео
-                'youTubeVideoTitle': 'youtubetitle__addcars', //Название видео с youtube
-                submitButtonEvents: {
-                    0: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Next', 'Step2_without_BigPhoto'])",
-                    1: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Next', 'Step2_with_BigPhoto'])"
-                },
-                optionCheckboxes: {
-                    onParts: 'forparts__addcars'
-                },
-                optionContainer: 'optionscontainer__addcars',
-                toolTipClasses: {
-                    wrapper: 'wrap-tooltip',
-                    tooltip: 'tooltip',
-                    close: 'close'
-                },
-                flash_swf_url: 'http://css.ria.ua/js/plupload/2.0a/Moxie.swf',
-                silverlight_xap_url: 'http://css.ria.ua/js/plupload/2.0a/Moxie.xap'
-            });
-            if ((Browser.opera && ((Browser.version).toFloat() < (12.01).toFloat())) || (Browser.ie && (Browser.version.toInt() < 10))) {
-                addPhotoPrimary.options.runtimes = 'html4';
-            }
-            addPhotoPrimary.initEventListener();
-            addPhotoPrimary.initPhotoUploader();
-        });
-    });
-</script>
+
 
 <div class="head-box line">
     <a href="http://auto.ria.ua/addauto/autoinfo/autoId/11284210" class="button mini">
@@ -129,38 +44,44 @@
         </div>
 
         <div class="form-upload-photo clearfix">
-            <dl class="headbar-add multi-uploader" id="oldtypecontainer__addcars">
-                <dt class="head-box">
-                <span id="oldtypeaddphotolink__addcars">Добавить фото</span>
-                </dt>
-                <dd class="item-help">
-                    Чтобы выбрать несколько фото / видео удерживайте клавишу Ctrl.<br/>
-                    Максимальный размер одного фото: 5 Мб.<br/>
-                    Форматы фото: GIF, JPG, PNG
-                </dd>
-                <dd class="item">
-                    <a href="http://img.auto.ria.ua/files/auto_photo.pdf" target="_blank">Как правильно сфотографировать автомобиль</a>
-                </dd>
-                <dd class="item" id="addphotocontainer__addcars">
-                    <a href="javascript:void(0);" class="button green large" id="addphotobutton__addcars">
-                        Добавить фото            </a>
-                </dd>
-            </dl>
-            <div class="othe-uploader">
+                <dl class="headbar-add multi-uploader" id="oldtypecontainer__addcars">
+                    <dt class="head-box">
+                    <span id="oldtypeaddphotolink__addcars">Добавить фото</span>
+                    </dt>
+                    <dd class="item-help">
+                        Чтобы выбрать несколько фото / видео удерживайте клавишу Ctrl.<br/>
+                        Максимальный размер одного фото: 5 Мб.<br/>
+                        Форматы фото: GIF, JPG, PNG
+                    </dd>
+                    <dd class="item">
+                        <a href="http://img.auto.ria.ua/files/auto_photo.pdf" target="_blank">Как правильно сфотографировать автомобиль</a>
+                    </dd>
+                    <!--
+                    <dd class="item" id="addphotocontainer__addcars">
+                        <a href="javascript:void(0);" class="button green large" id="addphotobutton__addcars">
+                            Добавить фото            </a>
+                    </dd>
+                    -->
+                    <dd class="item" id="addphotocontainer__addcars">
+                        <input class="" type="file" name="uploadify" id="uploadify" />
+                    </dd>
+                    
+                </dl>
+                <div class="othe-uploader">
 
-                <div class="item">
-                    <i class="icon-add__photo"></i>
-                    <a href="http://auto.ria.ua/addauto/addphoto/autoId/11284210/oldSystem/1">Упрощенная система загрузки фотографий</a>
+                    <div class="item">
+                        <i class="icon-add__photo"></i>
+                        <a href="http://auto.ria.ua/addauto/addphoto/autoId/11284210/oldSystem/1">Упрощенная система загрузки фотографий</a>
+                    </div>
+                    <div class="item" id="photoviammscontainer__addcars">
+                        <i class="icon-add__mobile"></i>
+                        <a href="javascript:void(0);" id="uploadphotoviamms__addcars">Загрузить фото с мобильного</a>
+                    </div>
+                    <div class="item" id="youtubecontainer__addcars">
+                        <i class="icon-add__youtube"></i>
+                        <a href="javascript:void(0);" id="uploadvideofromyoutube__addcars" class="new">Загрузить видео с Youtube</a>
+                    </div>
                 </div>
-                <div class="item" id="photoviammscontainer__addcars">
-                    <i class="icon-add__mobile"></i>
-                    <a href="javascript:void(0);" id="uploadphotoviamms__addcars">Загрузить фото с мобильного</a>
-                </div>
-                <div class="item" id="youtubecontainer__addcars">
-                    <i class="icon-add__youtube"></i>
-                    <a href="javascript:void(0);" id="uploadvideofromyoutube__addcars" class="new">Загрузить видео с Youtube</a>
-                </div>
-            </div>
         </div>
 
         <div class="gallery-upload-photo corner-7" id="photogallerycontainer__addcars" style="display: none;">
@@ -515,7 +436,6 @@
                     </dd>
                     <dd>
 
-                        <input type="hidden" name="confiscatedCar" value="0"><input type="checkbox" name="confiscatedCar" id="confiscatedCar" value="1" onfocus="showHelpNotice(this, & #39; helpNoticeconfiscatedCar & #39; );">                    <label for="confiscatedCar">
                             Автоконфискат                    </label>
                     </dd>
                     <dd>
@@ -592,43 +512,7 @@
                 <textarea name="description" id="description__addcars" rows="6" cols="80" maxlength="1024"></textarea>        <p class="number-characters">
                     Осталось символов: <span id="maxdescriptionslength__addcars">1024</span>
                 </p>
-                <script>
-                                            document.addEvent('domready', function() {
-                                                $('maxdescriptionslength__addcars').set('text', (1024 - $('description__addcars').get('value').length).toString());
-                                                $('description__addcars').addEvent('keydown', function(e) {
-                                                    $('maxdescriptionslength__addcars').set('text', (1024 - this.get('value').length).toString());
-                                                });
-                                                $('description__addcars').addEvent('change', function(e) {
-                                                    var text = this.get('value');
-                                                    var t = this.get('value').length;
-                                                    var num = (text.split("\n")).length;
-                                                    t = t + num;
-                                                    if (t > 1024) {
-                                                        var text = text.substr(0, (1024 - (num)));
-                                                        $('description__addcars').set('value', text);
-                                                        $('maxdescriptionslength__addcars').set('text', '0')
-                                                    }
-                                                    ;
-                                                });
-                                                if ($('matchedCarCountry').get('value') != 0) {
-                                                    $('matchedCar').set('checked', 'checked');
-                                                    $('matchedCarCountry').set('disabled', '');
-                                                    $('matchedCarCountry').removeClass('hide');
-                                                }
-                                            });
-                                            function showCountries() {
-                                                el = $('matchedCar');
-                                                if (el.get('checked')) {
-                                                    el.set('checked', 'checked');
-                                                    $('matchedCarCountry').set('disabled', '');
-                                                    $('matchedCarCountry').removeClass('hide');
-                                                } else {
-                                                    el.set('checked', '');
-                                                    $('matchedCarCountry').set('disabled', 'disabled');
-                                                    $('matchedCarCountry').addClass('hide');
-                                                }
-                                            }
-                </script>
+                
             </div>
         </section>
         <div class="submit-form-add">

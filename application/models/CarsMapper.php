@@ -34,6 +34,9 @@ class Application_Model_CarsMapper
             'drive_id' => $car->getDriveId(),
             'doors' => $car->getDoors(),
             'fuel_id' => $car->getFuelId(),
+            'fuel_city' => $car->getFuelCity(),
+            'fuel_route' => $car->getFuelRoute(),
+            'fuel_combine' => $car->getFuelCombine(),
             'color_id' => $car->getColorId(),
             'metallic' => $car->getMetallic(),
             'year' => $car->getYear(),
@@ -41,12 +44,17 @@ class Application_Model_CarsMapper
             'volume' => $car->getVolume(),                           
             'price'  => $car->getPrice(),
             'currency' => $car->getCurrency(),
+            'version' => $car->getVersion(),         
+            'vin' => $car->getVin(),     
+            'exchange' => $car->getExchange(),     
+            'auction' => $car->getAuction(),     
             'status' => $car->getStatus()
             
         );
+        //echo "<pre>"; print_r($data); exit;
       if (null === ($id = $car->getId())) {
             unset($data['id']);
-            $this->getDbTable()->insert($data);
+            return $this->getDbTable()->insert($data);
         } else {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
@@ -60,7 +68,7 @@ class Application_Model_CarsMapper
                                       ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
                                       ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
                                       ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
-                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'title'))
+                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'type'))
                                       //->joinLeft('users','users.id = cars.user_id', array('username', 'first_name', 'last_name', 'user_added' => 'added', 'last_login'))
                                       ->where('cars.id = ?', $id); 
 

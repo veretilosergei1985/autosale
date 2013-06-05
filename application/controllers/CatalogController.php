@@ -18,8 +18,7 @@ class CatalogController extends Zend_Controller_Action
     
     public function addAction()
     {
-       $this->view->headLink()->appendStylesheet('/css/init_add.css');
-       $this->view->headScript()->appendFile('/js/init_add.js');
+       
        $this->_helper->layout->setLayout('layout1');
        
        $step = $this->_getParam('step');
@@ -30,7 +29,8 @@ class CatalogController extends Zend_Controller_Action
        }
        
        if($step == 'autoinfo'){
-
+$this->view->headLink()->appendStylesheet('/css/init_add.css');
+       $this->view->headScript()->appendFile('/js/init_add.js');
             $form = new Application_Form_AddCar();
             
             if($autoId == ''){
@@ -52,6 +52,9 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setDriveId($data['drive_id']);
                                  $car->setDoors($data['doors']);
                                  $car->setFuelId($data['fuel_id']);
+                                 $car->setFuelCity($data['fuel_city']);
+                                 $car->setFuelRoute($data['fuel_route']);
+                                 $car->setFuelCombine($data['fuel_combine']);
                                  $car->setColorId($data['color_id']);
                                  $car->setMetallic($data['metallic']);
                                  $car->setYear($data['year']);
@@ -59,6 +62,10 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setVolume($data['volume']);                              
                                  $car->setPrice($data['price']);
                                  $car->setCurrency($data['currency']);
+                                 $car->setVersion($data['version']);
+                                 $car->setVin($data['vin']);
+                                 $car->setExchange($data['exchange']);
+                                 $car->setAuction($data['auction']);
                                  $car->setStatus('waiting');
                                  $car->setAdded(date('Y-m-d H:i:s'));
                                  
@@ -81,6 +88,11 @@ class CatalogController extends Zend_Controller_Action
        }
        
        if($autoId != '' && $step == 'addphoto'){
+           $this->view->headLink()->appendStylesheet('/css/init_add.css');
+           
+           $this->view->headLink()->appendStylesheet('/css/uploadify.css');
+           $this->view->headScript()->appendFile('/js/jquery.uploadify.js');
+           $this->view->headScript()->appendFile('/js/init_add_upload.js');
            
            $this->render('addphoto');
            

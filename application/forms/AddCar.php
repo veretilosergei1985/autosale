@@ -228,6 +228,7 @@ class Application_Form_AddCar extends Zend_Form
             
             $exchange = new Zend_Form_Element_Checkbox('exchange', array('disableLoadDefaultDecorators' => true, 'required' => false));
             $exchange->setAttrib('id', 'exchange__addcars');
+            
                 
         //////////////////////////////////////////////
         
