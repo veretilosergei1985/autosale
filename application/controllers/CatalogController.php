@@ -91,8 +91,9 @@ $this->view->headLink()->appendStylesheet('/css/init_add.css');
            $this->view->headLink()->appendStylesheet('/css/init_add.css');
            
            $this->view->headLink()->appendStylesheet('/css/uploadify.css');
-           $this->view->headScript()->appendFile('/js/jquery.uploadify.js');
            $this->view->headScript()->appendFile('/js/init_add_upload.js');
+           $this->view->headScript()->appendFile('/js/jquery.uploadify.js');
+           
            
            $this->render('addphoto');
            
