@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+       
+        <?php echo $this->headLink()->appendStylesheet('/css/main.css', 'screen'); ?>
+        <?php echo $this->headLink()->appendStylesheet('/css/init-main.css', 'screen'); ?>
+       
+        <?php echo $this->headScript()->appendFile('/js/jquery-1.7.2.min.js'); ?>
+         <?php echo $this->headScript()->appendFile('/js/main.js'); ?>
+       <?php echo $this->headLink()->appendStylesheet('/css/init_add.css'); ?>
+       <?php // echo $this->headScript()->appendFile('/js/init_add.js');?>
+
+   </head>
+
+<body class="ru">
+      <div class="container-body">
+        <!-- .BEGIN header -->
+<header class="text">
+    <div class="container">
+        <div class="loginbar">
+            <a href="/user/register" class="item">регистрация</a>
+            <a href="/login.html" class="item">вход</a>
+        </div>
+        <nav class="head-menu">
+            <a class="ria-ua" href='http://www.ria.ua/' title="Бесплатные объявления Украины"></a>
+            <a class="logo-auto-ria select" href='http://auto.ria.ua/' title="Авториа - автосайт №1 Украины"></a>
+            <a class="logo-dom-ria" href='http://dom.ria.ua/' title="Продажа и аренда недвижимости в Украине"></a>
+            <a class="logo-rabota-ria" href='http://rabota.ria.ua/' title="Поиск работы в Украине"></a>
+            <div class="top-drop">
+                <a title="Лучшие туры для отдыха" href="http://travel.ria.ua/?utm_source=auto&utm_medium=link&utm_campaign=header" class="logo-travel-ria" target=""></a>
+                <ol class="drop-menu">
+                    <li><a title="Все гостиницы Украины" href="http://hotels.ria.ua" class="logo-hotels-ria" target=""></a></li>
+                    <li><a title="Бронирование авиабилетов онлайн" href="http://avia.ria.ua" class="logo-avia-ria" target=""></a></li>
+                </ol>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- .END header -->
+
+        <div class="panel-banner" id="outboard">
+            
+            <!--RIA baner-->
+            <div id="search_banner_730x90">
+                <div></div>
+            </div>
+
+            <!--/RIA baner-->
+            
+        </div>
+
+
+
+
+
+        <div class="container" id="show_grid">
+            <!-- .BEGIN HEAD -->
+<div class="header">
+    <a href="/" class="logo">
+        <img src="http://img6.auto.ria.ua/images/logo.png" width="255" height="40" alt="AUTO.ria.ua" title="Авториа - автосайт №1 Украины" alt="Базар авто Авториа. Продажа бу автомобилей - объявления"/>
+    </a>
+    <div class="header-settings">
+        <div class="langbar">
+        
+            <span class="item">
+                <i class="icon-rus"></i>рус.
+            </span>
+            <a class="item" href="/uk/">
+                <i class="icon-ukr"></i>укр.
+            </a>
+        
+        <!-- <a class="item" href="/ru/">-->
+        </div>
+
+        <a href="/catalog/add" class="button green add-offer" title="Добавить объявление о продаже авто">
+             Добавить объявление
+        </a>
+
+        <div class="informbar">
+            <div class="location">
+    <a href="javascript:void(0);"><span>Украина</span><i class="icon-arrou"></i></a>
+
+    <div id ="head_location_popup" class="popup uarr __center hide">
+        <div class="wrapper">
+            <a href="javascript:void(0);" class="close">×</a>
+            <div class="title bold" style="margin: 0; padding: 0;">
+                Выберите город
+            </div>
+            <form class="grid grid-span1">
+                <p class="rows">
+                    <label class="label" for="select2">Область:</label>
+                    <span class="indent select">
+                        <select id="select" name="state_id" style="width: 135px;">
+                            <option>Загрузка...</option>
+                        </select>
+                    </span>
+                </p>
+                <p class="rows">
+                    <label class="label" for="select2">Город:</label>
+                    <span class="indent select">
+                        <select id="select2" name="city_id" style="width: 135px;">
+                            <option value="0">Любая</option>
+                        </select>
+                    </span>
+                </p>
+                <div class="input">
+                    <a href="javascript:void(0);" class="button">Сохранить</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+            
+    <div class="allotted newads">
+        <a class="icon-reload" href="javascript:void(0);"></a>
+        <div class="wrap">
+            <div class="" value="1">
+                <a href="/last/visit/" class="stretch">С последнего визита</a>
+                <span class="count">
+                    +<a href="/last/visit/"><span>0</span><i class="icon-arrou"></i></a>
+                </span>
+            </div>
+            <div class="hide" value="2">
+                <a href="/last/hour/" class="stretch">За последний час</a>
+                <span class="count">
+                    <a href="/last/hour/"><span>613</span><i class="icon-arrou"></i></a>
+                </span>
+            </div>
+            <div class="hide" value="3">
+                <a href="/last/today/" class="stretch">За сегодня</a>
+                <span class="count">
+                    <a href="/last/today/"><span>4542</span><i class="icon-arrou"></i></a>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="popup uarr __center hide">
+            <div class="wrapper">
+                <a href="javascript:void(0);" class="close">×</a>
+                <div class="title line bold">
+                    Выберите период
+                </div>
+
+                <div class="grid">
+                    <div class="ckecklist">
+                        <p class="item">
+                            <span class="area blue">
+                                + <strong value="1">0</strong>
+                            </span>
+                            <input type="radio" name="ria_adv_count" value="1" id="header_ads_count_from_last_visit" />
+                            <label for="header_ads_count_from_last_visit">С последнего визита</label>
+                        </p>
+                        <p class="item">
+                            <span class="area blue">
+                                <strong value="2">613</strong>
+                            </span>
+                            <input type="radio" name="ria_adv_count" value="2" id="header_ads_count_per_hour" />
+                            <label for="header_ads_count_per_hour">За последний час</label>
+                        </p>
+                        <p class="item">
+                            <span class="area blue">
+                                <strong value="3">4542</strong>
+                            </span>
+                            <input type="radio" name="ria_adv_count" value="3" id="header_ads_count_per_day"/>
+                            <label for="header_ads_count_per_day">За сегодня</label>
+                        </p>
+                    </div>
+                    <a href="javascript:void(0);" class="button">Сохранить</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        </div>
+
+    </div>
+    
+    
+    
+</div>
+<!-- .END HEAD -->
+            <!-- .BEGIN main menu -->
+
+<div class="main-menu" id="head_main_menu">
+
+    <div class="tabs" load_content='/pseudo_services/head_menu_items/0?lang_id=2' tab="0">
+        <i class="icon-search-red"></i>
+        <div class="window hide">
+            <div class="iframe" onmouseover="_gaq.push(['_trackEvent', 'Quick search', 'Mouse_on_Search_tab', 'Search']);"><iframe></iframe></div>
+            <div style="width: 325px;" class="wrapper">
+                <!--include virtual="/pseudo_services/head_menu_items/0?lang_id=${lang_id}" -->
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs hide" tab="1">
+         <a href="/mymenu.html" >Мое меню</a>
+        <div class="window hide">
+
+            <div class="iframe"><iframe></iframe></div>
+            <div class="wrapper" style="width: 400px;">
+
+                <!-- include virtual="/static/target/columns/event/user_info_menu_block/?lang_id={$smarty.session.lang_id}&type_block=1&sessionUserId=$sessionUserId&ria_new=1"
+                                <dl class="unordered-list">
+                                    include virtual="/static/target/columns/event/one_left_menu_block/?lang_id={$smarty.session.lang_id}&partName=menu&sessionUserId=$sessionUserId&page_end=1&ria_new=1"
+                                </ul>-->
+
+
+
+
+                <dl class="column unordered-list" style="width:180px;">
+                    <!-- Search form menu-->
+    <p class="headbar bold"><a href="/search.html">Поиск авто</a></p>
+    <form class="grid fast-search" id="main_menu_search" action="/" method="get">
+        <div class="hidden">
+            <input type="hidden" value="search" name="target" filter_type="old">
+            <input type="hidden" value="little" name="event" filter_type="old">
+
+            <input type="hidden" value="new" name="target" filter_type="new" class="hide">
+            <input type="hidden" value="view" name="event" filter_type="new" class="hide">
+
+            <input type="hidden" value="0" name="category_id">
+        </div>
+        <div class="row type-search">
+            <label for="item1" class="span2">
+                <input type="radio" name="radio" id="item1" value="oldAutos" checked="checked">
+                авто б/у
+            </label>
+            <label for="item2" class="span2">
+                <input type="radio" name="radio" id="item2" value="newAutos">
+                новые авто
+            </label>
+        </div>
+
+        <p class="rows" filter_type="old">
+            <label for="" class="label">Марка:</label>
+            <span class="select">
+                <select class="span3" name="marka" content="marka_old" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Marka', 'B-u search']);return true;">
+                    <option value="0">Любая</option>
+                    
+                </select>
+            </span>
+        </p>
+        <p class="rows hide" filter_type="new">
+            <label for="" class="label">Марка:</label>
+            <span class="select">
+                <select class="span3" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Marka', 'New search']);return true;" name="marka_id" content="marka_new" >
+                    <option value="0">Любая</option>
+                    
+                </select>
+            </span>
+        </p>
+
+        <p class="rows" filter_type="old">
+            <label for="" class="label">Модель:</label>
+            <span class="select">
+                <select class="span3" content="model_old" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Model', 'B-u search']);return true;" name="model">
+                    <option value="0">Любая</option>
+                </select>
+            </span>
+        </p>
+        <p class="rows hide" filter_type="new">
+            <label for="" class="label">Модель:</label>
+            <span class="select">
+                <select class="span3" content="model_new" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Model', 'New search']);return true;" name="model_id">
+                    <option value="0">Любая</option>
+                </select>
+            </span>
+        </p>
+
+        <p class="rows" filter_type="old">
+            <label for="" class="label">Год выпуска:</label>
+            <span class="indent">
+                от
+                <select class="years" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Year_from', 'B-u search']);return true;" id="" name="s_yers">
+                    <option value="0">Любой</option>
+                    
+                </select>
+                <em class="mdash">&mdash;</em>
+                до
+                <select class="years" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Year_to', 'B-u search']);return true;" id="" name="po_yers">
+                    <option value="0">Любой</option>
+                    
+                </select>
+            </span>
+        </p>
+
+        <p class="rows" filter_type="old">
+            <label for="" class="label">Регион:</label>
+            <span class="select">
+                <select class="span3" id="" onChange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Region', 'B-u search']);return true;" name="state">
+                    <option value="0">Любой</option>
+                    
+                </select>
+            </span>
+        </p>
+        <p class="rows hide" filter_type="new">
+            <label for="" class="label">Регион:</label>
+            <span class="select">
+                <select class="span3" id="" onChange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Region', 'New search']);return true;" name="city">
+                    <option value="0">Любой</option>
+                    
+                </select>
+            </span>
+        </p>
+
+        <p class="rows">
+            <label for="" class="label bold">Цена:</label>
+            <span class="select">
+                <input type="text" placeholder="от" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_from', 'Search']);" name="price_ot">
+                <em class="mdash">&mdash;</em>
+                <input type="text" placeholder="до" class="price" onclick="_gaq.push(['_trackEvent', 'Quick search', 'Input_Price_to', 'Search']);" name="price_do">
+                <select class="currency" id="" onchange="_gaq.push(['_trackEvent', 'Quick search', 'Select_Currency', 'Search']); return true;" name="currency">
+                    <option value="1">$</option>
+                    <option value="2">€</option>
+                    <option value="3">грн.</option>
+                </select>
+            </span>
+        </p>
+
+        <div class="submit-form">
+
+            <span class="button-icon">
+                <i class="icon-search-white"></i>
+                <input type="submit" value="Поиск" class="button blue large">
+            </span>
+
+            <p class="checkrows" filter_type="old">
+                <input type="checkbox" id="check1" name="with_photo" value="1">
+                <label for="check1">
+                    <i class="icon-photo-red"></i>
+                    только с фото
+                </label>
+            </p>
+
+            <a filter_type="old" href="/search.html" ext_search="true">
+                 Расширенный поиск
+            </a>
+        </div>
+    </form>
+
+
+                </dl>
+
+                <ul class="column unordered-list" style="width: 180px">
+                    <li>
+                        <a title="Мой блокнот" href="/notepad.html" >
+                           Мой блокнот
+                    </a>
+
+        <!--
+                            # if expr="$bookmarks_count!=0"
+                                                    <strong class="blue">
+                                    #echo var="bookmarks_count"
+                                                                                                        </strong>
+                                                                                                                            # endif -->
+                </li>
+                <li>
+                    <a title="Моя анкета" href="/?target=user&event=redug" >
+                       Моя анкета
+                </a>
+            </li>
+            <li>
+                <a title="Коммерческие сервисы" href="/myservice/" onclick="_gaq.push(['_trackEvent', 'My_Menu_Tab', 'Click_on_Link_My_Service', 'Myservice'])">
+                   Коммерческие сервисы
+            </a>
+        </li>
+        <li>
+            <a title="Поменять пароль" href="/user/change_password.html" >
+               Поменять пароль
+        </a>
+    </li>
+    <li>
+        <a title="Рассылка" href="/subscribe" >
+           Рассылка
+    </a>
+</li>
+<li>
+    <a title="Мои поиски" href="/?target=user&event=searchHistory" >
+       Мои поиски
+</a>
+</li>
+<li>
+    <a class="new" title="Мой Черный список" href="/user/blacklist" >
+       Мой "Черный список"
+</a>
+</li>
+
+</ul>
+<div class="menu__bottom-panel">
+    <a class="link-add" href="/add_auto.html" title="Добавить объявление" >
+       Добавить объявление
+</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="tabs" tab="2">
+    <a href="/" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Used_Cars', 'Menu'])">Автомобили б/у</a>
+    <div class="window hide">
+        <div class="iframe"><iframe></iframe></div>
+        <div style="width: 340px;" class="wrapper">
+            <p class="headbar bold">
+                <a href="/search" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Used_Cars', 'Search'])">
+                   Автомобили б/у
+            </a>
+        </p>
+        <ul class="column unordered-list">
+            <li><a href="/legkovie/" title="Легковые" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Legkovie', 'Сatalog'])">Легковые</a></li>
+            <li><a href="/moto/" title="Мото" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Moto', 'Сatalog'])">Мото</a></li>
+            <li><a href="/vodnyj_transport/" title="Водный транспорт" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Vodnyj_Transport', 'Сatalog'])">Водный транспорт</a></li>
+            <li><a href="/spectehnika/" title="Спецтехника" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Spectehnika', 'Сatalog'])">Спецтехника</a></li>
+            <li><a href="/trailer/" title="Прицепы" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Trailer', 'Сatalog'])">Прицепы</a></li>
+            <li><a href="/truck/" title=" Грузовики" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Truck', 'Сatalog'])"> Грузовики</a></li>
+            <li><a href="/bus/" title="Автобуси" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Bus', 'Сatalog'])">Автобуси</a></li>
+            <li><a href="/autohouse/" title="Автодома" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autohouse', 'Сatalog'])">Автодома</a></li>
+            <li><a href="/air_transport/" title="Воздушный транспорт" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Air_Transport', 'Сatalog'])">Воздушный транспорт</a></li>
+
+        </ul>
+        <ul class="column unordered-list" >
+            <li><a href="/search.html" title="Поиск авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Search_Cars', 'Search'])">Поиск авто</a></li>
+            <li><a href="/hots/" title="Горячие предложения" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Hots', 'Сatalog'])">Горячие предложения</a></li>
+            <li><a href="/retro/" title="Ретро автомобили" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Retro', 'Сatalog'])">Ретро автомобили</a></li>
+            <li><a href="/autointer/" title="Авто из-за рубежа" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Autointer', 'Сatalog'])">Авто из-за рубежа</a></li>
+            <li><a href="/avtovikup/" title="Автовыкуп" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Avtovikup', 'Service'])">Автовыкуп</a></li>
+            <li><a href="/kredit_auto/" class="new" title="Кредитные авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Kredit', 'Сatalog'])">Кредитные авто</a></li>
+            <li><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></li>
+            <li><a href="/diagnostika-promo/" class="new" title="Проверенные авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Diagnostika', 'Promo'])">Проверенные авто</a></li>
+        </ul>
+        <div class="menu__bottom-panel">
+            <a class="link-add" href="/add_auto.html" title="Добавить объявление" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Add', 'Menu'])" >
+               Добавить объявление
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="tabs" tab="3">
+    <a href="/newauto/" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Menu'])">Новые авто</a>
+    <div class="window hide">
+        <div class="iframe"><iframe></iframe></div>
+        <div style="width: 345px;" class="wrapper">
+            <p class="headbar bold">
+                <a href="/newauto/">Новые авто</a>
+            </p>
+            <ul class="column unordered-list">
+                <li><a href="/newauto/" title="Поиск новых авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto', 'Search'])">Поиск новых авто</a></li>
+                <li><a href="/new_auto/master_search/" title="Мастер поиска" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Master_Search', 'Search'])">Мастер поиска</a></li>
+                <li><a href="/newauto/catalogue/" title="Каталог новых авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_Сatalog', 'Сatalog'])">Каталог новых авто</a></li>
+                <li><i class="icon-reliable-partner"></i><a href="/reliable-partner/" title="Надежный партнер" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Reliable_Partner', 'Promo'])">Надежный партнер</a></li>
+            </ul>
+            <ul class="column unordered-list">
+                <li><a href="/newauto/avtosaloni/" title="Автосалоны" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Avtosalon', 'Сatalog'])">Автосалоны</a></li>
+                <li><a class="new" href="/newauto/motosaloni/" title="Мотосалоны" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Motosalon', 'Сatalog'])">Мотосалоны</a></li>
+                <li><a href="/news/actions/" title="Акции автосалонов" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Newauto_Actions', 'News'])">Акции автосалонов</a></li>
+                <li><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></li>
+            </ul>
+            <div class="menu__bottom-panel">
+                <a class="link-add" href="/avtosaloni/addinfo/" title="Добавить Автосалон" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Avtosalon', 'Menu'])" >
+                   Добавить Автосалон
+            </a>
+            <em class="mdash">|</em>
+            <a class="link-add" href="/motosalon/addinfo/" title="Добавить Мотосалон" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Add_Motosalon', 'Menu'])" >
+               Добавить Мотосалон
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="tabs" tab="4">
+    <a href="javascript:void(0);">Все для авто</a>
+    <div class="window hide">
+        <div class="iframe"><iframe></iframe></div>
+        <div style="width: 565px;" class="wrapper">
+            <div class="column" style="width: 155px">
+                <dl class="unordered-list">
+                    <dt>Сервисы</dt>
+                    <dd><a href="/avtovikup/" title="Автовыкуп" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtovikup', 'Service'])">Автовыкуп</a></dd>
+                    <dd><a href="/autolombardy/" title="Автоломбарды" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autolombardy', 'Service'])">Автоломбарды</a></dd>
+                    <dd><a href="/autoservice/" title="Автосервисы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoservice', 'Service'])">Автосервисы</a></dd>
+                    <dd><a href="/avtorazborka/" title="Авторазборка" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtorazborka', 'Service'])">Авторазборка</a></dd>
+                    <dd><a href="/avtorazborka/#stolzakazov" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Add_Aplication', 'Main_AUTO.ria.ua']);" title="Стол заказов запчастей">Стол заказов запчастей</a></dd>
+                    <dd><a href="/strahovanie/" title="Автострахование" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Strahovanie', 'Service'])">Автострахование</a></dd>
+                    <dd><a href="http://market.auto.ria.ua/tehpomosch" target="_blank" title="##autohelp##" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Tehpomosch', 'Market'])">Автопомощь</a></dd>
+                    <dd><a href="/rastamozhka_avto/" title="Растаможка авто" onclick="_gaq.push(['_trackEvent', 'Used_Cars_Tab', 'Click_on_Link_Rastamozhka', 'Сatalog'])">Растаможка авто</a></dd>
+                </dl>
+            </div>
+            <div class="column">
+             <dl class="unordered-list">
+                <dt>
+                    Товары от
+                    <a href="http://market.auto.ria.ua" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Market', 'Market'])">
+                        <i class="ico-market"></i>
+                    </a>
+                </dt>
+                <dd><a href="http://market.auto.ria.ua/shina" title="Шины" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Shina', 'Market'])">Шины</a></dd>
+                <dd><a href="http://market.auto.ria.ua/diski" title="Диски" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Diski', 'Market'])">Диски</a></dd>
+                <dd><a href="http://market.auto.ria.ua/car_seats/" title="Детские автокресла" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Krisla', 'Market'])">Детские автокресла</a></dd>
+                <dd><a href="http://market.auto.ria.ua/avtochehlu" title="Чехлы на сиденья" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtochehlu', 'Market'])">Чехлы на сиденья</a></dd>
+                <dd><a href="http://market.auto.ria.ua/kovriki/" title="Коврики" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Kovriki', 'Market'])">Коврики</a></dd>
+                <dd><a href="http://market.auto.ria.ua/farkop/" title="Фаркопы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Farkop', 'Market'])">Фаркопы</a></dd>
+
+                <dt>&nbsp;</dt>
+                <dd><a href="http://zapchasti.ria.ua/" title="Запчасти" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Zapchast_Catalog', 'Ria'])">Запчасти</a></dd>
+                <dd><a href="http://dom.ria.ua/garage/" title="Гаражи" target="_blank" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Garage_Catalog', 'Dom'])">Гаражи</a></dd>
+               <dd><a href="/document/" title="Автодокументы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Document', 'Poleznoe'])">Автодокументы</a></dd>
+            </dl>
+            </div>
+            <div class="column" style="width: 195px">
+                <dl class="unordered-list">
+                    <dt>Полезное</dt>
+                    <dd><a href="/avtoshkola/" title="Автошколы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Avtoshkola', 'Poleznoe'])">Автошколы</a></dd>
+                    <dd><a href="/online_pdd/" title="Билеты ПДД онлайн" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Pdd_online', 'Poleznoe'])">Билеты ПДД онлайн</a></dd>
+                    <dd><a href="/forum" title="Автофорум" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Forum', 'Poleznoe'])">Автофорум</a></dd>
+                    <dd><a href="/humor/" title="Автоюмор" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Humor', 'Poleznoe'])">Автоюмор</a></dd>
+                    <dd><a href="/autoclubs/" title="Автоклубы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Autoclubs', 'Poleznoe'])">Автоклубы</a></dd>
+                    <dd><a href="http://link.auto.ria.ua/" title="Автосайты" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Links', 'Poleznoe'])">Автосайты</a></dd>
+                    <dd><a href="/automagazine/" title="Журналы" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Magazine', 'Poleznoe'])">Журналы</a></dd>
+                    <dd><a href="/compare/" title="Надежность авто" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Compare', 'Poleznoe'])">Надежность авто</a></dd>
+                    <dd><a href="http://lanos.com.ua/" title="Все про Lanos" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Lanos', 'Poleznoe'])">Все про Lanos</a></dd>
+                    <dd><a href="/first_auto/" title="Покупаем первый автомобиль" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_First_Auto', 'Poleznoe'])">Покупаем первый автомобиль</a></dd>
+                    <dd><a href="/newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Car_Reviews', 'Reviews'])">Отзывы об авто</a></dd>
+                </dl>
+            </div>
+
+            <div class="menu__bottom-panel">
+                <a href="/help/" title="Помощь" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Help', 'Poleznoe'])">Помощь</a>
+                <em class="mdash">|</em>
+                <a href="/news/novinki/" title="Нововведения" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Novinki', 'Poleznoe'])">Нововведения</a>
+                <em class="mdash">|</em>
+                <a class="new" href="/?target=view&event=lic" title="Соглашение о предоставлении услуг" onclick="_gaq.push(['_trackEvent', 'Newauto_Tab', 'Click_on_Link_Agreement', 'Poleznoe'])">Соглашение о предоставлении услуг</a>
+
+            </div>
+            <div class="menu__bottom-panel">
+                <a class="link-add" href="/document/add.html" title="Добавить Автодокумент" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Docum', 'Menu'])">Добавить Автодокумент</a>
+                <em class="mdash">|</em>
+                <a class="link-add" href="http://www.ria.ua/advertisement/addstep1" title="Добавить запчасть" onclick="_gaq.push(['_trackEvent', 'All_For_Auto_Tab', 'Click_on_Link_Add_Zapchast', 'Ria'])">Добавить запчасть</a>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<div class="tabs" tab="5">
+    <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_News', 'News'])">Новости</a>
+    <strong class="blue"></strong>
+    <div class="window hide">
+        <div class="iframe"></div>
+        <div class="wrapper" style="width: 412px;">
+            
+
+    <div class="column" style="min-width: 90px">
+        <dl class="unordered-list">
+            <dt>
+            <a href="/news/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_All_News', 'News'])">Все новости</a>
+            </dt>
+
+            
+
+                <dd>
+                    
+                        <a href="/news/events/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_events', 'News'])">События</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/auto/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_auto', 'News'])">Автомобили</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/autobusiness/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autobusiness', 'News'])">Автобизнес</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/autolaw/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_autolaw', 'News'])">Автозакон</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/actions/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_actions', 'News'])">Акции</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/test_drive/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_test_drive', 'News'])">Тест-драйвы</a>
+                    
+                </dd>
+
+            
+        </dl>
+
+    </div>
+    <div class="column" style="width: 165px">
+        <dl class="unordered-list">
+            <dt>&nbsp;</dt>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/autoservice_technology/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_Technology', 'News'])">Автосервис и Технологии</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/about_us/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_about_us', 'News'])">О нас пишут</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/avtoblog/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_avtoblog', 'News'])">Автоблоги</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/novinki/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_novinki', 'News'])">Нововведения</a>
+                    
+                </dd>
+
+            
+
+        </dl>
+    </div>
+    <div class="column" style="min-width: 105px; padding-right: 0;">
+        <dl class="unordered-list">
+            <dt>&nbsp;</dt>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/subaru/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_subaru', 'News'])">Все о Subaru</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/bmw/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_bmw', 'News'])">Все o BMW</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/mini/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_mini', 'News'])">Все о MINI</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/rental_info/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_rental_info', 'News'])">Все о прокате</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/journals/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_journals', 'News'])">Онлайн журнал</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/konkurs/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_konkurs', 'News'])">Конкурсы</a>
+                    
+                </dd>
+
+            
+
+        
+
+                <dd>
+                    
+                        <a href="/news/shanghai/" onclick="_gaq.push(['_trackEvent', 'News_Tab', 'Click_on_Link_shanghai', 'News'])">Шанхай-2013</a>
+                    
+                </dd>
+
+            
+
+        
+
+        </dl>
+    </div>
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+<div class="tabs" >
+    <a href="/notepad.html" >
+       <i class="icon-star-tab"></i> Блокнот
+        <!-- FIX THIS to JavaScript-->
+        <!-- # if expr="$bookmarks_count!=0"
+                        <strong class="blue">
+                            #echo var="bookmarks_count"
+                        </strong>
+                    # endif -->
+    </a>
+</div>
+
+<span class="area">
+          <i class="ico-new"></i>
+     <a href="http://auto.ria.ua/news/events/206878/" target="_blank" class="insert-element"
+        onclick="_gaq.push(['_trackEvent', 'Whats_New', 'Click_on_Yanukovich_poshlini', '/']);">
+                  Янукович займется пошлинами
+          
+     </a>
+  <!-- Page load array script time : 0.034149885177612
+-->
+</span>
+</div>
+
+
+<!-- .END main menu -->
+            <!-- .BEGIN Pager -->
+<div style="display: none;">
+<!--<div>-->
+    /blocks_search_ajax/breadcrumbs/search/?catalog_name=search&person_id=0
+    <hr noshade="noshade">
+</div>
+
+<div class="panel-breadcrumbs">
+    <h2 class="breadcrumbs" id="breadcrumbs">
+        
+            <a href="/" title="Продажа авто" id="breadcrumbs-/" class="item">Продажа авто</a>
+            
+        
+            <a href="/search/" title="Расширенный поиск на Auto.ria.ua : продажа авто, автосалоны, каталог автомобилей, базар авто" id="breadcrumbs-/search/" class="item">Поиск авто</a>
+            
+        
+    </h2>
+    <div class="popup uarr __left" style="left: 100px; display: none;" id="breadcrumbs_popup_container">
+        <div class="iframe">
+            <iframe></iframe>
+        </div>
+        <div class="wrapper" >
+            <div class="wrapper-group" id="breadcrumbs_popup_data">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- .END Pager -->
+            <div class="row content-main">
+                <!-- .BEGIN Main Panel -->
+
+<!-- include virtual="/html/blocks/search_page/blocks/assync_banners_loader.html" -->
+
+
+       
+    
+    
+<?php echo $this->layout()->content; ?>
+
+
+
+<!-- .END Main Panel -->
+
+
+
+
+                <!-- .BEGIN Right Panel -->
+
+<div class="right-panel span4">
+    
+<ol class="statistic-addcars">
+    <li class="item left">
+        новых
+        <span class="allotted">
+            + <a href='/last/visit/' class="bold" type="visit">0</a>
+        </span>
+    </li>
+    <li class="item right">
+        за день <a href='/last/today/' class="bold" type="day">4542</a>
+    </li>
+    <li class="item center">
+        за час <a href='/last/hour/' class="bold" type="hour">613</a>
+    </li>
+
+</ol>
+
+
+
+
+
+    <!-- .BEGIN BANNER PLACE 300 -->
+
+    <div class="banner-place-300">
+        
+        <div id="adriver_banner"></div>
+                
+            <div id="right_advertisemrnt" style="font-size: 11px; display: none;" align="right"><a href='/price'>На правах рекламы</a></div>
+        
+    </div>
+
+    <!-- .END BANNER PLACE 300 -->
+
+
+
+    
+    <!-- <div class="box-panel" id="right_currencies_panel" onclick="$$('div#right_currencies_panel div.head + div.panel').toggleClass('hide');" >-->
+    <div class="box-panel" id="right_currencies_panel">
+        <div class="head head-financeua">
+            <i class="icon-head-finance"></i>
+            <a href="javascript:void(0);" >Курс валют</a>
+
+            <div class="financeua-mini hide">
+
+                <strong class="item" title="-10.6545">
+                    <span class="red">€</span>
+                    10.65
+                </strong>
+                <strong lass="item" title="-8.1415">
+                    <span class="red">$</span>
+                    8.14
+                </strong>
+
+            </div>
+
+            <i class="icon-close"></i>
+
+        </div>
+        <div class="panel">
+            <div class="financeua">
+                <a class="link-finance" href="http://finance.ua/"target="_blank"></a>
+                    
+                        
+                            <dl class="row head-row">
+                                <dt class="span1" title="14:07:13 23.04.2013">
+                                    <i class="icon-clock"></i>
+                                    14:07
+                                </dt>
+                                <dd class="span1">Покупка</dd>
+                                <dd class="span1">Продажа</dd>
+                            </dl>
+                        
+                        <dl class="row">
+                            <dt class="span1">EUR</dt>
+                            <dd class="span1">
+                                <strong title="-10.5568">
+                                    10.55
+                                </strong>
+                                <em>
+                                
+                                    &darr;
+                                
+                                </em>
+                            </dd>
+                            <dd class="span1">
+                                <strong title="-10.6545">
+                                    10.65
+                                </strong>
+                                <span class="hide">10.6545</span>
+                                <em>
+                                    &darr;
+                                </em>
+                            </dd>
+                        </dl>
+                
+                        
+                        <dl class="row">
+                            <dt class="span1">USD</dt>
+                            <dd class="span1">
+                                <strong title="-8.1218">
+                                    8.12
+                                </strong>
+                                <em>
+                                
+                                    &darr;
+                                
+                                </em>
+                            </dd>
+                            <dd class="span1">
+                                <strong title="-8.1415">
+                                    8.14
+                                </strong>
+                                <span class="hide">8.1415</span>
+                                <em>
+                                    &darr;
+                                </em>
+                            </dd>
+                        </dl>
+                
+            </div>
+        </div>
+
+        <div id="panel_calculator" class="panel">
+    <div class="" id="calculator_link" >
+        <a id="calculator_link_a" href="javascript:void(0);" >Валютный калькулятор</a>
+        <i id="icon" class="icon-open"></i>
+    </div>
+    <div id="calculator" class="calculator hide">
+        <div class="title">Валютный калькулятор</div>
+        <table class="calc">
+            <tbody>
+            <tr>
+                <td>
+                    <input id="js_in_valutata" type="text" value="100" class="span1">
+                </td>
+                <td>
+                    <select id="curv1" class="changablekurs">
+                        <option value="3">$</option>
+                        <option value="2">€</option>
+                        <option value="1">грн</option>
+                        </select>
+                </td>
+                <td style="line-height: 26px">=</td>
+                <td>
+                    <select id="curv2" class="changablekurs">
+                        <option value="1">грн</option>
+                        <option value="3">$</option>
+                        <option value="2">€</option>
+                    </select>
+                </td>
+                <td>
+                    <input id="js_out_valutata" type="text" value="" class="span1" readonly="readonly">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+
+    </div>
+
+
+
+
+    <!-- .BEGIN Help -->
+
+
+    
+<div class="box-panel">
+    <div class="head">
+        <i class="icon-head-help"></i> <a href="/help/" title="Помощь">Помощь</a>
+    </div>
+    <div class="panel">
+
+    <!-- (none) -->
+
+        <!-- include virtual="/pseudo_services/help_units/person_manager/?user_id=0&direction=(none)" -->
+        
+        
+            
+                <div class="support" id="support_manager_block">
+                    <img height="90" width="67" alt="Олейник Надежда" src="http://img.auto.ria.ua/images/demo/Nadia_Oleynik.png" class="photo">
+
+                    <div class="contact-data">
+                        <div class="title">
+                            Олейник Надежда
+                        </div>
+                        <p class="desc grey">Консультации по вопросам работы сайта AUTO.ria.ua</p>
+
+                        <div class="list-phone">
+                            <p class="phone"><i class="icon-phone"></i>(067) 430-09-14</p>
+                            <p class="phone hide"><i class="icon-phone"></i>0-800-21-00-12</p>
+                            <p class="phone hide"><i class="icon-phone"></i>(0432) 555-213</p>
+                            <p class="phone hide"><i class="icon-phone"></i>(0432) 555-200</p>
+                            <p class="phone hide"><i class="icon-phone"></i>(093) 561-61-61</p>
+                            <p class="phone hide"><i class="icon-phone"></i>(050) 416-86-88</p>
+                            <a href="javascript:void(0);" onclick="$$('div.list-phone p.phone').removeClass('hide'); this.addClass('hide');">
+                                Показать все телефоны<i class="icon-open"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <i class="icon-help"></i>
+                        <a href="/question/search/">Обратиться в службу поддержки</a>
+                    </p>
+                    <p>
+                        <i class="icon-bezpeka"></i>
+                        <a href="http://bezpeka.ria.ua/">Узнать о безопасности сделок от RIA.ua</a>
+                    </p>
+                </div>
+            
+            
+        
+    
+
+
+    </div>
+</div>
+
+
+
+<!-- include virtual="/html/common/help_block.html"-->
+
+
+    
+        <!--RIA2 baner-->
+        <div style="text-align: center; margin-bottom: 10px;" id="search_banner_300x100_1">
+
+        </div>
+
+        <!--/RIA2 baner-->
+    
+
+
+    <!-- .END Help -->
+
+
+
+      <!-- .BEGIN Market -->
+        <div class="box-panel">
+
+            <div class="head">
+                <i class="icon-head-market"></i>
+                    Автотовары
+                <span class="area">
+                    <a href="http://market.auto.ria.ua?utm_source=autoria&utm_medium=center_block&utm_campaign=markettovar" target="_blank">
+                              Смотреть все
+                             </a>
+                    <i class="icon-view"></i>
+                </span>
+            </div>
+                
+                    <div class="panel right-catalog-market">
+                        
+                        
+                    </div>
+                
+
+        </div>
+     <!-- .END Market -->
+    
+        <!--RIA baner-->
+        <div style="text-align: center; margin-bottom: 10px;" id="search_banner_300x100_2">
+
+        </div>
+
+
+
+        <div style="text-align: center; margin-bottom: 10px;" id="search_banner_test">
+        </div>
+    
+
+
+    <!-- .BEGIN Social Networks -->
+    <div class="box-panel">
+
+        <div class="head" style="margin-bottom: 14px;">
+            <i class="icon-head-feedback"></i>
+            Мы в социальных сетях
+        </div>
+
+        
+            <div id="vk_groups"></div>
+
+
+            <div id="fb-root"></div>
+
+             <div class="fb-like-box" data-href="http://www.facebook.com/AUTO.ria.ua" data-width="300" data-height="220" data-show-faces="true" data-stream="false" data-border-color="#ddd" data-header="true"></div>
+
+
+            <g:plus href="https://plus.google.com/110464453590594722256" width="300" height="69" ></g:plus>
+            <div style="margin-top: 10px">
+                <a href="https://twitter.com/AUTO_ria_ua" class="twitter-follow-button" data-show-count="true" data-lang="ru" data-size="large">Читать @AUTO_ria_ua</a>
+            </div>
+            
+        
+    </div>
+    <!-- .END Social Networks -->
+    <!-- .BEGIN Club -->
+    <div class="box-panel">
+        <div class="head">
+            <i class="icon-head-feedback"></i>
+            <a href='/forum' class="club-ria-ua"></a>
+        </div>
+        <div class="panel">
+            <strong class="size-15">Мы в социальных сетях:</strong>
+            <div class="social-network">
+                <a target="_blank" href="http://vkontakte.ru/auto_ria_ua" class="item-social" title="вконтакте">
+                    <i class="icon-social-vkontakte"></i>вконтакте
+                </a>
+                <a target="_blank" href="http://www.facebook.com/AUTO.ria.ua" class="item-social" title="Facebook">
+                    <i class="icon-social-facebook"></i>Facebook
+                </a>
+                <a target="_blank" href="http://twitter.com/auto_ria_ua" class="item-social" title="Twitter">
+                    <i class="icon-social-twitter"></i>Twitter
+                </a>
+                <a target="_blank" href="/pdd_online/" class="item-social" title="ПДД">
+                    <i class="icon-social-pddexam"></i>ПДД
+                </a>
+            </div>
+            <dl class="unordered-list">
+                <dt>
+                    Горячие темы:
+                </dt>
+                <dd>
+                    <a href='/forum/ac_7/34811.html'>Авто из-за рубежа против Наших б/у-шек!</a>
+                </dd>
+                <dd>
+                    <a href='/forum/experience_5/34819_0.html'>Схемы растаможки и доставки авто из-за рубежа</a>
+                </dd>
+                <dd>
+                    <a href='/forum/experience_5/59638_0.html'>
+                            Как наказать мошенников? И как не стать их жертвой?</a>
+                </dd>
+            </dl>
+            <div class="view-all">
+                <a href='/forum'>Смотреть все</a>
+                <i class="icon-view"></i>
+            </div>
+        </div>
+    </div>
+    <!-- .END Club -->
+
+
+     
+        <!-- .BEGIN Partner Informer -->
+        <div class="box-panel rocon">
+            <div class="panel partner-informer">
+            <p class="element-news">
+                            <a href="http://kommersant.ua/doc/2175908" class="images">
+                                <img width="70" height="70" src="http://www.kommersant.ua/Issues.photo/CorpUA/2013/04/20/KKI_006222_07431_1_t205.jpg" alt="" />
+                            </a>
+                            <span class="link-news">
+                                <a href="http://kommersant.ua/doc/2175908" title="Ъ: Полиция Бостона завершила операция по поимке террористов-взрывателей">Ъ: Полиция Бостона завершила операция по поимке террористов-взрывателей</a>
+                            </span>
+                        </p>
+<p class="element-news">
+                            <a href="http://www.kommersant.ua/doc/2170609" class="images">
+                                <img width="70" height="70" src="http://www.kommersant.ua/Issues.photo/KomUA/2013/064/KKI_017567_00959_1_t205.jpg" alt="" />
+                            </a>
+                            <span class="link-news">
+                                <a href="http://www.kommersant.ua/doc/2170609" title="Ъ: Импортные автомобили предлагают обложить еще одним сбором">Ъ: Импортные автомобили предлагают обложить еще одним сбором</a>
+                            </span>
+                        </p>
+<p class="element-news">
+                            <a href="http://kommersant.ua/doc/2164809" class="images">
+                                <img width="70" height="70" src="http://www.kommersant.ua/Issues.photo/CorpUA/2013/04/06/KVR_000083_00042_1_t205.jpg" alt="" />
+                            </a>
+                            <span class="link-news">
+                                <a href="http://kommersant.ua/doc/2164809" title="Ъ: «Укрзализныця» ввела именные билеты. В фамилии в билетах может быть допущено не более трех ошибок">Ъ: «Укрзализныця» ввела именные билеты. В фамилии в билетах может быть допущено не более трех ошибок</a>
+                            </span>
+                        </p>
+<p class="element-news">
+                            <a href="http://www.kommersant.ua/doc/2161502" class="images">
+                                <img width="70" height="70" src="http://www.kommersant.ua/Issues.photo/CorpUA/2013/04/03/KKI_017477_00106_1_t205.jpg" alt="" />
+                            </a>
+                            <span class="link-news">
+                                <a href="http://www.kommersant.ua/doc/2161502" title="Ъ: В ГАИ утвердили новые водительские права">Ъ: В ГАИ утвердили новые водительские права</a>
+                            </span>
+                        </p>
+
+            </div>
+        </div>
+        <!-- .END Partner Informer -->
+        <!-- .BEGIN Partner Informer -->
+        <!--24tv.ua-->
+        <div class="box-panel rocon">
+            <div class="panel partner-informer">
+                <div id='informer378'></div>
+                
+            </div>
+        </div>
+         <!--drugasmuga 50% ICTV-->
+        <div class="box-panel">
+            <!--
+<script src="http://fakty.ictv.ua/widgets/informers/informer.js?v1.9.14" type="text/javascript"/></script>
+<script type="text/javascript">
+var ictv_informer = "fakty_avtonews";
+get_ictvinformer (ictv_informer);
+</script>
+-->
+        </div>
+    
+    <!-- .END Partner Informer -->
+    <!-- .BEGIN About -->
+    <div class="box-panel" id="right_pannel_about_us">
+        <h3 class="head">
+            <a href="javascript:void(0);">О нас</a>
+            <i class="icon-open"></i>
+        </h3>
+        <div class="panel about-us">
+        
+        <h1> Авториа — базар авто Украины</h1>
+        Аutoria – это самый крупный <strong>базар авто Украины</strong>.
+        На сайте <strong>авториа</strong>
+        Вы сможете найти как <a href="http://auto.ria.ua/newauto/" title="новые авто">новые авто</a>,
+        так и объявления о продаже б/у автомобилей, купить или продать мотоциклы и другую мототехнику,
+        грузовые автомобили, прицепы и спецтехнику, автобусы и автодома, водный и даже воздушный транспорт.
+
+        <div class="hide">
+
+            <h2>Автопродажа на авториа</h2>
+            Продажа авто на <a href="http://auto.ria.ua" title="авториа">авториа</a> очень проста и удобна,
+            нужно только подать объявление о продаже автомобиля или другого транспорта, нового или подержанного.
+            Благодаря детальной рубрикации и большому набору опций автомобиля, добавление объявления на сайте авто
+            риа не заберет у Вас много времени.
+            <p>
+                При помощи удобной формы расширенного поиска на <i>авториа</i>, выбрать и купить авто можно без всяких усилий, так как:
+            </p>
+            <ul class="unordered-list">
+                <li>каждая модель и марка новых автомобилей в каталоге авториа имеет информацию о технических характеристиках, комплектации, информацию о автосалонах и акциях от них;</li>
+                <li>в базу объявлений о продаже Б/У авто на <strong>авториа</strong> ежедневно добавляется более 5000 новых предложений от продавцов.</li>
+            </ul>
+
+            <h2>Автосервисы на авториа</h2>
+            Раздел «Все для авто» на авториа содержит массу полезной информации (телефоны, адреса, тарифы и т.д.)
+            о таких автосервисах, как: <a href="http://auto.ria.ua/avtovikup/" title="автовыкуп">автовыкуп</a>,
+            <a href="http://auto.ria.ua/autoservice/" title="СТО">СТО</a>, <a href="http://auto.ria.ua/avtorazborka/" title="авторазборка">авторазборка</a>,
+            <a href="http://auto.ria.ua/strahovanie/" title="автострахование">автострахование</a>
+            и множество других автосервисов для Вашего автомобиля.
+            <p>
+                Помимо этого, на сайте <i>авториа</i> Вы найдете информацию об автошколах, расчитаете стоимость разтаможки автомобиля,
+                приобретете автодокументы, автозапчасти или другие автотовары к своему автомобилю.
+            </p>
+            <h2>Новости на авториа</h2>
+            <p>
+                Редактора сайта авториа ежедневно предоставляют актуальные и свежие новости:
+            </p>
+            <ul class="unordered-list">
+                <li>событиях и проишествиях в автомире;</li>
+                <li>о тенденциях и изменениях на автомобильном рынке Украины;</li>
+                <li>об обновлении законодательной базы в автомобильной сфере;</li>
+                <li>проводят тест-драйвы атомобилей и снабжают другой интересной информацией.</li>
+            </ul>
+            <p>
+                В заключение можно сказать, что <strong>Авториа</strong> - это проект, который сделан с душой командой профессионалов
+                и который постоянно развивается — появляются новые разделы, функции и сервисы для автолюбителей.
+                Так, что если Вам нужно выгодно и срочно продать или купить авто зарубежного или отечественного производителя,
+                подобрать оригинальные запчасти или подискать себе новое авто – добро пожаловать на авториа - базар авто Украины №1!
+            </p>
+        </div>
+    
+        </div>
+    </div>
+
+    <!-- .END About -->
+
+    <div class="box-panel">
+    <div class="boxed">
+        <!-- ##PANEL_Partneri_sayta## -->
+          <noindex>
+            <div style="float: left;">
+
+
+                <!--LiveInternet logo--><a href="http://www.liveinternet.ru/click"
+                target="_blank"><img src="//counter.yadro.ru/logo?12.6"
+                title="LiveInternet: показане число переглядів за 24 години, відвідувачів за 24 години й за сьогодні"
+                alt="" border="0" width="88" height="31"/></a><!--/LiveInternet-->
+                
+            </div>
+        </noindex>
+        <!-- /##PANEL_Partneri_sayta## -->
+    </div>
+</div>
+
+
+</div>
+                </div>
+<!-- .END Right Panel -->
+            </div>
+        </div>
+        <a href="/impressions" class="feedback"></a>
+        
+        
+    </div>
+    <!-- .BEGIN FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="footer-menu">
+
+            <div class="copyright">
+                &copy; 2004-2013 RIA.ua.<br />
+                Все права защищены
+            </div>
+
+            <div class="footer-signature">
+
+                <nav class="menu-footer">
+                    <a class="item" href='http://www.ria.ua/'>Объявления</a>
+                    <a class="item active" href='http://auto.ria.ua/'>Автомобили</a>
+                    <a class="item" href='http://dom.ria.ua/'>Недвижимость</a>
+                    <a class="item" href='http://rabota.ria.ua/'>Работа</a>
+                    <a class="item" href="http://hotels.ria.ua/">Гостиницы</a>
+                    <a class="item" href="http://avia.ria.ua/">Билеты</a>
+                </nav>
+
+                <div class="clear"></div>
+
+                <div class="left-bar__footer">
+
+                    <a href="http://auto.ria.ua/price/">Реклама на сайте</a><br />
+
+                    <!--i class="icon-mobile"></i-->
+                    <a href="http://m.auto.ria.ua/">Мобильная версия</a><br />
+
+                    <!--i class="icon-bezpeka"></i-->
+                    <a href="http://bezpeka.ria.ua/">Безопасные сделки</a>
+
+
+                </div>
+
+                <div class="signature__footer">
+
+                    <div class="right-bar__footer">
+                        <a target="_blank" title="Prom.ua — здесь находят клиентов (откроется в новом окне)" href="http://prom.ua">Prom.ua</a><br />
+                        
+                        
+                            <a target="_blank" href="/map/">Карта сайта</a><br/>
+                        
+                    </div>
+
+                    <a href="http://auto.ria.ua/question/search/">Помощь</a><br />
+                    <a target="_blank" href="http://auto.ria.ua/privacy-policy/">Политика конфиденциальности</a><br />
+                    <a href="http://cobrand.ria.ua/">Партнерские программы</a>
+
+                </div>
+
+            </div>
+        </div>
+<!-- Yandex.Metrika counter -->
+
+     
+<noscript><div><img src="//mc.yandex.ru/watch/91244" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+     
+<!-- /Yandex.Metrika counter -->
+
+
+    <div id="vk_api_transport"></div>
+
+
+
+<!-- MMI CMeter -->
+
+<noscript>
+<img
+src="http://juke.mmi.bemobile.ua/bug/pic.gif?siteid=auto.ria.ua"
+style="position:absolute;left:-1000px;"
+alt=""
+/>
+</noscript>
+
+
+<!-- /MMI CMeter -->
+
+     </div>
+</footer>
+</body>
+</html>
