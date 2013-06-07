@@ -91,8 +91,8 @@ class CatalogController extends Zend_Controller_Action
        
        if($autoId != '' && $step == 'addphoto'){
            
-         
-           //$this->view->headScript()->appendFile('/js/init_add_upload.js');
+            $this->view->headScript()->appendFile('/js/fileuploader.js');
+           $this->view->headScript()->appendFile('/js/init_add_upload.js');
 
            
            $this->render('addphoto');
