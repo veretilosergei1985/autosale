@@ -18,7 +18,7 @@ class CatalogController extends Zend_Controller_Action
     
     public function addAction()
     {
-       
+       $this->view->headLink()->appendStylesheet('/css/init_add.css');  
        $this->_helper->layout->setLayout('layout1');
        $this->view->headLink()->appendStylesheet('/css/init_add.css');
        
@@ -31,9 +31,8 @@ class CatalogController extends Zend_Controller_Action
        }
        
        if($step == 'autoinfo'){
-            $this->view->headScript()->appendFile('/js/init_add.js');
-            
 
+            $this->view->headScript()->appendFile('/js/init_add.js');
             $form = new Application_Form_AddCar();
             
             if($autoId == ''){
@@ -92,10 +91,9 @@ class CatalogController extends Zend_Controller_Action
        
        if($autoId != '' && $step == 'addphoto'){
            
-           $this->view->headLink()->appendStylesheet('/css/uploadify.css');
-           $this->view->headScript()->appendFile('/js/jquery.uploadify.min.js');           
+         
            //$this->view->headScript()->appendFile('/js/init_add_upload.js');
-           
+
            
            $this->render('addphoto');
            
