@@ -47,10 +47,9 @@ class qqUploadedFileXhr {
         imagejpeg($new_image, $distFileName, 75);
         
         // my
-        //chmod($distFileName, '777');
-        //chmod($srcFileName, '777');
-        chmod($new_image, '0755');
-        chmod($distFileName, '0755');
+
+        /////chmod($new_image, '0755');
+        ////chmod($distFileName, '0755');
         
         // my
     }
@@ -215,13 +214,13 @@ class qqFileUploader {
     }
 
 }
-//echo dirname(__FILE__) . '/agents/'; exit;
+
 // list of valid extensions, ex. array("jpeg", "xml", "bmp")
 $allowedExtensions = array("jpeg", "jpg", "gif", "png");
 // max file size in bytes
 $sizeLimit = 10 * 1024 * 1024;
 
 $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
-$result = $uploader->handleUpload(dirname(__FILE__) . '/agents/', true);
+$result = $uploader->handleUpload('/images/photos/', true);
 // to pass data through iframe you will need to encode all html tags
 echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);

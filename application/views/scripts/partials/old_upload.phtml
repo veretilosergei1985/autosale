@@ -1,0 +1,186 @@
+<section class="wrapper-add">
+
+    <div class="error" id="errorblock__addcars" style="display: none;">
+        
+    </div>
+
+    <div class="warning" style="display: none;">
+        <strong>На сайте проводятся технические работы с сервером фотографий.</strong><br>
+        <span>Пожалуйста, попробуйте позже.</span>
+    </div>
+
+    <div class="form-upload-photo clearfix">
+        <dl class="headbar-add multi-uploader">
+            <dt class="head-box"  id="oldtypeaddphotolink__addcars">
+            Добавить фото        </dt>
+            <dd class="item-help">
+                Максимальный размер одного фото: 5 Мб.<br/>
+                Форматы фото: GIF, JPG, PNG
+            </dd>
+            
+            <form method="POST" action="" enctype="multipart/form-data">
+                    <input id="autoId" type="hidden" value="<?php echo $this->autoId; ?>" name="auto_id">
+                    <?php echo $this->form->photo; ?>
+                    <?php echo $this->form->photo_submit; ?>
+            </form>
+            
+            <!--
+            <form enctype="multipart/form-data" action="http://auto.ria.ua?target=user" method="POST">
+                <input type="hidden" name="action" value="addimage" />
+                <input type="hidden" name="target" value="user" />
+                <input type="hidden" name="oldSystem" value="1" />
+                <input type="hidden" name="newProject" value="1" />
+                <input name="auto_id" type="hidden" value="11348377"/>
+                <input type="hidden" value="8388608" name="MAX_FILE_SIZE" />
+                <dd class="item">
+                    <input name="photo" type="file"/>
+                </dd>
+                <dd class="item">
+                    <input class="button green" name="boot" type="submit" value="Добавить фото"/>
+                </dd>
+            </form>
+            -->
+            
+        </dl>
+        <div class="othe-uploader">
+
+            <div class="item">
+                <i class="icon-add__photo"></i>
+                <a href="/catalog/add/step/addphoto/autoId/<?php echo $this->autoId; ?>">Сервисная система загрузки фотографий</a>
+            </div>
+            <div class="item" id="photoviammscontainer__addcars">
+                <i class="icon-add__mobile"></i>
+                <a href="javascript:void(0);" id="uploadphotoviamms__addcars">Загрузить фото с мобильного</a>
+            </div>
+            <div class="item" id="youtubecontainer__addcars">
+                <i class="icon-add__youtube"></i>
+                <a href="javascript:void(0);" id="uploadvideofromyoutube__addcars" class="new">Загрузить видео с Youtube</a>
+            </div>
+        </div>
+    </div>
+
+    <?php if(count($this->list) > 0){ ?>
+    
+        <div class="gallery-upload-photo corner-7" id="photogallerycontainer__addcars" style="display: block;">
+                    <div class="title">Главное фото:</div>
+        <?php foreach($this->list as $photo){ ?>  
+    
+          <?php if($photo->is_main == 1 && $photo->video_url == null){ ?>
+                    <div class="main-photo" >
+                        <div class="show-main-photo" id="mainphotocontainer__addcars">
+                            <img class="photo photo-135x90" src="/images/photos/<?php echo $this->autoId.'/'.$photo->image; ?>  " />
+                        </div>
+                        <p class="item-control" id="mainphotocontrols__addcars">
+                            <i class="icon-add__delete"></i>
+                            <a rel="<?php echo $photo->id; ?>" class="delete_main_photo" href="javascript:void(0);">удалить</a>
+                        </p>
+                        <label for="makemainphotobigger__addcars" class="bottom-bar">
+                            <input type="checkbox" id="makemainphotobigger__addcars" />
+                            Сделать главное фото <strong>большим</strong>
+                        </label>
+                    </div>
+                  
+
+              <?php } ?>
+          <?php } ?>
+
+
+                    <div id="uploadingphotocontainer__addcars" class="uploading-photo">
+                        <?php foreach($this->list as $photo){ ?>
+                            <?php if($photo->is_main == 0  && $photo->video_url == null){ ?>
+                                <div id="<?php echo $photo->id; ?>" class="item-photo">
+                                    <div class="photo photo-85x56">
+                                    <img width="85" src="/images/photos/<?php echo $this->autoId.'/'.$photo->image; ?>">
+                                    </div>
+                                    <div class="control-bar">
+                                        <p class="item-control">
+                                            <i class="icon-add__delete"></i>
+                                            <a rel="<?php echo $photo->id; ?>" class="delete_photo" href="javascript:void(0);">удалить</a>
+                                        </p>
+                                        <p class="item-control">
+                                            <i class="icon-add__star"></i>
+                                            <a class="do_main" rel="<?php echo $photo->id; ?>" href="javascript:void(0);">сделать главным</a>
+                                        </p>
+                                    </div>
+                                </div>
+                           <?php } ?>
+                        <?php } ?>
+                    </div>
+            
+                    <div class="clear"></div>
+                    <?php foreach($this->list as $photo){ ?>
+                       <?php if($photo->is_main == 0  && $photo->video_url !== null){ ?>
+                        
+                            <div class="uploading-video" id="uploadingvideocontainer__addcars" style="display: block;">
+                                <div class="title">Видео с Youtube:</div>
+
+                                <a href="<?php echo $photo->video_url; ?>" target="_blank" class="video-135x90" id="uploadedvideopreview__addcars">
+                                    <img src="/images/photos/<?php echo $this->autoId.'/'.$photo->image; ?>" title="">
+                                </a>
+
+                                <div class="control-bar">
+                                    <div class="title-video" id="youtubetitle__addcars">
+                                    </div>
+
+                                    <p class="item-control">
+                                        <i class="icon-add__delete"></i>
+                                        <a class="delete_video" rel='<?php echo $photo->id; ?>' href="javascript:void(0);">удалить</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="clear"></div>
+                     <?php } ?>
+               <?php } ?>
+                </div>
+           <?php } else { ?>
+        
+                    <div class="gallery-upload-photo corner-7" id="photogallerycontainer__addcars" style="display: none;">
+                    <div class="title">Главное фото:</div>
+                    
+                    <div class="main-photo" >
+                        <div class="show-main-photo" id="mainphotocontainer__addcars">
+                            <img class="photo photo-135x90" src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg" />
+                        </div>
+                        <p class="item-control" id="mainphotocontrols__addcars">
+                            <i class="icon-add__delete"></i>
+                            <a rel="" class="delete_main_photo" href="javascript:void(0);">удалить</a>
+                        </p>
+                        <label for="makemainphotobigger__addcars" class="bottom-bar">
+                            <input type="checkbox" id="makemainphotobigger__addcars" />
+                            Сделать главное фото <strong>большим</strong>
+                        </label>
+                    </div>
+
+
+
+                    <div id="uploadingphotocontainer__addcars" class="uploading-photo">
+
+                    </div>
+            
+
+                    <div class="clear"></div>
+                    <div class="uploading-video" id="uploadingvideocontainer__addcars" style="display: none;">
+                        <div class="title">Видео с Youtube:</div>
+
+                        <a href="http://www.youtube.com/watch?v=" target="_blank" class="video-135x90" id="uploadedvideopreview__addcars">
+                            <img src="" title="">
+                        </a>
+
+                        <div class="control-bar">
+                            <div class="title-video" id="youtubetitle__addcars">
+                            </div>
+
+                            <p class="item-control">
+                                <i class="icon-add__delete"></i>
+                                <a class="delete_video" rel='' href="javascript:void(0);">удалить</a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+        
+          <?php } ?>
+
+</section>

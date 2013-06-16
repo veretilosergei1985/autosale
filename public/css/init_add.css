@@ -3540,3 +3540,51 @@ root {
     left: 306px;
     top: 0;
 }
+
+.column label{
+    display: inline-block;
+    margin: 5px 0 5px 0;
+    padding-left: 3px;
+}
+.column input{
+
+    margin-right: 3px !important;
+}
+
+#safety-label{
+    display: none;
+}
+#comfort-label{
+    display: none;
+}
+#multimedia-label{
+    display: none;
+}
+#other-label{
+    display: none;
+}
+#state-label{
+    display: none;
+}
+#desc-label{
+    display: none;
+}
+#matchedCarCountry-label{
+    display: none;
+}
+
+.group-column .indent{
+    width: 200px;
+
+}
+
+#send_comments, #dont_comment{
+    margin-right: 3px !important;
+}
+
+#description__addcars{
+     height: 195px;
+}
+#chk_activate{
+    margin-right: 5px;
+}

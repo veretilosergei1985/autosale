@@ -48,7 +48,10 @@ class Application_Model_CarsMapper
             'vin' => $car->getVin(),     
             'exchange' => $car->getExchange(),     
             'auction' => $car->getAuction(),     
-            'status' => $car->getStatus()
+            'status' => $car->getStatus(),
+            'send_comments' => $car->getSendComments(),
+            'enable_comment' => $car->getEnableComment(),
+            'description' => $car->getDescription()
             
         );
         //echo "<pre>"; print_r($data); exit;
@@ -63,6 +66,8 @@ class Application_Model_CarsMapper
     {
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->joinLeft('mark','mark.id = cars.mark_id', array('mark_name'=>'name'))
+                                      ->joinLeft('model','model.id = cars.model_id', array('model_name'=>'name'))
                                       ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
                                       ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
                                       ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
@@ -79,21 +84,51 @@ class Application_Model_CarsMapper
                
         return $oResultSet;
      
-        
-        /*
+                
+    }
+    
+    public function findById($id, Application_Model_Cars $car)
+    {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $car->setId($row->id)
-            ->setTitle($row->title)
-            ->setDesription($row->description)
-            ->setYear($row->year)
-            ->setAdded($row->added);
-         * 
-         */
+        
+        $car->setId($row->id);
+        $car->setCatId($row->cat_id);
+        $car->setBodyId($row->body_id);
+        $car->setRegId($row->reg_id);
+        $car->setModelId($row->model_id);
+        $car->setMarkId($row->mark_id);
+        //$car->setCityId($data['']);
+        $car->setTransmissionId($row->transmission_id);
+        $car->setDriveId($row->drive_id);
+        $car->setDoors($row->doors);
+        $car->setFuelId($row->fuel_id);
+        $car->setFuelCity($row->fuel_city);
+        $car->setFuelRoute($row->fuel_route);
+        $car->setFuelCombine($row->fuel_combine);
+        $car->setColorId($row->color_id);
+        $car->setMetallic($row->metallic);
+        $car->setYear($row->year);
+        $car->setMileage($row->mileage);
+        $car->setVolume($row->volume);                              
+        $car->setPrice($row->price);
+        $car->setCurrency($row->currency);
+        $car->setVersion($row->version);
+        $car->setVin($row->vin);
+        $car->setExchange($row->exchange);
+        $car->setAuction($row->auction);
+        $car->setStatus($row->status);
+        $car->setAdded($row->added);
+
+        //$car->setTitle('Title');
+        $car->setDescription($row->description);
+        $car->setEnableComment($row->enable_comment);
+        $car->setSendComments($row->send_comments);
     }
+    
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();

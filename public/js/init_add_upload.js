@@ -1,148 +1,219 @@
 $(document).ready(function () {
 
-    // uploader photos
-    var uploadPropPhoto = new qq.FileUploader({
-        element:document.getElementById('photo_div'),
-        action:'/js/upload.php',
-        multiple:false,
-        onSubmit:function(id, fileName){
-            $('#loading_bar').fadeIn('fast');
-        },
-        onComplete:function (id, fileName, responseJSON) {
-            if (responseJSON.success) {
-                $('#loading_bar').fadeOut('fast');
-                var photoid = 'photo-' + responseJSON.index;
-                var photoIndex = parseInt($('#photo-index').val()) + 1;
-                $('#photo-index').val(photoIndex);
-                var html = '<div id="' + photoid + '" class="wrap-photo">' +
-                    '<img class="photo" src="' + responseJSON.photo + '" alt="" /><a href="#" title="Set as primary photo"' +
-                    ' onclick="setPrimaryPhoto(\'' + photoid + '\', \'' + responseJSON.photo + '\'); return false;"' +
-                    ' class="link-photo" style="display: none;">primary</a><a href="#" title="Delete photo"' +
-                    ' onclick="deletePhoto(\'' + photoid + '\', \'' + responseJSON.photo + '\'); return false;"' +
-                    ' class="link-photo link-delete" style="display: none;">delete</a>' +
-                    '<input type="hidden" name="photo-' + photoIndex + '" value="' + responseJSON.photo + '" /></div>';
-                $('#photo_div').append(html);
+    jQuery('.item-control .delete_photo').live('click',function(e) {
+        e.preventDefault();
+        
+        var photo_id = $(this).attr('rel');
+        
+        if(photo_id != ''){
+            jQuery.ajax({
+                url: '/display/deletephoto',
+                type:'POST',
+                data: {'photo_id' : photo_id, 'auto_id': $('#autoId').val() },
+                success: function(res) {
+                        
+                        if(res == 1){
+                            $('#'+photo_id).remove();
+                        }
+                        
+                    }
 
-                $('#' + photoid).bind('mouseover', function () {
-                    $(this).children('a').show();
-                });
 
-                $('#' + photoid).bind('mouseout', function () {
-                    $(this).children('a').hide();
-                });
-
-                validateAbilityEdit();
-            }
+            }); 
         }
     });
+    
+    jQuery('.do_main').live('click',function(e) {
+        e.preventDefault();
+        var elem = $(this);
+        
+        var newMainPhotoId = $(this).attr('rel');
+        var oldMainPhotoId = $(".delete_main_photo").attr('rel');
+        
+        if(typeof oldMainPhotoId !== "undefined" && typeof newMainPhotoId !== "undefined"){
 
-    $('.wrap-photo').bind('mouseover', function () {
-        $(this).children('a').show();
+                jQuery.ajax({
+                    url: '/display/changemainphoto',
+                    type:'POST',
+                    data: {'old_photo' : oldMainPhotoId, 'new_photo': newMainPhotoId, 'auto_id': $('#autoId').val() },
+                    success: function(res) {
+                            data = jQuery.parseJSON(res);
+                            if(data.result == 'ok'){
+
+                                $('#mainphotocontainer__addcars img').attr('src', data.new_path);
+                                $('#mainphotocontrols__addcars a.delete_main_photo').attr('rel', data.new_main_photo);
+                                $('#mainphotocontrols__addcars').show();
+                                
+                                $('#'+data.new_main_photo+' img').attr('src', data.old_path);
+                                $('#'+data.new_main_photo).attr('id', data.old_main_id);
+                                $(elem).attr('rel', data.old_main_id);
+                                $('#'+data.old_main_id+' .delete_photo').attr('rel', data.old_main_id);
+                           }
+
+                        }
+
+
+                }); 
+
+        }
     });
+    
 
-    $('.wrap-photo').bind('mouseout', function () {
-        $(this).children('a').hide();
-    });
+    jQuery('#mainphotocontrols__addcars a.delete_main_photo').live('click',function(e) {
+        e.preventDefault();
+        
+        var oldMainPhotoId = $(this).attr('rel');
+        var newMainPhotoId = $("#uploadingphotocontainer__addcars .item-photo:first-child").attr('id');
+        
+        if(typeof oldMainPhotoId !== "undefined"){
+            if(typeof newMainPhotoId !== "undefined"){
+                jQuery.ajax({
+                    url: '/display/deletemainphoto',
+                    type:'POST',
+                    data: {'old_photo' : oldMainPhotoId, 'new_photo': newMainPhotoId, 'auto_id': $('#autoId').val() },
+                    success: function(res) {
+                            data = jQuery.parseJSON(res);
+                            if(data.result == 'ok'){
 
-    $('#membership').bind('change', function () {
-        $.ajax({
-            type:'post',
-            url:'/properties/validate-add-photo/',
-            datatype:'html',
-            data:{
-                msid:$('#membership').val(),
-                countPhotos:$('.photo').length
-            },
-            success:function (answer) {
-                var data = JSON.parse(answer);
-                $('#limitCountPhoto').hide();
-                $('#uploadPropPhoto').show();
-                if (!data.allowAddPhoto) {
-                    $('#photo_div').empty();
-                }
+                                $('#mainphotocontainer__addcars img').attr('src', data.path);
+                                $('#mainphotocontrols__addcars a.delete_main_photo').attr('rel', data.main_photo);
+                                $('#mainphotocontrols__addcars').show();
 
-                return false;
+
+                                $('#'+data.main_photo).remove();
+                            }
+
+                        }
+
+
+                }); 
+            } else {
+            // only one photo exist
+            // remove from server, remove from table and insert def. image in main image
+            
+            jQuery.ajax({
+                    url: '/display/deletemainphoto',
+                    type:'POST',
+                    data: {'old_photo' : oldMainPhotoId, 'auto_id': $('#autoId').val() },
+                    success: function(res) {
+                            data = jQuery.parseJSON(res);
+                            if(data.result == 'ok'){
+
+                                $('#mainphotocontainer__addcars img').attr('src', 'http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg');
+                                $('#mainphotocontrols__addcars a.delete_main_photo').attr('rel', '');
+                                $('#mainphotocontrols__addcars').hide();
+
+
+                                $('#'+data.main_photo).remove();
+                            }
+
+                        }
+
+
+                }); 
             }
-        });
+        } 
     });
+    
+    
+    jQuery('#uploadvideofromyoutube__addcars').live('click',function(e) {
+        e.preventDefault();
+
+            jQuery.ajax({
+                url: '/display/showuploadvideopopup',
+                type:'POST',
+               success: function(res) {
+                       $('#uploadvideofromyoutube__addcars').after(res);                   
+                       
+                    }
+
+
+            }); 
+
+    });
+    
+    
+    jQuery('#cancelyoutubepopup__addcars').live('click',function(e) {
+        e.preventDefault();
+        $('#addyoutubevideopopup__addcars').hide();
+    });
+    
+    
+    jQuery('#uploadyoutubevideo__addcars').live('click',function(e) {
+        e.preventDefault();
+        $('#errorblock__addcars').empty();
+        $('#errorblock__addcars').hide();
+            jQuery.ajax({
+               url: '/display/downloadfromyoutube',
+               type:'POST',
+               data: {'url': $('#youtubeurlinput__addcars').val(), 'auto_id': $('#autoId').val() },
+               success: function(res) {
+                             data = jQuery.parseJSON(res);
+                             if(data.result == 'ok'){
+
+                                 $('.delete_video').attr('rel', data.id);
+                                 $('#uploadedvideopreview__addcars img').attr('src', data.path);
+                                 $('#uploadedvideopreview__addcars').attr('href', data.video_url[0]);
+                                 $('#uploadingvideocontainer__addcars').show();
+                                 
+                                 $('#addyoutubevideopopup__addcars').remove();
+                                 $('#photogallerycontainer__addcars').show();
+                                 
+                             } else if(data.result == 'error' && data.reason == 'video_exist') {
+                                 $('#errorblock__addcars').append(data.message);
+                                 $('#errorblock__addcars').show();
+                                 $('#addyoutubevideopopup__addcars').hide();
+                             } else if(data.result == 'error' && data.reason == 'no_found') {
+                                 $('#errorblock__addcars').append(data.message);
+                                 $('#errorblock__addcars').show();
+                                 $('#addyoutubevideopopup__addcars').hide();
+                             }
+                        }
+            }); 
+    });
+    
+    jQuery('.delete_video').live('click',function(e) {
+        e.preventDefault();
+        
+        var video_id = $(this).attr('rel');
+        
+        if(video_id != ''){
+            jQuery.ajax({
+                url: '/display/deletevideo',
+                type:'POST',
+                data: {'video_id' : video_id, 'auto_id': $('#autoId').val() },
+                success: function(res) {
+                        
+                        if(res == 1){
+                            $('.delete_video').attr('rel', '');
+                            $('#uploadedvideopreview__addcars img').attr('src', '');
+                            $('#uploadedvideopreview__addcars').attr('href', '');
+                            $('#uploadingvideocontainer__addcars').hide();
+                        }
+                        
+                    }
+
+
+            }); 
+        }
+    });
+    
+    jQuery('#state-13').live('click',function(e) {
+       
+       if ($(this).is(':checked')) {
+            $('#matchedCarCountry').show();
+            $('#matchedCarCountry').removeAttr('disabled');
+       } else {
+           $('#matchedCarCountry').hide();
+            $('#matchedCarCountry').attr('disabled', 'disabled');
+       } 
+       
+    });  
+    
+    $('#description__addcars').limit('1024','#maxdescriptionslength__addcars');
+    
+    
+   
 
 });
 
-function validateAbilityEdit() {
-    $.ajax({
-        type:'post',
-        url:'/properties/validate-ability-edit/',
-        datatype:'html',
-        data:{
-            edit:edit,
-            msid:$('#membership').val(),
-            countPhotos:$('.photo').length
-        },
-        success:function (answer) {
-            var data = JSON.parse(answer);
-
-            if (data.error) {
-                $.each(data.error, function (key, value) {
-                    $('#' + key).show();
-                    if (key == 'limitEditPhoto') {
-                        $('#uploadPropPhoto').remove();
-                        $('.wrap-photo').unbind();
-                        $('.wrap-photo a').remove();
-                    } else {
-                        $('#uploadPropPhoto').hide();
-                        $('.wrap-photo a').hide();
-                    }
-                });
-            }
-
-            return false;
-        }
-    });
-}
-
-function setPrimaryPhoto(photoId, photo) {
-    $.ajax({
-        type:'post',
-        url:'/properties/set-primary-photo-add/',
-        datatype:'html',
-        data:{
-            photo:photo
-        },
-        success:function (answer) {
-            if (answer == 'success') {
-                $('.primary-photo').removeClass('primary-photo');
-                $('#' + photoId).addClass('primary-photo');
-            }
-        }
-    });
-}
-
-function deletePhoto(photoId, photo) {
-    if ($('#' + photoId).hasClass('primary-photo')) {
-        alert('You cannot delete primary photo!');
-    } else {
-        $.ajax({
-            type:'post',
-            url:'/properties/delete-photo/',
-            datatype:'html',
-            data:{
-                photo:photo,
-                edit:edit,
-                msid:$('#membership').val(),
-                countPhotos:$('.photo').length
-            },
-            success:function (answer) {
-                var data = JSON.parse(answer);
-
-                if (data.success) {
-                    $('#' + photoId).detach();
-                }
-
-                if (data.allowAddPhoto) {
-                    $('#uploadPropPhoto').show();
-                    $('#limitCountPhoto').hide();
-                }
-            }
-        });
-    }
-}

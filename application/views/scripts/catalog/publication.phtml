@@ -1,0 +1,718 @@
+<div class="head-box">
+    Добавление объявления: Публикация
+    <span class="area grey">
+        Перейти к
+        <a class="bold" target="_blank" href="/mymenu/">Моему меню</a>
+    </span>
+</div>
+<nav class="progressive-bar step-3">
+    <a class="item-tab active" href="http://auto.ria.ua/addauto/autoinfo/autoId/11381974">
+        Шаг 1.
+        <em>Объявление</em>
+    </a>
+    <a class="item-tab active" href="http://auto.ria.ua/addauto/addphoto/autoId/11381974">
+        Шаг 2.
+        <em>фото и подробная информация</em>
+    </a>
+    <a class="item-tab focuse" href="http://auto.ria.ua/addauto/publication/autoId/11381974">
+        Шаг 3.
+        <em> Публикация </em>
+    </a>
+</nav>
+<div class="head-box line">
+    <a href="http://auto.ria.ua/addauto/addphoto/autoId/11381791" class="button mini">
+        &larr; Назад                    
+    </a>
+    Публикация
+</div>
+
+
+
+<div class="form-add-auto">
+    <div class="warning icons" id="phone_ro_confirm_warning_message">
+        Обратите внимание! Ваш номер телефона <strong>(093) 123-69-91</strong> может использоваться другими пользователями.
+        <a href="javascript:void(0);" onClick="new Ria_Auto_Common_Popup_ConfirmPhone({'section': 'registration', 'phone': {'phone_full_formatted': '(093) 123-69-91', 'number': '1236991', 'code': '093', 'is_mobile': true}});
+                return false;">Подтвердите телефон</a>, чтоб закрепить его за текущей учетной записью.
+    </div>
+
+    <form method="post" class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="">
+        <section class="box-panel">
+
+            <div class="head-publication" style="margin: 12px 0 25px;">
+                Ваше объявление <strong><?php echo $this->data->mark_name . " " . $this->data->model_name . " " . $this->data->year; ?></strong>
+                <strong class="red"><?php if($this->data->status == 'waiting') echo 'еще не опубликовано'; else echo 'уже опубликовано'; ?></strong>
+            </div>
+            <div class="ticket-preview">
+                <div class="head-box">
+                    Предварительный просмотр Вашего объявления:
+                </div>
+
+                <div class="ticket-item" id="previewblock__addcars">
+
+                    <div class="content-bar">
+                        <a href="javascript:void(0);" class="photo photo-135x90" target="_blank" id="previewphoto__addcars">
+
+                            <img src="<?php echo '/images/photos/' . $this->auto_id . "/" . $this->main_photo; ?>" />
+
+                        </a>
+
+                        <div class="content">
+
+                            <div class="head-ticket">
+                                <span class="city">
+                                    <a href="javascript:void(0);"><?php echo $this->data->reg_name; ?></a>
+                                </span>
+                                <h3 class="head-car" id="previewtitle__addcars">
+                                    <a href="javascript:void(0);" target="_blank"><?php echo $this->data->mark_name . " " . $this->data->model_name . " " . $this->data->version; ?></a> <?php echo $this->data->year; ?>
+                                </h3>
+                            </div>
+                            
+                            <div class="definition-data">
+                                <div class="price">
+                                    <?php
+                                        if($this->data->currency == 'USD')
+                                            echo '$<span class="green">'.$this->data->price.'</span>';
+                                        else if($this->data->currency == 'EUR')
+                                            echo '€<span class="green">'.$this->data->price.'</span>';
+                                        else if($this->data->currency == 'UAH')
+                                            echo '<span class="green">'.$this->data->price.'</span> грн.';
+                                    
+                                    ?>
+                                </div>
+                                <ul class="characteristic">
+                                    <li class="item-char" title="Тип топлива">
+                                        <i class="icon-char-fuel"></i>
+                                        <?php echo $this->data->fuel_type; ?>
+                                        ,&nbsp;
+                                        <?php echo $this->data->volume; ?> л.
+                                    </li>
+                                    <li class="item-char" title="Пробег">
+                                        <i class="icon-mileage"></i>
+                                         <?php echo $this->data->mileage; ?> тыс. км.
+                                    </li>
+                                    <li class="item-char" title="Тип коробки передач">
+                                        <i class="icon-char-transmission"></i>
+                                         <?php echo $this->data->trans_type; ?>
+                                    </li>
+                                    <li class="item-char" title="Цвет кузова">
+                                        <i class="icon-char-color"></i>
+                                        <?php echo $this->data->color; ?><?php if($this->data->metallic == 1) echo ' металлик'; ?> 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="descriptions-ticket">
+                            <?php echo substr($this->data->description, 0, 60); if(strlen($this->data->description) > 82) echo '...'; ?>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="box-panel">
+
+            <div class="head-publication">
+                <strong>Опубликовать</strong> объявление:
+            </div>
+            <div class="theme-publication">
+                <table class="publication" width="100%" id="publicationtable__addcars">
+                    <input type="hidden" name="current_publications_count" value="2"/>
+                    <colgroup class="check"></colgroup>
+                    <colgroup class="type"></colgroup>
+                    <colgroup class="cycle"></colgroup>
+                    <colgroup class="price"></colgroup>
+                    <tbody>
+                        <tr class="active">
+                            <td class="check">
+                                <input name="publication__addcars" disabled="disabled" value="1" type="checkbox" checked="checked" id="publication__addcars"/>
+                                <input name="free" value="1" type="hidden"/>
+                            </td>
+                            <td class="type">
+                                <strong>Публикация</strong> объявления на сайте AUTO.ria.ua
+                                <span class="wrap-tooltip">
+                                    <a id="showfreepublicationhelp__addcars" class="help-link" href="javascript:void(0);">Подробнее»</a>
+                                    <span id="freepublicationhelp__addcars" class="tooltip larr __top" style="display: none;">
+                                        <a href="javascript: void(0);" class="close">×</a>
+                                        <ul>
+                                            <li>
+                                                публикация объявление сроком на 1 месяц                                        </li>
+                                            <li>
+                                                обычное объявление ниже ТОП-объявлений в поиске                                        </li>
+                                            <li>
+                                                фото обычного размера в объявлении                                        </li>
+                                        </ul>
+                                    </span>
+                                </span>
+                                <p>
+                                    <span>Доступно публикаций: </span><strong style="color: #527B02;">2</strong>
+                                    <br/>
+                                    <span>Будет использовано публикаций: </span><strong style="color: #527B02;" id="add_cars__publication_count_which_will_be_used">1</strong>
+                                </p>
+                            </td>
+                            <td class="cycle">
+                                <?php echo $this->form->publish_period; ?>
+                            </td>
+                            <td class="price">
+                                <?php echo $this->form->simple_price; ?>
+                                <span class="price-through" style="font-size: 14px;">
+                                    <span class="through" id="publish_cost_view" style="font-size: 16px;"><?php echo (int)$this->prices['simple']; ?></span> грн.
+                                </span>
+                                <strong class="count" id="publish_cost">0</strong> грн.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="box-panel">
+            <input id="publications_app_is_activated" type="hidden"  name="publications_app_is_activated" value="0">
+            <div class="head-publication">
+
+                    <?php echo $this->form->chk_activate; ?>
+
+            </div>
+            <div class="theme-publication">
+                <div class="title-republication" id="publications_app_block_head_active" style="display:none;" >
+                    <i class="icon-add__rel"></i>
+                    Размещение объявления на сайте автоматически продлится еще на 1 месяц   за счет имеющихся у Вас публикаций.
+                </div>
+                <div id="publications_app_block_head_non_active" >
+                    <i class="icon-add__rel"></i>
+                    Размещение объявления на сайте не будет продлеваться автоматически.
+                    <div style="padding-left: 30px">По окончанию срока публикации оно переместится в Архив.</div>
+                </div>
+                <!--            <div class="title-republication" id="publications_app_block_head_pref_descr" style="display:none;">
+                                Вы можете настроить автоматическую перепубликацию Вашего объявления по окончании срока публикации:
+                            </div>-->
+
+                <div class="table-publication" id="publications_app_block_preferences_non_actived" style="display:none;">
+                    <div class="status-republishing">
+                        <span class="size15">Повторная публикация:</span>
+                        <strong class="status red">
+                            <i class="icon-add__disable"></i>
+                            выключена
+                        </strong>
+                        <i class="deliter-rarr"></i>
+                        <a href="javascript:void(0);" class="button green" id="publications_app_btn_activate">Включить</a>
+                        <i class="deliter-rarr"></i>
+                        <a target="_blank" href="http://help.ria.ua/index.php?/Knowledgebase/Article/View/419/94/avtomticheskja-povtornja-publikcija-sut-servis-i-ego-nstrojjki">Подробней о повторной публикации»</a>
+                    </div>
+                </div>
+                <div class="table-publication" id="publications_app_block_preferences_actived" style="display:none;" >
+                    <div class="status-republishing">
+
+                        <span class="size15">Повторная публикация:</span>
+
+                        <strong class="status green">
+                            <i class="icon-add__enable"></i>
+                            включена
+                        </strong>
+
+                        <i class="deliter-rarr"></i>
+                        <a href="javascript:void(0);" class="button grey" id="publications_app_btn_disactivate">Выключить</a>
+                        <i class="deliter-rarr"></i>
+                        <a target="_blank" href="http://help.ria.ua/index.php?/Knowledgebase/Article/View/398/94/publikcija-objavlenija-n-sjjte-autoriaua">Подробней о повторной публикации»</a>
+
+                    </div>
+
+                    <div class="options-republish">
+
+                        Настройки очистки <strong>статистики и комментариев</strong> объявления:
+
+                        <div class="base-options-republish">
+                            <label class="item" for="publications_app_chk_reset_comments">
+                                <input id="publications_app_chk_reset_comments" type="checkbox" checked="true" name="on_republ_reset_comments" value="1">
+                                Удалять торги, обмены, комментарии после повторной публикации
+                            </label>
+
+                            <label class="item" for="publications_app_chk_reset_counters">
+                                <input id="publications_app_chk_reset_counters" type="checkbox" checked="true" name="on_republ_reset_counters" value="1">
+                                Удалять информацию о количестве просмотров после повторной публикации
+                            </label>
+                            <label class="item" for="publications_app_chk_reset_messages">
+                                <input id="publications_app_chk_reset_messages" type="checkbox"  name="on_republ_reset_messages_stat" value="1">
+                                Обнулять статистику полученных сообщений
+                            </label>
+
+                        </div>
+
+                        <label for="publications_app_chk_save_preferences">
+                            <input id="publications_app_chk_save_preferences" type="checkbox"  name="save_app_attr_for_user" value="1">
+                            Предлагать эти настройки при публикации новых объявлений
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <section class="box-panel preoder-publication">
+            <div class="head-publication">
+                Сделать объявление более <strong>привлекательным</strong>:
+            </div>
+            <nav class="list-tabs-publication">
+                <label class="tab-publication active" for="promo_individual__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_Individual', 'Step3_Simple']);">
+                    <input type="radio" name="promo_type" id="promo_individual__addcars" checked="checked" value="1">
+                    <strong>Индивидуальное</strong> продвижение
+                </label>
+                <label class="tab-publication" for="promo_popular__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_TOP', 'Step3_Simple']);">
+                    <input type="radio" name="promo_type" id="promo_popular__addcars" value="2">
+                    <strong>ТОП</strong> продвижение
+                </label>
+                <label class="tab-publication" for="promo_sms__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_SMS', 'Step3_Simple']);">
+                    <input type="radio" name="promo_type" id="promo_sms__addcars" value="3">
+                    <strong>SMS</strong> продвижение
+                </label>
+                <input name="promo_params" type="hidden" id="promo_params__addcars"/>
+            </nav>
+
+            <div class="theme-publication">
+                <div class="advert-position">
+
+                    <div class="area-publication">
+                        <div class="item" id="become_a_number_one_container__addcars">
+                            <i class="icon-up-ticket"></i>
+                            <a href="javascript:void(0);" id="become_a_number_one__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Link_BecomeN1', 'Step3_Simple']);">Стать <strong onclick="document.fireEvent('click', {target: $('become_a_number_one__addcars')});">№1</strong> в поиске</a>
+                        </div>
+                        <div class="item" id="getfishkiandhotcount_container__addcars">
+                            <i class="icon-up-ticket"></i>
+                            <a href="javascript:void(0);" id="getfishkiandhotcount__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Position', 'Step3']);">На <strong onclick="document.fireEvent('click', {target: $('getfishkiandhotcount__addcars')});">1 позицию</strong> выше</a>
+                        </div>
+                    </div>
+                    <div class="advert-item-position">
+                        <strong class="curent-position">№ <span id="currentcarposition__addcars">256</span></strong>
+                        в результатах поиска <strong>BMW 525</strong> в Украине
+                        <div class="item-area">
+                            <i class="icon-add__inform"></i>
+                            <a href="javascript:void(0);" id="show_promo_help__addcars">Подробнее</a>
+                            <span class="tooltip uarr __top __left" style="display: none;" id="individual_promo_help__addcars">
+                                <a href="javascript: void(0);" class="close">×</a>
+                                <p>Индивидуальное объявление - объявление, к которому Вы самостоятельно подбираете необходимые элементы продвижения и их количество. Определяете место объявления в поисковой выдаче. Регулируете цену за объявление, исходя из выбранных Вами опций продвижения</p>
+                            </span>
+                            <span class="tooltip uarr __top __left" style="display: none;" id="popular_promo_help__addcars">
+                                <a href="javascript: void(0);" class="close">×</a>
+                                Популярное объявление - объявление с максимальным набором опций продвижения, который ставит его в ряд с самыми популярными и просматриваемыми объявлениями сайта
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="table-publication" id="regular_promo_table__addcars">
+
+                    <table class="publication" width="100%" >
+
+                        <colgroup class="check"></colgroup>
+                        <colgroup class="type"></colgroup>
+                        <colgroup class="cycle"></colgroup>
+                        <colgroup class="price"></colgroup>
+
+                        <tbody>
+
+                            <tr >
+                                <td class="check">
+                                    <input name="hot_publication" value="1" type="checkbox"  id="hotpublication__addcars">
+                                </td>
+                                <td class="type">
+                                    <strong>Добавить</strong> объявление в <strong>“ТОП”</strong>.
+
+                                    <span class="wrap-tooltip">
+                                        <a class="help-link" id="showhotpublicationshelp__addcars" href="javascript:void(0);">Подробнее»</a>
+                                        <span id="hotpublicationhelp__addcars" class="tooltip larr __top" style="display: none;">
+                                            <a href="javascript: void(0);" class="close">×</a>
+                                            <ul>
+                                                <li>
+                                                    размещаются первыми в результатах поиска                                    </li>
+                                                <li>
+                                                    имеют большое привлекательное фото                                    </li>
+                                                <li>
+                                                    выделены цветом и плашкой со “словом-магнитом”                                    </li>
+                                            </ul>
+                                        </span>
+                                    </span>
+
+                                    <div class="swich-title-ad">
+                                        <span class="item-ad">
+                                            <input type="radio" name="ad_title" value="1" id="hottypetitle__addcars" checked="checked">
+                                            <label class="label-hot" for="hottypetitle__addcars"></label>
+                                        </span>
+                                        <span class="item-ad">
+                                            <input type="radio" name="ad_title" value="2" id="lesstypetitle__addcars" >
+                                            <label class="label-less" for="lesstypetitle__addcars"></label>
+                                        </span>
+                                        <span class="item-ad">
+                                            <input type="radio" name="ad_title" value="3" id="urgentlytypetitle__addcars" >
+                                            <label class="label-urgently" for="urgentlytypetitle__addcars"></label>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td class="cycle">
+                                    <span class="switch-select">
+                                        <input name="hot_count" type="hidden" value="2" id="hotdaycounthidden__addcars"/>
+                                        <input class="elem-input" value="2 недели" type="text" id="hotdaycount__addcars">
+                                        <a href="javascript:void(0);" class="arr-up"></a>
+                                        <a href="javascript:void(0);" class="arr-down"></a>
+                                    </span>
+                                    <div id="hotpublication_promo_block__addcars" style="display: none;">
+                                        <strong class="green" id="hotpublication_promo_value__addcars">10 недель</strong> в "ТОП"
+
+                                        <p class="item-edit">
+                                            <i class="icon-add__edit"></i>
+                                            <a href="javascript:void(0);" class="link-edit">Изменить</a>
+                                        </p>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <span class="price">
+                                        <strong class="count" id="hotsum__addcars">80</strong> грн.
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr >
+                                <td class="check">
+                                    <input name="urgent_publication" value="1" type="checkbox"  id="urgentpublication__addcars" bind="big_main_photo"/>
+                                </td>
+                                <td class="type">
+
+                                    <strong>Поднять</strong> объявления в результатах поиска с помощью<br />
+                                    <strong>Фишек</strong>&nbsp;<i class="icon-add__chips"></i>
+
+                                    <span class="wrap-tooltip">
+                                        <a class="help-link" id="showurgentpublicationhelp__addcars" href="javascript:void(0);">Подробнее»</a>
+                                        <span id="urgentpublicationhelp__addcars" class="tooltip larr __top" style="display: none;">
+                                            <a href="javascript: void(0);" class="close">×</a>
+                                            <ul>
+                                                <li>
+                                                    больше фишек - больше звонков от покупателей                                    </li>
+                                                <li>
+                                                    имеют большое привлекательное фото                                    </li>
+                                                <li>
+                                                    поднимают в поиске обычные и ТОП-объявления                                    </li>
+                                            </ul>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="cycle">
+                                    <span class="switch-select">
+                                        <input name="fishki_count" value="14" type="hidden" id="fishkicounthidden__addcars"/>
+                                        <input class="elem-input" value="14 фишек" type="text" id="fishkicount__addcars">
+                                        <a href="javascript:void(0);" class="arr-up"></a>
+                                        <a href="javascript:void(0);" class="arr-down"></a>
+                                    </span>
+                                    <div id="urgentpublication_promo_block__addcars" style="display: none;">
+                                        <strong id="urgentpublication_promo_value__addcars">
+                                            <span id="urgentpublication_promo_count__addcars" class="green">10</span> <span id="urgentpublication_promo_word__addcars">фишек</span>
+                                        </strong>
+                                        <p class="item-edit">
+                                            <i class="icon-add__edit"></i>
+                                            <a href="javascript:void(0);" class="link-edit">Изменить</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="price">
+                                        <strong class="count" id="fishkisum__addcars">14</strong> грн.
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="warning icons" id="sms_promo_warning__addcars" style="display: none;">
+                    Оплата с помощью SMS дороже других способов оплаты на сайте. В нее дополнительно включается стоимость услуг оператора
+                </div>
+
+                <div class="table-publication" id="sms_promo_table__addcars" style="display: none;">
+                    <table class="publication">
+                        <input name="pay_via_sms" id="pay_via_sms__addcars" type="hidden" value="0"/>
+                        <input name="pay_via_sms_hot" id="pay_via_sms_hot__addcars" type="hidden" value="0"/>
+                        <input name="pay_via_sms_fishki" id="pay_via_sms_fishki__addcars" type="hidden" value="0"/>
+                        <input name="pay_via_sms_publications" id="pay_via_sms_publications__addcars" type="hidden" value="0"/>
+                        <colgroup class="public"></colgroup>
+                        <colgroup class="price-b"></colgroup>
+                        <colgroup class="position"></colgroup>
+                        <colgroup class="but-sms"></colgroup>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel-total-pay" id="total_pay_container__addcars">
+
+                <dl class="total-to-pay">
+                    <dt class="heading">
+                    Всего к оплате:
+                    </dt>
+                    <dd class="price">
+                        <strong id="totalamount__addcars" class="count">94</strong> грн.
+                    </dd>
+                </dl>
+
+                <div class="helpbar-pay">
+
+                    <div class="list-type-pay">
+
+                        <em>Вы сможете оплатить через:</em>
+                        <a href="javascript:void(0);" id="sms_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_SMS', 'Step3_Simple'])" class="icon-add__sms" title="SMS" style="display: none;"></a>
+                        <a href="javascript:void(0);" id="mastercard_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Mastercard', 'Step3_Simple'])" class="icon-add__mastercard" title="Платежная карта"></a>
+                        <a href="javascript:void(0);" id="visa_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Visa', 'Step3_Simple'])" class="icon-add__visa" title="Платежная карта"></a>
+                        <a href="javascript:void(0);" id="liqpay_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Liqpay', 'Step3_Simple'])" class="icon-add__liqpay" title="LiqPay"></a>
+                        <a href="javascript:void(0);" id="privat_payment_type__addcars" onclick=" _gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Privat24', 'Step3_Simple'])" class="icon-add__privat" title="Приват24"></a>
+                        <a href="javascript:void(0);" id="bank_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_BankKassa', 'Step3_Simple'])" class="icon-add__bank" title="Банковская касса"></a>
+                        <a href="javascript:void(0);" id="webmoney_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_WebMoney', 'Step3_Simple'])" class="icon-add__webmoney" title="WebMoney"></a>
+                        <a href="javascript:void(0);" id="ria_payment_type__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Медиакарта', 'Step3_Simple'])" class="icon-add__media" title="Медиакарта RIA"></a>
+                    </div>
+                    <dl class="user-account">
+                        <dt class="item-title">
+                        На Вашем счету:
+                        </dt>
+                        <dd class="item-row">
+                            <a href="javascript:void(0);"><strong class="green" id="user_balance__addcars">0</strong></a> грн.
+                            <a href="https://oplaty.ria.ua/auto/" target="_blank">пополнить</a>
+                        </dd>
+                    </dl>
+
+                </div>
+
+                <div class="submit-payment-form">
+                    <a id="publicatebutton__addcars" href="javascript:void(0);" class="button green">
+                        Опубликовать объявление                                    </a>
+                </div>
+
+            </div>
+        </section>                        
+        <script>
+            document.addEvent('domready', function() {
+                Ria_Autoloader.loadClass('Ria_Auto_Add_Form_Publication', function() {
+                    (new Ria_Auto_Add_Form_Publication({
+                        autoId: '11381791',
+                        autoPublished: '',
+                        editAuto: false,
+                        upToLimit: false,
+                        phoneRequired: '',
+                        phoneInBlackList: '',
+                        refreshdate_forecast: '1',
+                        mainTable: 'publicationtable__addcars', //ID основной таблицы
+                        mainTableAction: 'http://auto.ria.ua/user/buypoints', //Ссылка на которую будет отсылаться форма, если в ней выбран какой-либо из вариантов платного размещения
+                        publicateButton: 'publicatebutton__addcars', //ID кнопки по нажатию на которую будут отправляться данные для публикации
+                        activeButtonClass: 'green',
+                        autoPosition: 'currentcarposition__addcars', //Позиция авто в поиске
+                        getFishkiAndHotCount: 'getfishkiandhotcount__addcars',
+                        getFishkiAndHotContainer: 'getfishkiandhotcount_container__addcars',
+                        disableButtonClasses: ['grey', 'active'],
+                        publicationForm: 'publicationform__addcars', //ID формы, которую нужно будет отправить
+                        closeHelpButtonClass: 'close', //Класс элемента, по клику на который будет закрываться подсказка
+                        totalAmountElement: 'totalamount__addcars', //ID элемента, в котором содержится
+                        activeRowClass: 'active',
+                        disabledRowClass: 'disabled',
+                        delete_ads: 'delete_ads',
+                        publish_period: 'publish_period',
+                        publish_cost: 8,
+                        default_publication_cost: 8,
+                        default_sms_markup: 1.25,
+                        publish_date_end: 'publish_date_end',
+                        publish_date_end_pref: 'до ',
+                        publish_date_end_suff: ' г.',
+                        current_publications_count: 2,
+                        publicationsWhichWillBeUsed: 'add_cars__publication_count_which_will_be_used',
+                        publicationsCostCrossed: 'publish_cost_view',
+                        total_pay_container: 'total_pay_container__addcars',
+                        publications_app: {
+                            chk_activate_app: 'publications_app_chk_activate', //ID чекбокса, для отображения автоматической перепабликации (АПП)
+                            blocks: {
+                                head_non_active: 'publications_app_block_head_non_active',
+                                head_active: 'publications_app_block_head_active',
+                                preferences_actived: 'publications_app_block_preferences_actived',
+                                preferences_non_actived: 'publications_app_block_preferences_non_actived',
+                                btn_activate: 'publications_app_btn_activate',
+                                btn_disactivate: 'publications_app_btn_disactivate',
+                                app_is_activated: 'publications_app_is_activated',
+                                checkboxes: {
+                                    reset_comments: 'publications_app_chk_reset_comments',
+                                    reset_counters: 'publications_app_chk_reset_counters',
+                                    reset_messages: 'publications_app_chk_reset_messages',
+                                    save_preferences: 'publications_app_chk_save_preferences',
+                                }
+                            }
+//                    chk_activate_app : 'chk_activate_publications_app', //ID чекбокса, для отображения мен автоматической перепабликации (АПП)
+                        },
+                        freePublication: {
+                            showHelp: 'showfreepublicationhelp__addcars', //ID элемента по клику на который будет показываться попап с хелпом
+                            help: 'freepublicationhelp__addcars' //ID попапа с хэлпом
+                        },
+                        smsPromo: {
+                            pay_via_sms: 'pay_via_sms__addcars',
+                            hot: 'pay_via_sms_hot__addcars',
+                            fishki: 'pay_via_sms_fishki__addcars',
+                            publications: 'pay_via_sms_publications__addcars'
+                        },
+                        hotPublication: {
+                            showHelp: 'showhotpublicationshelp__addcars', //ID элемента по клику на который будет показываться попап с хелпом
+                            help: 'hotpublicationhelp__addcars', //ID попапа с хэлпом
+                            countInput: 'hotdaycount__addcars', //ID элемента, из которого берется количество недель горячего
+                            hiddenInput: 'hotdaycounthidden__addcars', //ID скрытого инпута, где будет храниться текущее число введенных недель горячего
+                            hotPrice: 40, //Цена одной недели горячего по умолчанию
+                            defaultCount: 1, //Количество недель горячего по умолчанию
+                            promoModeBlock: 'hotpublication_promo_block__addcars', //Блок который будет показываться когда человек выбрал режим продвижения "Популярное объявление"
+                            promoModeValue: 'hotpublication_promo_value__addcars',
+                            words: {
+                                one: 'неделя',
+                                two: 'недели',
+                                many: 'недель'
+                            }
+                        },
+                        urgentPublication: {
+                            showHelp: 'showurgentpublicationhelp__addcars', //ID элемента, по клику на который будет показываться попап с хелпом
+                            help: 'urgentpublicationhelp__addcars', //ID попапа с хелпом
+                            countInput: 'fishkicount__addcars', //ID элемента, из которого берется количество фишек
+                            hiddenInput: 'fishkicounthidden__addcars', //ID скрытого инпута, где будет храниться текущее число введенных фишек
+                            fishkiPrice: 1, //Цена одной фишки по умолчанию
+                            defaultCount: 1, //Количество фишек по умолчанию
+                            discount: 1, //Скидки на фишки для пакета "Автопродажа"
+                            promoModeBlock: 'urgentpublication_promo_block__addcars', //Блок который будет показываться когда человек выбрал режим продвижения "Популярное объявление"
+                            promoModeValue: 'urgentpublication_promo_value__addcars',
+                            promoModeCount: 'urgentpublication_promo_count__addcars',
+                            promoModeWord: 'urgentpublication_promo_word__addcars',
+                            words: {
+                                one: 'фишка',
+                                two: 'фишки',
+                                many: 'фишек'
+                            }
+                        },
+                        checkboxes: {
+                            publication: 'publication__addcars',
+                            hot: 'hotpublication__addcars',
+                            urgent: 'urgentpublication__addcars'
+                        },
+                        refreshDate: {
+                            hiddenInput: 'refreshdatehidden__addcars'
+                        },
+                        counter: {
+                            upButtonClass: 'arr-up', //Класс элемента, который увеличивает счетчик
+                            downButtonClass: 'arr-down', //Класс элемента, который уменьшает счетчик
+                            inputElementClass: 'elem-input', //Класс элемента, который является счетчиком :)
+                            container: 'switch-select' //Класс элемента, в котором все это содержится
+                        },
+                        submitButtonEvents: {
+                            0: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_Simple'])",
+                            1: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Locate'])",
+                            2: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Locate_Hot'])",
+                            3: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Locate_Hot_Fishki'])",
+                            4: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Locate_Fishki'])",
+                            5: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Hot'])",
+                            6: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Hot_Fishki'])",
+                            7: "_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Publish', 'Step3_with_Fishki'])"
+                        },
+                        submitButtonValues: {
+                            0: 'Опубликовать',
+                            1: 'Оплатить и опубликовать',
+                            2: 'Оплатить'
+                        },
+                        preview: {
+                            previewBlock: 'previewblock__addcars',
+                            previewTitle: 'previewtitle__addcars',
+                            previewPhoto: 'previewphoto__addcars',
+                            urgentClass: 'paid',
+                            hotLabel: 'i.label-hot',
+                            lessLabel: 'i.label-less',
+                            urgentlyLabel: 'i.label-urgently',
+                            labelInputs: {
+                                0: 'hottypetitle__addcars',
+                                1: 'lesstypetitle__addcars',
+                                2: 'urgentlytypetitle__addcars'
+                            },
+                            photo185x120: {
+                                'class': 'photo-185x120',
+                                'suffix': 'm'
+                            },
+                            photo135x90: {
+                                'class': 'photo-135x90',
+                                'suffix': 'sx'
+                            }
+                        },
+                        calculation: {
+                            fishkiSum: 'fishkisum__addcars', //ID элемента, в котором содержится сумма, которая насчитана только по фишкам
+                            refreshDateSum: 'publish_cost',
+                            hotSum: 'hotsum__addcars' //ID элемента, в котором содержится сумма, которая насчитана только по неделям горячего
+                        },
+                        paymentTypes: {
+                            'sms': 'sms_payment_type__addcars',
+                            'mastercard': 'mastercard_payment_type__addcars',
+                            'visa': 'visa_payment_type__addcars',
+                            'liqpay': 'liqpay_payment_type__addcars',
+                            'privat': 'privat_payment_type__addcars',
+                            'bank': 'bank_payment_type__addcars',
+                            'webmoney': 'webmoney_payment_type__addcars',
+                            'ria': 'ria_payment_type__addcars'
+                        },
+                        promotional: {
+                            tabs: {
+                                individual: 'promo_individual__addcars',
+                                popular: 'promo_popular__addcars',
+                                sms: 'promo_sms__addcars'
+                            },
+                            classes: {
+                                active: 'active',
+                                editLink: 'link-edit',
+                                'public': 'public',
+                                price_b: 'price-b',
+                                position: 'position',
+                                but_sms: 'but-sms',
+                                green: 'green',
+                                size15: 'size15'
+                            },
+                            links: {
+                                becomeNumberOne: 'become_a_number_one__addcars',
+                                showHelp: 'show_promo_help__addcars'
+                            },
+                            containers: {
+                                becomeNumberOne: 'become_a_number_one_container__addcars'
+                            },
+                            tips: {
+                                individual: 'individual_promo_help__addcars',
+                                popular: 'popular_promo_help__addcars',
+                                sms: 'sms_promo_warning__addcars'
+                            },
+                            tables: {
+                                sms: 'sms_promo_table__addcars',
+                                regular: 'regular_promo_table__addcars'
+                            },
+                            actions: {
+                                pay_via_sms: 'pay_via_sms'
+                            },
+                            sms_payments: [
+                                [{hot: 1}, {fishki: 32}, {fishki: 24}, {fishki: 16}, {fishki: 8}],
+                                [{fishki: 32}, {fishki: 24}, {fishki: 16}, {fishki: 8}, {fishki: 0}],
+                                [{fishki: 24}, {fishki: 16}, {fishki: 8}, {fishki: 0}],
+                                [{fishki: 16}, {fishki: 8}, {fishki: 0}]
+                            ],
+                            sms_text: [
+                                {
+                                    fishki: '<strong>Публикация</strong> на {publications_lack} мес. + {fishki} {right_word}',
+                                    without_fishki: '<strong>Публикация</strong> на {publications_lack} мес.'
+                                },
+                                {
+                                    hot: '<strong>Покупка</strong> {hot} {right_word} ТОП',
+                                    fishki: '<strong>Покупка</strong> {fishki} {right_word}'
+                                }
+                            ],
+                            price_text: ' {price} грн.',
+                            position_text: '<strong class="count" id="position_with_{fishki}_{hot}"></strong> позиция в поиске',
+                            button: '<a class="button green" id="goto_sms_payments_{publications_lack}_{hot}_{fishki}__addcars" href="javascript:void(0);" action="pay_via_sms" publications="{publications_lack}" hot="{hot}" fishki="{fishki}" title="Оплатить через SMS" onclick="_gaq.push([\'_trackEvent\', \'Add_Adv\', \'Click_on_Button_Send_SMS\', \'{text}\']);">Оплатить<br>через <strong>SMS</strong></a>',
+                            position_id_pattern: 'position_with_{fishki}_{hot}'
+                        },
+                        userBalanceElement: 'user_balance__addcars'
+                    })).initEventListener();
+                });
+            });
+        </script>
+    </form>
+</div>

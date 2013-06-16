@@ -29,3 +29,5 @@
 
 .qq-upload-failed-text {display:none;}
 .qq-upload-fail .qq-upload-failed-text {display:inline;}
+
+.qq-upload-list{ display: none !important; }

@@ -35,6 +35,8 @@ class Application_Model_Cars
     
     protected $_title;
     protected $_description;
+    protected $_enable_comment;
+    protected $_send_comments;
 
 
     
@@ -375,6 +377,26 @@ class Application_Model_Cars
         return $this->_description;
     }
     
+    public function setEnableComment($val)
+    {
+        $this->_enable_comment = $val;
+        return $this;
+    }
+    public function getEnableComment()
+    {
+        return $this->_enable_comment;
+    }
+    
+    public function setSendComments($val)
+    {
+        $this->_send_comments = $val;
+        return $this;
+    }
+    public function getSendComments()
+    {
+        return $this->_send_comments;
+    }
+    
     public function setMapper($mapper)
     {
         $this->_mapper = $mapper;
@@ -394,10 +416,18 @@ class Application_Model_Cars
     public function getAttributesById($id, $table_name) {
         return $this->getMapper()->getAttributesById($id, $table_name);
     }
+    
     public function find($id)
     {
         return $this->getMapper()->find($id);
     }
+    
+    public function findById($id)
+    {
+        $this->getMapper()->findById($id, $this);
+        return $this;
+    }
+    
     public function fetchAll()
     {
         return $this->getMapper()->fetchAll();
