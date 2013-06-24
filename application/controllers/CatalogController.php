@@ -337,6 +337,7 @@ class CatalogController extends Zend_Controller_Action
            
                       
            $carsModel = new Application_Model_Cars();
+                    
            $data = $carsModel->find($autoId);
            //echo "<pre>"; print_r($data); exit;
            $this->view->data = $data;
@@ -360,6 +361,13 @@ class CatalogController extends Zend_Controller_Action
            }
            
            $form = new Application_Form_AddCarPublication($prices['simple']);
+           
+           if ($this->getRequest()->isPost()) {
+                if($form->isValid($this->getRequest()->getPost())){
+                    $this->render('published');
+                }
+           
+           }     
 
            $this->view->main_photo = $main_photo;
            $this->view->auto_id = $autoId;
