@@ -46,20 +46,57 @@ class Application_Form_AddCarPublication extends Zend_Form
                 )
         )->setDescription(" Настроить <strong>повторную публикацию</strong>: ");
                 
+        $on_republ_reset_comments =  new Zend_Form_Element_Checkbox('on_republ_reset_comments', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $on_republ_reset_comments->setDecorators(
+                array(
+                        'ViewHelper',
+                        array('Description', array('escape' => false, 'tag' => 'span')), //escape false because I want html output
+                        array(array('w' => 'HtmlTag'), array('tag' => 'div', 'class' => 'item'))
+                )
+        )->setDescription(" Удалять торги, обмены, комментарии после повторной публикации");
+        $on_republ_reset_comments->setAttrib('checked', true);
+        
+        $on_republ_reset_counters =  new Zend_Form_Element_Checkbox('on_republ_reset_counters', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $on_republ_reset_counters->setDecorators(
+                array(
+                        'ViewHelper',
+                        array('Description', array('escape' => false, 'tag' => 'span')), //escape false because I want html output
+                        array(array('w' => 'HtmlTag'), array('tag' => 'div', 'class' => 'item'))
+                )
+        )->setDescription(" Удалять информацию о количестве просмотров после повторной публикации");
+        $on_republ_reset_counters->setAttrib('checked', true);
+        
+        $on_republ_reset_messages_stat =  new Zend_Form_Element_Checkbox('on_republ_reset_messages_stat', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $on_republ_reset_messages_stat->setDecorators(
+                array(
+                        'ViewHelper',
+                        array('Description', array('escape' => false, 'tag' => 'span')), //escape false because I want html output
+                        array(array('w' => 'HtmlTag'), array('tag' => 'div', 'class' => 'item'))
+                )
+        )->setDescription(" Обнулять статистику полученных сообщений");
+        
+        $save_app_attr_for_user = new Zend_Form_Element_Checkbox('save_app_attr_for_user', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $save_app_attr_for_user->setDecorators(
+                array(
+                        'ViewHelper',
+                        array('Description', array('escape' => false, 'tag' => 'span')), //escape false because I want html output
+                        array(array('w' => 'HtmlTag'), array('tag' => 'div', 'class' => 'item'))
+                )
+        )->setDescription("Предлагать эти настройки при публикации новых объявлений");
                        
-        $submit = new Zend_Form_Element_Submit('options_submit');
+        $submit = new Zend_Form_Element_Submit('publication_submit');
         $submit->setOptions(array('class' => 'button green'));
         $submit->setDecorators(array(
             'ViewHelper',
             'Description',
-            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
-            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows submit-form-add')),
+            array('HtmlTag', array('tag' => 'div')),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div')),
         ));
         $submit->getDecorator('description')->setOption('escape',false); 
-        $submit->setLabel('Далее');
+        $submit->setLabel('Опубликовать объявление');
         
         $this->addElements(
-                array($publish_period, $simple_price, $chk_activate)
+                array($publish_period, $simple_price, $chk_activate, $on_republ_reset_comments, $on_republ_reset_counters, $on_republ_reset_messages_stat, $save_app_attr_for_user)
                 );
  
             

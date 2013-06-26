@@ -26,6 +26,7 @@ $(document).ready(function () {
             
         } else {
             $('#publications_app_block_preferences_non_actived').hide();
+            $('#publications_app_block_preferences_actived').hide();
         }
 
     
@@ -47,22 +48,55 @@ $(document).ready(function () {
     
     });
     
+
     jQuery('#publications_app_btn_disactivate').live('click',function(e) {
          
-         
-         if($('#publications_app_block_preferences_actived:visible')){
-             $('#publications_app_block_preferences_non_actived').css({'display':'block'});
+         //if($('#publications_app_block_preferences_actived:visible')){
+            $('#publications_app_block_preferences_non_actived').show();
+            $('#publications_app_block_head_non_active').show();
+            $('#publications_app_block_head_active').hide();
+            $('#publications_app_block_preferences_actived').hide();
              
-             $('#publications_app_block_head_active').css({'display':'none'});
-             $('#publications_app_block_head_non_active').css({'display':'block'});
-             $('#publications_app_block_preferences_non_actived').css({'display':'block'});
-             $('#publications_app_block_preferences_actived').css({'display':'none'});
-         }
-            
-    
     });
     
-    
+     jQuery('.tab-publication').live('click',function(e) {
+         
+         $('.tab-publication').removeClass('active');
+         var type = $(this).attr('tab-type');
+         
+         if(type == 'sms'){
+             $('#regular_promo_table__addcars').hide();
+             $('#sms_promo_warning__addcars').show();
+             $('#sms_promo_table__addcars').show();
+             $(this).addClass('active');
+         }
+         
+         if(type == 'individual'){
+             $('#regular_promo_table__addcars').show();
+             
+             $('.switch-select').show();
+             $('#hotpublication_promo_block__addcars').hide();
+             $('#urgentpublication_promo_block__addcars').hide();
+             
+             $('#sms_promo_warning__addcars').hide();
+             $('#sms_promo_table__addcars').hide();
+             $(this).addClass('active');
+         }
+         
+         if(type == 'top'){
+             $('#regular_promo_table__addcars').show();
+             
+             $('.switch-select').hide();
+             $('#hotpublication_promo_block__addcars').show();
+             $('#urgentpublication_promo_block__addcars').show();
+             
+             $('#sms_promo_warning__addcars').hide();
+             $('#sms_promo_table__addcars').hide();
+             $(this).addClass('active');
+         }
+             
+    }); 
+
 
 });
 

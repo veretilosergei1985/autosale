@@ -3588,3 +3588,6 @@ root {
 #chk_activate{
     margin-right: 5px;
 }
+.options-republish input{
+    margin-right: 5px !important;
+}

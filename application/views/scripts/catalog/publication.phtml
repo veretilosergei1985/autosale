@@ -221,26 +221,13 @@
                         Настройки очистки <strong>статистики и комментариев</strong> объявления:
 
                         <div class="base-options-republish">
-                            <label class="item" for="publications_app_chk_reset_comments">
-                                <input id="publications_app_chk_reset_comments" type="checkbox" checked="true" name="on_republ_reset_comments" value="1">
-                                Удалять торги, обмены, комментарии после повторной публикации
-                            </label>
-
-                            <label class="item" for="publications_app_chk_reset_counters">
-                                <input id="publications_app_chk_reset_counters" type="checkbox" checked="true" name="on_republ_reset_counters" value="1">
-                                Удалять информацию о количестве просмотров после повторной публикации
-                            </label>
-                            <label class="item" for="publications_app_chk_reset_messages">
-                                <input id="publications_app_chk_reset_messages" type="checkbox"  name="on_republ_reset_messages_stat" value="1">
-                                Обнулять статистику полученных сообщений
-                            </label>
-
+                            <?php echo $this->form->on_republ_reset_comments; ?>
+                            <?php echo $this->form->on_republ_reset_counters; ?>
+                            <?php echo $this->form->on_republ_reset_messages_stat; ?>
+                                                      
                         </div>
 
-                        <label for="publications_app_chk_save_preferences">
-                            <input id="publications_app_chk_save_preferences" type="checkbox"  name="save_app_attr_for_user" value="1">
-                            Предлагать эти настройки при публикации новых объявлений
-                        </label>
+                       <?php echo $this->form->save_app_attr_for_user; ?>
                     </div>
                 </div>
             </div>
@@ -253,15 +240,15 @@
                 Сделать объявление более <strong>привлекательным</strong>:
             </div>
             <nav class="list-tabs-publication">
-                <label class="tab-publication active" for="promo_individual__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_Individual', 'Step3_Simple']);">
+                <label tab-type="individual" class="tab-publication active" for="promo_individual__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_Individual', 'Step3_Simple']);">
                     <input type="radio" name="promo_type" id="promo_individual__addcars" checked="checked" value="1">
                     <strong>Индивидуальное</strong> продвижение
                 </label>
-                <label class="tab-publication" for="promo_popular__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_TOP', 'Step3_Simple']);">
+                <label tab-type="top" class="tab-publication" for="promo_popular__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_TOP', 'Step3_Simple']);">
                     <input type="radio" name="promo_type" id="promo_popular__addcars" value="2">
                     <strong>ТОП</strong> продвижение
                 </label>
-                <label class="tab-publication" for="promo_sms__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_SMS', 'Step3_Simple']);">
+                <label tab-type="sms" class="tab-publication" for="promo_sms__addcars" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Radiobutton_SMS', 'Step3_Simple']);">
                     <input type="radio" name="promo_type" id="promo_sms__addcars" value="3">
                     <strong>SMS</strong> продвижение
                 </label>
@@ -430,17 +417,113 @@
                     Оплата с помощью SMS дороже других способов оплаты на сайте. В нее дополнительно включается стоимость услуг оператора
                 </div>
 
-                <div class="table-publication" id="sms_promo_table__addcars" style="display: none;">
+                <div id="sms_promo_table__addcars" class="table-publication" style="display:none;">
                     <table class="publication">
-                        <input name="pay_via_sms" id="pay_via_sms__addcars" type="hidden" value="0"/>
-                        <input name="pay_via_sms_hot" id="pay_via_sms_hot__addcars" type="hidden" value="0"/>
-                        <input name="pay_via_sms_fishki" id="pay_via_sms_fishki__addcars" type="hidden" value="0"/>
-                        <input name="pay_via_sms_publications" id="pay_via_sms_publications__addcars" type="hidden" value="0"/>
+                        <input id="pay_via_sms__addcars" type="hidden" value="0" name="pay_via_sms">
+                        <input id="pay_via_sms_hot__addcars" type="hidden" value="0" name="pay_via_sms_hot">
+                        <input id="pay_via_sms_fishki__addcars" type="hidden" value="0" name="pay_via_sms_fishki">
+                        <input id="pay_via_sms_publications__addcars" type="hidden" value="0" name="pay_via_sms_publications">
                         <colgroup class="public"></colgroup>
                         <colgroup class="price-b"></colgroup>
                         <colgroup class="position"></colgroup>
                         <colgroup class="but-sms"></colgroup>
-                        <tbody></tbody>
+                        <tbody>
+                            <tr>
+                                <td class="public size15">
+                                    <strong>Покупка</strong>
+                                    1 неделя ТОП
+                                </td>
+                                <td class="price-b size15"> 50 грн.</td>
+                                <td class="position green">
+                                    <strong id="position_with_0_1" class="count">1</strong>
+                                    позиция в поиске
+                                </td>
+                                <td class="but-sms">
+                                    <a id="goto_sms_payments_0_1_0__addcars" class="button green" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Send_SMS', 'Покупка 1 неделя ТОП']);" title="Оплатить через SMS" fishki="0" hot="1" publications="0" action="pay_via_sms" href="javascript:void(0);">
+                                        Оплатить
+                                        <br>
+                                        через
+                                        <strong>SMS</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="public size15">
+                                    <strong>Покупка</strong>
+                                    32 фишки
+                                </td>
+                                <td class="price-b size15"> 40 грн.</td>
+                                <td class="position green">
+                                    <strong id="position_with_32_0" class="count">1</strong>
+                                    позиция в поиске
+                                </td>
+                                <td class="but-sms">
+                                    <a id="goto_sms_payments_0_0_32__addcars" class="button green" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Send_SMS', 'Покупка 32 фишки']);" title="Оплатить через SMS" fishki="32" hot="0" publications="0" action="pay_via_sms" href="javascript:void(0);">
+                                        Оплатить
+                                        <br>
+                                        через
+                                        <strong>SMS</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="public size15">
+                                    <strong>Покупка</strong>
+                                    24 фишки
+                                </td>
+                                <td class="price-b size15"> 30 грн.</td>
+                                <td class="position green">
+                                    <strong id="position_with_24_0" class="count">1</strong>
+                                    позиция в поиске
+                                </td>
+                                <td class="but-sms">
+                                    <a id="goto_sms_payments_0_0_24__addcars" class="button green" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Send_SMS', 'Покупка 24 фишки']);" title="Оплатить через SMS" fishki="24" hot="0" publications="0" action="pay_via_sms" href="javascript:void(0);">
+                                        Оплатить
+                                        <br>
+                                        через
+                                        <strong>SMS</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="public size15">
+                                    <strong>Покупка</strong>
+                                    16 фишек
+                                </td>
+                                <td class="price-b size15"> 20 грн.</td>
+                                <td class="position green">
+                                    <strong id="position_with_16_0" class="count">1</strong>
+                                    позиция в поиске
+                                </td>
+                                <td class="but-sms">
+                                    <a id="goto_sms_payments_0_0_16__addcars" class="button green" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Send_SMS', 'Покупка 16 фишек']);" title="Оплатить через SMS" fishki="16" hot="0" publications="0" action="pay_via_sms" href="javascript:void(0);">
+                                        Оплатить
+                                        <br>
+                                        через
+                                        <strong>SMS</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="public size15">
+                                    <strong>Покупка</strong>
+                                    8 фишек
+                                </td>
+                                <td class="price-b size15"> 10 грн.</td>
+                                <td class="position green">
+                                    <strong id="position_with_8_0" class="count">1</strong>
+                                    позиция в поиске
+                                </td>
+                                <td class="but-sms">
+                                    <a id="goto_sms_payments_0_0_8__addcars" class="button green" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Button_Send_SMS', 'Покупка 8 фишек']);" title="Оплатить через SMS" fishki="8" hot="0" publications="0" action="pay_via_sms" href="javascript:void(0);">
+                                        Оплатить
+                                        <br>
+                                        через
+                                        <strong>SMS</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -483,8 +566,7 @@
                 </div>
 
                 <div class="submit-payment-form">
-                    <a id="publicatebutton__addcars" href="javascript:void(0);" class="button green">
-                        Опубликовать объявление                                    </a>
+                    <?php echo $this->form->publication_submit; ?>
                 </div>
 
             </div>
