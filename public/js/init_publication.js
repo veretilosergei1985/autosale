@@ -33,22 +33,36 @@ $(document).ready(function () {
     
      jQuery('#publications_app_btn_activate').live('click',function(e) {
          
-         if($('#publications_app_block_preferences_actived:visible')){
-            $('#publications_app_block_preferences_non_actived').hide();
-            $('#publications_app_block_head_non_active').hide();
-            $('#publications_app_block_head_active').show();
-            $('#publications_app_block_preferences_actived').show();
+         if($('#publications_app_block_preferences_non_actived:visible')){
+            
+             $('#publications_app_block_preferences_non_actived').css({'display':'none'});
+                     
+             $('#publications_app_block_head_non_active').css({'display':'none'});
+             $('#publications_app_block_head_active').css({'display':'block'});
+             $('#publications_app_block_preferences_actived').css({'display':'block'});
              
            
-         } else {
-             $('#publications_app_block_preferences_non_actived').hide();
-            $('#publications_app_block_head_non_active').show();
-            $('#publications_app_block_head_active').hide();
-            $('#publications_app_block_preferences_actived').show();
+         }
+                     
+    
+    });
+    
+    jQuery('#publications_app_btn_disactivate').live('click',function(e) {
+         
+         
+         if($('#publications_app_block_preferences_actived:visible')){
+             $('#publications_app_block_preferences_non_actived').css({'display':'block'});
+             
+             $('#publications_app_block_head_active').css({'display':'none'});
+             $('#publications_app_block_head_non_active').css({'display':'block'});
+             $('#publications_app_block_preferences_non_actived').css({'display':'block'});
+             $('#publications_app_block_preferences_actived').css({'display':'none'});
          }
             
     
     });
+    
+    
 
 });
 
