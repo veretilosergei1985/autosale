@@ -364,7 +364,9 @@ class CatalogController extends Zend_Controller_Action
            
            if ($this->getRequest()->isPost()) {
                 if($form->isValid($this->getRequest()->getPost())){
-                    $this->render('published');
+                    // save data from payment form
+                    
+                    $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'published', 'autoId' => $autoId));
                 }
            
            }     
@@ -376,10 +378,46 @@ class CatalogController extends Zend_Controller_Action
            
            $this->render('publication');
        }
+       
+       if($autoId != '' && $step == 'published'){
+           
+           $carsModel = new Application_Model_Cars();
+                    
+           $data = $carsModel->find($autoId);
+           $this->view->data = $data;
+           
+           $photosModel = new Application_Model_Photos();
+           $photos = $photosModel->findByAutoId($autoId);
+           $main_photo = '';
+           
+           $pricesModel = new Application_Model_Prices();
+           $prices = array();
+           foreach($pricesModel->fetchAll() as $item){
+               $prices[$item->name] = $item->value;
+           }
+
+           
+           foreach($photos as $photo){
+               if($photo['is_main'] == 1){
+                   $main_photo = $photo['image'];
+                   break;
+               }
+           }
+           
+           $this->view->main_photo = $main_photo;
+           $this->view->auto_id = $autoId;
+           $this->view->prices = $prices;
+           
+           $this->render('published');
+       }
+       
 
     }
     
-    
+    public function viewmyAction(){
+        
+        
+    }
 
 
 }

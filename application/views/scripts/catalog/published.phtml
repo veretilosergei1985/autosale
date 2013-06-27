@@ -34,11 +34,7 @@
 
             <div class="title">
                 <p>
-
-                    Ваше объявление <strong>Volkswagen Golf III  1996</strong> года                            <strong>опубликовано</strong> на <strong>1</strong> месяц <strong>до 22.08.2013</strong>. Изменения вступят в силу в течение 30 минут.
-
-
-
+                    Ваше объявление <strong><?php echo $this->data->mark_name . " " . $this->data->model_name . " " . $this->data->year; ?></strong> года                            <strong>опубликовано</strong> на <strong>1</strong> месяц <strong>до 22.08.2013</strong>. Изменения вступят в силу в течение 30 минут.
                 </p>
             </div>
         </div>
@@ -57,8 +53,11 @@
                     <div class="content-bar">
                         <a href="javascript:void(0);" class="photo photo-135x90" target="_blank" id="previewphoto__addcars">
 
-                            <img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg" />
-
+                            <?php if(isset($main_photo)){ ?>
+                                <img src="<?php echo '/images/photos/' . $this->auto_id . "/" . $this->main_photo; ?>" />
+                            <?php } else { ?>
+                                <img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg" />
+                            <?php } ?>
                         </a>
 
                         <div class="content">
@@ -66,57 +65,47 @@
                             <div class="head-ticket">
 
                                 <span class="city">
-                                    <a href="javascript:void(0);">Харьков</a>
+                                    <a href="javascript:void(0);"><?php echo $this->data->reg_name; ?></a>
                                 </span>
 
                                 <h3 class="head-car" id="previewtitle__addcars">
-                                    <a href="javascript:void(0);" target="_blank">Volkswagen Golf III </a> 1996
+                                    <a href="javascript:void(0);" target="_blank"><?php echo $this->data->mark_name . " " . $this->data->model_name . " " . $this->data->version; ?></a> <?php echo $this->data->year; ?>
                                 </h3>
-
                             </div>
-
-
-
-
 
                             <div class="definition-data">
 
                                 <div class="price">
-                                    $<span class="green">6 700</span>
+                                    <?php
+                                        if($this->data->currency == 'USD')
+                                            echo '$<span class="green">'.$this->data->price.'</span>';
+                                        else if($this->data->currency == 'EUR')
+                                            echo '€<span class="green">'.$this->data->price.'</span>';
+                                        else if($this->data->currency == 'UAH')
+                                            echo '<span class="green">'.$this->data->price.'</span> грн.';
+                                    
+                                    ?>
                                 </div>
 
                                 <ul class="characteristic">
-
                                     <li class="item-char" title="Тип топлива">
                                         <i class="icon-char-fuel"></i>
-                                        Не указан
+                                        <?php echo $this->data->fuel_type; ?>
+                                        ,&nbsp;
+                                        <?php echo $this->data->volume; ?> л.
                                     </li>
-
-
-
                                     <li class="item-char" title="Пробег">
                                         <i class="icon-mileage"></i>
-                                        230 тыс. км.
+                                         <?php echo $this->data->mileage; ?> тыс. км.
                                     </li>
-
-
-
-
                                     <li class="item-char" title="Тип коробки передач">
                                         <i class="icon-char-transmission"></i>
-                                        Не указан
+                                         <?php echo $this->data->trans_type; ?>
                                     </li>
-
-
-
                                     <li class="item-char" title="Цвет кузова">
                                         <i class="icon-char-color"></i>
-
-                                        не указан
-
+                                        <?php echo $this->data->color; ?><?php if($this->data->metallic == 1) echo ' металлик'; ?> 
                                     </li>
-
-
                                 </ul>
 
                             </div>
@@ -125,7 +114,7 @@
                         </div>
 
                         <p class="descriptions-ticket">
-                            Volkswagen Golf III, 1996  года, г. Харьков...
+                            <?php echo substr($this->data->description, 0, 60); if(strlen($this->data->description) > 82) echo '...'; ?>
                         </p>
 
                     </div>
@@ -134,7 +123,7 @@
 
 
                 <div class="event-bar">
-                    <a class="item-left" target="_blank" href="/auto_volkswagen_golf_iii_11436210.html" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Link_View', 'Step4']);">Перейти к просмотру объявления</a>
+                    <a class="item-left" target="_blank" href="/catalog/viewmy">Перейти к просмотру объявления</a>
                     <a class="item-right" target="_blank" href="/?target=search&event=little&marka=84&model=30785" onclick="_gaq.push(['_trackEvent', 'Add_Adv', 'Click_on_Link_Search', 'Step4']);">Просмотреть объявление в поиске</a>
                 </div>
             </div>
