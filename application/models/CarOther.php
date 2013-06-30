@@ -99,6 +99,9 @@ class Application_Model_CarOther
         return $this->getMapper()->findByAutoId($id);
     }
     
+     public function deleteAutoOptions($id){
+        $this->getMapper()->deleteAutoOptions($id);
+    }
    
     
 }

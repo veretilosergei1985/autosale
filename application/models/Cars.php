@@ -437,6 +437,8 @@ class Application_Model_Cars
     {
         return $this->getMapper()->findAll();
     }
+    
+    
 }
 
 ?>

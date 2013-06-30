@@ -179,6 +179,9 @@ class CatalogController extends Zend_Controller_Action
            
            
            /// populate options form
+           $car = new Application_Model_Cars();
+           $car_data = $car->find($autoId);
+           $optionsForm->populate($car_data->toArray());
            
            $oSafety = new Application_Model_CarSafety();
            $safety_data = $oSafety->findByAutoId($autoId);
@@ -243,6 +246,16 @@ class CatalogController extends Zend_Controller_Action
                 if ($this->getRequest()->isPost()) {
                     if(isset($formData['options_submit']) && $optionsForm->isValid($this->getRequest()->getPost())){
                         
+                        // delete previous data
+                        Base_ModelsHelper::deleteAutoOptions($autoId); 
+                        
+                        $carsModel = new Application_Model_Cars();
+                        $carsModel->findById($autoId);
+                        $carsModel->setId($autoId);
+                        $carsModel->setEnableComment(0);
+                        $carsModel->setSendComments(0);
+                        $carsModel->save();
+                        
                         if(count($formData['safety']) > 0){
                             foreach($formData['safety'] as $k => $v){
                                 $oSafety = new Application_Model_CarSafety();
@@ -288,7 +301,7 @@ class CatalogController extends Zend_Controller_Action
                             }
                         }
 
-                        if(isset($formData['description']) || isset($formData['dont_comment']) || isset($formData['send_comments'])){
+                        if(isset($formData['description']) || isset($formData['enable_comment']) || isset($formData['send_comments'])){
                             $car = new Application_Model_Cars();
                             $car->findById($autoId);
 
@@ -296,8 +309,8 @@ class CatalogController extends Zend_Controller_Action
                                 $car->setDescription($formData['description']);
                             }
 
-                            if(isset($formData['dont_comment'])){
-                                $car->setEnableComment($formData['dont_comment']);
+                            if(isset($formData['enable_comment'])){
+                                $car->setEnableComment($formData['enable_comment']);
                             }
 
                             if(isset($formData['send_comments'])){
@@ -385,6 +398,16 @@ class CatalogController extends Zend_Controller_Action
                
                if(isset($formData['options_submit']) && $optionsForm->isValid($this->getRequest()->getPost())){
 
+                    // delete previous data
+                    Base_ModelsHelper::deleteAutoOptions($autoId); 
+                    
+                    $carsModel = new Application_Model_Cars();
+                    $carsModel->findById($autoId);
+                    $carsModel->setId($autoId);
+                    $carsModel->setEnableComment(0);
+                    $carsModel->setSendComments(0);
+                    $carsModel->save();
+                   
                     if(count($formData['safety']) > 0){
                         foreach($formData['safety'] as $k => $v){
                             $oSafety = new Application_Model_CarSafety();
@@ -430,7 +453,7 @@ class CatalogController extends Zend_Controller_Action
                         }
                     }
                     
-                    if(isset($formData['description']) || isset($formData['dont_comment']) || isset($formData['send_comments'])){
+                    if(isset($formData['description']) || isset($formData['enable_comment']) || isset($formData['send_comments'])){
                         $car = new Application_Model_Cars();
                         $car->findById($autoId);
                         
@@ -438,8 +461,8 @@ class CatalogController extends Zend_Controller_Action
                             $car->setDescription($formData['description']);
                         }
                         
-                        if(isset($formData['dont_comment'])){
-                            $car->setEnableComment($formData['dont_comment']);
+                        if(isset($formData['enable_comment'])){
+                            $car->setEnableComment($formData['enable_comment']);
                         }
                         
                         if(isset($formData['send_comments'])){

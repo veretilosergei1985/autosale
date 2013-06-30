@@ -57,7 +57,10 @@ class Application_Model_CarOtherMapper
         }
     }
     
-   
+    public function deleteAutoOptions($id){
+        $oWhere = $this->getDbTable()->getAdapter()->quoteInto('car_id = ?', $id);
+        $this->getDbTable()->delete($oWhere);
+    }
     
     
 }

@@ -146,7 +146,7 @@ class Application_Form_AddCarOptions extends Zend_Form
         $country->removeDecorator('Errors');
         
         
-        $dont_comment = new Zend_Form_Element_Checkbox('dont_comment', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $dont_comment = new Zend_Form_Element_Checkbox('enable_comment', array('disableLoadDefaultDecorators' => true, 'required' => false));
         $dont_comment->setDecorators(
                 array(
                         'ViewHelper',

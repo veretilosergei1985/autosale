@@ -25,6 +25,7 @@ class Application_Model_CarsMapper
     public function save(Application_Model_Cars $car)
     { 
         $data = array(
+            'id' => $car->getId(),
             'user_id' =>$car->getUserId(),
             'cat_id' => $car->getCatId(), 
             'body_id' => $car->getBodyId(), 
@@ -189,6 +190,8 @@ class Application_Model_CarsMapper
         
         
     }
+   
+   
     
     
 }
