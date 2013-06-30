@@ -165,15 +165,15 @@ class Application_Form_AddCar extends Zend_Form
         $year->getValidator('NotEmpty')->setMessage('Выберите год выпуска');
         
 
-                $race = new Zend_Form_Element_Text('race');
-                $race->setLabel("Пробег:<ins>*</ins>")
+                $mileage = new Zend_Form_Element_Text('mileage');
+                $mileage->setLabel("Пробег:<ins>*</ins>")
                         ->setRequired(true)
                         ->addValidator('NotEmpty', true)
                         ->addFilter('HtmlEntities')
                         ->addFilter('StringTrim')
                         ->setAttrib('class', 'span1');
-                $race->getValidator('NotEmpty')->setMessage('Пробег б/у автомобиля должен быть более 1 тыс.км. Продажа новых автомобилей доступна только в коммерческом разделе “Новые авто”. Детальнее по телефону (067)430-79-91 ');
-                $race->setAttrib('onkeyup','return check_num(this);');
+                $mileage->getValidator('NotEmpty')->setMessage('Пробег б/у автомобиля должен быть более 1 тыс.км. Продажа новых автомобилей доступна только в коммерческом разделе “Новые авто”. Детальнее по телефону (067)430-79-91 ');
+                $mileage->setAttrib('onkeyup','return check_num(this);');
                 
         $volume = new Zend_Form_Element_Text('volume');
         $volume->setLabel("Объем двигателя:")
@@ -313,16 +313,16 @@ class Application_Form_AddCar extends Zend_Form
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
         ))->addDecorator('Errors');    
         
-        $race->setDecorators(array(
+        $mileage->setDecorators(array(
             'ViewHelper',
             'Description',
             array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
             array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
         ))->setDescription('<em class="add-on">тыс.км</em>');
-        $race->getDecorator('description')->setOption('escape',  
+        $mileage->getDecorator('description')->setOption('escape',  
         false); 
-        $race->addDecorator('Errors');
+        $mileage->addDecorator('Errors');
         
         $volume->setDecorators(array(
             'ViewHelper',
@@ -425,7 +425,7 @@ class Application_Form_AddCar extends Zend_Form
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($auction, $exchange, $currency, $fuel_city, $fuel_route, $fuel_combine, $metallic, $color_id, $model_id, $body_id, $cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $race, $volume, $price)
+                array($auction, $exchange, $currency, $fuel_city, $fuel_route, $fuel_combine, $metallic, $color_id, $model_id, $body_id, $cat_id, $region, $mark, $model, $version, $vin, $transmission, $drive, $doors, $fuel, $year, $mileage, $volume, $price)
                 );
  
         

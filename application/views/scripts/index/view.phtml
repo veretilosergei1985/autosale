@@ -219,7 +219,7 @@
                 Всего просмотров: <strong id="final_page__views_counter" ria_ppih_index="true" ria_ppih_title="Подсказка" ria_ppih_text="Демонстрирует сколько потенциальных покупателей просмотрело объявление." ria_ppih_position_orientation="right">загрузка...</strong>
             </p><p class="item-param">
                 <i class="icon-id-item"></i>
-                ID автомобиля: <strong><?php echo $this->data->id; ?></strong>
+                ID автомобиля: <strong id="current_auto_id"><?php echo $this->data->id; ?></strong>
             </p>
 
         </div>
@@ -298,16 +298,20 @@
         <div class="gallery-order">
             <div>
 
-                <div class="photo-380x250 main-photo " onclick="window.open('/old/auto_photo/viewphoto/11066447/', '_blank', 'width=800,height=600,scrollbars=yes');
-                        _gaq.push(['_trackEvent', 'Photos', 'Click_on_Main_photo', 'Ad_Page']);">
-                    <img src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962922bx.jpg" class="large-photo" width="380" id="final_page__main_photo">
-
+                <div class="photo-380x250 main-photo " onclick="window.open('/old/auto_photo/viewphoto/11066447/', '_blank', 'width=800,height=600,scrollbars=yes'); _gaq.push(['_trackEvent', 'Photos', 'Click_on_Main_photo', 'Ad_Page']);">
+                    <?php if($this->main_photo != ''){ ?>
+                        <img src="/images/photos/<?php echo $this->data->id .'/'. $this->main_photo; ?>" class="large-photo" width="380" id="final_page__main_photo">
+                    <?php } else { ?>
+                        <img src="http://img.auto.ria.ua/images/no-photo/no-photo-380x250.jpg" class="large-photo" width="380" id="final_page__main_photo">
+                    <?php } ?>
                 </div>
                 <div class="count-photo__order">
-                    <div class="count-photo">
-                        <i class="icon-photo-grey"></i>
-                        12 фото   Audi 80 1995
-                    </div>
+                    <?php if(count($this->photos)>0){ ?>
+                        <div class="count-photo">
+                            <i class="icon-photo-grey"></i>
+                            <?php echo count($this->photos) ?> фото <?php echo $this->data->mark_name.' '.$this->data->model_name.' '.$this->data->year; ?>
+                        </div>
+                    <?php } ?>
                     <span class="mega-photo">
                         <i class="icon-megaphoto"></i>
                         <a href="javascript:void(0);" id="final_page__megaphoto" onclick="window.open('/old/auto_photo/megaphoto/11066447/', '_blank', 'width=800,height=600,scrollbars=yes');
@@ -315,57 +319,16 @@
                     </span>
                 </div>
                 <div class="preview-gallery">
-
                     <div class="wrapper" id="final_page__preview_photos_wrapper">
-
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962912">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962912lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962917">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962917lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962922">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962922lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962927">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962927lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962932">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962932lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962939">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962939lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962944">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962944lx.jpg" width="85" height="56"/>
-                        </a>
-
-                        <a class="photo-85x56" href="javascript:void(0);" photo_id="78962952">
-                            <img title="Audi 80"
-                                 alt="Audi 80"
-                                 src="http://cdn.img.ria.ua/photosnew/auto/photo/audi_80__78962952lx.jpg" width="85" height="56"/>
-                        </a>
+                        <?php if(count($this->photos)>0){ ?>
+                            <?php foreach($this->photos as $photo){ ?>
+                                <a class="photo-85x56" href="javascript:void(0);" photo_id="<?php echo $photo->id; ?>">
+                                    <img title="Audi 80"
+                                         alt="Audi 80"
+                                         src="/images/photos/<?php echo $this->data->id .'/'. $photo->image; ?>" width="85" height="56"/>
+                                </a>
+                            <?php } ?>
+                        <?php } ?>
 
                     </div>
 

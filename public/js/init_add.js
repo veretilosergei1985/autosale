@@ -529,8 +529,7 @@ jQuery(function() {
           }); 
         
     }
-    
-    
+        
     if($('#colorid__addcars').val() != '' && $('#colorid__addcars').val() != '0' ){
         
         var val = $('#colorid__addcars').val();

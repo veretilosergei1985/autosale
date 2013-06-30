@@ -30,7 +30,7 @@ class Application_Model_CarSafetyMapper
         
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
-                            ->where('auto_id = ?', $auto_id); 
+                            ->where('car_id = ?', $auto_id); 
 
         $oResultSet = $oDbTable->fetchAll($oSelect);        
               

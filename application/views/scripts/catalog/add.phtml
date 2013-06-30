@@ -135,17 +135,37 @@
 </div>
 
 <nav class="progressive-bar step-3">
-    <a class="item-tab active" href="http://auto.ria.ua/addauto/autoinfo">
-        Шаг 1. <em>Объявление</em>
-    </a>
-    <a class="item-tab " href="javascript:void(0);">
-        Шаг 2. <em>фото и подробная информация</em>
-    </a>
-    <a class="item-tab " href="javascript:void(0);">
-        Шаг 3.
-        <em>
-            Публикация                    </em>
-    </a>
+   <?php if(isset($this->is_new) &&  $this->is_new == false && isset($this->auto_id)){ ?>
+        <a class="item-tab active" href="/catalog/add/step/autoinfo/autoId/<?php echo $this->auto_id; ?>">
+            Шаг 1. <em>Объявление</em>
+        </a>
+    <?php } else { ?>
+        <a class="item-tab active" href="/catalog/add/step/autoinfo">
+                Шаг 1. <em>Объявление</em>
+        </a>
+    <?php } ?>
+    
+    <?php if(isset($this->is_new) &&  $this->is_new == false && isset($this->auto_id)){ ?>
+        <a class="item-tab" href="/catalog/add/step/addphoto/autoId/<?php echo $this->auto_id; ?>">
+            Шаг 2. <em>фото и подробная информация</em>
+        </a>
+    <?php } else { ?>
+        <a class="item-tab" href="javascript:void(0);">
+                Шаг 1. <em>Объявление</em>
+        </a>
+    <?php } ?>
+    
+     <?php if(isset($this->is_new) &&  $this->is_new == false && isset($this->auto_id)){ ?>
+        <a class="item-tab" href="/catalog/add/step/publication/autoId/<?php echo $this->auto_id; ?>">
+            Шаг 3.
+            <em> Публикация </em>
+        </a>
+    <?php } else { ?>
+        <a class="item-tab" href="javascript:void(0);">
+            Шаг 3.
+            <em> Публикация </em>
+        </a>
+    <?php } ?>
 </nav>
 
 <div class="fixed-popover" id="mainauthcontainer__addcars">
@@ -385,7 +405,7 @@
          </div>
         
         <?php echo $this->form->year; ?>
-        <?php echo $this->form->race; ?>
+        <?php echo $this->form->mileage; ?>
         <?php echo $this->form->volume; ?>
         <?php echo $this->form->price; ?>
         <?php echo $this->form->currency; ?>

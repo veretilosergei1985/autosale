@@ -40,13 +40,26 @@ class IndexController extends Zend_Controller_Action
     
     public function viewAction()
     {
+        $this->view->headScript()->appendFile('/js/init_view.js');
+        
         $id = $this->_getParam('id');
+        $main_photo = '';
         
         $carsModel = new Application_Model_Cars();
-        //$data = $carsModel->find($id)->toArray();
         $data = $carsModel->find($id);
         $this->view->data = $data;
-         //echo "<pre>"; print_r($this->view->data); exit;
+
+        $photosModel = new Application_Model_Photos();
+        $photos = $photosModel->findByAutoId($id);
+        $this->view->photos = $photos; 
+                
+        foreach($photos as $photo){
+            if($photo['is_main'] == 1){
+                $main_photo = $photo['image'];
+                break;
+            }
+        }
+        $this->view->main_photo = $main_photo;
         
         $er = new Base_Exchange();
         $usd = $er->getExchangeRateByChar3("USD");
@@ -72,7 +85,7 @@ class IndexController extends Zend_Controller_Action
         //$this->view->other = $other;
         $this->view->multimedia = $multimedia;
         $this->view->state = $state;
-                
+                        
         
         
         //echo "<pre>"; print_r($this->view->safety); exit;

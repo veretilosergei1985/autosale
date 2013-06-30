@@ -34,7 +34,7 @@ class CatalogController extends Zend_Controller_Action
        if(!$step){
            // redirect
        }
-       
+      
        if($step == 'autoinfo'){
 
             $this->view->headScript()->appendFile('/js/init_add.js');
@@ -43,12 +43,16 @@ class CatalogController extends Zend_Controller_Action
             if($autoId == ''){
                 if ($this->getRequest()->isPost()) {
                     if ($form->isValid($this->getRequest()->getPost())) {
-
-
+                        
+                                if(!Zend_Auth::getInstance()->hasIdentity()){ 
+                                     $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'addphoto'));
+                                 }
+                                 
                                  $data = $form->getValues();
                                  //echo "<pre>"; print_r($data); exit;
                                  $car = new Application_Model_Cars();
 
+                                 $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
                                  $car->setCatId($data['cat_id']);
                                  $car->setBodyId($data['body_id']);
                                  $car->setRegId($data['reg_id']);
@@ -65,7 +69,7 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setColorId($data['color_id']);
                                  $car->setMetallic($data['metallic']);
                                  $car->setYear($data['year']);
-                                 $car->setMileage($data['race']);
+                                 $car->setMileage($data['mileage']);
                                  $car->setVolume($data['volume']);                              
                                  $car->setPrice($data['price']);
                                  $car->setCurrency($data['currency']);
@@ -86,7 +90,68 @@ class CatalogController extends Zend_Controller_Action
                 }
            
             } else if($autoId != ''){
+                        
+                                
+                // fill form
+                $carsModel = new Application_Model_Cars();
+                $data = $carsModel->find($autoId);
+
+                // check owner
+                if(count($data) < 1 || ($data->user_id != Zend_Auth::getInstance()->getIdentity()->id)){
+                    $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
+                }
+                $this->view->auto_id = $autoId;
+                $this->view->is_new = false;
+                                                
+                $data = $data->toArray();
+                unset($data['color']);
+                $form->populate($data);
                 
+                                
+                if ($this->getRequest()->isPost()) {
+                    if ($form->isValid($this->getRequest()->getPost())) {
+
+                            $data = $form->getValues();
+                            //echo "<pre>"; print_r($data); exit;
+                            $car = new Application_Model_Cars();
+
+                            $car->setId($autoId);
+                            $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
+                            $car->setCatId($data['cat_id']);
+                            $car->setBodyId($data['body_id']);
+                            $car->setRegId($data['reg_id']);
+                            $car->setModelId($data['model_id']);
+                            $car->setMarkId($data['mark_id']);
+                            //$car->setCityId($data['']);
+                            $car->setTransmissionId($data['transmission_id']);
+                            $car->setDriveId($data['drive_id']);
+                            $car->setDoors($data['doors']);
+                            $car->setFuelId($data['fuel_id']);
+                            $car->setFuelCity($data['fuel_city']);
+                            $car->setFuelRoute($data['fuel_route']);
+                            $car->setFuelCombine($data['fuel_combine']);
+                            $car->setColorId($data['color_id']);
+                            $car->setMetallic($data['metallic']);
+                            $car->setYear($data['year']);
+                            $car->setMileage($data['mileage']);
+                            $car->setVolume($data['volume']);                              
+                            $car->setPrice($data['price']);
+                            $car->setCurrency($data['currency']);
+                            $car->setVersion($data['version']);
+                            $car->setVin($data['vin']);
+                            $car->setExchange($data['exchange']);
+                            $car->setAuction($data['auction']);
+                            $car->setStatus('waiting');
+                            $car->setAdded(date('Y-m-d H:i:s'));
+
+                            $car->setTitle('Title');
+                            $car->setDescription('Description');
+
+                            $ins_id = $car->save();		
+                            $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $ins_id, 'step' => 'addphoto'));
+                    }
+ 
+                }
                 
             }
             
@@ -96,12 +161,80 @@ class CatalogController extends Zend_Controller_Action
        
        if($autoId != '' && $step == 'addphoto'){
            
+           // check owner
+           $carsModel = new Application_Model_Cars();
+           $data = $carsModel->find($autoId);
+
+           if(count($data) < 1 || ($data->user_id != Zend_Auth::getInstance()->getIdentity()->id)){
+               $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
+           }
+           $this->view->is_new = false;
+        
            $this->view->headScript()->appendFile('/js/jquery.limit.js');
            $this->view->headScript()->appendFile('/js/init_add_upload.js');
            
            $formData = $this->getRequest()->getPost();
            
            $optionsForm = new Application_Form_AddCarOptions();
+           
+           
+           /// populate options form
+           
+           $oSafety = new Application_Model_CarSafety();
+           $safety_data = $oSafety->findByAutoId($autoId);
+           $safety_data= $safety_data->toArray();
+           $arr = Array();
+           if(count($safety_data) > 0){
+                foreach($safety_data as $item){
+                    array_push($arr, $item['safety_id']);
+                }
+                $optionsForm->populate(array('safety' => $arr));
+           }
+            
+           $oComfort = new Application_Model_CarComfort();
+           $comfort_data = $oComfort->findByAutoId($autoId);
+           $comfort_data= $comfort_data->toArray();
+           $arr = Array();
+           if(count($comfort_data) > 0){
+                foreach($comfort_data as $item){
+                    array_push($arr, $item['comfort_id']);
+                }
+                $optionsForm->populate(array('comfort' => $arr));
+           }
+            
+           $oMultimedia = new Application_Model_CarMultimedia();
+           $multimedia_data = $oMultimedia->findByAutoId($autoId);
+           $multimedia_data= $multimedia_data->toArray();
+           $arr = Array();
+           if(count($multimedia_data) > 0){
+                foreach($multimedia_data as $item){
+                    array_push($arr, $item['multimedia_id']);
+                }
+                $optionsForm->populate(array('multimedia' => $arr));
+           }
+           
+           $oOther = new Application_Model_CarOther();
+           $other_data = $oOther->findByAutoId($autoId);
+           $other_data= $other_data->toArray();
+           $arr = Array();
+           if(count($other_data) > 0){
+                foreach($other_data as $item){
+                    array_push($arr, $item['other_id']);
+                }
+                $optionsForm->populate(array('other' => $arr));
+           }
+           
+           $oState = new Application_Model_CarState();
+           $state_data = $oState->findByAutoId($autoId);
+           $state_data= $state_data->toArray();
+           $arr = Array();
+           if(count($state_data) > 0){
+                foreach($state_data as $item){
+                    array_push($arr, $item['state_id']);
+                }
+                $optionsForm->populate(array('state' => $arr));
+           }
+           /// end populate options form
            
            if(!empty($oldSystem) && $oldSystem == 1){
               
@@ -333,6 +466,16 @@ class CatalogController extends Zend_Controller_Action
        }
        
        if($autoId != '' && $step == 'publication'){
+           
+           // check owner
+           $carsModel_tmp = new Application_Model_Cars();
+           $data_tmp = $carsModel_tmp->find($autoId);
+
+           if(count($data_tmp) < 1 || ($data_tmp->user_id != Zend_Auth::getInstance()->getIdentity()->id)){
+               $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
+           }
+           $this->view->is_new = false;
+           
            $this->view->headScript()->appendFile('/js/init_publication.js');
            
                       
@@ -380,6 +523,14 @@ class CatalogController extends Zend_Controller_Action
        }
        
        if($autoId != '' && $step == 'published'){
+            // check owner
+           $carsModel_tmp = new Application_Model_Cars();
+           $data_tmp = $carsModel_tmp->find($autoId);
+
+           if(count($data_tmp) < 1 || ($data_tmp->user_id != Zend_Auth::getInstance()->getIdentity()->id)){
+               $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
+           }
+           $this->view->is_new = false;
            
            $carsModel = new Application_Model_Cars();
                     

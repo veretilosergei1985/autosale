@@ -89,7 +89,7 @@ class Application_Model_Cars
     
     public function setUserId($id)
     {
-        $this->_user_id = (int) $id;
+        $this->_user_id = $id;
         return $this;
     }
     public function getUserId()

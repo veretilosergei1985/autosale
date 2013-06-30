@@ -23,8 +23,9 @@ class Application_Model_CarsMapper
         return $this->_dbTable;
     }
     public function save(Application_Model_Cars $car)
-    {
+    { 
         $data = array(
+            'user_id' =>$car->getUserId(),
             'cat_id' => $car->getCatId(), 
             'body_id' => $car->getBodyId(), 
             'reg_id' => $car->getRegId(),
@@ -54,12 +55,14 @@ class Application_Model_CarsMapper
             'description' => $car->getDescription()
             
         );
-        //echo "<pre>"; print_r($data); exit;
-      if (null === ($id = $car->getId())) {
+
+        if (null === ($id = $car->getId())) {
+
             unset($data['id']);
             return $this->getDbTable()->insert($data);
         } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
+           $this->getDbTable()->update($data, array('id = ?' => $id));
+           return $id;
         }
     }
     public function find($id)
@@ -96,6 +99,7 @@ class Application_Model_CarsMapper
         $row = $result->current();
         
         $car->setId($row->id);
+        $car->setUserId($row->user_id);
         $car->setCatId($row->cat_id);
         $car->setBodyId($row->body_id);
         $car->setRegId($row->reg_id);
