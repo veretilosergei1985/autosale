@@ -120,6 +120,16 @@ class Application_Model_PhotosMapper
         }        
     }
     
+    public function getMainImage($auto_id){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                            ->where('auto_id = ? AND is_main = 1', $auto_id); 
+
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+              
+        return $oResultSet;
+    }
+    
     
 }
 

@@ -760,8 +760,12 @@
                             </div>
                             <div class="content-bar">
                                 <div class="ticket-photo">
-                                    <a class=" photo photo-135x90 " title="<?php echo $car->title; ?>" href="/auto_audi_100_11080455.html">
-                                        <img src="/images/photos/<?php echo $car->id; ?>/main.jpg ">
+                                    <a class=" photo photo-135x90 " title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>">
+                                        <?php if($car->image != null){ ?>
+                                            <img src="/images/photos/<?php echo $car->id; ?>/<?php echo $car->image; ?>">
+                                        <?php } else { ?>
+                                            <img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg">
+                                        <?php } ?>
                                     </a>
                                     <span class="item">
                                         <i class="icon-small-photo"></i>
@@ -777,7 +781,7 @@
                         return false;" href="/fishki-group/"></a>
                                         </span>
                                         <h3 class="head-car">
-                                            <a title="<?php echo $car->title; ?>" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->title; ?> </a>
+                                            <a title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?> </a>
                                             1991
                                         </h3>
                                     </div>

@@ -155,16 +155,20 @@ class Application_Model_CarsMapper
     public function findAll()
     {
         $oDbTable = $this->getDbTable();
-        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+       $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->joinLeft('mark','mark.id = cars.mark_id', array('mark_name'=>'name'))
+                                      ->joinLeft('model','model.id = cars.model_id', array('model_name'=>'name'))
                                       ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
                                       ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
                                       ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
                                       ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
-                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name')
-                                      ); 
+                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
+                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'type'))
+                                      ->joinLeft('photos','photos.auto_id = cars.id AND photos.is_main = 1', array('image'))
+                                      ;
 
         
-        //echo $oSelect; exit;
+        echo $oSelect; exit;
         $oResultSet = $oDbTable->fetchAll($oSelect);        
        // echo "<pre>"; print_r($oResultSet);  exit;
                

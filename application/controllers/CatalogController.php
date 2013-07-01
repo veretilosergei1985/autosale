@@ -531,7 +531,8 @@ class CatalogController extends Zend_Controller_Action
            if ($this->getRequest()->isPost()) {
                 if($form->isValid($this->getRequest()->getPost())){
                     // save data from payment form
-                    
+                    //
+                                       
                     $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'published', 'autoId' => $autoId));
                 }
            

@@ -125,6 +125,10 @@ class Application_Model_Photos
         return $this->getMapper()->mainExist($auto_id);
     }
     
+    public function getMainImage($auto_id){
+        return $this->getMapper()->getMainImage($auto_id);
+    }
+    
     public function deletePhoto($photo_id){
         
         return $this->getMapper()->deletePhoto($photo_id);
