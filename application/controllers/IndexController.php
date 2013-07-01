@@ -26,7 +26,7 @@ class IndexController extends Zend_Controller_Action
         $page=$this->_getParam('p',1);
         
         $paginator = Zend_Paginator::factory($result);
-        $paginator->setItemCountPerPage(15);
+        $paginator->setItemCountPerPage(5);
         $paginator->setCurrentPageNumber($page);
 
         $this->view->paginator=$paginator;    
