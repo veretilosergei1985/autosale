@@ -23,6 +23,7 @@ class IndexController extends Zend_Controller_Action
         
         
         $result =  $carsModel->findAll();
+                
         $page=$this->_getParam('p',1);
         
         $paginator = Zend_Paginator::factory($result);
