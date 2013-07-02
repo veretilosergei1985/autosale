@@ -170,7 +170,7 @@ class Application_Model_CarsMapper
         
         //echo $oSelect; exit;
         $oResultSet = $oDbTable->fetchAll($oSelect);        
-       // echo "<pre>"; print_r($oResultSet);  exit;
+        // echo "<pre>"; print_r($oResultSet);  exit;
                
         return $oResultSet;
         
