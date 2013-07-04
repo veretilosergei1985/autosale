@@ -99,7 +99,6 @@ class Application_Model_Prices
         return $this->getMapper()->find($id);
     }
     
-   
     
 }
 

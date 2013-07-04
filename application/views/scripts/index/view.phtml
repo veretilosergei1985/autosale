@@ -21,7 +21,7 @@
         <i class="icon-star" id="final_page__add_bookmark_icon"></i>
     </a>
     <h1 class="head-cars">
-        <?php echo $this->data->title; ?>
+        <?php echo $this->data->mark_name.' '.$this->data->model_name; ?>
         <span class="year"><?php echo $this->data->year; ?></span>
         <a href="/help/hot" class="label-hot" target="_blank"></a>
     </h1>
@@ -84,7 +84,7 @@
                 Топливо:
                 <strong>
                     <?php echo $this->data->fuel_type; ?>
-                </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано">.</span>
+                </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано"></span>
             </p>
              <p class="item-param">
                 <i class="icon-engine"></i>
@@ -127,7 +127,7 @@
             <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">
             <dl class="info-user">
                 <dt class="user-name">
-                <?php //echo $this->data->username; ?>
+                <?php echo $this->owner->username; ?>
                 </dt>
                 <dd class="item">
                     Город:
@@ -143,11 +143,11 @@
                 </dd>
                 <dd class="item">
                     Пользуется сайтом: <strong>
-                        <?php //echo $this->elapsed_time; ?>
+                        <?php echo $this->elapsed_time; ?>
                     </strong>
                 </dd>
                 <dd class="item">
-                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014"><?php //echo $this->reg_time; ?> назад</strong>
+                    На сайте был: <strong id="final_page__user_last_visit" user_id="2442014"><?php echo $this->reg_time; ?> назад</strong>
                 </dd>
             </dl>
             <div class="characteristic contact-data-seller">

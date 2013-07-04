@@ -143,6 +143,10 @@ class Application_Model_Photos
          return $this->getMapper()->isVideoExist($auto_id);
     }
     
+    public function getPhotosCount(){
+        return $this->getMapper()->getPhotosCount();
+    }
+    
 }
 
 ?>

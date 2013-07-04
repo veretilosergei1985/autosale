@@ -130,6 +130,19 @@ class Application_Model_PhotosMapper
         return $oResultSet;
     }
     
+    public function getPhotosCount(){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select()
+                            ->from('photos', array('COUNT(photos.image) as cnt', 'photos.auto_id'))
+                            ->group('auto_id');
+        
+        //echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        // echo "<pre>"; print_r($oResultSet);  exit;
+               
+        return $oResultSet;
+    }
+    
     
 }
 

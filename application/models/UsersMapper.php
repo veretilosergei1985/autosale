@@ -111,6 +111,7 @@ class Application_Model_UsersMapper
             'email'    => $user->getEmail(),
             'phone'    => $user->getPhone(),
             'added' => date('Y-m-d H:i:s'),
+            'last_login' => $user->getLastLogin()
             
         );
         
@@ -122,6 +123,27 @@ class Application_Model_UsersMapper
             $ins_id = $this->getDbTable()->update($data, array('id = ?' => $id));
         }
     }
+    
+    public function updateAttr(Application_Model_Users $user)
+    {
+       $data = array(
+            'id' => $user->getId(),
+            'reg_id'    => $user->getRegId(),
+            'city_id'   => $user->getCityId(),
+            'username'  => $user->getUsername(),
+            'email'    => $user->getEmail(),
+            'phone'    => $user->getPhone(),
+            'last_login' => $user->getLastLogin()
+            
+        );
+        
+       $id = $user->getId();
+       unset($data['id']);
+       $ins_id = $this->getDbTable()->update($data, array('id = ?' => $id));
+       //echo "<pre>"; print_r($data); exit;
+ 
+    }
+    
     public function find($id, Application_Model_Users $user)
     {
 
@@ -135,12 +157,11 @@ class Application_Model_UsersMapper
         $user->setId($row->id)
              ->setUsername($row->username)
              ->setEmail($row->email)
-             ->setPhone($row->phone);
+             ->setPhone($row->phone)
+             ->setAdded($row->added)
+             ->setLastLogin($row->last_login);
                 //->setFirstName($row->first_name)
                 //->setLastName($row->last_name)
-                
-                
-
     }
     
     public function fetchAll()
@@ -153,6 +174,7 @@ class Application_Model_UsersMapper
                    ->setTitle($row->title)
                    ->setDescription($row->description)
                    ->setAdded($row->added)
+                    ->setLastLogin($row->last_login)
                    ->setYear($row->year)
                    ->setMapper($this);
             $entries[] = $entry;

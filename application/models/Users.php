@@ -11,6 +11,8 @@ class Application_Model_Users
     protected $_phone;
     protected $_reg_id;
     protected $_city_id;
+    protected $_added;
+    protected $_last_login;
     
     protected $_mapper;
    
@@ -48,7 +50,8 @@ class Application_Model_Users
         }
         return $this;
     }
-     public function setFirstName($val)
+    
+    public function setFirstName($val)
     {
         $this->_first_name = (string) $val;
         return $this;
@@ -57,6 +60,7 @@ class Application_Model_Users
     {
         return $this->_first_name;
     }
+    
     public function setLastName($val)
     {
         $this->_last_name = (string) $val;
@@ -135,6 +139,26 @@ class Application_Model_Users
         return $this->_city_id;
     }
     
+    public function setAdded($val)
+    {
+        $this->_added = $val;
+        return $this;
+    }
+    public function getAdded()
+    {
+        return $this->_added;
+    }
+    
+    public function setLastLogin($val)
+    {
+        $this->_last_login = $val;
+        return $this;
+    }
+    public function getLastLogin()
+    {
+        return $this->_last_login;
+    }
+    
     public function setMapper($mapper)
     {
         $this->_mapper = $mapper;
@@ -151,6 +175,11 @@ class Application_Model_Users
     {
        return $this->getMapper()->save($this);
     }
+    
+    public function updateAttr()
+    {
+       return $this->getMapper()->updateAttr($this);
+    }
    
     public function find($id)
     {
@@ -164,6 +193,8 @@ class Application_Model_Users
     
     public function authorize($email, $password)
     {
+        //echo md5('8wd6gg'.$password); exit;
+        //echo md5($password.'8wd6gg'); exit;
             $auth = Zend_Auth::getInstance();
             $authAdapter = new Zend_Auth_Adapter_DbTable(
                     Zend_Db_Table::getDefaultAdapter(),
@@ -177,7 +208,15 @@ class Application_Model_Users
 
             $result = $auth->authenticate($authAdapter);
             if ($result->isValid()) {
+
                     $storage = $auth->getStorage();
+                    $user_data = $authAdapter->getResultRowObject(null, array('password'));
+                    
+                    $userModel = new Application_Model_Users();
+                    $userModel->find($user_data->id);
+                    $userModel->setLastLogin(date('Y-m-d H:i:s'));
+                    $userModel->updateAttr();
+                    
                     $storage->write($authAdapter->getResultRowObject(null, array('password')));
                     return true;
             }
