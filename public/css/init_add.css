@@ -3591,3 +3591,6 @@ root {
 .options-republish input{
     margin-right: 5px !important;
 }
+#priority-element label{
+    display: inline-block;
+}

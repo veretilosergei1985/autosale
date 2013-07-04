@@ -9,6 +9,8 @@ jQuery(function() {
 
 
     }); 
+    
+    $('#priority-element').find('br').remove();
         
     if($('#category__addcars').val() != '' && $('#category__addcars').val() != '0'){
         

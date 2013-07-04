@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Июн 24 2013 г., 10:22
--- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
+-- Хост: localhost
+-- Время создания: Июл 04 2013 г., 19:13
+-- Версия сервера: 5.5.29
+-- Версия PHP: 5.3.10-1ubuntu3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -61,25 +61,30 @@ CREATE TABLE IF NOT EXISTS `cars` (
   `status` enum('active','pending','confirmed','waiting') NOT NULL DEFAULT 'waiting',
   `exchange` tinyint(1) NOT NULL,
   `auction` tinyint(1) NOT NULL,
+  `priority` enum('none','hot','less','urgently') NOT NULL DEFAULT 'none',
   `enable_comment` tinyint(1) DEFAULT '0',
   `send_comments` tinyint(1) DEFAULT '0',
   `added` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Дамп данных таблицы `cars`
 --
 
-INSERT INTO `cars` (`id`, `user_id`, `cat_id`, `body_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors`, `fuel_id`, `fuel_city`, `fuel_route`, `fuel_combine`, `color_id`, `metallic`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `other_id`, `version`, `vin`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `status`, `exchange`, `auction`, `enable_comment`, `send_comments`, `added`) VALUES
-(1, 1, 0, 0, 1, 1, 2, 22, 4, 2, 4, 1, '', '', '', 1, 0, 0, 0, 0, 0, 0, '', '', 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', 'waiting', 0, 0, 0, 0, '2013-04-17 09:00:00'),
-(2, 1, 0, 0, 1, 1, 1, 57, 4, 2, 4, 2, '', '', '', 6, 0, 0, 0, 0, 0, 0, '', '', 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', 'waiting', 0, 0, 0, 0, '2013-04-09 10:31:32'),
-(3, 2, 0, 0, 1, 2, 2, 3, 1, 3, 5, 4, '', '', '', 9, 0, 0, 0, 0, 0, 0, '', '', 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', 'waiting', 0, 0, 0, 0, '2013-01-12 08:11:00'),
-(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, 0, '', '', 'Title', 'Description', '', 0, 0, 0, 'UAH', 'waiting', 0, 0, 0, 0, '2013-06-04 22:49:31'),
-(6, 0, 2, 12, 13, 4, 2, 0, 1, 2, 1, 2, '0', '0', '0', 21, 1, 0, 0, 0, 0, 0, '', '', '', 'zazaz zazazaza zazazaza', '2011', 456, 456, 546, 'USD', 'waiting', 0, 0, 1, 1, '0000-00-00 00:00:00'),
-(7, 0, 1, 2, 20, 3, 1, 0, 4, 3, 4, 1, '9', '8', '9', 20, 1, 0, 0, 0, 0, 0, 'CC', '213260890746456', '', 'hghgfhfhfg fghfghfgh gfhfghfgh', '1997', 255, 2.6, 7850, 'USD', 'waiting', 1, 1, 1, 1, '0000-00-00 00:00:00'),
-(8, 0, 0, 0, 4, 4, 2, 0, 0, 0, 0, 0, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '1996', 120, 0, 3450, 'USD', 'waiting', 0, 0, 1, 1, '0000-00-00 00:00:00'),
-(9, 0, 0, 0, 7, 4, 2, 0, 0, 0, 0, 0, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '1994', 20, 1.3, 5670, 'USD', 'waiting', 0, 0, 1, 1, '0000-00-00 00:00:00');
+INSERT INTO `cars` (`id`, `user_id`, `cat_id`, `body_id`, `reg_id`, `model_id`, `mark_id`, `city_id`, `transmission_id`, `drive_id`, `doors`, `fuel_id`, `fuel_city`, `fuel_route`, `fuel_combine`, `color_id`, `metallic`, `safety_id`, `comfort_id`, `multimedia_id`, `state_id`, `other_id`, `version`, `vin`, `title`, `description`, `year`, `mileage`, `volume`, `price`, `currency`, `status`, `exchange`, `auction`, `priority`, `enable_comment`, `send_comments`, `added`) VALUES
+(1, 1, 0, 0, 1, 1, 2, 22, 4, 2, 4, 1, '', '', '', 1, 0, 0, 0, 0, 0, 0, '', '', 'Продам Audi 100', 'Продам Audi 100', '1994', 320, 2.4, 7450, 'UAH', 'waiting', 0, 0, 'none', 0, 0, '2013-07-02 09:00:00'),
+(2, 1, 0, 0, 1, 1, 1, 57, 4, 2, 4, 2, '', '', '', 6, 0, 0, 0, 0, 0, 0, '', '', 'Продам Audi 80', 'Продам Audi 80', '1992', 190, 2, 5600, 'UAH', 'waiting', 0, 0, 'none', 0, 0, '2013-07-03 10:31:32'),
+(3, 2, 0, 0, 1, 2, 2, 3, 1, 3, 5, 4, '', '', '', 9, 0, 0, 0, 0, 0, 0, '', '', 'Продам', 'Продам', '1990', 240, 1.8, 8100, 'USD', 'waiting', 0, 0, 'none', 0, 0, '2013-01-12 08:11:00'),
+(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, 0, '', '', 'Title', 'Description', '', 0, 0, 0, 'UAH', 'waiting', 0, 0, 'none', 0, 0, '2013-06-04 22:49:31'),
+(6, 0, 2, 12, 13, 4, 2, 0, 1, 2, 1, 2, '0', '0', '0', 21, 1, 0, 0, 0, 0, 0, '', '', '', 'zazaz zazazaza zazazaza', '2011', 456, 456, 546, 'USD', 'waiting', 0, 0, 'none', 1, 1, '2013-07-03 15:31:17'),
+(7, 0, 1, 2, 20, 3, 1, 0, 4, 3, 4, 1, '9', '8', '9', 20, 1, 0, 0, 0, 0, 0, 'CC', '213260890746456', '', 'hghgfhfhfg fghfghfgh gfhfghfgh', '1997', 255, 2.6, 7850, 'USD', 'waiting', 1, 1, 'none', 1, 1, '2013-04-22 11:20:00'),
+(8, 0, 0, 0, 4, 4, 2, 0, 0, 0, 0, 0, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '1996', 120, 0, 3450, 'USD', 'waiting', 0, 0, 'none', 1, 1, '2013-07-04 06:07:00'),
+(9, 0, 0, 0, 7, 4, 2, 0, 0, 0, 0, 0, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '1994', 20, 1.3, 5670, 'USD', 'waiting', 0, 0, 'none', 1, 1, '2013-07-04 05:06:08'),
+(10, 0, 1, 1, 3, 2, 1, 0, 4, 3, 4, 1, '8', '7', '8', 2, 1, 0, 0, 0, 0, 0, 'c4', '123124354609909090', '', '', '1996', 244, 2, 6000, 'USD', 'waiting', 0, 0, 'none', 1, 1, '2013-07-04 12:41:23'),
+(11, 3, 1, 1, 10, 2, 1, 0, 4, 2, 4, 1, '10', '9', '10', 13, 1, 0, 0, 0, 0, 0, 'C4', '', '', 'Description', '1994', 230, 3.2, 73400, 'UAH', 'waiting', 1, 1, 'none', 1, 1, '2013-07-04 12:05:00'),
+(12, 6, 1, 5, 6, 3, 1, 0, 4, 2, 4, 1, '0', '0', '0', 18, 1, 0, 0, 0, 0, 0, '', '', '', 'Description', '1996', 180, 2, 7800, 'EUR', 'waiting', 1, 1, 'none', NULL, NULL, '0000-00-00 00:00:00'),
+(13, 6, 4, 56, 5, 5, 2, 0, 3, 2, 2, 3, '0', '0', '0', 15, 1, 0, 0, 0, 0, 0, '', '', '', 'Description', '2000', 5432, 234, 234, 'USD', 'waiting', 1, 1, 'none', NULL, NULL, '2013-07-04 14:43:16');
 
 -- --------------------------------------------------------
 
@@ -92,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `car_comfort` (
   `car_id` int(11) NOT NULL,
   `comfort_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
 
 --
 -- Дамп данных таблицы `car_comfort`
@@ -135,7 +140,10 @@ INSERT INTO `car_comfort` (`id`, `car_id`, `comfort_id`) VALUES
 (62, 7, 12),
 (63, 7, 14),
 (64, 7, 15),
-(65, 8, 11);
+(65, 8, 11),
+(69, 11, 1),
+(70, 11, 2),
+(71, 11, 3);
 
 -- --------------------------------------------------------
 
@@ -148,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `car_multimedia` (
   `car_id` int(11) NOT NULL,
   `multimedia_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Дамп данных таблицы `car_multimedia`
@@ -171,7 +179,10 @@ INSERT INTO `car_multimedia` (`id`, `car_id`, `multimedia_id`) VALUES
 (26, 7, 3),
 (27, 7, 4),
 (28, 7, 3),
-(29, 7, 4);
+(29, 7, 4),
+(33, 11, 2),
+(34, 11, 3),
+(35, 11, 4);
 
 -- --------------------------------------------------------
 
@@ -184,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `car_other` (
   `car_id` int(11) NOT NULL,
   `other_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Дамп данных таблицы `car_other`
@@ -212,7 +223,8 @@ INSERT INTO `car_other` (`id`, `car_id`, `other_id`) VALUES
 (28, 7, 3),
 (29, 7, 6),
 (30, 8, 5),
-(31, 8, 6);
+(31, 8, 6),
+(33, 11, 2);
 
 -- --------------------------------------------------------
 
@@ -225,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `car_safety` (
   `car_id` int(11) NOT NULL,
   `safety_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- Дамп данных таблицы `car_safety`
@@ -261,7 +273,9 @@ INSERT INTO `car_safety` (`id`, `car_id`, `safety_id`) VALUES
 (53, 7, 7),
 (54, 7, 8),
 (55, 8, 10),
-(56, 8, 11);
+(56, 8, 11),
+(59, 11, 2),
+(60, 11, 4);
 
 -- --------------------------------------------------------
 
@@ -274,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `car_state` (
   `car_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Дамп данных таблицы `car_state`
@@ -306,7 +320,10 @@ INSERT INTO `car_state` (`id`, `car_id`, `state_id`) VALUES
 (30, 7, 5),
 (31, 7, 6),
 (32, 7, 8),
-(33, 7, 9);
+(33, 7, 9),
+(37, 11, 1),
+(38, 11, 2),
+(39, 11, 3);
 
 -- --------------------------------------------------------
 
@@ -3077,7 +3094,7 @@ CREATE TABLE IF NOT EXISTS `photos` (
   `is_main` tinyint(1) NOT NULL,
   `video_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `photos`
@@ -3087,7 +3104,8 @@ INSERT INTO `photos` (`id`, `auto_id`, `image`, `is_main`, `video_url`) VALUES
 (1, 8, 'WGRS9Q.jpg', 1, NULL),
 (2, 8, 'IlxDV1.jpg', 0, NULL),
 (3, 9, 'iApGZQ.jpg', 1, NULL),
-(4, 9, 'ctTixL.jpg', 0, NULL);
+(4, 9, 'ctTixL.jpg', 0, NULL),
+(5, 9, 'fdgASD3.jpg', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -3107,7 +3125,7 @@ CREATE TABLE IF NOT EXISTS `prices` (
 --
 
 INSERT INTO `prices` (`id`, `name`, `value`) VALUES
-(1, 'simple', '8.00');
+(1, 'simple', 8.00);
 
 -- --------------------------------------------------------
 
@@ -3481,18 +3499,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `enabled` enum('yes','no') NOT NULL DEFAULT 'yes',
   `avatar` varchar(255) NOT NULL,
   `added` datetime NOT NULL,
-  `last_login` datetime NOT NULL,
+  `last_login` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `reg_id`, `city_id`, `username`, `password`, `salt`, `old_password`, `secret`, `first_name`, `last_name`, `email`, `phone`, `skype`, `status`, `enabled`, `avatar`, `added`, `last_login`) VALUES
-(1, 0, 0, 'serg__666', '666666a', '', '666666a', 'asdNDa', 'Сергей', 'Веретило', 'sergey.veretilo@gmail.com', '', 'veretilo_sergei', 'confirmed', 'yes', '', '2008-02-14 14:17:00', '2013-05-07 10:22:00'),
+(1, 0, 0, 'serg__666', '666666a', '', '666666a', 'asdNDa', 'Сергей', 'Веретило', 'sergey.veretilo@gmail.com', '', 'veretilo_sergei', 'confirmed', 'yes', '', '2013-07-06 16:33:24', '2013-05-07 10:22:00'),
 (2, 0, 0, 'dima', '666666a', '', '666666a', 'sdg12C', 'Дмитрий', 'Головко', 'dima.golovko@gmail.com', '', 'dima_golovko', 'confirmed', 'yes', '', '2013-05-06 23:08:35', '2013-05-07 05:17:00'),
-(3, 0, 0, 'Сергей', 'ffb43cb0bf7c849377bc052020b3864c', 'kqwIMq', '', '', '', '', 'test@gmail.com', '0931236991', '', 'pending', 'yes', '', '2013-05-21 12:02:20', '0000-00-00 00:00:00');
+(3, 0, 0, 'Сергей', 'a1603e530f027f8801907febfdc42fb0', 'XvUPdl', '', '', '', '', 'test@gmail.com', '0931236991', '', 'pending', 'yes', '', '2013-07-03 16:57:23', '2013-07-02 03:06:00'),
+(4, 0, 0, 'zzzrtrtyrty', '3a49bc5cf980fcb38687332a736bd983', 'JrK2P1', '', '', '', '', 'zzz@gmail.com', '0988888555', '', 'confirmed', 'yes', '', '2013-07-03 17:04:30', '2013-07-03 05:04:30'),
+(5, 0, 0, 'Serg', '8bc9b328170d06d3cb166b7c8673b4ab', 'kdESP6', '', '', '', '', 'test1@gmail.com', '0931236991', '', 'pending', 'yes', '', '2013-07-03 17:13:07', '2013-07-03 17:13:07'),
+(6, 0, 0, 'sdfsdfsdfsdf', '7b566258b49067a9e1070118cbce3f2c', '8wd6gg', '', '', '', '', 'test2@gmail.com', '0931235996', '', 'pending', 'yes', '', '2013-07-02 16:46:59', '2013-07-04 12:57:32');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

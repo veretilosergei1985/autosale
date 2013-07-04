@@ -53,7 +53,9 @@ class Application_Model_CarsMapper
             'status' => $car->getStatus(),
             'send_comments' => $car->getSendComments(),
             'enable_comment' => $car->getEnableComment(),
-            'description' => $car->getDescription()
+            'description' => $car->getDescription(),
+            'added' => $car->getAdded(),
+            'priority' => $car->getPriority(),
             
         );
 
@@ -127,6 +129,7 @@ class Application_Model_CarsMapper
         $car->setAuction($row->auction);
         $car->setStatus($row->status);
         $car->setAdded($row->added);
+        $car->setPriority($row->priority);
 
         //$car->setTitle('Title');
         $car->setDescription($row->description);

@@ -229,8 +229,21 @@ class Application_Form_AddCar extends Zend_Form
             $exchange = new Zend_Form_Element_Checkbox('exchange', array('disableLoadDefaultDecorators' => true, 'required' => false));
             $exchange->setAttrib('id', 'exchange__addcars');
             
-                
+            
+        $this->addElement('radio', 'priority', array(
+            'label' => '',
+            'multiOptions' => array(
+                '1'=>'<label class="label-hot" for="previewradio1__addcars"></label>',
+                '2'=>'<label class="label-less" for="previewradio2__addcars"></label>',
+                '3'=>'<label class="label-urgently" for="previewradio3__addcars"></label>',
+                '0'=>'<label for="previewradio0__addcars"> ничего не добавлять </label>'
+            ),
+            'escape' => false,
+            'value' => '0',
+           'decorators' => array(),
+        ));
         //////////////////////////////////////////////
+        
         
         $region->setDecorators(array(
             'ViewHelper',
@@ -411,8 +424,7 @@ class Application_Form_AddCar extends Zend_Form
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows relative')),
         ))->setDescription('<label for="auction__addcars"><i class="icon-auction-red"></i>Возможен торг<em> (+ включить блок Торги)</em></label>'); 
         $auction->getDecorator('description')->setOption('escape', false);
-        
-                       
+                      
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setOptions(array('class' => 'button  large green'));
         $submit->setDecorators(array(
@@ -632,52 +644,7 @@ class Application_Form_AddCar extends Zend_Form
          
           
           
-          $this->addElement(
-                'note', 
-                'preview', 
-                array('value' => '<div id="previewblock__addcars" class="rows preview-title-ad span7">
-                                        <label class="label" for="input3"> Заглавие объявления: </label>
-                                        <div class="indent">
-                                            <div id="previewticket__addcars" class="ticket-item ">
-                                                <div class="head-ticket">
-                                                    <span class="city">
-                                                        <span id="previewcity__addcars" style="color : #256799">Город</span>
-                                                    </span>
-                                                    <h3 class="head-car">
-                                                        <i id="previewishot__addcars" class=""></i>
-                                                        <span id="previewmarka__addcars" style="color : #256799">Марка</span>
-                                                        <span id="previewmodel__addcars" style="color : #256799">Модель</span>
-                                                        <span id="previewversion__addcars" style="color : #256799"></span>
-                                                        <span id="previewyear__addcars">Год выпуска</span>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <dl class="swich-title-ad">
-                                            <dt class="title-ad"> Добавить к заглавию: </dt>
-                                            <dd class="item-ad">
-                                                <input id="previewradio1__addcars" type="radio" value="1" name="title-ad">
-                                                <label class="label-hot" for="previewradio1__addcars"></label>
-                                            </dd>
-                                            <dd class="item-ad">
-                                                <input id="previewradio2__addcars" type="radio" value="2" name="title-ad">
-                                                <label class="label-less" for="previewradio2__addcars"></label>
-                                            </dd>
-                                            <dd class="item-ad">
-                                                <input id="previewradio3__addcars" type="radio" value="3" name="title-ad">
-                                                <label class="label-urgently" for="previewradio3__addcars"></label>
-                                            </dd>
-                                            <dd class="item-ad">
-                                                <input id="previewradio0__addcars" type="radio" value="0" name="title-ad" checked="checked">
-                                                <label for="previewradio0__addcars"> ничего не добавлять </label>
-                                            </dd>
-                                            </dl>
-                                        </div>
-                                    </div>', 
-                      'decorators' => array(
-                          //array('HtmlTag', array('tag' => 'div', 'class' => 'rows')),
-                       )
-                    )
-               );
+          
          
                
         

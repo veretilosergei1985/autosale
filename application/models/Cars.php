@@ -38,8 +38,8 @@ class Application_Model_Cars
     protected $_enable_comment;
     protected $_send_comments;
 
-
-    
+    protected $_priority;
+        
     protected $_mapper;
     
     
@@ -355,6 +355,16 @@ class Application_Model_Cars
     public function getAdded()
     {
         return $this->_added;
+    }
+    
+    public function setPriority($val)
+    {
+        $this->_priority = $val;
+        return $this;
+    }
+    public function getPriority()
+    {
+        return $this->_priority;
     }
   ////////////////////////////////////////////////////  
     
