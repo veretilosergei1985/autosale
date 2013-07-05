@@ -58,7 +58,7 @@ class Application_Model_CarsMapper
             'priority' => $car->getPriority(),
             
         );
-
+//echo "<pre>"; print_r($data); exit;
         if (null === ($id = $car->getId())) {
 
             unset($data['id']);
@@ -72,6 +72,7 @@ class Application_Model_CarsMapper
     {
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->joinLeft('sub_category','sub_category.id = cars.body_id', array('body_name'=>'name'))
                                       ->joinLeft('mark','mark.id = cars.mark_id', array('mark_name'=>'name'))
                                       ->joinLeft('model','model.id = cars.model_id', array('model_name'=>'name'))
                                       ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))

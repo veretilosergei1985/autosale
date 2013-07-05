@@ -748,7 +748,7 @@
             <div id="search_auto_results" class="standart-view">
                 <?php foreach ($this->paginator as $car) { ?>
                     <div class="item">
-                        <div class="ticket-item" ticket_status_id="0" ticket_auto_id="11080455">
+                        <div class="ticket-item <?php if($car->priority != 'none'){ echo 'paid'; }?>" ticket_status_id="0" ticket_auto_id="11080455">
                             <a name="search_auto_id_11080455"> </a>
                             <div class="action-bar">
                                 <a class="item icon-chips" title="Фишек нет. Что это такое?" onclick="" href="javascript:void(0);"> 0 </a>
@@ -760,11 +760,12 @@
                             </div>
                             <div class="content-bar">
                                 <div class="ticket-photo">
-                                    <a class=" photo photo-135x90 " title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>">
+                                    <a class="<?php if($car->priority != 'none'){ ?>photo photo-185x120<?php } else { ?>photo photo-135x90<?php } ?> " title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>">
                                         <?php if($car->image != null){ ?>
                                             <img src="/images/photos/<?php echo $car->id; ?>/<?php echo $car->image; ?>">
                                         <?php } else { ?>
-                                            <img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg">
+                                            <?php if($car->priority != 'none'){ ?><img src="http://img.auto.ria.ua/images/no-photo/no-photo-185x120.jpg"><?php } else { ?><img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg"><?php } ?> 
+                                            
                                         <?php } ?>
                                     </a>
                                     <span class="item">
@@ -786,6 +787,9 @@
                         return false;" href="/fishki-group/"></a>
                                         </span>
                                         <h3 class="head-car">
+                                            <?php if($car->priority != 'none'){ ?>
+                                                        <i class="label-<?php echo $car->priority; ?>" onclick="fishkiObj.getForm(10043883); return false;"></i>
+                                            <?php } ?>
                                             <a title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?> </a>
                                             1991
                                         </h3>

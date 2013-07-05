@@ -79,6 +79,7 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setAuction($data['auction']);
                                  $car->setStatus('waiting');
                                  $car->setAdded(date('Y-m-d H:i:s'));
+                                 $car->setPriority($data['priority']);
                                  
                                  $car->setTitle('Title');
                                  $car->setDescription('Description');
@@ -143,6 +144,7 @@ class CatalogController extends Zend_Controller_Action
                             $car->setAuction($data['auction']);
                             $car->setStatus('waiting');
                             $car->setAdded(date('Y-m-d H:i:s'));
+                            $car->setPriority($data['priority']);
 
                             $car->setTitle('Title');
                             $car->setDescription('Description');

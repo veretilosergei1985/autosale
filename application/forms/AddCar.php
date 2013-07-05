@@ -233,10 +233,10 @@ class Application_Form_AddCar extends Zend_Form
         $this->addElement('radio', 'priority', array(
             'label' => '',
             'multiOptions' => array(
-                '1'=>'<label class="label-hot" for="previewradio1__addcars"></label>',
-                '2'=>'<label class="label-less" for="previewradio2__addcars"></label>',
-                '3'=>'<label class="label-urgently" for="previewradio3__addcars"></label>',
-                '0'=>'<label for="previewradio0__addcars"> ничего не добавлять </label>'
+                'hot'=>'<label class="label-hot" for="previewradio1__addcars"></label>',
+                'less'=>'<label class="label-less" for="previewradio2__addcars"></label>',
+                'urgently'=>'<label class="label-urgently" for="previewradio3__addcars"></label>',
+                'none'=>'<label for="previewradio0__addcars"> ничего не добавлять </label>'
             ),
             'escape' => false,
             'value' => '0',

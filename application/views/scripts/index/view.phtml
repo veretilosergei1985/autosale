@@ -23,7 +23,9 @@
     <h1 class="head-cars">
         <?php echo $this->data->mark_name.' '.$this->data->model_name; ?>
         <span class="year"><?php echo $this->data->year; ?></span>
-        <a href="/help/hot" class="label-hot" target="_blank"></a>
+        <?php if($this->data->priority != 'none'){ ?>
+            <a href="/help/hot" class="label-<?php echo $this->data->priority; ?>" target="_blank"></a>
+        <?php } ?>
     </h1>
 </div>
 
@@ -72,56 +74,63 @@
             </script>
         </div>
         <div class="characteristic delimeter">
-            <p class="item-param">
-                <i class="icon-color"></i>
-                Цвет кузова:
-                <strong>
-                    <?php echo $this->data->color; ?>
-                </strong>
-            </p>
-            <p class="item-param">
-                <i class="icon-fuel"></i>
-                Топливо:
-                <strong>
-                    <?php echo $this->data->fuel_type; ?>
-                </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано"></span>
-            </p>
-             <p class="item-param">
-                <i class="icon-engine"></i>
-                Объем двигателя:
-                <strong>
-                    <?php echo $this->data->volume; ?> л.
-                </strong>
-            </p>
-            <p class="item-param">
-                <i class="icon-transmission"></i>
-                Коробка:
-                <strong>
-                    <?php echo $this->data->trans_type; ?>
-                </strong>
-            </p>
-            <p class="item-param">
-                <i class="icon-drive"></i>
-                Привод:
-                <strong>
-                    <?php echo $this->data->drive; ?>
-                </strong>
-            </p>
-            <p class="item-param">
-                <i class="icon-door"></i>
-                Дверей:
-                <strong>
-                    <?php //echo $this->data->doors; ?>
-                </strong>
-            </p>
-            <p class="item-param">
-                <i class="icon-mileage"></i>
-                Пробег:
-                <strong>
-                    <?php echo $this->data->mileage; ?>
-                    тыс.км
-                </strong>
-            </p>
+            <?php if(isset($this->data->body_name)){ ?>
+                <p class="item-param">
+                    <i class="icon-bodytype"></i>
+                    Тип кузова:
+                    <strong> <?php if(isset($this->data->body_name)){ echo $this->data->body_name; }?></strong>
+                </p>
+            <?php } ?>
+                <p class="item-param">
+                    <i class="icon-color"></i>
+                    Цвет кузова:
+                    <strong>
+                        <?php echo $this->data->color; ?>
+                    </strong>
+                </p>
+                <p class="item-param">
+                    <i class="icon-fuel"></i>
+                    Топливо:
+                    <strong>
+                        <?php echo $this->data->fuel_type; ?>
+                    </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано"></span>
+                </p>
+                 <p class="item-param">
+                    <i class="icon-engine"></i>
+                    Объем двигателя:
+                    <strong>
+                        <?php echo $this->data->volume; ?> л.
+                    </strong>
+                </p>
+                <p class="item-param">
+                    <i class="icon-transmission"></i>
+                    Коробка:
+                    <strong>
+                        <?php echo $this->data->trans_type; ?>
+                    </strong>
+                </p>
+                <p class="item-param">
+                    <i class="icon-drive"></i>
+                    Привод:
+                    <strong>
+                        <?php echo $this->data->drive; ?>
+                    </strong>
+                </p>
+                <p class="item-param">
+                    <i class="icon-door"></i>
+                    Дверей:
+                    <strong>
+                        <?php //echo $this->data->doors; ?>
+                    </strong>
+                </p>
+                <p class="item-param">
+                    <i class="icon-mileage"></i>
+                    Пробег:
+                    <strong>
+                        <?php echo $this->data->mileage; ?>
+                        тыс.км
+                    </strong>
+                </p>
         </div>
         <div class="seller-data" id="black_list">
             <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">

@@ -62,7 +62,7 @@ class IndexController extends Zend_Controller_Action
         $userModel = new Application_Model_Users();
         $userModel->find($data->user_id);
         $this->view->owner = $userModel;
-        //echo "<pre>"; print_r($userModel); exit;     
+        //echo "<pre>"; print_r($data); exit;     
         
 
         $photosModel = new Application_Model_Photos();
