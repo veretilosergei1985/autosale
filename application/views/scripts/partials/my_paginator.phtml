@@ -42,7 +42,7 @@
              <!-- Numbered page links -->
             <?php foreach ($this->pagesInRange as $page): ?>
               <?php if ($page != $this->current): ?>
-                <a href="<?php echo $this->url(array('controller'=>'index','action'=>'index', 'p' => $page)); ?>">
+                <a href="<?php echo $this->url(array ('p' => $page), 'default');?>">
                     <?php echo $page; ?>
                 </a>
               <?php else: ?>

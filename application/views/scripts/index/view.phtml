@@ -73,14 +73,40 @@
             // ]]> -->
             </script>
         </div>
+        <?php if(!empty($this->data->auction) || !empty($this->data->exchange)){ ?>
+        <div class="base-information delimeter">
+            <div class="announced-tenders">
+                <?php if(!empty($this->data->auction)){ ?>
+                <strong class="item">
+                    <i class="icon-auction"></i>
+                    Торг
+                </strong>
+                <?php } ?>
+                <?php if(!empty($this->data->exchange)){ ?>
+                <strong class="item">
+                    <i class="icon-exchange"></i>
+                    Возможен обмен
+                </strong>
+                <?php } ?>
+            </div>
+        </div>
+        <?php } ?>
         <div class="characteristic delimeter">
-            <?php if(isset($this->data->body_name)){ ?>
+            <?php if(!empty($this->data->vin)){ ?>
+                <p class="item-param">
+                    <i class="icon-bodytype"></i>
+                    VIN:
+                    <strong> <?php if(!empty($this->data->vin)){ echo $this->data->vin; }?></strong>
+                </p>
+            <?php } ?>
+            <?php if(!empty($this->data->body_name)){ ?>
                 <p class="item-param">
                     <i class="icon-bodytype"></i>
                     Тип кузова:
-                    <strong> <?php if(isset($this->data->body_name)){ echo $this->data->body_name; }?></strong>
+                    <strong> <?php if(!empty($this->data->body_name)){ echo $this->data->body_name; }?></strong>
                 </p>
             <?php } ?>
+            <?php if(!empty($this->data->color)){ ?>
                 <p class="item-param">
                     <i class="icon-color"></i>
                     Цвет кузова:
@@ -88,6 +114,8 @@
                         <?php echo $this->data->color; ?>
                     </strong>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->fuel_type)){ ?>
                 <p class="item-param">
                     <i class="icon-fuel"></i>
                     Топливо:
@@ -95,6 +123,8 @@
                         <?php echo $this->data->fuel_type; ?>
                     </strong> <span title="Город: не указано, Трасса: не указано, Смешанный: не указано"></span>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->volume)){ ?>
                  <p class="item-param">
                     <i class="icon-engine"></i>
                     Объем двигателя:
@@ -102,6 +132,8 @@
                         <?php echo $this->data->volume; ?> л.
                     </strong>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->trans_type)){ ?>
                 <p class="item-param">
                     <i class="icon-transmission"></i>
                     Коробка:
@@ -109,6 +141,8 @@
                         <?php echo $this->data->trans_type; ?>
                     </strong>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->drive)){ ?>
                 <p class="item-param">
                     <i class="icon-drive"></i>
                     Привод:
@@ -116,13 +150,17 @@
                         <?php echo $this->data->drive; ?>
                     </strong>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->doors)){ ?>
                 <p class="item-param">
                     <i class="icon-door"></i>
                     Дверей:
                     <strong>
-                        <?php //echo $this->data->doors; ?>
+                        <?php echo $this->data->doors; ?>
                     </strong>
                 </p>
+            <?php } ?>
+            <?php if(!empty($this->data->mileage)){ ?>
                 <p class="item-param">
                     <i class="icon-mileage"></i>
                     Пробег:
@@ -131,6 +169,7 @@
                         тыс.км
                     </strong>
                 </p>
+            <?php } ?>
         </div>
         <div class="seller-data" id="black_list">
             <img class="photo-seller" src="http://img.auto.ria.ua/images/no-photo/avatar-50x50.gif" width="50" height="50">
@@ -147,7 +186,7 @@
                 </dd>
                 <dd class="item">
                     Объявлений продавца:
-                    <a href="/?target=search&event=little&user_id=2442014" target="_blank"><strong id="final_page__user_ads_count">1</strong></a>
+                    <a href="/?target=search&event=little&user_id=2442014" target="_blank"><strong id="final_page__user_ads_count"><?php echo $this->countAutosByUser; ?></strong></a>
                     <small class="count-offer" id="final_page__how_to_hide_link" style="display: none;"><a href="/autoseller/addpackage/?show_message=1" target="_blank">Как скрыть?</a></small>
                 </dd>
                 <dd class="item">
@@ -196,27 +235,29 @@
         <div class="characteristic delimeter">
             <p class="item-param">
                 <i class="icon-add"></i>
-                <a href="/add_auto.html" class="bold green">Добавить объявление</a>
+                <a href="/catalog/add/step/autoinfo" class="bold green">Добавить объявление</a>
             </p>
-
-            <p class="item-param" id="final_page__actions_block_edit_auto_container" style="display: none;">
+            
+            <?php if($this->data->user_id == Zend_Auth::getInstance()->getIdentity()->id){ ?>
+            
+            <p id="final_page__actions_block_edit_auto_container" class="item-param" style="">
                 <i class="icon-edit"></i>
-                <a href="/addauto/autoinfo/autoId/11066447/">Редактировать авто</a>
+                <a href="/catalog/add/step/autoinfo/autoId/<?php echo $this->data->id; ?>">Редактировать авто</a>
             </p>
-
-            <p class="item-param" id="final_page__actions_block_raise_up_auto_container" style="display: none;">
+            <p id="final_page__actions_block_raise_up_auto_container" class="item-param" style="">
                 <i class="icon-up-ticket"></i>
-                <a href="/fishki-group/" id="final_page__actions_block_raise_up_auto">Поднять вверх при поиске</a>
+                <a id="final_page__actions_block_raise_up_auto" href="/fishki-group/">Поднять вверх при поиске</a>
             </p>
-
-            <p class="item-param" id="final_page__actions_block_republic_container" style="display: none;">
+            <p id="final_page__actions_block_republic_container" class="item-param" style="">
                 <i class="icon-reload"></i>
-                <a href="/addauto/publication/autoId/11066447/">Переопубликовать</a>
+                <a href="/addauto/publication/autoId/11543114/">Переопубликовать</a>
             </p>
-            <p class="item-param" id="final_page__actions_block_delete_auto_container" style="display: none;">
+            <p id="final_page__actions_block_delete_auto_container" class="item-param" style="">
                 <i class="icon-delete"></i>
-                <a href="javascript:void(0);" id="final_page__actions_block_delete_auto">Удалить в архив</a>
+                <a id="final_page__actions_block_delete_auto" href="javascript:void(0);">Удалить в архив</a>
             </p>
+            
+            <?php } ?>
 
         </div>
         <div class="characteristic delimeter">
@@ -330,25 +371,48 @@
                 <div class="preview-gallery">
                     <div class="wrapper" id="final_page__preview_photos_wrapper">
                         <?php if(count($this->photos)>0){ ?>
-                            <?php foreach($this->photos as $photo){ ?>
-                                <a class="photo-85x56" href="javascript:void(0);" photo_id="<?php echo $photo->id; ?>">
-                                    <img title="Audi 80"
-                                         alt="Audi 80"
-                                         src="/images/photos/<?php echo $this->data->id .'/'. $photo->image; ?>" width="85" height="56"/>
-                                </a>
+                            <?php if(count($this->photos)>8){ ?>
+                                <?php for($i = 0; $i<8; $i++){ ?>
+                                        <a class="photo-85x56" href="javascript:void(0);" photo_id="<?php echo $this->photos[$i]['id']; ?>">
+                                            <img title="Audi 80"
+                                                 alt="Audi 80"
+                                                 src="/images/photos/<?php echo $this->data->id .'/'. $this->photos[$i]['image']; ?>" width="85" height="56"/>
+                                        </a>
+                                <?php } ?>
+                            <?php } else { ?>
+                                <?php foreach($this->photos as $photo){ ?>
+                                        <a class="photo-85x56" href="javascript:void(0);" photo_id="<?php echo $photo['id']; ?>">
+                                            <img title="Audi 80"
+                                                 alt="Audi 80"
+                                                 src="/images/photos/<?php echo $this->data->id .'/'. $photo['image']; ?>" width="85" height="56"/>
+                                        </a>
+                                <?php } ?>
                             <?php } ?>
                         <?php } ?>
 
                     </div>
+                    <?php if(count($this->photos)>8){ ?>
+                    <div id="final_page__preview_photos_wrapper_hidden">
+                           <?php for($i = 8; $i<count($this->photos); $i++){ ?>
+                               
+                                    <a class="photo-85x56" href="javascript:void(0);" photo_id="<?php echo $this->photos[$i]['id']; ?>">
+                                        <img title="Audi 80"
+                                             alt="Audi 80"
+                                             src="/images/photos/<?php echo $this->data->id .'/'. $this->photos[$i]['image']; ?>" width="85" height="56"/>
+                                    </a>
+                               
+                            <?php } ?>
+                    </div>
+                    <?php } ?>
 
+                    <?php if(count($this->photos)>8){ ?>
                     <div class="boxed">
                         <a href="javascript:void(0)" id="final_page__show_all_photos">
                             Показать еще
                             <em class="icon-open"></em>
                         </a>
-
                         <span id="final_page__photos_count">
-                            (4)
+                            (<?php echo (count($this->photos) - 8); ?>)
                         </span>
 
                         <a href="javascript:void(0)" style="display: none;" id="final_page__hide_photos">
@@ -356,6 +420,7 @@
                             <em class="icon-close"></em>
                         </a>
                     </div>
+                    <?php } ?>
 
                 </div>
 
@@ -388,7 +453,7 @@
 
                 <section class="box-panel">
                     <div class="title bold">
-                        <?php echo $this->data->title; ?> <?php echo $this->data->year; ?>
+                        Описание <?php echo $this->data->mark_name.' '.$this->data->model_name . ' ' . $this->data->year; ?>
                     </div>
                     <div class="box-panel rocon">
                         <?php if($this->comfort != null){ ?>
@@ -436,7 +501,7 @@
                                 </p>
                         <?php } ?>
                                 <p class="description-order">
-                                    очень быстрый и удобобный <a href="http://www.ria.ua/Services/Lease-rent/avtomobil/" title="автомобиль" target="_blank">автомобиль</a>...
+                                    <?php echo $this->data->description;  ?>
                                 </p>
                                 
                     </div>

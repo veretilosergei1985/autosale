@@ -340,7 +340,24 @@ class DisplayController extends Zend_Controller_Action
             
         }   
         exit;
-   } 
+   }
+   
+    public function cancommentautoAction(){
+        $this->_helper->layout->disableLayout();
+        
+        // check is logged
+        //if is logged
+        if(Zend_Auth::getInstance()->hasIdentity()){
+            echo json_encode(array('result' => 'ok')); exit;
+        } else {
+            echo json_encode(array('result' => 'error')); exit;
+        }
+        
+    }
+   
+   public function showautocommentformAction(){
+        $this->_helper->layout->disableLayout();
+   }
 
 
 }

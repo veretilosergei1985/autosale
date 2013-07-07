@@ -239,7 +239,7 @@ class Application_Form_AddCar extends Zend_Form
                 'none'=>'<label for="previewradio0__addcars"> ничего не добавлять </label>'
             ),
             'escape' => false,
-            'value' => '0',
+            'value' => 'none',
            'decorators' => array(),
         ));
         //////////////////////////////////////////////

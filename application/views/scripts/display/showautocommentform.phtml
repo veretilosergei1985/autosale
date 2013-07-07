@@ -1,0 +1,28 @@
+<div class="form-add-comment" id="final_page__add_comment_container">
+    <form method="get" id="final_page__add_comment_form" action="/ajax.php?target=blocks&event=addcomment">
+        <div class="grid">
+            <input name="autoId" type="hidden" id="final_page__add_comment_auto_id"/>
+            <input name="subcommId" type="hidden" id="final_page_add_comment_parent_id"/>
+            <div class="rows">
+                <label class="label" for="input2">
+                    Ваше имя:
+                </label>
+                <div class="input">
+                    <input class="span3" tabindex="1" id="final_page__add_comment_user_name" type="text" value=" <?php echo Zend_Auth::getInstance()->getIdentity()->username; ?>" disabled="disabled" name="field_name">
+                </div>
+            </div>
+            <div class="rows">
+                <label class="label" for="input2">
+                    Текст комментария:
+                </label>
+                <div class="input">
+                    <textarea class="textarea-comment" cols="60" rows="5" tabindex="2" name="ucomment" id="final_page_add_comment_text" autofocus="autofocus"></textarea>
+                </div>
+            </div>
+            <div class="indent">
+                <input class="button green" type="submit" value="Добавить комментарий" tabindex="3">
+                <a href="javascript:void(0);" class="button grey" id="final_page__add_comment_cancel_button" tabindex="4">Отмена</a>
+            </div>
+        </div>
+    </form>
+</div>

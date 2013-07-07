@@ -36,7 +36,7 @@ class IndexController extends Zend_Controller_Action
         $page=$this->_getParam('p',1);
         
         $paginator = Zend_Paginator::factory($result);
-        $paginator->setItemCountPerPage(20);
+        $paginator->setItemCountPerPage(1);
         $paginator->setCurrentPageNumber($page);
 
         $this->view->paginator=$paginator;    
@@ -67,8 +67,8 @@ class IndexController extends Zend_Controller_Action
 
         $photosModel = new Application_Model_Photos();
         $photos = $photosModel->findByAutoId($id);
-        $this->view->photos = $photos; 
-                
+        $this->view->photos = $photos->toArray(); 
+              
         foreach($photos as $photo){
             if($photo['is_main'] == 1){
                 $main_photo = $photo['image'];
@@ -96,6 +96,10 @@ class IndexController extends Zend_Controller_Action
         $multimedia = $carsModel->getAttributesById($id, 'multimedia');
         $state = $carsModel->getAttributesById($id, 'state');
         
+        $carsModel1 = new Application_Model_Cars();
+        $countAutosByUser = $carsModel1->countByUser($data->user_id);
+        $this->view->countAutosByUser = $countAutosByUser[0]['cnt'];
+
         $this->view->safety = $safety; 
         $this->view->comfort = $comfort;
         //$this->view->other = $other;

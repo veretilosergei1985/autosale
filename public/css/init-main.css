@@ -5898,3 +5898,6 @@ nav.menu-footer .item:hover {
 .signature__footer a {
     color: #8699A3;
 }
+#final_page__preview_photos_wrapper_hidden{
+    display: none;
+}

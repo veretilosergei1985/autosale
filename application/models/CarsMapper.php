@@ -195,8 +195,17 @@ class Application_Model_CarsMapper
         // echo "<pre>"; print_r($oResultSet);  exit;
                
         return $oResultSet;
-        
-        
+          
+    }
+    
+    public function countByUser($user_id){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select()
+                            ->from('cars', array('COUNT(cars.id) as cnt'))
+                            ->where("cars.user_id = ? AND cars.status = 'active'", $user_id); ;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        //echo $oSelect; exit;
+        return $oResultSet;
     }
    
    
