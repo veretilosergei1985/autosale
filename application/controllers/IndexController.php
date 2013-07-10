@@ -8,20 +8,11 @@ class IndexController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
-    public function indexAction()
+    public function searchAction()
     {
-              
-       
+            
         $carsModel = new Application_Model_Cars();
-        //$this->view->list = $carsModel->fetchAll();
-        
-        //$regionsModel = new Application_Model_Regions();
-        //$this->view->regions = $regionsModel->fetchAll();
-
-//        echo "<pre>";
-//        print_r($carsModel->findAll()); exit;
-        //$this->view->list = $carsModel->findAll();
-        
+       
         $photosModelCount = new Application_Model_Photos();
         $data = $photosModelCount->getPhotosCount();
         $photos_count = array();
@@ -29,8 +20,7 @@ class IndexController extends Zend_Controller_Action
             $photos_count[$item->auto_id] = $item->cnt;
         }
         $this->view->photos_cnt = $photos_count;    
-        
-                
+                        
         $result =  $carsModel->findAll();
                 
         $page=$this->_getParam('p',1);
@@ -39,9 +29,8 @@ class IndexController extends Zend_Controller_Action
         $paginator->setItemCountPerPage(1);
         $paginator->setCurrentPageNumber($page);
 
-        $this->view->paginator=$paginator;    
-        
-        
+        $this->view->paginator = $paginator;    
+                
         $er = new Base_Exchange();
         $data = $er->getExchangeRateByChar3("USD");
         $this->view->er = $data->rate/100;
@@ -64,7 +53,6 @@ class IndexController extends Zend_Controller_Action
         $this->view->owner = $userModel;
         //echo "<pre>"; print_r($data); exit;     
         
-
         $photosModel = new Application_Model_Photos();
         $photos = $photosModel->findByAutoId($id);
         $this->view->photos = $photos->toArray(); 
@@ -105,15 +93,16 @@ class IndexController extends Zend_Controller_Action
         //$this->view->other = $other;
         $this->view->multimedia = $multimedia;
         $this->view->state = $state;
-                        
-        
-        
-        //echo "<pre>"; print_r($this->view->safety); exit;
+
     }
     
-    public function testAction(){
-        echo "1111111111"; exit;
+    public function indexAction(){
+        $this->view->headScript()->appendFile('/js/init_index.js');
+                        
+        $form = new Application_Form_IndexSearchUsed();
+        $this->view->form = $form;        
     }
+    
     
     
 

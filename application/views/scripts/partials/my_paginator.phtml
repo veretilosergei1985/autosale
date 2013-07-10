@@ -8,7 +8,7 @@
             <!-- Previous page link -->
             <?php if (isset($this->previous)): ?>
                 <span class="prev" pdata="prev_page" pval="Предыдущая">
-                    <a href="<?php echo $this->url(array('controller'=>'index','action'=>'index', 'p' => $this->previous)); ?>">
+                    <a href="<?php echo $this->url(array('controller'=>'index','action'=>'search', 'p' => $this->previous)); ?>">
                         Предыдущая
                     </a>
                 </span>
@@ -25,7 +25,7 @@
             <!-- Next page link -->
             <?php if (isset($this->next)): ?>
             <span class="next" pdata="next_page" pval="Следующая">
-                <a href="<?php echo $this->url(array('controller'=>'index','action'=>'index', 'p' => $this->next)); ?>">
+                <a href="<?php echo $this->url(array('controller'=>'index','action'=>'search', 'p' => $this->next)); ?>">
                     Следующая
                 </a>
             </span>

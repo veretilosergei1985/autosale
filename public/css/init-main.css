@@ -5901,3 +5901,7 @@ nav.menu-footer .item:hover {
 #final_page__preview_photos_wrapper_hidden{
     display: none;
 }
+
+.st_end_label{
+    display: none;
+}

@@ -151,6 +151,23 @@ class DisplayController extends Zend_Controller_Action
         
     }
     
+     public function getbodytypeselectAction(){
+         $this->_helper->layout->disableLayout();
+         
+         $cat_id = $this->_getParam('category_id');
+      
+         if(!isset($cat_id)){
+             $cat_id = 1; 
+         }
+         
+         $oSubCat = new Application_Model_Subcats();
+         $result = $oSubCat->getByParentId($cat_id);
+
+         print_r(json_encode($result->toArray())); exit;
+        
+        
+    }
+    
     public function uploadphotoscarAction(){
 
         $auto_id = $this->_getParam('auto_id');
