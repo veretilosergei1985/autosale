@@ -70,6 +70,24 @@ class Application_Model_ModelsMapper
         return $oResultSet;
         
     }
+    
+    public function findByAttrs($mark_id, $subcat_id){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false);
+        
+                   if($mark_id != ''){
+                        $oSelect->where('model.mark_id = ?', $mark_id); 
+                   }
+                   
+//                   if($subcat_id != ''){
+//                        $oSelect->where('model.subcat_id = ?', $subcat_id); 
+//                   }
+        //echo $oSelect; exit;                
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+              
+        return $oResultSet;
+        
+    }
 
     
 }

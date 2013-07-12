@@ -133,6 +133,29 @@ class DisplayController extends Zend_Controller_Action
 
     }
     
+    public function findmodelsbyattrsAction(){
+        
+       $this->_helper->layout->disableLayout();
+       
+       if($this->_getParam('mark_id')){
+           $mark_id = $this->_getParam('mark_id');
+       } else {
+           $mark_id = '';
+       }
+       
+       if($this->_getParam('subcat_id')){
+           $subcat_id = $this->_getParam('subcat_id');
+       } else {
+           $subcat_id = '';
+       }
+       
+       $modelModel = new Application_Model_Models(); 
+       $result = $modelModel->findByAttrs($mark_id, $subcat_id);
+
+       print_r(json_encode($result->toArray())); exit;
+
+    }
+    
     public function bodytypeAction(){
          $this->_helper->layout->disableLayout();
          
@@ -374,6 +397,28 @@ class DisplayController extends Zend_Controller_Action
    
    public function showautocommentformAction(){
         $this->_helper->layout->disableLayout();
+   }
+   
+   public function getmarksbycatselectAction(){
+       
+       $this->_helper->layout->disableLayout();
+       $cat_id = $this->_getParam('cat_id');
+       
+       $oCategoriesMarks = new Application_Model_CategoriesMarksMapper();
+       $result = $oCategoriesMarks->getMarksByCat($cat_id);
+       
+       print_r(json_encode($result)); exit;
+   }
+   
+   public function findmarksbysubcatAction(){
+       
+       $this->_helper->layout->disableLayout();
+       $subcat_id = $this->_getParam('subcat_id');
+       
+       $oCategoriesMarks = new Application_Model_CategoriesMarksMapper();
+       $result = $oCategoriesMarks->getMarksBySubCat($subcat_id);
+       
+       print_r(json_encode($result)); exit;
    }
 
 

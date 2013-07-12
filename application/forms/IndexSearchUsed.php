@@ -70,7 +70,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
                         
         $year_start = new Zend_Form_Element_Select('year_start', array());
         $year_start->setLabel("Год выпуска:");
-        $year_start->setAttrib('style', 'float: left; width: 72px;');
+        $year_start->setAttrib('style', 'float: left; width: 72px; margin: 0 5px 5px 0;');
         $year_start->addMultiOptions(array('' => 'Выберите'));
 
         $cur_year = intval(date('Y'));
@@ -90,7 +90,13 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             }
             $year_end->setAttrib('class', 'years');
 
-        
+        $price_end = new Zend_Form_Element_Text('price_start', array());
+        $price_end->setLabel("Цена:");
+        $price_end->setAttrib('class', 'price');    
+            
+        $price_start = new Zend_Form_Element_Text('price_end', array());
+        $price_start->setLabel("Цена:");
+        $price_start->setAttrib('class', 'price');
 
                 
         //////////////////////////////////////////////
@@ -158,7 +164,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($region, $mark, $model, $year_start, $year_end, $bodystyle)
+                array($region, $mark, $model, $year_start, $year_end, $bodystyle, $price_start, $price_end)
                 );
         
         $this->addElements(
