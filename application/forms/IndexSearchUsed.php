@@ -90,13 +90,25 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             }
             $year_end->setAttrib('class', 'years');
 
-        $price_end = new Zend_Form_Element_Text('price_start', array());
-        $price_end->setLabel("Цена:");
-        $price_end->setAttrib('class', 'price');    
-            
-        $price_start = new Zend_Form_Element_Text('price_end', array());
+        $price_start = new Zend_Form_Element_Text('price_start', array());
         $price_start->setLabel("Цена:");
-        $price_start->setAttrib('class', 'price');
+        //$price_start->setAttrib('style', 'float: left;  width: 68px;');
+        $price_start->setAttrib('class', 'price'); 
+        $price_start->setAttrib ( 'placeholder', 'от' );
+            
+        $price_end = new Zend_Form_Element_Text('price_end', array());
+        $price_end->setLabel("Цена:");
+        //$price_end->setAttrib('style', 'float: left; width: 68px;');
+        $price_end->setAttrib('class', 'price');
+        $price_end->setAttrib ( 'placeholder', 'до' );
+        
+        $currency = new Zend_Form_Element_Select('currency', array());
+        $currency->addMultiOptions(array('USD' => '$'));
+        $currency->addMultiOptions(array('EUR' => '€'));
+        $currency->addMultiOptions(array('UAH' => 'грн.'));
+        $currency->setAttrib('class', 'currency');
+        $currency->setAttrib('id', 'currency__addcars');
+        //$currency->setAttrib('style', 'float: left;  width: 68px;');
 
                 
         //////////////////////////////////////////////
@@ -139,7 +151,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             'ViewHelper',
             'Description',
             array('HtmlTag', array('tag' => 'span', 'class' => 'indent select')),
-            array('Label', array('class' => 'label st_end_label', 'escape' => false)),
+            array('Label', array('class' => 'label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'p', 'class' => 'rows')),
         ))->addDecorator('Errors');    
         
@@ -147,24 +159,48 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             'ViewHelper',
             'Description',
             array('HtmlTag', array('tag' => 'span', 'class' => 'indent select')),
-            array('Label', array('class' => 'label', 'escape' => false)),
+            array('Label', array('class' => 'label st_end_label', 'escape' => false)),
             array(array('row' => 'HtmlTag'), array('tag' => 'p', 'class' => 'rows')),
+        ))->addDecorator('Errors');    
+        
+        $price_start->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span', 'class' => 'indent')),
+            array('Label', array('class' => 'label', 'escape' => false, 'style'=> 'width: 58px;', 'placeholder'=>"от")),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows', 'style'=> 'display: inline-block; width: 60px;')),
+        ))->addDecorator('Errors');    
+        
+        $price_end->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span', 'class' => 'indent')),
+            array('Label', array('class' => 'label st_end_label', 'escape' => false, 'style'=> 'width: 58px;')),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => '', 'style'=> 'display: inline-block; width: 60px;')),
+        ))->addDecorator('Errors');  
+        
+        $currency->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span', 'class' => 'indent')),
+            array('Label', array('class' => 'label', 'escape' => false, 'style'=> 'width: 58px;')),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => '', 'style'=> 'display: inline-block; width: 1px;')),
         ))->addDecorator('Errors');    
         
                               
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setOptions(array('class' => 'button  large green'));
+        $submit->setOptions(array('class' => ''));
         $submit->setDecorators(array(
             'ViewHelper',
             'Description',
-            array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
-            array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => 'rows submit-form-add')),
-        ))->setDescription('<p class="help-block"> При клике на кнопку "Далее" Вы перейдете к более подробному описанию своего объявления, а также добавлению фото </p>');
-        $submit->getDecorator('description')->setOption('escape',false); 
+            array('HtmlTag', array('tag' => 'div', 'class' => '')),
+            array(array('row' => 'HtmlTag'), array('tag' => 'span', 'class' => '')),
+        ));
+        
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($region, $mark, $model, $year_start, $year_end, $bodystyle, $price_start, $price_end)
+                array($region, $mark, $model, $year_start, $year_end, $bodystyle, $price_start, $price_end, $currency)
                 );
         
         $this->addElements(

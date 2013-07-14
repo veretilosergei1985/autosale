@@ -3536,6 +3536,7 @@
                         </p>
                         -->
                         
+ <!--
                         <p class="rows hide" filter_type="auto_new">
                             <label class="label" for="select_auto_new_state">Регион:</label>
                             <span class="indent select">
@@ -3596,53 +3597,18 @@
                             </span>
                         </p>
 
-                        <p class="rows" filter_type="auto_used">
-                            <label class="label" for="select_auto_used_years_of_production_from">Год выпуска:</label>
-                            <span class="indent">
+ -->                      
                                 <?php echo $this->form->year_start; ?>
                                 <?php echo $this->form->year_end; ?>
-                                <!--
-                                <select id="select_auto_used_years_of_production_from" class="years" name="s_yers">
-                                    <option value="0">Любой</option>
-                                    <?php 
-                                    //$cur_year = intval(date('Y'));
-                                    //for($i = $cur_year; $i >= 1901; $i--) {  ?>
-                                        <option value="<?php //echo $i; ?>"><?php //echo $i; ?></option>
-                                    <?php    
-                                    //}
-                                    ?>                                        
-                                    
-                                </select>
-                                <select class="years" name="po_yers">
-                                    <option value="0">Любой</option>
-                                    <?php 
-                                    //$cur_year = intval(date('Y'));
-                                    //for($i = $cur_year; $i >= 1901; $i--) {  ?>
-                                        <option value="<?php //echo $i; ?>"><?php //echo $i; ?></option>
-                                    <?php    
-                                    //}
-                                    ?>       
-                                </select>
-                                -->
-                            </span>
-                        </p>
+                               
+                     <div style="clear: both;"></div>
 
-                        <?php echo $this->form->price_start; ?>
+                                <?php echo $this->form->price_start; ?>
                                 <?php echo $this->form->price_end; ?>
-                        <!--
-                        <p class="rows" filter_type="auto">
-                            <label class="label" for="select_auto_common_price_from">Цена:</label>
-                            <span class="indent">
-                                <input type="text" class="price" placeholder="от" id="select_auto_common_price_from" name="price_ot"/>
-                                <input type="text" class="price" placeholder="до" name="price_do"/>
-                                <select class="currency" name="currency">
-                                    <option value="1">$</option>
-                                    <option value="2">&#8364;</option>
-                                    <option value="3">грн.</option>
-                                </select>
-                            </span>
-                        </p>
-                        -->
+                                <?php echo $this->form->currency; ?>
+                     
+                     <div style="clear: both;"></div>
+                        
                         
                         <div class="row checkrows hide" filter_type="auto_new">
                             <div>
@@ -5629,7 +5595,7 @@
                             <div class="indent text-r">
                                 <span class="button blue button-icon large">
                                     <i class="icon-search-white"> </i>
-                                    <input type="submit" id="main_search_form_submit" value="Поиск" />
+                                    <?php echo $this->form->submit; ?>
                                 </span>
                             </div>
                         </div>
