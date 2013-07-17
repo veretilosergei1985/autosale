@@ -19,7 +19,7 @@
     </nav>
  <div id="wraper_main">
     <div class="search-main">
-        <form method="post" class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="">
+        <form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="">
             <div class="hidden">
                 <input type="hidden" value="search" name="target" filter_type="auto_used">
                 <input type="hidden" value="little" name="event" filter_type="auto_used">
@@ -1646,7 +1646,7 @@
                         </p>
 
 
-
+<!-- разобраться для чего
 
                         <p class="rows hide" filter_type="market_by_mark">
                             <label class="label" for="select_market_model">Модель*:</label>
@@ -1656,7 +1656,7 @@
                                 </select>
                             </span>
                         </p>
-
+-->
 
                         <p class="rows hide" filter_type="market_by_mark">
                             <label class="label" for="select_market_year">Год*:</label>
@@ -2076,6 +2076,9 @@
 
                         <div class="rows" style="margin-bottom: 0" filter_type="auto_used">
                             <div class="indent">
+                                <?php echo $this->form->with_photo; ?>
+                                <?php echo $this->form->with_video; ?>
+                                <!--
                                 <div class="">
 
                                     <input id="check1" type="checkbox" name="with_photo" value="1"/>
@@ -2094,6 +2097,7 @@
                                     </label>
 
                                 </div>
+                                -->
                             </div>
                         </div>
 

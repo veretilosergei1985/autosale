@@ -1,0 +1,1536 @@
+<div class="main-panel span8">    
+
+
+    <div class="" id="DeleteAutoBlock">
+
+    </div>
+
+
+
+
+    <div style="margin-bottom: 10px;" >
+        <a href="/search.html" onclick="Cookie.write('use_old_search', '1', {duration: 365});
+                _gaq.push(['_trackEvent', 'Advanced_Search', 'Click_on_Link_Return', 'Search_Oldcar']);
+                this.set('href', '/search.html?' + window.location.hash.substring(1));
+                return true;" class="point-old-search">
+            <i class="icon-search-red"></i>Перейти к упрощенному поиску.</a>
+    </div>
+
+    <!--    .BEGIN Advanced Search    -->
+    <div class="advanced-search" id="advanced_search_main_container">
+        <a class="toggle-advanced hide" href="javascript:void(0);" id="search_advanced_top_container_slide_handler">
+            <i class="icon-open-white"></i>
+            <!--<i class="icon-close-white"></i>-->
+        </a>
+        <div id="search_advanced_top_container" class="hide">
+            <div  id="top_search_filters_container" class="hide">
+                <div class="setup-data-search">
+                    <i class="icon-head-searchauto"></i>
+                    Вы ищете:
+                    <span class="element-select" id="sfh_category_id" pelement="container" data="category_id">
+                        <a class="selected-smoll no-select" href="javascript:void(0);" pelement="handle">Все</a>
+                        <span class="options" style="display: none;" pelement="options_container">
+                            <a href="javascript:void(0);" class="item" pelement="option" pvalue="0">Все</a>
+                        </span>
+                    </span>
+
+
+
+                </div>
+                <div class="filtered hide" id="top_filter_container">
+
+
+                    <div class="title">
+
+                        Выбранные фильтры:
+
+                        <span class="area clear-filter">
+                            <i class="icon-delete"></i>
+                            <a href="javascript:void(0);" id="tf_reset_href">убрать все фильтры</a>
+                        </span>
+                    </div>
+
+                    <div id="top_filter_body">
+
+                        <!--                    <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                ABS
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Галогенные фары
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Серворуль
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Сигнализация
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Центральный замок
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                MP3
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Акустика
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Сабвуфер
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Бортовой компьютер
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Парктроник
+                                            </a>
+                                            <a class="item-filtered" href="#">
+                                                <i class="delete" href="#"></i>
+                                                Подогрев сидений
+                                            </a>-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="advanced-bar" id="search_expanded_advanced_container">
+                <a href="javascript:void(0);" class="advanced-button" id="search_form_expand_btn" openned="false">
+                    <i class="icon-search-white"></i>
+                    Уточнить поиск
+                </a>
+                <span class="count-result">
+                    Найдено <strong id="search_results_count">0</strong> авто
+                </span>
+
+            </div>
+        </div>
+        <div class="grid grid-span2" id="search_form_container">
+            <div class="preloader-window"></div>
+        </div>
+    </div>
+
+
+    <!--    .END Advanced Search    -->
+    <div style="display: none;">
+        <!-- hr noshade="noshade" / -->
+        <!-- hr noshade="noshade" / -->
+        <p class="item-feedback-newcars">
+            <i class="icon-feedback-red"></i>
+            <a class="bold" href="#">Отзывы о Chevrolet</a>:
+            По расходу топлива город в районе 9-10. Машинка ре ...
+            <a href="#">Подробнее<i class="icon-view"></i></a>
+        </p>
+
+
+    </div>
+
+
+
+    <div class="advanced-panel" id="advanced_panel_contaier">
+        <div class="filter" id="left_filter_container">
+
+            <div class="head-filter" style="cursor:pointer;">
+                Фильтровать
+            </div>
+            <div class="panel">
+                <input type="hidden" id="search_category_id" name="search_category_id" value="<?php echo $this->category_id; ?>">
+                <input type="hidden" id="search_bodystyle_id" name="search_bodystyle_id" value="<?php echo $this->query['bodystyle']; ?>">
+                <input type="hidden" id="search_mark_id" name="search_mark_id" value="<?php echo $this->query['mark']; ?>">
+                <input type="hidden" id="search_model_id" name="search_model_id" value="<?php echo $this->query['model']; ?>">
+                <input type="hidden" id="search_region_id" name="search_region_id" value="<?php echo $this->query['region']; ?>">
+                
+                <input type="hidden" id="search_year_start" name="search_year_start" value="<?php echo $this->query['year_start']; ?>">
+                <input type="hidden" id="search_year_end" name="search_year_end" value="<?php echo $this->query['year_end']; ?>">
+                
+                <input type="hidden" id="search_price_start" name="search_price_start" value="<?php echo $this->query['price_start']; ?>">
+                <input type="hidden" id="search_price_end" name="search_price_end" value="<?php echo $this->query['price_end']; ?>">
+                <input type="hidden" id="search_currency" name="search_currency" value="<?php echo $this->query['currency']; ?>">
+                
+                <input type="hidden" id="search_with_photo" name="search_with_photo" value="<?php echo $this->query['with_photo']; ?>">
+                <input type="hidden" id="search_with_video" name="search_with_video" value="<?php echo $this->query['with_video']; ?>">
+                <!--    .BEGIN    subcategory__filter    -->
+
+                <div class="group__filter" id="slf_filter_vendor_sub_category_container">
+                    <div class="title">
+                        <a href="javascript:void(0);" class="open" id="slf_filter_vendor_category_toggle_handler">Подкатегория</a>
+                    </div>
+                    <div id="slf_filter_vendor_category_toggle_target">
+                        <p class="item-rows">
+                            <select id="sfl_bodyStyleId" class="select" name="bodystylefilter_marka">
+                                <option value="0" class="no-select">Любой</option>
+                            </select>
+                        </p>
+                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                    </div>
+                </div>
+
+                <!--    .END    subcategory__filter    -->
+
+
+
+                <!--    .BEGIN    Marka/Model__filter    -->
+
+                <div class="group__filter">
+
+                    <div class="title" toggle="head">
+                        <a href="javascript:void(0)" class="open" id="slf_filter_marka_model_block_toggle_handler">Марка/Модель</a>
+                    </div>
+
+                    <div toggle="data" id="slf_filter_marka_model_block_toggle_target">
+                        <div class="group" id="slf_filter_marka_model_block">
+
+                            <p class="item-rows">
+                                <label class="label" for="">Марка</label>
+                                <select class="select" id="filter_marka" name="mark" data="mark">
+                                    <option value="0" class="no-select">Любая</option>
+                                </select>
+                            </p>
+
+                            <p class="item-rows">
+                                <label class="label" for="">Модель</label>
+                                <select class="select" id="filter_model" name="model" data="model">
+                                    <option value="0" class="no-select">Любая</option>
+                                </select>
+                            </p>
+
+                            <dl class="item-rows" data="time_range">
+                                <dt>Год выпуска</dt>
+                                <dd class="item-smoll">
+                                    <label class="label-smoll" for="filter_s_yers">от</label>
+                                    <select class="select-smoll" id="filter_s_yers"  data="years_from" name="year_start">
+                                        <option value="0" class="no-select">Любой</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1993">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="1974">1974</option>
+                                        <option value="1973">1973</option>
+                                        <option value="1972">1972</option>
+                                        <option value="1971">1971</option>
+                                        <option value="1970">1970</option>
+                                        <option value="1969">1969</option>
+                                        <option value="1968">1968</option>
+                                        <option value="1967">1967</option>
+                                        <option value="1966">1966</option>
+                                        <option value="1965">1965</option>
+                                        <option value="1964">1964</option>
+                                        <option value="1963">1963</option>
+                                        <option value="1962">1962</option>
+                                        <option value="1961">1961</option>
+                                        <option value="1960">1960</option>
+                                        <option value="1959">1959</option>
+                                        <option value="1958">1958</option>
+                                        <option value="1957">1957</option>
+                                        <option value="1956">1956</option>
+                                        <option value="1955">1955</option>
+                                        <option value="1954">1954</option>
+                                        <option value="1953">1953</option>
+                                        <option value="1952">1952</option>
+                                        <option value="1951">1951</option>
+                                        <option value="1950">1950</option>
+                                        <option value="1949">1949</option>
+                                        <option value="1948">1948</option>
+                                        <option value="1947">1947</option>
+                                        <option value="1946">1946</option>
+                                        <option value="1945">1945</option>
+                                        <option value="1944">1944</option>
+                                        <option value="1943">1943</option>
+                                        <option value="1942">1942</option>
+                                        <option value="1941">1941</option>
+                                        <option value="1940">1940</option>
+                                        <option value="1939">1939</option>
+                                        <option value="1938">1938</option>
+                                        <option value="1937">1937</option>
+                                        <option value="1936">1936</option>
+                                        <option value="1935">1935</option>
+                                        <option value="1934">1934</option>
+                                        <option value="1933">1933</option>
+                                        <option value="1932">1932</option>
+                                        <option value="1931">1931</option>
+                                        <option value="1930">1930</option>
+                                        <option value="1929">1929</option>
+                                        <option value="1928">1928</option>
+                                        <option value="1927">1927</option>
+                                        <option value="1926">1926</option>
+                                        <option value="1925">1925</option>
+                                        <option value="1924">1924</option>
+                                        <option value="1923">1923</option>
+                                        <option value="1922">1922</option>
+                                        <option value="1921">1921</option>
+                                        <option value="1920">1920</option>
+                                        <option value="1919">1919</option>
+                                        <option value="1918">1918</option>
+                                        <option value="1917">1917</option>
+                                        <option value="1916">1916</option>
+                                        <option value="1915">1915</option>
+                                        <option value="1914">1914</option>
+                                        <option value="1913">1913</option>
+                                        <option value="1912">1912</option>
+                                        <option value="1911">1911</option>
+                                        <option value="1910">1910</option>
+                                        <option value="1909">1909</option>
+                                        <option value="1908">1908</option>
+                                        <option value="1907">1907</option>
+                                        <option value="1906">1906</option>
+                                        <option value="1905">1905</option>
+                                        <option value="1904">1904</option>
+                                        <option value="1903">1903</option>
+                                        <option value="1902">1902</option>
+                                        <option value="1901">1901</option>
+                                    </select>
+                                </dd>
+                                <dd class="item-smoll">
+                                    <label class="label-smoll" for="filter_po_yers">до</label>
+                                    <select class="select-smoll" id="filter_po_yers" data="years_to" name="year_end">
+                                        <option value="0" class="no-select">Любой</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1993">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="1974">1974</option>
+                                        <option value="1973">1973</option>
+                                        <option value="1972">1972</option>
+                                        <option value="1971">1971</option>
+                                        <option value="1970">1970</option>
+                                        <option value="1969">1969</option>
+                                        <option value="1968">1968</option>
+                                        <option value="1967">1967</option>
+                                        <option value="1966">1966</option>
+                                        <option value="1965">1965</option>
+                                        <option value="1964">1964</option>
+                                        <option value="1963">1963</option>
+                                        <option value="1962">1962</option>
+                                        <option value="1961">1961</option>
+                                        <option value="1960">1960</option>
+                                        <option value="1959">1959</option>
+                                        <option value="1958">1958</option>
+                                        <option value="1957">1957</option>
+                                        <option value="1956">1956</option>
+                                        <option value="1955">1955</option>
+                                        <option value="1954">1954</option>
+                                        <option value="1953">1953</option>
+                                        <option value="1952">1952</option>
+                                        <option value="1951">1951</option>
+                                        <option value="1950">1950</option>
+                                        <option value="1949">1949</option>
+                                        <option value="1948">1948</option>
+                                        <option value="1947">1947</option>
+                                        <option value="1946">1946</option>
+                                        <option value="1945">1945</option>
+                                        <option value="1944">1944</option>
+                                        <option value="1943">1943</option>
+                                        <option value="1942">1942</option>
+                                        <option value="1941">1941</option>
+                                        <option value="1940">1940</option>
+                                        <option value="1939">1939</option>
+                                        <option value="1938">1938</option>
+                                        <option value="1937">1937</option>
+                                        <option value="1936">1936</option>
+                                        <option value="1935">1935</option>
+                                        <option value="1934">1934</option>
+                                        <option value="1933">1933</option>
+                                        <option value="1932">1932</option>
+                                        <option value="1931">1931</option>
+                                        <option value="1930">1930</option>
+                                        <option value="1929">1929</option>
+                                        <option value="1928">1928</option>
+                                        <option value="1927">1927</option>
+                                        <option value="1926">1926</option>
+                                        <option value="1925">1925</option>
+                                        <option value="1924">1924</option>
+                                        <option value="1923">1923</option>
+                                        <option value="1922">1922</option>
+                                        <option value="1921">1921</option>
+                                        <option value="1920">1920</option>
+                                        <option value="1919">1919</option>
+                                        <option value="1918">1918</option>
+                                        <option value="1917">1917</option>
+                                        <option value="1916">1916</option>
+                                        <option value="1915">1915</option>
+                                        <option value="1914">1914</option>
+                                        <option value="1913">1913</option>
+                                        <option value="1912">1912</option>
+                                        <option value="1911">1911</option>
+                                        <option value="1910">1910</option>
+                                        <option value="1909">1909</option>
+                                        <option value="1908">1908</option>
+                                        <option value="1907">1907</option>
+                                        <option value="1906">1906</option>
+                                        <option value="1905">1905</option>
+                                        <option value="1904">1904</option>
+                                        <option value="1903">1903</option>
+                                        <option value="1902">1902</option>
+                                        <option value="1901">1901</option>
+                                    </select>
+                                </dd>
+                                <!--                        <dd class="item-smoll">
+                                                            <select class="select-smoll">
+                                                                <option>option</option>
+                                                            </select>
+                                                        </dd>-->
+                            </dl>
+
+                        </div>
+                        <div id="slf_marka_model_block_add_pointer" style="display: none;"></div>
+                        <p class="item-rows">
+                            <a href="javascript:void(0);" class="link-add" id="slf_filter_add_marka_model_block">Добавить еще</a>
+                        </p>
+
+                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                    </div>
+
+                </div>
+
+                <!--    .END    Marka/Model__filter    -->
+
+
+                <!--    .BEGIN    Region    -->
+
+                <div class="group__filter">
+
+                    <div class="title" toggle="head">
+                        <a href="javascript:void(0)" class="open" id="slf_location_chk_toggle_handler">Регионы</a>
+                    </div>
+                    <div style="margin: 0px; position: static; overflow: hidden;">
+                        <div id="statePanel" class="list-group" multy="1" style="margin: 0px;">
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity1" dir="city" style="margin: -36px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state1" checkall="ria-cities-1" href="javascript:void(0)">Винницкая</a>
+                                            <a id="state1" class="opener open" callbackfunc="getCities" value="1" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-1" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state18" checkall="ria-cities-18" href="javascript:void(0)">Волынская</a>
+                                            <a id="state18" class="opener open" callbackfunc="getCities" value="18" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-18" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state11" checkall="ria-cities-11" href="javascript:void(0)">Днепропетровская</a>
+                                    <a id="state11" class="opener open" callbackfunc="getCities" value="11" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-11" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state13" checkall="ria-cities-13" href="javascript:void(0)">Донецкая</a>
+                                    <a id="state13" class="opener open" callbackfunc="getCities" value="13" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-13" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity2" dir="city" style="margin: -36px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state2" checkall="ria-cities-2" href="javascript:void(0)">Житомирская</a>
+                                            <a id="state2" class="opener open" callbackfunc="getCities" value="2" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-2" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state22" checkall="ria-cities-22" href="javascript:void(0)">Закарпатская</a>
+                                            <a id="state22" class="opener open" callbackfunc="getCities" value="22" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-22" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state14" checkall="ria-cities-14" href="javascript:void(0)">Запорожская</a>
+                                    <a id="state14" class="opener open" callbackfunc="getCities" value="14" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-14" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity15" dir="city" style="margin: -18px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state15" checkall="ria-cities-15" href="javascript:void(0)">Ивано-Франковская</a>
+                                            <a id="state15" class="opener open" callbackfunc="getCities" value="15" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-15" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state10" checkall="ria-cities-10" href="javascript:void(0)">Киевская</a>
+                                    <a id="state10" class="opener open" callbackfunc="getCities" value="10" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-10" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity16" dir="city" style="margin: -36px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state16" checkall="ria-cities-16" href="javascript:void(0)">Кировоградская</a>
+                                            <a id="state16" class="opener open" callbackfunc="getCities" value="16" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-16" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state17" checkall="ria-cities-17" href="javascript:void(0)">Луганская</a>
+                                            <a id="state17" class="opener open" callbackfunc="getCities" value="17" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-17" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state5" checkall="ria-cities-5" href="javascript:void(0)">Львовская</a>
+                                    <a id="state5" class="opener open" callbackfunc="getCities" value="5" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-5" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity19" dir="city" style="margin: -18px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state19" checkall="ria-cities-19" href="javascript:void(0)">Николаевская</a>
+                                            <a id="state19" class="opener open" callbackfunc="getCities" value="19" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-19" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="check ria-check-all " name="state12" checkall="ria-cities-12" href="javascript:void(0)">Одесская</a>
+                                    <a id="state12" class="opener open" callbackfunc="getCities" value="12" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-12" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity20" dir="city" style="margin: -90px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state20" checkall="ria-cities-20" href="javascript:void(0)">Полтавская</a>
+                                            <a id="state20" class="opener open" callbackfunc="getCities" value="20" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-20" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state21" checkall="ria-cities-21" href="javascript:void(0)">Республика Крым</a>
+                                            <a id="state21" class="opener open" callbackfunc="getCities" value="21" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-21" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state9" checkall="ria-cities-9" href="javascript:void(0)">Ровенская</a>
+                                            <a id="state9" class="opener open" callbackfunc="getCities" value="9" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-9" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state8" checkall="ria-cities-8" href="javascript:void(0)">Сумская</a>
+                                            <a id="state8" class="opener open" callbackfunc="getCities" value="8" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-8" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state3" checkall="ria-cities-3" href="javascript:void(0)">Тернопольская</a>
+                                            <a id="state3" class="opener open" callbackfunc="getCities" value="3" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-3" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>
+                                    <a class="checked ria-check-all " name="state7" checkall="ria-cities-7" href="javascript:void(0)">Харьковская</a>
+                                    <a id="state7" class="opener open" callbackfunc="getCities" value="7" href="javascript:void(0)"> </a>
+                                </p>
+                                <ul id="ria-cities-7" class="group hide" name="city" multy="1"> </ul>
+                            </div>
+                            <div class="hidden_city" style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div id="tempCity23" dir="city" style="margin: -115px 0px 0px;">
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state23" checkall="ria-cities-23" href="javascript:void(0)">Херсонская</a>
+                                            <a id="state23" class="opener open" callbackfunc="getCities" value="23" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-23" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state4" checkall="ria-cities-4" href="javascript:void(0)">Хмельницкая</a>
+                                            <a id="state4" class="opener open" callbackfunc="getCities" value="4" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-4" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state24" checkall="ria-cities-24" href="javascript:void(0)">Черкасская</a>
+                                            <a id="state24" class="opener open" callbackfunc="getCities" value="24" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-24" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state6" checkall="ria-cities-6" href="javascript:void(0)">Черниговская</a>
+                                            <a id="state6" class="opener open" callbackfunc="getCities" value="6" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-6" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="item">
+                                        <p>
+                                            <a class="check ria-check-all " name="state25" checkall="ria-cities-25" href="javascript:void(0)">Черновицкая</a>
+                                            <a id="state25" class="opener open" callbackfunc="getCities" value="25" href="javascript:void(0)"> </a>
+                                        </p>
+                                        <ul id="ria-cities-25" class="group hide" name="city" multy="1"> </ul>
+                                    </div>
+                                    <div class="wrapper-button">
+                                        <a class="button grey-20" href="javascript:void(0);">
+                                            <span>Поиск</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-swich-more">
+                                <a class="city-opener initialize open-more" store="1" open="statePanel" href="javascript:void(0);">Больше</a>
+                            </div>
+                            <noindex>
+                                <script type="text/javascript">
+                                new Ria_Auto_Generic_RiaOpener();
+                                </script>
+                            </noindex>
+                        </div>
+                    </div>
+                </div>
+
+                <!--    .END    Region    -->
+
+
+
+                <!--    .BEGIN    additionally__filter    -->
+
+                <div class="group__filter">
+                    <div class="title">
+                        <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_toggle_handler">Дополнительно</a>
+                    </div>
+
+                    <div class="group" id="slf_filter_additional_data_toggle_target">
+                        <p class="item-rows">
+                            <a href="javascript:void(0);" class="check" id="lf_search_with_photo" pname="with_photo" pvalue="1" pchecked="false">с фото</a>
+                        </p>
+
+                        <p class="item-rows">
+                            <a href="javascript:void(0);" class="check" id="lf_search_with_video" pname="with_video" pvalue="1" pchecked="false">с видео</a>
+                        </p>
+                        <p class="item-rows">
+                            <a href="javascript:void(0);" class="check" id="lf_checked_auto_ria" pname="checked_auto_ria" pvalue="1">проверено auto.ria.ua</a>
+                        </p>
+
+
+
+                        <div class="rows">
+                            <div class="sub-title">
+                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_price_block_toggle_handler">Цена</a>
+                            </div>
+                            <div class="hide" id="slf_filter_additional_data_price_block_toggle_target">
+                                <p class="item-smoll">
+                                    <label class="label-smoll" for="lf_price_from">от</label>
+                                    <input class="input-smoll" id="lf_price_from" type="text" name="price_ot" />
+                                </p>
+                                <p class="item-smoll">
+                                    <label class="label-smoll" for="lf_price_to">до</label>
+                                    <input class="input-smoll"  id="lf_price_to" type="text" name="price_do" />
+                                </p>
+                                <p class="item-smoll">
+                                    <select id="lf_currency_id" class="select-smoll" name="currency" >
+                                        <option value="1">$</option>
+                                        <option value="2">€</option>
+                                        <option value="3">грн.</option>
+                                    </select>
+                                </p>
+                                <p class="item-smoll">
+                                    <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="rows">
+                            <div class="sub-title">
+                                <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_race_block_toggle_handler">Пробег (тыс.км.)</a>
+                            </div>
+                            <div class="hide" id="slf_filter_additional_data_race_block_toggle_target">
+                                <dd class="item-smoll">
+                                    <label class="label-smoll" for="">от</label>
+                                    <input id="lf_race_from" type="text" class="input-smoll" name="raceFrom">
+                                </dd>
+                                <dd class="item-smoll">
+                                    <label class="label-smoll" for="">до</label>
+                                    <input id="lf_race_to" type="text" class="input-smoll" name="raceTo">
+                                </dd>
+                                <dd class="item-smoll">
+                                    <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                </dd>
+                            </div>
+                        </div>
+
+
+                        <!--                <div class="toggle">
+                                                <span toggle_status="open" class="" id="slf_filter_additional_data_more_toggle_handler"><span>Больше</span><i class="icon-open"></i></span>
+                                                <span toggle_status="close">Меньше<i class="icon-close"></i></span>
+                        
+                                        </div>-->
+                        <!--<div toggle="data" class="hide" id="slf_filter_additional_data_more_toggle_target">-->
+                        <div toggle=" data"id="slf_filter_additional_data_more_toggle_target">
+                            <div class="rows">
+                                <div class="sub-title" toggle="head" >
+                                    <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_gearbox_toggle_handler">Коробка передач</a>
+                                </div>
+                                <div toggle="data" class="hide" id="slf_filter_additional_data_more_gearbox_toggle_target">
+                                    <p class="item-rows">
+                                        <select id="lf_gearBoxId" class="select" name="gearbox">
+                                            <option value="0" class="no-select">Любая</option>
+                                            <option value="1">Автомат</option>
+                                            <option value="2">Адаптивная</option>
+                                            <option value="3">Вариатор</option>
+                                            <option value="4">Ручная / Механика</option>
+                                            <option value="5">Типтроник</option>
+                                        </select>
+                                    </p>
+                                    <p class="item-rows">
+                                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="rows">
+                                <div class="sub-title" toggle="head">
+                                    <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_engine_volume_toggle_handler">Объем двигателя</a>
+                                </div>
+                                <div toggle="data" class="hide" id="slf_filter_additional_data_more_engine_volume_toggle_target">
+                                    <p class="item-smoll">
+                                        <label class="label-smoll" for="">от</label>
+                                        <input type="text" class="input-smoll" id="lf_engineVolumeFrom" name="engineVolumeFrom"/>
+                                    </p>
+                                    <p class="item-smoll">
+                                        <label class="label-smoll" for="">до</label>
+                                        <input type="text" class="input-smoll" id="lf_engineVolumeTo" name="engineVolumeTo"/>
+                                    </p>
+                                    <p class="item-smoll">
+                                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="rows">
+                                <div class="sub-title">
+                                    <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_type_toggle_handler">Топливо</a>
+                                </div>
+                                <div toggle="data" class="hide" id="slf_filter_additional_data_more_type_toggle_target">
+                                    <p class="item-rows">
+                                        <select id="lf_fuel_type" class="select" name="type">
+                                            <option value="0" class="no-select">Любое</option>
+                                            <option value="1">Бензин</option>
+                                            <option value="2">Газ метан</option>
+                                            <option value="3">Газ пропан-бутан</option>
+                                            <option value="4">Газ/бензин</option>
+                                            <option value="5">Гибрид</option>
+                                            <option value="6">Дизель</option>
+                                            <option value="7">Электро</option>
+                                            <option value="8">Другое</option>
+                                        </select>
+                                    </p>
+                                    <p class="item-rows">
+                                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="rows">
+                                <div class="sub-title">
+                                    <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_drive_type_toggle_handler">Привод</a>
+                                </div>
+                                <div toggle="data" class="hide" id="slf_filter_additional_data_more_drive_type_toggle_target">
+                                    <p class="item-rows">
+                                        <select id="lf_driveTypeId" class="select" name="drive_type">
+                                            <option value="0" class="no-select">Любой</option>
+                                            <option value="1">Задний</option>
+                                            <option value="2">Передний</option>
+                                            <option value="3">Полный</option>
+                                        </select>
+                                    </p>
+                                    <p class="item-rows">
+                                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="rows">
+                                <div class="sub-title" toggle="head">
+                                    <a href="javascript:void(0)" class="open" id="slf_filter_additional_data_more_color_toggle_handler">Цвет</a>
+                                </div>
+                                <div toggle="data" class="hide" id="slf_filter_additional_data_more_color_toggle_target">
+                                    <p class="item-rows">
+                                        <select id="lf_colorId" class="select" name="color">
+                                            <option value="0" class="no-select">Любой</option>
+                                            <option value="1">Белый</option> 	
+                                            <option value="2">Черный</option> 	
+                                            <option value="3">Синий</option> 	
+                                            <option value="4">Серебряный</option> 	
+                                            <option value="5">Серый</option> 	
+                                            <option value="6">Асфальт</option> 	
+                                            <option value="7">Бежевый</option> 	
+                                            <option value="8">Бронзовый</option> 	
+                                            <option value="9">Вишневый</option> 	
+                                            <option value="10">Голубой</option> 	
+                                            <option value="11">Гранатовый</option> 	
+                                            <option value="12">Желтый</option> 	
+                                            <option value="13">Зеленый</option> 	
+                                            <option value="14">Золотой</option> 	
+                                            <option value="15">Коричневый</option> 	
+                                            <option value="16">Красный</option> 	
+                                            <option value="17">Магнолии</option> 	
+                                            <option value="18">Розовый</option> 	
+                                            <option value="19">Сафари</option> 	
+                                            <option value="20">Фиолетовый</option>
+                                        </select>
+                                    </p>
+                                    <p class="item-rows">
+                                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <!--    .END    additionally__filter    -->
+
+
+
+
+                <!--    .BEGIN    ID    -->
+
+                <div class="group__filter">
+
+                    <div class="title">
+                        <a href="javascript:void(0)" class="open" id="slf_auto_id_handler">Поиск по ID</a>
+                    </div>
+                    <div toggle="data" class="hide" id="slf_auto_id_target">
+
+                        <p class="item-rows">
+                            <input type="text"  class="select" id="lfs_auto_id_input" value=""/>
+                        </p>
+                        <a href="javascript:void(0);" class="button mini">Поиск</a>
+
+                    </div>
+                </div>
+
+                <!--    .END    ID    -->
+
+                <div class="filter-setup-list">
+                    <div id="lf_bottom_marka_model_exclude_labels_container">
+
+                    </div>
+                    <div id="lf_bottom_additional_remove_label_container">
+
+                    </div>
+                    <div id="lf_bottom_additional_filter_labels_container">
+
+                    </div>
+
+                    <p class="clear-filter">
+                        <i class="icon-delete"></i>
+                        <a href="javascript:void(0);" id="lf_reset_href">убрать все фильтры</a>
+                    </p>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="advanced" id='sft_search_filters'>
+
+            Сортировка
+
+            <span class="element-select" id='top_order_by' pelement="container" data="order_by">
+
+                <a class="selected" href="javascript:void(0);" pelement="handle">обычная</a>
+                <input type="hidden" name="order_by" pelement="data" value="0">
+                <span class="options" style="display: none;" pelement="options_container">
+                    <a class="item" href="javascript:void(0);"  pelement="option" pvalue="0">обычная</a>
+                    <a class="item" href="javascript:void(0);"  pelement="option" pvalue="3">от дорогих к дешевым</a>
+                    <a class="item" href="javascript:void(0);" pelement="option"  pvalue="2" >от дешевых к дорогим</a>
+                    <a class="item" href="javascript:void(0);" pelement="option"  pvalue="1">по рейтингу</a>
+                </span>
+
+            </span>
+
+
+            <span class="btn-compare hide" id="search_cars_compare_container">
+                <a href="/compare_ads/auto" target="_blank" class="button">
+                    <i class="icon-compare"></i>
+                </a>
+                <a href="/compare_ads/auto" target="_blank">сравнить</a>
+                (<strong id="search_cars_compare_count">0</strong>)
+            </span>
+
+            <span class="group-button" id="top_view_type_id">
+                <a href="javascript:void(0);" class="button active" name="type_view_id" pvalue="0">
+                    <i class="icon-switch-1"></i>
+                </a>
+                <a href="javascript:void(0);" class="button" name="type_view_id" pvalue="1">
+                    <i class="icon-switch-2"></i>
+                </a>
+                <!--<a href="#" class="button">-->
+                <!--<i class="icon-switch-3"></i>-->
+                <!--</a>-->
+                <!--<a href="#" class="button">-->
+                <!--<i class="icon-switch-4"></i>-->
+                <!--</a>-->
+            </span>
+
+            <div id="search_history_conteiner" class="hide pseudoselect span3 select-history">
+
+                <a id="search_history_link" onclick="_gaq.push(['_trackEvent', 'Search_history', 'Click_on_Select_Saved_Searches', 'Advanced_Search'])" class=" item-pseudoselect" href="javascript:void(0);">
+                    <span class="block">
+                        <span class="overflow">
+                            <i class="icon-search-history"></i>
+                            <span id="active_search_name" >сохраненные поиски</span>
+                        </span>
+                    </span>
+                </a>
+
+                <select id="">
+                    <option value=""></option>
+                </select>
+
+                <div id="search_history_block" class="hide options select-history-search" style="display: block;">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="user_cars_position_block" class="hide">
+        <!-- # include virtual="/html/blocks/search_page/blocks/cars_position-v1.062.html" -->
+    </div>
+
+
+
+
+    <div class="advanced-panel" id="results_newcompletebanner_1">
+
+
+
+        <section class="box-panel rocon">
+            <div class="head">
+                Новые авто
+                <a class="area" href="/newauto/search" target="_blank" title="Перейти к поиску новых авто">Смотреть все</a>
+            </div>
+            <div class="informer__newcars">
+
+                <div class="item ">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
+                            <img alt="Audi Q5 2.0 TFSI (211 л.с.) MT quattro" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1927/192786/192786s.jpg" width="85" title="Audi Q5 ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26240]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
+                                Audi Q5 2.0 TFSI (211 л.с.) MT quattro
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">479 580</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
+                                    <img alt="Audi Q5 2.0 TFSI (211 л.с.) MT quattro" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1927/192786/192786m.jpg" title="Audi Q5 ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Кроссовер</strong><br>
+                                Тип топлива: <strong>Бензин</strong><br>
+                                Кол-во дверей: <strong>5</strong><br>
+                                Тип привода: <strong>Полный</strong><br>
+                                Коробка передач: <strong>Механическая</strong><br>
+                                Обьем двигателя, см3: <strong>1984</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26240]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Audi/Q5/26240/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item ">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
+                            <img alt="Hyundai IX35 2.0 AT 4WD Comfort" src="http://img.ria.ua/photos/auto/new_auto/5/535/53570/53570s.jpg" width="85" title="Hyundai IX35 ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[9984]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
+                                Hyundai IX35 2.0 AT 4WD Comfort
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">219 808</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
+                                    <img alt="Hyundai IX35 2.0 AT 4WD Comfort" src="http://img.ria.ua/photos/auto/new_auto/5/535/53570/53570m.jpg" title="Hyundai IX35 ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Кроссовер</strong><br>
+                                Тип топлива: <strong>Бензин</strong><br>
+                                Кол-во дверей: <strong>5</strong><br>
+                                Тип привода: <strong>Полный</strong><br>
+                                Коробка передач: <strong>Автомат</strong><br>
+                                Обьем двигателя, см3: <strong>1998</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[9984]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Hyundai/IX35/9984/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item last">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/КамАЗ/4308/29665/?stateId=0">
+                            <img alt="КамАЗ 4308 4308-064-96(А3)" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1921/192130/192130s.jpg" width="85" title="КамАЗ 4308 ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[29665]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/КамАЗ/4308/29665/?stateId=0">
+                                КамАЗ 4308 4308-064-96(А3)
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">531 566</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/КамАЗ/4308/29665/?stateId=0">
+                                    <img alt="КамАЗ 4308 4308-064-96(А3)" src="http://img.ria.ua/photos/auto/new_auto_storage/19/1921/192130/192130m.jpg" title="КамАЗ 4308 ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Грузовик</strong><br>
+                                Тип топлива: <strong>Дизель</strong><br>
+                                Кол-во дверей: <strong>2</strong><br>
+
+                                Коробка передач: <strong>Механическая</strong><br>
+                                Обьем двигателя, см3: <strong>6700</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[29665]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/КамАЗ/4308/29665/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>    
+
+
+    </div>
+
+
+    <div id="banner_3_hidden_place" style="display: none;"></div>
+    <!--    .BEGIN Search Result   -->
+
+    <!--expr search with $request_uri search-->
+
+    <div style="display: none;">
+        <!--<div>-->
+        include virtual="/blocks_search/search/?catalog_name=search&person_id=0
+    </div>
+    <div style="display: none;" id="search_results_total_count">324188</div>
+
+
+
+    <div id="search_auto_results" class="standart-view">
+<?php foreach ($this->paginator as $car) { ?>
+            <div class="item">
+                <div class="ticket-item <?php if ($car->priority != 'none') {
+        echo 'paid';
+    } ?>" ticket_status_id="0" ticket_auto_id="11080455">
+                    <a name="search_auto_id_11080455"> </a>
+                    <div class="action-bar">
+                        <a class="item icon-chips" title="Фишек нет. Что это такое?" onclick="" href="javascript:void(0);"> 0 </a>
+                        <a class="item icon-star" content_type_id="1" item_id="11080455" pelement="auto_add_to_notepad" title="Добавить в блокнот" href="javascript:void(0);"></a>
+                        <span class="item-check" title="Добавить к сравнению">
+                            <input type="checkbox" item_id="11080455" content_type_id="1" auto_name="Audi 100 " auto_id="11080455" pelement="auto_compare_checkbox">
+                            <span class="tooltip succes larr __top hide" pelement="auto_compare_popup"> </span>
+                        </span>
+                    </div>
+                    <div class="content-bar">
+                        <div class="ticket-photo">
+                            <a class="<?php if ($car->priority != 'none') { ?>photo photo-185x120<?php } else { ?>photo photo-135x90<?php } ?> " title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>">
+                                <?php if ($car->image != null) { ?>
+                                    <img src="/images/photos/<?php echo $car->id; ?>/<?php echo $car->image; ?>">
+    <?php } else { ?>
+                                    <?php if ($car->priority != 'none') { ?><img src="http://img.auto.ria.ua/images/no-photo/no-photo-185x120.jpg"><?php } else { ?><img src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg"><?php } ?> 
+
+                                <?php } ?>
+                            </a>
+                            <span class="item">
+                                <i class="icon-small-photo" style="background-position: -140px 0;"></i>
+    <?php if (isset($this->photos_cnt[$car->id])) { ?>
+        <?php echo $this->photos_cnt[$car->id]; ?> фото 
+    <?php } else { ?>
+                                    Нет фото
+    <?php } ?>
+
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="head-ticket">
+                                <span class="city">
+                                    <a title="Поиск объявлений по региону <?php echo $car->reg_name; ?>." href="city/harkov/"><?php echo $car->reg_name; ?></a>
+                                    <a class="icon-up-ticket" title="Поднять вверх при поиске" target="_blank" onclick="fishkiObj.getForm(11080455);
+                    _gaq.push(['_trackEvent', 'Popup_Fishek', 'Strelka', 'Search_Oldcar']);
+                    return false;" href="/fishki-group/"></a>
+                                </span>
+                                <h3 class="head-car">
+    <?php if ($car->priority != 'none') { ?>
+                                        <i class="label-<?php echo $car->priority; ?>" onclick="fishkiObj.getForm(10043883);
+                        return false;"></i>
+                                    <?php } ?>
+                                    <a title="<?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?> </a>
+                                    1991
+                                </h3>
+                            </div>
+                            <div class="definition-data">
+                                <div class="price" currency_id="1">
+    <?php if ($car->currency == 'UAH') { ?>
+                                        <span class="grey" title="UAH"><?php echo $car->price; ?> грн.</span>
+                                        <span class="nbu">по курсу НБУ</span> $
+                                        <strong class="green" title="USD"><?php echo intval($car->price / $this->er); ?></strong>
+    <?php } else if ($car->currency == 'USD') { ?>
+                                        <span class="grey" title="UAH"><?php echo intval($car->price); ?> грн.</span>
+                                        <span class="nbu">по курсу НБУ</span> $
+                                        <strong class="green" title="USD"><?php echo intval($car->price / $this->er); ?></strong>
+    <?php } else if ($car->currency == 'EUR') { ?>
+                                        <span class="grey" title="UAH"><?php echo intval($car->price); ?> грн.</span>
+                                        <span class="nbu">по курсу НБУ</span> $
+                                        <strong class="green" title="USD"><?php echo intval($car->price / $this->er); ?></strong>
+                                        <?php } ?>
+                                </div>
+                                <ul class="characteristic">
+                                    <li class="item-char" title="Тип топлива">
+                                        <?php if (!empty($car->fuel_type) || !empty($car->volume)) { ?>
+                                            <i class="icon-char-fuel"></i>
+        <?php echo $car->fuel_type; ?>, <?php echo number_format($car->volume, 2, '.', ''); ?> л.
+                                        <?php } else { ?>
+                                            <i class="icon-fuel"></i>
+                                            Не указано
+                                        <?php } ?>
+                                    </li>
+                                    <li class="item-char" title="Пробег">
+
+                                        <?php if (!empty($car->mileage)) { ?>
+                                            <i class="icon-char-mileage"></i>
+                                            <?php echo $car->mileage; ?> тыс.км.
+                                        <?php } else { ?>
+                                            <i class="icon-mileage"></i>
+                                            Не указано
+                                        <?php } ?>
+                                    </li>
+                                    <li class="item-char" title="Тип коробки передач">
+                                        <?php if (!empty($car->trans_type)) { ?>
+                                            <i class="icon-char-transmission"></i>
+        <?php echo $car->trans_type; ?>
+                                        <?php } else { ?>
+                                            <i class="icon-transmission"></i>
+                                            Не указано
+                                        <?php } ?>
+                                    </li>
+                                    <li class="item-char" title="Цвет кузова">
+
+                                        <?php if (!empty($car->color)) { ?>
+                                            <i class="icon-char-color"></i>
+        <?php echo $car->color; ?>
+    <?php } else { ?>
+                                            <i class="icon-color"></i>
+                                            Не указано
+    <?php } ?>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="descriptions-ticket" pelement="description"><?php if (!empty($car->description)) {
+        echo $car->description;
+    } ?></p>
+                        </div>
+                        <div class="footer-ticket">
+                            <span class="view-all">
+                                <a href="/index/view/id/<?php echo $car->id; ?>">Подробно</a>
+                                <i class="icon-view"></i>
+                            </span>
+                            <div class="charlist-data">
+                                <span class="date-add" title="Объявление добавлено 03.05.2013" pvalue="22:33:45 03.05.2013" pelement="date_add">
+                                <?php echo Base_ElapsedTime::getAddCarTime(strtotime($car->added)); ?>
+                                </span>
+    <?php if (isset($car->exchange) && $car->exchange == '1') { ?>
+                                    <strong class="item" title="Возможен обмен (Любой)">
+                                        <i class="icon-exchange"></i>
+                                        <span class="title-char">Обмен</span>
+                                    </strong>
+    <?php } ?>
+    <?php if (isset($car->auction) && $car->auction == '1') { ?>
+                                    <strong class="item" title="Торги">
+                                        <i class="icon-auction"></i>
+                                        <span class="title-char">Торги</span>
+                                    </strong>
+            <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<?php } ?>
+<?php //foreach($this->regions as $region){  ?>
+<?php //echo $region->name;  ?>
+<?php //} ?>
+    </div>
+
+
+
+    <div style="text-align: center; margin-bottom: 10px;" id="search_result_banner_after_3" class="hide">
+
+    </div>
+    <div class="window-fixed hide" id="houses_popup"></div>
+
+
+
+
+    <!--    .BEGIN Pager    -->
+    <div style="display: none;">
+        <!--<div>-->
+        <hr noshade="noshade">
+        /blocks_search/pagination/search/?catalog_name=search&person_id=0
+        <hr noshade="noshade">
+    </div>
+    <!--    .BEGIN Pager    -->
+<?php echo $this->paginationControl($this->paginator, 'Sliding', 'partials/my_paginator.phtml');
+?>	
+
+    <!--    .END Pager    -->
+    <nav class="navigator" id="pager_navigator">
+        <span class="next">
+            <a href="javascript:void(0);" id="pager_scroll_up">Подняться вверх</a>
+            <i class="icon-up-blue"></i>
+        </span>
+        <div class="prev" id="pager_count_page" pelement="container" >
+            показывать
+            <span class="element-select">
+                <a class="selected" href="javascript:void(0);" pelement="handle">10</a>
+                <span class="options" style="display: none;" pelement="options_container">
+                    <a class="item" href="javascript:void(0);" pelement="option" pvalue="10">10</a>
+                    <a class="item" href="javascript:void(0);" pelement="option" pvalue="20">20</a>
+                    <a class="item" href="javascript:void(0);" pelement="option" pvalue="30">30</a>
+                    <a class="item" href="javascript:void(0);" pelement="option" pvalue="50">50</a>
+                    <a class="item" href="javascript:void(0);" pelement="option" pvalue="100">100</a>
+                </span>
+            </span>
+            результатов поиска на странице
+        </div>
+    </nav>
+
+    <!--    .END Pager    -->
+
+
+    <div class="advanced-panel" id="results_newcompletebanner_2">
+
+        <section class="box-panel rocon">
+            <div class="head">
+                Новые авто
+                <a class="area" href="/newauto/search" target="_blank" title="Перейти к поиску новых авто">Смотреть все</a>
+            </div>
+            <div class="informer__newcars">
+
+                <div class="item ">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/ГАЗ/3302 Газель/26402/?stateId=0">
+                            <img alt="ГАЗ 3302 Газель 3302-288 С" src="http://img.ria.ua/photos/auto/prototypes/0/10/1033/1033s.jpg" width="85" title="ГАЗ 3302 Газель ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26402]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/ГАЗ/3302 Газель/26402/?stateId=0">
+                                ГАЗ 3302 Газель 3302-288 С
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">147 871</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/ГАЗ/3302 Газель/26402/?stateId=0">
+                                    <img alt="ГАЗ 3302 Газель 3302-288 С" src="http://img.ria.ua/photos/auto/prototypes/0/10/1033/1033m.jpg" title="ГАЗ 3302 Газель ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Грузовик</strong><br>
+                                Тип топлива: <strong>Дизель</strong><br>
+                                Кол-во дверей: <strong>2</strong><br>
+
+                                Коробка передач: <strong>Механическая</strong><br>
+                                Обьем двигателя, см3: <strong>2900</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26402]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/ГАЗ/3302 Газель/26402/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item ">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
+                            <img alt="BMW X5 xDrive 30d AT" src="http://img.ria.ua/photos/auto/new_auto_storage/20/2004/200451/200451s.jpg" width="85" title="BMW X5 ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[26246]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
+                                BMW X5 xDrive 30d AT
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">583 329</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
+                                    <img alt="BMW X5 xDrive 30d AT" src="http://img.ria.ua/photos/auto/new_auto_storage/20/2004/200451/200451m.jpg" title="BMW X5 ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Внедорожник</strong><br>
+                                Тип топлива: <strong>Дизель</strong><br>
+                                Кол-во дверей: <strong>5</strong><br>
+                                Тип привода: <strong>Полный</strong><br>
+                                Коробка передач: <strong>Автомат</strong><br>
+                                Обьем двигателя, см3: <strong>2993</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[26246]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/BMW/X5/26246/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item last">
+                    <div class="details-newcar">
+                        <a  target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" class="photo-85x56" href="/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
+                            <img alt="Chevrolet Cruze 5D FL 1.8 АT LTZ " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1976/197653/197653s.jpg" width="85" title="Chevrolet Cruze 5D ">
+                        </a>
+                        <dl class="subscribe-item">
+                            <dt class="title">
+                            <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Name_[27114]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
+                                Chevrolet Cruze 5D FL 1.8 АT LTZ 
+                            </a>
+                            </dt>
+                            <dd class="rows price">
+                                <strong class="green">188 499</strong> грн.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="details">
+                        <div class="details-layer">
+                            <div class="all-images">
+                                <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
+                                    <img alt="Chevrolet Cruze 5D FL 1.8 АT LTZ " src="http://img.ria.ua/photos/auto/new_auto_storage/19/1976/197653/197653m.jpg" title="Chevrolet Cruze 5D ">
+                                </a>
+                            </div>
+                            <div class="car-type">
+                                Тип кузова: <strong>Комби (хэтчбек)</strong><br>
+                                Тип топлива: <strong>Бензин</strong><br>
+                                Кол-во дверей: <strong>5</strong><br>
+                                Тип привода: <strong>Передний</strong><br>
+                                Коробка передач: <strong>Автомат</strong><br>
+                                Обьем двигателя, см3: <strong>1796</strong><br>
+                                <span class="boxed view-all">
+                                    <a target="_blank" onclick="_gaq.push(['_trackEvent', 'NewAuto', 'Click_on_Logo_[27114]', $$('#informer_newauto_event').length ? $('informer_newauto_event').get('value') : 'Search_Oldcar']);" href="http://auto.ria.ua/newauto/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C/Chevrolet/Cruze 5D/27114/?stateId=0">
+                                        Подробно
+                                    </a>
+                                    <i class="icon-view"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>    
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="">
+        <section id="search_section" class="box-panel rocon hide">
+            <div class="head">
+                <i class="icon-head-history-search"></i>
+                История поиска
+            </div>
+
+            <div class="panel" id="panel_item">
+
+            </div>
+        </section>
+    </div>
+
+</div>

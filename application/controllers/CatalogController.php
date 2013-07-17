@@ -48,6 +48,15 @@ class CatalogController extends Zend_Controller_Action
                                      $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'addphoto'));
                                  }
                                  
+                                    /// get exchange rate
+                                    $er = new Base_Exchange();
+                                    $usd = $er->getExchangeRateByChar3("USD");
+                                    $eur = $er->getExchangeRateByChar3("EUR");
+
+                                    $usd = $usd->rate/100;
+                                    $eur = $eur->rate/100;
+                                    $rel = floatval($eur)/floatval($usd);
+                                 
                                  $data = $form->getValues();
                                  //echo "<pre>"; print_r($data); exit;
                                  $car = new Application_Model_Cars();
@@ -70,8 +79,17 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setMetallic($data['metallic']);
                                  $car->setYear($data['year']);
                                  $car->setMileage($data['mileage']);
-                                 $car->setVolume($data['volume']);                              
-                                 $car->setPrice($data['price']);
+                                 $car->setVolume($data['volume']); 
+                                 
+                                    if($data['currency'] == 'UAH'){ 
+                                        $car->setPrice(intval($data['price']));
+                                    } else if($data['currency'] == 'EUR'){ 
+                                        $car->setPrice(intval($data['price']) * $eur);
+                                    } else if($data['currency'] == 'USD'){ 
+                                        $car->setPrice(intval($data['price']) * $usd);
+                                    } 
+                                 
+                                 //$car->setPrice($data['price']);
                                  $car->setCurrency($data['currency']);
                                  $car->setVersion($data['version']);
                                  $car->setVin($data['vin']);
@@ -111,6 +129,15 @@ class CatalogController extends Zend_Controller_Action
                                 
                 if ($this->getRequest()->isPost()) {
                     if ($form->isValid($this->getRequest()->getPost())) {
+                        
+                            /// get exchange rate
+                                $er = new Base_Exchange();
+                                $usd = $er->getExchangeRateByChar3("USD");
+                                $eur = $er->getExchangeRateByChar3("EUR");
+
+                                $usd = $usd->rate/100;
+                                $eur = $eur->rate/100;
+                                $rel = floatval($eur)/floatval($usd);
 
                             $data = $form->getValues();
                             //echo "<pre>"; print_r($data); exit;
@@ -135,8 +162,16 @@ class CatalogController extends Zend_Controller_Action
                             $car->setMetallic($data['metallic']);
                             $car->setYear($data['year']);
                             $car->setMileage($data['mileage']);
-                            $car->setVolume($data['volume']);                              
-                            $car->setPrice($data['price']);
+                            $car->setVolume($data['volume']);   
+                            
+                                if($data['currency'] == 'UAH'){ 
+                                    $car->setPrice(intval($data['price']));
+                                } else if($data['currency'] == 'EUR'){ 
+                                    $car->setPrice(intval($data['price']) * $eur);
+                                } else if($data['currency'] == 'USD'){ 
+                                    $car->setPrice(intval($data['price']) * $usd);
+                                } 
+                                                        
                             $car->setCurrency($data['currency']);
                             $car->setVersion($data['version']);
                             $car->setVin($data['vin']);

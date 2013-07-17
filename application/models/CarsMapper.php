@@ -158,7 +158,7 @@ class Application_Model_CarsMapper
     
     public function findAll()
     {
-        $oDbTable = $this->getDbTable();
+       $oDbTable = $this->getDbTable();
        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
                                       ->joinLeft('mark','mark.id = cars.mark_id', array('mark_name'=>'name'))
                                       ->joinLeft('model','model.id = cars.model_id', array('model_name'=>'name'))
@@ -178,6 +178,90 @@ class Application_Model_CarsMapper
                
         return $oResultSet;
         
+    }
+    
+    public function findByAttrs($data)
+    {
+        
+               
+       $oDbTable = $this->getDbTable();
+       $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      //->columns(array('img_cnt'=>'count(photos.id)'), false)
+                                      ->joinLeft('mark','mark.id = cars.mark_id', array('mark_name'=>'name'))
+                                      ->joinLeft('model','model.id = cars.model_id', array('model_name'=>'name', 'subcat_id'))
+                                      ->joinLeft('region','region.id = cars.reg_id', array('reg_name'=>'name'))
+                                      ->joinLeft('city','city.id = cars.city_id', array('city_name'=>'name'))
+                                      ->joinLeft('fuel','fuel.id = cars.fuel_id', array('fuel_type'=>'type'))
+                                      ->joinLeft('transmission','transmission.id = cars.transmission_id', array('trans_type'=>'type'))
+                                      ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
+                                      ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'type'));
+                                        if(!empty($data['with_photo'])){
+                                            $oSelect->joinInner('photos','photos.auto_id = cars.id', array('image', 'img_cnt' => 'COUNT(photos.id)'));
+                                            $oSelect->group('cars.id');
+                                        } else {
+                                            $oSelect->joinLeft('photos','photos.auto_id = cars.id', array('image'));
+                                            $oSelect->group('cars.id');
+                                        }
+                                     
+        if(!empty($data['category_id'])){
+            $oSelect->where('cars.cat_id = ?', $data['category_id']); 
+        }                  
+
+        if(!empty($data['region'])){
+            $oSelect->where('cars.reg_id = ?', $data['region']); 
+        }
+        
+        if(!empty($data['mark'])){
+            $oSelect->where('cars.mark_id = ?', $data['mark']); 
+        }
+        
+        if(!empty($data['model'])){
+            $oSelect->where('cars.model_id = ?', $data['model']); 
+        }
+        
+        if(!empty($data['bodystyle'])){
+            $oSelect->where('model.subcat_id = ?', $data['bodystyle']); 
+        }
+        
+        if(!empty($data['with_photo'])){
+            $oSelect->group('photos.auto_id');
+        }
+        
+        if(!empty($data['with_video'])){
+            $oSelect->where("photos.video_url <> 'NULL'");
+        }
+        
+        if(!empty($data['year_start']) && !empty($data['year_end']) ){
+            $oSelect->where('year >= ?',  $data['year_start']);
+            $oSelect->where("year <= ?",  $data['year_end']);
+        } else {
+            if(!empty($data['year_start'])){
+                $oSelect->where('year >= ?',  $data['year_start']);
+            }
+            
+            if(!empty($data['year_end'])){
+                $oSelect->where("year <= ?",  $data['year_end']);
+            }
+        }
+        
+        if(!empty($data['price_start']) && !empty($data['price_end']) ){
+            $oSelect->where('price >= ?',  $data['price_start']);
+            $oSelect->where("price <= ?",  $data['price_end']);
+        } else {
+            if(!empty($data['price_start'])){
+                $oSelect->where('price >= ?',  $data['price_start']);
+            }
+            
+            if(!empty($data['price_end'])){
+                $oSelect->where("price <= ?",  $data['price_end']);
+            }
+        }
+        
+        //echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        // echo "<pre>"; print_r($oResultSet);  exit;
+               
+        return $oResultSet;
     }
     
     public function getAttributesById($id, $table_name){

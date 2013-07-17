@@ -448,6 +448,11 @@ class Application_Model_Cars
         return $this->getMapper()->findAll();
     }
     
+    public function findByAttrs($data)
+    {
+        return $this->getMapper()->findByAttrs($data);
+    }
+    
     public function countByUser($user_id){
         return $this->getMapper()->countByUser($user_id);
     }

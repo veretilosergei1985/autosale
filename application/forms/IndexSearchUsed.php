@@ -5,9 +5,10 @@ class Application_Form_IndexSearchUsed extends Zend_Form
     public function init(){
      
 
-        $this->setMethod('post');
+        $this->setMethod('get');
         $this->setAttrib('class', 'grid grid-span2');
         $this->setAttrib('id', 'main_search_form');
+        $this->setAction('/search/index');
                 
         $this->setDecorators(array(
                         array('FormErrors', array('markupListEnd' => '', 'markupListStart' => '','markupListItemStart' => '', 'markupListItemEnd' => '')),
@@ -71,7 +72,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
         $year_start = new Zend_Form_Element_Select('year_start', array());
         $year_start->setLabel("Год выпуска:");
         $year_start->setAttrib('style', 'float: left; width: 72px; margin: 0 5px 5px 0;');
-        $year_start->addMultiOptions(array('' => 'Выберите'));
+        $year_start->addMultiOptions(array('' => 'Любой'));
 
         $cur_year = intval(date('Y'));
         for($i = $cur_year; $i >= 1901; $i--) {
@@ -82,7 +83,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             $year_end = new Zend_Form_Element_Select('year_end', array());
             
             $year_end->setAttrib('style', 'float: left;  width: 72px;');
-            $year_end->addMultiOptions(array('' => 'Выберите'));
+            $year_end->addMultiOptions(array('' => 'Любой'));
 
             $cur_year = intval(date('Y'));
             for($i = $cur_year; $i >= 1901; $i--) {
@@ -96,11 +97,11 @@ class Application_Form_IndexSearchUsed extends Zend_Form
         $price_start->setAttrib('class', 'price'); 
         $price_start->setAttrib ( 'placeholder', 'от' );
             
-        $price_end = new Zend_Form_Element_Text('price_end', array());
-        $price_end->setLabel("Цена:");
-        //$price_end->setAttrib('style', 'float: left; width: 68px;');
-        $price_end->setAttrib('class', 'price');
-        $price_end->setAttrib ( 'placeholder', 'до' );
+            $price_end = new Zend_Form_Element_Text('price_end', array());
+            $price_end->setLabel("Цена:");
+            //$price_end->setAttrib('style', 'float: left; width: 68px;');
+            $price_end->setAttrib('class', 'price');
+            $price_end->setAttrib ( 'placeholder', 'до' );
         
         $currency = new Zend_Form_Element_Select('currency', array());
         $currency->addMultiOptions(array('USD' => '$'));
@@ -108,7 +109,12 @@ class Application_Form_IndexSearchUsed extends Zend_Form
         $currency->addMultiOptions(array('UAH' => 'грн.'));
         $currency->setAttrib('class', 'currency');
         $currency->setAttrib('id', 'currency__addcars');
-        //$currency->setAttrib('style', 'float: left;  width: 68px;');
+        
+            $with_photo = new Zend_Form_Element_Checkbox('with_photo', array('disableLoadDefaultDecorators' => true, 'required' => false));
+            $with_photo->setAttrib('id', 'check1');
+        
+        $with_video = new Zend_Form_Element_Checkbox('$with_video', array('disableLoadDefaultDecorators' => true, 'required' => false));
+        $with_video->setAttrib('id', 'check2');
 
                 
         //////////////////////////////////////////////
@@ -185,7 +191,27 @@ class Application_Form_IndexSearchUsed extends Zend_Form
             array('HtmlTag', array('tag' => 'span', 'class' => 'indent')),
             array('Label', array('class' => 'label', 'escape' => false, 'style'=> 'width: 58px;')),
             array(array('row' => 'HtmlTag'), array('tag' => 'div', 'class' => '', 'style'=> 'display: inline-block; width: 1px;')),
-        ))->addDecorator('Errors');    
+        ))->addDecorator('Errors');  
+        
+         $with_photo->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div')),
+         ))->addDecorator('Errors');
+         $with_photo->setDescription('<label for="check1"><i class="icon-photo-white"></i>только с фото </label>'); 
+         $with_photo->getDecorator('description')->setOption('escape', false); 
+         
+        $with_video->setDecorators(array(
+            'ViewHelper',
+            'Description',
+            array('HtmlTag', array('tag' => 'span')),
+            array('Label', array('class' => 'label', 'escape' => false)),
+            array(array('row' => 'HtmlTag'), array('tag' => 'div')),
+        ))->addDecorator('Errors'); 
+        $with_video->setDescription('<label for="check2"><i class="icon-video-white"></i>только с видео </label>'); 
+        $with_video->getDecorator('description')->setOption('escape', false); 
         
                               
         $submit = new Zend_Form_Element_Submit('submit');
@@ -200,7 +226,7 @@ class Application_Form_IndexSearchUsed extends Zend_Form
         $submit->setLabel('Далее');
         
         $this->addElements(
-                array($region, $mark, $model, $year_start, $year_end, $bodystyle, $price_start, $price_end, $currency)
+                array($region, $mark, $model, $year_start, $year_end, $bodystyle, $price_start, $price_end, $currency, $with_photo, $with_video)
                 );
         
         $this->addElements(

@@ -1,0 +1,41 @@
+#statePanel p{
+    margin: 0;
+}
+
+
+
+
+
+.city-opener:link:after, .city-opener:visited:after {
+}
+.city-opener {
+    background-position: 100% -600px;
+}
+.city-opener {
+    color: #757575;
+    font-weight: bold;
+}
+.city-opener {
+    color: #414042;
+}
+.city-opener {
+    background-position: 100% -599px !important;
+}
+.city-opener {
+    background: url("http://img.auto.ria.ua/images/icons/arrow.gif") no-repeat scroll 0 0 transparent;
+    padding-right: 15px;
+}
+.city-opener {
+}
+.city-opener {
+    color: #256799;
+    text-decoration: none;
+}
+
+.wrap-swich-more {
+    text-align: right;
+}
+
+.city_empty_margin{
+    margin: 0 !important;
+}

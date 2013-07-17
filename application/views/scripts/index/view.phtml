@@ -37,7 +37,9 @@
                 <?php if($this->data->currency == 'UAH'){ ?>
                    <span class="price"><?php echo intval($this->data->price); ?></span> грн.
                 <?php } else if($this->data->currency == 'USD'){ ?>
-                    <span class="price"><?php echo intval($this->data->price * $this->usd); ?></span> грн.
+                    <span class="price"><?php echo intval($this->data->price); ?></span> грн.
+                <?php } else if($this->data->currency == 'EUR'){ ?>
+                    <span class="price"><?php echo intval($this->data->price); ?></span> грн.
                 <?php } ?>
             </div>
             <div class="nbu">
@@ -48,11 +50,11 @@
                     &euro;<span class="price"><?php echo intval($this->data->price / $this->eur); ?></span> /
                     $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price / $this->usd); ?></span>
                 <?php } else if($this->data->currency == 'EUR'){ ?>
-                    &euro;<span class="price"><?php echo intval($this->data->price); ?></span> /
-                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price * $this->rel); ?></span>
+                    &euro;<span class="price"><?php echo intval($this->data->price / $this->eur); ?></span> /
+                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price / $this->usd); ?></span>
                 <?php } else if($this->data->currency == 'USD'){ ?>
-                    &euro;<span class="price"><?php echo intval($this->data->price / $this->rel); ?></span> /
-                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price); ?></span>
+                    &euro;<span class="price"><?php echo intval($this->data->price / $this->eur); ?></span> /
+                    $<span class="price" style="font-weight: bold;"><?php echo intval($this->data->price  / $this->usd); ?></span>
                 <?php } ?>
             </div>
         </div>
