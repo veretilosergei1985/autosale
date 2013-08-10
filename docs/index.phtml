@@ -170,12 +170,6 @@
                 <input type="hidden" id="drive_id" name="drive_id" value="<?php echo $this->query['drive_id']; ?>">
                 
                 <input type="hidden" id="color_id" name="color_id" value="<?php echo $this->query['color_id']; ?>">
-                
-                <?php if(isset($this->query['m_state'])){
-                        foreach($this->query['m_state'] as $k => $v){
-                            echo '<input class="m_state" type="hidden" name="m_state[]" value="' . $v . '" />';
-                        }
-                      } ?>
              </form>
                 <!--    .BEGIN    subcategory__filter    -->
 
@@ -495,8 +489,8 @@
                             <p class="item">
                                 <a class="check " href="javascript:void(0);" pname="state" pvalue="1" pchecked="false">Винницкая</a>
                                 <a class="open" href="javascript:void(0);"></a>
-                            <div class="hidden_subgroup" pvalue="1" style="display: none;">
-                                <div class="subgroup " >
+                            <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                                <div class="subgroup " style="margin: -609px 0px 0px; overflow: hidden;">
                                     <p class="item">
                                         <a class="check" href="javascript:void(0);" pvalue="597" pname="city" pchecked="false">Бар</a>
                                     </p>
@@ -590,8 +584,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="18" pchecked="false">Волынская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="18" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -357px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="50" pname="city" pchecked="false">Владимир-Волынский</a>
                                 </p>
@@ -649,8 +643,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="11" pchecked="false">Днепропетровская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="11" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -609px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="68" pname="city" pchecked="false">Апостоловo</a>
                                 </p>
@@ -744,8 +738,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="13" pchecked="false">Донецкая</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="13" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -798px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="607" pname="city" pchecked="false">Авдеевка</a>
                                 </p>
@@ -866,8 +860,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="2" pchecked="false">Житомирская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="2" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -483px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="131" pname="city" pchecked="false">Андрушевка</a>
                                 </p>
@@ -943,8 +937,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="22" pchecked="false">Закарпатская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="22" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -357px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="155" pname="city" pchecked="false">Берегово</a>
                                 </p>
@@ -1002,8 +996,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="14" pchecked="false">Запорожская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="14" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -462px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="191" pname="city" pchecked="false">Акимовка</a>
                                 </p>
@@ -1076,8 +1070,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="15" pchecked="false">Ивано-Франковская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="15" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -399px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="192" pname="city" pchecked="false">Богородчаны</a>
                                 </p>
@@ -1141,8 +1135,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="10" pchecked="false">Киевская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="10" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -693px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="209" pname="city" pchecked="false">Барышевка</a>
                                 </p>
@@ -1248,8 +1242,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="16" pchecked="false">Кировоградская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="16" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -441px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="252" pname="city" pchecked="false">Александрия</a>
                                 </p>
@@ -1319,8 +1313,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="17" pchecked="false">Луганская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="17" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -609px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="258" pname="city" pchecked="false">Алчевск</a>
                                 </p>
@@ -1414,8 +1408,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="5" pchecked="false">Львовская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="5" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -588px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="287" pname="city" pchecked="false">Борислав</a>
                                 </p>
@@ -1506,8 +1500,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="19" pchecked="false">Николаевская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="19" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -441px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="311" pname="city" pchecked="false">Арбузинка</a>
                                 </p>
@@ -1577,8 +1571,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="12" pchecked="false">Одесская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="12" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -651px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="332" pname="city" pchecked="false">Ананьев</a>
                                 </p>
@@ -1678,8 +1672,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="20" pchecked="false">Полтавская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="20" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -546px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="360" pname="city" pchecked="false">Великая Багачка</a>
                                 </p>
@@ -1764,8 +1758,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="21" pchecked="false">Республика Крым</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="21" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -588px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="618" pname="city" pchecked="false">Алупка</a>
                                 </p>
@@ -1856,8 +1850,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="9" pchecked="false">Ровенская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="9" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -357px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="388" pname="city" pchecked="false">Березно</a>
                                 </p>
@@ -1915,8 +1909,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="8" pchecked="false">Сумская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="8" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -378px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="416" pname="city" pchecked="false">Ахтырка</a>
                                 </p>
@@ -1977,8 +1971,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="3" pchecked="false">Тернопольская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="3" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -357px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="425" pname="city" pchecked="false">Бережаны</a>
                                 </p>
@@ -2036,8 +2030,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="7" pchecked="false">Харьковская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="7" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -588px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="443" pname="city" pchecked="false">Балаклея</a>
                                 </p>
@@ -2128,8 +2122,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="23" pchecked="false">Херсонская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="23" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -441px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="472" pname="city" pchecked="false">Белозерка</a>
                                 </p>
@@ -2199,8 +2193,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="4" pchecked="false">Хмельницкая</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="4" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -441px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="491" pname="city" pchecked="false">Белогорье</a>
                                 </p>
@@ -2270,8 +2264,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="24" pchecked="false">Черкасская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="24" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -441px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="645" pname="city" pchecked="false">Ватутино</a>
                                 </p>
@@ -2341,8 +2335,8 @@
                         <p class="item">
                             <a class="check" href="javascript:void(0);" pname="state" pvalue="6" pchecked="false">Черниговская</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="6" style="display: none;">
-                            <div class="subgroup ">
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: -462px 0px 0px; overflow: hidden;">
                                 <p class="item">
                                     <a class="check" href="javascript:void(0);" pvalue="546" pname="city" pchecked="false">Бахмач</a>
                                 </p>
@@ -2415,8 +2409,8 @@
                         <p class="item">
                             <a class="check " href="javascript:void(0);" pname="state" pvalue="25" pchecked="false">Черновицкая</a>
                             <a class="open" href="javascript:void(0);"></a>
-                        <div class="hidden_subgroup" pvalue="25" style="display: none;">
-                            <div class="subgroup "></div>
+                        <div style="margin: 0px; position: static; overflow: hidden; height: 0px;">
+                            <div class="subgroup " style="margin: 0px; overflow: hidden;"></div>
                         </div>
                         </p>
                         </div>

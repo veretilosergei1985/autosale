@@ -8,7 +8,7 @@
             <!-- Previous page link -->
             <?php if (isset($this->previous)): ?>
                 <span class="prev" pdata="prev_page" pval="Предыдущая">
-                    <a href="<?php echo $this->url(array('p' => $this->previous), 'default'). '?' . $_SERVER['QUERY_STRING']; ?>">
+                    <a href="<?php echo $this->url(array('action' => 'index' ,'p' => $this->previous), 'default'). '?' . $this->queryString; ?>">
                         Предыдущая
                     </a>
                 </span>
@@ -25,7 +25,7 @@
             <!-- Next page link -->
             <?php if (isset($this->next)): ?>
             <span class="next" pdata="next_page" pval="Следующая">
-                <a href="<?php echo $this->url(array('p' => $this->next), 'default'). '?' . $_SERVER['QUERY_STRING']; ?>">
+                <a href="<?php echo $this->url(array('action' => 'index' ,'p' => $this->next), 'default'). '?' . $this->queryString; ?>">
                     Следующая
                 </a>
             </span>
@@ -42,7 +42,7 @@
              <!-- Numbered page links -->
             <?php foreach ($this->pagesInRange as $page): ?>
               <?php if ($page != $this->current): ?>
-                <a href="<?php echo $this->url(array ('p' => $page), 'default'). '?' . $_SERVER['QUERY_STRING'];?>">
+                <a href="<?php echo $this->url(array ('action' => 'index' ,'p' => $page), 'default'). '?' . $this->queryString;?>">
                     <?php echo $page; ?>
                 </a>
               <?php else: ?>

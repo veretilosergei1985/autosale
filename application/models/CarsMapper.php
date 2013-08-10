@@ -257,6 +257,48 @@ class Application_Model_CarsMapper
             }
         }
         
+        if(!empty($data['mileage_start']) && !empty($data['mileage_end']) ){
+            $oSelect->where('mileage >= ?',  $data['mileage_start']);
+            $oSelect->where("mileage <= ?",  $data['mileage_end']);
+        } else {
+            if(!empty($data['mileage_start'])){
+                $oSelect->where('mileage >= ?',  $data['mileage_start']);
+            }
+            
+            if(!empty($data['mileage_end'])){
+                $oSelect->where("mileage <= ?",  $data['mileage_end']);
+            }
+        }
+        
+        if(!empty($data['transmission_id'])){
+            $oSelect->where('cars.transmission_id = ?', $data['transmission_id']); 
+        }
+        
+        if(!empty($data['volume_start']) && !empty($data['volume_end']) ){
+            $oSelect->where('volume >= ?',  $data['volume_start']);
+            $oSelect->where("volume <= ?",  $data['volume_end']);
+        } else {
+            if(!empty($data['volume_start'])){
+                $oSelect->where('volume >= ?',  $data['volume_start']);
+            }
+            
+            if(!empty($data['volume_end'])){
+                $oSelect->where("volume <= ?",  $data['volume_end']);
+            }
+        }
+        
+        if(!empty($data['fuel_id'])){
+            $oSelect->where('cars.fuel_id = ?', $data['fuel_id']); 
+        }
+        
+        if(!empty($data['drive_id'])){
+            $oSelect->where('cars.drive_id = ?', $data['drive_id']); 
+        }
+        
+        if(!empty($data['color_id'])){
+            $oSelect->where('cars.color_id = ?', $data['color_id']); 
+        }
+        
         //echo $oSelect; exit;
         $oResultSet = $oDbTable->fetchAll($oSelect);        
         // echo "<pre>"; print_r($oResultSet);  exit;

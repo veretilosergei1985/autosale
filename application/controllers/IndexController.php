@@ -96,7 +96,7 @@ class IndexController extends Zend_Controller_Action
 
     }
     
-    public function indexAction(){
+    public function indexAction(){ 
         $this->view->headScript()->appendFile('/js/init_index.js');
                         
         $form = new Application_Form_IndexSearchUsed();
