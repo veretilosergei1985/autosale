@@ -1,38 +1,50 @@
     <!--<div id="search_auto_results" class="standart-view"> -->
     <div id="search_auto_results" class="">
-        
-      <form id="search_ajax_form" method="get">   
-        <input type="hidden" id="category_id" name="category_id" value="<?php echo $this->category_id; ?>">
-        <input type="hidden" id="bodystyle" name="bodystyle" value="<?php echo $this->query['bodystyle']; ?>">
-        <input type="hidden" id="mark" name="mark" value="<?php echo $this->query['mark']; ?>">
-        <input type="hidden" id="model" name="model" value="<?php echo $this->query['model']; ?>">
-        <input type="hidden" id="region" name="region" value="<?php echo $this->query['region']; ?>">
-
-        <input type="hidden" id="year_start" name="year_start" value="<?php echo $this->query['year_start']; ?>">
-        <input type="hidden" id="year_end" name="year_end" value="<?php echo $this->query['year_end']; ?>">
-
-        <input type="hidden" id="price_start" name="price_start" value="<?php echo $this->query['price_start']; ?>">
-        <input type="hidden" id="price_end" name="price_end" value="<?php echo $this->query['price_end']; ?>">
-        <input type="hidden" id="currency" name="currency" value="<?php echo $this->query['currency']; ?>">
-
-        <input type="hidden" id="with_photo" name="with_photo" value="<?php echo $this->query['with_photo']; ?>">
-        <input type="hidden" id="with_video" name="with_video" value="<?php echo $this->query['with_video']; ?>">
-        
-        <input type="hidden" id="mileage_start" name="mileage_start" value="<?php echo $this->query['mileage_start']; ?>">
-        <input type="hidden" id="mileage_end" name="mileage_end" value="<?php echo $this->query['mileage_end']; ?>">
-
-        <input type="hidden" id="transmission_id" name="transmission_id" value="<?php echo $this->query['transmission_id']; ?>">
-        
-        <input type="hidden" id="volume_start" name="volume_start" value="<?php echo $this->query['volume_start']; ?>">
-        <input type="hidden" id="volume_end" name="volume_end" value="<?php echo $this->query['volume_end']; ?>">
-        
         <input type="hidden" id="queryString" name="queryString" value="<?php echo $this->queryString; ?>">
+        <input type="hidden" id="count_result" name="count_result" value="<?php echo $this->count_result; ?>">
         
-        <input type="hidden" id="fuel_id" name="fuel_id" value="<?php echo $this->query['fuel_id']; ?>">
-        <input type="hidden" id="drive_id" name="drive_id" value="<?php echo $this->query['drive_id']; ?>">
-        
-        <input type="hidden" id="color_id" name="color_id" value="<?php echo $this->query['color_id']; ?>">
-     </form>   
+           <form id="search_ajax_form" method="get">
+                               
+                <input type="hidden" id="auto_id" name="auto_id" value="<?php echo $this->query['auto_id']; ?>">
+                <input type="hidden" id="category_id" name="category_id" value="<?php echo $this->category_id; ?>">
+                <input type="hidden" id="bodystyle" name="bodystyle" value="<?php echo $this->query['bodystyle']; ?>">
+                <input type="hidden" id="mark" name="mark" value="<?php echo $this->query['mark']; ?>">
+                <input type="hidden" id="model" name="model" value="<?php echo $this->query['model']; ?>">
+                
+                <?php if(!empty($this->query['region'])){ ?>
+                    <input type="hidden" id="region" class="m_state" name="m_state[]"  city_id="0" value="<?php echo $this->query['region']; ?>">
+                    <input class="m_city" type="hidden" name="m_city[]" state_id="<?php echo $this->query['region']; ?>" value="0">
+                <?php } ?>
+                
+                <input type="hidden" id="year_start" name="year_start" value="<?php echo $this->query['year_start']; ?>">
+                <input type="hidden" id="year_end" name="year_end" value="<?php echo $this->query['year_end']; ?>">
+                
+                <input type="hidden" id="price_start" name="price_start" value="<?php echo $this->query['price_start']; ?>">
+                <input type="hidden" id="price_end" name="price_end" value="<?php echo $this->query['price_end']; ?>">
+                <input type="hidden" id="currency" name="currency" value="<?php echo $this->query['currency']; ?>">
+                
+                <input type="hidden" id="with_photo" name="with_photo" value="<?php echo $this->query['with_photo']; ?>">
+                <input type="hidden" id="with_video" name="with_video" value="<?php echo $this->query['with_video']; ?>">
+                
+                <input type="hidden" id="mileage_start" name="mileage_start" value="<?php echo $this->query['mileage_start']; ?>">
+                <input type="hidden" id="mileage_end" name="mileage_end" value="<?php echo $this->query['mileage_end']; ?>">
+                
+                <input type="hidden" id="transmission_id" name="transmission_id" value="<?php echo $this->query['transmission_id']; ?>">
+                
+                <input type="hidden" id="volume_start" name="volume_start" value="<?php echo $this->query['volume_start']; ?>">
+                <input type="hidden" id="volume_end" name="volume_end" value="<?php echo $this->query['volume_end']; ?>">
+                
+                <input type="hidden" id="fuel_id" name="fuel_id" value="<?php echo $this->query['fuel_id']; ?>">
+                <input type="hidden" id="drive_id" name="drive_id" value="<?php echo $this->query['drive_id']; ?>">
+                
+                <input type="hidden" id="color_id" name="color_id" value="<?php echo $this->query['color_id']; ?>">
+                
+                <?php if(isset($this->query['m_state'])){
+                        foreach($this->query['m_state'] as $k => $v){
+                            echo '<input class="m_state" type="hidden" city_id="" name="m_state[]" value="' . $v . '">';
+                        }
+                      } ?>
+             </form>
         
         
 <?php foreach ($this->paginator as $car) { ?>

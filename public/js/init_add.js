@@ -10,6 +10,58 @@ jQuery(function() {
 
     }); 
     
+    jQuery.ajax({
+        url: '/display/showregionspopup',
+        type:'POST',
+        success: function(res) {
+                 $('.window-location').append(res);
+            }
+
+
+    }); 
+    
+    $('#stateslist__addcars a.item').live('click',function(e) {
+        e.preventDefault();
+
+        var reg_id = $(this).attr('state_id');
+        var elem = $(this);
+        
+        $('#stateslist__addcars a.active').removeClass('active');
+        $(this).addClass('active');
+
+        jQuery.ajax({
+              url: '/display/findcitiesbyreg',
+              type:'POST',
+              data: { reg_id : reg_id },
+              success: function(res) {
+                        data = jQuery.parseJSON(res);
+                        
+                        var tips = '';
+                        
+                        for (var i in data) {
+                            if(i == 0){
+                                tips += '<a class="item active" href="javascript:void(0);" city_id="' + data[i].id + '">' + data[i].name + '</a>';
+                            } else {
+                                tips += '<a class="item" href="javascript:void(0);" city_id="' + data[i].id + '">' + data[i].name + '</a>';
+                            }
+                        }
+                        
+                        $('#citieslist__addcars').empty();
+                        $('#citieslist__addcars').append(tips);
+                                               
+                    }
+                    
+        }); 
+    }); 
+    
+    $('#citieslist__addcars a.item').live('click',function(e) {
+        e.preventDefault();
+       
+        $('#citieslist__addcars a.active').removeClass('active');
+        $(this).addClass('active');
+ 
+    }); 
+    
     $('#priority-element').find('br').remove();
         
     if($('#category__addcars').val() != '' && $('#category__addcars').val() != '0'){
@@ -79,6 +131,32 @@ jQuery(function() {
 
 
         }); 
+    });
+    
+    jQuery('#locationpopup__addcars .close').live('click',function(e) {
+        e.preventDefault();
+        
+        $('#locationpopup__addcars').css('display', 'none');
+    });
+        
+    jQuery('#cancellocation__addcars').live('click',function(e) {
+        e.preventDefault();
+        
+        $('#locationpopup__addcars').css('display', 'none');
+    });
+    
+    jQuery('#chooselocation__addcars').live('click',function(e) {
+        e.preventDefault();
+
+        var reg_id = $('#stateslist__addcars a.active').attr('state_id');
+        var reg_name = $('#stateslist__addcars a.active').text();
+        
+        var city_id = $('#citieslist__addcars a.active').attr('city_id');
+        var city_name = $('#citieslist__addcars a.active').text();
+        
+        $('select#reg_id option[value="choose"]').after('<option value="'+reg_id+'-'+city_id+'" label="'+city_name+', '+reg_name+' обл.">'+city_name+', '+reg_name+' обл.</option>');
+        //<option value="8-416" label="Ахтырка, Сумская обл.">Ахтырка, Сумская обл.</option>
+        $('#locationpopup__addcars').css('display', 'none');
     });
     
     jQuery('#choosebodystyle__addcars').live('click',function(e) {
@@ -260,6 +338,11 @@ jQuery(function() {
     
     });
     */
+   
+     $('select#reg_id option[value="choose"]').live('click',function(e) {
+        e.preventDefault();
+        $('#locationpopup__addcars').show();
+      }); 
     
     jQuery('#cancelbodystyle__addcars').live('click',function(e) {
         $('#bodystylespopup__addcars').hide();

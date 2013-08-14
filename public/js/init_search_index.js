@@ -48,6 +48,8 @@ jQuery(function() {
             
             // delete hidden inputs for new regions
             $('input.m_state[value="'+pvalue+'"]').remove();
+            $('input.m_city[state_id="'+pvalue+'"]').remove();
+            
         } else {
             $('.hidden_subgroup[pvalue="'+pvalue+'"]').show();
             $('.hidden_subgroup[pvalue="'+pvalue+'"]').css('margin-left','12px');
@@ -55,7 +57,9 @@ jQuery(function() {
             $(this).addClass('checked');
             
             // create hidden inputs for new regions
-            $('<input class="m_state" type="hidden" name="m_state[]" value="' + pvalue + '" />').appendTo('#search_ajax_form');
+            $('<input class="m_state" type="hidden" name="m_state[]" city_id="" value="' + pvalue + '" />').appendTo('#search_ajax_form');
+            $('<input class="m_city" type="hidden" name="m_city[]" state_id="' + pvalue + '" value="0" />').appendTo('#search_ajax_form');
+                        
         }
         
         $('.wrapper_search').empty();
@@ -68,7 +72,56 @@ jQuery(function() {
               success: function(res) {
                     $('.wrapper_search').empty();
                     $('.wrapper_search').append(res);
+                    $('#search_results_count').text($('#count_result').val());
+                    window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                  }
+          }); 
+        
+    });
+    
+    jQuery('a[pname="city"]').live('click',function(e) {
+        e.preventDefault();
+        
+        var pvalue = $(this).attr('pvalue');
+        var state_id = $(this).attr('state_id');
+                        
+        if($(this).hasClass('checked')){
+            $(this).removeClass('checked');
+            
+            $('.m_state[value="'+state_id+'"][city_id="'+pvalue+'"]').remove();
+            $('.m_city[state_id="'+state_id+'"][value="'+pvalue+'"]').remove();
+            
+//            if($('.m_city[state_id="'+state_id+'"][value="'+pvalue+'"]').length>0) {
+//                $('.m_city[state_id="'+state_id+'"][value="'+pvalue+'"]').val('');
+//            } 
+            // delete hidden inputs for new cities
+            //$('input.m_city[value="'+pvalue+'"]').remove();
+            // remove value of main hidden input - region
+            //if(pvalue == $('input#region').val())
+                //$('input#region').val('');
+        } else {
+            $(this).addClass('checked');
+                        
+            // create hidden inputs for new cities
+            $('<input class="m_state" type="hidden" name="m_state[]" city_id="'+pvalue+'" value="' + state_id + '" />').appendTo('#search_ajax_form');
+            $('<input class="m_city" type="hidden" name="m_city[]" state_id="' + state_id + '" value="'+pvalue+'" />').appendTo('#search_ajax_form');
+            
+//            else {
+//                $('<input class="m_city" type="hidden" name="m_city[]" value="' + pvalue + '" />').appendTo('#search_ajax_form');
+//            }           
+        }
+        
+        $('.wrapper_search').empty();
+        $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
 
+        jQuery.ajax({
+              url: '/search/ajax',
+              type:'POST',
+              data: $('#search_ajax_form').serialize(),
+              success: function(res) {
+                    $('.wrapper_search').empty();
+                    $('.wrapper_search').append(res);
+                    $('#search_results_count').text($('#count_result').val());
                     window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                   }
           }); 
@@ -337,8 +390,8 @@ jQuery(function() {
            $('#filter_po_yers option[value='+val+']').attr('selected', 'selected');
        }
        
-       if($('#region').val() != '' && $('#region').val() != '0'){
-           var reg_val = $('#region').val();
+       if($('.m_state').val() != '' && $('.m_state').val() != '0'){
+           var reg_val = $('.m_state').val();
            $('a[pvalue='+reg_val+'][pname="state"]').removeClass('check');
            $('a[pvalue='+reg_val+'][pname="state"]').addClass('checked');
            
@@ -436,6 +489,8 @@ jQuery(function() {
             });
        }
        
+       $('#search_results_count').text($('#count_result').val());
+       
        
        // filtering AJAX
             
@@ -499,6 +554,7 @@ jQuery(function() {
                       success: function(res) {
                             $('.wrapper_search').empty();
                             $('.wrapper_search').append(res);
+                            $('#search_results_count').text($('#count_result').val());
                             
                             window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                           }
@@ -521,7 +577,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -541,7 +597,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -566,7 +622,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -593,7 +649,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -628,7 +684,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -665,7 +721,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -691,7 +747,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -715,7 +771,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -744,7 +800,7 @@ jQuery(function() {
                               success: function(res) {
                                     $('.wrapper_search').empty();
                                     $('.wrapper_search').append(res);
-                                    
+                                    $('#search_results_count').text($('#count_result').val());
                                     window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                                   }
                           }); 
@@ -773,7 +829,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -801,7 +857,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -828,7 +884,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -854,7 +910,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -882,7 +938,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -909,7 +965,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -934,7 +990,7 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
@@ -959,13 +1015,89 @@ jQuery(function() {
                           success: function(res) {
                                 $('.wrapper_search').empty();
                                 $('.wrapper_search').append(res);
-                                
+                                $('#search_results_count').text($('#count_result').val());
                                 window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
                               }
                       }); 
-           });  
+           });
            
-        
+           $('.head-filter').live('click',function(e) {
+                e.preventDefault();
+                
+                if($('.panel').hasClass('hide')){
+                    $('#advanced_panel_contaier').removeClass('compact-filter');
+                    $('.panel').removeClass('hide');
+                } else {
+                    $('#advanced_panel_contaier').addClass('compact-filter');
+                    $('.panel').addClass('hide');
+                }
+                
+                
+          
+            }); 
+            
+            $('#lfs_auto_id_input').keyup(function () {
+               $('#auto_id').val($(this).val());
+               
+            });
+                       
+                       
+            $('.send_button_ajax_form').live('click',function(e) {
+                e.preventDefault();
+                           
+                $('.wrapper_search').empty();
+                $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
+
+                        jQuery.ajax({
+                              url: '/search/ajax',
+                              type:'POST',
+                              //data: { mark_id : mark_id, query_str : $('#queryString').val() },
+                              data: $('#search_ajax_form').serialize(),
+                              success: function(res) {
+                                    $('.wrapper_search').empty();
+                                    $('.wrapper_search').append(res);
+                                    $('#search_results_count').text($('#count_result').val());
+                                    window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                                  }
+                          }); 
+               }); 
+               
+               
+               $('#lf_reset_href').live('click',function(e) {
+                e.preventDefault();
+                
+                $('#search_ajax_form input[type="hidden"]').val('');
+                $('.m_state').remove();
+                $('.m_city').remove();
+                $('#queryString').val('');
+                $('#count_result').val('0');
+                           
+                $('.wrapper_search').empty();
+                $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
+
+                        jQuery.ajax({
+                              url: '/search/ajax',
+                              type:'POST',
+                              data: $('#search_ajax_form').serialize(),
+                              //data: { type : 1 },
+                              success: function(res) {
+                                    $('.wrapper_search').empty();
+                                    $('.wrapper_search').append(res);
+                                    
+                                    $('#search_ajax_form input[type="hidden"]').val('');
+                                    $('#queryString').val('');
+                                    $('#count_result').val('0');
+                                    $('.m_state').remove();
+                                    $('.m_city').remove();
+                                    window.location = '/search/index';
+                                    //window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                                    //location.reload();
+                                    
+                                  }
+                          }); 
+               }); 
+               
+              
 
 });
     

@@ -179,7 +179,7 @@ class DisplayController extends Zend_Controller_Action
          
          $cat_id = $this->_getParam('category_id');
       
-         if(!isset($cat_id)){
+         if(empty($cat_id)){
              $cat_id = 1; 
          }
          
@@ -419,6 +419,29 @@ class DisplayController extends Zend_Controller_Action
        $result = $oCategoriesMarks->getMarksBySubCat($subcat_id);
        
        print_r(json_encode($result)); exit;
+   }
+   
+   public function showregionspopupAction(){
+        $this->_helper->layout->disableLayout();
+        
+        $regionsModel = new Application_Model_Regions();
+        $regions = $regionsModel->fetchAll();
+        
+        $citiesModel = new Application_Model_Cities();
+        $cities = $citiesModel->findByRegId($regions[0]->id);
+   
+        $this->view->regions = $regions;
+        $this->view->cities = $cities;
+   }
+   
+   public function findcitiesbyregAction(){
+        $this->_helper->layout->disableLayout();
+        $reg_id = $this->_getParam('reg_id');       
+        
+        $citiesModel = new Application_Model_Cities();
+        $cities = $citiesModel->findByRegId($reg_id);
+ 
+        print_r(json_encode($cities->toArray())); exit;
    }
 
 

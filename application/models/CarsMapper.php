@@ -182,8 +182,7 @@ class Application_Model_CarsMapper
     
     public function findByAttrs($data)
     {
-        
-               
+                     
        $oDbTable = $this->getDbTable();
        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
                                       //->columns(array('img_cnt'=>'count(photos.id)'), false)
@@ -202,11 +201,15 @@ class Application_Model_CarsMapper
                                             $oSelect->joinLeft('photos','photos.auto_id = cars.id', array('image'));
                                             $oSelect->group('cars.id');
                                         }
-                                     
+                                        
+        if(!empty($data['auto_id'])){
+            $oSelect->where('cars.id = ?', $data['auto_id']); 
+        }     
+                                        
         if(!empty($data['category_id'])){
             $oSelect->where('cars.cat_id = ?', $data['category_id']); 
         }                  
-
+                
         if(!empty($data['region'])){
             $oSelect->where('cars.reg_id = ?', $data['region']); 
         }
@@ -297,6 +300,67 @@ class Application_Model_CarsMapper
         
         if(!empty($data['color_id'])){
             $oSelect->where('cars.color_id = ?', $data['color_id']); 
+        }
+        
+        /*
+        if(isset($data['m_state'])){
+            foreach($data['m_state'] as $k => $v){
+              if($k == 0){  
+                if(empty($data['region'])){ 
+                    $oSelect->where('cars.reg_id = ?', $v); 
+                }else{
+                    $oSelect->orWhere('cars.reg_id = ?', $v); 
+                }
+              } else {
+                  $oSelect->orWhere('cars.reg_id = ?', $v); 
+              }
+            }            
+        }
+        
+         * 
+         */
+        
+        if(isset($data['m_state'])){
+            $check = false;
+            //if(isset($data['m_state']) && array_search(''))
+            $cnt = count($data['m_state']);
+            for($i = 0; $i < $cnt; $i++){
+                if($data['m_city'][$i] == '0'){
+                    $tmp = $data['m_state'];
+                    unset($tmp[$i]);
+                    if(!array_search($data['m_state'][$i], $tmp)){
+                        //echo array_search($data['m_state'][$i], $data['m_state']); exit;
+                        if($i == 0){
+                            if($cnt > 1){
+                                $oSelect->where("(cars.reg_id = '".$data['m_state'][$i]."'");
+                                $check = true;
+                            } else {
+                                $oSelect->where("cars.reg_id = '".$data['m_state'][$i]."'");
+                                $check = true;
+                            }
+                        } else {
+                            if($i == $cnt-1){
+                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."')"); 
+                            } else {
+                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."'"); 
+                            }
+                        }
+                        //$oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
+                    } 
+                } else {
+                     if($check == false){
+                         $oSelect->where("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
+                         $check = true;
+                     } else {
+                         if($i == $cnt-1){
+                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."'))");
+                         } else {
+                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')"); 
+                         }
+
+                     }
+                }
+            }
         }
         
         //echo $oSelect; exit;

@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <a href="javascript:void(0);" id="closelocationpopup__addcars" class="close">×</a>
+
+    <div class="title bold">
+        Выбор места положения            </div>
+    <div class="list-select-state">
+        <div class="optgroup-province" id="stateslist__addcars">
+            <?php $i = 0;
+                  foreach($this->regions as $region){ ?>
+                      <a class="item<?php if($i == 0) echo ' active'; ?>" state_id="<?php echo $region->id; ?>" href="javascript:void(0);"><?php echo $region->name; ?></a>
+            <?php 
+                      $i++; 
+                  } ?>    
+        </div>
+        <div class="optgroup-region" id="citieslist__addcars">
+            <?php $j = 0;
+                  foreach($this->cities as $city){ ?>
+                        <a class="item<?php if($j == 0) echo ' active'; ?>" href="javascript:void(0);" city_id="<?php echo $city->id; ?>"><?php echo $city->name; ?></a>
+            <?php 
+                  $j++; 
+                  } ?>  
+        </div>
+    </div>
+    <div class="button-bar">
+        <a class="button blue" id="chooselocation__addcars" href="javascript:void(0);">Выбрать</a>
+        <a class="button" id="cancellocation__addcars" href="javascript:void(0);">Отмена</a>
+    </div>
+</div>

@@ -72,6 +72,8 @@ class SearchController extends Zend_Controller_Action
         $this->view->category_id = $requestData['category_id'];
         $this->view->query = $requestDataForForm;
         $this->view->queryString = $_SERVER['QUERY_STRING'];
+        
+        $this->view->count_result = count($result);
                 
     }
     
@@ -80,7 +82,7 @@ class SearchController extends Zend_Controller_Action
         
         $requestData = $this->getRequest()->getParams();
         $requestDataForForm = $requestData;
-//        echo "<pre>"; print_r($requestData); exit;
+      //echo "<pre>"; print_r($requestData); exit;
         
         
 //        $query = $this->_getParam('query_str');
@@ -163,9 +165,10 @@ class SearchController extends Zend_Controller_Action
         
         // для левой формы - фильтры (ajax)
         $this->view->category_id = $requestData['category_id'];
-//        $this->view->query = $requestDataForForm;
+        $this->view->query = $requestDataForForm;
         $this->view->queryString = http_build_query($requestDataForForm);
-//      $this->view->queryString = $requestData;
+        //echo "<pre>"; print_r($this->view->queryString); exit; 
+        $this->view->count_result = count($result);        
     }
     
     

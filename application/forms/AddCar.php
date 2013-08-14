@@ -34,6 +34,7 @@ class Application_Form_AddCar extends Zend_Form
                 $region = new Zend_Form_Element_Select('reg_id', array());
                 $region->setLabel("Регион:<ins>*</ins>");
                 $region->addMultiOptions(array('' => 'Выберите'));
+                $region->addMultiOptions(array('choose' => 'Выбрать другой регион'));
                 //
                 $oRegion = new Application_Model_Regions();
                 foreach ($oRegion->fetchAll() as $reg) {

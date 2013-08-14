@@ -353,6 +353,12 @@
     
     <form method="post" class="<?php echo $this->form->getAttrib('class'); ?>" id="<?php echo $this->form->getId(); ?>" action="<?php echo $this->form->getAction(); ?>">
         <?php echo $this->form->reg_id; ?>
+        <div class="window-fixed" style="display: none;" id="locationpopup__addcars">
+            <div class="mount-iframe">
+                <iframe></iframe>
+            </div>
+            <div class="popup window-location"></div>
+        </div>
         <div class="window-fixed" style="display: none;" id="bodystylespopup__addcars"></div>  
   
         <?php echo $this->form->cat_id; ?>

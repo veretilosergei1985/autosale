@@ -47,6 +47,10 @@ class Application_Model_CategoriesMarksMapper
     
     public function getMarksByCat($cat_id){
         
+        if(empty($cat_id)){
+            $cat_id = 1;
+        }
+        
         //select id, name FROM marks LEFT JOIN categories_marks ON marks.id = categories_marks.mark_id LEFT JOIN categories ON categories.id = categories_marks.cat_id WHERE categories.id = 2 
         
         // SELECT mark.id, mark.name FROM mark LEFT JOIN categories_marks ON mark.id = categories_marks.mark_id LEFT JOIN category ON category.id = categories_marks.cat_id
