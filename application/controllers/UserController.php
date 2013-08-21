@@ -203,6 +203,31 @@ class UserController extends Zend_Controller_Action
         $auth->clearIdentity();
         $this->_helper->redirector('login');
     }
+    
+    public function myautosAction(){
+        $this->_helper->layout->setLayout('mymenu');
+        
+        if(!Zend_Auth::getInstance()->hasIdentity()){ 
+            $this->_helper->redirector('login', 'user', 'default');
+        } else {
+            $auto_id = $this->_getParam('delete_id');
+            if ($this->getRequest()->isPost() && !empty($auto_id)) {
+                $carsModel = new Application_Model_Cars();
+                $result = $carsModel->checkAutoOwner($this->_getParam('delete_id') ,Zend_Auth::getInstance()->getIdentity()->id);
+                
+                if($result == true){
+                    echo "ok"; exit;
+                } else {
+                    $this->_helper->redirector('login', 'user', 'default');
+                }
+            } else {
+                // just display info
+            }
+        }
+        
+          
+    }
+    
       
     
 

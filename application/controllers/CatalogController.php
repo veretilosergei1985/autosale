@@ -60,11 +60,13 @@ class CatalogController extends Zend_Controller_Action
                                  $data = $form->getValues();
                                  //echo "<pre>"; print_r($data); exit;
                                  $car = new Application_Model_Cars();
-
+                                 list($region, $city) = explode("-", $data['reg_id']);
+                                 
                                  $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
                                  $car->setCatId($data['cat_id']);
                                  $car->setBodyId($data['body_id']);
-                                 $car->setRegId($data['reg_id']);
+                                 $car->setRegId($region);
+                                 $car->setCityId($city);
                                  $car->setModelId($data['model_id']);
                                  $car->setMarkId($data['mark_id']);
                                  //$car->setCityId($data['']);
@@ -109,8 +111,7 @@ class CatalogController extends Zend_Controller_Action
                 }
            
             } else if($autoId != ''){
-                        
-                                
+                       
                 // fill form
                 $carsModel = new Application_Model_Cars();
                 $data = $carsModel->find($autoId);
@@ -126,7 +127,19 @@ class CatalogController extends Zend_Controller_Action
                 unset($data['color']);
                 $form->populate($data);
                 
-                                
+                if($data['reg_id'] == $data['city_id']){
+                   $form->populate(array('reg_id' => $data['reg_id'] . '-' . $data['city_id']));
+                } else { 
+                   $regionModel = new Application_Model_Regions();
+                   $cityModel = new Application_Model_Cities();
+                   $region = $regionModel->find($data['reg_id']);
+                   $city = $cityModel->find($data['city_id']);
+                    
+                   $form->getElement('reg_id')->addMultiOption($data['reg_id'] . '-' . $data['city_id'], $city->name.', '.$region->name.' обл.'); 
+                   $form->getElement('reg_id')->setValue($data['reg_id'] . '-' . $data['city_id']);
+                }
+
+                
                 if ($this->getRequest()->isPost()) {
                     if ($form->isValid($this->getRequest()->getPost())) {
                         
@@ -142,12 +155,15 @@ class CatalogController extends Zend_Controller_Action
                             $data = $form->getValues();
                             //echo "<pre>"; print_r($data); exit;
                             $car = new Application_Model_Cars();
-
+                            
+                            list($region, $city) = explode("-", $data['reg_id']);
+   
                             $car->setId($autoId);
                             $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
                             $car->setCatId($data['cat_id']);
                             $car->setBodyId($data['body_id']);
-                            $car->setRegId($data['reg_id']);
+                            $car->setRegId($region);
+                            $car->setCityId($city);
                             $car->setModelId($data['model_id']);
                             $car->setMarkId($data['mark_id']);
                             //$car->setCityId($data['']);

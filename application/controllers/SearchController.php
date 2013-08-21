@@ -11,6 +11,7 @@ class SearchController extends Zend_Controller_Action
     
     public function indexAction()
     {
+        $this->view->headLink()->appendStylesheet('/css/init_search_new.css');
         $this->view->headLink()->appendStylesheet('/css/init_search_index.css'); 
         $this->view->headScript()->appendFile('/js/init_search_index.js');
         $requestData = $this->getRequest()->getParams();
@@ -47,6 +48,18 @@ class SearchController extends Zend_Controller_Action
         $carsModel = new Application_Model_Cars();
         $result =  $carsModel->findByAttrs($requestData);
         
+        //find current user car ids (if logged)
+        if(Zend_Auth::getInstance()->hasIdentity()){
+            $ids = array();
+            $carsModel1 = new Application_Model_Cars();
+            $res =  $carsModel1->getIdsByUser(Zend_Auth::getInstance()->getIdentity()->id);
+            
+            foreach($res->toArray() as $item){
+                array_push($ids, $item['id']);
+            }
+        } 
+        $this->view->ids = $ids;  
+        
         $photosModelCount = new Application_Model_Photos();
         $data = $photosModelCount->getPhotosCount();
         $photos_count = array();
@@ -59,7 +72,13 @@ class SearchController extends Zend_Controller_Action
         $page=$this->_getParam('p',1);
         
         $paginator = Zend_Paginator::factory($result);
-        $paginator->setItemCountPerPage(2);
+        
+        if(!empty($requestDataForForm['count_per_page'])){
+            $paginator->setItemCountPerPage($requestDataForForm['count_per_page']);
+        } else {
+             $paginator->setItemCountPerPage(5);
+        }
+        
         $paginator->setCurrentPageNumber($page);
 
         $this->view->paginator = $paginator;    
@@ -74,10 +93,15 @@ class SearchController extends Zend_Controller_Action
         $this->view->queryString = $_SERVER['QUERY_STRING'];
         
         $this->view->count_result = count($result);
+        
+        if($requestDataForForm['block_view'] == 1){
+            $this->render('block_index');
+        }
                 
     }
     
     public function ajaxAction(){
+        //$this->view->headLink()->appendStylesheet('/css/init_search_new.css');
         $this->_helper->layout->disableLayout();
         
         $requestData = $this->getRequest()->getParams();
@@ -154,7 +178,13 @@ class SearchController extends Zend_Controller_Action
         //$page=$this->_getParam('p',1);
         
         $paginator = Zend_Paginator::factory($result);
-        $paginator->setItemCountPerPage(2);
+        
+        if(!empty($requestDataForForm['count_per_page'])){
+            $paginator->setItemCountPerPage($requestDataForForm['count_per_page']);
+        } else {
+             $paginator->setItemCountPerPage(5);
+        }
+        
         $paginator->setCurrentPageNumber('1');
 
         $this->view->paginator = $paginator;    
@@ -168,7 +198,11 @@ class SearchController extends Zend_Controller_Action
         $this->view->query = $requestDataForForm;
         $this->view->queryString = http_build_query($requestDataForForm);
         //echo "<pre>"; print_r($this->view->queryString); exit; 
-        $this->view->count_result = count($result);        
+        $this->view->count_result = count($result);   
+        
+        if($requestDataForForm['block_view'] == 1){
+            $this->render('block_ajax');
+        }
     }
     
     

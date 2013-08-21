@@ -1,0 +1,273 @@
+
+.boxed {
+    display: inline-block;
+    width: 100%;
+}
+.edit-my-offer {
+    background: none repeat scroll 0 0 #FCF9C6;
+    border-bottom: 1px solid #F0BD35;
+    border-radius: 7px 7px 0 0;
+    padding: 9px 10px;
+}
+.edit-my-offer .button {
+    float: right;
+    margin: -2px 2px 0 0;
+}
+.button.green-20 {
+    background-position: -144px -60px;
+}
+.button.green-20, .button.green-20 input, .button.green-20 span {
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+}
+.button.green-20 {
+    font-size: 12px;
+}
+
+.button.green-20, .button.green-20 input, .button.green-20 span {
+    background: url("http://img.auto.ria.ua/images/button/button.png?v02") repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.button.green-20 input, .button.green-20 span {
+    background-position: 100% -60px;
+}
+.button.green-20, .button.green-20 input, .button.green-20 span {
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+}
+.button.green-20 input, .button.green-20 span {
+    font-size: inherit;
+}
+.button input, .button span {
+    display: block;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding: 0 10px 0 5px;
+    position: relative;
+}
+
+img.up-btn {
+    background: url("http://img.auto.ria.ua/images/icons/icons-sprite.png") no-repeat scroll -104px -185px transparent;
+    height: 12px;
+    vertical-align: middle;
+    width: 12px;
+}
+
+.edit-my-offer .btn {
+    background-color: #F6F6F6;
+}
+.btn.edit {
+    background-position: -22px -182px;
+}
+.btn {
+    background: url("http://img.auto.ria.ua/images/icons/icons-sprite.png") no-repeat scroll 0 0 transparent;
+    border: 1px solid #D2D2D2;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    width: 16px;
+}
+
+
+.edit-my-offer .btn {
+    background-color: #F6F6F6;
+}
+a .btn {
+    margin-right: 4px;
+}
+
+.element-select {
+    display: inline-block;
+    position: relative;
+}
+
+.edit-my-offer .btn {
+    background-color: #F6F6F6;
+}
+.btn.larr1 {
+    background-position: -102px -202px;
+}
+a .btn {
+    margin-right: 4px;
+}
+.btn {
+    background: url("http://img.auto.ria.ua/images/icons/icons-sprite.png") no-repeat scroll 0 0 transparent;
+    border: 1px solid #D2D2D2;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    width: 16px;
+}
+.rarr, .larr1 {
+    font-size: 18px;
+}
+
+.ticket-item {
+    padding: 0 !important;
+}
+.edit-my-offer .show-options {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FCF9C6;
+    border-color: -moz-use-text-color #F0BD35 #F0BD35;
+    border-image: none;
+    border-right: 1px solid #F0BD35;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    left: 0;
+    padding: 0 10px 10px 20px;
+    position: absolute;
+    top: 27px;
+
+}
+
+
+.pop-up-element .tl-shadow, .pop-up-element .tr-shadow, .pop-up-element .bl-shadow, .pop-up-element .br-shadow {
+    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element.png") no-repeat scroll 0 0 transparent;
+    height: 25px;
+    position: absolute;
+    width: 25px;
+}
+.pop-up-element .tl-shadow, .pop-up-element .tr-shadow {
+    top: -1px;
+}
+.pop-up-element .bl-shadow, .pop-up-element .br-shadow {
+    bottom: -1px;
+}
+.pop-up-element .tl-shadow, .pop-up-element .bl-shadow {
+    left: 0;
+}
+.pop-up-element .tr-shadow, .pop-up-element .br-shadow {
+    right: 0;
+}
+.pop-up-element .tl-shadow {
+    background-position: 0 -25px;
+}
+.pop-up-element .tr-shadow {
+    background-position: 100% -25px;
+}
+.pop-up-element .bl-shadow {
+    background-position: 0 -50px;
+}
+.pop-up-element .br-shadow {
+    background-position: 100% -50px;
+}
+.pop-up-element .top-shadow, .pop-up-element .bottom-shadow {
+    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element.png") repeat-x scroll 0 0 transparent;
+    position: relative;
+    width: 100%;
+    z-index: 200;
+}
+.pop-up-element .top-shadow {
+    background-position: 0 0;
+}
+.pop-up-element .bottom-shadow {
+    background-position: 0 100%;
+}
+.pop-up-element .left-shadow, .pop-up-element .right-shadow {
+    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element-y.png") repeat-y scroll 0 0 transparent;
+}
+.pop-up-element .left-shadow {
+    background-position: 0 0;
+}
+.pop-up-element .right-shadow {
+    background-position: 100% 0;
+}
+.pop-up-element .top-shadow {
+    padding-top: 10px;
+    top: -25px;
+}
+.pop-up-element .bottom-shadow {
+    bottom: -50px;
+    margin-top: -52px;
+    padding-bottom: 10px;
+}
+.pop-up-element .left-shadow {
+    margin: 24px 0;
+    padding-left: 25px;
+}
+.pop-up-element .right-shadow {
+    padding-right: 25px;
+}
+.pop-up-element .container-item {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: auto;
+    margin: 0 -5px 2px;
+    padding: 10px 0;
+    position: relative;
+    top: 2px;
+    z-index: 500;
+}
+.pop-up-element a.close-alert, .pop-up-window a.close-alert {
+    background: url("http://img.auto.ria.ua/images/icons/icons-sprite.png") no-repeat scroll 0 -40px transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 16px;
+    line-height: 0;
+    margin-top: -6px;
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+    width: 16px;
+    z-index: 1000;
+}
+.pop-up-window a.close-alert {
+    margin-top: -3px;
+    right: 14px;
+}
+.pop-up-element a.close-alert:hover, .pop-up-window a.close-alert:hover {
+    background-position: -20px -40px;
+}
+
+
+.title {
+    border-bottom: 1px solid #D85442;
+    cursor: default;
+    display: block;
+    font: bold 15px/21px Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0 0 5px;
+}
+.text-l {
+    text-align: left;
+}
+
+
+.button.green-30.disabled input, .button.green-30.disabled span, .button.grey-30.disabled input, .button.grey-30.disabled span, .button.blue-30.disabled input, .button.blue-30.disabled span {
+    background-position: 100% -120px !important;
+    color: #B5B5B5;
+    cursor: default;
+    text-shadow: 1px 1px 0 #E8E8E8;
+}
+
+
+.button.red-30 input, .button.red-30 span {
+    background-position: 100% -854px;
+}
+.button.red-30, .button.red-30 input, .button.red-30 span {
+    color: #FFFFFF;
+    height: 30px;
+    line-height: 28px;
+	background-color: red;
+}
+.button.red-30 input, .button.red-30 span {
+    font-size: inherit;
+}
+

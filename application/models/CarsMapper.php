@@ -30,6 +30,7 @@ class Application_Model_CarsMapper
             'cat_id' => $car->getCatId(), 
             'body_id' => $car->getBodyId(), 
             'reg_id' => $car->getRegId(),
+            'city_id' => $car->getCityId(),
             'model_id' => $car->getModelId(),
             'mark_id' => $car->getMarkId(),
             'transmission_id' => $car->getTransmissionId(), 
@@ -353,7 +354,7 @@ class Application_Model_CarsMapper
                          $check = true;
                      } else {
                          if($i == $cnt-1){
-                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."'))");
+                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
                          } else {
                             $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')"); 
                          }
@@ -362,6 +363,15 @@ class Application_Model_CarsMapper
                 }
             }
         }
+        
+        if(!empty($data['search_sort'])){
+            //$oSelect->where('cars.id = ?', $data['auto_id']); 
+            if($data['search_sort'] == 3){
+                $oSelect->order(array('price DESC'));
+            } else if($data['search_sort'] == 2){
+                 $oSelect->order(array('price ASC'));
+            } 
+        }    
         
         //echo $oSelect; exit;
         $oResultSet = $oDbTable->fetchAll($oSelect);        
@@ -396,6 +406,34 @@ class Application_Model_CarsMapper
         $oResultSet = $oDbTable->fetchAll($oSelect);        
         //echo $oSelect; exit;
         return $oResultSet;
+    }
+    
+    public function getIdsByUser($user_id){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select()
+                            ->from('cars', array('cars.id'))
+                            ->where("cars.user_id = ? AND cars.status = 'active'", $user_id); ;
+        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        //echo $oSelect; exit;
+        return $oResultSet;
+    }
+    
+    public function checkAutoOwner($auto_id ,$user_id){
+        $oDbTable = $this->getDbTable();
+        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
+                                      ->where('cars.user_id = ?', $user_id)
+                                      ->where('cars.id = ?', $auto_id); 
+                
+        //echo $oSelect; exit;
+        $oResultSet = $oDbTable->fetchRow($oSelect);        
+        //echo "<pre>"; print_r($oResultSet->toArray());  exit;
+        if($oResultSet != null){
+            return true;
+        } else {
+            return false;
+        }
+               
+        //return $oResultSet;
     }
    
    

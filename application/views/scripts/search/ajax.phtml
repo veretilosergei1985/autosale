@@ -4,7 +4,11 @@
         <input type="hidden" id="count_result" name="count_result" value="<?php echo $this->count_result; ?>">
         
            <form id="search_ajax_form" method="get">
-                               
+                 <input type="hidden" id="count_per_page" name="count_per_page" value="<?php echo $this->query['count_per_page']; ?>">
+               
+                <input type="hidden" id="block_view" name="block_view" value="<?php echo $this->query['block_view']; ?>">
+                <input type="hidden" id="search_sort" name="search_sort" value="<?php echo $this->query['search_sort']; ?>">                
+               
                 <input type="hidden" id="auto_id" name="auto_id" value="<?php echo $this->query['auto_id']; ?>">
                 <input type="hidden" id="category_id" name="category_id" value="<?php echo $this->category_id; ?>">
                 <input type="hidden" id="bodystyle" name="bodystyle" value="<?php echo $this->query['bodystyle']; ?>">
@@ -84,7 +88,7 @@
                         <div class="content">
                             <div class="head-ticket">
                                 <span class="city">
-                                    <a title="Поиск объявлений по региону <?php echo $car->reg_name; ?>." href="city/harkov/"><?php echo $car->reg_name; ?></a>
+                                    <a title="Поиск объявлений по региону <?php echo $car->city_name; ?>." href="city/harkov/"><?php echo $car->city_name; ?></a>
                                     <a class="icon-up-ticket" title="Поднять вверх при поиске" target="_blank" onclick="fishkiObj.getForm(11080455);
                     _gaq.push(['_trackEvent', 'Popup_Fishek', 'Strelka', 'Search_Oldcar']);
                     return false;" href="/fishki-group/"></a>

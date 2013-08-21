@@ -183,7 +183,7 @@
                     Город:
                     <strong>
                         <?php echo $this->data->city_name; ?><br>
-                        <?php echo $this->data->reg_name; ?>
+                        <?php echo $this->data->reg_name; ?> обл.
                     </strong>
                 </dd>
                 <dd class="item">
@@ -206,18 +206,14 @@
                 </strong>
                 <div class="item-param writing-seller">
                     <i class="icon-email"></i>
-                    <a href="/display/showemailform" id="final_page__mail_to_seller" data-currentUser="<?php //echo $this->data->user_id; ?>" rel="<?php// echo $this->data->user_id; ?>">Написать сообщение</a>
+                    <a href="/display/showemailform" id="final_page__mail_to_seller" data-currentUser="<?php echo Zend_Auth::getInstance()->getIdentity()->id; ?>" rel="<?php echo $this->data->user_id; ?> " car_id="<?php echo $this->data->id; ?>">Написать сообщение</a>
                 </div>
                 <div class="item-param">
                     <i class="icon-mobile-confirm"></i>
-                    <strong class="phone">(093) 439-53-80</strong>
+                    <strong class="phone"><?php echo '(' . substr($this->owner->phone, 0, 3) . ') ' . substr($this->owner->phone, 3, 3) . '-' . substr($this->owner->phone, 6, 2) . '-' . substr($this->owner->phone, 8, 2) ; ?></strong>
 
                 </div>
-                <div class="item-param">
-                    <i class="icon-mobile-confirm"></i>
-                    <strong class="phone">(063) 779-11-28</strong>
-                </div>
-            </div>
+           </div>
         </div>
         <div class="warning">
             <strong>ВНИМАНИЕ!</strong>

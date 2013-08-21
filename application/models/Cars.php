@@ -457,6 +457,13 @@ class Application_Model_Cars
         return $this->getMapper()->countByUser($user_id);
     }
     
+    public function getIdsByUser($user_id){
+        return $this->getMapper()->getIdsByUser($user_id);
+    }
+    
+    public function checkAutoOwner($auto_id ,$user_id){
+        return $this->getMapper()->checkAutoOwner($auto_id ,$user_id);
+    }
     
 }
 

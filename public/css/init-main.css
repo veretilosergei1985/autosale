@@ -2504,10 +2504,7 @@ div.right-catalog-market {
     border-color: #F0BD35;
 
 }
-.ticket-item.paid .edit-my-offer {
-    background: none repeat scroll 0 0 #F8E1A8;
-    border-bottom-color: #F0BD35;
-}
+
 .ticket-item.paid .content {
     margin-left: 195px;
 }
@@ -2521,10 +2518,7 @@ div.right-catalog-market {
     border-color: #F0BD35;
     min-height: 213px;
 }
-.ticket-item.paid-top .edit-my-offer {
-    background: none repeat scroll 0 0 #F8E1A8;
-    border-bottom-color: #F0BD35;
-}
+
 .ticket-item.paid-top .content {
     margin-left: 195px;
 }
@@ -2607,32 +2601,7 @@ div.right-catalog-market {
     color: #D85442;
     font-weight: normal;
 }
-.edit-my-offer {
-    background: none repeat scroll 0 0 #E7E7E7;
-    border-bottom: 1px solid #DDDDDD;
-    border-radius: 6px 6px 0 0;
-    display: block;
-    margin: -10px -10px 10px 0;
-    padding: 6px 10px;
-}
-.edit-my-offer .config-ticket {
-    display: block;
-    font-size: 12px;
-    line-height: 20px;
-    margin: 0 90px 0 0;
-}
-.edit-my-offer .item-conf {
-    display: inline-block;
-    padding: 0 0 0 12px;
-    position: relative;
-}
-.edit-my-offer .options {
-    left: 10px;
-    line-height: 21px;
-}
-.edit-my-offer .up-myorder {
-    float: right;
-}
+
 .popup__sold {
     left: -5px;
     top: 24px;

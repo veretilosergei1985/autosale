@@ -9,8 +9,7 @@ class IndexController extends Zend_Controller_Action
     }
 
     public function searchAction()
-    {
-            
+    {                    
         $carsModel = new Application_Model_Cars();
        
         $photosModelCount = new Application_Model_Photos();
@@ -39,6 +38,7 @@ class IndexController extends Zend_Controller_Action
     
     public function viewAction()
     {
+          
         $this->view->headScript()->appendFile('/js/init_view.js');
         
         $id = $this->_getParam('id');
@@ -75,7 +75,7 @@ class IndexController extends Zend_Controller_Action
         
         $elapsed_time = new Base_ElapsedTime();
         $this->view->elapsed_time = $elapsed_time->get_elapsed_time(strtotime($userModel->added));
-        //$this->view->reg_time = $elapsed_time->get_reg_time(strtotime($userModel->last_login));
+        $this->view->reg_time = $elapsed_time->get_reg_time(strtotime($userModel->lastlogin));
         
         // get full characteristics
         $safety = $carsModel->getAttributesById($id, 'safety');
@@ -97,6 +97,7 @@ class IndexController extends Zend_Controller_Action
     }
     
     public function indexAction(){ 
+        
         $this->view->headScript()->appendFile('/js/init_index.js');
                         
         $form = new Application_Form_IndexSearchUsed();

@@ -1,0 +1,2173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+       
+        <?php $this->headLink()->appendStylesheet('/css/init_mymenu_new1.css', 'screen'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/init_mymenu_new2.css', 'screen'); ?>
+       
+        <?php //$this->headScript()->prependFile('/js/jquery-1.7.2.min.js'); ?>
+         <?php //$this->headScript()->appendFile('/js/main.js'); ?>
+       <?php echo $this->headLink(); ?>
+       <?php //echo $this->headScript();?>
+        
+
+        <noindex>
+            
+            <link type="text/css" rel="stylesheet" href="http://img6.auto.ria.ua/css/layouts/common/branding.css" />
+            <link type="text/css" rel="stylesheet" media="print" href="http://img.auto.ria.ua/css/ria2/core-css/print.css?001" />
+
+
+
+
+
+            <script type="text/javascript" src="http://css.ria.ua/js/mootools-core-1.3.js">
+            </script>
+
+            <script type="text/javascript" >
+                if (Browser.Engine.webkit) {
+                    var fileref = document.createElement('script');
+                    fileref.setAttribute("type", "text/javascript");
+                    fileref.setAttribute("src", 'http://css.ria.ua/js/mootools-1.2.3-webkit-patch.js');
+                    if (typeof fileref != "undefined") {
+                        document.getElementsByTagName("head")[0].appendChild(fileref)
+                    }
+                }</script>
+
+
+            <script type="text/javascript" src="http://css.ria.ua/js/mootools-1.2.4.4-more-with-drag-yc.js">
+            </script>
+            <script type="text/javascript" src="http://css.ria.ua/js/mootools-1.2.4.4-more_ext.js">
+            </script>
+
+
+            <script type="text/javascript" src="http://img.auto.ria.ua/js/mootools/common.js">
+            </script>
+
+            <script type="text/javascript" src="http://img.auto.ria.ua/js/lang/ru.js?7.86">
+            </script>
+            <script type="text/javascript" src="http://img.auto.ria.ua/js/validator/gen_validatorv2.js">
+            </script>
+            <script type="text/javascript" src="http://img.auto.ria.ua/js/adriver/adriver.core.2.js"></script>
+
+            <script type="text/javascript" src="http://img6.auto.ria.ua/js/init.js"></script>
+
+
+            <script type="text/javascript" src="http://img.auto.ria.ua/js/common.js?v3.7">
+            </script>
+
+            <script type="text/javascript" src="/js/pack/jsClasses_1735771799_1372248388.js"></script>
+
+        </noindex>
+
+
+        <!--Google-analytics -->
+
+        <noindex>
+            <script>
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-119062-1']);
+                _gaq.push(['_trackPageview']);
+                _gaq.push(['_trackPageLoadTime']);
+
+                _gaq.push(['b._setAccount', 'UA-37267794-10']);
+                _gaq.push(['b._trackPageview']);
+
+
+
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        </noindex>
+
+
+        <!--/Google-analytics -->
+
+
+        <noindex>
+            <!--RIA baner-->
+            <script type="text/javascript">
+                <!--// <![CDATA[
+           var OA_zones = {
+                    '730x90': 4,
+                    '300x100_1': 3,
+                    'test': 2,
+                    '300x100_2': 6
+                }
+                // ]]> -->
+            </script>
+            <!--/RIA baner-->
+
+
+
+            <!--RIA baner-->
+
+
+            <script type="text/javascript">
+                function OA_show(name) {
+                    return;
+                }
+            </script>
+            <!--/RIA baner-->
+        </noindex>
+
+
+
+
+        <!-- GOOGLE BUTTON -->
+        <noindex><script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+            {
+                lang: 'ru'
+            }
+            </script>
+            <link href="https://plus.google.com/110464453590594722256" rel="author" />
+
+            <!-- VKONTAKTE BUTTON -->
+            <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?31"></script>
+
+            <!--facebook -->
+            <script src="http://connect.facebook.net/ru_RU/all.js#appId=223549387674070&amp;xfbml=1"></script>
+        </noindex>
+
+
+
+
+
+
+
+
+        <meta property="vk:app_id" content="3521595" />
+
+        <meta property="vk:title" content="AUTO.ria.ua - Автосайт №1 в Украине"/>
+        <meta property="og:title" content="AUTO.ria.ua - Автосайт №1 в Украине"/>
+
+        <meta property="vk:description" content="Продажа автомобиля за несколько дней, 7000+ новых объявлений ежедневно, лучшие автоновости, каталог автосервисов"/>
+        <meta property="og:description" content="Продажа автомобиля за несколько дней, 7000+ новых объявлений ежедневно, лучшие автоновости, каталог автосервисов"/>
+
+        <meta property="vk:url" content="http://auto.ria.ua/"/>
+        <meta property="og:url" content="http://auto.ria.ua/"/>
+
+        <meta property="vk:image" content="http://img.auto.ria.ua/images/languages/ru/logo.png"/>
+        <meta property="og:image" content="http://img.auto.ria.ua/images/languages/ru/logo.png"/>
+
+
+
+
+
+
+    </head>
+
+    <body class="ru">
+
+        <div class="container-html">
+            <div class="container-body">
+
+                <div class="preloader-img" style="display: none;">
+
+                    <img width="10" height="10" src="http://img.auto.ria.ua/img/ria2/logo.png" />
+                    <img width="10" height="10" src="http://img.auto.ria.ua/img/ria2/common/sprite-elements.png" />
+                    <img width="10" height="10" src="http://img.auto.ria.ua/img/ria2/snippets/floating-header-menu.png" />
+                    <img width="10" height="10" src="http://img.auto.ria.ua/img/ria2/snippets/pop-up-shadow/pop-up-element.png" />
+                    <img width="10" height="10" src="http://img.auto.ria.ua/img/ria2/snippets/pop-up-shadow/pop-up-element-y.png" />
+
+                </div>                
+                <div class="container-header">
+
+                    <noindex><script type="text/javascript">
+                        var settings = new Hash.Cookie('siteSettings', {path: '/', duration: '365'});
+                        settings.set('showImpress', (1 * settings.get('showImpress')) + 1);
+
+                        </script></noindex>
+
+
+
+                    <noindex><script type="text/javascript">
+                        settings.set('minni', 1);
+                        </script></noindex>
+
+
+
+
+
+                    <!--
+                             <div class="new_des_wrap " id="new_des_big_banner_little">
+                            <div class="new_des_big_banner">
+                                <a class="new_des_btn" href="http://auto.ria.ua/impressions">&nbsp;</a>
+                                <a  href="javascript:void(0);" class="close-des-wrap" onclick="closePlashka()"></a>
+                            </div>
+                         </div>
+                         
+                         <noindex><script type="text/javascript">
+                             function closePlashka() {
+                                 var newset = new Cookie.write('showBunnerNew2', 4,{duration:356});
+                                 $('new_des_big_banner_little').addClass('hide');
+                             }
+                         </script></noindex>
+                         
+                    -->  
+
+
+
+
+                    <!--script type="text/javascript">
+                       var newset = new Cookie.write('showBunnerNew2', Cookie.read("showBunnerNew2")*1+1,{duration:356});
+                    </script-->
+
+
+
+
+
+
+
+
+
+
+                    <div class="container">
+
+                        <div class="header-settings">
+
+                            <ul class="header-menu-settings">
+                                <li class="ria-ua">
+                                    <a href="http://ria.ua" title="Бесплатные объявления"></a>
+                                </li>
+                                <li>
+                                    <a href="http://auto.ria.ua/" title="Автомобили">Автомобили</a>
+                                </li>
+                                <li>
+                                    <a href="http://dom.ria.ua" title="Недвижимость">Недвижимость</a>
+                                </li>
+                                <li>
+                                    <a href="http://rabota.ria.ua" title="Работа">Работа</a>
+                                </li>
+                                <li>
+                                    <a href="http://hotels.ria.ua" title="Гостиницы">Гостиницы</a>
+                                </li>
+
+
+                                <li class="another-service" id="otherServices">
+                                    <a class="ico-darr" href="javascript:void(0);" id="other_servs">Другие сервисы</a>
+                                    <ol id="additional_top_panel_block" class="hide">
+                                        <!--                        <li>
+                                                                    <a href="http://myradio.ua"  onclick="this.setAttribute('value', this.get('href'))">Интернет-радио</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://mamaclub.ua/"  onclick="this.setAttribute('value', this.get('href'))">MAMAclub.ua</a>
+                                                                </li>-->
+                                        <li>
+                                            <a href="http://20minut.ua"  onclick="this.setAttribute('value', this.get('href'))">Новости "20minut.ua"</a>
+                                        </li>
+                                    </ol>
+                                </li>
+
+
+                                <li class="list-servise">
+
+                                    <a href="javascript:void(0);" class="icons-servise ico-favorit"  title="Добавить в избранное" onclick="return bookmark(this)"></a>
+
+                                    <a href="/help" class="icons-servise ico-help" title="Помощь"></a>
+
+                                    <a href="/impressions" class="icons-servise ico-idea" title="Оставить отзыв о новой версии сайта"></a>
+                                    <!--                    <a href="javascript:void(0);" class="icons-servise ico-mobile"></a>-->
+                                    <a href="/subscribe" class="icons-servise ico-email" title="Подписаться на рассылку новых объявлений"></a>
+
+                                    <a href="/rss" class="icons-servise ico-rss" title="RSS"></a>
+
+                                </li>
+                            </ul>
+
+                            <dl class="panel-login">
+                                <dt>
+                                    <a class="icons-x12 exit-x12" href="/?exit=yes">Выход</a>
+                                </dt>
+                                <dd>
+                                    <strong>
+                                        <!-- Здравствуйте, -->
+                                        <a class="icons-x12 user-x12" href="/mymenu/">Сергей</a>
+                                    </strong>
+                                </dd>
+                            </dl>
+
+                        </div>
+                    </div>
+
+
+
+                    <noindex><script type="text/javascript">
+                        logMeIn = function() {
+                            if ($('autoriseWindow').getStyle('display') == 'none') {
+                                $('autoriseWindow').setStyle('display', 'block');
+                            } else {
+                                $('autoriseWindow').setStyle('display', 'none');
+                            }
+                            //$('autoriseWindow').toggleClass('hide');
+                        }
+                        </script></noindex>
+
+
+
+
+                    <div class="box-fixed" id="autoriseWindow">
+
+
+                        <div class="box-iframe" id="iframePlace">
+                            <!-- Do iframe on JS (IE6 hack) -->
+
+                            <noindex><script type="text/javascript">
+                                new Ria_Auto_Generic_IE6Iframe('iframePlace');
+                                </script></noindex>
+
+                        </div>
+
+                        <div class="pop-up-element window-login">
+                            <div class="left-shadow">
+                                <div class="right-shadow">
+                                    <span class="tl-shadow">&nbsp;</span>
+                                    <span class="tr-shadow">&nbsp;</span>
+                                    <span class="bl-shadow">&nbsp;</span>
+                                    <span class="br-shadow">&nbsp;</span>
+
+                                    <a href="javascript:void(0);" class="close-alert" onclick="logMeIn();">&nbsp;</a>
+
+                                    <div class="top-shadow">
+                                        <div class="bottom-shadow">
+                                            <div class="container-item">
+
+                                                <h3 class="title">
+                                                    Вход
+                                                </h3>
+
+                                                <form action="./?target=login" method="post" class="form-login">
+                                                    <div class="hidden">
+                                                        <input type="hidden" name="action" value="enter" />
+                                                    </div>
+
+                                                    <div class="item-input">
+                                                        <label for="test-id-1">Email:</label>
+                                                        <span>
+                                                            <input id="test-id-1" type="text" name="email" />
+                                                        </span>
+                                                    </div>
+                                                    <div class="item-input">
+                                                        <label for="test-id-2">Пароль:</label>
+                                                        <span>
+                                                            <input id="test-id-2" type="password" name="password" />
+                                                        </span>
+                                                    </div>
+                                                    <div class="item-check">
+                                                        <input type="checkbox" id="test-id-3" name="remember_me" value="1" checked="" />
+                                                        <label for="test-id-3">Запомнить меня</label>
+
+                                                        <ol class="reset" style="float: none;">
+                                                            <li><a href="/user/forgot_password.html">Забыли пароль</a>?</li>
+                                                            <li><a class="bezpeka-ria" href="http://bezpeka.ria.ua/">Безопасные сделки Ria.ua</a></li>
+                                                        </ol>
+
+                                                    </div>
+                                                    <div class="item-submit">
+                                                        <span class="button grey-30">
+                                                            <input class="bold" style="width: 100px;" type="submit" value="Войти" />
+                                                        </span>
+
+                                                    </div>
+                                                </form>
+                                                <!-- dl class="anothe-login-service">
+                                                    <dt>
+                                                        Войти через:
+                                                    </dt>
+                                                    <dd>
+                                                        <a title="#" class="" href="#">vkontakte</a>
+                                                        <a title="#" class="" href="#">facebook</a>
+                                                        <a title="#" class="" href="#">twitter</a>
+                                                        <a title="#" class="" href="#">google</a>
+                                                    </dd>
+                                                </dl -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <!-- Page load array script time : 0.0097792148590088
+                    -->
+
+
+                </div>
+
+
+                <noindex><script type="text/javascript">
+
+                                new Ria_Auto_Generic_SuperSelect({
+                                    selector: '#otherServices',
+                                    optionsClass: 'options',
+                                    selectedClass: 'ico-darr'
+                                });
+
+                                new Ria_Auto_Generic_OtherServs();
+
+                    </script></noindex>
+
+
+                <!-- Up openx Banner-->
+                <div class="panel-banner" id="outboard">
+                    <div id="top_banner" class="top-panel-banner" style="text-align: center; margin-top: 5px;">
+
+                        <!--RIA baner-->
+
+                        <noindex>
+                            <script type="text/javascript" language=javascript>
+                                <!--// <![CDATA[
+                                OA_show('730x90');
+                                // ]]> -->
+                            </script>
+                        </noindex>
+
+                        <!--/RIA baner-->
+
+                    </div>
+                </div>
+                <!-- /Up openx Banner-->
+
+                <div class="container-main">
+
+
+
+
+
+                    <!--set var="emergency_notifications" value='0' -->
+
+                    <!--set var="important_notifications" value='0' -->
+
+                    <!--set var="informative_notifications" value='0' -->
+
+
+
+
+
+
+                    <!-- Page load array script time : 0.31570816040039
+                    -->
+
+
+
+
+                    <div class="header-main">
+
+                        <!--        <a href="javascript:void(0);" onclick="Cookie.write('newdesign', '0', {duration:100, path:'/'});window.location.reload();" title="Старая версия auto.ria.ua" class="inser-icons">Старая версия auto.ria.ua</a>-->
+
+                        <div class="container-logo">
+                            <!--<a class="old-link" style="position: relative; z-index: 51;" href="/?startnew=0" title=""Старая версия auto.ria.ua">
+                                Старая версия сайта
+                            </a>-->
+                            <a href="" class="logo">
+
+                                <img src="http://img.auto.ria.ua/images/languages/ru/logo.png" width="255" height="40" alt="AUTO.ria.ua"/>
+                <!--             <img src="http://img.auto.ria.ua/images/events/logo/logo_repr.jpg" width="275" height="55" alt="AUTO.ria.ua"/>-->
+
+                            </a>
+
+
+
+
+
+
+
+                            <script type="text/javascript">
+                                function set_logo(url, w, h) {
+                                    $$('a.logo img').set('src', url).set('width', w).set('height', h);
+                                }
+
+                                var date = new Date();
+                                h = date['getHours']();
+                                i = date['getMinutes']();
+                                s = date['getSeconds']();
+                                y = date['getFullYear']();
+                                m = date['getMonth']() + 1;
+                                d = date['getDate']();
+
+                                m_holiday = 6; //месяц события
+                                d_holiday_l = 28; //день месяца начала события
+                                d_holiday_u = 28; //день месяца конца события
+                                h_holiday_l = 1; //час месяца начала события
+                                h_holiday_u = 24; //час месяца конца события
+
+                                if (m == m_holiday && (d >= d_holiday_l && (d != d_holiday_l || h >= h_holiday_l - 1)) && (d <= d_holiday_u && (d != d_holiday_u || h <= h_holiday_u - 1))) {
+                                    set_logo('http://img6.auto.ria.ua/images/branding/logo/ru/auto_dk_rus.png', 250, 35);
+                                    $$('a.logo img').setStyle('margin-top', '5px');
+                                }
+                            </script>
+
+
+
+                        </div>
+
+                        <div class="main-panel-settings">
+                            <dl class="bar-tools">
+
+
+                                <dt class="language-bar">
+                                    <span class="rus">Рус.</span>
+                                    <a class="ukr" title='Перейти на украинскую версию сайта' href='/uk/?target=user&amp;event=myauto&amp;delete=11543114&amp;reason_id=6'>Укр.</a>
+                                </dt>
+                                <dd>
+                                    <a href="add_auto.html" title="Добавить авто" class="button green-add-45">
+                                        <span class="bold">Добавить объявление</span>
+                                    </a>
+                                </dd>
+                            </dl>
+
+                            <div class="panel">
+
+
+                                <div class="region">
+
+
+                                    <div class="stretch-top hide" id="alertChangeHrefId">
+                                        <div class="pop-up pop-up-uarr">
+                                            Выберите регион, объявлениями которого Вы интересуетесь  
+                                        </div>
+                                    </div>
+
+                                    <a class="icons-arrow" href="javascript:void(0);" id="changeHrefId" onclick="$('userLocationEditDivId').style.display = '';">
+
+
+                                        <span id="currentPositionNameId" riatitle="regionRiaTitle">
+
+                                            Харьковская обл.
+                                        </span>
+
+                                    </a>
+
+                                    <!-- div class="pop-up pop-up-darr hide" id="regionRiaTitle">
+                                        <div class="table-prices">
+                                            <div style="padding-left:5px;" class="item">Выберите регион, автомобилями которого Вы интересуетесь </div>
+                                        </div>
+                                    </div -->
+
+                                    <div class="pop-up-element" id="userLocationEditDivId" style="display: none;">
+                                        <div class="left-shadow">
+                                            <div class="right-shadow">
+                                                <em class="tl-shadow">&nbsp;</em>
+                                                <em class="tr-shadow">&nbsp;</em>
+                                                <em class="bl-shadow">&nbsp;</em>
+                                                <em class="br-shadow">&nbsp;</em>
+                                                <a href="javascript:void(0);" class="close-alert" id="hideHrefId" onClick="$('userLocationEditDivId').style.display = 'block';
+                                    $('userLocationEditDivId').style.display = 'none';">&nbsp;</a>
+                                                <div class="top-shadow">
+                                                    <div class="bottom-shadow">
+                                                        <div class="container-item panel-select-region">
+                                                            <div class="title text-l">
+                                                                Выберите город
+                                                            </div>
+                                                            <form method="post">
+                                                                <input type="hidden" name="target" value="main"/>
+                                                                <input type="hidden" name="action" value="setUserLocation"/>
+                                                                <input type="hidden" name="backUrl" value='http://auto.ria.ua/?target=user&amp;event=myauto&amp;delete=11543114&amp;reason_id=6'/>
+                                                                <div class="rows-item" id="userLocationStateEditDivId">
+                                                                    <label for="userStateLocationId">Область:</label>
+                                                                    <p>
+                                                                        <select name="userStateLocation" id="userStateLocationId" onChange="new Ria_Auto_Search_GetCityClassAjax({'sourceId': 'userStateLocationId', 'targetId': 'userCityLocationId', 'langId': 2, 'zoneType': 'search'});">
+                                                                            <option value="0">Любая</option>
+                                                                            <option label="" value="1"></option>
+                                                                            <option label="" value="18"></option>
+                                                                            <option label="" value="11"></option>
+                                                                            <option label="" value="13"></option>
+                                                                            <option label="" value="2"></option>
+                                                                            <option label="" value="22"></option>
+                                                                            <option label="" value="14"></option>
+                                                                            <option label="" value="15"></option>
+                                                                            <option label="" value="10"></option>
+                                                                            <option label="" value="16"></option>
+                                                                            <option label="" value="17"></option>
+                                                                            <option label="" value="5"></option>
+                                                                            <option label="" value="19"></option>
+                                                                            <option label="" value="12"></option>
+                                                                            <option label="" value="20"></option>
+                                                                            <option label="" value="21"></option>
+                                                                            <option label="" value="9"></option>
+                                                                            <option label="" value="8"></option>
+                                                                            <option label="" value="3"></option>
+                                                                            <option label="" value="7" selected="selected"></option>
+                                                                            <option label="" value="23"></option>
+                                                                            <option label="" value="4"></option>
+                                                                            <option label="" value="24"></option>
+                                                                            <option label="" value="6"></option>
+                                                                            <option label="" value="25"></option>
+
+                                                                        </select>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="rows-item">
+                                                                    <label for="userCityLocationId">Город:</label>
+                                                                    <p>
+                                                                        <select name="userCityLocation" id="userCityLocationId">
+                                                                            <option value="0">Любой</option>
+                                                                            <option label="" value="443"></option>
+                                                                            <option label="" value="444"></option>
+                                                                            <option label="" value="445"></option>
+                                                                            <option label="" value="446"></option>
+                                                                            <option label="" value="447"></option>
+                                                                            <option label="" value="448"></option>
+                                                                            <option label="" value="449"></option>
+                                                                            <option label="" value="450"></option>
+                                                                            <option label="" value="451"></option>
+                                                                            <option label="" value="452"></option>
+                                                                            <option label="" value="453"></option>
+                                                                            <option label="" value="454"></option>
+                                                                            <option label="" value="455"></option>
+                                                                            <option label="" value="456"></option>
+                                                                            <option label="" value="457"></option>
+                                                                            <option label="" value="458"></option>
+                                                                            <option label="" value="459"></option>
+                                                                            <option label="" value="460"></option>
+                                                                            <option label="" value="461"></option>
+                                                                            <option label="" value="462"></option>
+                                                                            <option label="" value="634"></option>
+                                                                            <option label="" value="463"></option>
+                                                                            <option label="" value="464"></option>
+                                                                            <option label="" value="465"></option>
+                                                                            <option label="" value="466"></option>
+                                                                            <option label="" value="7"></option>
+                                                                            <option label="" value="469"></option>
+                                                                            <option label="" value="470"></option>
+
+                                                                        </select>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="element-submit" id="submitDivId">
+                                                                    <span class="button grey-30">
+                                                                        <input type="submit" class="bold" value="Сохранить"/>
+                                                                    </span>
+                                                                </div>
+                                                            </form>
+
+                                                            <noindex><script type="text/javascript">
+                                $('userCityLocationId').getElements('option').each(function(option) {
+                                    if ((option.get('value') != 0) && (option.get('value') == 7)) {
+                                        option.selected = true;
+                                        $('currentPositionNameId').set('html', 'г. ' + option.get('text').slice(0, 18) + '.');
+                                    }
+                                });
+                                                                </script></noindex>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <!-- Page load array script time : 0.084183931350708
+                                -->
+
+                                <div class="inform newads-for-time">
+
+                                    <div class="added-for-time">
+                                        <div class="stretch-top hide" id="alertUpdateCounters">
+                                            <div class="pop-up pop-up-uarr">
+                                                Количество новых предложений по вашему региону
+                                            </div>
+                                        </div>
+
+                                        <a class="reload" href="javascript:void(0);" id="updateCounters"></a>
+
+                                        <span>
+                                            <a title="Новых объявлений с Вашего последнего визита на сайт" class="redirect" href="/last/visit/" id="linkTopCount">С последнего визита:</a>
+                                            <a id="addedCars" class="icons-arrow" href="javascript:void(0)">+7780</a>
+                                        </span>
+                                    </div>
+
+
+                                    <div class="pop-up-element hide" id="riaPeriodSelect">
+                                        <div class="left-shadow">
+                                            <div class="right-shadow">
+                                                <em class="tl-shadow">&nbsp;</em>
+                                                <em class="tr-shadow">&nbsp;</em>
+                                                <em class="bl-shadow">&nbsp;</em>
+                                                <em class="br-shadow">&nbsp;</em>
+                                                <a href="javascript:void(0);" class="close-alert" id="closePerDay">&nbsp;</a>
+                                                <div class="top-shadow">
+                                                    <div class="bottom-shadow">
+                                                        <div class="container-item popup-top-count">
+
+                                                            <div class="title text-l">
+                                                                Выберите период
+                                                            </div>
+
+                                                            <div class="main-pop-up">
+                                                                <p>
+                                                                    <span>
+                                                                        <input id="a" type="radio" name="selected-top-count" val="{'url':'/last/visit/', 'id':1}"  />
+                                                                        <label for="a" title="Новых объявлений с Вашего последнего визита на сайт">С последнего визита:</label>
+                                                                    </span>
+                                                                    <strong class="count" id="counterLastVisit">
+                                                                        +7780
+                                                                    </strong>
+                                                                </p>
+                                                                <p>
+                                                                    <span>
+                                                                        <input id="b" type="radio" name="selected-top-count" val="{'url':'/last/hour/', 'id':2}"  />
+                                                                        <label for="b" title="Новых объявлений за час">За последний час:</label>
+                                                                    </span>
+                                                                    <strong class="count" id="counterPerHour">659</strong>
+                                                                </p>
+                                                                <p>
+                                                                    <span>
+                                                                        <input id="c" type="radio" name="selected-top-count" val="{'url':'/last/today/', 'id':3}"  />
+                                                                        <label for="c" title="Новых объявлений за сегодня">За сегодня:</label>
+                                                                    </span>
+                                                                    <strong class="count" id="counterPerDay">8316</strong>
+                                                                </p>
+                                                                <p class="box-button">
+
+                                                                    <a href="javascript:void(0)" id="savePerDay" class="button grey-30">
+                                                                        <span class="bold">Сохранить</span>
+                                                                    </a>
+
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <noindex>
+                                    <script type="text/javascript">
+                                        new Ria_Auto_Generic_CountersUpdate();
+                                        var yellow = new Ria_Auto_Generic_TopCounters();
+                                        yellow.setup();
+                                    </script>
+                                </noindex>
+
+
+                            </div>
+
+                        </div>
+                    </div><!-- Page load array script time : 0.020190954208374
+                    -->
+
+
+                    <!--include virtual="/static/target/common/event/top_header_main/?lang_id=2&ria_new=1&MY_STATE_ID=7&MY_CITY_ID=7" -->
+
+
+
+
+
+                    <div class="box-header-menu">
+                        <div class="header-menu">
+
+                            <div class="standart-tabs tabs-ltr" id="ria-tabs-panel">
+
+                                <div class="item ria-menu-tab" tabid="through-search">
+
+                                    <a href="javascript:void(0);" class="tabs" id="throughSearch">
+                                        <span class="icons-x12 search-x12"></span>
+                                    </a>
+
+                                    <div class="floating-window hide ria-menu-panels" id="through-search">
+
+                                        <div class="box-iframe"><iframe></iframe></div>
+
+                                        <div class="bottom-shadow column-2">
+
+                                            <div class="wrapper" isLoaded="" loadedParams="" style="min-height: 150px;">
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="item ria-menu-tab" tabid="panel-my-menu">
+
+
+                                    <a title="Мое меню" href="mymenu/" class="tabs" id="top_panel_tabs_my_menu">
+                                        Мое меню
+                                    </a>
+
+                                    <div class="floating-window hide ria-menu-panels" id="panel-my-menu">
+                                        <div class="box-iframe"><iframe></iframe></div>
+                                        <div class="bottom-shadow column-2">
+                                            <div class="wrapper">
+
+                                                <!--menu-->
+                                                <div class="panel-user-info delimeter-bottom">
+                                                    <img width="60" height="70" src='http://img.auto.ria.ua/img/ria2/no-photo/no-photo-user-50x50.gif' class="user-avatar">
+                                                        <div class="list-user-date">
+                                                            <h3>
+                                                                <span>Сергей</span>
+                                                            </h3>
+                                                            <div class="phone">
+                                                                Телефон: <strong>(093) 770-81-11</strong>
+                                                            </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- Page load array script time : 0.54075193405151
+                                                -->
+
+
+                                                <dl class="unordered-list">
+
+                                                    <!--salon-->
+
+                                                    <!--auto-->
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="http://auto.ria.ua/?target=user&event=myauto&section=all&viewType=all" >Автомобили</a>
+                                                        </dt>
+
+
+
+                                                        <dd>
+                                                            <a href="http://auto.ria.ua/?target=user&event=myauto&section=active&viewType=draft" >Черновики</a>  <strong> 1 </strong>
+                                                        </dd>
+
+
+
+                                                        <dd>
+                                                            <a href="http://auto.ria.ua/?target=user&event=myauto&section=archive&viewType=deleted" >Архив</a>  <strong> 4 </strong>
+                                                        </dd>
+                                                    </dl>
+
+
+
+
+                                                    <!--dokum-->
+
+
+                                                    <!--comercial-->
+
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="http://auto.ria.ua/autoseller/info" title="Моя Автопродажа" >Моя Автопродажа</a>
+                                                        </dt>
+                                                    </dl>
+
+                                                    <!--NOTIFICATIONS-->
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="http://auto.ria.ua/?target=user&event=mynotifications" ><strong>Уведомления</strong></a>
+                                                        </dt>
+
+                                                        <dd>
+                                                            <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=important" title="" >Важные</a> <strong>1</strong>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=informative" title="" >Информирующие</a> <strong>4</strong>
+                                                        </dd>
+
+
+                                                        <noindex><script>
+                                                            if ($('top_panel_tabs_my_menu')) {
+                                                                if ($('top_panel_tabs_my_menu').get('notify_was_setuped') != 'true') {
+                                                                    $('top_panel_tabs_my_menu').set('notify_was_setuped', 'true');
+                                                                    $('top_panel_tabs_my_menu').grab(new Element('span', {
+                                                                        "class": "inoti-warning",
+                                                                        "title": "У Вас есть важные уведомления"
+                                                                    })
+                                                                            , 'bottom');
+                                                                }
+                                                            }
+                                                            </script></noindex>
+
+
+
+                                                        <!-- Page load array script time : 0.026936054229736
+                                                        -->
+
+                                                    </dl>
+
+
+                                                </dl>  
+                                                <dl class="unordered-list">
+                                                    <dd>
+                                                        <a title="Мой блокнот" href="notepad.html" >
+                                                            Мой блокнот
+                                                        </a>
+
+                                                        <strong id="notepadCount">
+                                                            2
+                                                        </strong>
+
+                                                    </dd>
+                                                    <dd> <a href="?target=user&event=redug" title="Моя анкета" >Моя анкета</a></dd>
+                                                    <dd> <a href="myservice/" title="Коммерческие сервисы" >Коммерческие сервисы</a></dd>
+                                                    <dd> <a href="user/change_password.html" title="Изменить пароль" >Поменять пароль</a></dd>
+                                                    <dd> <a href="subscribe" title="Рассылка" >Рассылка</a></dd>
+                                                    <dd> <a href="user/blacklist/" class="new" title='Мой "Черный список"' >Мой "Черный список"</a></dd>
+
+                                                </dl><!-- Page load array script time : 0.049735069274902
+                                                -->
+
+
+                                                <a class="exit" href="?exit=yes" title="Выход">Выход</a>
+
+                                                <div class="element-link link-add-cars ">
+                                                    <a href="add_auto.html" title="Добавить авто">Добавить объявление</a>
+                                                </div>
+
+                                                <div class="clr"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--                Автомобили б/у          -->
+
+                                <div class="item ria-menu-tab" tabid="panel-used-cars">
+
+                                    <a title="Автомобили б/у" href="" class="tabs">
+                                        <span>Автомобили б/у</span>
+                                    </a>
+
+                                    <div class="floating-window hide ria-menu-panels" id="panel-used-cars">
+                                        <div class="box-iframe"><iframe></iframe></div>
+                                        <div class="bottom-shadow column-2">
+                                            <div class="wrapper">
+                                                <dl class="unordered-list" style="width: 200px;">
+
+                                                    <dt><a href="search/" >Автомобили б/у</a></dt>
+                                                    <dd><a href="legkovie/" title="Легковые автомобили" >Легковые</a></dd>
+                                                    <dd><a href="moto/" title="Мото" >Мото</a></dd>
+                                                    <dd><a href="vodnyj_transport/" title="Водный транспорт" >Водный транспорт</a></dd>
+                                                    <dd><a href="spectehnika/" title="Спецтехника">Спецтехника</a></dd>
+                                                    <dd><a href="trailer/" title="Прицепы" >Прицепы</a></dd>
+                                                    <dd><a href="truck/" title="Грузовики" >Грузовики</a></dd>
+                                                    <dd><a href="bus/" title="Автобусы" >Автобусы</a></dd>
+                                                    <dd><a href="autohouse/" title="Автодома" >Автодома</a></dd>
+                                                    <dd><a href="air_transport/" title="Воздушный транспорт">Воздушный транспорт</a></dd>
+
+                                                </dl>
+                                                <dl class="unordered-list">
+                                                    <dt>&nbsp;</dt>
+                                                    <dd><a href="search.html" title="Search_auto">Поиск авто</a></dd>
+                                                    <dd><a href="hots/" title="Горячие предложения">Горячие предложения</a></dd>
+                                                    <!--                                    <dd><a class="new" href="#stol_zakazov" title="Стол заказов авто">Стол заказов авто</a></dd>-->
+                                                    <dd><a href="retro/" title="Ретро автомобили" >Ретро автомобили</a></dd>
+                                                    <dd><a href="autointer/" title="Авто из-за рубежа" >Авто из-за рубежа</a></dd>
+                                                    <dd><a href="avtovikup/" title="Автовыкуп" >Автовыкуп</a></dd>
+                                                    <dd><a href="kredit_auto/" class="new" title="Кредитные авто">Кредитные авто</a></dd>
+                                                    <dd><a href="newauto/Отзывы/Каталог" class="new" title="Отзывы об авто" >Отзывы об авто</a></dd>
+                                                    <dd><a href="diagnostika-promo/" class="new" title="Проверенные авто">Проверенные авто</a></dd>
+                                                </dl>
+
+                                                <div class="element-link link-add-cars ">
+                                                    <a href="add_auto.html" title="Добавить авто">Добавить объявление</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--                Новые автомобили          -->
+
+                                <div class="item ria-menu-tab" tabid="panel-new-cars">
+
+                                    <a class="tabs" href="newauto/" id="NewAutoAnchor" title="Новые авто">
+                                        <span>Новые авто</span>
+                                    </a>
+
+                                    <div class="floating-window hide ria-menu-panels" id="panel-new-cars">
+                                        <div class="box-iframe"><iframe></iframe></div>
+                                        <div class="bottom-shadow column-2">
+                                            <div class="wrapper">
+                                                <dl class="unordered-list">
+                                                    <dt>Новые авто</dt>
+                                                    <dd><a href="/newauto/" title="Поиск новых авто" >Поиск новых авто</a></dd>
+                                                    <dd><a href="new_auto/master_search/" title="Мастер поиска" >Мастер поиска</a></dd>
+                                                    <dd><a href="newauto/catalogue/" title="Каталог новых авто">Каталог новых авто</a></dd>
+                                                    <dd><i class="ico-reliable-partner" style="float: left;"></i><a style="margin-left: 4px;float: left;" href="reliable-partner/" title="Надежный партнер">Надежный партнер</a></dd>
+                                                </dl>
+                                                <dl class="unordered-list">
+                                                    <dt>&nbsp;</dt>
+                                                    <dd><a href="newauto/avtosaloni/" title="Автосалоны" >Автосалоны</a></dd>
+                                                    <dd><a class="new" href="newauto/motosaloni/" title="Автосалоны" >Мотосалоны</a></dd>
+                                                    <dd><a href="news/actions/" title="Акции" >Акции автосалонов</a></dd>
+                                                    <dd><a href="newauto/Отзывы/Каталог" class="new" title="Отзывы об авто" >Отзывы об авто</a></dd>
+                                                </dl>
+                                                <div class="element-link link-add-cars ">
+                                                    <dt>
+                                                        <dd>
+                                                            <a href="/avtosaloni/addinfo" title="Добавить Автосалон - информация" >Добавить Автосалон</a>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="/motosalon/addinfo" title="Добавить Мотосалон - информация" >Добавить Мотосалон</a>
+                                                        </dd>
+                                                    </dt>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item ria-menu-tab" tabid="panel-everything">
+                                    <a class="tabs" href="/all_for_auto/" id="CarsNesseccerityAnchor" title="Все для авто">
+                                        Все для авто
+                                    </a>
+                                    <div class="floating-window hide ria-menu-panels" id="panel-everything">
+                                        <div class="box-iframe"><iframe></iframe></div>
+                                        <div class="bottom-shadow column-3">
+                                            <div class="wrapper">
+                                                <dl class="unordered-list">
+                                                    <dt>Сервисы</dt>
+                                                    <dd><a href="avtorazborka/" title="Авторазборка" >Авторазборка</a></dd>
+                                                    <dd><a href="avtorazborka/#stolzakazov" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Add_Aplication', 'Main_AUTO.ria.ua']);" title="Стол заказов запчастей">Стол заказов запчастей</a></dd>
+                                                    <dd><a href="avtovikup/" title="Автовыкуп">Автовыкуп</a></dd>
+                                                    <dd><a href="autolombardy/"  title="Автоломбарды" >Автоломбарды</a></dd>
+                                                    <dd><a href="autoservice/" title="Автосервисы" >Автосервисы</a></dd>
+                                                    <dd><a href="strahovanie/" title="Автострахование" >Автострахование</a></dd>
+                                                    <!--dd><a href="http://market.auto.ria.ua/tehpomosch" target="_blank" title="Автопомощь" >Автопомощь</a></dd-->
+                                                    <dd><a href="rastamozhka_avto/" title="Растаможка авто">Растаможка авто</a></dd>
+
+                                                    <dd class="link-add">
+                                                        <a href="?target=user&event=add_docum" title="Добавить Автодокумент">Добавить<br />Автодокумент</a>
+                                                    </dd>
+
+                                                </dl>
+
+                                                <dl class="unordered-list">
+                                                    <dt>Товары</dt>
+                                                    <dd><a href="http://zapchasti.ria.ua/" title="Запчасти" >Запчасти</a></dd>
+
+                                                    <dd><a href="http://market.auto.ria.ua/shina" title="Шины" >Шины</a></dd>
+
+                                                    <dd><a href="http://market.auto.ria.ua/diski" title="Диски">Диски</a></dd>
+                                                    <dd><a href="http://market.auto.ria.ua/car_seats/" title="Детские автокресла" >Детские автокресла</a></dd>
+                                                    <dd><a href="http://market.auto.ria.ua/avtochehlu" title="Чехлы на сиденья" >Чехлы на сиденья</a></dd>
+                                                    <!--dd><a href="http://market.auto.ria.ua/knigi"  title="Автолитература">Автолитература</a></dd-->
+
+                                                    <!--dd><a href="http://auto.ria.ua/shop/" title="Автозвук">Автозвук</a></dd-->
+                                                    <dd><a href="http://dom.ria.ua/garage/" title="Гаражи" target="_blank" >Гаражи</a></dd>
+                                                    <dd><a href="document/" title="Автодокументы">Автодокументы</a></dd>
+
+                                                    <dd class="link-add">
+                                                        <a href="http://www.ria.ua/advertisement/addstep1" title="Запчасти" >Добавить запчасть</a>
+                                                    </dd>
+
+
+                                                </dl>
+
+                                                <dl class="unordered-list">
+                                                    <dt>Полезное</dt>
+                                                    <dd><a href="avtoshkola/"  title="Автошколы">Автошколы</a></dd>
+                                                    <dd><a href="online_pdd/"  title="Билеты ПДД онлайн">Билеты ПДД онлайн</a></dd>
+                                                    <dd><a href="/golink/?http://vk.com/board6499791" title="Обсуждения" >Обсуждения</a></dd>
+                                                    <dd><a href="humor/" title="Автоюмор" >Автоюмор</a></dd>
+                                                    <dd><a href="autoclubs/" title="Автоклубы" >Автоклубы</a></dd>
+
+                                                    <dd><a href="http://link.auto.ria.ua/" title="Автосайты" >Автосайты</a></dd>
+
+                                                    <dd><a href="automagazine/" title="Журналы" >Журналы</a></dd>
+
+                                                    <dd><a href="http://lanos.com.ua/" title="Все о Lanos" >Все о Lanos</a></dd>
+
+                                                    <dd><a href="first_auto/"  title="Покупаем первый автомобиль" >Покупаем первый автомобиль</a></dd>
+                                                    <dd><a href="newauto/Отзывы/Каталог/" class="new" title="Отзывы об авто" >Отзывы об авто</a></dd>
+                                                </dl>
+
+                                                <div class="element-link important-links">
+
+                                                    <a href="help/" title="Помощь" >Помощь</a>
+                                                    <span>|</span>
+                                                    <a href="news/novinki/" title="Нововведения" >Нововведения</a>
+                                                    <span>|</span>
+                                                    <a href="?target=view&event=lic" class="new" title="Соглашение о предоставлении услуг" >Соглашение о предоставлении услуг</a>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--    ::: NEWS      @TODO      -->
+
+                                <div class="item ria-menu-tab" tabid="panel-new-news">
+                                    <a class="tabs" href="news/" id="newsAnchor" title="Новости">
+                                        <span>Новости</span>
+
+                                        <strong style="color: #3f829b;">+12</strong>
+
+
+                                    </a>
+
+
+
+
+                                    <div class="floating-window hide ria-menu-panels" id="panel-new-news">
+                                        <div class="box-iframe"><iframe></iframe></div>
+                                        <div class="bottom-shadow column-3">
+                                            <div class="wrapper">
+
+                                                <dl class="unordered-list">
+                                                    <dt>
+                                                        <a title="Все новости" href="news/">Все новости</a>
+                                                    </dt>
+
+                                                    <dd>
+                                                        <a title="События" href="news/events/"  > События </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Автомобили" href="news/auto/"  > Автомобили </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Автобизнес" href="news/autobusiness/"  > Автобизнес </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Автозакон" href="news/autolaw/"  > Автозакон </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Акции" href="news/actions/"  > Акции </a>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="unordered-list">
+                                                    <dt>&nbsp;</dt>
+
+                                                    <dd>
+                                                        <a title="Тест-драйвы" href="news/test-drive/"  > Тест-драйвы </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Автосервис и Технологии" href="news/autoservice_technology/"  > Автосервис и Технологии </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="О нас пишут" href="news/about_us/"  > О нас пишут </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Автоблоги" href="news/avtoblog/"  > Автоблоги </a>
+                                                    </dd>
+                                                    <dd>
+                                                        <a href="konkurs/" title="Конкурсы" class="new" >Конкурсы</a>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="unordered-list">
+                                                    <dt>&nbsp;</dt>
+
+                                                    <dd>
+                                                        <a title="Нововведения" href="news/novinki/"  > Нововведения </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Все о Subaru" href="news/subaru/"  > Все о Subaru </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Все o BMW" href="news/bmw/" class="new" > Все o BMW </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Все о MINI" href="news/mini/" class="new" > Все о MINI </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Онлайн журнал" href="news/journals/" class="new" > Онлайн журнал </a>
+                                                    </dd>
+
+                                                    <dd>
+                                                        <a title="Конкурсы" href="news/konkurs/"  > Конкурсы </a>
+                                                    </dd>
+
+                                                </dl>
+                                                <div class="element-link link-add-cars clr">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--       NOTEPAD          -->
+
+                                <div class="item">
+                                    <a title="Блокнот" href="notepad.html" class="tabs">
+                                        <span class="icons notepad">
+                                            Блокнот
+                                            <strong id="notepadCount">
+
+                                                2
+
+                                            </strong>
+                                        </span>
+                                    </a>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="new-sections">
+                                <i class="ico-new"></i>
+                                <a href="/news/bmw/208844/" target="_blank" class="insert-element"
+                                   onclick="_gaq.push(['_trackEvent', 'Whats_New', 'Click_on_BMW M4', '/']);">
+                                    Новый BMW M4
+
+                                </a>
+                                <!-- Page load array script time : 0.024996042251587
+                                -->   
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <noindex>
+                        <noindex><script type="text/javascript">
+                                                            var topSearchUrl = '/static/target/common/event/throughSearch/?lang_id=2&ria_new=1';
+
+                                                            var topSearchUrlParamsObj = new Ria_Auto_Generic_TabSwitcher_RequestSearchUrlParams();
+                                                            topSearchUrlParamsObj.setParams({'category': '0', 'marka': '0', 'model': '0', 'state': '0'});
+
+                                                            var closeMenuAllOverObj = new Ria_Auto_Generic_TabSwitcher_CloseMenuAllOver();
+
+
+                                                            var tabSwitcher = new Ria_Auto_Generic_TabSwitcher({
+                                                                'tabClass': 'ria-menu-tab',
+                                                                'panelClass': 'ria-menu-panels',
+                                                                'event': 'mouseover',
+                                                                'css3RootElement': '#ria-tabs-panel div.',
+                                                                'invisibleCss': 'hide',
+                                                                'selectCss': 'select',
+                                                                'autohide': '1',
+                                                                'delay': '0.55',
+                                                                'closeMenuAllOver': closeMenuAllOverObj,
+                                                                'jsAutoLoad': {
+                                                                    'through-search': function() {
+                                                                        new Ria_Auto_Generic_TabSwitcher_QuickSearch({
+                                                                            'requestSearchUrl': topSearchUrl,
+                                                                            'requestSearchUrlParamsObj': topSearchUrlParamsObj,
+                                                                            'requestConteinerId': 'through-search',
+                                                                            'closeMenuAllOver': closeMenuAllOverObj
+                                                                        })
+                                                                    }
+                                                                }
+                                                            });
+
+                            </script></noindex>
+                    </noindex><!-- Page load array script time : 0.011048793792725
+                    -->
+
+                    <div class="breadcrumbs">
+                        <h2>
+                            <a id="path_href_1"  title="Продажа автомобилей" href="/" >
+                                Автомобили
+                            </a> &rarr;                                                                                                 <a id="path_href_2"  href="?target=user" >
+                                Мое меню
+                            </a> &rarr;                                                                                                 
+                        </h2>
+                        <div class="item">
+                            <a id="path_href_1"  title="Продажа автомобилей" href="/" >                                    Автомобили
+                            </a>                                <div id = "ajaxitem_1" style="display:none;" class="sub-menu">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a id="path_href_2"  href="?target=user" >                                    Мое меню
+                            </a>                                <div id = "ajaxitem_2" style="display:none;" class="sub-menu">
+                            </div>
+                        </div>
+                        <div class="item">
+
+                            <div id = "ajaxitem_3" style="display:none;" class="sub-menu">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="right-main-panel">
+
+                        <div class="left-panel">
+
+                            <div >
+                                <div id="myMenu" class="box-panel">
+
+
+
+
+                                    <dl class="vertical-menu user-menu">
+                                        <!-- SSI: Блок Мой Автосалон -->
+
+
+
+                                        <dt class="add-cars">
+                                            <a href="http://auto.ria.ua/add_auto.html" title="Добавить объявление" >
+                                                Добавить объявление
+                                            </a>
+                                        </dt>
+
+
+
+                                        <!-- SSI: Блок Мои объявления -->
+                                        <dt class="my-document">
+                                            Мои объявления
+                                        </dt>
+
+                                        <dd>
+                                            <ol class="unordered-list">
+                                                <!--  auto-->
+
+                                                <li>
+                                                    <a class="bold" href="/user/menu/allCars/" >Автомобили</a>
+                                                    <ul>
+
+
+                                                        <li>
+                                                            <a href="/user/menu/?section=active&viewType=draft" >Черновики</a>&nbsp;<em>1</em>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="/user/menu/?section=archive&viewType=all">Архив</a>&nbsp;<em>4</em>
+                                                        </li>
+
+                                                    </ul>
+
+                                                    <!--  dokumenti-->
+
+                                                    <!--  zapchasti-->
+                                                    <li>
+
+                                                        <a class="bold" target="_blank" href="http://www.ria.ua/user" >Мои запчасти</a>
+
+                                                    </li>
+
+                                            </ol>
+                                        </dd>
+
+
+                                        <!-- SSI: Блок Чат >
+                                        <dd>
+                                            <a class="my-chat new" href="#"><strong>Чат</strong></a>
+                                        </dd -->
+
+                                        <!-- SSI: Блок Мои Уведомления -->
+
+                                        <dt class="my-notifi beta">
+                                            <a href="http://auto.ria.ua/?target=user&event=mynotifications" >
+                                                Уведомления
+                                            </a>
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+                                                <li>
+                                                    <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=important" title="" >Важные</a>&nbsp;<em>1</em>
+                                                </li>
+                                                <li>
+                                                    <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=informative" title="" >Информирующие</a>&nbsp;<em>4</em>
+                                                </li>
+                                            </ol>
+                                        </dd>
+
+                                        <!-- SSI: Блок Мои Комм.Сервисы -->
+                                        <dt class="my-commerc-ser">
+                                            <a href="http://auto.ria.ua/myservice/" >
+                                                Коммерческие сервисы
+                                            </a>
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+                                                <li>
+                                                    <a  href="http://auto.ria.ua/myservice/" title="Важная информация" >Важная информация</a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="/stolzakazov/zapchasti/" title="Стол заказов запчастей" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Aplication_StZZ', 'My_Menu']);">Стол заказов запчастей</a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="http://auto.ria.ua/autoseller/info/" title="Моя Автопродажа" onclick="//_gaq.push(['_trackEvent', 'Menu_Target_User', 'Click_on_Link_Autoseller', 'Myservice']);">Моя Автопродажа</a>&nbsp;<em>3</em>
+                                                </li>
+
+                                                <li>
+                                                    <a href="http://auto.ria.ua/fishki-group/" title="Управление объявлениями" >Управление объявлениями</a>
+                                                </li>
+                                                <li>
+                                                    <a class="new" href="http://auto.ria.ua/fishki-optom/" title="Фишки оптом">Фишки оптом</a>
+                                                </li>
+                                                <li>
+                                                    <a class="new" href="http://auto.ria.ua/top-optom/" title="ТОП оптом" >ТОП оптом</a>
+                                                </li>
+                                            </ol>
+                                        </dd>
+
+
+
+                                        <!-- SSI: Блок Рассылка -->
+                                        <dt class="my-mailer">
+                                            <a href="http://auto.ria.ua/subscribe" title="Рассылка" >Рассылка</a>
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+                                                <li>
+                                                    <a title="Мои профили рассылки" href="http://auto.ria.ua/subscribe?showProfiles=1" >Мои профили рассылки</a>
+                                                </li>
+                                                <li>
+                                                    <a title="Создать профиль" href="http://auto.ria.ua/subscribe?create_profile=1" >Создать профиль</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/deskoffers/profiles" title="Подписка на Стол заказов" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Subscriptions_StZZ', 'My_Menu']);">Стол заказов</a>
+                                                    <!--                <a title="Стол заказов запчастей" href="#">Стол заказов запчастей</a>-->
+                                                </li>
+                                            </ol>
+                                        </dd>
+
+                                        <!--    <dt class="my-deskorders-auto">
+                                                <a href="http://auto.ria.ua/#stol_zakazov" title="Стол заказов авто">Стол заказов авто</a>
+                                            </dt>
+                                            <dd class="">
+                                                <ol class="unordered-list">
+                                                    <li>
+                                                        <a title="Мои заявки" href="http://auto.ria.ua/order_table/my-requests/">Мои заявки</a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="Мои профили" href="http://auto.ria.ua/order_table/profiles/">Мои профили</a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="Заявки по профилям" href="http://auto.ria.ua/order_table/requests/">Заявки по профилям</a>
+                                                    </li>
+                                                </ol>
+                                            </dd>-->
+
+                                        <dt class="my-mailer">
+                                            <a href="/avtoprovereno/" title="Авто проверено" >Авто проверено</a>
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+
+                                            </ol>
+                                        </dd>
+
+                                        <!-- SSI: Блок Моя Инф. -->
+                                        <dt class="my-profile">
+                                            Мои данные
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+
+                                                <li>
+                                                    <a title="Моя анкета" href="http://auto.ria.ua/?target=user&event=redug" >Моя анкета</a>
+                                                </li>
+
+                                                <!--            <li>-->
+                                                <!--                <a href="subscribe" title="Рассылка">Рассылка</a>-->
+                                                <!--            </li>-->
+
+                                                <li>
+                                                    <a title='Мой "Черный список"' href="http://auto.ria.ua/user/blacklist">Мой "Черный список"</a>
+                                                </li>
+
+
+
+                                                <li>
+                                                    <a href="http://auto.ria.ua/user/change_password.html" title="Поменять пароль" >Поменять пароль</a>
+                                                </li>
+
+                                                <li>
+                                                    <a title="Выход" href="http://auto.ria.ua/?exit=yes" >Выход</a>
+                                                </li>
+
+                                            </ol>
+                                        </dd>
+
+
+
+
+                                        <dt class="my-mobile-app">
+                                            Мобильное приложение
+                                        </dt>
+                                        <dd>
+                                            <ol class="unordered-list">
+                                                <li>
+                                                    <a href="https://play.google.com/store/apps/details?id=ria.ua" target="_blank" >Для Android</a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://itunes.apple.com/ru/app/ria.ua/id508748317?l=ru&ls=1&mt=8" target="_blank">Для iPhone</a>
+                                                </li>
+                                            </ol>
+                                        </dd>
+
+
+                                    </dl><!-- Page load array script time : 0.55285215377808
+                                    -->
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <!-- Block manager-->
+                            <div class="box-panel">
+
+                                <div class="head">
+                                    <span class="icons-head i-help">
+                                        <a class="head-help" href="/help">Помощь</a>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="panel" style="padding: 10px;">
+                                    <div class="service-support">
+                                        <div class="hide">
+                                            <input type="hidden" id="activ_manager_page" value="0">
+                                                <input type="hidden" id="t_page" value="user">
+                                                    <input type="hidden" id="e_page" value="myauto">
+                                                        </div>
+
+                                                        <img height="90" width="67" alt="Олейник Надежда" src="http://img.auto.ria.ua/images/demo/Nadia_Oleynik.png" class="photo">
+                                                            <dl class="contact-data-seller">
+                                                                <dt>Олейник Надежда</dt>
+                                                                <dd class="description">
+                                                                    Консультации по вопросам работы сайта AUTO.ria.ua
+                                                                </dd>
+
+                                                                </div>
+                                                                <div class="contact-seller" style="padding: 0;">
+                                                                    <dl class="contact-data-seller">
+                                                                        <dd  class="phone block_phone_js">
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">(067) 469-04-10</strong>
+                                                                            <strong class="icons-x12 phone-home-x12 ">(067) 469-04-10</strong>
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">0-800-21-00-12</strong>
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">(0432) 555-213</strong>
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">(0432) 555-200</strong>
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">(093) 190-27-23</strong>
+
+                                                                            <strong class="icons-x12 phone-home-x12 hide">(050) 416-86-88</strong>
+
+
+                                                                            <span class="icons" style="white-space: nowrap;">
+                                                                                <a href="javascript:void(0)" class="close-more hide" id="closePhoseMan" onclick="showAllManagerPhone(this, $('openPhoseMan'));">Скрыть телефоны</a>
+                                                                                <a href="javascript:void(0)" class="open-more" id="openPhoseMan" onclick="showAllManagerPhone(this, $('closePhoseMan'));">Показать все телефоны</a>
+                                                                            </span>
+
+                                                                            <noindex><script>
+                                                            function showAllManagerPhone(elementFrom, elementTo) {
+                                                                elementFrom.toggleClass('hide');
+                                                                elementTo.toggleClass('hide');
+                                                                $$('.block_phone_js .phone-home-x12').each(function(item) {
+                                                                    if (!item.getAttribute('independent'))
+                                                                        item.toggleClass('hide');
+                                                                });
+                                                            }
+                                                                                </script></noindex>
+
+                                                                        </dd>
+
+                                                                        <div class="userid"><style type="text/css">
+                                                                                .userid{
+                                                                                    padding-left: 20px;
+                                                                                }
+                                                                                .inform{
+                                                                                    background: #f8e1a8;
+                                                                                    font-weight: normal;
+                                                                                }
+                                                                            </style>
+
+                                                                            <i style="margin-left:-20px" class="btn id"></i>
+                                                                            Ваш клиентский номер:<span class="inform">2287191</span> 
+
+                                                                            <a target="_blank" href=" http://help.ria.ua/index.php?/Knowledgebase/Article/View/411/0/chto-tkoe-klientskijj-nomer" title=""><img width="14" height="14" src="http://img.auto.ria.ua/images/demo/ico-help.gif" style="margin: 2px 0 0;"></a>
+
+                                                                        </div>
+                                                                    </dl>
+                                                                </div>
+                                                                <div class="service-support">
+                                                                    <dl class="contact-data-seller">
+                                                                        <dd>
+                                                                            <p class="icons-x12 help-x12" style="padding-left: 25px;">
+                                                                                <a href="/question/user/myauto" class="bold">
+                                                                                    Обратиться в службу поддержки
+                                                                                </a>
+                                                                            </p>
+                                                                        </dd>
+
+                                                                        <dd>
+                                                                            <a class="bezpeka-ria" href="http://bezpeka.ria.ua/">Узнать о безопасности сделок от RIA.ua</a>
+                                                                        </dd>
+
+
+                                                                    </dl>
+                                                                </div>
+                                                                </div>
+
+
+                                                                </div>
+
+
+                                                                <!-- Page load array script time : 0.58825898170471
+                                                                -->
+                                                                <!-- /Block manager-->
+
+
+
+
+                                                                </div>
+
+                                                                <div class="center-panel">
+                                                                    <?php echo $this->layout()->content; ?>
+
+
+
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <div class="container-footer">
+
+
+
+                                                                                                                                                                                                        <div http://auto.ria.ua/ class="container">
+                                                                                                                                                                                                        <div class="footer-bar-menu">
+                                                                                                                                                                                                        <div class="footer-menu">
+                                                                                                                                                                                                        <div class="column">
+                                                                                                                                                                                                        <p>
+                                                                                                                                                                                                        <a href="add_auto.html" class="bold">Добавить авто</a>
+                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                        <p>
+                                                                                                                                                                                                        <a href="notepad.html">Мой блокнот</a>
+
+                                                                                                                                                                                                        (2)
+
+                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <div class="item-column">
+                                                                                                                                                                                                        <p>
+                                                                                                                                                                                                        <a href="search.html" class="bold">Поиск авто</a>
+                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                        <div class="group" id="myMenu">
+                                                                                                                                                                                                        <a href="javascript:void(0);" class="icons-arrow">Мое меню</a>
+
+
+
+
+                                                                                                                                                                                                        <div class="sub-menu pop-up-window hide">
+                                                                                                                                                                                                        <div class="floating-window">
+                                                                                                                                                                                                        <div class="box-iframe"><iframe></iframe></div>
+                                                                                                                                                                                                        <div class="wrapper inject-darr">
+                                                                                                                                                                                                        <div class="bottom-shadow column-2">
+
+                                                                                                                                                                                                        <a class="close-alert" href="javascript:void(0);">&nbsp;</a>
+
+
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+
+                                                                                                                                                                                                        <!--salon-->
+
+                                                                                                                                                                                                        <!--auto-->
+                                                                                                                                                                                                        <dl>
+                                                                                                                                                                                                        <dt>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=myauto&section=all&viewType=all" >Автомобили</a>
+                                                                                                                                                                                                        </dt>
+
+
+
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=myauto&section=active&viewType=draft" >Черновики</a>  <strong> 1 </strong>
+                                                                                                                                                                                                        </dd>
+
+
+
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=myauto&section=archive&viewType=deleted" >Архив</a>  <strong> 4 </strong>
+                                                                                                                                                                                                        </dd>
+                                                                                                                                                                                                        </dl>
+
+
+
+
+                                                                                                                                                                                                        <!--dokum-->
+
+
+                                                                                                                                                                                                        <!--comercial-->
+
+                                                                                                                                                                                                        <dl>
+                                                                                                                                                                                                        <dt>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/autoseller/info" title="Моя Автопродажа" >Моя Автопродажа</a>
+                                                                                                                                                                                                        </dt>
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        <!--NOTIFICATIONS-->
+                                                                                                                                                                                                        <dl>
+                                                                                                                                                                                                        <dt>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=mynotifications" ><strong>Уведомления</strong></a>
+                                                                                                                                                                                                        </dt>
+
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=important" title="" >Важные</a> <strong>1</strong>
+                                                                                                                                                                                                        </dd>
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=informative" title="" >Информирующие</a> <strong>4</strong>
+                                                                                                                                                                                                        </dd>
+
+
+                                                                                                                                                                                                        <noindex><script>
+                                                                                                                                                                                                            if ($('top_panel_tabs_my_menu')) {
+                                                                                                                                                                                                                if ($('top_panel_tabs_my_menu').get('notify_was_setuped') != 'true') {
+                                                                                                                                                                                                                    $('top_panel_tabs_my_menu').set('notify_was_setuped', 'true');
+                                                                                                                                                                                                                    $('top_panel_tabs_my_menu').grab(new Element('span', {
+                                                                                                                                                                                                                        "class": "inoti-warning",
+                                                                                                                                                                                                                        "title": "У Вас есть важные уведомления"
+                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                            , 'bottom');
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        </script></noindex>
+
+
+
+                                                                                                                                                                                                        <!-- Page load array script time : 0.026936054229736
+                                                                                                                                                                                                        -->
+
+                                                                                                                                                                                                        </dl>
+
+
+                                                                                                                                                                                                        </dl>  
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        <a title="Мой блокнот" href="notepad.html" >
+                                                                                                                                                                                                        Мой блокнот
+                                                                                                                                                                                                        </a>
+
+                                                                                                                                                                                                        <strong id="notepadCount">
+                                                                                                                                                                                                        2
+                                                                                                                                                                                                        </strong>
+
+                                                                                                                                                                                                        </dd>
+                                                                                                                                                                                                        <dd> <a href="?target=user&event=redug" title="Моя анкета" >Моя анкета</a></dd>
+                                                                                                                                                                                                        <dd> <a href="myservice/" title="Коммерческие сервисы" >Коммерческие сервисы</a></dd>
+                                                                                                                                                                                                        <dd> <a href="user/change_password.html" title="Изменить пароль" >Поменять пароль</a></dd>
+                                                                                                                                                                                                        <dd> <a href="subscribe" title="Рассылка" >Рассылка</a></dd>
+                                                                                                                                                                                                        <dd> <a href="user/blacklist/" class="new" title='Мой "Черный список"' >Мой "Черный список"</a></dd>
+
+                                                                                                                                                                                                        </dl><!-- Page load array script time : 0.049735069274902
+                                                                                                                                                                                                        -->
+
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <div class="item-column">
+                                                                                                                                                                                                        <div class="group" id="buAutos">
+
+                                                                                                                                                                                                        <a href="javascript:void(0);" class="icons-arrow">Автомобили б/у</a>
+
+                                                                                                                                                                                                        <div class="sub-menu pop-up-window hide">
+                                                                                                                                                                                                        <div class="floating-window">
+                                                                                                                                                                                                        <div class="box-iframe"><iframe></iframe></div>
+                                                                                                                                                                                                        <div class="wrapper inject-darr">
+                                                                                                                                                                                                        <div class="bottom-shadow column-1">
+
+                                                                                                                                                                                                        <a class="close-alert" href="javascript:void(0);">&nbsp;</a>
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dt>Автомобили б/у</dt>
+                                                                                                                                                                                                        <dd><a href="legkovie" title="Легковые">Легковые</a></dd>
+                                                                                                                                                                                                        <dd><a href="moto" title="Мото">Мото</a></dd>
+                                                                                                                                                                                                        <dd><a href="vodnyj_transport" title="Водный транспорт">Водный транспорт</a></dd>
+                                                                                                                                                                                                        <dd><a href="spectehnika" title="Спецтехника">Спецтехника</a></dd>
+                                                                                                                                                                                                        <dd><a href="trailer" title="Прицепы">Прицепы</a></dd>
+                                                                                                                                                                                                        <dd><a href="truck" title="Грузовики">Грузовики</a></dd>
+                                                                                                                                                                                                        <dd><a href="bus" title="Автобусы">Автобусы</a></dd>
+                                                                                                                                                                                                        <dd><a href="autohouse"  title="Автодома">Автодома</a></dd>
+                                                                                                                                                                                                        <dd><a href="add_auto.html" title="Добавить авто">Добавить авто</a></dd>
+                                                                                                                                                                                                        <dd><a href="retro/" title="Ретро автомобили">Ретро автомобили</a></dd>
+                                                                                                                                                                                                        <dd><a href="autointer/" title="Авто из-за рубежа">Авто из-за рубежа</a></dd>
+                                                                                                                                                                                                        <dd><a href="air_transport" title="Воздушный транспорт">Воздушный транспорт</a></dd>
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        <div class="group" id="newAutos">
+                                                                                                                                                                                                        <a href="javascript:void(0);" class="icons-arrow">Новые авто</a>
+
+                                                                                                                                                                                                        <div class="sub-menu pop-up-window hide">
+                                                                                                                                                                                                        <div class="floating-window">
+                                                                                                                                                                                                        <div class="box-iframe"><iframe></iframe></div>
+                                                                                                                                                                                                        <div class="wrapper inject-darr">
+                                                                                                                                                                                                        <div class="bottom-shadow column-1">
+
+                                                                                                                                                                                                        <a class="close-alert" href="javascript:void(0);">&nbsp;</a>
+
+
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dt>Новые авто</dt>
+                                                                                                                                                                                                        <dd><a href="/newauto/" title="Поиск новых авто">Поиск новых авто</a></dd>
+                                                                                                                                                                                                        <dd><a href="new_auto/master_search/" title="Мастер поиска">Мастер поиска</a></dd>
+                                                                                                                                                                                                        <dd><a href="newauto/catalogue/" title="Каталог новых авто">Каталог новых авто</a></dd>
+                                                                                                                                                                                                        <dd><a href="newauto/avtosaloni/" title="Автосалоны">Автосалоны</a></dd>
+                                                                                                                                                                                                        <dd><a class="new" href="newauto/motosaloni/" title="Автосалоны">Мотосалоны</a></dd>
+                                                                                                                                                                                                        <dd><a href="news/actions/" title="Акции">Акции автосалонов</a></dd>
+                                                                                                                                                                                                        <dd><a href="newauto/Отзывы/Каталог" class="new" title="Отзывы об авто">Отзывы об авто</a></dd>
+                                                                                                                                                                                                        </dl>
+
+
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <div class="item-column">
+                                                                                                                                                                                                        <div class="group" id="everything">
+                                                                                                                                                                                                        <a href="javascript:void(0);" class="icons-arrow">Все для авто</a>                    
+                                                                                                                                                                                                        <a href="news/">Новости</a>
+
+                                                                                                                                                                                                        +12
+
+
+                                                                                                                                                                                                        <div class="sub-menu pop-up-window hide">
+                                                                                                                                                                                                        <div class="floating-window">
+                                                                                                                                                                                                        <div class="box-iframe"><iframe></iframe></div>
+                                                                                                                                                                                                        <div class="wrapper inject-darr">
+                                                                                                                                                                                                        <div class="bottom-shadow column-3">
+
+                                                                                                                                                                                                        <a class="close-alert" href="javascript:void(0);">&nbsp;</a>
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dt>Сервисы</dt>
+                                                                                                                                                                                                        <dd><a href="avtovikup/" title="Автовыкуп">Автовыкуп</a></dd>
+                                                                                                                                                                                                        <dd><a href="autolombardy/"  title="Автоломбарды">Автоломбарды</a></dd>
+                                                                                                                                                                                                        <dd><a href="autoservice/" title="Автосервисы">Автосервисы</a></dd>
+                                                                                                                                                                                                        <dd><a href="avtorazborka/" title="Авторазборка">Авторазборка</a></dd>
+                                                                                                                                                                                                        <dd><a href="avtorazborka/#stolzakazov" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Add_Aplication', 'Main_AUTO.ria.ua']);" title="Стол заказов запчастей">Стол заказов запчастей</a></dd>
+                                                                                                                                                                                                        <dd><a href="strahovanie/" title="Автострахование">Автострахование</a></dd>
+                                                                                                                                                                                                        <!--dd><a href="http://market.auto.ria.ua/tehpomosch" target="_blank" title="Автопомощь">Автопомощь</a></dd-->
+                                                                                                                                                                                                        <dd><a href="rastamozhka_avto/" title="Растаможка авто">Растаможка авто</a></dd>
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dt>Товары</dt>
+                                                                                                                                                                                                        <dd><a href='http://zapchasti.ria.ua/' title="Запчасти">Запчасти</a></dd>
+
+                                                                                                                                                                                                        <dd><a href="http://market.auto.ria.ua/shina" title="Шины">Шины</a></dd>
+
+                                                                                                                                                                                                        <dd><a href="http://market.auto.ria.ua/diski" title="Диски">Диски</a></dd>
+                                                                                                                                                                                                        <dd><a href="http://market.auto.ria.ua/kovriki" title="Коврики">Коврики</a></dd>
+                                                                                                                                                                                                        <dd><a href="http://market.auto.ria.ua/avtochehlu" title="Чехлы на сиденья">Чехлы на сиденья</a></dd>
+                                                                                                                                                                                                        <!--dd><a href="http://market.auto.ria.ua/knigi"   title="Автолитература">Автолитература</a></dd-->
+
+                                                                                                                                                                                                        <!--dd><a href="http://auto.ria.ua/shop/" title="Автозвук">Автозвук</a></dd-->
+                                                                                                                                                                                                        <dd><a href="http://dom.ria.ua/garage/" title="Гаражи" target="_blank">Гаражи</a></dd>
+                                                                                                                                                                                                        <dd><a href="document/" title="Автодокументы">Автодокументы</a></dd>
+
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        <dl class="unordered-list">
+                                                                                                                                                                                                        <dt>Полезное</dt>
+                                                                                                                                                                                                        <dd><a href="avtoshkola/"  title="Автошколы">Автошколы</a></dd>
+                                                                                                                                                                                                        <dd><a href="forum" title="Автофорум">Автофорум</a></dd>
+                                                                                                                                                                                                        <dd><a href="humor/" title="Автоюмор">Автоюмор</a></dd>
+                                                                                                                                                                                                        <dd><a href="autoclubs/" title="Автоклубы">Автоклубы</a></dd>
+
+                                                                                                                                                                                                        <dd><a href='http://link.auto.ria.ua/' title="Автосайты">Автосайты</a></dd>
+
+                                                                                                                                                                                                        <dd><a href="automagazine/" title="Журналы">Журналы</a></dd>
+
+                                                                                                                                                                                                        <dd><a href="compare/" title="Надежность авто">Надежность авто</a></dd>
+                                                                                                                                                                                                        <dd><a href="http://lanos.com.ua/" title="Все о Lanos">Все о Lanos</a></dd>
+
+                                                                                                                                                                                                        <dd><a href="first_auto/"  title="Покупаем первый автомобиль">Покупаем первый автомобиль</a></dd>
+                                                                                                                                                                                                        <dd><a href="newauto/Отзывы/Каталог" class="new" title="Отзывы об авто">Отзывы об авто</a></dd>
+
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        <div class="important-links">
+
+                                                                                                                                                                                                        <a href="help/" title="Помощь">Помощь</a>
+                                                                                                                                                                                                        <span>|</span>
+                                                                                                                                                                                                        <a href="news/novinki/" title="Нововведения">Нововведения</a>
+
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <div class="other-projects">
+
+
+                                                                                                                                                                                                        <a target="_blank" title="Недвижимость &mdash; жильё, земля, офисы, коммерческая недвижимость" href="http://dom.ria.ua/">Недвижимость</a>
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a target="_blank" title="Работа в Украине, вакансии, резюме, поиск работы и сотрудников" href="http://rabota.ria.ua/">Работа</a>
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a target="_blank" title="Бронирование Гостиниц" href="http://hotels.ria.ua/">Гостиницы</a>
+                                                                                                                                                                                                        <!--            |
+                                                                                                                                                                                                        <a target="_blank" rel="nofollow, noindex" title="Частные объявления украинцев (откроется в новом окне)" href="http://emarket.ua">Emarket.ua</a>-->
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a target="_blank" title="Prom.ua &mdash; здесь находят клиентов (откроется в новом окне)" href="http://prom.ua">Prom.ua</a>
+                                                                                                                                                                                                        <!--            |
+                                                                                                                                                                                                        <a target="_blank" title="ВЦене (откроется в новом окне)" href="http://vcene.ua">Vcene.ua</a>-->
+
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a target="_blank" title="Политика конфиденциальности" href="http://auto.ria.ua/privacy-policy/">Политика конфиденциальности</a>
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                        <dl class="footer-signature">
+
+                                                                                                                                                                                                        <dt>
+                                                                                                                                                                                                        <a class="bezpeka-ria" href="http://bezpeka.ria.ua/">Безопасные сделки RIA.ua</a>
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a href="price/">Реклама на сайте</a>
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a href="http://auto.ria.ua/question//">Обратная связь</a>
+                                                                                                                                                                                                        |
+                                                                                                                                                                                                        <a href="http://cobrand.ria.ua/">Партнерские программы</a>
+                                                                                                                                                                                                        </dt>
+
+                                                                                                                                                                                                        <dd>
+                                                                                                                                                                                                        Copyright &copy; 2004-2013 RIA.ua.
+                                                                                                                                                                                                        Все права защищены
+                                                                                                                                                                                                        </dd>
+                                                                                                                                                                                                        </dl>
+
+                                                                                                                                                                                                        </div>
+
+
+                                                                                                                                                                                                        <noindex><script type="text/javascript">
+                                                                                                                                                                                                            new Ria_Auto_Generic_SuperSelect({
+                                                                                                                                                                                                                selector: '#everything',
+                                                                                                                                                                                                                optionsClass: 'sub-menu',
+                                                                                                                                                                                                                selectedClass: 'icons-arrow',
+                                                                                                                                                                                                                selectedOptionClass: 'select'
+                                                                                                                                                                                                            });
+
+                                                                                                                                                                                                            new Ria_Auto_Generic_SuperSelect({
+                                                                                                                                                                                                                selector: '#myMenu',
+                                                                                                                                                                                                                optionsClass: 'sub-menu',
+                                                                                                                                                                                                                selectedClass: 'icons-arrow',
+                                                                                                                                                                                                                selectedOptionClass: 'select'
+                                                                                                                                                                                                            });
+                                                                                                                                                                                                            new Ria_Auto_Generic_SuperSelect({
+                                                                                                                                                                                                                selector: '#buAutos',
+                                                                                                                                                                                                                optionsClass: 'sub-menu',
+                                                                                                                                                                                                                selectedClass: 'icons-arrow',
+                                                                                                                                                                                                                selectedOptionClass: 'select'
+                                                                                                                                                                                                            });
+                                                                                                                                                                                                            new Ria_Auto_Generic_SuperSelect({
+                                                                                                                                                                                                                selector: '#newAutos',
+                                                                                                                                                                                                                optionsClass: 'sub-menu',
+                                                                                                                                                                                                                selectedClass: 'icons-arrow',
+                                                                                                                                                                                                                selectedOptionClass: 'select'
+                                                                                                                                                                                                            });
+                                                                                                                                                                                                        </script></noindex>
+                                                                                                                                                                                                        <!-- Page load array script time : 0.16412305831909
+                                                                                                                                                                                                        -->
+
+
+                                                                                                                                                                                                        <!-- Yandex.Metrika counter -->
+                                                                                                                                                                                                        <script type="text/javascript">
+                                                                                                                                                                                                            (function(d, w, c) {
+                                                                                                                                                                                                                (w[c] = w[c] || []).push(function() {
+                                                                                                                                                                                                                    try {
+                                                                                                                                                                                                                        w.yaCounter91244 = new Ya.Metrika({id: 91244,
+                                                                                                                                                                                                                            webvisor: true,
+                                                                                                                                                                                                                            clickmap: true});
+                                                                                                                                                                                                                    } catch (e) {
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                });
+
+                                                                                                                                                                                                                var n = d.getElementsByTagName("script")[0],
+                                                                                                                                                                                                                        s = d.createElement("script"),
+                                                                                                                                                                                                                        f = function() {
+                                                                                                                                                                                                                    n.parentNode.insertBefore(s, n);
+                                                                                                                                                                                                                };
+                                                                                                                                                                                                                s.type = "text/javascript";
+                                                                                                                                                                                                                s.async = true;
+                                                                                                                                                                                                                s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+                                                                                                                                                                                                                if (w.opera == "[object Opera]") {
+                                                                                                                                                                                                                    d.addEventListener("DOMContentLoaded", f);
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    f();
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            })(document, window, "yandex_metrika_callbacks");
+                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                        <noscript><div><img src="//mc.yandex.ru/watch/91244" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                                                                                                                                                                                                        <!-- /Yandex.Metrika counter -->  
+
+
+
+                                                                                                                                                                                                        <div id="vk_api_transport"></div>
+
+                                                                                                                                                                                                        <noindex><script>
+
+
+                                                                                                                                                                                                            window.vkAsyncInit = function() {
+                                                                                                                                                                                                                VK.init({
+                                                                                                                                                                                                                    apiId: 3521595,
+                                                                                                                                                                                                                    onlyWidgets: true
+                                                                                                                                                                                                                });
+
+
+                                                                                                                                                                                                            };
+
+
+                                                                                                                                                                                                            setTimeout(function() {
+                                                                                                                                                                                                                var el = document.createElement("script");
+                                                                                                                                                                                                                el.type = "text/javascript";
+                                                                                                                                                                                                                el.src = "http://vkontakte.ru/js/api/openapi.js";
+                                                                                                                                                                                                                el.async = true;
+                                                                                                                                                                                                                if ($defined($('vk_api_transport'))) {
+                                                                                                                                                                                                                    document.getElementById("vk_api_transport").appendChild(el);
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }, 0);
+                                                                                                                                                                                                            if ($defined($('vk_like_button_link'))) {
+                                                                                                                                                                                                                VK.Widgets.Like("vk_like_button_link", {type: "link", height: 20, width: 30});
+                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                            if ($defined($('vk_like_button'))) {
+                                                                                                                                                                                                                VK.Widgets.Like("vk_like_button", {type: "button", height: 20});
+
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            //отключено 06,07,2012        
+                                                                                                                                                                                                            if ($defined($('vk_groups'))) {
+                                                                                                                                                                                                                VK.Widgets.Group("vk_groups", {width: "300", height: "100"}, 6499791);
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        </script></noindex>
+
+
+
+
+
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        </div>
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                        <a class="feedback" style="background: url('http://img.auto.ria.ua/images/demo/plashka.png') no-repeat 0 0" href="/impressions/">&nbsp;</a>
+
+
+                                                                                                                                                                                                        </body>
+
+                                                                                                                                                                                                        </html><!-- Page load array script time : 0.42641305923462
+                                                                                                                                                                                                        rw_m_point_2 : 0.009443998336792
+                                                                                                                                                                                                        rw_bm_point_20 : 0.0094661712646484
+                                                                                                                                                                                                        rw_bm_point_21 : 0.009486198425293
+                                                                                                                                                                                                        rw_bm_point_4 : 0.0094931125640869
+                                                                                                                                                                                                        rw_bm_point_5 : 0.009498119354248
+                                                                                                                                                                                                        rw_bm_point_16 : 0.009505033493042
+                                                                                                                                                                                                        rw_bm_point_17 : 0.019610166549683
+                                                                                                                                                                                                        rw_bm_point_6 : 0.019623994827271
+                                                                                                                                                                                                        rw_bm_point_12 : 0.01969313621521
+                                                                                                                                                                                                        rw_bm_point_7 : 0.019736051559448
+                                                                                                                                                                                                        rw_bm_point_14 : 0.019755125045776
+                                                                                                                                                                                                        rw_bm_point_22 : 0.02798318862915
+                                                                                                                                                                                                        rw_bm_point_23 : 0.029712200164795
+                                                                                                                                                                                                        rw_bm_point_15 : 0.029734134674072
+                                                                                                                                                                                                        rw_bm_point_2 : 0.029742002487183
+                                                                                                                                                                                                        rw_bm_point_3 : 0.029752969741821
+                                                                                                                                                                                                        rw_m_point_3 : 0.029757976531982
+                                                                                                                                                                                                        rw_bm_point_18 : 0.033707141876221
+                                                                                                                                                                                                        rw_bm_point_19 : 0.03380298614502
+                                                                                                                                                                                                        cache_init_start : 0.094740152359009
+                                                                                                                                                                                                        point_0 : 0.094794034957886
+                                                                                                                                                                                                        point_1 : 0.094887971878052
+                                                                                                                                                                                                        point_3 : 0.095132112503052
+                                                                                                                                                                                                        point_4 : 0.096443176269531
+                                                                                                                                                                                                        point_5 : 0.10374808311462
+                                                                                                                                                                                                        cache_process_start : 0.10379719734192
+                                                                                                                                                                                                        point_8.3.1 : 0.10625219345093
+                                                                                                                                                                                                        point_9 : 0.11800098419189
+                                                                                                                                                                                                        point_10 : 0.12369799613953
+                                                                                                                                                                                                        point_10.1 : 0.12375211715698
+                                                                                                                                                                                                        point_10.2 : 0.15118598937988
+                                                                                                                                                                                                        point_13 : 0.15119099617004
+                                                                                                                                                                                                        point_14 : 0.15143799781799
+                                                                                                                                                                                                        point_15 : 0.15412902832031
+                                                                                                                                                                                                        point_16 : 0.15571808815002
+                                                                                                                                                                                                        point_16_1 : 0.15573406219482
+                                                                                                                                                                                                        point_16_2 : 0.15583801269531
+                                                                                                                                                                                                        point_16_3 : 0.15584301948547
+                                                                                                                                                                                                        point_16_4 : 0.15679407119751
+                                                                                                                                                                                                        cache_process_end : 0.15685415267944
+                                                                                                                                                                                                        cache_init_end : 0.15713620185852
+                                                                                                                                                                                                        queries : 
+                                                                                                                                                                                                        Array
+                                                                                                                                                                                                        (
+                                                                                                                                                                                                        )
+                                                                                                                                                                                                        -->

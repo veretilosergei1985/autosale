@@ -111,7 +111,7 @@ class Application_Model_UsersMapper
             'email'    => $user->getEmail(),
             'phone'    => $user->getPhone(),
             'added' => date('Y-m-d H:i:s'),
-            'last_login' => $user->getLastLogin()
+            'lastlogin' => $user->getLastLogin()
             
         );
         
@@ -133,7 +133,7 @@ class Application_Model_UsersMapper
             'username'  => $user->getUsername(),
             'email'    => $user->getEmail(),
             'phone'    => $user->getPhone(),
-            'last_login' => $user->getLastLogin()
+            'lastlogin' => $user->getLastLogin()
             
         );
         
@@ -159,7 +159,7 @@ class Application_Model_UsersMapper
              ->setEmail($row->email)
              ->setPhone($row->phone)
              ->setAdded($row->added)
-             ->setLastLogin($row->last_login);
+             ->setLastLogin($row->lastlogin);
                 //->setFirstName($row->first_name)
                 //->setLastName($row->last_name)
     }
@@ -174,7 +174,7 @@ class Application_Model_UsersMapper
                    ->setTitle($row->title)
                    ->setDescription($row->description)
                    ->setAdded($row->added)
-                    ->setLastLogin($row->last_login)
+                    ->setLastLogin($row->lastlogin)
                    ->setYear($row->year)
                    ->setMapper($this);
             $entries[] = $entry;

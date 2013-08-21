@@ -12,7 +12,7 @@ class Application_Model_Users
     protected $_reg_id;
     protected $_city_id;
     protected $_added;
-    protected $_last_login;
+    protected $_lastlogin;
     
     protected $_mapper;
    
@@ -151,12 +151,12 @@ class Application_Model_Users
     
     public function setLastLogin($val)
     {
-        $this->_last_login = $val;
+        $this->_lastlogin = $val;
         return $this;
     }
     public function getLastLogin()
     {
-        return $this->_last_login;
+        return $this->_lastlogin;
     }
     
     public function setMapper($mapper)

@@ -154,7 +154,7 @@ jQuery(function() {
         var city_id = $('#citieslist__addcars a.active').attr('city_id');
         var city_name = $('#citieslist__addcars a.active').text();
         
-        $('select#reg_id option[value="choose"]').after('<option value="'+reg_id+'-'+city_id+'" label="'+city_name+', '+reg_name+' обл.">'+city_name+', '+reg_name+' обл.</option>');
+        $('select#reg_id option[value="choose"]').after('<option selected="selected" value="'+reg_id+'-'+city_id+'" label="'+city_name+', '+reg_name+' обл.">'+city_name+', '+reg_name+' обл.</option>');
         //<option value="8-416" label="Ахтырка, Сумская обл.">Ахтырка, Сумская обл.</option>
         $('#locationpopup__addcars').css('display', 'none');
     });

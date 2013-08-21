@@ -1,0 +1,67 @@
+      
+    <div style="width:660px;margin:30px auto 0">
+        <div style="float:right">
+            <a target="_blank" href="http://vk.com/auto_ria_ua">
+                <img width="16" height="16" title="AUTO.ria.ua в VKontakte" alt="AUTO.ria.ua в VKontakte" src="http://img6.auto.ria.ua/images/demo/subscribe/ico-vk.jpg">
+            </a>
+            <a target="_blank" href="http://www.facebook.com/AUTO.ria.ua">
+                <img width="16" height="16" title="AUTO.ria.ua в Facebook" alt="AUTO.ria.ua в Facebook" src="http://img6.auto.ria.ua/images/demo/subscribe/ico-fb.jpg">
+            </a>
+            <a target="_blank" href="http://twitter.com/auto_ria_ua">
+                <img width="16" height="16" title="AUTO.ria.ua в Twitter" alt="AUTO.ria.ua в Twitter" src="http://img6.auto.ria.ua/images/demo/subscribe/ico-tw.jpg">
+            </a>
+        </div>
+        <div style="font-size:15px;margin-bottom:25px">Здравствуйте, <?php echo $this->owner_username; ?>!</div>
+        <div style="font:18px/100% Arial">
+            Пользователь
+            <strong><?php echo $this->sender_username; ?></strong>
+            оставил сообщение к Вашему объявлению о продаже
+            <a target="_blank" href="http://autosale/index/view/id/<?php echo $this->car_id; ?>"><?php echo $this->car_mark .' '. $this->car_model; ?></a>
+            (ID <?php echo $this->car_id; ?>):
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td style="padding:10px 10px 0 0">
+                        <img width="33" height="28" style="border:none" alt="" src="http://img.ria.ua/photos/adv/common/0/0/40/40l.jpg">
+                    </td>
+                    <td style="font:14px/1.5 Arial;color:#4b4b4b">
+                        <p style="list-style:none;margin-bottom:0">
+                            <strong><?php echo $this->message; ?></strong>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="display:inline-block;width:100%;padding-bottom:15px;border-bottom:1px dotted #d9d9d9">
+            <p>
+                Телефон:
+                <strong><?php echo '(' . substr($this->sender_phone, 0, 3) . ') ' . substr($this->sender_phone, 3, 3) . '-' . substr($this->sender_phone, 6, 2) . '-' . substr($this->sender_phone, 8, 2) ; ?></strong>
+            </p>
+            <p>
+                E-mail:
+                <strong>
+                    <a target="_blank" href="mailto:<?php echo $this->sender_email; ?>"><?php echo $this->sender_email; ?></a>
+                </strong>
+            </p>
+            <p style="margin-top:20px">
+                <a target="_blank" href="http://autosale/index/view/id/<?php echo $this->car_id; ?>" style="color:#3d6899;font-size:16px">Перейти к объявлению»</a>
+            </p>
+            <p style="margin-top:20px">
+                <a target="_blank" href="mailto:<?php echo $this->sender_email; ?>" style="color:#3d6899;font-size:16px">Отправить сообщение пользователю »</a>
+            </p>
+        </div>
+        <p style="margin:20px 0 20px 25px;display:block;line-height:15px">
+            <em>
+                C ув. Служба поддержки
+                <a target="_blank" href="http://AUTO.ria.ua">AUTO.ria.ua</a>
+                <br>
+                0-800-21-00-12, (067) 430-09-14
+            </em>
+        </p>
+    </div>
+                      
+                      
+                      
+                      
+                     

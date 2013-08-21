@@ -380,6 +380,12 @@ jQuery(function() {
        }
        
        
+       if($('#block_view').val() == '0' || $('#block_view').val() == ''){
+          $('#top_view_type_id a[pvalue="0"]').addClass('active'); 
+       } else {
+          $('#top_view_type_id a[pvalue="1"]').addClass('active'); 
+       }
+       
        if($('#year_start').val() != '' && $('#year_start').val() != '0'){
            var val = $('#year_start').val();
            $('#filter_s_yers option[value='+val+']').attr('selected', 'selected');
@@ -491,6 +497,15 @@ jQuery(function() {
        
        $('#search_results_count').text($('#count_result').val());
        
+       if($('#search_sort').val() != '' && $('#search_sort').val() != 'undefined'){
+           var order_text = $('#top_order_by a.item[pvalue="'+$('#search_sort').val()+'"]').text();
+           $('#top_order_by a.selected').text(order_text);
+       }
+       
+       if($('#count_per_page').val() != '' && $('#count_per_page').val() != 'undefined'){
+           var count_per_page = $('#pager_count_page a.item[pvalue="'+$('#count_per_page').val()+'"]').text();
+           $('#pager_count_page a.selected').text(count_per_page);
+       }
        
        // filtering AJAX
             
@@ -1063,7 +1078,7 @@ jQuery(function() {
                }); 
                
                
-               $('#lf_reset_href').live('click',function(e) {
+            $('#lf_reset_href').live('click',function(e) {
                 e.preventDefault();
                 
                 $('#search_ajax_form input[type="hidden"]').val('');
@@ -1097,6 +1112,164 @@ jQuery(function() {
                           }); 
                }); 
                
+              
+            $('#top_order_by a.selected').live('click',function(e) {
+                e.preventDefault();
+                
+                if($('#top_order_by .options').is(':visible')){
+                    $('#top_order_by .options').hide();
+                } else {
+                    $('#top_order_by .options').show();
+                }
+                               
+            }); 
+            
+             $('#top_order_by a.item').live('click',function(e) {
+                e.preventDefault();
+                var elem = $(this);
+                
+                var search_sort = $(this).attr('pvalue');
+                var search_text = $(this).text();
+                $('#top_order_by a.selected').text(search_text);
+                $('#top_order_by .options').hide();
+                                
+                $('#search_sort').val(search_sort);
+                           
+                $('.wrapper_search').empty();
+                $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
+
+                        jQuery.ajax({
+                              url: '/search/ajax',
+                              type:'POST',
+                              data: $('#search_ajax_form').serialize(),
+                              success: function(res) {
+                                                                      
+                                    $('.wrapper_search').empty();
+                                    $('.wrapper_search').append(res);
+                                    $('#search_results_count').text($('#count_result').val());
+                                    window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                                  }
+                          }); 
+             }); 
+             
+             
+             $('#top_view_type_id a.button').live('click',function(e) {
+                e.preventDefault();
+                
+                $('#top_view_type_id a.button').removeClass('active');
+                $(this).addClass('active');
+                $('#block_view').val($(this).attr('pvalue'));
+                 
+                $('.wrapper_search').empty();
+                $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
+
+                        jQuery.ajax({
+                              url: '/search/ajax',
+                              type:'POST',
+                              data: $('#search_ajax_form').serialize(),
+                              success: function(res) {
+                                    $('.wrapper_search').empty();
+                                    $('.wrapper_search').append(res);
+                                    $('#search_results_count').text($('#count_result').val());
+                                    window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                                  }
+                          }); 
+             }); 
+             
+             // show car-block count per page select block
+             
+            $('#pager_count_page a.selected').live('click',function(e) {
+                e.preventDefault();
+                
+                if($('#pager_count_page .options').is(':visible')){
+                    $('#pager_count_page .options').hide();
+                } else {
+                    $('#pager_count_page .options').show();
+                }
+                               
+            }); 
+            
+            $('#pager_count_page a.item').live('click',function(e) {
+                e.preventDefault();
+                var elem = $(this);
+                
+                var count_per_page = $(this).attr('pvalue');
+                $('#pager_count_page a.selected').text(count_per_page);
+                $('#pager_count_page .options').hide();
+                                
+                $('#count_per_page').val(count_per_page);
+                           
+                $('.wrapper_search').empty();
+                $('.wrapper_search').append('<div id="search_form_container" class="grid grid-span2"><div class="preloader-window"></div></div>');
+
+                        jQuery.ajax({
+                              url: '/search/ajax',
+                              type:'POST',
+                              data: $('#search_ajax_form').serialize(),
+                              success: function(res) {
+                                                                      
+                                    $('.wrapper_search').empty();
+                                    $('.wrapper_search').append(res);
+                                    $('#search_results_count').text($('#count_result').val());
+                                    window.history.pushState('Object', 'Title', '?' + $('#queryString').val());
+                                  }
+                          }); 
+            }); 
+             
+             
+            jQuery('.show_options_owner_item').live('click',function(e) {
+                   e.preventDefault();
+                   var id = $(this).attr('rel');
+
+                   if($('#auto_search_item_another_events_container_'+id).hasClass('hide')){
+                      $('#auto_search_item_another_events_container_'+id).removeClass('hide');
+                   } else {
+                      $('#auto_search_item_another_events_container_'+id).addClass('hide');
+                   }
+
+            });
+            
+            jQuery('.to_archive').live('click',function(e) {
+                  e.preventDefault();
+                  var id = $(this).attr('rel');
+                  
+                  $('#autoDeleteReason'+id).show();
+                  $('#auto_search_item_another_events_container_'+id).addClass('hide');
+           });
+                      
+           jQuery('.edit-my-offer .close-alert').live('click',function(e) {
+                  e.preventDefault();
+                  var id = $(this).attr('rel');
+                  
+                  $('#autoDeleteReason'+id).hide();
+                  $('#auto_search_item_another_events_container_'+id).addClass('hide');
+           });
+           
+           jQuery('.to_archive_button_cancel').live('click',function(e) {
+                  e.preventDefault();
+                  var id = $(this).attr('auto_id');
+                  
+                  $('#autoDeleteReason'+id).hide();
+                  $('#auto_search_item_another_events_container_'+id).addClass('hide');
+           });
+           
+           jQuery('input[type="radio"][name="reason_id"]').live('click',function(e) {
+                  var id = $(this).attr('auto_id');
+                  
+                  $('#formmm_span_'+id).removeClass('disabled');
+                  $('#formmm_span_'+id).removeClass('grey-30');
+                  $('#formmm_span_'+id).addClass('red-30');
+                  
+                  $('#formmm_'+id).removeAttr('disabled');
+                  
+                  //$('#autoDeleteReason'+id).hide();
+                  $('#auto_search_item_another_events_container_'+id).addClass('hide');
+                 
+                 
+           });
+           
+           
+                          
               
 
 });

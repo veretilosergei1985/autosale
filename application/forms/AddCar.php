@@ -38,7 +38,7 @@ class Application_Form_AddCar extends Zend_Form
                 //
                 $oRegion = new Application_Model_Regions();
                 foreach ($oRegion->fetchAll() as $reg) {
-                    $region->addMultiOption($reg->id, $reg->name);
+                    $region->addMultiOption($reg->id . '-' . $reg->id, $reg->name);
                 }
                 //
                 $region->setAttrib('class', 'span3');

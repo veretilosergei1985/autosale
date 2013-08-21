@@ -90,6 +90,7 @@ class Application_Model_Regions
         return $this->getMapper()->findParentRow(new Model_DbTable_Cars, 'Car');
                 
     }
+    
 }
 
 ?>
