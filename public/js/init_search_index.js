@@ -852,13 +852,13 @@ jQuery(function() {
                //}
            });  
            
-           $('#lf_race_to').change(function () {
+           jQuery('#lf_race_to').change(function () {
                
                $('#mileage_end').val($(this).val());
                
            });  
             
-            $('#lf_race_to').blur(function(event) {
+            jQuery('#lf_race_to').blur(function(event) {
                 
               //if($('#lf_race_from').val() != ''){  
                               
@@ -880,7 +880,7 @@ jQuery(function() {
               //}
            });  
            
-           $('#lf_gearBoxId').change(function () {
+           jQuery('#lf_gearBoxId').change(function () {
                
                 var transmission = $(this).val();
                 
@@ -905,13 +905,13 @@ jQuery(function() {
                       }); 
            });  
            
-           $('#lf_engineVolumeFrom').change(function () {
+           jQuery('#lf_engineVolumeFrom').change(function () {
                
                $('#volume_start').val($(this).val());
                
            });  
             
-            $('#lf_engineVolumeFrom').blur(function(event) {
+            jQuery('#lf_engineVolumeFrom').blur(function(event) {
                 
               //if($('#lf_race_from').val() != ''){  
                               
@@ -933,7 +933,7 @@ jQuery(function() {
                //}
            });  
            
-           $('#lf_engineVolumeTo').change(function () {
+          jQuery('#lf_engineVolumeTo').change(function () {
                
                $('#volume_end').val($(this).val());
                
@@ -961,7 +961,7 @@ jQuery(function() {
                //}
            }); 
            
-           $('#lf_fuel_type').change(function () {
+          jQuery('#lf_fuel_type').change(function () {
                
                 var fuel_id = $(this).val();
                 
@@ -986,7 +986,7 @@ jQuery(function() {
                       }); 
            });  
            
-           $('#lf_driveTypeId').change(function () {
+          jQuery('#lf_driveTypeId').change(function () {
                
                 var drive_id = $(this).val();
                 
@@ -1011,7 +1011,7 @@ jQuery(function() {
                       }); 
            });  
            
-           $('#lf_colorId').change(function () {
+           jQuery('#lf_colorId').change(function () {
                
                 var color_id = $(this).val();
                 
@@ -1036,7 +1036,7 @@ jQuery(function() {
                       }); 
            });
            
-           $('.head-filter').live('click',function(e) {
+           jQuery('.head-filter').live('click',function(e) {
                 e.preventDefault();
                 
                 if($('.panel').hasClass('hide')){
@@ -1051,13 +1051,13 @@ jQuery(function() {
           
             }); 
             
-            $('#lfs_auto_id_input').keyup(function () {
+            jQuery('#lfs_auto_id_input').keyup(function () {
                $('#auto_id').val($(this).val());
                
             });
                        
                        
-            $('.send_button_ajax_form').live('click',function(e) {
+            jQuery('.send_button_ajax_form').live('click',function(e) {
                 e.preventDefault();
                            
                 $('.wrapper_search').empty();
@@ -1078,7 +1078,7 @@ jQuery(function() {
                }); 
                
                
-            $('#lf_reset_href').live('click',function(e) {
+           jQuery('#lf_reset_href').live('click',function(e) {
                 e.preventDefault();
                 
                 $('#search_ajax_form input[type="hidden"]').val('');
@@ -1113,7 +1113,7 @@ jQuery(function() {
                }); 
                
               
-            $('#top_order_by a.selected').live('click',function(e) {
+            jQuery('#top_order_by a.selected').live('click',function(e) {
                 e.preventDefault();
                 
                 if($('#top_order_by .options').is(':visible')){
@@ -1124,7 +1124,7 @@ jQuery(function() {
                                
             }); 
             
-             $('#top_order_by a.item').live('click',function(e) {
+             jQuery('#top_order_by a.item').live('click',function(e) {
                 e.preventDefault();
                 var elem = $(this);
                 
@@ -1153,7 +1153,7 @@ jQuery(function() {
              }); 
              
              
-             $('#top_view_type_id a.button').live('click',function(e) {
+             jQuery('#top_view_type_id a.button').live('click',function(e) {
                 e.preventDefault();
                 
                 $('#top_view_type_id a.button').removeClass('active');
@@ -1178,7 +1178,7 @@ jQuery(function() {
              
              // show car-block count per page select block
              
-            $('#pager_count_page a.selected').live('click',function(e) {
+            jQuery('#pager_count_page a.selected').live('click',function(e) {
                 e.preventDefault();
                 
                 if($('#pager_count_page .options').is(':visible')){
@@ -1189,7 +1189,7 @@ jQuery(function() {
                                
             }); 
             
-            $('#pager_count_page a.item').live('click',function(e) {
+            jQuery('#pager_count_page a.item').live('click',function(e) {
                 e.preventDefault();
                 var elem = $(this);
                 
@@ -1267,6 +1267,24 @@ jQuery(function() {
                  
                  
            });
+           
+           jQuery('.to_archive_submit').live('click',function(e) {
+                e.preventDefault();
+                var elem = $(this);
+                var id = $(this).attr('auto_id');
+
+                jQuery.ajax({
+                      url: '/catalog/toarchive',
+                      type:'POST',
+                      data: $('#complaintAdvertisementForm-'+id).serialize(),
+                      success: function(res) {
+                          if(res == '1'){
+                              $('.ticket-item[ticket_auto_id="'+id+'"]').remove();
+                              window.location = "/user/myautos"
+                          }
+                      }
+                  }); 
+            }); 
            
            
                           

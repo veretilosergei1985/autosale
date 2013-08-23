@@ -175,15 +175,15 @@
                 <input type="hidden" id="mileage_start" name="mileage_start" value="<?php echo $this->query['mileage_start']; ?>">
                 <input type="hidden" id="mileage_end" name="mileage_end" value="<?php echo $this->query['mileage_end']; ?>">
                 
-                <input type="hidden" id="transmission_id" name="transmission_id" value="<?php echo $this->query['transmission_id']; ?>">
+                <input type="hidden" id="transmission_id" name="transmission_id" value="<?php if(isset($this->query['transmission_id'])) echo $this->query['transmission_id']; ?>">
                 
                 <input type="hidden" id="volume_start" name="volume_start" value="<?php echo $this->query['volume_start']; ?>">
                 <input type="hidden" id="volume_end" name="volume_end" value="<?php echo $this->query['volume_end']; ?>">
                 
-                <input type="hidden" id="fuel_id" name="fuel_id" value="<?php echo $this->query['fuel_id']; ?>">
-                <input type="hidden" id="drive_id" name="drive_id" value="<?php echo $this->query['drive_id']; ?>">
+                <input type="hidden" id="fuel_id" name="fuel_id" value="<?php if(isset($this->query['fuel_id'])) echo $this->query['fuel_id']; ?>">
+                <input type="hidden" id="drive_id" name="drive_id" value="<?php if(isset($this->query['drive_id'])) echo $this->query['drive_id']; ?>">
                 
-                <input type="hidden" id="color_id" name="color_id" value="<?php echo $this->query['color_id']; ?>">
+                <input type="hidden" id="color_id" name="color_id" value="<?php  if(isset($this->query['color_id'])) echo $this->query['color_id']; ?>">
                 
                 <?php if(isset($this->query['m_state'])){
                         foreach($this->query['m_state'] as $k => $v){
@@ -2945,7 +2945,7 @@
             <div class="item">
                 <div class="ticket-item <?php if ($car->priority != 'none') {
         echo 'paid';
-    } ?>" ticket_status_id="0" ticket_auto_id="11080455">
+    } ?>" ticket_status_id="0" ticket_auto_id="<?php echo $car->id; ?>">
                     <a name="search_auto_id_11080455"> </a>
                     <?php if(isset($this->ids) && array_search($car->id, $this->ids)){ ?>
                         <div class="boxed">

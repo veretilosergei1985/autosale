@@ -4,13 +4,15 @@
         <?php echo $this->headMeta(); ?>
         <?php echo $this->headTitle(); ?>
        
-        <?php echo $this->headLink()->appendStylesheet('/css/main.css', 'screen'); ?>
-        <?php echo $this->headLink()->appendStylesheet('/css/init-main.css', 'screen'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/main.css', 'screen'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/init-main.css', 'screen'); ?>
        
-        <?php echo $this->headScript()->appendFile('/js/jquery-1.7.2.min.js'); ?>
-         <?php echo $this->headScript()->appendFile('/js/main.js'); ?>
-       <?php echo $this->headLink()->appendStylesheet('/css/init_add.css'); ?>
+        <?php $this->headScript()->prependFile('/js/jquery-1.7.2.min.js'); ?>
+         <?php $this->headScript()->appendFile('/js/main.js'); ?>
+       <?php $this->headLink()->appendStylesheet('/css/init_add.css'); ?>
        <?php // echo $this->headScript()->appendFile('/js/init_add.js');?>
+        <?php echo $this->headLink(); ?>
+       <?php echo $this->headScript();?>
 
    </head>
 

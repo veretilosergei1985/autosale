@@ -465,6 +465,10 @@ class Application_Model_Cars
         return $this->getMapper()->checkAutoOwner($auto_id ,$user_id);
     }
     
+    public function toArchive($auto_id){
+        return $this->getMapper()->toArchive($auto_id);
+    }
+    
 }
 
 ?>

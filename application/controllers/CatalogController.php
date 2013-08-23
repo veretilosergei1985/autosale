@@ -646,6 +646,25 @@ class CatalogController extends Zend_Controller_Action
         
         
     }
+    
+    public function toarchiveAction(){
+        $this->_helper->layout->disableLayout();
+        
+        if(Zend_Auth::getInstance()->hasIdentity()){
+            $requestData = $this->getRequest()->getParams();
+            $auto_id = $requestData['delete_id'];
+            
+            $model = new Application_Model_Cars();
+            $result = $model->toArchive($auto_id);
+            
+            if($result){
+                echo '1'; exit;
+            } else {
+                echo '0'; exit;
+            }
+        }
+        
+    }
 
 
 }

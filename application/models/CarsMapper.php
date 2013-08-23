@@ -205,7 +205,11 @@ class Application_Model_CarsMapper
                                         
         if(!empty($data['auto_id'])){
             $oSelect->where('cars.id = ?', $data['auto_id']); 
-        }     
+        }   
+        
+        if(!empty($data['user_id'])){
+            $oSelect->where('cars.user_id = ?', $data['user_id']); 
+        }   
                                         
         if(!empty($data['category_id'])){
             $oSelect->where('cars.cat_id = ?', $data['category_id']); 
@@ -436,7 +440,13 @@ class Application_Model_CarsMapper
         //return $oResultSet;
     }
    
-   
+    public function toArchive($auto_id){
+        if($this->getDbTable()->update(array('status' => 'archive'), array('id = ?' => $auto_id))){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
 }

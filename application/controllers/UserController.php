@@ -210,20 +210,28 @@ class UserController extends Zend_Controller_Action
         if(!Zend_Auth::getInstance()->hasIdentity()){ 
             $this->_helper->redirector('login', 'user', 'default');
         } else {
-            $auto_id = $this->_getParam('delete_id');
-            if ($this->getRequest()->isPost() && !empty($auto_id)) {
-                $carsModel = new Application_Model_Cars();
-                $result = $carsModel->checkAutoOwner($this->_getParam('delete_id') ,Zend_Auth::getInstance()->getIdentity()->id);
-                
-                if($result == true){
-                    echo "ok"; exit;
-                } else {
-                    $this->_helper->redirector('login', 'user', 'default');
+            $user_id = Zend_Auth::getInstance()->getIdentity()->id;
+            $model = new Application_Model_Cars();
+            $data = $model->findByAttrs(array('user_id' => $user_id));
+            
+            $published = $archived = $draft = array();
+            
+            foreach($data as $auto){
+                if($auto['status'] == 'active'){
+                    $published[] = $auto; 
                 }
-            } else {
-                // just display info
+                if($auto['status'] == 'archive'){
+                    $archived[] = $auto; 
+                }
+                if($auto['status'] == 'waiting' || $auto['status'] == 'pending'){
+                    $draft[] = $auto; 
+                }
             }
-        }
+            
+            $this->view->published = $published;
+            $this->view->archived = $archived;
+            $this->view->draft = $draft;
+       }
         
           
     }
