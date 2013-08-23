@@ -1280,7 +1280,7 @@ jQuery(function() {
                       success: function(res) {
                           if(res == '1'){
                               $('.ticket-item[ticket_auto_id="'+id+'"]').remove();
-                              window.location = "/user/myautos"
+                              window.location = "/user/myautos";
                           }
                       }
                   }); 
