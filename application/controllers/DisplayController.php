@@ -451,6 +451,10 @@ class DisplayController extends Zend_Controller_Action
  
         print_r(json_encode($cities->toArray())); exit;
    }
+   
+   public function testAction(){
+       $this->_helper->layout->disableLayout();
+   }
 
 
 }

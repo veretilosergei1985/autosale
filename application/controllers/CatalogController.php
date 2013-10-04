@@ -6,7 +6,7 @@ class CatalogController extends Zend_Controller_Action
     protected function _getPublicPath() {
         return realpath(APPLICATION_PATH . '/../public');
     }
-    
+
     public function init()
     {
         /* Initialize action controller here */
@@ -17,37 +17,37 @@ class CatalogController extends Zend_Controller_Action
 
         $this->view->text = 'Вася';
 
-        
+
     }
-    
+
     public function addAction()
     {
-       $this->view->headLink()->appendStylesheet('/css/init_add.css');  
+       $this->view->headLink()->appendStylesheet('/css/init_add.css');
        $this->_helper->layout->setLayout('layout1');
        $this->view->headLink()->appendStylesheet('/css/init_add.css');
-       
-              
+
+
        $step = $this->_getParam('step');
        $autoId = $this->_getParam('autoId');
        $oldSystem = $this->_getParam('oldSystem');
-       
+
        if(!$step){
            // redirect
        }
-      
+
        if($step == 'autoinfo'){
 
             $this->view->headScript()->appendFile('/js/init_add.js');
             $form = new Application_Form_AddCar();
-            
+
             if($autoId == ''){
                 if ($this->getRequest()->isPost()) {
                     if ($form->isValid($this->getRequest()->getPost())) {
-                        
-                                if(!Zend_Auth::getInstance()->hasIdentity()){ 
+
+                                if(!Zend_Auth::getInstance()->hasIdentity()){
                                      $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'addphoto'));
                                  }
-                                 
+
                                     /// get exchange rate
                                     $er = new Base_Exchange();
                                     $usd = $er->getExchangeRateByChar3("USD");
@@ -56,12 +56,12 @@ class CatalogController extends Zend_Controller_Action
                                     $usd = $usd->rate/100;
                                     $eur = $eur->rate/100;
                                     $rel = floatval($eur)/floatval($usd);
-                                 
+
                                  $data = $form->getValues();
                                  //echo "<pre>"; print_r($data); exit;
                                  $car = new Application_Model_Cars();
                                  list($region, $city) = explode("-", $data['reg_id']);
-                                 
+
                                  $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
                                  $car->setCatId($data['cat_id']);
                                  $car->setBodyId($data['body_id']);
@@ -81,16 +81,16 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setMetallic($data['metallic']);
                                  $car->setYear($data['year']);
                                  $car->setMileage($data['mileage']);
-                                 $car->setVolume($data['volume']); 
-                                 
-                                    if($data['currency'] == 'UAH'){ 
+                                 $car->setVolume($data['volume']);
+
+                                    if($data['currency'] == 'UAH'){
                                         $car->setPrice(intval($data['price']));
-                                    } else if($data['currency'] == 'EUR'){ 
+                                    } else if($data['currency'] == 'EUR'){
                                         $car->setPrice(intval($data['price']) * $eur);
-                                    } else if($data['currency'] == 'USD'){ 
+                                    } else if($data['currency'] == 'USD'){
                                         $car->setPrice(intval($data['price']) * $usd);
-                                    } 
-                                 
+                                    }
+
                                  //$car->setPrice($data['price']);
                                  $car->setCurrency($data['currency']);
                                  $car->setVersion($data['version']);
@@ -100,18 +100,18 @@ class CatalogController extends Zend_Controller_Action
                                  $car->setStatus('waiting');
                                  $car->setAdded(date('Y-m-d H:i:s'));
                                  $car->setPriority($data['priority']);
-                                 
+
                                  $car->setTitle('Title');
                                  $car->setDescription('Description');
-            
-                                 $ins_id = $car->save();		
+
+                                 $ins_id = $car->save();
                                  $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $ins_id, 'step' => 'addphoto'));
                     }
                     //echo "<pre>"; print_r($form->getErrors()); exit;
                 }
-           
+
             } else if($autoId != ''){
-                       
+
                 // fill form
                 $carsModel = new Application_Model_Cars();
                 $data = $carsModel->find($autoId);
@@ -122,27 +122,27 @@ class CatalogController extends Zend_Controller_Action
                 }
                 $this->view->auto_id = $autoId;
                 $this->view->is_new = false;
-                                                
+
                 $data = $data->toArray();
                 unset($data['color']);
                 $form->populate($data);
-                
+
                 if($data['reg_id'] == $data['city_id']){
                    $form->populate(array('reg_id' => $data['reg_id'] . '-' . $data['city_id']));
-                } else { 
+                } else {
                    $regionModel = new Application_Model_Regions();
                    $cityModel = new Application_Model_Cities();
                    $region = $regionModel->find($data['reg_id']);
                    $city = $cityModel->find($data['city_id']);
-                    
-                   $form->getElement('reg_id')->addMultiOption($data['reg_id'] . '-' . $data['city_id'], $city->name.', '.$region->name.' обл.'); 
+
+                   $form->getElement('reg_id')->addMultiOption($data['reg_id'] . '-' . $data['city_id'], $city->name.', '.$region->name.' обл.');
                    $form->getElement('reg_id')->setValue($data['reg_id'] . '-' . $data['city_id']);
                 }
 
-                
+
                 if ($this->getRequest()->isPost()) {
                     if ($form->isValid($this->getRequest()->getPost())) {
-                        
+
                             /// get exchange rate
                                 $er = new Base_Exchange();
                                 $usd = $er->getExchangeRateByChar3("USD");
@@ -155,9 +155,9 @@ class CatalogController extends Zend_Controller_Action
                             $data = $form->getValues();
                             //echo "<pre>"; print_r($data); exit;
                             $car = new Application_Model_Cars();
-                            
+
                             list($region, $city) = explode("-", $data['reg_id']);
-   
+
                             $car->setId($autoId);
                             $car->setUserId(Zend_Auth::getInstance()->getIdentity()->id);
                             $car->setCatId($data['cat_id']);
@@ -178,16 +178,16 @@ class CatalogController extends Zend_Controller_Action
                             $car->setMetallic($data['metallic']);
                             $car->setYear($data['year']);
                             $car->setMileage($data['mileage']);
-                            $car->setVolume($data['volume']);   
-                            
-                                if($data['currency'] == 'UAH'){ 
+                            $car->setVolume($data['volume']);
+
+                                if($data['currency'] == 'UAH'){
                                     $car->setPrice(intval($data['price']));
-                                } else if($data['currency'] == 'EUR'){ 
+                                } else if($data['currency'] == 'EUR'){
                                     $car->setPrice(intval($data['price']) * $eur);
-                                } else if($data['currency'] == 'USD'){ 
+                                } else if($data['currency'] == 'USD'){
                                     $car->setPrice(intval($data['price']) * $usd);
-                                } 
-                                                        
+                                }
+
                             $car->setCurrency($data['currency']);
                             $car->setVersion($data['version']);
                             $car->setVin($data['vin']);
@@ -200,20 +200,20 @@ class CatalogController extends Zend_Controller_Action
                             $car->setTitle('Title');
                             $car->setDescription('Description');
 
-                            $ins_id = $car->save();		
+                            $ins_id = $car->save();
                             $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $ins_id, 'step' => 'addphoto'));
                     }
- 
+
                 }
-                
+
             }
-            
-            
+
+
             $this->view->form = $form;
        }
-       
+
        if($autoId != '' && $step == 'addphoto'){
-           
+
            // check owner
            $carsModel = new Application_Model_Cars();
            $data = $carsModel->find($autoId);
@@ -222,20 +222,20 @@ class CatalogController extends Zend_Controller_Action
                $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
            }
            $this->view->is_new = false;
-        
+
            $this->view->headScript()->appendFile('/js/jquery.limit.js');
            $this->view->headScript()->appendFile('/js/init_add_upload.js');
-           
+
            $formData = $this->getRequest()->getPost();
-           
+
            $optionsForm = new Application_Form_AddCarOptions();
-           
-           
+
+
            /// populate options form
            $car = new Application_Model_Cars();
            $car_data = $car->find($autoId);
            $optionsForm->populate($car_data->toArray());
-           
+
            $oSafety = new Application_Model_CarSafety();
            $safety_data = $oSafety->findByAutoId($autoId);
            $safety_data= $safety_data->toArray();
@@ -246,7 +246,7 @@ class CatalogController extends Zend_Controller_Action
                 }
                 $optionsForm->populate(array('safety' => $arr));
            }
-            
+
            $oComfort = new Application_Model_CarComfort();
            $comfort_data = $oComfort->findByAutoId($autoId);
            $comfort_data= $comfort_data->toArray();
@@ -257,7 +257,7 @@ class CatalogController extends Zend_Controller_Action
                 }
                 $optionsForm->populate(array('comfort' => $arr));
            }
-            
+
            $oMultimedia = new Application_Model_CarMultimedia();
            $multimedia_data = $oMultimedia->findByAutoId($autoId);
            $multimedia_data= $multimedia_data->toArray();
@@ -268,7 +268,7 @@ class CatalogController extends Zend_Controller_Action
                 }
                 $optionsForm->populate(array('multimedia' => $arr));
            }
-           
+
            $oOther = new Application_Model_CarOther();
            $other_data = $oOther->findByAutoId($autoId);
            $other_data= $other_data->toArray();
@@ -279,7 +279,7 @@ class CatalogController extends Zend_Controller_Action
                 }
                 $optionsForm->populate(array('other' => $arr));
            }
-           
+
            $oState = new Application_Model_CarState();
            $state_data = $oState->findByAutoId($autoId);
            $state_data= $state_data->toArray();
@@ -291,30 +291,30 @@ class CatalogController extends Zend_Controller_Action
                 $optionsForm->populate(array('state' => $arr));
            }
            /// end populate options form
-           
+
            if(!empty($oldSystem) && $oldSystem == 1){
-              
+
                $form = new Application_Form_AddCarPhoto();
-                              
+
                 if ($this->getRequest()->isPost()) {
                     if(isset($formData['options_submit']) && $optionsForm->isValid($this->getRequest()->getPost())){
-                        
+
                         // delete previous data
-                        Base_ModelsHelper::deleteAutoOptions($autoId); 
-                        
+                        Base_ModelsHelper::deleteAutoOptions($autoId);
+
                         $carsModel = new Application_Model_Cars();
                         $carsModel->findById($autoId);
                         $carsModel->setId($autoId);
                         $carsModel->setEnableComment(0);
                         $carsModel->setSendComments(0);
                         $carsModel->save();
-                        
+
                         if(count($formData['safety']) > 0){
                             foreach($formData['safety'] as $k => $v){
                                 $oSafety = new Application_Model_CarSafety();
                                 $oSafety->setCarId($autoId);
                                 $oSafety->setSafetyId($v);
-                                $oSafety->save();                            
+                                $oSafety->save();
                             }
                         }
 
@@ -323,7 +323,7 @@ class CatalogController extends Zend_Controller_Action
                                 $oComfort = new Application_Model_CarComfort();
                                 $oComfort->setCarId($autoId);
                                 $oComfort->setComfortId($v);
-                                $oComfort->save();                            
+                                $oComfort->save();
                             }
                         }
 
@@ -332,7 +332,7 @@ class CatalogController extends Zend_Controller_Action
                                 $oMultimedia = new Application_Model_CarMultimedia();
                                 $oMultimedia->setCarId($autoId);
                                 $oMultimedia->setMultimediaId($v);
-                                $oMultimedia->save();                            
+                                $oMultimedia->save();
                             }
                         }
 
@@ -341,7 +341,7 @@ class CatalogController extends Zend_Controller_Action
                                 $oOther = new Application_Model_CarOther();
                                 $oOther->setCarId($autoId);
                                 $oOther->setOtherId($v);
-                                $oOther->save();                            
+                                $oOther->save();
                             }
                         }
 
@@ -350,7 +350,7 @@ class CatalogController extends Zend_Controller_Action
                                 $oState = new Application_Model_CarState();
                                 $oState->setCarId($autoId);
                                 $oState->setStateId($v);
-                                $oState->save();                            
+                                $oState->save();
                             }
                         }
 
@@ -369,21 +369,21 @@ class CatalogController extends Zend_Controller_Action
                             if(isset($formData['send_comments'])){
                                 $car->setSendComments($formData['send_comments']);
                             }
-                            $car->save();                        
+                            $car->save();
                         }
-                        
+
                         $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $autoId, 'step' => 'publication'));
-                        
+
                     }
-                    
-                    
+
+
                     if (isset($formData['photo_submit']) && $form->isValid($this->getRequest()->getPost())) {
-                        
+
                         if (!file_exists($this->_getPublicPath().'/images/photos/'.$autoId)) {
                             mkdir($this->_getPublicPath().'/images/photos/'.$autoId);
                             // chmod($autoId, '0755');
                         }
-                        
+
                         $uploadHandler = new Zend_File_Transfer_Adapter_Http();
                         $uploadHandler->setDestination($this->_getPublicPath().'/images/photos/'.$autoId );
                         try {
@@ -394,12 +394,12 @@ class CatalogController extends Zend_Controller_Action
 
                             $fullPath = $uploadHandler->getFileName( 'photo' );
                             $fileInfo = pathinfo( $fullPath );
-                            
-                            $hash = Base_Gen::mkSecret(6); 
-                                                        
+
+                            $hash = Base_Gen::mkSecret(6);
+
                             $newName = $hash.'.'. $fileInfo['extension'];
                             $newNameThumb = $hash.'_thumb.'. $fileInfo['extension'];
-                            
+
                             $fullFilePath = $this->_getPublicPath().'/images/photos/'.$autoId.'/'.$newName;
                             $fullFilePathThumb = $this->_getPublicPath().'/images/photos/'.$autoId.'/'.$newNameThumb;
 
@@ -407,16 +407,16 @@ class CatalogController extends Zend_Controller_Action
                                 array('target' => $fullFilePath, 'overwrite' => true)
                             );
                             $filterFileRename -> filter($fullPath);
-                                                                                  
+
                             Base_ImageHelper::resize_image1($fullFilePath);
                             Base_ImageHelper::create_thumbnail($fullFilePath, $fullFilePathThumb, $targ_w = 85, $targ_h = 56);
-                            
+
                             // save in table
                             $photo = new Application_Model_Photos();
 
                             $photo->setAutoId($autoId);
                             $photo->setImage($newName);
-                                                        
+
                             $is_exist = $photo->mainExist($autoId);
 
                             if($is_exist == false){
@@ -424,15 +424,15 @@ class CatalogController extends Zend_Controller_Action
                             } else {
                                $photo->setIsMain(0);
                             }
-                           
+
                             $photo_id = $photo->save();
-                            
+
                             $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'addphoto', 'autoId' => $autoId, 'oldSystem' => '1'));
 
                         } catch ( Zend_File_Transfer_Exception $e ) {
                             echo $e->getMessage();
                         }
-                        
+
                     }
 
                 }
@@ -441,108 +441,108 @@ class CatalogController extends Zend_Controller_Action
                $this->view->form = $form;
                $this->view->oldSystem = true;
                $this->view->list = $photos_list;
-               
+
            } else {
-               
-               
-               $this->view->headLink()->appendStylesheet('/css/fileuploader.css'); 
+
+
+               $this->view->headLink()->appendStylesheet('/css/fileuploader.css');
                $this->view->headScript()->appendFile('/js/fileuploader.js');
                $this->view->headScript()->appendFile('/js/init_uploader.js');
-               
+
                if(isset($formData['options_submit']) && $optionsForm->isValid($this->getRequest()->getPost())){
 
                     // delete previous data
-                    Base_ModelsHelper::deleteAutoOptions($autoId); 
-                    
+                    Base_ModelsHelper::deleteAutoOptions($autoId);
+
                     $carsModel = new Application_Model_Cars();
                     $carsModel->findById($autoId);
                     $carsModel->setId($autoId);
                     $carsModel->setEnableComment(0);
                     $carsModel->setSendComments(0);
                     $carsModel->save();
-                   
+
                     if(count($formData['safety']) > 0){
                         foreach($formData['safety'] as $k => $v){
                             $oSafety = new Application_Model_CarSafety();
                             $oSafety->setCarId($autoId);
                             $oSafety->setSafetyId($v);
-                            $oSafety->save();                            
+                            $oSafety->save();
                         }
                     }
-                    
+
                     if(count($formData['comfort']) > 0){
                         foreach($formData['comfort'] as $k => $v){
                             $oComfort = new Application_Model_CarComfort();
                             $oComfort->setCarId($autoId);
                             $oComfort->setComfortId($v);
-                            $oComfort->save();                            
+                            $oComfort->save();
                         }
                     }
-                    
+
                     if(count($formData['multimedia']) > 0){
                         foreach($formData['multimedia'] as $k => $v){
                             $oMultimedia = new Application_Model_CarMultimedia();
                             $oMultimedia->setCarId($autoId);
                             $oMultimedia->setMultimediaId($v);
-                            $oMultimedia->save();                            
+                            $oMultimedia->save();
                         }
                     }
-                    
+
                     if(count($formData['other']) > 0){
                         foreach($formData['other'] as $k => $v){
                             $oOther = new Application_Model_CarOther();
                             $oOther->setCarId($autoId);
                             $oOther->setOtherId($v);
-                            $oOther->save();                            
+                            $oOther->save();
                         }
                     }
-                    
+
                     if(count($formData['state']) > 0){
                         foreach($formData['state'] as $k => $v){
                             $oState = new Application_Model_CarState();
                             $oState->setCarId($autoId);
                             $oState->setStateId($v);
-                            $oState->save();                            
+                            $oState->save();
                         }
                     }
-                    
+
                     if(isset($formData['description']) || isset($formData['enable_comment']) || isset($formData['send_comments'])){
                         $car = new Application_Model_Cars();
                         $car->findById($autoId);
-                        
+
                         if(isset($formData['description'])){
                             $car->setDescription($formData['description']);
                         }
-                        
+
                         if(isset($formData['enable_comment'])){
                             $car->setEnableComment($formData['enable_comment']);
                         }
-                        
+
                         if(isset($formData['send_comments'])){
                             $car->setSendComments($formData['send_comments']);
                         }
-                        $car->save();                        
+                        $car->save();
                     }
-                    
+
                     $this->_helper->redirector('add', 'catalog', 'default', array('autoId' => $autoId, 'step' => 'publication'));
                 }
-                           
+
                $this->view->oldSystem = false;
-               
+
            }
-                    
+
             $oPhotos = new Application_Model_Photos();
             $photos_list = $oPhotos->findByAutoId($autoId);
             $this->view->list = $photos_list;
             $this->view->optionsForm = $optionsForm;
-                       
+
             $this->view->autoId = $autoId;
             $this->render('addphoto');
-           
+
        }
-       
+
        if($autoId != '' && $step == 'publication'){
-           
+
            // check owner
            $carsModel_tmp = new Application_Model_Cars();
            $data_tmp = $carsModel_tmp->find($autoId);
@@ -551,54 +551,54 @@ class CatalogController extends Zend_Controller_Action
                $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
            }
            $this->view->is_new = false;
-           
+
            $this->view->headScript()->appendFile('/js/init_publication.js');
-           
-                      
+
+
            $carsModel = new Application_Model_Cars();
-                    
+
            $data = $carsModel->find($autoId);
            //echo "<pre>"; print_r($data); exit;
            $this->view->data = $data;
-           
+
            $photosModel = new Application_Model_Photos();
            $photos = $photosModel->findByAutoId($autoId);
            $main_photo = array();
-           
+
            $pricesModel = new Application_Model_Prices();
            $prices = array();
            foreach($pricesModel->fetchAll() as $item){
                $prices[$item->name] = $item->value;
            }
            //echo "<pre>"; print_r($prices); exit();
-           
+
            foreach($photos as $photo){
                if($photo['is_main'] == 1){
                    $main_photo = $photo['image'];
                    break;
                }
            }
-           
+
            $form = new Application_Form_AddCarPublication($prices['simple']);
-           
+
            if ($this->getRequest()->isPost()) {
                 if($form->isValid($this->getRequest()->getPost())){
                     // save data from payment form
                     //
-                                       
+
                     $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'published', 'autoId' => $autoId));
                 }
-           
-           }     
+
+           }
 
            $this->view->main_photo = $main_photo;
            $this->view->auto_id = $autoId;
            $this->view->form = $form;
            $this->view->prices = $prices;
-           
+
            $this->render('publication');
        }
-       
+
        if($autoId != '' && $step == 'published'){
             // check owner
            $carsModel_tmp = new Application_Model_Cars();
@@ -608,62 +608,80 @@ class CatalogController extends Zend_Controller_Action
                $this->_helper->redirector('add', 'catalog', 'default', array('step' => 'autoinfo'));
            }
            $this->view->is_new = false;
-           
+
            $carsModel = new Application_Model_Cars();
-                    
+
            $data = $carsModel->find($autoId);
            $this->view->data = $data;
-           
+
            $photosModel = new Application_Model_Photos();
            $photos = $photosModel->findByAutoId($autoId);
            $main_photo = '';
-           
+
            $pricesModel = new Application_Model_Prices();
            $prices = array();
            foreach($pricesModel->fetchAll() as $item){
                $prices[$item->name] = $item->value;
            }
 
-           
+
            foreach($photos as $photo){
                if($photo['is_main'] == 1){
                    $main_photo = $photo['image'];
                    break;
                }
            }
-           
+
            $this->view->main_photo = $main_photo;
            $this->view->auto_id = $autoId;
            $this->view->prices = $prices;
-           
+
            $this->render('published');
        }
-       
+
 
     }
-    
+
     public function viewmyAction(){
-        
-        
+
+
     }
-    
+
     public function toarchiveAction(){
         $this->_helper->layout->disableLayout();
-        
+
         if(Zend_Auth::getInstance()->hasIdentity()){
             $requestData = $this->getRequest()->getParams();
             $auto_id = $requestData['delete_id'];
-            
+
             $model = new Application_Model_Cars();
             $result = $model->toArchive($auto_id);
-            
+
             if($result){
                 echo '1'; exit;
             } else {
                 echo '0'; exit;
             }
         }
-        
+
+    }
+
+    public function deleteautoAction(){
+        $this->_helper->layout->disableLayout();
+        $auto_id = $this->_getParam('auto_id');
+
+        if(!empty($auto_id)){
+            $oAuto = new Application_Model_Cars();
+            $result = $oAuto->delete($auto_id);
+                if($result){
+                    Base_FileHelper::delete_directory($this->_getPublicPath() . '/images/photos/' . $auto_id);
+                    echo '1'; exit;
+                } else {
+                    echo '0'; exit;
+                }
+        } else {
+            echo '1'; exit;
+        }
     }
 
 

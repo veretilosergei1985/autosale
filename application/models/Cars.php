@@ -1,7 +1,7 @@
 <?php
 
 class Application_Model_Cars
-{    
+{
     protected $_id;
     protected $_user_id;
     protected $_cat_id;
@@ -14,11 +14,11 @@ class Application_Model_Cars
     protected $_drive_id;
     protected $_doors;
     protected $_fuel_id;
-    
+
      protected $_fuel_city;
      protected $_fuel_route;
      protected $_fuel_combine;
-    
+
     protected $_color_id;
     protected $_metallic;
     protected $_year;
@@ -32,17 +32,17 @@ class Application_Model_Cars
     protected $_auction;
     protected $_status;
     protected $_added;
-    
+
     protected $_title;
     protected $_description;
     protected $_enable_comment;
     protected $_send_comments;
 
     protected $_priority;
-        
+
     protected $_mapper;
-    
-    
+
+
     public function __construct(array $options = null)
     {
         if (is_array($options)) {
@@ -76,7 +76,7 @@ class Application_Model_Cars
         }
         return $this;
     }
-    
+
     public function setId($id)
     {
         $this->_id = (int) $id;
@@ -86,7 +86,7 @@ class Application_Model_Cars
     {
         return $this->_id;
     }
-    
+
     public function setUserId($id)
     {
         $this->_user_id = $id;
@@ -96,7 +96,7 @@ class Application_Model_Cars
     {
         return $this->_user_id;
     }
-    
+
     public function setCatId($id)
     {
         $this->_cat_id = (int) $id;
@@ -106,7 +106,7 @@ class Application_Model_Cars
     {
         return $this->_cat_id;
     }
-    
+
     public function setBodyId($id)
     {
         $this->_body_id = (int) $id;
@@ -116,7 +116,7 @@ class Application_Model_Cars
     {
         return $this->_body_id;
     }
-    
+
     public function setRegId($id)
     {
         $this->_reg_id = (int) $id;
@@ -126,7 +126,7 @@ class Application_Model_Cars
     {
         return $this->_reg_id;
     }
-    
+
     public function setModelId($id)
     {
         $this->_model_id = (int) $id;
@@ -136,7 +136,7 @@ class Application_Model_Cars
     {
         return $this->_model_id;
     }
-    
+
     public function setMarkId($id)
     {
         $this->_mark_id = (int) $id;
@@ -146,7 +146,7 @@ class Application_Model_Cars
     {
         return $this->_mark_id;
     }
-    
+
     public function setCityId($id)
     {
         $this->_city_id = (int) $id;
@@ -156,7 +156,7 @@ class Application_Model_Cars
     {
         return $this->_city_id;
     }
-    
+
     public function setTransmissionId($id)
     {
         $this->_transmission_id = (int) $id;
@@ -166,7 +166,7 @@ class Application_Model_Cars
     {
         return $this->_transmission_id;
     }
-    
+
     public function setDriveId($id)
     {
         $this->_drive_id = (int) $id;
@@ -176,7 +176,7 @@ class Application_Model_Cars
     {
         return $this->_drive_id;
     }
-    
+
     public function setDoors($num)
     {
         $this->_doors = (int) $num;
@@ -186,7 +186,7 @@ class Application_Model_Cars
     {
         return $this->_doors;
     }
-    
+
     public function setFuelId($id)
     {
         $this->_fuel_id = (int) $id;
@@ -196,7 +196,7 @@ class Application_Model_Cars
     {
         return $this->_fuel_id;
     }
-    
+
     public function setFuelCity($val)
     {
         $this->_fuel_city = (int) $val;
@@ -206,7 +206,7 @@ class Application_Model_Cars
     {
         return $this->_fuel_city;
     }
-    
+
     public function setFuelRoute($val)
     {
         $this->_fuel_route = (int) $val;
@@ -216,7 +216,7 @@ class Application_Model_Cars
     {
         return $this->_fuel_route;
     }
-    
+
     public function setFuelCombine($val)
     {
         $this->_fuel_combine = (int) $val;
@@ -226,7 +226,7 @@ class Application_Model_Cars
     {
         return $this->_fuel_combine;
     }
-    
+
     public function setColorId($id)
     {
         $this->_color_id = (int) $id;
@@ -236,7 +236,7 @@ class Application_Model_Cars
     {
         return $this->_color_id;
     }
-    
+
     public function setMetallic($val)
     {
         $this->_metallic = (int)$val;
@@ -246,7 +246,7 @@ class Application_Model_Cars
     {
         return $this->_metallic;
     }
-    
+
     public function setYear($val)
     {
         $this->_year = $val;
@@ -256,7 +256,7 @@ class Application_Model_Cars
     {
         return $this->_year;
     }
-    
+
     public function setMileage($val)
     {
         $this->_mileage = (int)$val;
@@ -266,7 +266,7 @@ class Application_Model_Cars
     {
         return $this->_mileage;
     }
-    
+
     public function setVolume($val)
     {
         $this->_volume = $val;
@@ -276,7 +276,7 @@ class Application_Model_Cars
     {
         return $this->_volume;
     }
-    
+
     public function setPrice($val)
     {
         $this->_price = $val;
@@ -286,7 +286,7 @@ class Application_Model_Cars
     {
         return $this->_price;
     }
-    
+
     public function setCurrency($val)
     {
         $this->_currency = $val;
@@ -296,7 +296,7 @@ class Application_Model_Cars
     {
         return $this->_currency;
     }
-    
+
     public function setVersion($val)
     {
         $this->_version = $val;
@@ -306,7 +306,7 @@ class Application_Model_Cars
     {
         return $this->_version;
     }
-    
+
     public function setVin($val)
     {
         $this->_vin = $val;
@@ -316,7 +316,7 @@ class Application_Model_Cars
     {
         return $this->_vin;
     }
-    
+
     public function setAuction($val)
     {
         $this->_auction = (int)$val;
@@ -326,7 +326,7 @@ class Application_Model_Cars
     {
         return $this->_auction;
     }
-    
+
     public function setExchange($val)
     {
         $this->_exchange = (int)$val;
@@ -336,7 +336,7 @@ class Application_Model_Cars
     {
         return $this->_exchange;
     }
-    
+
     public function setStatus($val)
     {
         $this->_status = $val;
@@ -346,7 +346,7 @@ class Application_Model_Cars
     {
         return $this->_status;
     }
-    
+
     public function setAdded($ts)
     {
         $this->_added = $ts;
@@ -356,7 +356,7 @@ class Application_Model_Cars
     {
         return $this->_added;
     }
-    
+
     public function setPriority($val)
     {
         $this->_priority = $val;
@@ -366,8 +366,8 @@ class Application_Model_Cars
     {
         return $this->_priority;
     }
-  ////////////////////////////////////////////////////  
-    
+  ////////////////////////////////////////////////////
+
     public function setTitle($title)
     {
         $this->_title = (string) $title;
@@ -386,7 +386,7 @@ class Application_Model_Cars
     {
         return $this->_description;
     }
-    
+
     public function setEnableComment($val)
     {
         $this->_enable_comment = $val;
@@ -396,7 +396,7 @@ class Application_Model_Cars
     {
         return $this->_enable_comment;
     }
-    
+
     public function setSendComments($val)
     {
         $this->_send_comments = $val;
@@ -406,7 +406,7 @@ class Application_Model_Cars
     {
         return $this->_send_comments;
     }
-    
+
     public function setMapper($mapper)
     {
         $this->_mapper = $mapper;
@@ -426,49 +426,52 @@ class Application_Model_Cars
     public function getAttributesById($id, $table_name) {
         return $this->getMapper()->getAttributesById($id, $table_name);
     }
-    
+
     public function find($id)
     {
         return $this->getMapper()->find($id);
     }
-    
+
     public function findById($id)
     {
         $this->getMapper()->findById($id, $this);
         return $this;
     }
-    
+
     public function fetchAll()
     {
         return $this->getMapper()->fetchAll();
     }
-    
+
     public function findAll()
     {
         return $this->getMapper()->findAll();
     }
-    
+
     public function findByAttrs($data)
     {
         return $this->getMapper()->findByAttrs($data);
     }
-    
+
     public function countByUser($user_id){
         return $this->getMapper()->countByUser($user_id);
     }
-    
+
     public function getIdsByUser($user_id){
         return $this->getMapper()->getIdsByUser($user_id);
     }
-    
+
     public function checkAutoOwner($auto_id ,$user_id){
         return $this->getMapper()->checkAutoOwner($auto_id ,$user_id);
     }
-    
+
     public function toArchive($auto_id){
         return $this->getMapper()->toArchive($auto_id);
     }
-    
+    public function delete($auto_id){
+
+        return $this->getMapper()->delete($auto_id);
+    }
 }
 
 ?>

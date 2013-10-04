@@ -2427,8 +2427,6 @@ thead.styled th, thead.styled td {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: transparent #D85442 transparent transparent;
-    border-left: 0 dashed transparent;
-    border-right: 10px solid #D85442;
     border-style: solid solid dashed dashed;
     border-width: 10px 10px 10px 0;
     font-size: 0;
@@ -2448,8 +2446,6 @@ thead.styled th, thead.styled td {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: transparent transparent transparent #D85442;
-    border-left: 10px solid #D85442;
-    border-right: 0 dashed transparent;
     border-style: solid dashed dashed solid;
     border-width: 10px 0 10px 10px;
     font-size: 0;
@@ -2685,8 +2681,6 @@ thead.styled th, thead.styled td {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: transparent #F2F2F2 transparent transparent;
-    border-left: 0 dashed transparent;
-    border-right: 15px solid #F2F2F2;
     border-style: solid solid dashed dashed;
     border-width: 16px 15px 15px 0;
     content: "";
@@ -2710,14 +2704,14 @@ html, body {
     height: 100%;
 }
 body {
-    background: none repeat scroll 0 0 #FFFFFF !important;
-    color: #414042 !important;
-    font-family: Arial,Helvetica,sans-serif !important;
-    font-size: 13px !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    line-height: 18px !important;
-    text-rendering: geometricprecision !important;
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #414042;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 18px;
+    text-rendering: geometricprecision;
 }
 body.pattern {
     background: url("http://img6.auto.ria.ua/images/pattern/bgnoise.png") repeat scroll 0 0 transparent;
@@ -2788,7 +2782,6 @@ header {
     -moz-border-top-colors: none;
     border-color: -moz-use-text-color #DDDDDD #DDDDDD;
     border-radius: 0 0 7px 7px;
-    border-right: 1px solid #DDDDDD;
     border-style: none solid solid;
     border-width: 0 1px 1px;
     display: block;
@@ -3224,7 +3217,6 @@ nav.head-menu .select[class^="logo-"] {
     background: none repeat scroll 0 0 #FFFFFF;
     border-color: -moz-use-text-color #D85442 #D85442;
     border-radius: 0 0 9px 9px;
-    border-right: 2px solid #D85442;
     border-style: none solid solid;
     border-width: 0 2px 2px;
     box-shadow: 0 18px 18px rgba(0, 0, 0, 0.5);
@@ -4615,7 +4607,6 @@ div.right-catalog-market {
 }
 .action-bar .answer:before {
     border-color: transparent #DBDBDB transparent -moz-use-text-color;
-    border-right: 5px solid #DBDBDB;
     border-style: dashed solid solid none;
     border-width: 5px 5px 5px 0;
     left: -5px;
@@ -4623,7 +4614,6 @@ div.right-catalog-market {
 }
 .action-bar .answer:after {
     border-color: transparent #FEFFE6 transparent -moz-use-text-color;
-    border-right: 5px solid #FEFFE6;
     border-style: dashed solid solid none;
     border-width: 5px 5px 5px 0;
     left: -4px;
@@ -6497,8 +6487,6 @@ table.discounts-fishki .bottom-help {
 .window-exchange .item-exchange {
     background: none repeat scroll 0 0 #F6F6F6;
     border-color: #FEFEFE -moz-use-text-color #B9C7CC;
-    border-left: 0 none;
-    border-right: 0 none;
     border-style: solid none;
     border-width: 1px 0;
     cursor: pointer;
@@ -11081,8 +11069,6 @@ li.item-news {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: transparent transparent transparent #60B8DA;
-    border-left: 10px solid #60B8DA;
-    border-right: 0 dashed transparent;
     border-style: solid dashed dashed solid;
     border-width: 10px 0 10px 10px;
     content: "";
@@ -13875,8 +13861,6 @@ img.pic-sms {
     background-image: -moz-linear-gradient(center top , #6CA9D6 10%, #4775C0 70%);
     background-repeat: repeat-x;
     border-color: #6CA9D6 #588DCA #33548B;
-    border-left: 1px solid #588DCA;
-    border-right: 1px solid #588DCA;
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 0 0 #4775C0;
@@ -13894,8 +13878,6 @@ img.pic-sms {
     background-image: -moz-linear-gradient(center top , #6CA9D6 10%, #4775C0 70%);
     background-repeat: repeat-x;
     border-color: #6CA9D6 #588DCA #33548B;
-    border-left: 1px solid #588DCA;
-    border-right: 1px solid #588DCA;
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 0 0 #4775C0;
@@ -15649,7 +15631,6 @@ img.pic-sms {
     -moz-border-top-colors: none;
     border-color: -moz-use-text-color #DDDDDD #DDDDDD;
     border-radius: 0 0 7px 7px;
-    border-right: 1px solid #DDDDDD;
     border-style: none solid solid;
     border-width: 0 1px 1px;
     padding: 5px 20px 20px;
@@ -16239,100 +16220,3 @@ nav.menu-footer .item:hover {
     color: #8699A3;
 }
 
-.pop-up-element .tl-shadow, .pop-up-element .tr-shadow, .pop-up-element .bl-shadow, .pop-up-element .br-shadow {
-    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element.png") no-repeat scroll 0 0 transparent;
-    height: 25px;
-    position: absolute;
-    width: 25px;
-}
-.pop-up-element .tl-shadow, .pop-up-element .tr-shadow {
-    top: -1px;
-}
-.pop-up-element .bl-shadow, .pop-up-element .br-shadow {
-    bottom: -1px;
-}
-.pop-up-element .tl-shadow, .pop-up-element .bl-shadow {
-    left: 0;
-}
-.pop-up-element .tr-shadow, .pop-up-element .br-shadow {
-    right: 0;
-}
-.pop-up-element .tl-shadow {
-    background-position: 0 -25px;
-}
-.pop-up-element .tr-shadow {
-    background-position: 100% -25px;
-}
-.pop-up-element .bl-shadow {
-    background-position: 0 -50px;
-}
-.pop-up-element .br-shadow {
-    background-position: 100% -50px;
-}
-.pop-up-element .top-shadow, .pop-up-element .bottom-shadow {
-    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element.png") repeat-x scroll 0 0 transparent;
-    position: relative;
-    width: 100%;
-    z-index: 200;
-}
-.pop-up-element .top-shadow {
-    background-position: 0 0;
-}
-.pop-up-element .bottom-shadow {
-    background-position: 0 100%;
-}
-.pop-up-element .left-shadow, .pop-up-element .right-shadow {
-    background: url("http://img.auto.ria.ua/images/snippets/pop-up-shadow/pop-up-element-y.png") repeat-y scroll 0 0 transparent;
-}
-.pop-up-element .left-shadow {
-    background-position: 0 0;
-}
-.pop-up-element .right-shadow {
-    background-position: 100% 0;
-}
-.pop-up-element .top-shadow {
-    padding-top: 10px;
-    top: -25px;
-}
-.pop-up-element .bottom-shadow {
-    bottom: -50px;
-    margin-top: -52px;
-    padding-bottom: 10px;
-}
-.pop-up-element .left-shadow {
-    margin: 24px 0;
-    padding-left: 25px;
-}
-.pop-up-element .right-shadow {
-    padding-right: 25px;
-}
-.pop-up-element .container-item {
-    background: none repeat scroll 0 0 #FFFFFF;
-    height: auto;
-    margin: 0 -5px 2px;
-    padding: 10px 0;
-    position: relative;
-    top: 2px;
-    z-index: 500;
-}
-.pop-up-element a.close-alert, .pop-up-window a.close-alert {
-    background: url("http://img.auto.ria.ua/images/icons/icons-sprite.png") no-repeat scroll 0 -40px transparent;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 0;
-    height: 16px;
-    line-height: 0;
-    margin-top: -6px;
-    position: absolute;
-    right: 20px;
-    text-decoration: none;
-    width: 16px;
-    z-index: 1000;
-}
-.pop-up-window a.close-alert {
-    margin-top: -3px;
-    right: 14px;
-}
-.pop-up-element a.close-alert:hover, .pop-up-window a.close-alert:hover {
-    background-position: -20px -40px;
-}

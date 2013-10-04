@@ -23,17 +23,17 @@ class Application_Model_CarsMapper
         return $this->_dbTable;
     }
     public function save(Application_Model_Cars $car)
-    { 
+    {
         $data = array(
             'id' => $car->getId(),
             'user_id' =>$car->getUserId(),
-            'cat_id' => $car->getCatId(), 
-            'body_id' => $car->getBodyId(), 
+            'cat_id' => $car->getCatId(),
+            'body_id' => $car->getBodyId(),
             'reg_id' => $car->getRegId(),
             'city_id' => $car->getCityId(),
             'model_id' => $car->getModelId(),
             'mark_id' => $car->getMarkId(),
-            'transmission_id' => $car->getTransmissionId(), 
+            'transmission_id' => $car->getTransmissionId(),
             'drive_id' => $car->getDriveId(),
             'doors' => $car->getDoors(),
             'fuel_id' => $car->getFuelId(),
@@ -44,20 +44,20 @@ class Application_Model_CarsMapper
             'metallic' => $car->getMetallic(),
             'year' => $car->getYear(),
             'mileage' => $car->getMileage(),
-            'volume' => $car->getVolume(),                           
+            'volume' => $car->getVolume(),
             'price'  => $car->getPrice(),
             'currency' => $car->getCurrency(),
-            'version' => $car->getVersion(),         
-            'vin' => $car->getVin(),     
-            'exchange' => $car->getExchange(),     
-            'auction' => $car->getAuction(),     
+            'version' => $car->getVersion(),
+            'vin' => $car->getVin(),
+            'exchange' => $car->getExchange(),
+            'auction' => $car->getAuction(),
             'status' => $car->getStatus(),
             'send_comments' => $car->getSendComments(),
             'enable_comment' => $car->getEnableComment(),
             'description' => $car->getDescription(),
             'added' => $car->getAdded(),
             'priority' => $car->getPriority(),
-            
+
         );
 //echo "<pre>"; print_r($data); exit;
         if (null === ($id = $car->getId())) {
@@ -83,18 +83,18 @@ class Application_Model_CarsMapper
                                       ->joinLeft('color','color.id = cars.color_id', array('color'=>'name'))
                                       ->joinLeft('drive','drive.id = cars.drive_id', array('drive'=>'type'))
                                       //->joinLeft('users','users.id = cars.user_id', array('username', 'first_name', 'last_name', 'user_added' => 'added', 'last_login'))
-                                      ->where('cars.id = ?', $id); 
+                                      ->where('cars.id = ?', $id);
 
-        
+
         //echo $oSelect; exit;
-        $oResultSet = $oDbTable->fetchRow($oSelect);        
+        $oResultSet = $oDbTable->fetchRow($oSelect);
         // echo "<pre>"; print_r($oResultSet);  exit;
-               
+
         return $oResultSet;
-     
-                
+
+
     }
-    
+
     public function findById($id, Application_Model_Cars $car)
     {
         $result = $this->getDbTable()->find($id);
@@ -102,7 +102,7 @@ class Application_Model_CarsMapper
             return;
         }
         $row = $result->current();
-        
+
         $car->setId($row->id);
         $car->setUserId($row->user_id);
         $car->setCatId($row->cat_id);
@@ -122,7 +122,7 @@ class Application_Model_CarsMapper
         $car->setMetallic($row->metallic);
         $car->setYear($row->year);
         $car->setMileage($row->mileage);
-        $car->setVolume($row->volume);                              
+        $car->setVolume($row->volume);
         $car->setPrice($row->price);
         $car->setCurrency($row->currency);
         $car->setVersion($row->version);
@@ -138,7 +138,7 @@ class Application_Model_CarsMapper
         $car->setEnableComment($row->enable_comment);
         $car->setSendComments($row->send_comments);
     }
-    
+
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();
@@ -155,8 +155,8 @@ class Application_Model_CarsMapper
         }
         return $entries;
     }
-    
-    
+
+
     public function findAll()
     {
        $oDbTable = $this->getDbTable();
@@ -172,18 +172,18 @@ class Application_Model_CarsMapper
                                       ->joinLeft('photos','photos.auto_id = cars.id AND photos.is_main = 1', array('image'))
                                       ;
 
-        
+
         //echo $oSelect; exit;
-        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        $oResultSet = $oDbTable->fetchAll($oSelect);
         // echo "<pre>"; print_r($oResultSet);  exit;
-               
+
         return $oResultSet;
-        
+
     }
-    
+
     public function findByAttrs($data)
     {
-                     
+
        $oDbTable = $this->getDbTable();
        $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
                                       //->columns(array('img_cnt'=>'count(photos.id)'), false)
@@ -202,43 +202,43 @@ class Application_Model_CarsMapper
                                             $oSelect->joinLeft('photos','photos.auto_id = cars.id', array('image'));
                                             $oSelect->group('cars.id');
                                         }
-                                        
+
         if(!empty($data['auto_id'])){
-            $oSelect->where('cars.id = ?', $data['auto_id']); 
-        }   
-        
+            $oSelect->where('cars.id = ?', $data['auto_id']);
+        }
+
         if(!empty($data['user_id'])){
-            $oSelect->where('cars.user_id = ?', $data['user_id']); 
-        }   
-                                        
+            $oSelect->where('cars.user_id = ?', $data['user_id']);
+        }
+
         if(!empty($data['category_id'])){
-            $oSelect->where('cars.cat_id = ?', $data['category_id']); 
-        }                  
-                
+            $oSelect->where('cars.cat_id = ?', $data['category_id']);
+        }
+
         if(!empty($data['region'])){
-            $oSelect->where('cars.reg_id = ?', $data['region']); 
+            $oSelect->where('cars.reg_id = ?', $data['region']);
         }
-        
+
         if(!empty($data['mark'])){
-            $oSelect->where('cars.mark_id = ?', $data['mark']); 
+            $oSelect->where('cars.mark_id = ?', $data['mark']);
         }
-        
+
         if(!empty($data['model'])){
-            $oSelect->where('cars.model_id = ?', $data['model']); 
+            $oSelect->where('cars.model_id = ?', $data['model']);
         }
-        
+
         if(!empty($data['bodystyle'])){
-            $oSelect->where('model.subcat_id = ?', $data['bodystyle']); 
+            $oSelect->where('model.subcat_id = ?', $data['bodystyle']);
         }
-        
+
         if(!empty($data['with_photo'])){
             $oSelect->group('photos.auto_id');
         }
-        
+
         if(!empty($data['with_video'])){
             $oSelect->where("photos.video_url <> 'NULL'");
         }
-        
+
         if(!empty($data['year_start']) && !empty($data['year_end']) ){
             $oSelect->where('year >= ?',  $data['year_start']);
             $oSelect->where("year <= ?",  $data['year_end']);
@@ -246,12 +246,12 @@ class Application_Model_CarsMapper
             if(!empty($data['year_start'])){
                 $oSelect->where('year >= ?',  $data['year_start']);
             }
-            
+
             if(!empty($data['year_end'])){
                 $oSelect->where("year <= ?",  $data['year_end']);
             }
         }
-        
+
         if(!empty($data['price_start']) && !empty($data['price_end']) ){
             $oSelect->where('price >= ?',  $data['price_start']);
             $oSelect->where("price <= ?",  $data['price_end']);
@@ -259,12 +259,12 @@ class Application_Model_CarsMapper
             if(!empty($data['price_start'])){
                 $oSelect->where('price >= ?',  $data['price_start']);
             }
-            
+
             if(!empty($data['price_end'])){
                 $oSelect->where("price <= ?",  $data['price_end']);
             }
         }
-        
+
         if(!empty($data['mileage_start']) && !empty($data['mileage_end']) ){
             $oSelect->where('mileage >= ?',  $data['mileage_start']);
             $oSelect->where("mileage <= ?",  $data['mileage_end']);
@@ -272,16 +272,16 @@ class Application_Model_CarsMapper
             if(!empty($data['mileage_start'])){
                 $oSelect->where('mileage >= ?',  $data['mileage_start']);
             }
-            
+
             if(!empty($data['mileage_end'])){
                 $oSelect->where("mileage <= ?",  $data['mileage_end']);
             }
         }
-        
+
         if(!empty($data['transmission_id'])){
-            $oSelect->where('cars.transmission_id = ?', $data['transmission_id']); 
+            $oSelect->where('cars.transmission_id = ?', $data['transmission_id']);
         }
-        
+
         if(!empty($data['volume_start']) && !empty($data['volume_end']) ){
             $oSelect->where('volume >= ?',  $data['volume_start']);
             $oSelect->where("volume <= ?",  $data['volume_end']);
@@ -289,42 +289,42 @@ class Application_Model_CarsMapper
             if(!empty($data['volume_start'])){
                 $oSelect->where('volume >= ?',  $data['volume_start']);
             }
-            
+
             if(!empty($data['volume_end'])){
                 $oSelect->where("volume <= ?",  $data['volume_end']);
             }
         }
-        
+
         if(!empty($data['fuel_id'])){
-            $oSelect->where('cars.fuel_id = ?', $data['fuel_id']); 
+            $oSelect->where('cars.fuel_id = ?', $data['fuel_id']);
         }
-        
+
         if(!empty($data['drive_id'])){
-            $oSelect->where('cars.drive_id = ?', $data['drive_id']); 
+            $oSelect->where('cars.drive_id = ?', $data['drive_id']);
         }
-        
+
         if(!empty($data['color_id'])){
-            $oSelect->where('cars.color_id = ?', $data['color_id']); 
+            $oSelect->where('cars.color_id = ?', $data['color_id']);
         }
-        
+
         /*
         if(isset($data['m_state'])){
             foreach($data['m_state'] as $k => $v){
-              if($k == 0){  
-                if(empty($data['region'])){ 
-                    $oSelect->where('cars.reg_id = ?', $v); 
+              if($k == 0){
+                if(empty($data['region'])){
+                    $oSelect->where('cars.reg_id = ?', $v);
                 }else{
-                    $oSelect->orWhere('cars.reg_id = ?', $v); 
+                    $oSelect->orWhere('cars.reg_id = ?', $v);
                 }
               } else {
-                  $oSelect->orWhere('cars.reg_id = ?', $v); 
+                  $oSelect->orWhere('cars.reg_id = ?', $v);
               }
-            }            
+            }
         }
-        
-         * 
+
+         *
          */
-        
+
         if(isset($data['m_state'])){
             $check = false;
             //if(isset($data['m_state']) && array_search(''))
@@ -345,13 +345,13 @@ class Application_Model_CarsMapper
                             }
                         } else {
                             if($i == $cnt-1){
-                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."')"); 
+                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."')");
                             } else {
-                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."'"); 
+                                $oSelect->orWhere("cars.reg_id = '".$data['m_state'][$i]."'");
                             }
                         }
                         //$oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
-                    } 
+                    }
                 } else {
                      if($check == false){
                          $oSelect->where("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
@@ -360,86 +360,86 @@ class Application_Model_CarsMapper
                          if($i == $cnt-1){
                             $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
                          } else {
-                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')"); 
+                            $oSelect->orWhere("(cars.reg_id = '".$data['m_state'][$i]."' AND cars.city_id = '".$data['m_city'][$i]."')");
                          }
 
                      }
                 }
             }
         }
-        
+
         if(!empty($data['search_sort'])){
-            //$oSelect->where('cars.id = ?', $data['auto_id']); 
+            //$oSelect->where('cars.id = ?', $data['auto_id']);
             if($data['search_sort'] == 3){
                 $oSelect->order(array('price DESC'));
             } else if($data['search_sort'] == 2){
                  $oSelect->order(array('price ASC'));
-            } 
-        }    
-        
+            }
+        }
+
         //echo $oSelect; exit;
-        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        $oResultSet = $oDbTable->fetchAll($oSelect);
         // echo "<pre>"; print_r($oResultSet);  exit;
-               
+
         return $oResultSet;
     }
-    
+
     public function getAttributesById($id, $table_name){
-        
-        // SELECT * FROM car_comfort LEFT JOIN comfort ON comfort.id = car_comfort.comfort_id WHERE car_comfort.car_id = 1 
-               
+
+        // SELECT * FROM car_comfort LEFT JOIN comfort ON comfort.id = car_comfort.comfort_id WHERE car_comfort.car_id = 1
+
         $db = Zend_Db_Table::getDefaultAdapter();
         $oSelect = $db->select()->from('car_' . $table_name)
                                 ->joinLeft($table_name, $table_name . '.id = car_' . $table_name . '.' . $table_name . '_id', array('attr'))
-                                ->where('car_' . $table_name . '.car_id = ?', $id); 
+                                ->where('car_' . $table_name . '.car_id = ?', $id);
 
-        
+
         //echo $oSelect; exit;
-        $oResultSet = $db->fetchAll($oSelect);        
+        $oResultSet = $db->fetchAll($oSelect);
         // echo "<pre>"; print_r($oResultSet);  exit;
-               
+
         return $oResultSet;
-          
+
     }
-    
+
     public function countByUser($user_id){
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select()
                             ->from('cars', array('COUNT(cars.id) as cnt'))
                             ->where("cars.user_id = ? AND cars.status = 'active'", $user_id); ;
-        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        $oResultSet = $oDbTable->fetchAll($oSelect);
         //echo $oSelect; exit;
         return $oResultSet;
     }
-    
+
     public function getIdsByUser($user_id){
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select()
                             ->from('cars', array('cars.id'))
                             ->where("cars.user_id = ? AND cars.status = 'active'", $user_id); ;
-        $oResultSet = $oDbTable->fetchAll($oSelect);        
+        $oResultSet = $oDbTable->fetchAll($oSelect);
         //echo $oSelect; exit;
         return $oResultSet;
     }
-    
+
     public function checkAutoOwner($auto_id ,$user_id){
         $oDbTable = $this->getDbTable();
         $oSelect = $oDbTable->select(Zend_Db_Table::SELECT_WITH_FROM_PART)->setIntegrityCheck(false)
                                       ->where('cars.user_id = ?', $user_id)
-                                      ->where('cars.id = ?', $auto_id); 
-                
+                                      ->where('cars.id = ?', $auto_id);
+
         //echo $oSelect; exit;
-        $oResultSet = $oDbTable->fetchRow($oSelect);        
+        $oResultSet = $oDbTable->fetchRow($oSelect);
         //echo "<pre>"; print_r($oResultSet->toArray());  exit;
         if($oResultSet != null){
             return true;
         } else {
             return false;
         }
-               
+
         //return $oResultSet;
     }
-   
+
     public function toArchive($auto_id){
         if($this->getDbTable()->update(array('status' => 'archive'), array('id = ?' => $auto_id))){
             return true;
@@ -447,8 +447,18 @@ class Application_Model_CarsMapper
             return false;
         }
     }
-    
-    
+
+    public function delete($auto_id){
+        //$auto = $this->getDbTable()->find($auto_id);
+        $oWhere = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $auto_id);
+        if($this->getDbTable()->delete($oWhere)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
 ?>

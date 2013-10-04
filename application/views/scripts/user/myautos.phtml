@@ -1,1724 +1,496 @@
-                        
-<div class="left-panel">
-
-    <div >
-        <div id="myMenu" class="box-panel">
-
-
-
-
-            <dl class="vertical-menu user-menu">
-                <!-- SSI: Блок Мой Автосалон -->
-
-
-
-                <dt class="add-cars">
-                <a href="http://auto.ria.ua/add_auto.html" title="Добавить объявление" >
-                    Добавить объявление
-                </a>
-                </dt>
-                <!-- SSI: Блок Мои объявления -->
-                <dt class="my-document">
-                    Мои объявления
-                </dt>
-
-                <dd>
-                    <ol class="unordered-list">
-                        <!--  auto-->
-                        <li>
-                            <a class="bold" href="/user/menu/allCars/" >Автомобили</a>
-                            <ul>
-                                <?php if(count($this->published) > 0){ ?>
-                                    <li>
-                                        <a href="/user/published">Опубликованые</a>&nbsp;<em><?php echo count($this->published); ?></em>
-                                    </li>
-                                <?php } ?>
-                                <?php if(count($this->draft) > 0){ ?>
-                                    <li>
-                                        <a href="/user/draft" >Черновики</a>&nbsp;<em><?php echo count($this->draft); ?></em>
-                                    </li>
-                                <?php } ?> 
-                                <?php if(count($this->archived) > 0){ ?>
-                                    <li>
-                                        <a href="/user/archived">Архив</a>&nbsp;<em><?php echo count($this->archived); ?></em>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                            <!--  dokumenti-->
-                            <!--  zapchasti-->
-                        <li>
-                            <a class="bold" target="_blank" href="http://www.ria.ua/user" >Мои запчасти</a>
-                        </li>
-                    </ol>
-                </dd>
-                <!-- SSI: Блок Чат >
-                <dd>
-                    <a class="my-chat new" href="#"><strong>Чат</strong></a>
-                </dd -->
-
-                <!-- SSI: Блок Мои Уведомления -->
-
-                <dt class="my-notifi beta">
-                <a href="http://auto.ria.ua/?target=user&event=mynotifications" >
-                    Уведомления
-                </a>
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-                        <li>
-                            <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=important" title="" >Важные</a>&nbsp;<em>1</em>
-                        </li>
-                        <li>
-                            <a href="http://auto.ria.ua/?target=user&event=mynotifications&sort_by=informative" title="" >Информирующие</a>&nbsp;<em>4</em>
-                        </li>
-                    </ol>
-                </dd>
-
-                <!-- SSI: Блок Мои Комм.Сервисы -->
-                <dt class="my-commerc-ser">
-                <a href="http://auto.ria.ua/myservice/" >
-                    Коммерческие сервисы
-                </a>
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-                        <li>
-                            <a  href="http://auto.ria.ua/myservice/" title="Важная информация" >Важная информация</a>
-                        </li>
-
-
-                        <li>
-                            <a href="/stolzakazov/zapchasti/" title="Стол заказов запчастей" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Aplication_StZZ', 'My_Menu']);">Стол заказов запчастей</a>
-                        </li>
-
-
-                        <li>
-                            <a href="http://auto.ria.ua/autoseller/info/" title="Моя Автопродажа" onclick="//_gaq.push(['_trackEvent', 'Menu_Target_User', 'Click_on_Link_Autoseller', 'Myservice']);">Моя Автопродажа</a>&nbsp;<em>3</em>
-                        </li>
-
-                        <li>
-                            <a href="http://auto.ria.ua/fishki-group/" title="Управление объявлениями" >Управление объявлениями</a>
-                        </li>
-                        <li>
-                            <a class="new" href="http://auto.ria.ua/fishki-optom/" title="Фишки оптом">Фишки оптом</a>
-                        </li>
-                        <li>
-                            <a class="new" href="http://auto.ria.ua/top-optom/" title="ТОП оптом" >ТОП оптом</a>
-                        </li>
-                    </ol>
-                </dd>
-
-
-
-                <!-- SSI: Блок Рассылка -->
-                <dt class="my-mailer">
-                <a href="http://auto.ria.ua/subscribe" title="Рассылка" >Рассылка</a>
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-                        <li>
-                            <a title="Мои профили рассылки" href="http://auto.ria.ua/subscribe?showProfiles=1" >Мои профили рассылки</a>
-                        </li>
-                        <li>
-                            <a title="Создать профиль" href="http://auto.ria.ua/subscribe?create_profile=1" >Создать профиль</a>
-                        </li>
-                        <li>
-                            <a href="/deskoffers/profiles" title="Подписка на Стол заказов" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Subscriptions_StZZ', 'My_Menu']);">Стол заказов</a>
-                            <!--                <a title="Стол заказов запчастей" href="#">Стол заказов запчастей</a>-->
-                        </li>
-                    </ol>
-                </dd>
-
-                <!--    <dt class="my-deskorders-auto">
-                        <a href="http://auto.ria.ua/#stol_zakazov" title="Стол заказов авто">Стол заказов авто</a>
-                    </dt>
-                    <dd class="">
-                        <ol class="unordered-list">
-                            <li>
-                                <a title="Мои заявки" href="http://auto.ria.ua/order_table/my-requests/">Мои заявки</a>
-                            </li>
-                            <li>
-                                <a title="Мои профили" href="http://auto.ria.ua/order_table/profiles/">Мои профили</a>
-                            </li>
-                            <li>
-                                <a title="Заявки по профилям" href="http://auto.ria.ua/order_table/requests/">Заявки по профилям</a>
-                            </li>
-                        </ol>
-                    </dd>-->
-
-                <dt class="my-mailer">
-                <a href="/avtoprovereno/" title="Авто проверено" >Авто проверено</a>
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-
-                    </ol>
-                </dd>
-
-                <!-- SSI: Блок Моя Инф. -->
-                <dt class="my-profile">
-                Мои данные
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-
-                        <li>
-                            <a title="Моя анкета" href="http://auto.ria.ua/?target=user&event=redug" >Моя анкета</a>
-                        </li>
-
-                        <!--            <li>-->
-                        <!--                <a href="subscribe" title="Рассылка">Рассылка</a>-->
-                        <!--            </li>-->
-
-                        <li>
-                            <a title='Мой "Черный список"' href="http://auto.ria.ua/user/blacklist">Мой "Черный список"</a>
-                        </li>
-
-
-
-                        <li>
-                            <a href="http://auto.ria.ua/user/change_password.html" title="Поменять пароль" >Поменять пароль</a>
-                        </li>
-
-                        <li>
-                            <a title="Выход" href="http://auto.ria.ua/?exit=yes" >Выход</a>
-                        </li>
-
-                    </ol>
-                </dd>
-
-
-
-
-                <dt class="my-mobile-app">
-                Мобильное приложение
-                </dt>
-                <dd>
-                    <ol class="unordered-list">
-                        <li>
-                            <a href="https://play.google.com/store/apps/details?id=ria.ua" target="_blank" >Для Android</a>
-                        </li>
-                        <li>
-                            <a href="http://itunes.apple.com/ru/app/ria.ua/id508748317?l=ru&ls=1&mt=8" target="_blank">Для iPhone</a>
-                        </li>
-                    </ol>
-                </dd>
-
-
-            </dl><!-- Page load array script time : 0.55285215377808
-            -->
-
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <!-- Block manager-->
-    <div class="box-panel">
-
-        <div class="head">
-            <span class="icons-head i-help">
-                <a class="head-help" href="/help">Помощь</a>
-            </span>
-        </div>
-
-
-
-        <div class="panel" style="padding: 10px;">
-            <div class="service-support">
-                <div class="hide">
-                    <input type="hidden" id="activ_manager_page" value="0">
-                    <input type="hidden" id="t_page" value="user">
-                    <input type="hidden" id="e_page" value="myauto">
-                </div>
-
-                <img height="90" width="67" alt="Олейник Надежда" src="http://img.auto.ria.ua/images/demo/Nadia_Oleynik.png" class="photo">
-                <dl class="contact-data-seller">
-                    <dt>Олейник Надежда</dt>
-                    <dd class="description">
-                        Консультации по вопросам работы сайта AUTO.ria.ua
-                    </dd>
-
-            </div>
-            <div class="contact-seller" style="padding: 0;">
-                <dl class="contact-data-seller">
-                    <dd  class="phone block_phone_js">
-
-                        <strong class="icons-x12 phone-home-x12 hide">(067) 469-04-10</strong>
-                        <strong class="icons-x12 phone-home-x12 ">(067) 469-04-10</strong>
-
-                        <strong class="icons-x12 phone-home-x12 hide">0-800-21-00-12</strong>
-
-                        <strong class="icons-x12 phone-home-x12 hide">(0432) 555-213</strong>
-
-                        <strong class="icons-x12 phone-home-x12 hide">(0432) 555-200</strong>
-
-                        <strong class="icons-x12 phone-home-x12 hide">(093) 190-27-23</strong>
-
-                        <strong class="icons-x12 phone-home-x12 hide">(050) 416-86-88</strong>
-
-
-                        <span class="icons" style="white-space: nowrap;">
-                            <a href="javascript:void(0)" class="close-more hide" id="closePhoseMan" onclick="showAllManagerPhone(this, $('openPhoseMan'));">Скрыть телефоны</a>
-                            <a href="javascript:void(0)" class="open-more" id="openPhoseMan" onclick="showAllManagerPhone(this, $('closePhoseMan'));">Показать все телефоны</a>
-                        </span>
-
-                    <noindex><script>
-                                function showAllManagerPhone(elementFrom, elementTo) {
-                                    elementFrom.toggleClass('hide');
-                                    elementTo.toggleClass('hide');
-                                    $$('.block_phone_js .phone-home-x12').each(function(item) {
-                                        if (!item.getAttribute('independent'))
-                                            item.toggleClass('hide');
-                                    });
-                                }
-                        </script></noindex>
-
-                    </dd>
-
-                    <div class="userid"><style type="text/css">
-                            .userid{
-                                padding-left: 20px;
-                            }
-                            .inform{
-                                background: #f8e1a8;
-                                font-weight: normal;
-                            }
-                        </style>
-
-                        <i style="margin-left:-20px" class="btn id"></i>
-                        Ваш клиентский номер:<span class="inform">2287191</span> 
-
-                        <a target="_blank" href=" http://help.ria.ua/index.php?/Knowledgebase/Article/View/411/0/chto-tkoe-klientskijj-nomer" title=""><img width="14" height="14" src="http://img.auto.ria.ua/images/demo/ico-help.gif" style="margin: 2px 0 0;"></a>
-
-                    </div>
-                </dl>
-            </div>
-            <div class="service-support">
-                <dl class="contact-data-seller">
-                    <dd>
-                        <p class="icons-x12 help-x12" style="padding-left: 25px;">
-                            <a href="/question/user/myauto" class="bold">
-                                Обратиться в службу поддержки
-                            </a>
-                        </p>
-                    </dd>
-
-                    <dd>
-                        <a class="bezpeka-ria" href="http://bezpeka.ria.ua/">Узнать о безопасности сделок от RIA.ua</a>
-                    </dd>
-
-
-                </dl>
-            </div>
-        </div>
-
-
-    </div>
-
-
-    <!-- Page load array script time : 0.58825898170471
-    -->
-    <!-- /Block manager-->
-
-
-
-
-</div>
-
-<div class="center-panel">
-    <div class="head-page">
-        Мои автомобили
-    </div>
-    <div>
-        <p>
-            Мои автомобили - это раздел, предназначенный для оперативного управления Вашими объявлениями на сайте. С его помощью Вы можете легко и удобно отслеживать статистику Ваших объявлений: их тип, дату публикации, статистику просмотров, качество наполнения и позицию в поиске. В разделе представлены основные инструменты управления объявлениями: поднятие в результатах поиска, обновление даты публикации, перемещение в архив, редактирование и удаление.
-        </p>
-
-        <p class="notice icons">
-            Поднимайте свое объявление в результатах поиска и привлекайте больше покупателей. Узнайте <a href="/?target=view&event=promo">как сделать своё объявление на сайте популярным и привлекательным</a>.
-        </p>
-    </div>
-
-    <?php if(count($this->draft) > 0){ ?>
-        <div style="position: relative">
-            <div class="head-page">
-                Черновики
-            </div>
-            <?php foreach($this->draft as $auto){ ?>   
-            <div class="table-my-ticket">
-                <div class="tbody published corner-7">
-                    <div class="item ticket" id="ticket_11815797">
-                        <ol class="control-list">
-
-                            <li>
-                                <a href="/addauto/publication/autoId/11815797/" title="Обновление даты и продление срока публикации объявления" onClick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Re-Published', 'Search_Result']);">Опубликовать</a>
-                            </li>
-                            <li>
-                                <a href="/addauto/autoinfo/autoId/11815797" title="Перейти к редактированию объявления">Редактировать</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" title="" onclick="auto_saled(11815797, 0);">Удалить в архив</a>
-                            </li>
-                        </ol>
-
-
-                        <table class="rows">
-                            <tbody><tr>
-                                    <td class="rest">
-
-                                        <a key="b" class="photo ria-photo-small"
-                                           href="/auto_audi_100_11815797.html">
-                                            <img width="135"
-                                                 title=' Audi 100'
-                                                 alt=' Audi 100'
-                                                 src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg"
-                                                 />
-                                        </a>
-
-
-                                        <div class="content">
-                                            <h3 class="head-table" >
-                                                <a href="/auto_audi_100_11815797.html" id="11815797_itemHeaderLink" title="Audi 100 ">
-                                                    Audi 100 
-                                                </a>
-                                                <strong class="year">1992</strong>
-                                            </h3>
-                                            <p class="city">
-                                                Балаклея
-                                            </p>
-                                            <div class="corect-price">
-                                                <span class="price">
-
-
-                                                    <span class="curr-price">
-                                                        <span title="USD">
-                                                            $
-                                                        </span>
-                                                        <strong>6 500</strong>
-                                                    </span>
-
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div class="characteristic">
-                                        </div>
-                                    </td>
-
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 type-x12">
-                                                    Обычное
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 time-x12" id="date_auto_add_11815797" title="Дата публикации 15.08.2013">
-                                                    15.08.2013
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 auto-x12" title="Фишки">
-                                                    фишек: 0
-                                                </em>
-                                            </li>
-                                        </ol>
-                                    </td>
-
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 id-item-x12" title="ID объявления">
-                                                    11815797
-                                                </em>
-                                            </li>
-                                        </ol>
-
-                                    </td>
-                                </tr>
-                            </tbody></table>
-
-                        <div id="autoDeleteReason11815797" class="pop-up-element" style="position: absolute; margin-top: 0; z-index: 1000; width: 350px; display: none; left: 262px; top: 100px;">
-                            <div class="left-shadow">
-                                <div class="right-shadow">
-                                    <em class="tl-shadow">&nbsp;</em>
-                                    <em class="tr-shadow">&nbsp;</em>
-                                    <em class="bl-shadow">&nbsp;</em>
-                                    <em class="br-shadow">&nbsp;</em>
-                                    <a name="closeAlert" href="javascript:void(0);" class="close-alert" id='button_close_x_11815797' onclick="fToggle(11815797)" >&nbsp;</a>
-                                    <div class="top-shadow">
-                                        <div class="bottom-shadow">
-                                            <div class="container-item">
-                                                <div class="title text-l" id="reason-title-11815797">
-
-                                                </div>
-
-                                                <div id="complaintAdvertisementResponseAjax-11815797" class="hide">
-                                                    <!-- Message after ajax. Used class succes or error -->
-                                                </div>
-
-                                                <div id="saled-form-11815797" saled="0">
-                                                    <form id="complaintAdvertisementForm-11815797" action="." method="get" class="grid-form">
-                                                        <div class="hidden">
-                                                            <input type="hidden" value="user" name="target">
-                                                            <input type="hidden" value="myauto" name="event">
-                                                            <input type="hidden" value="11815797" name="delete">
-
-                                                        </div>
-                                                        <p id="reason-reason-11815797">
-
-                                                        </p>
-
-                                                        <p class="box-check" onclick="inform_delete_block(11815797)">
-                                                            <input id="reason_id4-11815797" type="radio" value="4" name="reason_id" />
-                                                            <label for="reason_id4-11815797">Авто продано с помощью AUTO.ria.ua</label>
-                                                        </p>
-                                                        <p class="box-check" onclick="inform_delete_block(11815797)">
-                                                            <input id="reason_id5-11815797"type="radio" value="5" name="reason_id" />
-                                                            <label for="reason_id5-11815797">Авто продано в другом месте</label>
-                                                        </p>
-
-                                                        <p id="repub-11815797" class="box-check" onclick="inform_delete_block(11815797)">
-                                                            <input id="reason_id6-11815797" type="radio" value="6" name="reason_id" />
-                                                            <label for="reason_id6-11815797">Я хочу разместить объявление заново</label>
-                                                        </p>
-                                                        <p id="changed-11815797" class="box-check" onclick="inform_delete_block(11815797)">
-                                                            <input id="reason_id7-11815797" type="radio" value="7" name="reason_id" />
-                                                            <label for="reason_id7-11815797">Я передумал продавать автомобиль</label>
-                                                        </p>
-
-                                                        <div class="boxed box-button" style="margin: 10px" >
-                                                            <span class="button grey-30 disabled" id="formmm_span_11815797" >
-                                                                <input type="submit" id="formmm_11815797" value="Удалить" onclick="//return confirm('Вы уверены, что хотите удалить объявление?');" disabled="disabled"/>
-                                                            </span>
-                                                            <span class="button grey-30">
-                                                                <input type="button" value="Отмена" onclick="fToggle(11815797)" />
-                                                            </span>
-                                                        </div>
-                                                    </form>
-                                                </div>
-
-                                                <div id="succes-remove-11815797" style="display: none">
-                                                    <div class="succes-remove-ads" style="border: medium none; margin: 0 0 0 -20px; padding: 5px 15px 0 110px;">
-                                                        <p class="box-check">Ваше объявление отмечено как <span id="inform_result_status_11815797" class="bold size-14">"продано"</span></p>
-                                                        <p class="box-check">Изменения вступят в силу в течении нескольких минут.</p>
-                                                    </div>
-
-                                                    <p class="box-check bold">Спасибо, что воспользовались <span style="color: #D0412E">AUTO.ria.ua!</span></p>
-                                                    <div id="popap_social_11815797"> </div>
-                                                    <div style="margin: 0 0 0 115px;" class="boxed box-button">
-                                                        <span class="button grey-30">
-                                                            <input type="button" onclick="fToggle(11815797)" id="button_close_11815797" value="Закрыть">
-                                                        </span>
-                                                    </div>
-                                                    <p id="dopolnenie_11815797" class="hide" style="font-size: 10px;" >*Объявление еще 2 дня будет продолжать участовать в поиске без контактных данных.</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> 
-        <?php } ?>   
-
-        </div>
-    <?php } ?>
-
-    <div class="head-page">
-        Архив
-    </div>
-
-    <section id="view_myauto_pages" class="box-panel">
-
-        <div class="standart-tabs tabs-ltr">
-            <a href="javascript:void(0);" tabid="archivedeleted" class="tabs view_myauto_pages_tab select" >
-                Удаленные
+<div class="row content-main">
+    <div class="left-panel span3">
+        <dl class="user-menu">
+            <!-- SSI: Блок Мой Автосалон -->
+            <dt class="title">
+            <i class="icon-menu-add"></i>
+            <a href="add_auto.html" title="Добавить объявление" >
+                Добавить объявление
             </a>
+            </dt>
+            <dt class="title">
+            <i class="icon-menu-offer"></i>
+            Мои объявления
+            </dt>
+            <dd class="item-menu">
+                <a class="subhead" href="user/menu/allCars/" >Автомобили</a>
+                <ul class="sublist">
+                    <li class="subitem">
+                        <?php if (count($this->published)) { ?>
+                            <a href="user/menu/?section=active&viewType=active" >Опубликованные</a>&nbsp;<em><?php echo count($this->published); ?></em>
+                        <?php } ?>
+                    </li>
 
-        </div>
+                    <li class="subitem">
+                        <?php if (count($this->archived)) { ?>
+                            <a href="user/menu/?section=archive&viewType=all">Архив</a>&nbsp;<em><?php echo count($this->archived); ?></em>
+                        <?php } ?>
+                    </li>
 
-        <div  class='archiv-tab  view_myauto_pages_panel ' id='archivedeleted'>
-            <div class="table-my-ticket">
+                    <li class="subitem">
+                        <a href="?target=search&event=little&category=0&user_id=2287191">Все объявления с моим телефоном</a>&nbsp;<em>1</em>
+                    </li>
+                </ul>
+            </dd>
+            <dd class="item-menu">
+                <a class="subhead" target="_blank" href="http://www.ria.ua/user" >Мои запчасти</a>
+            </dd>
+            <dt class="title">
+            <i class="icon-menu-notifi"></i>
+            <a href="mynotifications/" >Уведомления</a>
+            </dt>
+            <dd class="item-menu">
+                <a href="mynotifications/?&sort_by=important" title="" >Важные</a>&nbsp;<em>1</em>
+            </dd>
+            <dd class="item-menu">
+                <a href="mynotifications/?&sort_by=informative" title="" >Информирующие</a>&nbsp;<em>5</em>
+            </dd>
+            <dt class="title">
+            <i class="icon-menu-commerc"></i>
+            <a href="myservice/" >Коммерческие сервисы</a>
+            </dt>
+            <dd class="item-menu">
+                <a  href="myservice/" title="Важная информация" >Важная информация</a>
+            </dd>
+            <dd class="item-menu">
+                <a href="/stolzakazov/zapchasti/" title="Стол заказов запчастей" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Aplication_StZZ', 'My_Menu']);">Стол заказов запчастей</a>
+            </dd>
+            <dd class="item-menu">
+                <a href="autoseller/info/" title="Моя Автопродажа" onclick="//_gaq.push(['_trackEvent', 'Menu_Target_User', 'Click_on_Link_Autoseller', 'Myservice']);">Моя Автопродажа</a>&nbsp;<em>3</em>
+            </dd>
+            <dd class="item-menu">
+                <a href="fishki-group/" title="Управление объявлениями" >Управление объявлениями</a>
+            </dd>
+            <dd class="item-menu">
+                <a class="new" href="fishki-optom/" title="Фишки оптом" >Фишки оптом</a>
+            </dd>
+            <dd class="item-menu">
+                <a class="new" href="top-optom/" title="ТОП оптом" >ТОП оптом</a>
+            </dd>
+            <dt class="title">
+            <i class="icon-menu-subscribe"></i>
+            <a href="/subscribe/" title="Рассылка" >Рассылка</a>
+            </dt>
+            <dd class="item-menu">
+                <a title="Мои профили рассылки" href="/subscribe/" >Мои профили рассылки</a>
+            </dd>
+            <dd class="item-menu">
+                <a title="Создать профиль" href="/subscribe/?add_profile=1" >Создать профиль</a>
+            </dd>
+            <dd class="item-menu">
+                <a href="/deskoffers/profiles" title="Подписка на Стол заказов" onclick="_gaq.push(['_trackEvent', 'Stol_Zakazov_Zapch', 'Click_on_Subscriptions_StZZ', 'My_Menu']);">Стол заказов</a>
+            </dd>
+            <dt class="title">
+            <i class="icon-menu-subscribe"></i>
+            <a href="/avtoprovereno/" title="Авто проверено" >Авто проверено</a>
+            </dt>
 
-                <div class="tbody published corner-7">
+            <dt class="title">
+            <i class="icon-menu-profile"></i>
+            Мои данные
+            </dt>
+            <dd class="item-menu">
+                <a title="Моя анкета" href="/my_profile/edit/" >Моя анкета</a>
+            </dd>
+            <dd class="item-menu">
+                <a title='Мой "Черный список"' href="user/blacklist" >Мой "Черный список"</a>
+            </dd>
 
-                    <div class="item ticket" id="ticket_11543114">
-
-                        <ol class="control-list">
-
-                            <li>
-                                <a href="/addauto/republication/autoId/11543114/" title="Обновление даты и продление срока публикации объявления" onClick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Re-Published', 'Search_Result']);">Восстановить</a>
-                            </li>
-
-                            <li>
-                                <a href="/auto_statistic/11543114/" title="Смотреть отчет" >Статистика</a>
-                            </li>
-
-                            <li>
-                                <a href="/?target=user&event=myauto&delete_archive=11543114(none)"
-                                   title="Удалить обьявление"
-                                   onclick="return confirm('Вы уверены, что хотите удалить объявление?');">
-                                    Удалить с сайта</a>
-                            </li>
-                        </ol>
-
-
-                        <table class="rows">
-                            <tbody><tr>
-                                    <td class="rest">
-
-                                        <a key="sx" class="photo ria-photo-small"
-                                           href="/auto_seat_leon_11543114.html">
-                                            <img width="135"
-                                                 title='Седан Seat Leon 4'
-                                                 alt='Седан Seat Leon 4'
-                                                 src="http://img.ria.ua/photos/auto/photo/8391/839185/83918531/83918531sx.jpg"
-                                                 />
-                                        </a>
-
-
-                                        <div class="content">
-                                            <h3 class="head-table" >
-                                                <a href="/auto_seat_leon_11543114.html" id="11543114_itemHeaderLink" title="Seat Leon 4">
-                                                    Seat Leon 4
-                                                </a>
-                                                <strong class="year">2009</strong>
-                                            </h3>
-                                            <p class="city">
-                                                Харьков
-                                            </p>
-                                            <div class="corect-price">
-                                                <span class="price">
-
-                                                    <span title="USD">
-                                                        $
-                                                    </span>
-                                                    <strong>
-                                                        123 000
-                                                    </strong>
-
-
-                                                </span>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="characteristic">
-                                            <div class="item-char icons-grey-photo-cars" title="1 фотографий">
-                                                1
-                                            </div>
-                                            <div class="item-char icons-grey-exchange" title=Возможен обмен>
-                                                Обмен: Равноценный обмен
-
-                                            </div>
-                                            <div class="item-char icons-grey-auction" title="Торги">
-                                                Торги
-                                            </div>
-                                        </div>
-
-                                    </td>
-
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 type-x12">
-                                                    Обычное
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 time-x12" id="date_auto_add_11543114" title="Дата публикации 06.07.2013">
-                                                    06.07.2013
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 auto-x12" title="Фишки">
-                                                    фишек: 0
-                                                </em>
-                                            </li>
-                                        </ol>
-                                    </td>
-
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 id-item-x12" title="ID объявления">
-                                                    11543114
-                                                </em>
-                                            </li>
-
-                                            <li class="boxed">
-                                                <em class="icons-x12 time-x12" title="Дата окончания публикации 06.09.2013">
-                                                    06.09.2013
-                                                </em>
-                                            </li>
-                                        </ol>
-                                    </td>
-                                </tr>
-                            </tbody></table>
-
-                        <div id="autoDeleteReason11543114" class="pop-up-element" style="position: absolute; margin-top: 0; z-index: 1000; width: 350px; display: none; left: 262px; top: 100px;">
-                            <div class="left-shadow">
-                                <div class="right-shadow">
-                                    <em class="tl-shadow">&nbsp;</em>
-                                    <em class="tr-shadow">&nbsp;</em>
-                                    <em class="bl-shadow">&nbsp;</em>
-                                    <em class="br-shadow">&nbsp;</em>
-                                    <a name="closeAlert" href="javascript:void(0);" class="close-alert" id='button_close_x_11543114' onclick="fToggle(11543114)" >&nbsp;</a>
-                                    <div class="top-shadow">
-                                        <div class="bottom-shadow">
-                                            <div class="container-item">
-                                                <div class="title text-l" id="reason-title-11543114">
-
-                                                </div>
-
-                                                <div id="complaintAdvertisementResponseAjax-11543114" class="hide">
-                                                    <!-- Message after ajax. Used class succes or error -->
-                                                </div>
-
-                                                <div id="saled-form-11543114" saled="0">
-                                                    <form id="complaintAdvertisementForm-11543114" action="." method="get" class="grid-form">
-                                                        <div class="hidden">
-                                                            <input type="hidden" value="user" name="target">
-                                                            <input type="hidden" value="myauto" name="event">
-                                                            <input type="hidden" value="11543114" name="delete">
-
-                                                        </div>
-
-                                                        <p id="reason-reason-11543114">
-
-                                                        </p>
-
-                                                        <p class="box-check" onclick="inform_delete_block(11543114)">
-                                                            <input id="reason_id4-11543114" type="radio" value="4" name="reason_id" />
-                                                            <label for="reason_id4-11543114">Авто продано с помощью AUTO.ria.ua</label>
-                                                        </p>
-                                                        <p class="box-check" onclick="inform_delete_block(11543114)">
-                                                            <input id="reason_id5-11543114"type="radio" value="5" name="reason_id" />
-                                                            <label for="reason_id5-11543114">Авто продано в другом месте</label>
-                                                        </p>
-
-                                                        <p id="repub-11543114" class="box-check" onclick="inform_delete_block(11543114)">
-                                                            <input id="reason_id6-11543114" type="radio" value="6" name="reason_id" />
-                                                            <label for="reason_id6-11543114">Я хочу разместить объявление заново</label>
-                                                        </p>
-                                                        <p id="changed-11543114" class="box-check" onclick="inform_delete_block(11543114)">
-                                                            <input id="reason_id7-11543114" type="radio" value="7" name="reason_id" />
-                                                            <label for="reason_id7-11543114">Я передумал продавать автомобиль</label>
-                                                        </p>
-
-                                                        <div class="boxed box-button" style="margin: 10px" >
-                                                            <span class="button grey-30 disabled" id="formmm_span_11543114" >
-                                                                <input type="submit" id="formmm_11543114" value="Удалить" onclick="//return confirm('Вы уверены, что хотите удалить объявление?');" disabled="disabled"/>
-                                                            </span>
-                                                            <span class="button grey-30">
-                                                                <input type="button" value="Отмена" onclick="fToggle(11543114)" />
-                                                            </span>
-                                                        </div>
-                                                    </form>
-                                                </div>
-
-                                                <div id="succes-remove-11543114" style="display: none">
-                                                    <div class="succes-remove-ads" style="border: medium none; margin: 0 0 0 -20px; padding: 5px 15px 0 110px;">
-                                                        <p class="box-check">Ваше объявление отмечено как <span id="inform_result_status_11543114" class="bold size-14">"продано"</span></p>
-                                                        <p class="box-check">Изменения вступят в силу в течении нескольких минут.</p>
-                                                    </div>
-
-                                                    <p class="box-check bold">Спасибо, что воспользовались <span style="color: #D0412E">AUTO.ria.ua!</span></p>
-                                                    <div id="popap_social_11543114"> </div>
-                                                    <div style="margin: 0 0 0 115px;" class="boxed box-button">
-                                                        <span class="button grey-30">
-                                                            <input type="button" onclick="fToggle(11543114)" id="button_close_11543114" value="Закрыть">
-                                                        </span>
-                                                    </div>
-                                                    <p id="dopolnenie_11543114" class="hide" style="font-size: 10px;" >*Объявление еще 2 дня будет продолжать участовать в поиске без контактных данных.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <dd class="item-menu">
+                <a href="user/change_password.html" title="Поменять пароль" >Поменять пароль</a>
+            </dd>
+            <dd class="item-menu">
+                <a title="Выход" href="?exit=yes" >Выход</a>
+            </dd>
+            <dt class="title">
+            <i class="icon-menu-app"></i>
+            Мобильное приложение
+            </dt>
+            <dd class="item-menu">
+                <a href="https://play.google.com/store/apps/details?id=ria.ua" target="_blank" >Для Android</a>
+            </dd>
+            <dd class="item-menu">
+                <a href="http://itunes.apple.com/ru/app/ria.ua/id508748317?l=ru&ls=1&mt=8" target="_blank" >Для iPhone</a>
+            </dd>
+        </dl><!-- Page load array script time : 0.10322999954224
+        -->
+        <div class="box-panel">
+            <div class="head">
+                <i class="icon-head-help"></i> <a href="/help/" title="Помощь">Помощь</a>
+            </div>
+            <!-- include virtual="/pseudo_services/help_units/person_manager/?user_id=2287191&lang_id=2" -->
 
 
+
+            <div class="support" id="support_manager_block">
+                <img height="90" width="67" alt="Олейник Надежда" src="http://img.auto.ria.ua/images/demo/Nadia_Oleynik.png" class="photo">
+
+                <div class="contact-data">
+                    <div class="title">
+                        Олейник Надежда
                     </div>
+                    <p class="desc grey">Консультации по вопросам работы сайта AUTO.ria.ua</p>
 
-                    <div class="item ticket" id="ticket_11481087">
-
-                        <ol class="control-list">
-
-                            <li>
-                                <a href="/addauto/publication/autoId/11481087/" title="Обновление даты и продление срока публикации объявления" onClick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Re-Published', 'Search_Result']);">Опубликовать</a>
-                            </li>
-                            <li>
-                                <a href="/addauto/autoinfo/autoId/11481087" title="Перейти к редактированию объявления">Редактировать</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" title="" onclick="auto_saled(11481087, 0);">Удалить в архив</a>
-                            </li>
-                        </ol>
-                        <table class="rows">
-                            <tbody><tr>
-                                    <td class="rest">
-                                        <a key="b" class="photo ria-photo-small"
-                                           href="/auto_audi_q7_11481087.html">
-                                            <img width="135"
-                                                 title='Внедорожник / Кроссовер Audi Q7'
-                                                 alt='Внедорожник / Кроссовер Audi Q7'
-                                                 src="http://img.auto.ria.ua/images/no-photo/no-photo-135x90.jpg"
-                                                 />
-                                        </a>
-                                        <div class="content">
-                                            <h3 class="head-table" >
-                                                <a href="/auto_audi_q7_11481087.html" id="11481087_itemHeaderLink" title="Audi Q7 ">
-                                                    Audi Q7 
-                                                </a>
-                                                <strong class="year">2011</strong>
-                                            </h3>
-                                            <p class="city">
-                                                Чернигов
-                                            </p>
-                                            <div class="corect-price">
-                                                <span class="price">
-
-                                                    <span title="USD">
-                                                        $
-                                                    </span>
-                                                    <strong>
-                                                        56 000
-                                                    </strong>
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div class="characteristic">
-                                        </div>
-                                    </td>
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 type-x12">
-                                                    Обычное
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 time-x12" id="date_auto_add_11481087" title="Дата публикации 29.06.2013">
-                                                    29.06.2013
-                                                </em>
-                                            </li>
-                                            <li class="boxed">
-                                                <em class="icons-x12 auto-x12" title="Фишки">
-                                                    фишек: 0
-                                                </em>
-                                            </li>
-                                        </ol>
-                                    </td>
-
-                                    <td class="tabel-stat-offer">
-                                        <ol class="reset">
-                                            <li class="boxed">
-                                                <em class="icons-x12 id-item-x12" title="ID объявления">
-                                                    11481087
-                                                </em>
-                                            </li>
-                                        </ol>
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                        <script type="text/javascript">
-                                function showDetailBlock(index) {
-                                    if (index && $('detaildBlock_' + index))
-                                        $('detaildBlock_' + index).toggleClass('hide');
-                                    _gaq.push(['_trackEvent', 'ad_Management', 'Click_on_Count_Messages', 'My_Adv']);
-                                }
-                                window.addEvent('domready', function() {
-                                    var d = new Date();
-                                    h = d['getHours']();
-                                    i = d['getMinutes']();
-                                    s = d['getSeconds']();
-                                    y = d['getFullYear']();
-                                    m = d['getMonth']() + 1;
-                                    d = d['getDate']();
-                                    var date_11481087 = "12.06.57.29.06.2013".split('.');
-                                    if (date_11481087[3] == d && date_11481087[4] == m && date_11481087[5] == y && date_11481087[0] == h) {
-                                        document.getElementById("date_auto_add_11481087").innerHTML = Math.abs(i - date_11481087[1]) + " мин. назад";
-                                    }
-                                    else if (date_11481087[3] == d && date_11481087[4] == m && date_11481087[5] == y) {
-                                        if (date_11481087[0] == h && date_11481087[1] > i) {
-                                            document.getElementById("date_auto_add_11481087").innerHTML = Math.abs(60 + i - date_11481087[1]) + " мин. назад";
-                                        } else if (h - date_11481087[0] == 1 && date_11481087[1] > i) {
-                                            document.getElementById("date_auto_add_11481087").innerHTML = Math.abs(60 + i - date_11481087[1]) + " мин. назад";
-                                        } else
-                                        {
-                                            document.getElementById("date_auto_add_11481087").innerHTML = Math.abs(h - date_11481087[0]) + " часа назад";
-                                        }
-
-
-                                    }
-                                    else if (date_11481087[3] == (d - 1) && date_11481087[4] == m && date_11481087[5] == y) {
-                                        document.getElementById("date_auto_add_11481087").innerHTML = "Вчера";
-                                    }
-                                    else if (date_11481087[3] == (d - 2) && date_11481087[4] == m && date_11481087[5] == y) {
-                                        document.getElementById("date_auto_add_11481087").innerHTML = "Позавчера";
-                                    }
-                                    else {
-                                        document.getElementById("date_auto_add_11481087").innerHTML = "29.06.2013";
-                                    }
-                                });
-                        </script></noindex>
-
-                        <div id="autoDeleteReason11481087" class="pop-up-element" style="position: absolute; margin-top: 0; z-index: 1000; width: 350px; display: none; left: 262px; top: 100px;">
-                            <div class="left-shadow">
-                                <div class="right-shadow">
-                                    <em class="tl-shadow">&nbsp;</em>
-                                    <em class="tr-shadow">&nbsp;</em>
-                                    <em class="bl-shadow">&nbsp;</em>
-                                    <em class="br-shadow">&nbsp;</em>
-                                    <a name="closeAlert" href="javascript:void(0);" class="close-alert" id='button_close_x_11481087' onclick="fToggle(11481087)" >&nbsp;</a>
-                                    <div class="top-shadow">
-                                        <div class="bottom-shadow">
-                                            <div class="container-item">
-                                                <div class="title text-l" id="reason-title-11481087">
-
-                                                </div>
-
-                                                <div id="complaintAdvertisementResponseAjax-11481087" class="hide">
-                                                    <!-- Message after ajax. Used class succes or error -->
-                                                </div>
-
-                                                <div id="saled-form-11481087" saled="0">
-                                                    <form id="complaintAdvertisementForm-11481087" action="." method="get" class="grid-form">
-                                                        <div class="hidden">
-                                                            <input type="hidden" value="user" name="target">
-                                                            <input type="hidden" value="myauto" name="event">
-                                                            <input type="hidden" value="11481087" name="delete">
-
-                                                        </div>
-                                                        <p id="reason-reason-11481087">
-
-                                                        </p>
-
-                                                        <p class="box-check" onclick="inform_delete_block(11481087)">
-                                                            <input id="reason_id4-11481087" type="radio" value="4" name="reason_id" />
-                                                            <label for="reason_id4-11481087">Авто продано с помощью AUTO.ria.ua</label>
-                                                        </p>
-                                                        <p class="box-check" onclick="inform_delete_block(11481087)">
-                                                            <input id="reason_id5-11481087"type="radio" value="5" name="reason_id" />
-                                                            <label for="reason_id5-11481087">Авто продано в другом месте</label>
-                                                        </p>
-
-                                                        <p id="repub-11481087" class="box-check" onclick="inform_delete_block(11481087)">
-                                                            <input id="reason_id6-11481087" type="radio" value="6" name="reason_id" />
-                                                            <label for="reason_id6-11481087">Я хочу разместить объявление заново</label>
-                                                        </p>
-                                                        <p id="changed-11481087" class="box-check" onclick="inform_delete_block(11481087)">
-                                                            <input id="reason_id7-11481087" type="radio" value="7" name="reason_id" />
-                                                            <label for="reason_id7-11481087">Я передумал продавать автомобиль</label>
-                                                        </p>
-
-                                                        <div class="boxed box-button" style="margin: 10px" >
-                                                            <span class="button grey-30 disabled" id="formmm_span_11481087" >
-                                                                <input type="submit" id="formmm_11481087" value="Удалить" onclick="//return confirm('Вы уверены, что хотите удалить объявление?');" disabled="disabled"/>
-                                                            </span>
-                                                            <span class="button grey-30">
-                                                                <input type="button" value="Отмена" onclick="fToggle(11481087)" />
-                                                            </span>
-                                                        </div>
-                                                    </form>
-                                                </div>
-
-                                                <div id="succes-remove-11481087" style="display: none">
-                                                    <div class="succes-remove-ads" style="border: medium none; margin: 0 0 0 -20px; padding: 5px 15px 0 110px;">
-                                                        <p class="box-check">Ваше объявление отмечено как <span id="inform_result_status_11481087" class="bold size-14">"продано"</span></p>
-                                                        <p class="box-check">Изменения вступят в силу в течении нескольких минут.</p>
-                                                    </div>
-
-                                                    <p class="box-check bold">Спасибо, что воспользовались <span style="color: #D0412E">AUTO.ria.ua!</span></p>
-                                                    <div id="popap_social_11481087"> </div>
-                                                    <div style="margin: 0 0 0 115px;" class="boxed box-button">
-                                                        <span class="button grey-30">
-                                                            <input type="button" onclick="fToggle(11481087)" id="button_close_11481087" value="Закрыть">
-                                                        </span>
-                                                    </div>
-                                                    <p id="dopolnenie_11481087" class="hide" style="font-size: 10px;" >*Объявление еще 2 дня будет продолжать участовать в поиске без контактных данных.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="list-phone">
+                        <p class="phone"><i class="icon-phone"></i>(067) 431-82-29</p>
+                        <p class="phone hide"><i class="icon-phone"></i>0-800-21-00-12</p>
+                        <p class="phone hide"><i class="icon-phone"></i>(0432) 555-213</p>
+                        <p class="phone hide"><i class="icon-phone"></i>(0432) 555-200</p>
+                        <p class="phone hide"><i class="icon-phone"></i>(093) 190-27-23</p>
+                        <p class="phone hide"><i class="icon-phone"></i>(050) 416-86-88</p>
+                        <a href="javascript:void(0);" onclick="$$('div.list-phone p.phone').removeClass('hide');
+                        this.addClass('hide');">
+                            Показать все телефоны<i class="icon-open"></i>
+                        </a>
 
                     </div>
                 </div>
-            </div>
 
-            <div class="text-c">
-                <a href="http://auto.ria.ua/?target=user&event=myauto&section=archive&viewType=deleted" class="button grey-30">
-                    <span>
-                        Смотреть все объявления (4)
+                <p class="characteristic">
+                    <span class="item-param">
+                        <i class="icon-id-item"></i>Ваш клиентский номер:
+                        <span class="inline allotted">2287191</span>
+                        <a target="_blank" href=" http://help.ria.ua/index.php?/Knowledgebase/Article/View/411/0/chto-tkoe-klientskijj-nomer" title=""><img width="14" height="14" src="http://img.auto.ria.ua/images/demo/ico-help.gif" style=" margin-bottom: -2px;"></a>
                     </span>
-                </a>
+                </p>
+
+                <p>
+                    <i class="icon-help"></i>
+                    <a href="/question/my_active_ads/">Обратиться в службу поддержки</a>
+                </p>
+                <!--Доменная зона: ua -->
+
+                <p>
+                    <i class="icon-bezpeka"></i>
+                    <a href="http://bezpeka.ria.ua/">Узнать о безопасности сделок от RIA</a>
+                </p>
+
             </div>
-        </div>
-    </section>
 
-    <noindex>
-        <style type="text/css">
-
-            .box-ppfishki{
-                position: absolute;
-                overflow: visible;
-            }
-            .box-ppfishki .box-iframe{position: fixed;}
-            .window-ppfishki {
-                left: 50%;
-                margin-left: -370px;
-                top: 115px;
-                width: 740px;
-                position: absolute;
-                z-index: 65000 !important;}
-            .inline-bl{
-                display: inline-block;
-                width: 100%;}
-            /* window-ppfishki */
-            .window-ppfishki a.close-alert {
-                position: absolute;
-                display: inline-block;
-                margin-top: 5px;
-                width: 16px;
-                height: 16px;
-                background: url('http://img.auto.ria.ua/images/icons/icons-sprite.png') 0 -40px no-repeat;
-                font-size: 0;
-                line-height: 0;
-                text-decoration: none;
-                z-index: 1000;
-                right: 25px;
-                cursor: pointer;}
-            .window-ppfishki{
-                -moz-box-shadow: 0px 0px 15px 4px #525252;
-                -webkit-box-shadow: 0px 0px 15px 4px #525252;
-                box-shadow: 0px 0px 15px 4px #525252;
-                border-radius: 10px 10px 10px 10px;
-                padding: 5px;}
-            .window-ppfishki .content-ppfishki{
-                background: #efefef;
-                border-radius: 8px 8px 8px 8px;
-                padding: 8px 23px;}
-            .fishki-line{
-                background: #fff;
-                border-bottom: 1px solid #d9d9d9;
-                height: 1px;
-                margin: 18px 0;}
-            .combobox-ppfishki{
-                background: #FFF;
-                position: relative;
-                padding: 6px 5px 6px 9px;}
-            .combobox-ppfishki .select-bar a {
-                background: url("http://img.auto.ria.ua/img/fishki/select-combobox-fishki.gif") no-repeat 100% 0;
-                color: #414042;
-                display: inline-block;
-                font: normal 13px/33px Arial,Helvetica,sans-serif;
-                padding: 0 45px 0 0;
-                text-decoration: none;
-                width: 635px;}
-            .combobox-ppfishki .select-bar a.select {
-                background-position: 100% 100%;}
-            .combobox-ppfishki .select-bar a span span{
-                width: 680px;
-                display: inline-block;}
-            .combobox-ppfishki .select-bar a span span img{
-                margin: 0 5px 0 0;}
-            .combobox-ppfishki .optgroup {
-                background: #fff;
-                border-bottom: 3px solid #EFEFEF;
-                display: none;
-                position: absolute;
-                width: 100%;
-                overflow: hidden;
-                top: 32px;
-                padding-top: 1px;
-                z-index: 1995;
-                margin-left: -9px;}
-            .combobox-ppfishki .link-view-all{
-                margin: 0px 37px 7px 9px;
-                border-top: 1px solid #EFEFEF;
-                padding: 5px 0 0;}
-            .combobox-ppfishki .link-view-all a {
-                font-weight: normal;
-            }
-            .combobox-ppfishki .optgroup .list{
-                padding: 0px 9px 6px;}
-            .combobox-ppfishki .optgroup .list a{
-                display: inline-block;
-                width: 96%;
-                text-decoration: none;
-                border-top: 1px solid #EFEFEF;
-                padding: 7px 0 0;
-                margin: 7px 0 0;}
-            .combobox-ppfishki .optgroup .list a span span{
-                padding: 8px 0 8px 5px;
-                display: inline-block;}
-            .combobox-ppfishki .optgroup .list a:hover span span{
-                color: #242424;}
-            .head-page {
-                border-bottom: 2px solid #D85442;
-                margin: 0 0 10px;}
-            .bleft-fishki{
-                float: left;
-                width: 133px;}
-            .raise-menu{
-                height: 372px;
-                padding: 0;
-                margin: 0;}
-            .raise-menu li{list-style: none;}
-            .raise-menu li a{
-                background-image: url("http://img.auto.ria.ua/img/fishki/nemu-fishki.png");
-                background-repeat: no-repeat;
-                color: #414042;
-                display: inline-block;
-                font-size: 16px;
-                width: 95px;
-                line-height: 22px;
-                padding: 20px 0 20px 25px;
-                text-decoration: none;}
-            .raise-menu li.b-bt a{	border-bottom: 1px solid #d6d6d6;}
-            .raise-menu li.b-top a{border-top: 1px solid #d6d6d6;}
-            .raise-menu li.fishki-tab-1 a{	background: none;}
-            .raise-menu li.fishki-tab-2 a{
-                background-position: 37px 32px;
-                padding-bottom: 40px;}
-            .raise-menu li.fishki-tab-3 a{
-                background-position: 37px -72px;
-                padding-bottom: 40px;}
-            .raise-menu li a:hover{color: #d85442;}
-            .raise-menu li.active{
-                background: #fff;
-                width: 140px;
-                border-radius: 7px 0 0 7px;}
-
-            .fishki-ads{
-                background: #FFF;
-                float: left;
-                width: 520px;
-                height: 445px;
-                padding: 10px 20px;
-                margin: 0 0 15px;}
-            .fishki-ads h3{
-                border-bottom: 1px solid #D85442;
-                color: #414042;
-                margin: 5px 0 20px;
-                font: normal 15px/23px Arial, Helvetica, sans-serif;}
-            .block-support {/* d9d9d9 */
-                border-top: 1px solid #fff;
-                float: left;
-                width: 120px;
-                color: #6e6e6e;
-                font-size: 11px;
-                padding: 5px 0 0;}
-            .block-support a{color: #cc372a;}
-            .block-support span{
-                border-bottom: 1px solid #CC372A;
-                display: inline-block;
-                width: 100%;
-                line-height: 14px;
-                margin: 0 0 3px;
-                padding: 0 0 3px;}
-            a.ico-support{
-                background: url("http://img.auto.ria.ua/img/fishki/ico-support.png") 0 0 no-repeat;
-                font-size: 9px;
-                text-decoration: none;
-                color: white;
-                float: left;
-                text-align: center;
-                width: 30px;
-                margin: 2px 8px 0 0;
-                padding: 38px 0 0;}
-            a.ico-support.ico-offline{background-position: 100% 0;}
-            .block-support .bl-support{
-                float: left;
-                width: 80px;}
-            .fishki-ads table thead {
-                background-color:#f7f7f7;
-                background-repeat:repeat-x;
-                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1f1f1), to(#fefefe));
-                background: -webkit-linear-gradient(top, #fefefe, #f1f1f1);
-                background: -moz-linear-gradient(top, #fefefe, #f1f1f1);
-                background: -ms-linear-gradient(top, #fefefe, #f1f1f1);
-                background: -o-linear-gradient(top, #fefefe, #f1f1f1);}
-            .fishki-ads table thead tr td{
-                height: 26px;
-                padding: 0 10px;
-                border-bottom: 1px solid #d9d9d9;
-                border-right: 1px solid #d9d9d9;
-                color: #414042;
-                font: normal 13px/20px Arial, Helvetica, sans-serif;}
-            .fishki-ads table tbody tr td{
-                border-right: 1px solid #d9d9d9;
-                border-bottom: 1px solid #d9d9d9;}
-            .fishki-ads table .description{
-                font-size: 11px;
-                font-style: italic;
-                color: #6e6e6e;
-                text-align: center;
-                position: relative;
-                line-height: 10px;
-                margin: 0 0 5px;}
-            .fishki-ads table .price{
-                font-size: 13px;
-                text-align: center;
-                color: #527b02;
-                margin: 18px 0 16px;}
-            .fishki-ads table .description .stretch-top .pop-up{
-                display: none;
-                left: -62px;
-                color: #414042;
-                font-size: 13px;
-                line-height: 14px;
-                font-style: normal;
-                width: 225px;
-            }
-            .fishki-ads table .description .desc-pop-up:hover .stretch-top .pop-up{display: block;}
-            .fishki-ads table .price span{
-                font-size: 16px;
-                font-weight: bold;
-                color: #527b02;}
-            .window-ppfishki input {outline:none;}
-            .fishki-select{
-                margin: 17px 12px 12px;
-                position: relative;}
-            .fishki-select input{
-                border: none;
-                float: left;
-                width: 110px;
-                height: 20px;
-                font-size: 14px;
-                font-weight: bold;
-                color: #535353;}
-            .fishki-select .select-bar{
-                border: 1px solid #aeaeae;
-                border-radius: 5px;
-                display: inline-block;
-                padding: 4px 3px;
-                width: 132px;}
-            .fishki-select .options {
-                margin: 26px 0 0 0px;
-                width: 138px;
-                border-radius: 0 0 5px 5px;}
-            .fishki-select.fis-day .type-auto a {
-                background: url("http://img.auto.ria.ua/img/fishki/ico-select.gif") 100% 0 no-repeat;
-                padding: 0 30px 0 0;
-                display: inline-block;}
-            .fishki-select.sold-fishki .options a {
-                font-weight: bold;
-                font-size: 14px;}
-            .fishki-select .type-auto{
-                border: 1px solid #aeaeae;
-                border-radius: 5px;
-                display: inline-block;
-                padding: 2px 0px 2px 5px;
-                width: 133px;}
-            .fishki-select .type-auto a{
-                font-size: 14px;
-                color: #535353;
-                text-decoration: none;}
-            .info-bl-fishki{
-                background: #FFF6BF;
-                margin: 16px 0 0;
-                border-radius: 7px;
-                padding: 5px 0;
-                position: relative;}
-            .info-bl-fishki.uarr:before {
-                -moz-border-bottom-colors: none;
-                -moz-border-image: none;
-                -moz-border-left-colors: none;
-                -moz-border-right-colors: none;
-                -moz-border-top-colors: none;
-                border-color: transparent transparent black;
-                border-style: dashed solid solid dashed;
-                border-width: 0 10px 10px;
-                font-size: 0;
-                height: 0;
-                line-height: 0;
-                top: -10px;
-                left: 15px;
-                width: 0;
-                content: "";
-                position: absolute;
-                z-index: 100;
-                border-bottom-color: #FFF6BF;}
-            .info-bl-fishki .count-select, .ad-position-select .count-select{
-                background: #fff;
-                display: inline-block;
-                width: 85px;
-                margin: 9px 0 0 12px;
-                border-radius: 4px;}
-            .ad-position-select .count-select{
-                margin: 4px 0 0;
-            }
-            .info-bl-fishki .count-select input{
-                background: url("http://img.auto.ria.ua/img/fishki/ico-fishki.png") 95% 0 no-repeat;
-                width: 85px;
-                height: 30px;/*21|27*/
-                color: #f09212;
-                font-size: 23px;
-                font-weight: bold;}
-            .ad-position-select{
-                border-bottom: 1px dotted #CACACA;
-                padding: 0 0 5px;
-                margin: 13px 0 0;}
-            .ad-position-select .description{
-                color: #6E6E6E;
-                font-size: 11px;
-                margin: 5px 0 0;}
-            .ad-position-select .count-select input{
-                background: url("http://img.auto.ria.ua/img/fishki/ico-fishki.png") 95% 0 no-repeat;
-                width: 100px;
-                height: 30px;/*21|27*/
-                color: #f09212;
-                font-size: 24px;
-                font-weight: bold;}
-            .info-bl-fishki .count-select input.down, .ad-position-select .count-select input.down{
-                background-position: 95% -37px;}
-            .info-bl-fishki p, .ad-position{
-                color: #414042;
-                display: inline-block;
-                line-height: 16px;
-                margin: 2px 0 0 15px;}
-            .total-to-pay {
-                border-bottom: 1px dotted #cacaca;
-                padding: 20px 0 17px;
-                text-align: right;}
-            .total-to-pay label{
-                font-size: 15px;
-                color: #414042;
-                margin: 0 20px 0 0;}
-            .total-to-pay .old-price {
-                display: inline-block;
-                padding: 0 5px 0 10px;}
-            .total-to-pay .old-price span{
-                color: #414042;
-                font-size: 13px;}
-            .total-to-pay .old-price  .cross{
-                background: #C82D1F;
-                height: 1px;
-                margin: -9px 0 0;
-                padding: 0 5px 0 0;
-                width: 40px;}
-            .total-to-pay .green-number{
-                color: #527b02;
-                position: relative;}
-            .total-to-pay .green-number .stretch-top .pop-up{
-                display: none;
-                left: -175px;
-                width: 370px;
-                text-align: center;
-                color: #414042;}
-            .total-to-pay .green-number:hover .stretch-top .pop-up{
-                display: block;}
-            .total-to-pay .price{
-                background: url("http://img.auto.ria.ua/img/fishki/ico-fishki.png") 0 -80px no-repeat;
-                color: #527B02;
-                font-size: 15px;
-                margin: -8px 22px 0 10px;
-                padding: 8px 0 8px 34px;
-                display: inline-block;}
-            .total-to-pay .price span{
-                font-size: 24px;
-                font-weight: bold;}
-            .fishki-link{
-                text-align: right;
-                margin: 18px 0 0;
-            }
-            .tab1 .fishki-link{
-                margin: 0;
-            }
-            .your-account{
-                border-bottom: 1px dotted #cacaca;
-                padding: 10px 0;}
-            .oplanach{
-                display: inline-block;
-                width: 190px;
-                margin: 0px 0 5px;}
-            .oplanach p{
-                margin: 0 0 7px;
-                font-size: 12px;
-                color: #6e6e6e;
-                font-style: italic;}
-            .y-account{
-                border-left: 1px dotted #cacaca;
-                float: right;
-                padding: 0 0 0 30px;}
-            .y-account p{
-                margin: 0 0 2px;
-                color: #6e6e6e;}
-            .y-account p span{
-                font-size: 13px;
-                color: #527b02;}
-            .y-account div{padding: 5px 0 0 15px;}
-            .fishki-ads.tab1 h3{
-                border: none;
-                margin: 0;}
-            .fishki-ads.tab1 .fishki-up-ad{text-align: center;}
-            .fishki-ads.tab1 .fishki-up-ad h3{
-                font-size: 18px;
-                margin: 18px 0 10px;}
-            .tab1 .fishki-link a {
-                position: relative;
-                margin: 0 50px 0 0;}
-            .tab1 .fishki-link a span{padding: 0 50px 0 10px;}
-            .tab1 .fishki-link a div{
-                background-image: url("http://img.auto.ria.ua/img/fishki/nemu-fishki.png");
-                background-repeat: no-repeat;
-                width: 72px;
-                height: 40px;
-                position: absolute;}
-            .tab1 .fishki-link a.econom div{
-                background-position: 0 -20px;
-                top: -13px;
-                right: -35px;}
-            .tab1 .fishki-link a.quickly div{
-                background-position: 0 -125px;
-                top: -13px;
-                right: -35px;}
-            .fishki-ads.tab1{
-                padding: 10px 34px;
-                width: 493px;}
-            .tab1 h3.heading-urgent{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") -303px 0 no-repeat;
-                padding: 0 0 0 40px;
-                line-height: 18px;
-                margin: 14px 0 0;}
-            .block-rubrik .cont{
-                border-top: 1px dotted #cacaca;
-                border-bottom: 1px dotted #cacaca;
-                margin: 15px 0 0 40px;
-                padding: 5px 0 0;}
-            .block-rubrik p, .block-fishk p{
-                padding: 0;
-                margin: 0;}
-            .ads-rubrik{
-                display: inline-block;
-                width: 255px;
-                margin: 10px 0 0;}
-            .st-rubrik{
-                background: url("http://img.auto.ria.ua/img/fishki/ico-fishki.png") 0 -80px no-repeat;
-                width: 20px;
-                height: 50px;
-                display: inline-block;
-                margin: 25px 5px 0 5px;}
-            .img-urgently{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") 7px -30px no-repeat;
-                display: inline-block;
-                width: 130px;
-                height: 94px;}
-            .img-fishki{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") -150px -32px no-repeat;
-                display: inline-block;
-                width: 140px;
-                height: 85px;}
-            .img-fishki img{
-                margin: 16px 0 0 26px;}
-            .block-fishk .cont{
-                border-bottom: 1px dotted #cacaca;
-                padding: 0 0 0 40px;}
-            .imgfishki{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") 0 0 no-repeat;
-                display: inline-block;
-                width: 300px;
-                height: 30px;
-                margin: 6px 0 0 33px;}
-            .oplata-ls{
-                width: 225px;
-                display: inline-block;
-                margin: 10px 0 0 10px;
-                color: #6e6e6e;
-                font-size: 12px;
-                font-style: italic;
-                line-height: 23px;}
-            .img-ls{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") 0 -149px no-repeat;
-                display: inline-block;
-                width: 205px;
-                height: 20px;}
-            .img-lsms{
-                background: url("http://img.auto.ria.ua/img/fishki/fishki-img.jpg") 100% -149px no-repeat;
-                display: inline-block;
-                width: 65px;
-                height: 20px;}
-            .tab3 h3{
-                border: none;
-                margin-bottom: 12px;}
-            .tab3 .fishki-select {margin: 10px 0 0px;}
-            .tab3 .fishki-select .type-auto {
-                width: 390px;
-                padding: 5px;}
-            .tab3 .fishki-select .type-auto a {
-                width: 360px;
-                font-size: 17px;}
-            .tab3 .fishki-select .options {
-                margin: 26px 0 0 0px;
-                width: 400px;}
-            .tab3 .fishki-select .options a {
-                font-size: 17px;
-                color: #535353;
-                padding-bottom: 2px;}
-            .tab3 .info-bl-fishki ul {
-                margin: 0;
-                padding: 5px 0 5px 25px;}
-            .tab3 .info-bl-fishki ul li{
-                list-style: none;
-                padding: 5px 0;
-                font-size: 15px;}
-            .tab3 .info-bl-fishki ul li .list-sms-info{
-                width: 200px;
-                display: inline-block;}
-            .tab3 .info-bl-fishki ul li .bgbl{
-                background: white;
-                font-size: 18px;
-                border-radius: 5px;
-                padding: 2px 10px;
-                font-weight: bold;}
-            .tab3 .info-bl-fishki ul li.price-sms{
-                padding: 10px 0 0;}
-            .tab3 .info-bl-fishki ul li.price-sms .bgbl{color:#527b02;}
-            .tab3 .info-bl-fishki ul li.price-sms .bgbl span{
-                font-size: 15px;
-                font-weight: normal;
-                line-height: 21px;}
-            .tab3 .info-bl-fishki .description{
-                color: #6E6E6E;
-                font-size: 11px;
-                font-style: italic;
-                line-height: 15px;
-                margin: 0 0 5px 230px;}
-            .tab3 .fishki-link {margin: 10px 0 0;}
-            .img-telsms {
-                background: url("http://img.auto.ria.ua/images/common/pass-change.jpg") no-repeat 8px 4px;
-                display: inline-block;
-                height: 135px;
-                width: 149px;}
-            .messages-finish{
-                display: inline-block;
-                font-size: 20px;
-                line-height: 30px;
-                margin: 24px 0 0;}
-            .fishki-ads.tab-finish {
-                padding-top: 70px;
-                height: 385px;}
-            .inline-bl.desc-ads{
-                border-top: 1px dotted #cacaca;
-                font-size: 13px;
-                margin: 50px 0 1px;
-                padding: 30px 0 0;}
-            /* pop-ap login */
-            .fishki-ads.tab-login {
-                padding-top: 70px;
-                height: 385px;}
-            .tab-login .form-login{
-                margin: 20px 0 0 55px;}
-            .img-login {
-                background: url("images/ico-login.png") no-repeat 0 0;
-                display: inline-block;
-                height: 65px;
-                margin-left: 20px;
-                width: 100px;}
-            .tab-login .form-login label,
-            .tab-login .form-login .item-input input{
-                color: #525252;
-                font-size: 15px;
-                line-height: 25px;}
-            .tab-login .form-login .item-input input{
-                border: 1px solid #AEAEAE;
-                border-radius: 5px;
-                padding: 0 5px;
-                height: 25px;
-                width: 210px;}
-            .messages-login{
-                display: inline-block;
-                font-size: 16px;
-                line-height: 25px;
-                margin: 15px 0 0 15px;}
-            .fishki-select.sold-fishki .count-select{
-                background: #fff;
-                display: inline-block;
-                width: 115px;
-                border-radius: 4px;
-                position: relative;
-                display: inline-block;
-                border: 1px solid lightGrey;
-                padding: 1px 24px 1px 0;
-                line-height: 28px;}
-            .fishki-select.sold-fishki .count-select input{
-                height: 27px;/*21|27*/
-                margin: 0 0 0 3px;}
-
-
-        </style>
-
-        <script type="text/javascript">
-
-                                function pluralForm(n, form1, form2, form5) {
-                                    n = n % 100;
-                                    n1 = n % 10;
-                                    if (n > 10 && n < 20)
-                                        return form5;
-                                    if (n1 > 1 && n1 < 5)
-                                        return form2;
-                                    if (n1 == 1)
-                                        return form1;
-                                    return form5;
-                                }
-
-                                function select_tab(item) {
-                                    if (!$$('#fishki-ads-' + item).length)
-                                        return false;
-
-                                    $$('.fishki-ads').hide();
-                                    $$('#fishki-ads-' + item).show();
-                                    $$('.raise-menu>li').removeClass('active');
-                                    if (item == 'tab1') {
-                                        $$('.fishki-tab-1').addClass('active');
-                                        $$('.fishki-tab-2').addClass('b-bt');
-                                        $$('.fishki-tab-2').removeClass('b-top');
-                                    } else if (item == 'tab2') {
-                                        $$('.fishki-tab-2').addClass('active');
-                                        $$('.fishki-tab-2').removeClass('b-top');
-                                        $$('.fishki-tab-2').removeClass('b-bt');
-                                        Cookie.write('fishki_popup_view', item);
-                                    } else if (item == 'tab3') {
-                                        $$('.fishki-tab-3').addClass('active');
-                                        $$('.fishki-tab-2').addClass('b-top');
-                                        $$('.fishki-tab-2').removeClass('b-bt');
-                                        Cookie.write('fishki_popup_view', item);
-                                    } else if (item == 'tab4') {
-                                        $$('.fishki-tab-2').addClass('b-top');
-                                        $$('.fishki-tab-2').addClass('b-bt');
-                                    } else if (item == 'tab5') {
-                                        $$('.fishki-tab-2').addClass('b-top');
-                                        $$('.fishki-tab-2').addClass('b-bt');
-                                    }
-                                }
-
-        </script>
-    </noindex>
-
-    <div id="houses_popup" class="box-fixed box-ppfishki" style="display: none;">
-        <div class="box-iframe" id='iframePlace'>
-        </div>
-        <div class="window-ppfishki">
-            <div class="ppfishki-bg"></div>
-            <div class="content-ppfishki">
-                <a href="javascript:void(0);" class="close-alert" style="z-index: 10;" id="closeUpAutoWindow" title="Зактыть">&nbsp;</a>
-                <div class="pop-up-loader" id="fishki-pop-up-loader" style="display:none; z-index: 9;">
-                    <div style="text-align: center;font-size: 25px;padding-top: 260px;">
-                        Пожалуйста, подождите
-                    </div>
-                </div>
-                <div class="inline-bl" id="form_container">
-                    <div class="title-ppfishki">
-                        <div class="container-item">
-                            <h2 class="head-page">Поднятие объявления</h2>
-                        </div>
-                    </div>
-                    <div class="select-ads">
-                        <p>Вы хотите поднять в результатах поиска объявление: 
-                            <!--
-                            <span class="area float-r">
-                            <a href="#" title="Что такое фишки?" target="_blank">Что такое фишки <img width="14" height="14" style="margin: 1px 0 0;" src="http://img.auto.ria.ua/images/demo/ico-help.gif" class="ico-help"></a>
-                            </span>
-                            -->
-                        </p>
-                        <div class="combobox-ppfishki corner-7" >
-                            <div class="select-bar corner-5 icons-type-1 ">
-                                <a href="javascript:void(0);">
-                                    <span title="Нажмите для выбора объявления">
-                                        <span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="fishki-line inline-bl">
-                    <div class="raise-ad inline-bl">
-                        <div class="bleft-fishki">
-                            <ul class="raise-menu">
-                                <li class="fishki-tab-1 active"><a href="javascript:void(0);"><strong>О поднятии</strong><br> объявлений</a></li>
-                                <li class="fishki-tab-2 b-bt"><a href="javascript:void(0);">Поднять<br> <strong>Экономно</strong></a></li>
-                                <li class="fishki-tab-3"><a href="javascript:void(0);">Поднять<br> <strong>Быстро</strong></a></li>
-                            </ul>
-                            <div class="block-support">
-                                <a class="ico-support ico-online" target="_blank" href="/question/fishki/">online</a>
-                                <div class="bl-support">
-                                    <span>Cлужба<br> поддержки:</span><br>
-                                    (067) 469-04-10<br>
-                                    0(800) 210 012<br>
-                                    <a target="_blank" href="/question/fishki/">Написать >></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="fishki-ads tab1 corner-7">
-                            <h3 class="heading-urgent"><strong>Фишки и рубрика «Горячее»</strong> - это способ поднятия<br> объявлений на AUTO.ria на первые позиции в результатах поиска</h3>
-                            <div class="block-rubrik inline-bl">
-                                <div class="cont">
-                                    <div class="ads-rubrik">
-                                        <p>Объявления в рубрике <img width="66" title="Горячее предложение" src="http://img.auto.ria.ua/images/languages/ru/demo/urgently.png" class="urgently"></p>
-                                        <p>размещаются выше выделенных и обычных
-                                            объявлений. Объявления также сортируются по количеству фишек.</p>
-                                    </div>
-                                    <i class="st-rubrik"></i>
-                                    <div class="img-urgently"></div>
-                                </div>
-                            </div>
-                            <div class="block-fishk inline-bl">
-                                <div class="inline-bl">
-                                    <i class="imgfishki"></i>
-                                </div>
-                                <div class="cont">
-                                    <div class="ads-rubrik">
-                                        <p>Чем больше фишек - тем выше
-                                            объявление и больше покупателей
-                                            его просмотрит.</p>
-                                    </div>
-                                    <i class="st-rubrik"></i>
-                                    <div class="img-fishki"><img width="66" height="44" src="http://img.auto.ria.ua/img/fishki/auto.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="inline-bl fishki-up-ad">
-                                <h3>Вы можете поднять объявление:</h3>
-                            </div>
-                            <div class="fishki-link inline-bl">
-                                <a href="javascript:void(0);" class="button green-30 econom"><span>Поднять <strong>экономно</strong></span><div></div></a>
-                                <a href="javascript:void(0);" class="button green-30 quickly"><span>Поднять <strong>быстро</strong></span><div></div></a>
-                            </div>
-                            <div class="inline-bl">
-                                <div class="oplata-ls">
-                                    <label>Оплата через:  Личный счет,</label>
-                                    <i class="img-ls"></i>
-                                </div>
-                                <div class="oplata-ls">
-                                    <label>Оплата через:  SMS для операторов</label>
-                                    <i class="img-lsms"></i> и другие операторы 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    <div class="main-panel span9">
+        <div class="head-box line-grove" style="margin-bottom: 20px">
+            Мои автомобили        </div>
+        <div class="about-section">
+            <p>Мои автомобили - это раздел, предназначенный для оперативного управления Вашими объявлениями на сайте. С его помощью Вы можете легко и удобно отслеживать статистику Ваших объявлений: их тип, дату публикации, статистику просмотров, качество наполнения и позицию в поиске. В разделе представлены основные инструменты управления объявлениями: поднятие в результатах поиска, обновление даты публикации, перемещение в архив, редактирование и удаление.</p>        </div>
+        <div class="info icons">
+            Поднимайте свое объявление в результатах поиска и привлекайте больше покупателей. Узнайте <a href="/?target=view&amp;event=promo" >как сделать своё объявление на сайте популярным и привлекательным</a>.        </div>
+
+        <?php if (count($this->published)) { ?>
+            <section id="user_menu__container_active_active" class="box-panel">
+                <div class="head-box"> Опубликованные </div>
+                <div id="user_menu__main_table_active_active" class="table-myauto">
+                    <?php foreach ($this->published as $car) { ?>
+                    <div class="item-ticket" auto_ticket="<?php echo $car->id; ?>">
+                            <label class="check-item" for="check_auto_11871440">
+                                <input id="check_auto_11871440" class="check" type="checkbox" value="11871440" name="check_auto[11871440]">
+                            </label>
+                            <div class="content-myauto">
+                                <div class="content">
+                                    <?php if ($car->image != null) { ?>
+                                        <a class="photo" target="_blank" href="/index/view/id/<?php echo $car->id; ?>" nav_mem="11871440">
+                                            <img width="135" alt="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" src="/images/photos/<?php echo $car->id; ?>/<?php echo $car->image; ?>">
+                                        </a>
+                                    <?php } else { ?>
+                                        <a class="photo" target="_blank" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" nav_mem="11871440">
+                                            <img width="135" alt="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" src=" http://img.auto.ria.ua/images/languages/ru/no-photo/add-photo-135x90.jpg ">
+                                        </a>
+
+                                    <?php } ?>
+
+                                    <div class="content-item">
+                                        <h3 class="head-item">
+                                            <a title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->mark_name . ' ' . $car->model_name; ?></a>
+                                            &nbsp;<?php echo $car->year; ?>
+                                        </h3>
+                                        <p class="city"><?php echo $car->city_name; ?></p>
+                                        <div class="corect-price">
+                                            <?php if ($car->currency == 'UAH') { ?>
+                                                <span title="UAH">грн.</span>
+                                                <span class="price"><?php echo $car->price; ?> грн.</span>
+                                            <?php } else if ($car->currency == 'USD') { ?>
+                                                <span title="USD">$</span>
+                                                <span class="price"><?php echo intval($car->price / $this->usd); ?></span>
+                                            <?php } else if ($car->currency == 'EUR') { ?>
+                                                <span title="EUR">€</span>
+                                                <span class="price"><?php echo intval($car->price / $this->eur); ?></span>
+                                            <?php } ?>
+                                        </div>
+                                        <p class="position" style="">
+                                            <a href="/?target=search&event=little&marka=98&model=30098&scroll_to_auto_id=11871440&page=0" position_in_search="11871440" title="Показать на странице поиска" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">№1</a>
+                                            в поиске
+                                        </p>
+                                    </div>
+                                    <div class="media-data">
+                                        <span class="item" title="Количество фото">
+                                            <i class="icon-photo"></i>
+                                            <?php if (isset($this->photos_cnt[$car->id])) { ?>
+                                                <a title="Нажмите, чтоб добавить фото" style="text-decoration: none; color: black; font-weight: bold;" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" target="_blank"><?php echo $this->photos_cnt[$car->id]; ?></a>
+                                            <?php } else { ?>
+                                                <a title="Нажмите, чтоб добавить фото" style="text-decoration: none; color: black; font-weight: bold;" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" target="_blank">Нет фото</a>
+                                            <?php } ?>
+                                        </span>
+                                        <span class="item" publication_statistic="publication_statistic" style="">
+                                            <i class="icon-through"></i>
+                                            <a target="_blank" href="/auto_statistic/11871440/">Статистика объявления</a>
+                                        </span>
+                                        <span class="tinycomment" onclick="window.open('/auto_acura_el_11871440.html#final_page__comments_container', '_blank');" style="display: none;" comments_count="11871440" title="Нажмите, чтоб перейти к комментариям">загрузка...</span>
+                                    </div>
+                                </div>
+                                <div class="current-state">
+                                    <p class="item-state">
+                                        <i class="icon-type"></i>
+                                        <span title="Обычное объявление" auto_id="11871440" action="raise_up"> Обычное </span>
+                                    </p>
+                                    <p class="item-state">
+                                        <i class="icon-time-grey"></i>
+                                        <strong class="gray" format_date="<?php echo $car->added; ?>" processed="true"><?php echo date('d.m.Y', strtotime($car->added)); ?></strong>
+                                    </p>
+                                    <p class="item-state">
+                                        <i class="icon-auto-dibs"></i>
+                                        фишек:
+                                        <strong title="Нажмите, чтоб добавить фишек" style="cursor: pointer;" auto_id="11871440" action="raise_up">0</strong>
+                                    </p>
+                                    <p class="item-state" style="display: none;">
+                                        <i class="icon-mail"></i>
+                                        <span title="Сообщения, которые были отправлены вам по электронной почте" mail_count="11871440">загрузка...</span>
+                                        <span mail_count_word="11871440">сообщение</span>
+                                    </p>
+                                </div>
+                                <div class="current-state">
+                                    <p class="item-state">
+                                        <i class="icon-views"></i>
+                                        <span title="Количество просмотров объявления" view_count="11871440">21</span>
+                                    </p>
+                                    <p class="item-state" title="Дата окончания публикации 23.09.2013">
+                                        <i class="icon-time-grey"></i>
+                                        до
+                                        <strong class="gray" may_be_in_the_future="" format_date="2013-09-23 16:33:34" processed="true">23.09.2013</strong>
+                                    </p>
+                                    <p class="item-state" title="ID объявления" ticket_id="">
+                                        <i class="icon-id-item"></i>
+                                        <?php echo $car->id; ?>
+                                    </p>
+                                    <div class="item-republication" automatic_republication_container="11871440" style="" title="Размещение объявления на сайте не будет продлеваться автоматически.По окончанию срока публикации оно переместится в Архив.">
+                                        <i class="icon-republication-off" automatic_republication_icon="11871440"></i>
+                                        Повторная публикация
+                                        <a class="red" automatic_republication_status="11871440" expired_date="23.09.2013">выключена</a>
+                                    </div>
+                                </div>
+                                <ol class="control-list">
+                                    <li>
+                                        <a onclick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Up', 'Search_Result']);" title="Поднять объявление в поиске, опубликовав его как "Срочное" или "Выделенное"" action="raise_up" auto_id="11871440" href="javascript:void(0);">
+                                            <i class="icon-up-blue"></i>
+                                            Поднять
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Обновление даты и продление срока публикации объявления" onclick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Re-Published', 'Search_Result']);" href="/addauto/republication/autoId/11871440/">Переопубликовать</a>
+                                    </li>
+                                    <li>
+                                        <a title="Перейти к редактированию объявления" href="/catalog/add/step/autoinfo/autoId/<?php echo $car->id; ?>">Редактировать</a>
+                                    </li>
+                                    <li>
+                                        <a action="inform_us_about_sale" auto_id="11871440" title="Сообщить о продаже" href="javascript:void(0);">Сообщить о продаже</a>
+                                    </li>
+                                    <li>
+                                        <a class="to_archive" rel="<?php echo $car->id; ?>" href="javascript:void(0);">Удалить в архив</a>
+                                    </li>
+                                </ol>
+
+                                <div id="autoDeleteReason<?php echo $car->id; ?>" class="pop-up-element" style="position: absolute; margin-top: 0; z-index: 1000; width: 350px; display: none; left: 352px; top: 98px;">
+                                    <div class="left-shadow">
+                                        <div class="right-shadow">
+                                            <em class="tl-shadow"> </em>
+                                            <em class="tr-shadow"> </em>
+                                            <em class="bl-shadow"> </em>
+                                            <em class="br-shadow"> </em>
+                                            <a rel="<?php echo $car->id; ?>" class="close-alert" href="javascript:void(0);" name="closeAlert"> </a>
+                                            <div class="top-shadow">
+                                                <div class="bottom-shadow">
+                                                    <div class="container-item">
+                                                        <div id="reason-title-<?php echo $car->id; ?>" class="title text-l">Удаление объявления</div>
+                                                        <div id="complaintAdvertisementResponseAjax-<?php echo $car->id; ?>" class="hide"> </div>
+                                                        <div id="saled-form-<?php echo $car->id; ?>" saled="0">
+                                                            <form id="complaintAdvertisementForm-<?php echo $car->id; ?>" class="grid-form" method="post" action="/user/myautos">
+                                                                <div class="hidden">
+                                                                    <input type="hidden" name="target" value="user">
+                                                                    <input type="hidden" name="event" value="myauto">
+                                                                    <input type="hidden" name="delete_id" value="<?php echo $car->id; ?>">
+                                                                </div>
+                                                                <p id="reason-reason-<?php echo $car->id; ?>">
+                                                                    Пожалуйста, укажите причину, по которой Вы удаляете объявление
+                                                                    <strong>
+                                                                        <?php echo $car->mark_name . ' ' . $car->model_name . ' ' . $car->year; ?>г.в.
+                                                                        <strong>:</strong>
+                                                                    </strong>
+                                                                </p>
+                                                                <p class="box-check">
+                                                                    <input auto_id="<?php echo $car->id; ?>" id="reason_id4-<?php echo $car->id; ?>" type="radio" name="reason_id" value="4">
+                                                                    <label for="reason_id4-<?php echo $car->id; ?>">Авто продано с помощью AUTO.ria.ua</label>
+                                                                </p>
+                                                                <p class="box-check">
+                                                                    <input auto_id="<?php echo $car->id; ?>" id="reason_id5-<?php echo $car->id; ?>" type="radio" name="reason_id" value="5">
+                                                                    <label for="reason_id5-<?php echo $car->id; ?>">Авто продано в другом месте</label>
+                                                                </p>
+                                                                <p id="repub-11543114" class="box-check">
+                                                                    <input auto_id="<?php echo $car->id; ?>" id="reason_id6-<?php echo $car->id; ?>" type="radio" name="reason_id" value="6">
+                                                                    <label for="reason_id6-<?php echo $car->id; ?>">Я хочу разместить объявление заново</label>
+                                                                </p>
+                                                                <p id="changed-11543114" class="box-check">
+                                                                    <input auto_id="<?php echo $car->id; ?>" id="reason_id7-<?php echo $car->id; ?>" type="radio" name="reason_id" value="7">
+                                                                    <label for="reason_id7-<?php echo $car->id; ?>">Я передумал продавать автомобиль</label>
+                                                                </p>
+                                                                <div class="boxed box-button" style="margin: 10px">
+                                                                    <span id="formmm_span_<?php echo $car->id; ?>" style="padding: 0;" class="button grey-30 disabled">
+                                                                        <input class="to_archive_submit" auto_id="<?php echo $car->id; ?>" id="formmm_<?php echo $car->id; ?>" type="submit" disabled="disabled" onclick="//return confirm('Вы уверены, что хотите удалить объявление?');" value="Удалить">
+                                                                    </span>
+                                                                    <span style="padding: 0;"  class="button grey-30">
+                                                                        <input class="to_archive_button_cancel" auto_id="<?php echo $car->id; ?>" type="button" value="Отмена">
+                                                                    </span>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div id="succes-remove-11543114" style="display: none">
+                                                            <div class="succes-remove-ads" style="border: medium none; margin: 0 0 0 -20px; padding: 5px 15px 0 110px;">
+                                                                <p class="box-check">
+                                                                    Ваше объявление отмечено как
+                                                                    <span class="bold size-14">"продано"</span>
+                                                                </p>
+                                                                <p class="box-check">Изменения вступят в силу в течении нескольких минут.</p>
+                                                            </div>
+                                                            <p class="box-check bold">
+                                                                Спасибо, что воспользовались
+                                                                <span style="color: #D0412E">AUTO.ria.ua!</span>
+                                                            </p>
+                                                            <div class="boxed box-button" style="margin: 0 0 0 115px;">
+                                                                <span class="button grey-30">
+                                                                    <input type="button" value="Закрыть" onclick="fToggle(11543114)">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <noindex>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </section>
+        <?php } ?>
+        <section id="user_menu__container_archive_all" class="box-panel">
+            <div class="head-box"> Архив </div>
+            <div id="user_menu__main_table_archive_all" class="table-myauto">
+                <?php foreach ($this->archived as $car) { ?>
+                    <div class="item-ticket" auto_ticket="<?php echo $car->id; ?>">
+                        <label class="check-item" for="check_auto_11871440">
+                            <input id="check_auto_11871440" class="check" type="checkbox" value="11871440" name="check_auto[11871440]">
+                        </label>
+                        <div class="content-myauto">
+                            <div class="content">
+                                <?php if ($car->image != null) { ?>
+                                    <a class="photo" target="_blank" href="/index/view/id/<?php echo $car->id; ?>" nav_mem="11871440">
+                                        <img width="135" alt="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" src="/images/photos/<?php echo $car->id; ?>/<?php echo $car->image; ?>">
+                                    </a>
+                                <?php } else { ?>
+                                    <a class="photo" target="_blank" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" nav_mem="11871440">
+                                        <img width="135" alt="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" src=" http://img.auto.ria.ua/images/languages/ru/no-photo/add-photo-135x90.jpg ">
+                                    </a>
+
+                                <?php } ?>
+
+                                <div class="content-item">
+                                    <h3 class="head-item">
+                                        <a title="<?php echo $car->mark_name . ' ' . $car->model_name; ?>" nav_mem="11871440" href="/index/view/id/<?php echo $car->id; ?>"><?php echo $car->mark_name . ' ' . $car->model_name; ?></a>
+                                        &nbsp;<?php echo $car->year; ?>
+                                    </h3>
+                                    <p class="city"><?php echo $car->city_name; ?></p>
+                                    <div class="corect-price">
+                                        <?php if ($car->currency == 'UAH') { ?>
+                                            <span title="UAH">грн.</span>
+                                            <span class="price"><?php echo $car->price; ?> грн.</span>
+                                        <?php } else if ($car->currency == 'USD') { ?>
+                                            <span title="USD">$</span>
+                                            <span class="price"><?php echo intval($car->price / $this->usd); ?></span>
+                                        <?php } else if ($car->currency == 'EUR') { ?>
+                                            <span title="EUR">€</span>
+                                            <span class="price"><?php echo intval($car->price / $this->eur); ?></span>
+                                        <?php } ?>
+                                    </div>
+                                    <p class="position" style="">
+                                        <a href="/?target=search&event=little&marka=98&model=30098&scroll_to_auto_id=11871440&page=0" position_in_search="11871440" title="Показать на странице поиска" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">№1</a>
+                                        в поиске
+                                    </p>
+                                </div>
+                                <div class="media-data">
+                                    <span class="item" title="Количество фото">
+                                        <i class="icon-photo"></i>
+                                        <?php if (isset($this->photos_cnt[$car->id])) { ?>
+                                            <a title="Нажмите, чтоб добавить фото" style="text-decoration: none; color: black; font-weight: bold;" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" target="_blank"><?php echo $this->photos_cnt[$car->id]; ?></a>
+                                        <?php } else { ?>
+                                            <a title="Нажмите, чтоб добавить фото" style="text-decoration: none; color: black; font-weight: bold;" href="/catalog/add/step/addphoto/autoId/<?php echo $car->id; ?>" target="_blank">Нет фото</a>
+                                        <?php } ?>
+                                    </span>
+                                    <span class="item" publication_statistic="publication_statistic" style="">
+                                        <i class="icon-through"></i>
+                                        <a target="_blank" href="/auto_statistic/11871440/">Статистика объявления</a>
+                                    </span>
+                                    <span class="tinycomment" onclick="window.open('/auto_acura_el_11871440.html#final_page__comments_container', '_blank');" style="display: none;" comments_count="11871440" title="Нажмите, чтоб перейти к комментариям">загрузка...</span>
+                                </div>
+                            </div>
+                            <div class="current-state">
+                                <p class="item-state">
+                                    <i class="icon-type"></i>
+                                    <span title="Не опубликовано" auto_id="11871440" action="raise_up">Не опубликовано </span>
+                                </p>
+                                <p class="item-state">
+                                    <i class="icon-time-grey"></i>
+                                    <strong class="gray" format_date="<?php echo $car->added; ?>" processed="true"><?php echo date('d.m.Y', strtotime($car->added)); ?></strong>
+                                </p>
+                                <p class="item-state">
+                                    <i class="icon-auto-dibs"></i>
+                                    фишек:
+                                    <strong title="Нажмите, чтоб добавить фишек" style="cursor: pointer;" auto_id="11871440" action="raise_up">0</strong>
+                                </p>
+                                <p class="item-state" style="display: none;">
+                                    <i class="icon-mail"></i>
+                                    <span title="Сообщения, которые были отправлены вам по электронной почте" mail_count="11871440">загрузка...</span>
+                                    <span mail_count_word="11871440">сообщение</span>
+                                </p>
+                            </div>
+                            <div class="current-state">
+                                <p class="item-state" title="ID объявления" ticket_id="">
+                                    <i class="icon-id-item"></i>
+                                    <?php echo $car->id; ?>
+                                </p>
+                            </div>
+                            <ol class="control-list">
+                                <li>
+                                    <a title="Обновление даты и продление срока публикации объявления" onclick="_gaq.push(['_trackEvent', 'Paid_Promote', 'Click_on_Button_Re-Published', 'Search_Result']);" href="/addauto/republication/autoId/11871440/">Опубликовать</a>
+                                </li>
+                                <li>
+                                    <a title="Перейти к редактированию объявления" href="/catalog/add/step/autoinfo/autoId/<?php echo $car->id; ?>">Редактировать</a>
+                                </li>
+                                <li>
+                                    <a class="delete_auto" auto_id="<?php echo $car->id; ?>" href="javascript:void(0);">Удалить с сайта</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <p class="show-all-ticket">
+                <a class="button" target="_blank" href="/user/menu/?section=archive&viewType=all"> Смотреть все объявления (4) </a>
+            </p>
+        </section>
+
+    </div>
+
 </div>
